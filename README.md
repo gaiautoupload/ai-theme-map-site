@@ -8,5 +8,5 @@
 
 部署方式：
 - GitHub Pages
-- 建議 branch: `main`
-- root 發布
+- branch: `main`
+- folder: `/root`
