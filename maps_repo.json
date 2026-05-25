@@ -1,0 +1,35 @@
+{
+  "map_unique_id": {
+    "title": "2026 台積電 FOPLP 與玻璃基板 GCS 供應鏈實戰地圖",
+    "date": "2026-05-25",
+    "heat": "極度火熱 🔥 (AI 晶片封裝技術路徑之關鍵變革)",
+    "period": "設備驗證期: 2025-2026 | 材料量產期: 2026-2027 | 載板切換期: 2027+",
+    "desc": "隨著 AI 晶片（如 NVIDIA Blackwell 及後續架構）算力需求突破矽基物理極限，台積電（TSMC）正加速推進 FOPLP（Fan-Out Panel Level Packaging，扇出型面板級封裝）與 GCS（Glass Core Substrate，玻璃基板）兩大先進封裝技術。FOPLP 旨在利用大尺寸面板降低單位成本並提升產能，而 GCS 則憑藉其低熱膨脹係數、高平整度與高頻傳輸特性，成為解決 2nm 以下節點互連密度與訊號衰減痛點的唯一解。此技術變革不僅重塑了封裝製程，更引發了設備、材料與載板供應鏈的劇烈洗牌。從 TGV（玻璃通孔）雷射鑽孔、化學機械拋光（CMP）到 Low-Dk 玻纖布與高階載板，台灣供應鏈憑藉在 PCB 與半導體封裝的深厚積累，正積極卡位台積電與全球一線 CSP（雲端服務供應商）的訂單，成為 AI 硬體架構升級中不可或缺的核心環節。",
+    "icon": "layers",
+    "color": "from-cyan-500 to-indigo-600",
+    "concepts": [
+      {
+        "title": "FOPLP (Fan-Out Panel Level Packaging)",
+        "subtitle": "大尺寸面板級扇出型封裝技術",
+        "desc": "FOPLP 是將傳統晶圓級封裝（WLP）擴展至面板級（Panel Level）的技術，主要優勢在於面板尺寸（如 600x600mm）遠大於晶圓（300mm），可大幅降低切割損耗與單位封裝成本。然而，其核心挑戰在於面板在熱壓合與化學拋光過程中的翹曲（Warpage）控制，以及大面積均勻性問題。台積電透過 FOPLP 技術，旨在為 AI 加速器與高階 SoC 提供更具成本效益的封裝方案，特別適合大面積晶片。這要求設備商具備高精度對位與大面積 CMP 能力，材料商需提供低應力、高平整度的底部填充膠與模複化合物。"
+      },
+      {
+        "title": "GCS (Glass Core Substrate) & TGV",
+        "subtitle": "玻璃基板與玻璃通孔的高頻互連革命",
+        "desc": "玻璃基板（GCS）利用玻璃材料極低的熱膨脹係數（CTE），能與矽晶片更好匹配，大幅降低高溫製程中的翹曲問題。同時，玻璃優異的高頻電氣特性，能有效減少 AI 晶片在高速資料傳輸中的訊號損耗。其關鍵製程為 TGV（Through-Glass Via，玻璃通孔），需透過高精度雷射或蝕刻技術在脆性玻璃上鑽出微米級通孔，再填入銅形成導電路徑。這對鑽孔設備、鍍銅均勻性與後續拋光技術提出極高要求，是材料與設備商的核心戰場。"
+      }
+    ],
+    "stocks": [],
+    "heat_score": 92,
+    "theme_tags": ["先進封裝", "FOPLP", "玻璃基板", "GCS", "TGV", "CMP"],
+    "trigger_events": ["台積電先進封裝技術論壇釋出新時程", "CSP/ASIC 大客戶加快導入節奏"],
+    "risks": ["技術驗證時程遞延", "良率不如預期", "競爭技術路線取代"],
+    "watch_signals": ["設備訂單能見度", "材料送樣驗證進度", "高階載板資本支出"],
+    "related_themes": ["CoWoS", "HBM", "CPO"],
+    "tech_lessons": [],
+    "structure_layers": [],
+    "capital_flow": [],
+    "timeline_phases": [],
+    "thesis": "AI 晶片封裝路線升級將帶動玻璃基板、設備與材料供應鏈進入新一輪卡位期。"
+  }
+}

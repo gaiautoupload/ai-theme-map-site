@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM 投資決策 Wiki 平台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: { 950: '#0b0f19', 900: '#111827', 800: '#1f2937', 700: '#374151' }
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', 'Noto Sans TC', sans-serif; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #0b0f19; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+<div id="app"></div>
+<script>
+const APP_STATE = {
+    maps: {},
+    selectedMapId: null,
+    currentView: 'dashboard'
+};
+
+const sectorLabels = {
+    all: '全部',
+    equipment: '設備',
+    materials: '材料',
+    substrate: '載板',
+    packaging: '封裝',
+    foundry: '晶圓/平台',
+    pcb: 'PCB',
+    carrier: '載體/中介',
+    glass: '玻璃',
+    chemistry: '化學',
+    optics: '光通訊',
+    others: '其他'
+};
+
+async function loadMaps() {
+    const res = await fetch('./maps_repo.json?_=' + Date.now());
+    APP_STATE.maps = await res.json();
+    renderDashboardHome();
+}
+
+function safeText(v) {
+    return v === undefined || v === null ? '' : String(v);
+}
+
+function getHeatBadgeClass(score) {
+    if (score >= 85) return 'bg-red-950/30 border-red-700/50 text-red-300';
+    if (score >= 70) return 'bg-amber-950/30 border-amber-700/50 text-amber-300';
+    return 'bg-slate-900 border-slate-700 text-slate-300';
+}
+
+function renderDashboardHome() {
+    APP_STATE.currentView = 'dashboard';
+    const mapsRepository = APP_STATE.maps || {};
+    const keys = Object.keys(mapsRepository);
+    keys.sort((a, b) => {
+        const scoreA = Number(mapsRepository[a]?.heat_score || 0);
+        const scoreB = Number(mapsRepository[b]?.heat_score || 0);
+        if (scoreB !== scoreA) return scoreB - scoreA;
+        return String(mapsRepository[b]?.updated_at || '').localeCompare(String(mapsRepository[a]?.updated_at || ''));
+    });
+
+    const app = document.getElementById('app');
+    app.innerHTML = `
+        <div class="max-w-7xl mx-auto px-4 py-8 space-y-6">
+            <div class="bg-gradient-to-r from-indigo-950/40 via-slate-900 to-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
+                <div>
+                    <h1 class="text-2xl font-black text-slate-100">AI 產業主題雷達牆</h1>
+                    <p class="text-sm text-slate-400 mt-2 leading-relaxed">本地生成主題地圖，聚焦技術教學、結構分層、資金流推演與概念股映射。GitHub Pages 版本專注展示，資料由本地研究引擎持續發布更新。</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
+                        <div class="text-[11px] text-slate-500 mb-1">研究模式</div>
+                        <div class="text-sm font-bold text-cyan-300">技術教學 + 結構分層 + 資金流推演</div>
+                    </div>
+                    <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
+                        <div class="text-[11px] text-slate-500 mb-1">展示模式</div>
+                        <div class="text-sm font-bold text-amber-300">GitHub Pages 靜態發布</div>
+                    </div>
+                    <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
+                        <div class="text-[11px] text-slate-500 mb-1">系統目標</div>
+                        <div class="text-sm font-bold text-emerald-300">自主進化與探索的主題雷達牆</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-4">
+                <h2 class="text-base font-bold text-slate-300">主題雷達牆 (依火勢與更新時間排序)</h2>
+                <div class="text-xs text-slate-500">共 ${keys.length} 張地圖</div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                ${keys.map(key => {
+                    const map = mapsRepository[key] || {};
+                    return `
+                        <button onclick="showMapWorkspace('${key}')" class="text-left bg-slate-900 border border-slate-800 hover:border-cyan-700/60 rounded-2xl p-5 shadow-lg transition hover:-translate-y-0.5">
+                            <div class="flex items-start justify-between gap-3 mb-3">
+                                <div class="text-lg font-bold text-slate-100 leading-snug">${safeText(map.title)}</div>
+                                <div class="px-2 py-1 rounded-lg border text-xs font-semibold ${getHeatBadgeClass(Number(map.heat_score || 0))}">${safeText(map.heat_score ?? '--')}</div>
+                            </div>
+                            <div class="text-sm text-cyan-300 font-semibold leading-relaxed mb-3">${safeText(map.thesis || map.desc || '').slice(0, 90)}</div>
+                            <div class="text-xs text-slate-400 leading-relaxed mb-4">${safeText(map.desc || '').slice(0, 150)}</div>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                ${(map.theme_tags || []).slice(0, 5).map(tag => `<span class="px-2 py-1 rounded-md bg-slate-950 border border-slate-800 text-[11px] text-slate-300">${safeText(tag)}</span>`).join('')}
+                            </div>
+                            <div class="flex items-center justify-between text-xs text-slate-500">
+                                <div>${safeText(map.period)}</div>
+                                <div>${safeText(map.updated_at || map.date || '')}</div>
+                            </div>
+                        </button>
+                    `;
+                }).join('')}
+            </div>
+        </div>
+    `;
+    if (window.lucide) lucide.createIcons();
+}
+
+function showMapWorkspace(mapId) {
+    APP_STATE.selectedMapId = mapId;
+    APP_STATE.currentView = 'workspace';
+    const mapData = APP_STATE.maps[mapId] || {};
+    const app = document.getElementById('app');
+    app.innerHTML = `
+        <div class="max-w-7xl mx-auto px-4 py-8 space-y-6">
+            <div class="flex items-center justify-between gap-4">
+                <button onclick="renderDashboardHome()" class="px-4 py-2 rounded-xl border border-slate-700 text-slate-300 hover:bg-slate-900 text-sm">← 返回雷達牆</button>
+                <div class="text-xs text-slate-500">${safeText(mapId)}</div>
+            </div>
+
+            <div class="grid grid-cols-1 xl:grid-cols-3 gap-4">
+                <div class="xl:col-span-2 bg-slate-900 border border-slate-800 rounded-xl p-6 space-y-4">
+                    <div>
+                        <div class="text-[11px] text-slate-500 mb-1">主題 Thesis</div>
+                        <div id="map-thesis-hero" class="text-lg font-bold text-cyan-300 leading-relaxed"></div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                        <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-4">
+                            <div class="text-[11px] text-slate-500 mb-1">火勢狀態</div>
+                            <div id="map-heat-hero" class="text-sm font-bold text-red-300"></div>
+                        </div>
+                        <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-4">
+                            <div class="text-[11px] text-slate-500 mb-1">火勢分數</div>
+                            <div id="map-heat-score-hero" class="text-sm font-bold text-amber-300"></div>
+                        </div>
+                        <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-4">
+                            <div class="text-[11px] text-slate-500 mb-1">所處階段</div>
+                            <div id="map-period-hero" class="text-sm font-bold text-indigo-300"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold text-indigo-400 uppercase tracking-wider mb-2 flex items-center gap-2">議題深度背景摘要</h3>
+                        <div id="map-long-desc" class="text-slate-300 text-sm leading-relaxed"></div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 space-y-4">
+                    <div>
+                        <div class="text-[11px] text-slate-500 mb-2">主題標籤</div>
+                        <div id="theme-tags" class="flex flex-wrap gap-2"></div>
+                    </div>
+                    <div>
+                        <div class="text-[11px] text-slate-500 mb-2">觸發事件</div>
+                        <div id="trigger-events" class="space-y-2"></div>
+                    </div>
+                    <div>
+                        <div class="text-[11px] text-slate-500 mb-2">風險</div>
+                        <div id="risk-items" class="space-y-2"></div>
+                    </div>
+                    <div>
+                        <div class="text-[11px] text-slate-500 mb-2">觀察訊號</div>
+                        <div id="watch-signals" class="space-y-2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+                    <h3 class="text-sm font-bold text-cyan-400 uppercase tracking-wider mb-4">技術教學</h3>
+                    <div id="tech-lessons" class="space-y-3"></div>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+                    <h3 class="text-sm font-bold text-fuchsia-400 uppercase tracking-wider mb-4">結構分層</h3>
+                    <div id="structure-layers" class="space-y-3"></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+                    <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-4">商用時程</h3>
+                    <div id="timeline-phases" class="space-y-3"></div>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+                    <h3 class="text-sm font-bold text-red-400 uppercase tracking-wider mb-4">資金流與火勢</h3>
+                    <div id="capital-flow" class="space-y-3"></div>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-6 space-y-4">
+                <div class="flex items-center justify-between gap-3 flex-wrap">
+                    <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-wider">概念股雷達</h3>
+                    <div id="sector-tabs" class="flex flex-wrap gap-2"></div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full text-sm">
+                        <thead>
+                            <tr class="text-slate-400 border-b border-slate-800">
+                                <th class="text-left py-3 pr-4">代號</th>
+                                <th class="text-left py-3 pr-4">公司</th>
+                                <th class="text-left py-3 pr-4">板塊</th>
+                                <th class="text-left py-3 pr-4">角色</th>
+                                <th class="text-left py-3 pr-4">時程</th>
+                                <th class="text-left py-3 pr-4">純度</th>
+                                <th class="text-left py-3 pr-4">壁壘</th>
+                            </tr>
+                        </thead>
+                        <tbody id="stocks-table"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.getElementById('map-thesis-hero').textContent = mapData.thesis || mapData.title || '';
+    document.getElementById('map-heat-hero').textContent = mapData.heat || '未分類';
+    document.getElementById('map-heat-score-hero').textContent = `${mapData.heat_score ?? '--'} / 100`;
+    document.getElementById('map-period-hero').textContent = mapData.period || '觀察期';
+    document.getElementById('map-long-desc').innerHTML = `
+        <div class="space-y-3">
+            <p>${safeText(mapData.desc || '')}</p>
+            ${(mapData.heat_drivers && mapData.heat_drivers.length) ? `<div><div class="text-xs text-slate-500 mb-1">火勢驅動</div><div class="flex flex-wrap gap-2">${mapData.heat_drivers.map(x => `<span class='px-2 py-1 rounded bg-red-950/30 border border-red-900/30 text-red-300 text-xs'>${safeText(x)}</span>`).join('')}</div></div>` : ''}
+        </div>
+    `;
+
+    renderSimpleTagList('theme-tags', mapData.theme_tags, 'bg-slate-950 border-slate-800 text-slate-300');
+    renderSimpleCardList('trigger-events', mapData.trigger_events, 'border-cyan-900/40 text-cyan-200');
+    renderSimpleCardList('risk-items', mapData.risks, 'border-red-900/40 text-red-200');
+    renderSimpleCardList('watch-signals', mapData.watch_signals, 'border-amber-900/40 text-amber-200');
+    renderTechLessons(mapData.tech_lessons || []);
+    renderStructureLayers(mapData.structure_layers || []);
+    renderTimelinePhases(mapData.timeline_phases || []);
+    renderCapitalFlow(mapData.capital_flow || []);
+    renderSectorTabs(mapData.stocks || []);
+    renderStocksTable(mapData.stocks || [], 'all');
+}
+
+function renderSimpleTagList(targetId, items, cls) {
+    const el = document.getElementById(targetId);
+    el.innerHTML = (items || []).map(x => `<span class="px-2 py-1 rounded-md border text-xs ${cls}">${safeText(x)}</span>`).join('') || '<div class="text-sm text-slate-500">暫無資料</div>';
+}
+
+function renderSimpleCardList(targetId, items, cls) {
+    const el = document.getElementById(targetId);
+    el.innerHTML = (items || []).map(x => `<div class="bg-slate-950/60 border rounded-xl p-3 text-sm ${cls}">${safeText(x)}</div>`).join('') || '<div class="text-sm text-slate-500">暫無資料</div>';
+}
+
+function renderTechLessons(items) {
+    const el = document.getElementById('tech-lessons');
+    el.innerHTML = (items || []).map(item => `
+        <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-4 space-y-2">
+            <div class="text-base font-bold text-cyan-300">${safeText(item.title)}</div>
+            <div class="text-xs text-slate-500">${safeText(item.subtitle)}</div>
+            <div class="text-sm text-slate-300">${safeText(item.desc)}</div>
+            <div class="grid grid-cols-1 gap-2 text-sm">
+                <div><span class="text-slate-500">問題：</span>${safeText(item.problem)}</div>
+                <div><span class="text-slate-500">機制：</span>${safeText(item.mechanism)}</div>
+                <div><span class="text-slate-500">Why now：</span>${safeText(item.why_now)}</div>
+            </div>
+        </div>
+    `).join('') || '<div class="text-sm text-slate-500">暫無資料</div>';
+}
+
+function renderStructureLayers(items) {
+    const el = document.getElementById('structure-layers');
+    el.innerHTML = (items || []).map(item => `
+        <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-4 space-y-2">
+            <div class="text-base font-bold text-fuchsia-300">${safeText(item.name)}</div>
+            <div class="text-xs text-slate-500">${safeText(item.position)}</div>
+            <div class="text-sm text-slate-300">${safeText(item.summary)}</div>
+            <div class="flex flex-wrap gap-2">${(item.key_points || []).map(x => `<span class="px-2 py-1 rounded bg-slate-900 border border-slate-800 text-xs text-slate-300">${safeText(x)}</span>`).join('')}</div>
+        </div>
+    `).join('') || '<div class="text-sm text-slate-500">暫無資料</div>';
+}
+
+function renderTimelinePhases(items) {
+    const el = document.getElementById('timeline-phases');
+    el.innerHTML = (items || []).map(item => `
+        <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-4 space-y-2">
+            <div class="flex items-center justify-between gap-3">
+                <div class="text-base font-bold text-amber-300">${safeText(item.phase)}</div>
+                <div class="text-xs text-slate-500">${safeText(item.timeframe)}</div>
+            </div>
+            <div class="text-sm text-slate-300">${safeText(item.summary)}</div>
+            <div class="flex flex-wrap gap-2">${(item.winners || []).map(x => `<span class="px-2 py-1 rounded bg-amber-950/20 border border-amber-900/30 text-amber-300 text-xs">${safeText(x)}</span>`).join('')}</div>
+        </div>
+    `).join('') || '<div class="text-sm text-slate-500">暫無資料</div>';
+}
+
+function renderCapitalFlow(flows) {
+    const el = document.getElementById('capital-flow');
+    el.innerHTML = (flows || []).map((item, index) => `
+        <div class="relative bg-slate-950/60 border border-slate-800 rounded-xl p-5 space-y-3 overflow-hidden">
+            <div class="absolute left-0 top-0 bottom-0 w-1 ${index % 3 === 0 ? 'bg-red-500/70' : index % 3 === 1 ? 'bg-amber-500/70' : 'bg-cyan-500/70'}"></div>
+            <div class="flex items-start justify-between gap-3 pl-3">
+                <div>
+                    <div class="text-red-300 font-bold text-sm">${safeText(item.phase)}</div>
+                    <div class="text-[11px] text-slate-500 mt-1">${safeText(item.timeframe)}</div>
+                </div>
+                <span class="px-2 py-1 rounded bg-red-950/20 border border-red-900/30 text-red-300 text-xs">${safeText(item.focus)}</span>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed pl-3">${safeText(item.logic)}</p>
+            <div class="flex flex-wrap gap-2 pl-3">${(item.beneficiary_groups || []).map(x => `<span class="px-2 py-1 rounded bg-amber-950/20 border border-amber-900/30 text-amber-300 text-xs">${safeText(x)}</span>`).join('')}</div>
+        </div>
+    `).join('') || '<div class="text-sm text-slate-500">暫無資料</div>';
+}
+
+function renderSectorTabs(stocks) {
+    const sectors = ['all', ...Array.from(new Set((stocks || []).map(x => x.sectorId || 'others')))];
+    const el = document.getElementById('sector-tabs');
+    el.innerHTML = sectors.map(sectorId => `
+        <button class="sector-tab-btn px-2.5 py-1 text-xs font-medium rounded-md text-slate-400 hover:text-white hover:bg-slate-800 transition ${sectorId === 'all' ? 'bg-indigo-600 text-white' : ''}" data-sector="${sectorId}" onclick="filterSector('${sectorId}')">${safeText(sectorLabels[sectorId] || sectorId)}</button>
+    `).join('');
+}
+
+function filterSector(sectorId) {
+    document.querySelectorAll('.sector-tab-btn').forEach(btn => btn.className = 'sector-tab-btn px-2.5 py-1 text-xs font-medium rounded-md text-slate-400 hover:text-white hover:bg-slate-800 transition');
+    const activeBtn = document.querySelector(`.sector-tab-btn[data-sector="${sectorId}"]`);
+    if (activeBtn) activeBtn.className = 'sector-tab-btn px-2.5 py-1 text-xs font-medium rounded-md transition bg-indigo-600 text-white';
+    const mapData = APP_STATE.maps[APP_STATE.selectedMapId] || {};
+    renderStocksTable(mapData.stocks || [], sectorId);
+}
+
+function renderStocksTable(stocks, sectorId) {
+    const filtered = sectorId === 'all' ? stocks : (stocks || []).filter(x => (x.sectorId || 'others') === sectorId);
+    const el = document.getElementById('stocks-table');
+    el.innerHTML = filtered.map(stock => `
+        <tr class="border-b border-slate-900 hover:bg-slate-950/60 align-top">
+            <td class="py-3 pr-4 text-slate-300">${safeText(stock.code || stock.id)}</td>
+            <td class="py-3 pr-4">
+                <div class="font-semibold text-slate-100">${safeText(stock.name)}</div>
+                <div class="text-xs text-slate-500 mt-1">${safeText(stock.desc || '')}</div>
+            </td>
+            <td class="py-3 pr-4 text-slate-300">${safeText(stock.sector)}</td>
+            <td class="py-3 pr-4 text-slate-300">${safeText(stock.role)}</td>
+            <td class="py-3 pr-4 text-slate-400">${safeText(stock.timeframe)}</td>
+            <td class="py-3 pr-4 text-cyan-300">${safeText(stock.pureLevel)}</td>
+            <td class="py-3 pr-4 text-amber-300">${safeText(stock.barrierLevel)}</td>
+        </tr>
+    `).join('') || '<tr><td colspan="7" class="py-8 text-center text-slate-500">此分類暫無資料</td></tr>';
+}
+
+loadMaps();
+</script>
+</body>
+</html>
