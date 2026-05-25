@@ -66,6 +66,24 @@
                     <div class="text-sm font-bold text-emerald-300">自主進化與探索的主題雷達牆</div>
                 </div>
             </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+                <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
+                    <div class="text-[11px] text-slate-500 mb-1">Producer</div>
+                    <div class="text-sm font-bold text-amber-200">+1000</div>
+                </div>
+                <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
+                    <div class="text-[11px] text-slate-500 mb-1">網站作者</div>
+                    <div class="text-sm font-bold text-cyan-200">+1000</div>
+                </div>
+                <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
+                    <div class="text-[11px] text-slate-500 mb-1">製作</div>
+                    <div class="text-sm font-bold text-emerald-200">+1000</div>
+                </div>
+                <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
+                    <div class="text-[11px] text-slate-500 mb-1">更新日期</div>
+                    <div class="text-sm font-bold text-indigo-200" id="site-updated-at">載入中...</div>
+                </div>
+            </div>
         </div>
 
         <div class="space-y-4">
@@ -344,11 +362,28 @@
             lucide.createIcons();
         }
 
+        function updateSiteMeta() {
+            const metaEl = document.getElementById('site-updated-at');
+            if (!metaEl) return;
+            const keys = Object.keys(mapsRepository || {});
+            if (keys.length === 0) {
+                metaEl.textContent = '尚無資料';
+                return;
+            }
+            const latest = keys
+                .map(key => mapsRepository[key]?.updated_at || mapsRepository[key]?.date || '')
+                .filter(Boolean)
+                .sort()
+                .reverse()[0];
+            metaEl.textContent = latest || '尚無資料';
+        }
+
         // 渲染首頁列表
         function renderDashboardHome() {
             document.getElementById('panel-home').classList.remove('hidden');
             document.getElementById('panel-map-workspace').classList.add('hidden');
             document.getElementById('header-status').innerHTML = '';
+            updateSiteMeta();
 
             const grid = document.getElementById('maps-grid');
             grid.innerHTML = '';
