@@ -394,12 +394,58 @@
         let currentMapKey = null;
         let watchlist = [];
 
+        // 異步載入 vLLM 動態產出的資料庫
+        async function fetchJsonWithFallback(urls) {
+            let lastError = null;
+            for (const url of urls) {
+                try {
+                    const response = await fetch(url, { cache: 'no-store' });
+                    if (!response.ok) throw new Error(`HTTP ${response.status} @ ${url}`);
+                    const data = await response.json();
+                    return { data, url };
+                } catch (err) {
+                    lastError = err;
+                    console.warn('JSON load failed:', url, err);
+                }
+            }
+            throw lastError || new Error('No JSON source available');
+        }
+
+        function hasMapContent(mapData) {
+            return Boolean(
+                (Array.isArray(mapData?.concepts) && mapData.concepts.length >= 0)
+                || (Array.isArray(mapData?.tech_lessons) && mapData.tech_lessons.length >= 0)
+                || (Array.isArray(mapData?.structure_layers) && mapData.structure_layers.length >= 0)
+                || (Array.isArray(mapData?.timeline_phases) && mapData.timeline_phases.length >= 0)
+                || (typeof mapData?.thesis === 'string' && mapData.thesis.trim())
+                || (typeof mapData?.desc === 'string' && mapData.desc.trim())
+            );
+        }
+
         function isValidMapData(mapData) {
             return mapData
                 && typeof mapData === 'object'
                 && typeof mapData.title === 'string'
-                && Array.isArray(mapData.concepts)
-                && Array.isArray(mapData.stocks);
+                && Array.isArray(mapData.stocks)
+                && hasMapContent(mapData);
+        }
+
+        function normalizeMapData(mapData) {
+            return {
+                ...mapData,
+                concepts: Array.isArray(mapData?.concepts) ? mapData.concepts : [],
+                tech_lessons: Array.isArray(mapData?.tech_lessons) ? mapData.tech_lessons : [],
+                structure_layers: Array.isArray(mapData?.structure_layers) ? mapData.structure_layers : [],
+                timeline_phases: Array.isArray(mapData?.timeline_phases) ? mapData.timeline_phases : [],
+                theme_tags: Array.isArray(mapData?.theme_tags) ? mapData.theme_tags : [],
+                trigger_events: Array.isArray(mapData?.trigger_events) ? mapData.trigger_events : [],
+                risks: Array.isArray(mapData?.risks) ? mapData.risks : [],
+                watch_signals: Array.isArray(mapData?.watch_signals) ? mapData.watch_signals : [],
+                related_themes: Array.isArray(mapData?.related_themes) ? mapData.related_themes : [],
+                heat_drivers: Array.isArray(mapData?.heat_drivers) ? mapData.heat_drivers : [],
+                capital_flow: Array.isArray(mapData?.capital_flow) ? mapData.capital_flow : [],
+                stocks: Array.isArray(mapData?.stocks) ? mapData.stocks : [],
+            };
         }
 
         function normalizeRepository(rawRepo) {
@@ -408,35 +454,42 @@
             const normalized = {};
             for (const [key, value] of Object.entries(rawRepo)) {
                 if (isValidMapData(value)) {
-                    normalized[key] = value;
+                    normalized[key] = normalizeMapData(value);
                 }
             }
 
             if (Object.keys(normalized).length === 0 && isValidMapData(rawRepo)) {
-                normalized['map_default'] = rawRepo;
+                normalized['map_default'] = normalizeMapData(rawRepo);
             }
 
             return normalized;
         }
 
-        // 異步載入 vLLM 動態產出的資料庫
-        window.onload = async function() {
+        async function bootstrapApp() {
             try {
-                const response = await fetch('./maps_repo.json', { cache: 'no-store' });
-                if (!response.ok) throw new Error("遠端 HTTP 狀態碼錯誤");
-                const rawRepo = await response.json();
+                const versionStamp = Date.now();
+                const versionedMapCandidates = [
+                    './maps_repo_20260527_005959.json',
+                    './maps_repo.json',
+                    './maps_repo_v4.json',
+                    './maps_repo_v3.json',
+                    './maps_repo_v2.json'
+                ];
+                const { data: rawRepo, url } = await fetchJsonWithFallback([
+                    ...versionedMapCandidates.map(x => `${x}?v=${versionStamp}`),
+                    ...versionedMapCandidates
+                ]);
                 mapsRepository = normalizeRepository(rawRepo);
-                console.log("成功加載動態 Wiki 數據庫！主題數：", Object.keys(mapsRepository).length);
+                console.log("成功加載動態 Wiki 數據庫！主題數：", Object.keys(mapsRepository).length, 'source=', url);
             } catch (err) {
                 console.error("讀取動態數據庫失敗，採用備用防錯提示:", err);
-                // 應對本地雙擊開啟產生的 CORS 限制
                 mapsRepository = {
                     "error_local": {
                         title: "資料庫加載失敗 ⚠️",
-                        date: "2026-05-25",
-                        heat: "CORS 限制中",
-                        period: "請確認已透過 Python 啟動本地伺服器",
-                        desc: "偵測不到 maps_repo.json。請確保你在 D:\\map 目錄下執行了 python -m http.server 或是執行過 vLLM.py 生成了實體檔案。",
+                        date: "--",
+                        heat: "資料未載入",
+                        period: "請檢查 GitHub Pages 是否成功同步 maps_repo.json",
+                        desc: "站點沒有成功讀到主資料庫。請確認 publish_site.py 是否已同步 maps_repo.json，或檢查瀏覽器快取。",
                         icon: "alert-triangle",
                         color: "from-red-600 to-orange-500",
                         concepts: [],
@@ -447,6 +500,8 @@
             renderDashboardHome();
             lucide.createIcons();
         }
+
+        window.addEventListener('DOMContentLoaded', bootstrapApp);
 
         function showMap(mapKey) {
             loadMapWorkspace(mapKey);
@@ -545,9 +600,6 @@
                 const scoreB = Number(mapsRepository[b]?.heat_score || 0);
                 return scoreB - scoreA;
             });
-
-            const grid = document.getElementById('maps-grid');
-            grid.innerHTML = '';
 
             const broadened = [];
             keys.forEach(key => {
