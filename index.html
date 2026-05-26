@@ -226,7 +226,7 @@
                 <div class="grid grid-cols-1 xl:grid-cols-3 gap-4 mobile-overview-compact">
                     <div class="xl:col-span-2 bg-slate-900 border border-slate-800 rounded-xl p-6 space-y-4">
                         <div>
-                            <div class="text-[11px] text-slate-500 mb-1">主題 Thesis</div>
+                            <div class="text-[11px] text-slate-500 mb-1">破題</div>
                             <div id="map-thesis-hero" class="text-lg font-bold text-cyan-300 leading-relaxed"></div>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -469,7 +469,7 @@
             try {
                 const versionStamp = Date.now();
                 const versionedMapCandidates = [
-                    './maps_repo_20260527_013330.json',
+                    './maps_repo_20260527_013746.json',
                     './maps_repo.json',
                     './maps_repo_v4.json',
                     './maps_repo_v3.json',
@@ -601,52 +601,48 @@
                 return scoreB - scoreA;
             });
 
-            const broadened = [];
             keys.forEach(key => {
-                broadened.push({ key, mode: 'main' });
-                const related = mapsRepository[key]?.related_themes || [];
-                related.slice(0, 2).forEach((theme, idx) => {
-                    broadened.push({ key, mode: 'related', relatedTheme: theme, relatedIndex: idx });
-                });
-            });
-
-            broadened.forEach(entry => {
-                const map = mapsRepository[entry.key];
+                const map = mapsRepository[key];
                 if (!map) return;
-                const isRelated = entry.mode === 'related';
                 const card = document.createElement('div');
-                card.className = `bg-slate-900 border ${isRelated ? 'border-cyan-900/40' : 'border-slate-800'} rounded-2xl p-5 hover:border-slate-700 transition cursor-pointer flex flex-col justify-between shadow-lg hover:shadow-indigo-950/20`;
-                card.onclick = () => loadMapWorkspace(entry.key);
-                const title = isRelated ? `延伸主題：${entry.relatedTheme}` : map.title;
-                const subtitle = isRelated ? `源自主題：${map.title}` : `📅 發布時程: ${map.date}`;
-                const summary = isRelated ? `從「${map.title}」延伸追蹤的關聯題材，方便會員擴大觀察範圍。` : (map.desc || '');
-                const thesis = isRelated ? shortenText((map.watch_signals || [])[0] || (map.trigger_events || [])[0] || map.thesis || '', 52) : (map.thesis || '');
-                const tagText = isRelated ? `${entry.relatedTheme} · 延伸觀察` : (map.theme_tags || []).slice(0,3).join(' · ');
+                card.className = 'bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-slate-700 transition cursor-pointer flex flex-col justify-between shadow-lg hover:shadow-indigo-950/20';
+                card.onclick = () => loadMapWorkspace(key);
+                const opening = map.thesis || map.desc || map.title || '尚無主題摘要';
+                const summary = map.desc || map.long_description || map.description || map.thesis || '';
+                const tagText = (map.theme_tags || []).slice(0, 3).join(' · ');
+                const relatedText = (map.related_themes || []).slice(0, 3).join(' / ');
                 card.innerHTML = `
                     <div>
                         <div class="flex items-center gap-3 mb-3">
-                            <div class="bg-gradient-to-tr ${isRelated ? 'from-cyan-700 to-blue-600' : (map.color || 'from-indigo-500 to-cyan-500')} p-2 rounded-xl text-white shadow-md">
-                                <i data-lucide="${isRelated ? 'sparkles' : (map.icon || 'layers')}" class="w-5 h-5"></i>
+                            <div class="bg-gradient-to-tr ${map.color || 'from-indigo-500 to-cyan-500'} p-2 rounded-xl text-white shadow-md">
+                                <i data-lucide="${map.icon || 'layers'}" class="w-5 h-5"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-slate-100 text-sm line-clamp-2">${title}</h4>
-                                <span class="text-[10px] text-slate-500 block font-mono">${subtitle}</span>
+                                <h4 class="font-bold text-slate-100 text-sm line-clamp-2">${map.title}</h4>
+                                <span class="text-[10px] text-slate-500 block font-mono">📅 發布時程: ${map.date}</span>
                             </div>
                         </div>
-                        <p class="text-xs text-slate-400 leading-relaxed line-clamp-3 mb-3 h-15">${summary}</p>
-                        <p class="text-[11px] text-cyan-300/90 leading-relaxed line-clamp-2 mb-4">${thesis}</p>
+                        <div class="mb-3 rounded-xl border border-cyan-900/30 bg-cyan-950/15 px-3 py-3">
+                            <div class="text-[10px] uppercase tracking-[0.2em] text-cyan-400/80 mb-1">破題</div>
+                            <p class="text-xs text-cyan-200 leading-relaxed line-clamp-3">${opening}</p>
+                        </div>
+                        <p class="text-xs text-slate-400 leading-relaxed line-clamp-3 mb-3 h-15">${summary || '尚無摘要'}</p>
                     </div>
                     <div class="border-t border-slate-800/60 pt-3 space-y-2 text-[11px]">
                         <div class="flex items-center justify-between gap-2">
-                            <span class="text-red-400 bg-red-950/40 px-2 py-0.5 rounded-md border border-red-900/40 font-medium">${isRelated ? '延伸主題' : map.heat}</span>
-                            <span class="text-amber-300 bg-amber-950/40 px-2 py-0.5 rounded-md border border-amber-900/40 font-medium">${isRelated ? '關聯追蹤' : `火勢 ${map.heat_score ?? '--'}`}</span>
+                            <span class="text-red-400 bg-red-950/40 px-2 py-0.5 rounded-md border border-red-900/40 font-medium">${map.heat}</span>
+                            <span class="text-amber-300 bg-amber-950/40 px-2 py-0.5 rounded-md border border-amber-900/40 font-medium">火勢 ${map.heat_score ?? '--'}</span>
                         </div>
-                        <div class="text-slate-500 line-clamp-2">${tagText}</div>
+                        <div class="text-slate-500 line-clamp-2">${tagText || '尚無標籤'}</div>
                         <div class="rounded-xl border border-emerald-800/30 bg-emerald-950/20 px-3 py-2">
                             <div class="text-[10px] uppercase tracking-[0.2em] text-emerald-400/80 mb-1">優先關注</div>
                             <div class="text-xs font-bold text-emerald-300 line-clamp-2">${(map.stocks || []).slice(0, 3).map(s => s.name).join(' / ') || '待補'}</div>
                         </div>
-                        <span class="text-indigo-400 font-semibold hover:underline flex items-center gap-1">探索核心架構 <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
+                        <div class="rounded-xl border border-slate-800 bg-slate-950/50 px-3 py-2">
+                            <div class="text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-1">納入主題一起看</div>
+                            <div class="text-xs text-slate-300 line-clamp-2">${relatedText || '目前無延伸主題'}</div>
+                        </div>
+                        <span class="text-indigo-400 font-semibold hover:underline flex items-center gap-1">進入主題 <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
                     </div>
                 `;
                 grid.appendChild(card);
@@ -720,8 +716,9 @@
             if (detailEl) {
                 detailEl.innerHTML = `
                     <div class="space-y-3">
-                        <div><div class="text-[11px] text-slate-500 mb-1">主題 Thesis</div><div>${mapData.thesis || mapData.title || '尚無內容'}</div></div>
-                        <div><div class="text-[11px] text-slate-500 mb-1">深度描述</div><div>${mapData.long_description || mapData.description || '尚無細節描述'}</div></div>
+                        <div><div class="text-[11px] text-slate-500 mb-1">破題</div><div>${mapData.thesis || mapData.title || '尚無內容'}</div></div>
+                        <div><div class="text-[11px] text-slate-500 mb-1">這個主題在講什麼</div><div>${mapData.desc || mapData.long_description || mapData.description || '尚無細節描述'}</div></div>
+                        <div><div class="text-[11px] text-slate-500 mb-1">納入主題一起看</div><div>${(mapData.related_themes || []).join(' / ') || '目前無延伸主題'}</div></div>
                     </div>
                 `;
                 detailEl.classList.add('hidden');
@@ -1085,8 +1082,13 @@
             const related = document.getElementById('related-themes-container');
             if (related) {
                 related.innerHTML = (mapData.related_themes || []).length
-                    ? mapData.related_themes.map(tag => `<span class="px-2 py-1 rounded-md bg-slate-950/70 border border-slate-800 text-slate-300 text-xs">${tag}</span>`).join('')
-                    : '<span class="text-[11px] text-slate-600">尚無延伸主題</span>';
+                    ? `
+                        <div class="w-full rounded-xl border border-slate-800 bg-slate-950/50 p-3">
+                            <div class="text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-2">納入主題一起看</div>
+                            <div class="flex flex-wrap gap-2">${mapData.related_themes.map(tag => `<span class="px-2 py-1 rounded-md bg-slate-950/70 border border-slate-800 text-slate-300 text-xs">${tag}</span>`).join('')}</div>
+                        </div>
+                    `
+                    : '<span class="text-[11px] text-slate-600">目前無延伸主題</span>';
             }
         }
 
