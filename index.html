@@ -422,7 +422,7 @@
         // 異步載入 vLLM 動態產出的資料庫
         window.onload = async function() {
             try {
-                const response = await fetch('./maps_repo.json', { cache: 'no-store' });
+                const response = await fetch('./maps_repo_v2.json?v=202605261914', { cache: 'no-store' });
                 if (!response.ok) throw new Error("遠端 HTTP 狀態碼錯誤");
                 const rawRepo = await response.json();
                 mapsRepository = normalizeRepository(rawRepo);
