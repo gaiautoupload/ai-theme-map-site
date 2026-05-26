@@ -186,7 +186,10 @@
                             <div id="mobile-theme-period" class="mt-1 text-sm font-bold text-indigo-300"></div>
                         </div>
                     </div>
-                    <div id="mobile-theme-signals" class="grid grid-cols-1 gap-2"></div>
+                    <div id="mobile-theme-flow" class="rounded-2xl border border-slate-800 bg-slate-950/70 p-4"></div>
+                    <div id="mobile-theme-summary" class="space-y-2"></div>
+                    <button id="mobile-theme-detail-toggle" type="button" onclick="toggleMobileThemeDetail()" class="w-full rounded-xl border border-slate-700 bg-slate-900/80 px-4 py-2.5 text-sm font-semibold text-slate-200">看細節</button>
+                    <div id="mobile-theme-detail" class="hidden rounded-2xl border border-slate-800 bg-slate-950/60 p-4 text-sm text-slate-300 leading-7"></div>
                 </div>
                 <div class="grid grid-cols-1 xl:grid-cols-3 gap-4 mobile-overview-compact">
                     <div class="xl:col-span-2 bg-slate-900 border border-slate-800 rounded-xl p-6 space-y-4">
@@ -508,6 +511,46 @@
             document.getElementById('mobile-theme-heat').textContent = mapData.heat || '未分類';
             document.getElementById('mobile-theme-score').textContent = `${mapData.heat_score ?? '--'}`;
             document.getElementById('mobile-theme-period').textContent = mapData.period || '觀察期';
+            const flowEl = document.getElementById('mobile-theme-flow');
+            const summaryEl = document.getElementById('mobile-theme-summary');
+            const detailEl = document.getElementById('mobile-theme-detail');
+            const detailBtn = document.getElementById('mobile-theme-detail-toggle');
+            if (flowEl) {
+                const flowItems = [
+                    shortenText(mapData.thesis || mapData.title || '主題啟動', 18),
+                    shortenText((mapData.trigger_events || [])[0] || (mapData.heat_drivers || [])[0] || '需求升溫', 18),
+                    shortenText((mapData.watch_signals || [])[0] || (mapData.related_themes || [])[0] || '概念股擴散', 18)
+                ];
+                flowEl.innerHTML = `
+                    <div class="text-[11px] uppercase tracking-[0.2em] text-slate-500 mb-3">Flow</div>
+                    <div class="flex items-center justify-between gap-2 text-center">
+                        ${flowItems.map((item, idx) => `
+                            <div class="flex items-center ${idx < flowItems.length - 1 ? 'flex-1' : ''} gap-2">
+                                <div class="min-w-0 flex-1 rounded-xl border border-slate-800 bg-slate-900/80 px-2 py-2 text-[11px] font-medium text-slate-200 leading-4">${item}</div>
+                                ${idx < flowItems.length - 1 ? '<div class="text-cyan-400 text-sm">→</div>' : ''}
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            }
+            if (summaryEl) {
+                const summaryLines = [
+                    mapData.thesis || mapData.title || '尚無摘要',
+                    (mapData.trigger_events || [])[0] || (mapData.heat_drivers || [])[0] || '尚無驅動描述',
+                    (mapData.watch_signals || [])[0] || (mapData.related_themes || [])[0] || '尚無觀察重點'
+                ].filter(Boolean).slice(0, 3);
+                summaryEl.innerHTML = summaryLines.map(line => `<div class="rounded-xl border border-slate-800 bg-slate-950/50 px-3 py-2 text-xs text-slate-200 leading-5">${shortenText(line, 60)}</div>`).join('');
+            }
+            if (detailEl) {
+                detailEl.innerHTML = `
+                    <div class="space-y-3">
+                        <div><div class="text-[11px] text-slate-500 mb-1">主題 Thesis</div><div>${mapData.thesis || mapData.title || '尚無內容'}</div></div>
+                        <div><div class="text-[11px] text-slate-500 mb-1">深度描述</div><div>${mapData.long_description || mapData.description || '尚無細節描述'}</div></div>
+                    </div>
+                `;
+                detailEl.classList.add('hidden');
+            }
+            if (detailBtn) detailBtn.textContent = '看細節';
 
             const longDescEl = document.getElementById('map-long-desc');
             longDescEl.innerHTML = `
@@ -663,15 +706,14 @@
                             <div class="flex items-start justify-between gap-2">
                                 <div class="min-w-0">
                                     <div class="truncate text-sm font-bold text-slate-100">${stock.name} <span class="text-[11px] text-indigo-400 font-mono">${stock.code}</span></div>
-                                    <div class="mt-0.5 truncate text-[11px] text-slate-500">${stock.sector || '概念股'} ｜ ${stockTierLabel(stock.stock_tier)}</div>
+                                    <div class="mt-0.5 truncate text-[11px] text-slate-500">${shortenText(stock.role || stock.sector || '概念股', 24)}</div>
                                 </div>
                                 <div class="shrink-0 text-right">
                                     <div class="text-[11px] font-bold text-amber-300">${Number(stock.pureLevel).toFixed(1)}</div>
                                     <div class="text-[10px] text-slate-500">純度</div>
                                 </div>
                             </div>
-                            <div class="mt-1 truncate text-[12px] text-slate-300">${stock.role || ''}</div>
-                            <div class="mt-1 truncate text-[11px] text-slate-500">${stripHtml(summarizeStockSources(stock))}</div>
+                            <div class="mt-1 truncate text-[11px] text-slate-500">${shortenText(stripHtml(summarizeStockSources(stock)) || stockTierLabel(stock.stock_tier), 28)}</div>
                         </div>
                     </div>
                 `;
@@ -768,6 +810,20 @@
             return (div.textContent || div.innerText || '').replace(/\s+/g, ' ').trim();
         }
 
+        function shortenText(input, maxLen = 36) {
+            const text = stripHtml(input || '');
+            return text.length > maxLen ? `${text.slice(0, maxLen)}…` : text;
+        }
+
+        function toggleMobileThemeDetail() {
+            const panel = document.getElementById('mobile-theme-detail');
+            const button = document.getElementById('mobile-theme-detail-toggle');
+            if (!panel || !button) return;
+            const isHidden = panel.classList.contains('hidden');
+            panel.classList.toggle('hidden');
+            button.textContent = isHidden ? '收起細節' : '看細節';
+        }
+
         function renderMetaPanels(mapData) {
             const tags = document.getElementById('theme-tags-container');
             if (tags) {
@@ -777,16 +833,6 @@
             }
             renderBulletList('trigger-events-container', mapData.trigger_events || [], '尚無觸發事件', 'amber');
             renderBulletList('watch-signals-container', mapData.watch_signals || [], '尚無觀察訊號', 'emerald');
-            const mobileSignals = document.getElementById('mobile-theme-signals');
-            if (mobileSignals) {
-                const items = [
-                    ...(mapData.trigger_events || []).slice(0, 2).map(x => ({ tone: 'amber', text: x })),
-                    ...(mapData.watch_signals || []).slice(0, 2).map(x => ({ tone: 'emerald', text: x }))
-                ].slice(0, 4);
-                mobileSignals.innerHTML = items.length
-                    ? items.map(item => `<div class="rounded-xl border ${item.tone === 'amber' ? 'border-amber-900/40 bg-amber-950/20 text-amber-200' : 'border-emerald-900/40 bg-emerald-950/20 text-emerald-200'} px-3 py-2 text-xs leading-5">${item.text}</div>`).join('')
-                    : `<div class="rounded-xl border border-slate-800 bg-slate-950/50 px-3 py-2 text-xs text-slate-500">暫無關鍵訊號</div>`;
-            }
             renderBulletList('heat-drivers-container', mapData.heat_drivers || [], '尚無火勢驅動資料', 'red');
             renderBulletList('risks-container', mapData.risks || [], '尚無風險提示', 'slate');
 
