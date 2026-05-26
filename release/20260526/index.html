@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM 投資決策 Wiki 平台 Release 20260526</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { 
+                extend: { 
+                    colors: { 
+                        slate: { 950: '#0b0f19', 900: '#111827', 800: '#1f2937', 700: '#374151' } 
+                    } 
+                } 
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', 'Noto Sans TC', sans-serif; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #0b0f19; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
+        .mobile-stock-card { display: none; }
+        .mobile-theme-hero { display: none; }
+        @media (max-width: 767px) {
+            .desktop-stock-table { display: none; }
+            .mobile-stock-card { display: block; }
+            .mobile-theme-hero { display: block; }
+            .mobile-overview-compact { display: none; }
+            .mobile-modal-sheet {
+                width: 100%;
+                max-width: 100%;
+                max-height: 92vh;
+                border-radius: 20px 20px 0 0;
+                padding: 1rem;
+                margin-top: auto;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col antialiased">
+
+    <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="showDashboardHome()">
+                <div class="bg-gradient-to-tr from-cyan-500 to-indigo-600 p-2 rounded-lg text-white shadow-lg shadow-indigo-500/20">
+                    <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
+                        LLM 投資決策 Wiki 平台
+                    </h1>
+                    <p class="text-xs text-slate-400">動態主題式先進產業鏈研究與佈局地圖</p>
+                </div>
+            </div>
+            <div id="header-status" class="hidden sm:flex items-center gap-4">
+                </div>
+        </div>
+    </header>
+
+    <div id="panel-home" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-1 space-y-8">
+        <div class="bg-gradient-to-r from-indigo-950/40 via-slate-900 to-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
+            <div>
+                <h2 class="text-xl font-bold text-slate-200 mb-2">歡迎來到 AI 產業決策 Wiki</h2>
+                <p class="text-sm text-slate-400 leading-relaxed">本系統以本地 vLLM 為主體推理引擎，搭配可擴充的搜尋上下文介面，將半導體、AI 伺服器硬體與關鍵材料題材轉化為可持續演化的技術教學、結構分層與資金流研究地圖。請選擇下方主題進入研究：</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
+                    <div class="text-[11px] text-slate-500 mb-1">研究模式</div>
+                    <div class="text-sm font-bold text-cyan-300">技術教學 + 結構分層 + 資金流推演</div>
+                </div>
+                <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
+                    <div class="text-[11px] text-slate-500 mb-1">推理核心</div>
+                    <div class="text-sm font-bold text-amber-300">本地 vLLM / 高 Token 主題展開</div>
+                </div>
+                <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
+                    <div class="text-[11px] text-slate-500 mb-1">系統目標</div>
+                    <div class="text-sm font-bold text-emerald-300">自主進化與探索的主題雷達牆</div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+                <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
+                    <div class="text-[11px] text-slate-500 mb-1">Producer</div>
+                    <div class="text-sm font-bold text-amber-200">pioter</div>
+                </div>
+                <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
+                    <div class="text-[11px] text-slate-500 mb-1">網站作者</div>
+                    <div class="text-sm font-bold text-cyan-200">pioter</div>
+                </div>
+                <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
+                    <div class="text-[11px] text-slate-500 mb-1">今日正式版</div>
+                    <div class="text-sm font-bold text-emerald-200" id="site-formal-version">2026-05-26 正式版</div>
+                </div>
+                <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
+                    <div class="text-[11px] text-slate-500 mb-1">更新日期</div>
+                    <div class="text-sm font-bold text-indigo-200" id="site-updated-at">載入中...</div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                <div class="lg:col-span-2 bg-gradient-to-br from-amber-950/40 via-slate-900 to-slate-900 border border-amber-800/40 rounded-2xl p-5 shadow-xl">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="space-y-2">
+                            <div class="text-[11px] uppercase tracking-[0.25em] text-amber-400/80">Today Highlight</div>
+                            <div id="home-highlight-title" class="text-xl font-black text-slate-100 leading-snug">載入中...</div>
+                            <div id="home-highlight-thesis" class="text-sm text-slate-300 leading-7">整理今日主題亮點中...</div>
+                        </div>
+                        <div class="hidden md:flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-500/10 border border-amber-500/20">
+                            <i data-lucide="sparkles" class="w-7 h-7 text-amber-300"></i>
+                        </div>
+                    </div>
+                    <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+                        <div class="rounded-xl border border-slate-800 bg-slate-950/50 p-3">
+                            <div class="text-slate-500 mb-1">提案日期</div>
+                            <div id="home-highlight-date" class="font-bold text-cyan-300">--</div>
+                        </div>
+                        <div class="rounded-xl border border-slate-800 bg-slate-950/50 p-3">
+                            <div class="text-slate-500 mb-1">主線亮點</div>
+                            <div id="home-highlight-flow" class="font-bold text-amber-300">--</div>
+                        </div>
+                        <div class="rounded-xl border border-slate-800 bg-slate-950/50 p-3">
+                            <div class="text-slate-500 mb-1">優先關注</div>
+                            <div id="home-highlight-stocks" class="flex flex-wrap gap-2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl space-y-3">
+                    <div class="text-[11px] uppercase tracking-[0.25em] text-slate-500">Version Track</div>
+                    <div id="home-version-track" class="space-y-2 text-sm text-slate-300"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="space-y-4">
+            <div class="flex items-center gap-2 border-b border-slate-800 pb-3">
+                <i data-lucide="calendar" class="w-5 h-5 text-indigo-400"></i>
+                <h3 class="text-base font-bold text-slate-300">主題雷達牆 (依火勢與更新時間排序)</h3>
+            </div>
+            
+            <div id="maps-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="col-span-full py-12 text-center text-slate-500">
+                    <i data-lucide="loader" class="w-8 h-8 animate-spin mx-auto mb-3"></i>
+                    正在載入 release/20260526 maps_repo.json 數據庫...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="panel-map-workspace" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 grid grid-cols-1 lg:grid-cols-4 gap-6 w-full hidden">
+        
+        <aside class="space-y-6 lg:col-span-1">
+            <button onclick="showDashboardHome()" class="w-full flex items-center justify-center gap-2 py-2 px-4 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white rounded-xl text-xs font-bold transition">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> 返回地圖導覽首頁
+            </button>
+
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 space-y-2">
+                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider px-2 mb-3">導覽選單</p>
+                <button onclick="switchTab('overview')" id="btn-overview" class="tab-btn w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition bg-indigo-600 text-white">
+                    <span class="flex items-center gap-2"><i data-lucide="compass" class="w-4 h-4"></i>技術觀念解析</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </button>
+                <button onclick="switchTab('stock-list')" id="btn-stock-list" class="tab-btn w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition">
+                    <span class="flex items-center gap-2"><i data-lucide="list" class="w-4 h-4"></i>概念股主篩選表</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </button>
+                <button onclick="switchTab('comparison')" id="btn-comparison" class="tab-btn w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition">
+                    <span class="flex items-center gap-2"><i data-lucide="git-compare" class="w-4 h-4"></i>雙股 PK 比較器</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </button>
+                <button onclick="switchTab('structure')" id="btn-structure" class="tab-btn w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition">
+                    <span class="flex items-center gap-2"><i data-lucide="network" class="w-4 h-4"></i>結構分層</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </button>
+                <button onclick="switchTab('capital-flow')" id="btn-capital-flow" class="tab-btn w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition">
+                    <span class="flex items-center gap-2"><i data-lucide="flame" class="w-4 h-4"></i>資金流與火勢</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-4">
+                <div class="flex items-center justify-between mb-3 px-2">
+                    <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">我的追蹤名單</span>
+                    <span id="watchlist-count" class="bg-indigo-900/60 text-indigo-300 text-[10px] font-bold px-2 py-0.5 rounded-full border border-indigo-700/50">0</span>
+                </div>
+                <div id="watchlist-container" class="space-y-2 max-h-48 overflow-y-auto pr-1"></div>
+            </div>
+        </aside>
+
+        <main class="lg:col-span-3 space-y-6">
+            <section id="sec-overview" class="tab-content space-y-6">
+                <div id="mobile-theme-hero" class="mobile-theme-hero bg-gradient-to-br from-slate-900 via-slate-950 to-indigo-950 border border-slate-800 rounded-2xl p-5 shadow-xl space-y-4">
+                    <div class="flex items-start justify-between gap-3">
+                        <div>
+                            <div class="text-[11px] uppercase tracking-[0.25em] text-slate-500">Theme Focus</div>
+                            <div id="mobile-theme-title" class="mt-1 text-lg font-bold text-white leading-snug"></div>
+                        </div>
+                        <div class="shrink-0">
+                            <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="27" cy="27" r="26" stroke="#334155" stroke-width="2"/>
+                                <path d="M27 9L31.8 21.2L45 27L31.8 32.8L27 45L22.2 32.8L9 27L22.2 21.2L27 9Z" fill="#22d3ee" fill-opacity="0.22" stroke="#22d3ee" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2">
+                        <div class="rounded-xl border border-slate-800 bg-slate-950/70 p-3">
+                            <div class="text-[10px] text-slate-500">熱度</div>
+                            <div id="mobile-theme-heat" class="mt-1 text-sm font-bold text-red-300"></div>
+                        </div>
+                        <div class="rounded-xl border border-slate-800 bg-slate-950/70 p-3">
+                            <div class="text-[10px] text-slate-500">分數</div>
+                            <div id="mobile-theme-score" class="mt-1 text-sm font-bold text-amber-300"></div>
+                        </div>
+                        <div class="rounded-xl border border-slate-800 bg-slate-950/70 p-3">
+                            <div class="text-[10px] text-slate-500">階段</div>
+                            <div id="mobile-theme-period" class="mt-1 text-sm font-bold text-indigo-300"></div>
+                        </div>
+                    </div>
+                    <div id="mobile-theme-flow" class="rounded-2xl border border-slate-800 bg-slate-950/70 p-4"></div>
+                    <div id="mobile-theme-summary" class="space-y-2"></div>
+                    <button id="mobile-theme-detail-toggle" type="button" onclick="toggleMobileThemeDetail()" class="w-full rounded-xl border border-slate-700 bg-slate-900/80 px-4 py-2.5 text-sm font-semibold text-slate-200">看細節</button>
+                    <div id="mobile-theme-detail" class="hidden rounded-2xl border border-slate-800 bg-slate-950/60 p-4 text-sm text-slate-300 leading-7"></div>
+                </div>
+                <div class="grid grid-cols-1 xl:grid-cols-3 gap-4 mobile-overview-compact">
+                    <div class="xl:col-span-2 bg-slate-900 border border-slate-800 rounded-xl p-6 space-y-4">
+                        <div>
+                            <div class="text-[11px] text-slate-500 mb-1">主題 Thesis</div>
+                            <div id="map-thesis-hero" class="text-lg font-bold text-cyan-300 leading-relaxed"></div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-4">
+                                <div class="text-[11px] text-slate-500 mb-1">火勢狀態</div>
+                                <div id="map-heat-hero" class="text-sm font-bold text-red-300"></div>
+                            </div>
+                            <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-4">
+                                <div class="text-[11px] text-slate-500 mb-1">火勢分數</div>
+                                <div id="map-heat-score-hero" class="text-sm font-bold text-amber-300"></div>
+                            </div>
+                            <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-4">
+                                <div class="text-[11px] text-slate-500 mb-1">所處階段</div>
+                                <div id="map-period-hero" class="text-sm font-bold text-indigo-300"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-indigo-400 uppercase tracking-wider mb-2 flex items-center gap-2">
+                                <i data-lucide="file-text" class="w-4 h-4"></i> 議題深度背景摘要
+                            </h3>
+                            <div id="map-long-desc" class="text-slate-300 text-sm leading-relaxed"></div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-4">
+                        <div>
+                            <div class="text-[11px] text-slate-500 mb-1">主題標籤</div>
+                            <div id="theme-tags-container" class="flex flex-wrap gap-2"></div>
+                        </div>
+                        <div>
+                            <div class="text-[11px] text-slate-500 mb-1">關鍵觸發事件</div>
+                            <div id="trigger-events-container" class="space-y-2"></div>
+                        </div>
+                        <div>
+                            <div class="text-[11px] text-slate-500 mb-1">觀察訊號</div>
+                            <div id="watch-signals-container" class="space-y-2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="overview-cards-container"></div>
+            </section>
+
+            <section id="sec-structure" class="tab-content hidden space-y-6">
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+                    <h3 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-4 flex items-center gap-2">
+                        <i data-lucide="network" class="w-4 h-4 text-cyan-400"></i>
+                        產業結構分層與受惠位置
+                    </h3>
+                    <div id="structure-layers-container" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-6">
+                    <h3 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-4 flex items-center gap-2">
+                        <i data-lucide="timer-reset" class="w-4 h-4 text-emerald-400"></i>
+                        商用時程 / 驗證節點
+                    </h3>
+                    <div id="timeline-phases-container" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
+                </div>
+            </section>
+
+            <section id="sec-capital-flow" class="tab-content hidden space-y-6">
+                <div class="grid grid-cols-1 xl:grid-cols-3 gap-4">
+                    <div class="xl:col-span-2 bg-slate-900 border border-slate-800 rounded-xl p-6">
+                        <h3 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-4 flex items-center gap-2">
+                            <i data-lucide="flame" class="w-4 h-4 text-red-400"></i>
+                            資金流向與火勢推演
+                        </h3>
+                        <div id="capital-flow-container" class="space-y-4"></div>
+                    </div>
+                    <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-4">
+                        <div>
+                            <div class="text-[11px] text-slate-500 mb-2">火勢驅動因子</div>
+                            <div id="heat-drivers-container" class="space-y-2"></div>
+                        </div>
+                        <div>
+                            <div class="text-[11px] text-slate-500 mb-2">主要風險</div>
+                            <div id="risks-container" class="space-y-2"></div>
+                        </div>
+                        <div>
+                            <div class="text-[11px] text-slate-500 mb-2">相關主題延伸</div>
+                            <div id="related-themes-container" class="flex flex-wrap gap-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sec-stock-list" class="tab-content hidden space-y-6">
+                <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div class="flex items-center gap-2 bg-slate-950 border border-slate-800 px-3 py-1.5 rounded-lg flex-1">
+                        <i data-lucide="search" class="w-4 h-4 text-slate-500"></i>
+                        <input type="text" id="table-search" oninput="filterTable()" placeholder="輸入代號、名稱、或關鍵字..." class="bg-transparent border-none text-sm text-slate-200 focus:outline-none w-full">
+                    </div>
+                    <div class="flex flex-wrap gap-1.5" id="sector-filters"></div>
+                </div>
+
+                <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-xl desktop-stock-table">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-slate-950 border-b border-slate-800 text-slate-400 text-xs uppercase tracking-wider">
+                                    <th class="py-3 px-4 font-semibold text-center w-12">追蹤</th>
+                                    <th class="py-3 px-4 font-semibold">股票名稱</th>
+                                    <th class="py-3 px-4 font-semibold">板塊</th>
+                                    <th class="py-3 px-4 font-semibold">技術角色 / 利基點</th>
+                                    <th class="py-3 px-4 font-semibold">營收放量時程</th>
+                                    <th class="py-3 px-4 font-semibold text-center">純度</th>
+                                    <th class="py-3 px-4 font-semibold text-center">壁壘</th>
+                                    <th class="py-3 px-4 font-semibold text-center w-16">詳細</th>
+                                </tr>
+                            </thead>
+                            <tbody id="stock-table-body" class="divide-y divide-slate-800/60 text-sm"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="stock-mobile-list" class="mobile-stock-card space-y-2"></div>
+            </section>
+
+            <section id="sec-comparison" class="tab-content hidden space-y-6">
+                <div class="bg-slate-900 border border-slate-800 rounded-xl p-5">
+                    <h3 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-4">選擇兩檔概念股進行 PK 比較</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div><label class="text-xs text-slate-400">對照組 A</label><select id="compare-a" onchange="renderComparison()" class="w-full bg-slate-950 border border-slate-800 rounded-lg py-2 px-3 text-sm text-slate-200 focus:outline-none"></select></div>
+                        <div><label class="text-xs text-slate-400">對照組 B</label><select id="compare-b" onchange="renderComparison()" class="w-full bg-slate-950 border border-slate-800 rounded-lg py-2 px-3 text-sm text-slate-200 focus:outline-none"></select></div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="comparison-result-cards"></div>
+            </section>
+        </main>
+    </div>
+
+    <div id="stock-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-0 md:p-4 hidden">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl p-6 space-y-4 mobile-modal-sheet">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div class="flex items-center gap-3">
+                    <h3 id="modal-stock-name" class="text-xl font-bold text-slate-100">---</h3>
+                    <span id="modal-stock-sector" class="px-2 py-0.5 rounded bg-indigo-950 border border-indigo-800 text-indigo-400 text-xs">---</span>
+                </div>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-white transition"><i data-lucide="x" class="w-5 h-5"></i></button>
+            </div>
+            <div class="grid grid-cols-2 gap-4 bg-slate-950 p-4 rounded-xl border border-slate-800/60 text-sm">
+                <div><span class="text-slate-400 block text-xs">題材純度分數</span><span id="modal-stock-pure" class="text-amber-400 font-bold">★ -</span></div>
+                <div><span class="text-slate-400 block text-xs">核心技術壁壘</span><span id="modal-stock-barrier" class="text-emerald-400 font-bold">🛡️ -</span></div>
+                <div class="col-span-2"><span class="text-slate-400 block text-xs">營收放量時程線</span><span id="modal-stock-timeframe" class="text-slate-200 font-medium">---</span></div>
+            </div>
+            <div class="space-y-3 text-sm">
+                <div><span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider block mb-1">💡 技術利基與核心角色</span><p id="modal-stock-role" class="text-slate-300 leading-relaxed"></p></div>
+                <div><span class="text-xs font-semibold text-cyan-400 uppercase tracking-wider block mb-1">✅ 聯網核心競爭優勢 (Pros)</span><p id="modal-stock-pros" class="text-slate-300 leading-relaxed"></p></div>
+                <div><span class="text-xs font-semibold text-red-400 uppercase tracking-wider block mb-1">❌ 投資潛在潛在風險 (Cons)</span><p id="modal-stock-cons" class="text-slate-300 leading-relaxed"></p></div>
+                <div><span class="text-xs font-semibold text-amber-500 uppercase tracking-wider block mb-1">🚀 關鍵催化劑事件 (Catalyst)</span><p id="modal-stock-catalyst" class="text-slate-300 leading-relaxed"></p></div>
+                <div><span class="text-xs font-semibold text-violet-400 uppercase tracking-wider block mb-1">🏷️ 股票層級 / 證據型態</span><p id="modal-stock-tags" class="text-slate-300 leading-relaxed"></p></div>
+                <div><span class="text-xs font-semibold text-fuchsia-400 uppercase tracking-wider block mb-1">🔄 題材關係 / 連動強度</span><div id="modal-stock-linkage" class="text-slate-300 leading-relaxed text-xs space-y-2"></div></div>
+                <div><span class="text-xs font-semibold text-sky-400 uppercase tracking-wider block mb-1">🔗 來源 / 分析師 / 投顧</span><div id="modal-stock-sources" class="text-slate-300 leading-relaxed text-xs space-y-2"></div></div>
+                <div class="border-t border-slate-800/80 pt-3"><span class="text-xs font-semibold text-slate-400 block mb-1">📊 深度供應鏈背景分析</span><p id="modal-stock-desc" class="text-slate-400 leading-relaxed text-xs bg-slate-950/40 p-3 rounded-lg border border-slate-800/40"></p></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="fixed bottom-5 right-5 bg-indigo-600 text-white text-xs font-semibold py-2.5 px-4 rounded-lg shadow-lg transform translate-y-20 opacity-0 transition duration-300 z-50 flex items-center gap-2">
+        <i data-lucide="check-circle" class="w-4 h-4"></i> <span id="toast-text">操作成功</span>
+    </div>
+
+    <script>
+        let mapsRepository = {};
+        let currentMapData = null;
+        let currentMapKey = null;
+        let watchlist = [];
+
+        function isValidMapData(mapData) {
+            return mapData
+                && typeof mapData === 'object'
+                && typeof mapData.title === 'string'
+                && Array.isArray(mapData.concepts)
+                && Array.isArray(mapData.stocks);
+        }
+
+        function normalizeRepository(rawRepo) {
+            if (!rawRepo || typeof rawRepo !== 'object') return {};
+
+            const normalized = {};
+            for (const [key, value] of Object.entries(rawRepo)) {
+                if (isValidMapData(value)) {
+                    normalized[key] = value;
+                }
+            }
+
+            if (Object.keys(normalized).length === 0 && isValidMapData(rawRepo)) {
+                normalized['map_default'] = rawRepo;
+            }
+
+            return normalized;
+        }
+
+        // 異步載入 vLLM 動態產出的資料庫
+        window.onload = async function() {
+            try {
+                const response = await fetch('./maps_repo.json?v=202605261949', { cache: 'no-store' });
+                if (!response.ok) throw new Error("遠端 HTTP 狀態碼錯誤");
+                const rawRepo = await response.json();
+                mapsRepository = normalizeRepository(rawRepo);
+                console.log("成功加載動態 Wiki 數據庫！主題數：", Object.keys(mapsRepository).length);
+            } catch (err) {
+                console.error("讀取動態數據庫失敗，採用備用防錯提示:", err);
+                // 應對本地雙擊開啟產生的 CORS 限制
+                mapsRepository = {
+                    "error_local": {
+                        title: "資料庫加載失敗 ⚠️",
+                        date: "2026-05-25",
+                        heat: "CORS 限制中",
+                        period: "請確認已透過 Python 啟動本地伺服器",
+                        desc: "偵測不到 release/20260526/maps_repo.json。請確認 release 版本已成功部署。",
+                        icon: "alert-triangle",
+                        color: "from-red-600 to-orange-500",
+                        concepts: [],
+                        stocks: []
+                    }
+                };
+            }
+            renderDashboardHome();
+            lucide.createIcons();
+        }
+
+        function showMap(mapKey) {
+            loadMapWorkspace(mapKey);
+        }
+
+        function openHighlightStock(stockId) {
+            if (!currentMapData || !currentMapData.stocks) return;
+            switchTab('stock-list');
+            openModal(stockId);
+        }
+
+        function updateSiteMeta() {
+            const metaEl = document.getElementById('site-updated-at');
+            const keys = Object.keys(mapsRepository || {});
+            if (!metaEl) return;
+            if (keys.length === 0) {
+                metaEl.textContent = '尚無資料';
+                const versionTrack = document.getElementById('home-version-track');
+                if (versionTrack) versionTrack.innerHTML = '<div class="text-slate-500 text-sm">尚無歷史版本</div>';
+                return;
+            }
+            const datedMaps = keys
+                .map(key => ({ key, map: mapsRepository[key], date: mapsRepository[key]?.updated_at || mapsRepository[key]?.date || '' }))
+                .filter(item => item.date)
+                .sort((a, b) => String(b.date).localeCompare(String(a.date)));
+            const newestFirst = [...datedMaps];
+            metaEl.textContent = datedMaps[0]?.date || '尚無資料';
+
+            const topEntry = newestFirst[0] || datedMaps[0] || null;
+            const topMap = topEntry?.map || mapsRepository[keys[0]];
+            const highlightTitle = document.getElementById('home-highlight-title');
+            const highlightThesis = document.getElementById('home-highlight-thesis');
+            const highlightDate = document.getElementById('home-highlight-date');
+            const highlightFlow = document.getElementById('home-highlight-flow');
+            const highlightStocks = document.getElementById('home-highlight-stocks');
+            const versionTrack = document.getElementById('home-version-track');
+            if (topMap) {
+                if (highlightTitle) highlightTitle.textContent = topMap.title || '今日主題';
+                if (highlightThesis) highlightThesis.textContent = shortenText(topMap.thesis || topMap.desc || '今日亮點整理中', 88);
+                if (highlightDate) highlightDate.textContent = topMap.date || topMap.updated_at || '--';
+                if (highlightFlow) highlightFlow.textContent = shortenText((topMap.trigger_events || [])[0] || (topMap.heat_drivers || [])[0] || topMap.period || '主線整理中', 28);
+                if (highlightStocks) {
+                    const stockPool = (topMap.stocks || []);
+                    const preferredStocks = stockPool
+                        .filter(s => ['strong', 'medium'].includes(linkageBucket(s)) || ['第一圈', '第二圈'].includes(benefitStageText(s)))
+                        .sort((a, b) => {
+                            const stageRank = x => benefitStageText(x) === '第一圈' ? 0 : benefitStageText(x) === '第二圈' ? 1 : 2;
+                            const scoreA = (Number(a.pureLevel || 0) * 10) + Number(a.barrierLevel || 0);
+                            const scoreB = (Number(b.pureLevel || 0) * 10) + Number(b.barrierLevel || 0);
+                            if (stageRank(a) !== stageRank(b)) return stageRank(a) - stageRank(b);
+                            return scoreB - scoreA;
+                        })
+                        .slice(0, 3);
+                    highlightStocks.innerHTML = preferredStocks.length
+                        ? preferredStocks.map(s => `<button onclick="event.stopPropagation(); loadMapWorkspace('${topEntry.key}'); setTimeout(() => openHighlightStock('${s.id}'), 120);" class="rounded-full border border-emerald-700/40 bg-emerald-950/30 px-3 py-1 text-xs font-bold text-emerald-300 hover:border-emerald-500 hover:text-white">${s.name}</button>`).join('')
+                        : '<span class="text-slate-500 text-sm">待補</span>';
+                }
+            }
+            if (versionTrack) {
+                versionTrack.innerHTML = newestFirst.slice(0, 6).map((item, idx) => `
+                    <div class="rounded-xl border ${idx === 0 ? 'border-amber-700/40 bg-amber-950/20' : 'border-slate-800 bg-slate-950/40'} px-3 py-2">
+                        <div class="flex items-center justify-between gap-3">
+                            <div class="min-w-0">
+                                <div class="text-xs font-bold ${idx === 0 ? 'text-amber-300' : 'text-slate-200'} truncate">${item.date}${idx === 0 ? ' ・ 今日提案' : ''}</div>
+                                <div class="text-[11px] text-slate-500 truncate">${item.map?.title || item.key}</div>
+                            </div>
+                            <button onclick="showMap('${item.key}')" class="text-[11px] px-2 py-1 rounded-lg border border-slate-700 text-slate-300 hover:text-white hover:border-slate-500">查看</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // 渲染首頁列表
+        function renderDashboardHome() {
+            document.getElementById('panel-home').classList.remove('hidden');
+            document.getElementById('panel-map-workspace').classList.add('hidden');
+            document.getElementById('header-status').innerHTML = '';
+            updateSiteMeta();
+
+            const grid = document.getElementById('maps-grid');
+            grid.innerHTML = '';
+
+            const keys = Object.keys(mapsRepository);
+            if(keys.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center text-slate-500 py-8">目前數據庫內無資料，請先執行 vLLM.py</div>`;
+                return;
+            }
+
+            keys.sort((a, b) => {
+                const dateA = String(mapsRepository[a]?.updated_at || mapsRepository[a]?.date || '');
+                const dateB = String(mapsRepository[b]?.updated_at || mapsRepository[b]?.date || '');
+                const byDate = dateB.localeCompare(dateA);
+                if (byDate !== 0) return byDate;
+                const scoreA = Number(mapsRepository[a]?.heat_score || 0);
+                const scoreB = Number(mapsRepository[b]?.heat_score || 0);
+                return scoreB - scoreA;
+            });
+
+            const grid = document.getElementById('maps-grid');
+            grid.innerHTML = '';
+
+            const broadened = [];
+            keys.forEach(key => {
+                broadened.push({ key, mode: 'main' });
+                const related = mapsRepository[key]?.related_themes || [];
+                related.slice(0, 2).forEach((theme, idx) => {
+                    broadened.push({ key, mode: 'related', relatedTheme: theme, relatedIndex: idx });
+                });
+            });
+
+            broadened.forEach(entry => {
+                const map = mapsRepository[entry.key];
+                if (!map) return;
+                const isRelated = entry.mode === 'related';
+                const card = document.createElement('div');
+                card.className = `bg-slate-900 border ${isRelated ? 'border-cyan-900/40' : 'border-slate-800'} rounded-2xl p-5 hover:border-slate-700 transition cursor-pointer flex flex-col justify-between shadow-lg hover:shadow-indigo-950/20`;
+                card.onclick = () => loadMapWorkspace(entry.key);
+                const title = isRelated ? `延伸主題：${entry.relatedTheme}` : map.title;
+                const subtitle = isRelated ? `源自主題：${map.title}` : `📅 發布時程: ${map.date}`;
+                const summary = isRelated ? `從「${map.title}」延伸追蹤的關聯題材，方便會員擴大觀察範圍。` : (map.desc || '');
+                const thesis = isRelated ? shortenText((map.watch_signals || [])[0] || (map.trigger_events || [])[0] || map.thesis || '', 52) : (map.thesis || '');
+                const tagText = isRelated ? `${entry.relatedTheme} · 延伸觀察` : (map.theme_tags || []).slice(0,3).join(' · ');
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="bg-gradient-to-tr ${isRelated ? 'from-cyan-700 to-blue-600' : (map.color || 'from-indigo-500 to-cyan-500')} p-2 rounded-xl text-white shadow-md">
+                                <i data-lucide="${isRelated ? 'sparkles' : (map.icon || 'layers')}" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-100 text-sm line-clamp-2">${title}</h4>
+                                <span class="text-[10px] text-slate-500 block font-mono">${subtitle}</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-400 leading-relaxed line-clamp-3 mb-3 h-15">${summary}</p>
+                        <p class="text-[11px] text-cyan-300/90 leading-relaxed line-clamp-2 mb-4">${thesis}</p>
+                    </div>
+                    <div class="border-t border-slate-800/60 pt-3 space-y-2 text-[11px]">
+                        <div class="flex items-center justify-between gap-2">
+                            <span class="text-red-400 bg-red-950/40 px-2 py-0.5 rounded-md border border-red-900/40 font-medium">${isRelated ? '延伸主題' : map.heat}</span>
+                            <span class="text-amber-300 bg-amber-950/40 px-2 py-0.5 rounded-md border border-amber-900/40 font-medium">${isRelated ? '關聯追蹤' : `火勢 ${map.heat_score ?? '--'}`}</span>
+                        </div>
+                        <div class="text-slate-500 line-clamp-2">${tagText}</div>
+                        <div class="rounded-xl border border-emerald-800/30 bg-emerald-950/20 px-3 py-2">
+                            <div class="text-[10px] uppercase tracking-[0.2em] text-emerald-400/80 mb-1">優先關注</div>
+                            <div class="text-xs font-bold text-emerald-300 line-clamp-2">${(map.stocks || []).slice(0, 3).map(s => s.name).join(' / ') || '待補'}</div>
+                        </div>
+                        <span class="text-indigo-400 font-semibold hover:underline flex items-center gap-1">探索核心架構 <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+            lucide.createIcons();
+        }
+
+        // 載入特定地圖工作區
+        function loadMapWorkspace(mapKey) {
+            const mapData = mapsRepository[mapKey];
+            if (!mapData) return;
+            currentMapData = mapData;
+            currentMapKey = mapKey;
+
+            document.getElementById('panel-home').classList.add('hidden');
+            document.getElementById('panel-map-workspace').classList.remove('hidden');
+
+            // 頂部狀態更新
+            document.getElementById('header-status').innerHTML = `
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-950 text-red-400 border border-red-800">${mapData.heat}</span>
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-950 text-amber-300 border border-amber-800">火勢 ${mapData.heat_score ?? '--'}</span>
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-950 text-indigo-400 border border-indigo-800">${mapData.period}</span>
+            `;
+
+            // 灌入深度背景描述
+            document.getElementById('map-thesis-hero').textContent = mapData.thesis || mapData.title || '';
+            document.getElementById('map-heat-hero').textContent = mapData.heat || '未分類';
+            document.getElementById('map-heat-score-hero').textContent = `${mapData.heat_score ?? '--'} / 100`;
+            document.getElementById('map-period-hero').textContent = mapData.period || '觀察期';
+            document.getElementById('header-status').innerHTML = `
+                <div class="hidden xl:flex items-center gap-2 text-xs text-slate-400">
+                    <span class="px-2 py-1 rounded-lg border border-slate-700 bg-slate-900">提案日期 ${mapData.date || '--'}</span>
+                    <span class="px-2 py-1 rounded-lg border border-slate-700 bg-slate-900">更新 ${mapData.updated_at || mapData.date || '--'}</span>
+                    <span class="px-2 py-1 rounded-lg border border-amber-700/40 bg-amber-950/20 text-amber-300">2026-05-26 正式版</span>
+                </div>
+            `;
+            document.getElementById('mobile-theme-title').textContent = mapData.title || '未命名主題';
+            document.getElementById('mobile-theme-heat').textContent = mapData.heat || '未分類';
+            document.getElementById('mobile-theme-score').textContent = `${mapData.heat_score ?? '--'}`;
+            document.getElementById('mobile-theme-period').textContent = mapData.period || '觀察期';
+            const flowEl = document.getElementById('mobile-theme-flow');
+            const summaryEl = document.getElementById('mobile-theme-summary');
+            const detailEl = document.getElementById('mobile-theme-detail');
+            const detailBtn = document.getElementById('mobile-theme-detail-toggle');
+            if (flowEl) {
+                const flowItems = [
+                    shortenText(mapData.thesis || mapData.title || '主題啟動', 18),
+                    shortenText((mapData.trigger_events || [])[0] || (mapData.heat_drivers || [])[0] || '需求升溫', 18),
+                    shortenText((mapData.watch_signals || [])[0] || (mapData.related_themes || [])[0] || '概念股擴散', 18)
+                ];
+                flowEl.innerHTML = `
+                    <div class="text-[11px] uppercase tracking-[0.2em] text-slate-500 mb-3">Flow</div>
+                    <div class="flex items-center justify-between gap-2 text-center">
+                        ${flowItems.map((item, idx) => `
+                            <div class="flex items-center ${idx < flowItems.length - 1 ? 'flex-1' : ''} gap-2">
+                                <div class="min-w-0 flex-1 rounded-xl border border-slate-800 bg-slate-900/80 px-2 py-2 text-[11px] font-medium text-slate-200 leading-4">${item}</div>
+                                ${idx < flowItems.length - 1 ? '<div class="text-cyan-400 text-sm">→</div>' : ''}
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            }
+            if (summaryEl) {
+                const summaryLines = [
+                    mapData.thesis || mapData.title || '尚無摘要',
+                    (mapData.trigger_events || [])[0] || (mapData.heat_drivers || [])[0] || '尚無驅動描述',
+                    (mapData.watch_signals || [])[0] || (mapData.related_themes || [])[0] || '尚無觀察重點'
+                ].filter(Boolean).slice(0, 3);
+                summaryEl.innerHTML = summaryLines.map(line => `<div class="rounded-xl border border-slate-800 bg-slate-950/50 px-3 py-2 text-xs text-slate-200 leading-5">${shortenText(line, 60)}</div>`).join('');
+            }
+            if (detailEl) {
+                detailEl.innerHTML = `
+                    <div class="space-y-3">
+                        <div><div class="text-[11px] text-slate-500 mb-1">主題 Thesis</div><div>${mapData.thesis || mapData.title || '尚無內容'}</div></div>
+                        <div><div class="text-[11px] text-slate-500 mb-1">深度描述</div><div>${mapData.long_description || mapData.description || '尚無細節描述'}</div></div>
+                    </div>
+                `;
+                detailEl.classList.add('hidden');
+            }
+            if (detailBtn) detailBtn.textContent = '看細節';
+
+            const longDescEl = document.getElementById('map-long-desc');
+            longDescEl.innerHTML = `
+                <div class="space-y-3">
+                    <p>${mapData.desc || ''}</p>
+                    ${(mapData.heat_drivers && mapData.heat_drivers.length) ? `<div><div class="text-xs text-slate-500 mb-1">火勢驅動</div><div class="flex flex-wrap gap-2">${mapData.heat_drivers.map(x => `<span class='px-2 py-1 rounded bg-red-950/30 border border-red-900/30 text-red-300 text-xs'>${x}</span>`).join('')}</div></div>` : ''}
+                </div>
+            `;
+
+            // 渲染技術概念卡 / 教學卡
+            const conceptContainer = document.getElementById('overview-cards-container');
+            conceptContainer.innerHTML = '';
+            const lessons = (mapData.tech_lessons && mapData.tech_lessons.length) ? mapData.tech_lessons : (mapData.concepts || []);
+            if(lessons && lessons.length > 0) {
+                lessons.forEach(c => {
+                    conceptContainer.innerHTML += `
+                        <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 hover:border-slate-700 transition">
+                            <h4 class="text-base font-bold text-cyan-400 mb-1 flex items-center gap-1.5"><i data-lucide="help-circle" class="w-4 h-4"></i>${c.title || ''}</h4>
+                            <span class="text-[10px] text-slate-400 font-mono block mb-2">${c.subtitle || ''}</span>
+                            <p class="text-xs text-slate-300 leading-relaxed mb-2">${c.desc || ''}</p>
+                            ${c.problem ? `<div class='text-[11px] text-amber-300 mb-1'>解決問題：${c.problem}</div>` : ''}
+                            ${c.mechanism ? `<div class='text-[11px] text-slate-400 mb-1'>運作機制：${c.mechanism}</div>` : ''}
+                            ${c.why_now ? `<div class='text-[11px] text-emerald-300'>為何現在重要：${c.why_now}</div>` : ''}
+                        </div>
+                    `;
+                });
+            } else {
+                conceptContainer.innerHTML = `<div class="col-span-full text-center text-slate-600 py-4 text-xs">無內建技術教學內容</div>`;
+            }
+
+            renderMetaPanels(mapData);
+            renderStructureLayers(mapData);
+            renderTimelinePhases(mapData);
+            renderCapitalFlow(mapData);
+
+            initWorkspaceModules();
+            switchTab('overview');
+        }
+
+        function showDashboardHome() {
+            renderDashboardHome();
+        }
+
+        // 初始化工作區聯動模組 (篩選標籤群、PK選單)
+        function initWorkspaceModules() {
+            const selectA = document.getElementById('compare-a');
+            const selectB = document.getElementById('compare-b');
+            selectA.innerHTML = ''; selectB.innerHTML = '';
+
+            const filterBar = document.getElementById('sector-filters');
+            filterBar.innerHTML = `<button onclick="filterSector('all')" class="sector-tab-btn px-2.5 py-1 text-xs font-medium rounded-md transition bg-indigo-600 text-white" data-sector="all">全部</button>`;
+            
+            if(!currentMapData.stocks || currentMapData.stocks.length === 0) {
+                renderTable();
+                return;
+            }
+
+            // 動態抓取板塊標籤
+            const sectorSet = new Set();
+            const sectors = [];
+            currentMapData.stocks.forEach(s => {
+                const item = JSON.stringify({id: s.sectorId, name: s.sector});
+                if(!sectorSet.has(item)) {
+                    sectorSet.add(item);
+                    sectors.push(JSON.parse(item));
+                }
+            });
+
+            sectors.forEach(sec => {
+                filterBar.innerHTML += `<button onclick="filterSector('${sec.id}')" class="sector-tab-btn px-2.5 py-1 text-xs font-medium rounded-md text-slate-400 hover:text-white hover:bg-slate-800 transition" data-sector="${sec.id}">${sec.name}</button>`;
+            });
+
+            // 填入 PK 選單
+            currentMapData.stocks.forEach((stock, idx) => {
+                let optA = new Option(`${stock.name} (${stock.code})`, stock.id);
+                let optB = new Option(`${stock.name} (${stock.code})`, stock.id);
+                if(idx === 0) optA.selected = true;
+                if(idx === 1 || (idx === 0 && currentMapData.stocks.length === 1)) optB.selected = true; 
+                selectA.add(optA); selectB.add(optB);
+            });
+
+            renderTable();
+            renderComparison();
+            renderWatchlist();
+        }
+
+        // 核心：個股交互表格渲染
+        function sourceTypeLabel(type) {
+            const map = {
+                official_sources: '官方',
+                global_news: '國際新聞',
+                taiwan_finance_news: '台灣財經',
+                youtube_sources: 'YouTube',
+                analyst_sources: '分析師/投顧',
+                community_sources: '社群',
+                other: '其他'
+            };
+            return map[type] || type || '來源';
+        }
+
+        function stockTierLabel(tier) {
+            const map = { core: '核心股', extended: '延伸股', watch: '觀察股' };
+            return map[tier] || tier || '未分類';
+        }
+
+        function evidenceTypeLabel(type) {
+            const map = { direct: '直接來源', inferred: '推論補充' };
+            return map[type] || type || '未標示';
+        }
+
+        function linkageBucket(stock) {
+            const pure = Number(stock?.pureLevel || 0);
+            const tier = stock?.stock_tier || '';
+            if (tier === 'core' || pure >= 4.2) return 'strong';
+            if (tier === 'extended' || pure >= 3.0) return 'medium';
+            return 'weak';
+        }
+
+        function linkageStrengthLabel(stock) {
+            const map = { strong: '強連動', medium: '中連動', weak: '弱連動' };
+            return map[linkageBucket(stock)] || '中連動';
+        }
+
+        function linkageRoleLabel(stock) {
+            const tier = stock?.stock_tier || '';
+            const evidence = stock?.evidence_type || '';
+            if (tier === 'core' && evidence === 'direct') return '核心受惠';
+            if (tier === 'core') return '核心觀察';
+            if (tier === 'extended' && evidence === 'direct') return '次級擴散';
+            if (tier === 'extended') return '延伸受惠';
+            return '情緒/驗證';
+        }
+
+        function buildLinkageReason(stock) {
+            const role = shortenText(stock?.role || stock?.pros || stock?.sector || '供應鏈受惠', 24);
+            const timeframe = shortenText(stock?.timeframe || '觀察中', 14);
+            return `${role}｜${timeframe}`;
+        }
+
+        function relationText(stock) {
+            return stock?.relation_to_theme || linkageRoleLabel(stock);
+        }
+
+        function benefitStageText(stock) {
+            return stock?.benefit_stage || (stock?.stock_tier === 'core' ? '第一圈' : stock?.stock_tier === 'extended' ? '第二圈' : '第三圈');
+        }
+
+        function linkageText(stock) {
+            return stock?.linkage_strength || linkageStrengthLabel(stock);
+        }
+
+        function linkageDriverText(stock) {
+            return stock?.linkage_driver || buildLinkageReason(stock);
+        }
+
+        function renderLinkageSummary(stock) {
+            return `${relationText(stock)}｜${linkageText(stock)}`;
+        }
+
+        function renderModalLinkage(stock) {
+            const strength = linkageText(stock);
+            const role = relationText(stock);
+            const reason = linkageDriverText(stock);
+            const stage = benefitStageText(stock);
+            const tone = linkageBucket(stock) === 'strong'
+                ? 'border-fuchsia-800/50 bg-fuchsia-950/20 text-fuchsia-200'
+                : linkageBucket(stock) === 'medium'
+                    ? 'border-cyan-800/50 bg-cyan-950/20 text-cyan-200'
+                    : 'border-slate-800 bg-slate-950/40 text-slate-300';
+            return `
+                <div class="rounded-xl border ${tone} p-3 space-y-1.5">
+                    <div class="font-semibold">${role} · ${strength}</div>
+                    <div class="leading-5">受惠位階：${stage}</div>
+                    <div class="leading-5">連動原因：${reason}</div>
+                    <div class="text-[11px] text-slate-400">與題材連動邏輯：${stock?.relation_note || stock?.pros || stock?.role || '待補充'}</div>
+                </div>
+            `;
+        }
+
+        function summarizeStockSources(stock) {
+            const sources = Array.isArray(stock.sources) ? stock.sources : [];
+            if (!sources.length) return '<span class="text-slate-500">系統推論</span>';
+            return sources.slice(0, 2).map(src => {
+                const analyst = src.analyst_name ? ` / ${src.analyst_name}` : '';
+                return `<div class="leading-5"><span class="text-cyan-300">${sourceTypeLabel(src.source_type)}</span> · ${src.source_name || '未標示來源'}${analyst}</div>`;
+            }).join('');
+        }
+
+        function renderModalSources(stock) {
+            const sources = Array.isArray(stock.sources) ? stock.sources : [];
+            if (!sources.length) {
+                return '<div class="text-slate-500">目前這檔為系統依主題供應鏈推論補入，尚未掛上外部來源連結。</div>';
+            }
+            return sources.map(src => {
+                const analyst = src.analyst_name ? `<span class="text-amber-300">分析師：${src.analyst_name}</span>` : '';
+                const meta = [sourceTypeLabel(src.source_type), src.source_name || '未標示來源', analyst].filter(Boolean).join(' ｜ ');
+                const title = src.title || src.source_name || '未命名來源';
+                if (src.url) {
+                    return `<div class="rounded-lg border border-slate-800 bg-slate-950/50 p-3"><a href="${src.url}" target="_blank" rel="noreferrer" class="text-cyan-300 hover:text-cyan-200">${title}</a><div class="mt-1 text-[11px] text-slate-500">${meta}</div></div>`;
+                }
+                return `<div class="rounded-lg border border-slate-800 bg-slate-950/50 p-3"><div class="text-slate-200">${title}</div><div class="mt-1 text-[11px] text-slate-500">${meta}</div></div>`;
+            }).join('');
+        }
+
+        function renderMobileStockCards(filtered) {
+            const container = document.getElementById('stock-mobile-list');
+            if (!container) return;
+            container.innerHTML = '';
+            if (!filtered.length) {
+                container.innerHTML = `<div class="text-center text-slate-500 text-sm py-8">查無符合條件的概念股</div>`;
+                return;
+            }
+            filtered.forEach(stock => {
+                const row = document.createElement('button');
+                row.type = 'button';
+                row.className = 'w-full rounded-xl border border-slate-800 bg-slate-900 px-3 py-3 text-left shadow-sm active:scale-[0.99] transition';
+                row.setAttribute('onclick', `openModal('${stock.id}')`);
+                row.innerHTML = `
+                    <div class="flex items-start gap-3">
+                        <button onclick="event.stopPropagation(); toggleWatchlist('${stock.id}')" class="mt-0.5 w-6 shrink-0 text-sm ${watchlist.includes(stock.id) ? 'text-amber-400' : 'text-slate-600'}">★</button>
+                        <div class="min-w-0 flex-1">
+                            <div class="flex items-start justify-between gap-2">
+                                <div class="min-w-0">
+                                    <div class="truncate text-sm font-bold text-slate-100">${stock.name} <span class="text-[11px] text-indigo-400 font-mono">${stock.code}</span></div>
+                                    <div class="mt-0.5 truncate text-[11px] text-slate-500">${renderLinkageSummary(stock)}</div>
+                                </div>
+                                <div class="shrink-0 text-right">
+                                    <div class="text-[11px] font-bold text-amber-300">${Number(stock.pureLevel).toFixed(1)}</div>
+                                    <div class="text-[10px] text-slate-500">連動</div>
+                                </div>
+                            </div>
+                            <div class="mt-1 truncate text-[11px] text-slate-300">${shortenText(stock.role || stock.sector || '概念股', 24)}</div>
+                            <div class="mt-1 truncate text-[11px] text-slate-500">${shortenText(stripHtml(summarizeStockSources(stock)) || stockTierLabel(stock.stock_tier), 28)}</div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(row);
+            });
+        }
+
+        function renderTable(filterText = '', filterSectorId = 'all') {
+            const tbody = document.getElementById('stock-table-body');
+            tbody.innerHTML = '';
+            if (!currentMapData || !currentMapData.stocks) return;
+
+            const filtered = currentMapData.stocks.filter(stock => {
+                const targetText = (stock.name + stock.code + stock.role + stock.sector).toLowerCase();
+                const matchText = targetText.includes(filterText.toLowerCase());
+                const matchSector = filterSectorId === 'all' || stock.sectorId === filterSectorId;
+                return matchText && matchSector;
+            });
+
+            if(filtered.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="8" class="py-8 text-center text-slate-500 text-xs">無符合過濾條件的個股資料</td></tr>`;
+                renderMobileStockCards([]);
+                return;
+            }
+
+            filtered.forEach(stock => {
+                const isWatched = watchlist.includes(stock.id);
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-slate-800/40 transition border-b border-slate-800/60";
+                tr.innerHTML = `
+                    <td class="py-3.5 px-4 text-center">
+                        <button onclick="toggleWatchlist('${stock.id}')" class="transition ${isWatched ? 'text-amber-400 scale-110' : 'text-slate-600 hover:text-amber-400'}">
+                            ★
+                        </button>
+                    </td>
+                    <td class="py-3.5 px-4 font-bold text-slate-100">${stock.name} <span class="text-xs text-indigo-400 font-mono block sm:inline">[${stock.code}]</span></td>
+                    <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded bg-slate-800 text-xs text-slate-300 border border-slate-700/40">${stock.sector}</span></td>
+                    <td class="py-3.5 px-4 text-slate-300 text-xs max-w-xs">
+                        <div class="truncate">${stock.role}</div>
+                        <div class="mt-1 text-[11px] text-slate-500">${stockTierLabel(stock.stock_tier)} ｜ ${evidenceTypeLabel(stock.evidence_type)} ｜ ${renderLinkageSummary(stock)}</div>
+                        <div class="mt-1 text-[11px] text-slate-400">${summarizeStockSources(stock)}</div>
+                    </td>
+                    <td class="py-3.5 px-4 text-slate-400 text-xs font-mono">${stock.timeframe}</td>
+                    <td class="py-3.5 px-4 text-center text-amber-400 font-bold font-mono">${Number(stock.pureLevel).toFixed(1)}</td>
+                    <td class="py-3.5 px-4 text-center text-emerald-400 font-bold font-mono">${Number(stock.barrierLevel).toFixed(1)}</td>
+                    <td class="py-3.5 px-4 text-center">
+                        <button onclick="openModal('${stock.id}')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 p-1.5 rounded-lg transition border border-slate-700/60 shadow-sm">
+                            <i data-lucide="info" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+            renderMobileStockCards(filtered);
+            lucide.createIcons();
+        }
+
+        function filterTable() {
+            const searchVal = document.getElementById('table-search').value.trim();
+            const activeSectorBtn = document.querySelector('.sector-tab-btn.bg-indigo-600');
+            const sectorId = activeSectorBtn ? activeSectorBtn.getAttribute('data-sector') : 'all';
+            renderTable(searchVal, sectorId);
+        }
+
+        function filterSector(sectorId) {
+            document.querySelectorAll('.sector-tab-btn').forEach(btn => btn.className = "sector-tab-btn px-2.5 py-1 text-xs font-medium rounded-md text-slate-400 hover:text-white hover:bg-slate-800 transition");
+            const activeBtn = document.querySelector(`.sector-tab-btn[data-sector="${sectorId}"]`);
+            if (activeBtn) {
+                activeBtn.className = "sector-tab-btn px-2.5 py-1 text-xs font-medium rounded-md transition bg-indigo-600 text-white";
+            }
+            filterTable();
+        }
+
+        function renderBulletList(containerId, items, emptyText, tone = 'slate') {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            if (!items || items.length === 0) {
+                container.innerHTML = `<div class="text-[11px] text-slate-600">${emptyText}</div>`;
+                return;
+            }
+            const toneClass = {
+                slate: 'border-slate-800 text-slate-300 bg-slate-950/50',
+                red: 'border-red-900/40 text-red-300 bg-red-950/20',
+                amber: 'border-amber-900/40 text-amber-300 bg-amber-950/20',
+                emerald: 'border-emerald-900/40 text-emerald-300 bg-emerald-950/20',
+                indigo: 'border-indigo-900/40 text-indigo-300 bg-indigo-950/20'
+            };
+            container.innerHTML = items.map(item => `<div class="text-xs border rounded-lg px-3 py-2 ${toneClass[tone] || toneClass.slate}">${item}</div>`).join('');
+        }
+
+        function stripHtml(input) {
+            const div = document.createElement('div');
+            div.innerHTML = input || '';
+            return (div.textContent || div.innerText || '').replace(/\s+/g, ' ').trim();
+        }
+
+        function shortenText(input, maxLen = 36) {
+            const text = stripHtml(input || '');
+            return text.length > maxLen ? `${text.slice(0, maxLen)}…` : text;
+        }
+
+        function toggleMobileThemeDetail() {
+            const panel = document.getElementById('mobile-theme-detail');
+            const button = document.getElementById('mobile-theme-detail-toggle');
+            if (!panel || !button) return;
+            const isHidden = panel.classList.contains('hidden');
+            panel.classList.toggle('hidden');
+            button.textContent = isHidden ? '收起細節' : '看細節';
+        }
+
+        function renderMetaPanels(mapData) {
+            const tags = document.getElementById('theme-tags-container');
+            if (tags) {
+                tags.innerHTML = (mapData.theme_tags || []).length
+                    ? mapData.theme_tags.map(tag => `<span class="px-2 py-1 rounded-md bg-indigo-950/40 border border-indigo-900/40 text-indigo-300 text-xs">${tag}</span>`).join('')
+                    : '<span class="text-[11px] text-slate-600">尚無主題標籤</span>';
+            }
+            renderBulletList('trigger-events-container', mapData.trigger_events || [], '尚無觸發事件', 'amber');
+            renderBulletList('watch-signals-container', mapData.watch_signals || [], '尚無觀察訊號', 'emerald');
+            renderBulletList('heat-drivers-container', mapData.heat_drivers || [], '尚無火勢驅動資料', 'red');
+            renderBulletList('risks-container', mapData.risks || [], '尚無風險提示', 'slate');
+
+            const related = document.getElementById('related-themes-container');
+            if (related) {
+                related.innerHTML = (mapData.related_themes || []).length
+                    ? mapData.related_themes.map(tag => `<span class="px-2 py-1 rounded-md bg-slate-950/70 border border-slate-800 text-slate-300 text-xs">${tag}</span>`).join('')
+                    : '<span class="text-[11px] text-slate-600">尚無延伸主題</span>';
+            }
+        }
+
+        function renderStructureLayers(mapData) {
+            const container = document.getElementById('structure-layers-container');
+            if (!container) return;
+            const layers = mapData.structure_layers || [];
+            if (!layers.length) {
+                container.innerHTML = `<div class="col-span-full text-center text-slate-600 py-4 text-xs">目前沒有結構分層資料</div>`;
+                return;
+            }
+            container.innerHTML = layers.map(layer => `
+                <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-5 space-y-3">
+                    <div>
+                        <div class="text-cyan-300 font-bold text-sm">${layer.name || ''}</div>
+                        <div class="text-[11px] text-slate-500 mt-1">位置：${layer.position || ''}</div>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">${layer.summary || ''}</p>
+                    <div>
+                        <div class="text-[11px] text-slate-500 mb-1">關鍵重點</div>
+                        <div class="flex flex-wrap gap-2">${(layer.key_points || []).map(x => `<span class="px-2 py-1 rounded bg-cyan-950/20 border border-cyan-900/30 text-cyan-300 text-xs">${x}</span>`).join('')}</div>
+                    </div>
+                    <div>
+                        <div class="text-[11px] text-slate-500 mb-1">受惠族群</div>
+                        <div class="flex flex-wrap gap-2">${(layer.beneficiaries || []).map(x => `<span class="px-2 py-1 rounded bg-indigo-950/20 border border-indigo-900/30 text-indigo-300 text-xs">${x}</span>`).join('')}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderTimelinePhases(mapData) {
+            const container = document.getElementById('timeline-phases-container');
+            if (!container) return;
+            const phases = mapData.timeline_phases || [];
+            if (!phases.length) {
+                container.innerHTML = `<div class="col-span-full text-center text-slate-600 py-4 text-xs">目前沒有時程資料</div>`;
+                return;
+            }
+            container.innerHTML = phases.map(item => `
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800">
+                    <span class="text-xs font-bold text-emerald-400 block mb-1">${item.phase || ''}</span>
+                    <div class="text-[11px] text-slate-500 mb-2">${item.timeframe || ''}</div>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-3">${item.summary || ''}</p>
+                    <div class="flex flex-wrap gap-2">${(item.winners || []).map(x => `<span class="px-2 py-1 rounded bg-emerald-950/20 border border-emerald-900/30 text-emerald-300 text-xs">${x}</span>`).join('')}</div>
+                </div>
+            `).join('');
+        }
+
+        function renderCapitalFlow(mapData) {
+            const container = document.getElementById('capital-flow-container');
+            if (!container) return;
+            const flows = mapData.capital_flow || [];
+            if (!flows.length) {
+                container.innerHTML = `<div class="text-center text-slate-600 py-4 text-xs">目前沒有資金流推演資料</div>`;
+                return;
+            }
+            container.innerHTML = flows.map((item, index) => `
+                <div class="relative bg-slate-950/60 border border-slate-800 rounded-xl p-5 space-y-3 overflow-hidden">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 ${index % 3 === 0 ? 'bg-red-500/70' : index % 3 === 1 ? 'bg-amber-500/70' : 'bg-cyan-500/70'}"></div>
+                    <div class="flex items-start justify-between gap-3 pl-3">
+                        <div>
+                            <div class="text-red-300 font-bold text-sm">${item.phase || ''}</div>
+                            <div class="text-[11px] text-slate-500 mt-1">${item.timeframe || ''}</div>
+                        </div>
+                        <span class="px-2 py-1 rounded bg-red-950/20 border border-red-900/30 text-red-300 text-xs">${item.focus || ''}</span>
+                    </div>
+                    <p class="text-sm text-slate-300 leading-relaxed pl-3">${item.logic || ''}</p>
+                    <div class="flex flex-wrap gap-2 pl-3">${(item.beneficiary_groups || []).map(x => `<span class="px-2 py-1 rounded bg-amber-950/20 border border-amber-900/30 text-amber-300 text-xs">${x}</span>`).join('')}</div>
+                </div>
+            `).join('');
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`sec-${tabId}`).classList.remove('hidden');
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.className = "tab-btn w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition text-slate-300 hover:bg-slate-800 hover:text-white");
+            if(document.getElementById(`btn-${tabId}`)) document.getElementById(`btn-${tabId}`).className = "tab-btn w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition bg-indigo-600 text-white";
+        }
+
+        // 核心：雙股高階 PK 比較渲染
+        function renderComparison() {
+            const idA = document.getElementById('compare-a').value;
+            const idB = document.getElementById('compare-b').value;
+            const stockA = currentMapData.stocks.find(s => s.id === idA);
+            const stockB = currentMapData.stocks.find(s => s.id === idB);
+            
+            const container = document.getElementById('comparison-result-cards');
+            container.innerHTML = '';
+            if (!stockA || !stockB) return;
+
+            const createCardHTML = (stock, badgeColor, borderStyle) => `
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-xl flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-2">
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-100">${stock.name} <span class="text-xs font-mono text-indigo-400">[${stock.code}]</span></h4>
+                                <span class="text-[10px] text-slate-400 bg-slate-950 px-2 py-0.5 rounded border border-slate-800 mt-1 inline-block">${stock.sector}</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-xs text-amber-400 font-bold">純度 ★${Number(stock.pureLevel).toFixed(1)}</div>
+                                <div class="text-xs text-emerald-400 font-bold">壁壘 🛡️${Number(stock.barrierLevel).toFixed(1)}</div>
+                            </div>
+                        </div>
+                        <div class="space-y-3 mt-4 text-xs">
+                            <div>
+                                <span class="text-indigo-300 font-bold block mb-1">💡 先進卡位角色</span>
+                                <p class="text-slate-300 leading-relaxed">${stock.role}</p>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3 bg-slate-950 p-3 rounded-xl border border-slate-800/60">
+                                <div><span class="text-cyan-400 font-semibold block mb-0.5">🟢 技術優勢</span><p class="text-slate-400 text-[11px] leading-relaxed">${stock.pros}</p></div>
+                                <div><span class="text-red-400 font-semibold block mb-0.5">🔴 投資風險</span><p class="text-slate-400 text-[11px] leading-relaxed">${stock.cons}</p></div>
+                            </div>
+                            <div>
+                                <span class="text-amber-500 font-bold block mb-1">🚀 股價催化劑</span>
+                                <p class="text-slate-300 leading-relaxed">${stock.catalyst}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            container.innerHTML = createCardHTML(stockA, 'indigo', 'indigo') + createCardHTML(stockB, 'teal', 'teal');
+        }
+
+        // 追蹤清單控制邏輯
+        function toggleWatchlist(stockId) {
+            const index = watchlist.indexOf(stockId);
+            if(index === -1) {
+                watchlist.push(stockId);
+                showToast("已成功加入追蹤名單");
+            } else {
+                watchlist.splice(index, 1);
+                showToast("已從追蹤名單移除");
+            }
+            document.getElementById('watchlist-count').textContent = watchlist.length;
+            renderWatchlist();
+            filterTable(); // 同步重繪主表格星號
+        }
+
+        function renderWatchlist() {
+            const container = document.getElementById('watchlist-container');
+            container.innerHTML = '';
+            if(watchlist.length === 0) {
+                container.innerHTML = `<p class="text-[11px] text-slate-500 text-center py-2">目前沒有追蹤個股</p>`;
+                return;
+            }
+            watchlist.forEach(id => {
+                const stock = currentMapData.stocks.find(s => s.id === id);
+                if(!stock) return;
+                const div = document.createElement('div');
+                div.className = "flex items-center justify-between bg-slate-950/60 p-2 border border-slate-800/60 rounded-lg text-xs";
+                div.innerHTML = `
+                    <span class="font-medium text-slate-200 cursor-pointer hover:text-indigo-400" onclick="openModal('${stock.id}')">${stock.name} <span class="text-[10px] text-slate-500 font-mono">(${stock.code})</span></span>
+                    <button onclick="toggleWatchlist('${stock.id}')" class="text-red-400/80 hover:text-red-400 transition"><i data-lucide="trash-2" class="w-3.5 h-3.5"></i></button>
+                `;
+                container.appendChild(div);
+            });
+            lucide.createIcons();
+        }
+
+        // Modal 控制
+        function openModal(stockId) {
+            const stock = currentMapData.stocks.find(s => s.id === stockId);
+            if(!stock) return;
+
+            document.getElementById('modal-stock-name').innerHTML = `${stock.name} <span class="text-sm text-slate-400 font-mono">${stock.code}</span>`;
+            document.getElementById('modal-stock-sector').textContent = stock.sector;
+            document.getElementById('modal-stock-pure').textContent = `★ ${Number(stock.pureLevel).toFixed(1)} / 5.0`;
+            document.getElementById('modal-stock-barrier').textContent = `🛡️ ${Number(stock.barrierLevel).toFixed(1)} / 5.0`;
+            document.getElementById('modal-stock-timeframe').textContent = stock.timeframe;
+            document.getElementById('modal-stock-role').textContent = stock.role;
+            document.getElementById('modal-stock-pros').textContent = stock.pros;
+            document.getElementById('modal-stock-cons').textContent = stock.cons;
+            document.getElementById('modal-stock-catalyst').textContent = stock.catalyst;
+            document.getElementById('modal-stock-tags').textContent = `${stockTierLabel(stock.stock_tier)} ／ ${evidenceTypeLabel(stock.evidence_type)}`;
+            document.getElementById('modal-stock-linkage').innerHTML = renderModalLinkage(stock);
+            document.getElementById('modal-stock-sources').innerHTML = renderModalSources(stock);
+            document.getElementById('modal-stock-desc').textContent = stock.desc;
+
+            document.getElementById('stock-modal').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closeModal() {
+            document.getElementById('stock-modal').classList.add('hidden');
+        }
+
+        // Toast Helper
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-text').textContent = message;
+            toast.className = "fixed bottom-5 right-5 bg-indigo-600 text-white text-xs font-semibold py-2.5 px-4 rounded-lg shadow-lg transform translate-y-0 opacity-100 transition duration-300 z-50 flex items-center gap-2";
+            setTimeout(() => {
+                toast.className = "fixed bottom-5 right-5 bg-indigo-600 text-white text-xs font-semibold py-2.5 px-4 rounded-lg shadow-lg transform translate-y-20 opacity-0 transition duration-300 z-50 flex items-center gap-2";
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
