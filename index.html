@@ -394,12 +394,41 @@
         let currentMapKey = null;
         let watchlist = [];
 
+        function hasMapContent(mapData) {
+            return Boolean(
+                (Array.isArray(mapData?.concepts) && mapData.concepts.length >= 0)
+                || (Array.isArray(mapData?.tech_lessons) && mapData.tech_lessons.length >= 0)
+                || (Array.isArray(mapData?.structure_layers) && mapData.structure_layers.length >= 0)
+                || (Array.isArray(mapData?.timeline_phases) && mapData.timeline_phases.length >= 0)
+                || (typeof mapData?.thesis === 'string' && mapData.thesis.trim())
+                || (typeof mapData?.desc === 'string' && mapData.desc.trim())
+            );
+        }
+
         function isValidMapData(mapData) {
             return mapData
                 && typeof mapData === 'object'
                 && typeof mapData.title === 'string'
-                && Array.isArray(mapData.concepts)
-                && Array.isArray(mapData.stocks);
+                && Array.isArray(mapData.stocks)
+                && hasMapContent(mapData);
+        }
+
+        function normalizeMapData(mapData) {
+            return {
+                ...mapData,
+                concepts: Array.isArray(mapData?.concepts) ? mapData.concepts : [],
+                tech_lessons: Array.isArray(mapData?.tech_lessons) ? mapData.tech_lessons : [],
+                structure_layers: Array.isArray(mapData?.structure_layers) ? mapData.structure_layers : [],
+                timeline_phases: Array.isArray(mapData?.timeline_phases) ? mapData.timeline_phases : [],
+                theme_tags: Array.isArray(mapData?.theme_tags) ? mapData.theme_tags : [],
+                trigger_events: Array.isArray(mapData?.trigger_events) ? mapData.trigger_events : [],
+                risks: Array.isArray(mapData?.risks) ? mapData.risks : [],
+                watch_signals: Array.isArray(mapData?.watch_signals) ? mapData.watch_signals : [],
+                related_themes: Array.isArray(mapData?.related_themes) ? mapData.related_themes : [],
+                heat_drivers: Array.isArray(mapData?.heat_drivers) ? mapData.heat_drivers : [],
+                capital_flow: Array.isArray(mapData?.capital_flow) ? mapData.capital_flow : [],
+                stocks: Array.isArray(mapData?.stocks) ? mapData.stocks : [],
+            };
         }
 
         function normalizeRepository(rawRepo) {
@@ -408,12 +437,12 @@
             const normalized = {};
             for (const [key, value] of Object.entries(rawRepo)) {
                 if (isValidMapData(value)) {
-                    normalized[key] = value;
+                    normalized[key] = normalizeMapData(value);
                 }
             }
 
             if (Object.keys(normalized).length === 0 && isValidMapData(rawRepo)) {
-                normalized['map_default'] = rawRepo;
+                normalized['map_default'] = normalizeMapData(rawRepo);
             }
 
             return normalized;
