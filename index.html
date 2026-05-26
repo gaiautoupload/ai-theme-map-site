@@ -426,14 +426,13 @@
         // 異步載入 vLLM 動態產出的資料庫
         window.onload = async function() {
             try {
-                const response = await fetch('./maps_repo.json?v=202605262340', { cache: 'no-store' });
+                const response = await fetch('./maps_repo.json?v=202605262347', { cache: 'no-store' });
                 if (!response.ok) throw new Error("遠端 HTTP 狀態碼錯誤");
                 const rawRepo = await response.json();
                 mapsRepository = normalizeRepository(rawRepo);
                 console.log("成功加載動態 Wiki 數據庫！主題數：", Object.keys(mapsRepository).length);
             } catch (err) {
                 console.error("讀取動態數據庫失敗，採用備用防錯提示:", err);
-                // 應對本地雙擊開啟產生的 CORS 限制
                 mapsRepository = {
                     "error_local": {
                         title: "資料庫加載失敗 ⚠️",
@@ -443,6 +442,21 @@
                         desc: "偵測不到 maps_repo.json。請確保你在 D:\\map 目錄下執行了 python -m http.server 或是執行過 vLLM.py 生成了實體檔案。",
                         icon: "alert-triangle",
                         color: "from-red-600 to-orange-500",
+                        concepts: [],
+                        stocks: []
+                    }
+                };
+            }
+            if (Object.keys(mapsRepository).length === 0) {
+                mapsRepository = {
+                    "error_empty": {
+                        title: "資料庫目前為空 ⚠️",
+                        date: "2026-05-26",
+                        heat: "Schema 檢查中",
+                        period: "需檢查資料格式",
+                        desc: "首頁成功載入 JSON，但經 normalize 後為 0 筆，表示前端 schema 驗證與資料內容仍有不一致。",
+                        icon: "database-zap",
+                        color: "from-amber-500 to-red-500",
                         concepts: [],
                         stocks: []
                     }
@@ -614,13 +628,6 @@
 
             document.getElementById('panel-home').classList.add('hidden');
             document.getElementById('panel-map-workspace').classList.remove('hidden');
-
-            // 頂部狀態更新
-            document.getElementById('header-status').innerHTML = `
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-950 text-red-400 border border-red-800">${mapData.heat}</span>
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-950 text-amber-300 border border-amber-800">火勢 ${mapData.heat_score ?? '--'}</span>
-                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-950 text-indigo-400 border border-indigo-800">${mapData.period}</span>
-            `;
 
             // 灌入深度背景描述
             document.getElementById('map-thesis-hero').textContent = mapData.thesis || mapData.title || '';
