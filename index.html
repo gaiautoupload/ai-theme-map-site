@@ -537,10 +537,13 @@
             }
 
             keys.sort((a, b) => {
+                const dateA = String(mapsRepository[a]?.updated_at || mapsRepository[a]?.date || '');
+                const dateB = String(mapsRepository[b]?.updated_at || mapsRepository[b]?.date || '');
+                const byDate = dateB.localeCompare(dateA);
+                if (byDate !== 0) return byDate;
                 const scoreA = Number(mapsRepository[a]?.heat_score || 0);
                 const scoreB = Number(mapsRepository[b]?.heat_score || 0);
-                if (scoreB !== scoreA) return scoreB - scoreA;
-                return String(mapsRepository[b]?.updated_at || '').localeCompare(String(mapsRepository[a]?.updated_at || ''));
+                return scoreB - scoreA;
             });
 
             const grid = document.getElementById('maps-grid');
