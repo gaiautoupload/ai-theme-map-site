@@ -66,20 +66,20 @@
         <div class="bg-gradient-to-r from-indigo-950/40 via-slate-900 to-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
             <div>
                 <h2 class="text-xl font-bold text-slate-200 mb-2">歡迎來到 AI 產業決策 Wiki</h2>
-                <p class="text-sm text-slate-400 leading-relaxed">本系統以本地 vLLM 為主體推理引擎，搭配可擴充的搜尋上下文介面，將半導體、AI 伺服器硬體與關鍵材料題材轉化為可持續演化的技術教學、結構分層與資金流研究地圖。請選擇下方主題進入研究：</p>
+                <p class="text-sm text-slate-400 leading-relaxed">這不是工程展示牆，而是投資決策雷達。先看題材天花板、商業化時程、誰賺最多，再往下拆解供應鏈位置、概念股排序與資金火勢。請選擇下方主題進入研究：</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
                 <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
-                    <div class="text-[11px] text-slate-500 mb-1">研究模式</div>
-                    <div class="text-sm font-bold text-cyan-300">技術教學 + 結構分層 + 資金流推演</div>
+                    <div class="text-[11px] text-slate-500 mb-1">投資切入</div>
+                    <div class="text-sm font-bold text-cyan-300">先看 TAM / CAGR / 商業化節奏</div>
                 </div>
                 <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
-                    <div class="text-[11px] text-slate-500 mb-1">推理核心</div>
-                    <div class="text-sm font-bold text-amber-300">本地 vLLM / 高 Token 主題展開</div>
+                    <div class="text-[11px] text-slate-500 mb-1">決策重點</div>
+                    <div class="text-sm font-bold text-amber-300">誰有定價權、誰賺最多、誰最先放量</div>
                 </div>
                 <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
                     <div class="text-[11px] text-slate-500 mb-1">系統目標</div>
-                    <div class="text-sm font-bold text-emerald-300">自主進化與探索的主題雷達牆</div>
+                    <div class="text-sm font-bold text-emerald-300">投資人的獲利雷達與預警牆</div>
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
@@ -112,10 +112,18 @@
                             <i data-lucide="sparkles" class="w-7 h-7 text-amber-300"></i>
                         </div>
                     </div>
-                    <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+                    <div class="mt-4 grid grid-cols-1 md:grid-cols-5 gap-3 text-xs">
                         <div class="rounded-xl border border-slate-800 bg-slate-950/50 p-3">
                             <div class="text-slate-500 mb-1">提案日期</div>
                             <div id="home-highlight-date" class="font-bold text-cyan-300">--</div>
+                        </div>
+                        <div class="rounded-xl border border-slate-800 bg-slate-950/50 p-3">
+                            <div class="text-slate-500 mb-1">潛在市場規模 TAM</div>
+                            <div id="home-highlight-tam" class="font-bold text-emerald-300">--</div>
+                        </div>
+                        <div class="rounded-xl border border-slate-800 bg-slate-950/50 p-3">
+                            <div class="text-slate-500 mb-1">CAGR</div>
+                            <div id="home-highlight-cagr" class="font-bold text-cyan-300">--</div>
                         </div>
                         <div class="rounded-xl border border-slate-800 bg-slate-950/50 p-3">
                             <div class="text-slate-500 mb-1">主線亮點</div>
@@ -158,24 +166,24 @@
 
             <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 space-y-2">
                 <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider px-2 mb-3">導覽選單</p>
-                <button onclick="switchTab('overview')" id="btn-overview" class="tab-btn w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition bg-indigo-600 text-white">
-                    <span class="flex items-center gap-2"><i data-lucide="compass" class="w-4 h-4"></i>技術觀念解析</span>
-                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
-                </button>
                 <button onclick="switchTab('stock-list')" id="btn-stock-list" class="tab-btn w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition">
                     <span class="flex items-center gap-2"><i data-lucide="list" class="w-4 h-4"></i>概念股主篩選表</span>
                     <i data-lucide="chevron-right" class="w-4 h-4"></i>
                 </button>
-                <button onclick="switchTab('comparison')" id="btn-comparison" class="tab-btn w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition">
-                    <span class="flex items-center gap-2"><i data-lucide="git-compare" class="w-4 h-4"></i>雙股 PK 比較器</span>
+                <button onclick="switchTab('capital-flow')" id="btn-capital-flow" class="tab-btn w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition">
+                    <span class="flex items-center gap-2"><i data-lucide="flame" class="w-4 h-4"></i>資金流與火勢</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </button>
+                <button onclick="switchTab('overview')" id="btn-overview" class="tab-btn w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium transition bg-indigo-600 text-white">
+                    <span class="flex items-center gap-2"><i data-lucide="compass" class="w-4 h-4"></i>產業投資邏輯與觀念解析</span>
                     <i data-lucide="chevron-right" class="w-4 h-4"></i>
                 </button>
                 <button onclick="switchTab('structure')" id="btn-structure" class="tab-btn w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition">
-                    <span class="flex items-center gap-2"><i data-lucide="network" class="w-4 h-4"></i>結構分層</span>
+                    <span class="flex items-center gap-2"><i data-lucide="network" class="w-4 h-4"></i>結構分層 / Value Capture</span>
                     <i data-lucide="chevron-right" class="w-4 h-4"></i>
                 </button>
-                <button onclick="switchTab('capital-flow')" id="btn-capital-flow" class="tab-btn w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition">
-                    <span class="flex items-center gap-2"><i data-lucide="flame" class="w-4 h-4"></i>資金流與火勢</span>
+                <button onclick="switchTab('comparison')" id="btn-comparison" class="tab-btn w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition">
+                    <span class="flex items-center gap-2"><i data-lucide="git-compare" class="w-4 h-4"></i>雙股 PK 比較器</span>
                     <i data-lucide="chevron-right" class="w-4 h-4"></i>
                 </button>
             </div>
@@ -204,14 +212,18 @@
                             </svg>
                         </div>
                     </div>
-                    <div class="grid grid-cols-3 gap-2">
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-2">
                         <div class="rounded-xl border border-slate-800 bg-slate-950/70 p-3">
-                            <div class="text-[10px] text-slate-500">熱度</div>
-                            <div id="mobile-theme-heat" class="mt-1 text-sm font-bold text-red-300"></div>
+                            <div class="text-[10px] text-slate-500">潛在市場規模 TAM</div>
+                            <div id="mobile-theme-tam" class="mt-1 text-sm font-bold text-emerald-300"></div>
                         </div>
                         <div class="rounded-xl border border-slate-800 bg-slate-950/70 p-3">
-                            <div class="text-[10px] text-slate-500">分數</div>
-                            <div id="mobile-theme-score" class="mt-1 text-sm font-bold text-amber-300"></div>
+                            <div class="text-[10px] text-slate-500">CAGR</div>
+                            <div id="mobile-theme-cagr" class="mt-1 text-sm font-bold text-cyan-300"></div>
+                        </div>
+                        <div class="rounded-xl border border-slate-800 bg-slate-950/70 p-3">
+                            <div class="text-[10px] text-slate-500">火勢</div>
+                            <div id="mobile-theme-heat" class="mt-1 text-sm font-bold text-red-300"></div>
                         </div>
                         <div class="rounded-xl border border-slate-800 bg-slate-950/70 p-3">
                             <div class="text-[10px] text-slate-500">階段</div>
@@ -369,7 +381,12 @@
             <div class="grid grid-cols-2 gap-4 bg-slate-950 p-4 rounded-xl border border-slate-800/60 text-sm">
                 <div><span class="text-slate-400 block text-xs">題材純度分數</span><span id="modal-stock-pure" class="text-amber-400 font-bold">★ -</span></div>
                 <div><span class="text-slate-400 block text-xs">核心技術壁壘</span><span id="modal-stock-barrier" class="text-emerald-400 font-bold">🛡️ -</span></div>
+                <div><span class="text-slate-400 block text-xs">AI 營收含金量</span><span id="modal-stock-ai-revenue" class="text-emerald-300 font-bold">---</span></div>
+                <div><span class="text-slate-400 block text-xs">毛利率走勢</span><span id="modal-stock-gm" class="text-cyan-300 font-bold">---</span></div>
+                <div><span class="text-slate-400 block text-xs">定價權 / Value Capture</span><span id="modal-stock-pricing" class="text-fuchsia-300 font-bold">---</span></div>
+                <div><span class="text-slate-400 block text-xs">取代風險</span><span id="modal-stock-substitution" class="text-amber-300 font-bold">---</span></div>
                 <div class="col-span-2"><span class="text-slate-400 block text-xs">營收放量時程線</span><span id="modal-stock-timeframe" class="text-slate-200 font-medium">---</span></div>
+                <div class="col-span-2"><span class="text-slate-400 block text-xs">客戶集中 / 獨家性 / Switching Cost</span><span id="modal-stock-customer" class="text-slate-200 font-medium">---</span></div>
             </div>
             <div class="space-y-3 text-sm">
                 <div><span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider block mb-1">💡 技術利基與核心角色</span><p id="modal-stock-role" class="text-slate-300 leading-relaxed"></p></div>
@@ -469,7 +486,7 @@
             try {
                 const versionStamp = Date.now();
                 const versionedMapCandidates = [
-                    './maps_repo_20260527_013746.json',
+                    './maps_repo_20260527_014314.json',
                     './maps_repo.json',
                     './maps_repo_v4.json',
                     './maps_repo_v3.json',
@@ -535,6 +552,8 @@
             const highlightTitle = document.getElementById('home-highlight-title');
             const highlightThesis = document.getElementById('home-highlight-thesis');
             const highlightDate = document.getElementById('home-highlight-date');
+            const highlightTam = document.getElementById('home-highlight-tam');
+            const highlightCagr = document.getElementById('home-highlight-cagr');
             const highlightFlow = document.getElementById('home-highlight-flow');
             const highlightStocks = document.getElementById('home-highlight-stocks');
             const versionTrack = document.getElementById('home-version-track');
@@ -542,6 +561,8 @@
                 if (highlightTitle) highlightTitle.textContent = topMap.title || '今日主題';
                 if (highlightThesis) highlightThesis.textContent = shortenText(topMap.thesis || topMap.desc || '今日亮點整理中', 88);
                 if (highlightDate) highlightDate.textContent = topMap.date || topMap.updated_at || '--';
+                if (highlightTam) highlightTam.textContent = shortenText(topMap.market_size_tam || '待補資料', 28);
+                if (highlightCagr) highlightCagr.textContent = shortenText(topMap.market_cagr || '待補資料', 28);
                 if (highlightFlow) highlightFlow.textContent = shortenText((topMap.trigger_events || [])[0] || (topMap.heat_drivers || [])[0] || topMap.period || '主線整理中', 28);
                 if (highlightStocks) {
                     const stockPool = (topMap.stocks || []);
@@ -611,6 +632,10 @@
                 const summary = map.desc || map.long_description || map.description || map.thesis || '';
                 const tagText = (map.theme_tags || []).slice(0, 3).join(' · ');
                 const relatedText = (map.related_themes || []).slice(0, 3).join(' / ');
+                const tamText = map.market_size_tam || '待補資料';
+                const cagrText = map.market_cagr || '待補資料';
+                const stageText = map.theme_stage || map.period || '觀察期';
+                const valueCaptureText = map.primary_value_capture || '待補資料';
                 card.innerHTML = `
                     <div>
                         <div class="flex items-center gap-3 mb-3">
@@ -625,6 +650,12 @@
                         <div class="mb-3 rounded-xl border border-cyan-900/30 bg-cyan-950/15 px-3 py-3">
                             <div class="text-[10px] uppercase tracking-[0.2em] text-cyan-400/80 mb-1">破題</div>
                             <p class="text-xs text-cyan-200 leading-relaxed line-clamp-3">${opening}</p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 mb-3 text-[11px]">
+                            <div class="rounded-xl border border-emerald-900/30 bg-emerald-950/15 px-3 py-2"><div class="text-slate-500 mb-1">TAM</div><div class="font-bold text-emerald-300 line-clamp-2">${tamText}</div></div>
+                            <div class="rounded-xl border border-cyan-900/30 bg-cyan-950/15 px-3 py-2"><div class="text-slate-500 mb-1">CAGR</div><div class="font-bold text-cyan-300 line-clamp-2">${cagrText}</div></div>
+                            <div class="rounded-xl border border-amber-900/30 bg-amber-950/15 px-3 py-2"><div class="text-slate-500 mb-1">題材階段</div><div class="font-bold text-amber-300 line-clamp-2">${stageText}</div></div>
+                            <div class="rounded-xl border border-fuchsia-900/30 bg-fuchsia-950/15 px-3 py-2"><div class="text-slate-500 mb-1">誰賺最多</div><div class="font-bold text-fuchsia-300 line-clamp-2">${valueCaptureText}</div></div>
                         </div>
                         <p class="text-xs text-slate-400 leading-relaxed line-clamp-3 mb-3 h-15">${summary || '尚無摘要'}</p>
                     </div>
@@ -675,14 +706,17 @@
             document.getElementById('header-status').innerHTML = `
                 <div class="hidden xl:flex items-center gap-2 text-xs text-slate-400">
                     <span class="px-2 py-1 rounded-lg border border-slate-700 bg-slate-900">提案日期 ${mapData.date || '--'}</span>
+                    <span class="px-2 py-1 rounded-lg border border-emerald-700/40 bg-emerald-950/20 text-emerald-300">TAM ${mapData.market_size_tam || '待補資料'}</span>
+                    <span class="px-2 py-1 rounded-lg border border-cyan-700/40 bg-cyan-950/20 text-cyan-300">CAGR ${mapData.market_cagr || '待補資料'}</span>
+                    <span class="px-2 py-1 rounded-lg border border-amber-700/40 bg-amber-950/20 text-amber-300">${mapData.theme_stage || mapData.period || '觀察期'}</span>
                     <span class="px-2 py-1 rounded-lg border border-slate-700 bg-slate-900">更新 ${mapData.updated_at || mapData.date || '--'}</span>
-                    <span class="px-2 py-1 rounded-lg border border-amber-700/40 bg-amber-950/20 text-amber-300">2026-05-26 正式版</span>
                 </div>
             `;
             document.getElementById('mobile-theme-title').textContent = mapData.title || '未命名主題';
+            document.getElementById('mobile-theme-tam').textContent = mapData.market_size_tam || '待補資料';
+            document.getElementById('mobile-theme-cagr').textContent = mapData.market_cagr || '待補資料';
             document.getElementById('mobile-theme-heat').textContent = mapData.heat || '未分類';
-            document.getElementById('mobile-theme-score').textContent = `${mapData.heat_score ?? '--'}`;
-            document.getElementById('mobile-theme-period').textContent = mapData.period || '觀察期';
+            document.getElementById('mobile-theme-period').textContent = mapData.theme_stage || mapData.period || '觀察期';
             const flowEl = document.getElementById('mobile-theme-flow');
             const summaryEl = document.getElementById('mobile-theme-summary');
             const detailEl = document.getElementById('mobile-theme-detail');
@@ -717,7 +751,9 @@
                 detailEl.innerHTML = `
                     <div class="space-y-3">
                         <div><div class="text-[11px] text-slate-500 mb-1">破題</div><div>${mapData.thesis || mapData.title || '尚無內容'}</div></div>
+                        <div><div class="text-[11px] text-slate-500 mb-1">為什麼現在看</div><div>${mapData.why_now || '待補資料'}</div></div>
                         <div><div class="text-[11px] text-slate-500 mb-1">這個主題在講什麼</div><div>${mapData.desc || mapData.long_description || mapData.description || '尚無細節描述'}</div></div>
+                        <div><div class="text-[11px] text-slate-500 mb-1">誰賺最多</div><div>${mapData.primary_value_capture || '待補資料'}</div></div>
                         <div><div class="text-[11px] text-slate-500 mb-1">納入主題一起看</div><div>${(mapData.related_themes || []).join(' / ') || '目前無延伸主題'}</div></div>
                     </div>
                 `;
@@ -998,6 +1034,8 @@
                         <div class="truncate">${stock.role}</div>
                         <div class="mt-1 text-[11px] text-slate-500">${stockTierLabel(stock.stock_tier)} ｜ ${evidenceTypeLabel(stock.evidence_type)} ｜ ${renderLinkageSummary(stock)}</div>
                         <div class="mt-1 text-[11px] text-slate-400">${summarizeStockSources(stock)}</div>
+                        <div class="mt-1 text-[11px] text-emerald-300">AI營收含金量：${stock.ai_revenue_exposure || '待補資料'}</div>
+                        <div class="mt-1 text-[11px] text-amber-300">商用節奏：${stock.commercialization_phase || stock.timeframe || '待補資料'}</div>
                     </td>
                     <td class="py-3.5 px-4 text-slate-400 text-xs font-mono">${stock.timeframe}</td>
                     <td class="py-3.5 px-4 text-center text-amber-400 font-bold font-mono">${Number(stock.pureLevel).toFixed(1)}</td>
@@ -1100,6 +1138,11 @@
                 container.innerHTML = `<div class="col-span-full text-center text-slate-600 py-4 text-xs">目前沒有結構分層資料</div>`;
                 return;
             }
+            const pricingTone = value => value === 'high'
+                ? 'border-amber-700/40 bg-amber-950/20 text-amber-300'
+                : value === 'medium'
+                    ? 'border-cyan-700/40 bg-cyan-950/20 text-cyan-300'
+                    : 'border-slate-800 bg-slate-950/40 text-slate-300';
             container.innerHTML = layers.map(layer => `
                 <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-5 space-y-3">
                     <div>
@@ -1107,6 +1150,12 @@
                         <div class="text-[11px] text-slate-500 mt-1">位置：${layer.position || ''}</div>
                     </div>
                     <p class="text-xs text-slate-300 leading-relaxed">${layer.summary || ''}</p>
+                    <div class="grid grid-cols-2 gap-2 text-[11px]">
+                        <div class="rounded-lg border ${pricingTone(layer.pricing_power)} px-3 py-2"><div class="text-slate-500 mb-1">定價權</div><div class="font-bold">${layer.pricing_power || '待補資料'}</div></div>
+                        <div class="rounded-lg border border-fuchsia-900/30 bg-fuchsia-950/15 px-3 py-2"><div class="text-slate-500 mb-1">Value Capture</div><div class="font-bold text-fuchsia-300">${layer.value_capture || '待補資料'}</div></div>
+                        <div class="rounded-lg border border-emerald-900/30 bg-emerald-950/15 px-3 py-2"><div class="text-slate-500 mb-1">利潤輪廓</div><div class="font-bold text-emerald-300">${layer.margin_profile || '待補資料'}</div></div>
+                        <div class="rounded-lg border border-slate-800 bg-slate-950/50 px-3 py-2"><div class="text-slate-500 mb-1">進入門檻</div><div class="font-bold text-slate-200">${layer.entry_barrier || '待補資料'}</div></div>
+                    </div>
                     <div>
                         <div class="text-[11px] text-slate-500 mb-1">關鍵重點</div>
                         <div class="flex flex-wrap gap-2">${(layer.key_points || []).map(x => `<span class="px-2 py-1 rounded bg-cyan-950/20 border border-cyan-900/30 text-cyan-300 text-xs">${x}</span>`).join('')}</div>
@@ -1128,10 +1177,20 @@
                 return;
             }
             container.innerHTML = phases.map(item => `
-                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800">
-                    <span class="text-xs font-bold text-emerald-400 block mb-1">${item.phase || ''}</span>
-                    <div class="text-[11px] text-slate-500 mb-2">${item.timeframe || ''}</div>
-                    <p class="text-xs text-slate-400 leading-relaxed mb-3">${item.summary || ''}</p>
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800 space-y-3">
+                    <div class="flex items-start justify-between gap-3">
+                        <div>
+                            <span class="text-xs font-bold text-emerald-400 block mb-1">${item.phase || ''}</span>
+                            <div class="text-[11px] text-slate-500">${item.timeframe || ''}</div>
+                        </div>
+                        <span class="px-2 py-1 rounded bg-amber-950/20 border border-amber-900/30 text-amber-300 text-xs">${item.investment_phase || '待補資料'}</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">${item.summary || ''}</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-2 text-[11px]">
+                        <div class="rounded-lg border border-cyan-900/30 bg-cyan-950/15 px-3 py-2"><div class="text-slate-500 mb-1">營收意義</div><div class="text-cyan-200">${item.revenue_meaning || '待補資料'}</div></div>
+                        <div class="rounded-lg border border-emerald-900/30 bg-emerald-950/15 px-3 py-2"><div class="text-slate-500 mb-1">觀察指標</div><div class="text-emerald-200">${item.watch_metric || '待補資料'}</div></div>
+                        <div class="rounded-lg border border-fuchsia-900/30 bg-fuchsia-950/15 px-3 py-2"><div class="text-slate-500 mb-1">市場焦點</div><div class="text-fuchsia-200">${item.expected_market_focus || '待補資料'}</div></div>
+                    </div>
                     <div class="flex flex-wrap gap-2">${(item.winners || []).map(x => `<span class="px-2 py-1 rounded bg-emerald-950/20 border border-emerald-900/30 text-emerald-300 text-xs">${x}</span>`).join('')}</div>
                 </div>
             `).join('');
@@ -1201,6 +1260,12 @@
                                 <div><span class="text-cyan-400 font-semibold block mb-0.5">🟢 技術優勢</span><p class="text-slate-400 text-[11px] leading-relaxed">${stock.pros}</p></div>
                                 <div><span class="text-red-400 font-semibold block mb-0.5">🔴 投資風險</span><p class="text-slate-400 text-[11px] leading-relaxed">${stock.cons}</p></div>
                             </div>
+                            <div class="grid grid-cols-2 gap-2 text-[11px]">
+                                <div class="rounded-lg border border-emerald-900/30 bg-emerald-950/15 p-3"><div class="text-slate-500 mb-1">AI 營收含金量</div><div class="text-emerald-300 font-bold">${stock.ai_revenue_exposure || '待補資料'}</div></div>
+                                <div class="rounded-lg border border-cyan-900/30 bg-cyan-950/15 p-3"><div class="text-slate-500 mb-1">毛利率走勢</div><div class="text-cyan-300 font-bold">${stock.gross_margin_impact || '待補資料'}</div></div>
+                                <div class="rounded-lg border border-amber-900/30 bg-amber-950/15 p-3"><div class="text-slate-500 mb-1">客戶集中 / 獨家性</div><div class="text-amber-300 font-bold">${stock.customer_concentration || (stock.sole_supplier ? '具獨家供應潛力' : '待補資料')}</div></div>
+                                <div class="rounded-lg border border-fuchsia-900/30 bg-fuchsia-950/15 p-3"><div class="text-slate-500 mb-1">Switching Cost / 取代風險</div><div class="text-fuchsia-300 font-bold">${stock.switching_cost || '待補資料'} / ${stock.substitution_risk || '待補資料'}</div></div>
+                            </div>
                             <div>
                                 <span class="text-amber-500 font-bold block mb-1">🚀 股價催化劑</span>
                                 <p class="text-slate-300 leading-relaxed">${stock.catalyst}</p>
@@ -1258,7 +1323,12 @@
             document.getElementById('modal-stock-sector').textContent = stock.sector;
             document.getElementById('modal-stock-pure').textContent = `★ ${Number(stock.pureLevel).toFixed(1)} / 5.0`;
             document.getElementById('modal-stock-barrier').textContent = `🛡️ ${Number(stock.barrierLevel).toFixed(1)} / 5.0`;
-            document.getElementById('modal-stock-timeframe').textContent = stock.timeframe;
+            document.getElementById('modal-stock-ai-revenue').textContent = stock.ai_revenue_exposure || '待補資料';
+            document.getElementById('modal-stock-gm').textContent = stock.gross_margin_impact || '待補資料';
+            document.getElementById('modal-stock-pricing').textContent = `${stock.pricing_power || '待補資料'} / ${stock.value_capture_score ?? '待補資料'}`;
+            document.getElementById('modal-stock-substitution').textContent = stock.substitution_risk || '待補資料';
+            document.getElementById('modal-stock-timeframe').textContent = stock.commercialization_phase || stock.timeframe;
+            document.getElementById('modal-stock-customer').textContent = `${stock.customer_concentration || '待補資料'}${stock.sole_supplier ? ' / 獨家供應可能' : ''} / Switching Cost ${stock.switching_cost || '待補資料'}`;
             document.getElementById('modal-stock-role').textContent = stock.role;
             document.getElementById('modal-stock-pros').textContent = stock.pros;
             document.getElementById('modal-stock-cons').textContent = stock.cons;
