@@ -85,19 +85,51 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
                 <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
                     <div class="text-[11px] text-slate-500 mb-1">Producer</div>
-                    <div class="text-sm font-bold text-amber-200">+1000</div>
+                    <div class="text-sm font-bold text-amber-200">pioter</div>
                 </div>
                 <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
                     <div class="text-[11px] text-slate-500 mb-1">網站作者</div>
-                    <div class="text-sm font-bold text-cyan-200">+1000</div>
+                    <div class="text-sm font-bold text-cyan-200">pioter</div>
                 </div>
                 <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
-                    <div class="text-[11px] text-slate-500 mb-1">製作</div>
-                    <div class="text-sm font-bold text-emerald-200">+1000</div>
+                    <div class="text-[11px] text-slate-500 mb-1">今日正式版</div>
+                    <div class="text-sm font-bold text-emerald-200" id="site-formal-version">2026-05-26 正式版</div>
                 </div>
                 <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
                     <div class="text-[11px] text-slate-500 mb-1">更新日期</div>
                     <div class="text-sm font-bold text-indigo-200" id="site-updated-at">載入中...</div>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                <div class="lg:col-span-2 bg-gradient-to-br from-amber-950/40 via-slate-900 to-slate-900 border border-amber-800/40 rounded-2xl p-5 shadow-xl">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="space-y-2">
+                            <div class="text-[11px] uppercase tracking-[0.25em] text-amber-400/80">Today Highlight</div>
+                            <div id="home-highlight-title" class="text-xl font-black text-slate-100 leading-snug">載入中...</div>
+                            <div id="home-highlight-thesis" class="text-sm text-slate-300 leading-7">整理今日主題亮點中...</div>
+                        </div>
+                        <div class="hidden md:flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-500/10 border border-amber-500/20">
+                            <i data-lucide="sparkles" class="w-7 h-7 text-amber-300"></i>
+                        </div>
+                    </div>
+                    <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+                        <div class="rounded-xl border border-slate-800 bg-slate-950/50 p-3">
+                            <div class="text-slate-500 mb-1">提案日期</div>
+                            <div id="home-highlight-date" class="font-bold text-cyan-300">--</div>
+                        </div>
+                        <div class="rounded-xl border border-slate-800 bg-slate-950/50 p-3">
+                            <div class="text-slate-500 mb-1">主線亮點</div>
+                            <div id="home-highlight-flow" class="font-bold text-amber-300">--</div>
+                        </div>
+                        <div class="rounded-xl border border-slate-800 bg-slate-950/50 p-3">
+                            <div class="text-slate-500 mb-1">優先關注</div>
+                            <div id="home-highlight-stocks" class="font-bold text-emerald-300">--</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-xl space-y-3">
+                    <div class="text-[11px] uppercase tracking-[0.25em] text-slate-500">Version Track</div>
+                    <div id="home-version-track" class="space-y-2 text-sm text-slate-300"></div>
                 </div>
             </div>
         </div>
@@ -417,18 +449,50 @@
 
         function updateSiteMeta() {
             const metaEl = document.getElementById('site-updated-at');
-            if (!metaEl) return;
             const keys = Object.keys(mapsRepository || {});
+            if (!metaEl) return;
             if (keys.length === 0) {
                 metaEl.textContent = '尚無資料';
+                const versionTrack = document.getElementById('home-version-track');
+                if (versionTrack) versionTrack.innerHTML = '<div class="text-slate-500 text-sm">尚無歷史版本</div>';
                 return;
             }
-            const latest = keys
-                .map(key => mapsRepository[key]?.updated_at || mapsRepository[key]?.date || '')
-                .filter(Boolean)
-                .sort()
-                .reverse()[0];
-            metaEl.textContent = latest || '尚無資料';
+            const datedMaps = keys
+                .map(key => ({ key, map: mapsRepository[key], date: mapsRepository[key]?.updated_at || mapsRepository[key]?.date || '' }))
+                .filter(item => item.date)
+                .sort((a, b) => String(b.date).localeCompare(String(a.date)));
+            metaEl.textContent = datedMaps[0]?.date || '尚無資料';
+
+            const topMap = datedMaps[0]?.map || mapsRepository[keys[0]];
+            const highlightTitle = document.getElementById('home-highlight-title');
+            const highlightThesis = document.getElementById('home-highlight-thesis');
+            const highlightDate = document.getElementById('home-highlight-date');
+            const highlightFlow = document.getElementById('home-highlight-flow');
+            const highlightStocks = document.getElementById('home-highlight-stocks');
+            const versionTrack = document.getElementById('home-version-track');
+            if (topMap) {
+                if (highlightTitle) highlightTitle.textContent = topMap.title || '今日主題';
+                if (highlightThesis) highlightThesis.textContent = shortenText(topMap.thesis || topMap.desc || '今日亮點整理中', 88);
+                if (highlightDate) highlightDate.textContent = topMap.date || topMap.updated_at || '--';
+                if (highlightFlow) highlightFlow.textContent = shortenText((topMap.trigger_events || [])[0] || (topMap.heat_drivers || [])[0] || topMap.period || '主線整理中', 28);
+                if (highlightStocks) {
+                    const topStocks = (topMap.stocks || []).slice(0, 3).map(s => s.name).join(' / ');
+                    highlightStocks.textContent = topStocks || '待補';
+                }
+            }
+            if (versionTrack) {
+                versionTrack.innerHTML = datedMaps.slice(0, 6).map((item, idx) => `
+                    <div class="rounded-xl border ${idx === 0 ? 'border-amber-700/40 bg-amber-950/20' : 'border-slate-800 bg-slate-950/40'} px-3 py-2">
+                        <div class="flex items-center justify-between gap-3">
+                            <div class="min-w-0">
+                                <div class="text-xs font-bold ${idx === 0 ? 'text-amber-300' : 'text-slate-200'} truncate">${item.date}${idx === 0 ? ' ・ 今日提案' : ''}</div>
+                                <div class="text-[11px] text-slate-500 truncate">${item.map?.title || item.key}</div>
+                            </div>
+                            <button onclick="showMap('${item.key}')" class="text-[11px] px-2 py-1 rounded-lg border border-slate-700 text-slate-300 hover:text-white hover:border-slate-500">查看</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
         }
 
         // 渲染首頁列表
@@ -508,6 +572,13 @@
             document.getElementById('map-heat-hero').textContent = mapData.heat || '未分類';
             document.getElementById('map-heat-score-hero').textContent = `${mapData.heat_score ?? '--'} / 100`;
             document.getElementById('map-period-hero').textContent = mapData.period || '觀察期';
+            document.getElementById('header-status').innerHTML = `
+                <div class="hidden xl:flex items-center gap-2 text-xs text-slate-400">
+                    <span class="px-2 py-1 rounded-lg border border-slate-700 bg-slate-900">提案日期 ${mapData.date || '--'}</span>
+                    <span class="px-2 py-1 rounded-lg border border-slate-700 bg-slate-900">更新 ${mapData.updated_at || mapData.date || '--'}</span>
+                    <span class="px-2 py-1 rounded-lg border border-amber-700/40 bg-amber-950/20 text-amber-300">2026-05-26 正式版</span>
+                </div>
+            `;
             document.getElementById('mobile-theme-title').textContent = mapData.title || '未命名主題';
             document.getElementById('mobile-theme-heat').textContent = mapData.heat || '未分類';
             document.getElementById('mobile-theme-score').textContent = `${mapData.heat_score ?? '--'}`;
