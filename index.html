@@ -465,7 +465,7 @@
             throw lastError || new Error('No JSON source available');
         }
 
-        window.onload = async function() {
+        async function bootstrapApp() {
             try {
                 const versionStamp = Date.now();
                 const { data: rawRepo, url } = await fetchJsonWithFallback([
@@ -495,6 +495,8 @@
             renderDashboardHome();
             lucide.createIcons();
         }
+
+        window.addEventListener('DOMContentLoaded', bootstrapApp);
 
         function showMap(mapKey) {
             loadMapWorkspace(mapKey);
