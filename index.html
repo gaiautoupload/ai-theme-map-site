@@ -218,12 +218,23 @@
                                 <span id="map-heat-hero" class="px-3 py-1.5 rounded-full text-xs font-bold bg-red-950/50 text-red-300 border border-red-800/50"></span>
                                 <span id="map-heat-score-hero" class="px-3 py-1.5 rounded-full text-xs font-bold bg-amber-950/50 text-amber-300 border border-amber-800/50"></span>
                                 <span id="map-period-hero" class="px-3 py-1.5 rounded-full text-xs font-bold bg-indigo-950/50 text-indigo-300 border border-indigo-800/50"></span>
+                                <span id="map-tam-hero" class="px-3 py-1.5 rounded-full text-xs font-bold bg-yellow-950/50 text-yellow-300 border border-yellow-800/50">TAM 待補</span>
+                                <span id="map-cagr-hero" class="px-3 py-1.5 rounded-full text-xs font-bold bg-cyan-950/50 text-cyan-300 border border-cyan-800/50">CAGR 待補</span>
                             </div>
                         </div>
                         <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
                             <div class="lg:col-span-2 rounded-2xl border border-slate-800 bg-slate-950/50 p-5">
                                 <div class="text-[11px] uppercase tracking-[0.25em] text-slate-500 mb-3">這是什麼題材</div>
                                 <div id="map-long-desc" class="text-slate-300 text-sm leading-7"></div>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-4">
+                                    <div class="rounded-xl border border-slate-800 bg-slate-900/60 p-4"><div class="text-[11px] text-slate-500 mb-1">為什麼現在重要</div><div id="map-why-now" class="text-sm text-slate-200 leading-6">待補</div></div>
+                                    <div class="rounded-xl border border-slate-800 bg-slate-900/60 p-4"><div class="text-[11px] text-slate-500 mb-1">市場天花板 / TAM</div><div id="map-tam-detail" class="text-sm text-yellow-300 font-semibold leading-6">待補</div></div>
+                                    <div class="rounded-xl border border-slate-800 bg-slate-900/60 p-4"><div class="text-[11px] text-slate-500 mb-1">複合成長率 / CAGR</div><div id="map-cagr-detail" class="text-sm text-cyan-300 font-semibold leading-6">待補</div></div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mt-3">
+                                    <div class="rounded-xl border border-slate-800 bg-slate-900/60 p-4"><div class="text-[11px] text-slate-500 mb-1">最大價值捕捉</div><div id="map-value-capture" class="text-sm text-slate-200 leading-6">待補</div></div>
+                                    <div class="rounded-xl border border-slate-800 bg-slate-900/60 p-4"><div class="text-[11px] text-slate-500 mb-1">核心瓶頸</div><div id="map-bottleneck" class="text-sm text-slate-200 leading-6">待補</div></div>
+                                </div>
                             </div>
                             <div class="rounded-2xl border border-slate-800 bg-slate-950/50 p-5 space-y-4">
                                 <div>
@@ -269,7 +280,7 @@
                             <div class="text-[11px] uppercase tracking-[0.25em] text-slate-500">補充觀念</div>
                             <h3 class="mt-1 text-xl font-bold text-white">延伸觀念與結構資訊</h3>
                         </div>
-                        <div id="overview-cards-container" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+                        <div id="overview-cards-container-hidden-anchor" class="hidden"></div>
                     </section>
                 </div>
             </section>
@@ -371,16 +382,21 @@
                 </div>
                 <button onclick="closeModal()" class="text-slate-400 hover:text-white transition"><i data-lucide="x" class="w-5 h-5"></i></button>
             </div>
-            <div class="grid grid-cols-2 gap-4 bg-slate-950 p-4 rounded-xl border border-slate-800/60 text-sm">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 bg-slate-950 p-4 rounded-xl border border-slate-800/60 text-sm">
                 <div><span class="text-slate-400 block text-xs">題材純度分數</span><span id="modal-stock-pure" class="text-amber-400 font-bold">★ -</span></div>
                 <div><span class="text-slate-400 block text-xs">核心技術壁壘</span><span id="modal-stock-barrier" class="text-emerald-400 font-bold">🛡️ -</span></div>
-                <div class="col-span-2"><span class="text-slate-400 block text-xs">營收放量時程線</span><span id="modal-stock-timeframe" class="text-slate-200 font-medium">---</span></div>
+                <div><span class="text-slate-400 block text-xs">營收含金量</span><span id="modal-stock-ai-exposure" class="text-cyan-300 font-bold">待補</span></div>
+                <div><span class="text-slate-400 block text-xs">毛利率彈性</span><span id="modal-stock-gm-impact" class="text-violet-300 font-bold">待補</span></div>
+                <div><span class="text-slate-400 block text-xs">定價權 / Value Capture</span><span id="modal-stock-pricing" class="text-yellow-300 font-bold">待補</span></div>
+                <div><span class="text-slate-400 block text-xs">替代風險</span><span id="modal-stock-subrisk" class="text-rose-300 font-bold">待補</span></div>
+                <div class="col-span-2 md:col-span-3"><span class="text-slate-400 block text-xs">營收放量時程線</span><span id="modal-stock-timeframe" class="text-slate-200 font-medium">---</span></div>
+                <div class="col-span-2 md:col-span-3"><span class="text-slate-400 block text-xs">客戶集中度 / 獨家性</span><span id="modal-stock-customer" class="text-slate-200 font-medium">待補</span></div>
             </div>
             <div class="space-y-3 text-sm">
-                <div><span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider block mb-1">💡 技術利基與核心角色</span><p id="modal-stock-role" class="text-slate-300 leading-relaxed"></p></div>
-                <div><span class="text-xs font-semibold text-cyan-400 uppercase tracking-wider block mb-1">✅ 聯網核心競爭優勢 (Pros)</span><p id="modal-stock-pros" class="text-slate-300 leading-relaxed"></p></div>
-                <div><span class="text-xs font-semibold text-red-400 uppercase tracking-wider block mb-1">❌ 投資潛在潛在風險 (Cons)</span><p id="modal-stock-cons" class="text-slate-300 leading-relaxed"></p></div>
-                <div><span class="text-xs font-semibold text-amber-500 uppercase tracking-wider block mb-1">🚀 關鍵催化劑事件 (Catalyst)</span><p id="modal-stock-catalyst" class="text-slate-300 leading-relaxed"></p></div>
+                <div><span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider block mb-1">💡 受惠位置 / 供應鏈角色</span><p id="modal-stock-role" class="text-slate-300 leading-relaxed"></p></div>
+                <div><span class="text-xs font-semibold text-cyan-400 uppercase tracking-wider block mb-1">✅ 投資亮點</span><p id="modal-stock-pros" class="text-slate-300 leading-relaxed"></p></div>
+                <div><span class="text-xs font-semibold text-red-400 uppercase tracking-wider block mb-1">❌ 風險提醒</span><p id="modal-stock-cons" class="text-slate-300 leading-relaxed"></p></div>
+                <div><span class="text-xs font-semibold text-amber-500 uppercase tracking-wider block mb-1">🚀 股價催化 / 驗證事件</span><p id="modal-stock-catalyst" class="text-slate-300 leading-relaxed"></p></div>
                 <div><span class="text-xs font-semibold text-violet-400 uppercase tracking-wider block mb-1">🏷️ 股票層級 / 證據型態</span><p id="modal-stock-tags" class="text-slate-300 leading-relaxed"></p></div>
                 <div><span class="text-xs font-semibold text-fuchsia-400 uppercase tracking-wider block mb-1">🔄 題材關係 / 連動強度</span><div id="modal-stock-linkage" class="text-slate-300 leading-relaxed text-xs space-y-2"></div></div>
                 <div><span class="text-xs font-semibold text-sky-400 uppercase tracking-wider block mb-1">🔗 來源 / 分析師 / 投顧</span><div id="modal-stock-sources" class="text-slate-300 leading-relaxed text-xs space-y-2"></div></div>
@@ -478,9 +494,45 @@
             return stock.desc || stock.pros || stock.catalyst || stock.role || '屬於此題材的重要觀察標的。';
         }
 
+
+        function displayValue(value, fallback = '待補') {
+            if (value === undefined || value === null) return fallback;
+            if (typeof value === 'string' && value.trim() === '') return fallback;
+            return value;
+        }
+
+        function pricingPowerLabel(value) {
+            const v = String(value || '').toLowerCase();
+            if (v.includes('high') || v.includes('強') || v.includes('高')) return '高';
+            if (v.includes('medium') || v.includes('中')) return '中';
+            if (v.includes('low') || v.includes('低')) return '低';
+            return displayValue(value);
+        }
+
+        function investmentPhaseLabel(item) {
+            const raw = item?.investment_phase || item?.phase || '';
+            if (/概念/.test(raw)) return '概念期';
+            if (/驗證/.test(raw)) return '驗證期';
+            if (/放量|量產/.test(raw)) return '放量期';
+            if (/營收|貢獻/.test(raw)) return '財報貢獻期';
+            return raw || '觀察期';
+        }
+
         function renderVeraOverview(mapData) {
             const topTitle = document.getElementById('vera-top-title');
             if (topTitle) topTitle.textContent = mapData.title || '';
+            const whyNow = displayValue(mapData.why_now || mapData.market_narrative);
+            const tam = displayValue(mapData.market_size_tam);
+            const cagr = displayValue(mapData.market_cagr);
+            const capture = displayValue(mapData.primary_value_capture);
+            const bottleneck = displayValue(mapData.key_bottleneck);
+            const mapWhyNow = document.getElementById('map-why-now'); if (mapWhyNow) mapWhyNow.textContent = whyNow;
+            const mapTamDetail = document.getElementById('map-tam-detail'); if (mapTamDetail) mapTamDetail.textContent = tam;
+            const mapCagrDetail = document.getElementById('map-cagr-detail'); if (mapCagrDetail) mapCagrDetail.textContent = cagr;
+            const mapValueCapture = document.getElementById('map-value-capture'); if (mapValueCapture) mapValueCapture.textContent = capture;
+            const mapBottleneck = document.getElementById('map-bottleneck'); if (mapBottleneck) mapBottleneck.textContent = bottleneck;
+            const mapTamHero = document.getElementById('map-tam-hero'); if (mapTamHero) mapTamHero.textContent = `TAM ${tam}`;
+            const mapCagrHero = document.getElementById('map-cagr-hero'); if (mapCagrHero) mapCagrHero.textContent = `CAGR ${cagr}`;
 
             const evo = document.getElementById('vera-evolution-cards');
             if (evo) {
@@ -1192,23 +1244,33 @@
                 container.innerHTML = `<div class="col-span-full text-center text-slate-600 py-4 text-xs">目前沒有結構分層資料</div>`;
                 return;
             }
-            container.innerHTML = layers.map(layer => `
+            container.innerHTML = layers.map(layer => {
+                const power = pricingPowerLabel(layer.pricing_power || layer.value_capture || '待補');
+                const powerTone = power === '高' ? 'border-yellow-700/40 bg-yellow-950/15 text-yellow-300' : power === '中' ? 'border-cyan-700/40 bg-cyan-950/15 text-cyan-300' : 'border-slate-700/60 bg-slate-900/60 text-slate-300';
+                return `
                 <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-5 space-y-3">
-                    <div>
-                        <div class="text-cyan-300 font-bold text-sm">${layer.name || ''}</div>
-                        <div class="text-[11px] text-slate-500 mt-1">位置：${layer.position || ''}</div>
+                    <div class="flex items-start justify-between gap-3">
+                        <div>
+                            <div class="text-cyan-300 font-bold text-sm">${layer.name || ''}</div>
+                            <div class="text-[11px] text-slate-500 mt-1">位置：${layer.position || ''}</div>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-full text-xs border ${powerTone}">定價權 ${power}</span>
                     </div>
                     <p class="text-xs text-slate-300 leading-relaxed">${layer.summary || ''}</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div class="rounded-lg border border-slate-800 bg-slate-900/50 p-3"><div class="text-[11px] text-slate-500 mb-1">價值捕捉</div><div class="text-sm text-white">${displayValue(layer.value_capture)}</div></div>
+                        <div class="rounded-lg border border-slate-800 bg-slate-900/50 p-3"><div class="text-[11px] text-slate-500 mb-1">利潤率輪廓</div><div class="text-sm text-white">${displayValue(layer.margin_profile)}</div></div>
+                    </div>
                     <div>
                         <div class="text-[11px] text-slate-500 mb-1">關鍵重點</div>
                         <div class="flex flex-wrap gap-2">${(layer.key_points || []).map(x => `<span class="px-2 py-1 rounded bg-cyan-950/20 border border-cyan-900/30 text-cyan-300 text-xs">${x}</span>`).join('')}</div>
                     </div>
-                    <div>
-                        <div class="text-[11px] text-slate-500 mb-1">受惠族群</div>
-                        <div class="flex flex-wrap gap-2">${(layer.beneficiaries || []).map(x => `<span class="px-2 py-1 rounded bg-indigo-950/20 border border-indigo-900/30 text-indigo-300 text-xs">${x}</span>`).join('')}</div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div class="rounded-lg border border-slate-800 bg-slate-900/50 p-3"><div class="text-[11px] text-slate-500 mb-1">進入門檻</div><div class="text-sm text-slate-200">${displayValue(layer.entry_barrier)}</div></div>
+                        <div class="rounded-lg border border-slate-800 bg-slate-900/50 p-3"><div class="text-[11px] text-slate-500 mb-1">受惠族群</div><div class="flex flex-wrap gap-2 mt-2">${(layer.beneficiaries || []).map(x => `<span class=\"px-2 py-1 rounded bg-indigo-950/20 border border-indigo-900/30 text-indigo-300 text-xs\">${x}</span>`).join('')}</div></div>
                     </div>
                 </div>
-            `).join('');
+            `}).join('');
         }
 
         function renderTimelinePhases(mapData) {
@@ -1220,10 +1282,20 @@
                 return;
             }
             container.innerHTML = phases.map(item => `
-                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800">
-                    <span class="text-xs font-bold text-emerald-400 block mb-1">${item.phase || ''}</span>
-                    <div class="text-[11px] text-slate-500 mb-2">${item.timeframe || ''}</div>
-                    <p class="text-xs text-slate-400 leading-relaxed mb-3">${item.summary || ''}</p>
+                <div class="bg-slate-950/60 p-4 rounded-lg border border-slate-800 space-y-3">
+                    <div class="flex items-start justify-between gap-3">
+                        <div>
+                            <span class="text-xs font-bold text-emerald-400 block mb-1">${item.phase || ''}</span>
+                            <div class="text-[11px] text-slate-500">${item.timeframe || ''}</div>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-full text-[11px] border border-emerald-800/40 text-emerald-300">${investmentPhaseLabel(item)}</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">${item.summary || ''}</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                        <div class="rounded-lg border border-slate-800 bg-slate-900/50 p-3"><div class="text-[11px] text-slate-500 mb-1">營收意義</div><div class="text-xs text-slate-200 leading-6">${displayValue(item.revenue_meaning)}</div></div>
+                        <div class="rounded-lg border border-slate-800 bg-slate-900/50 p-3"><div class="text-[11px] text-slate-500 mb-1">市場看點</div><div class="text-xs text-slate-200 leading-6">${displayValue(item.expected_market_focus || item.focus)}</div></div>
+                        <div class="rounded-lg border border-slate-800 bg-slate-900/50 p-3"><div class="text-[11px] text-slate-500 mb-1">觀察指標</div><div class="text-xs text-slate-200 leading-6">${displayValue(item.watch_metric)}</div></div>
+                    </div>
                     <div class="flex flex-wrap gap-2">${(item.winners || []).map(x => `<span class="px-2 py-1 rounded bg-emerald-950/20 border border-emerald-900/30 text-emerald-300 text-xs">${x}</span>`).join('')}</div>
                 </div>
             `).join('');
@@ -1350,7 +1422,12 @@
             document.getElementById('modal-stock-sector').textContent = stock.sector;
             document.getElementById('modal-stock-pure').textContent = `★ ${Number(stock.pureLevel).toFixed(1)} / 5.0`;
             document.getElementById('modal-stock-barrier').textContent = `🛡️ ${Number(stock.barrierLevel).toFixed(1)} / 5.0`;
-            document.getElementById('modal-stock-timeframe').textContent = stock.timeframe;
+            document.getElementById('modal-stock-timeframe').textContent = displayValue(stock.commercialization_phase || stock.timeframe, '待補');
+            document.getElementById('modal-stock-ai-exposure').textContent = displayValue(stock.ai_revenue_exposure);
+            document.getElementById('modal-stock-gm-impact').textContent = displayValue(stock.gross_margin_impact);
+            document.getElementById('modal-stock-pricing').textContent = `${pricingPowerLabel(stock.pricing_power)} / ${displayValue(stock.value_capture_score, '待補')}`;
+            document.getElementById('modal-stock-subrisk').textContent = displayValue(stock.substitution_risk);
+            document.getElementById('modal-stock-customer').textContent = stock.sole_supplier ? `獨家供應 / ${displayValue(stock.customer_concentration)}` : displayValue(stock.customer_concentration);
             document.getElementById('modal-stock-role').textContent = stock.role;
             document.getElementById('modal-stock-pros').textContent = stock.pros;
             document.getElementById('modal-stock-cons').textContent = stock.cons;
