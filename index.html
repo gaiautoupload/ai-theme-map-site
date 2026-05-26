@@ -123,7 +123,7 @@
                         </div>
                         <div class="rounded-xl border border-slate-800 bg-slate-950/50 p-3">
                             <div class="text-slate-500 mb-1">優先關注</div>
-                            <div id="home-highlight-stocks" class="font-bold text-emerald-300">--</div>
+                            <div id="home-highlight-stocks" class="flex flex-wrap gap-2"></div>
                         </div>
                     </div>
                 </div>
@@ -391,6 +391,7 @@
     <script>
         let mapsRepository = {};
         let currentMapData = null;
+        let currentMapKey = null;
         let watchlist = [];
 
         function isValidMapData(mapData) {
@@ -447,6 +448,16 @@
             lucide.createIcons();
         }
 
+        function showMap(mapKey) {
+            loadMapWorkspace(mapKey);
+        }
+
+        function openHighlightStock(stockId) {
+            if (!currentMapData || !currentMapData.stocks) return;
+            switchTab('stock-list');
+            openModal(stockId);
+        }
+
         function updateSiteMeta() {
             const metaEl = document.getElementById('site-updated-at');
             const keys = Object.keys(mapsRepository || {});
@@ -461,9 +472,11 @@
                 .map(key => ({ key, map: mapsRepository[key], date: mapsRepository[key]?.updated_at || mapsRepository[key]?.date || '' }))
                 .filter(item => item.date)
                 .sort((a, b) => String(b.date).localeCompare(String(a.date)));
+            const newestFirst = [...datedMaps];
             metaEl.textContent = datedMaps[0]?.date || '尚無資料';
 
-            const topMap = datedMaps[0]?.map || mapsRepository[keys[0]];
+            const topEntry = newestFirst[0] || datedMaps[0] || null;
+            const topMap = topEntry?.map || mapsRepository[keys[0]];
             const highlightTitle = document.getElementById('home-highlight-title');
             const highlightThesis = document.getElementById('home-highlight-thesis');
             const highlightDate = document.getElementById('home-highlight-date');
@@ -477,7 +490,7 @@
                 if (highlightFlow) highlightFlow.textContent = shortenText((topMap.trigger_events || [])[0] || (topMap.heat_drivers || [])[0] || topMap.period || '主線整理中', 28);
                 if (highlightStocks) {
                     const stockPool = (topMap.stocks || []);
-                    const preferred = stockPool
+                    const preferredStocks = stockPool
                         .filter(s => ['strong', 'medium'].includes(linkageBucket(s)) || ['第一圈', '第二圈'].includes(benefitStageText(s)))
                         .sort((a, b) => {
                             const stageRank = x => benefitStageText(x) === '第一圈' ? 0 : benefitStageText(x) === '第二圈' ? 1 : 2;
@@ -486,14 +499,14 @@
                             if (stageRank(a) !== stageRank(b)) return stageRank(a) - stageRank(b);
                             return scoreB - scoreA;
                         })
-                        .slice(0, 3)
-                        .map(s => s.name)
-                        .join(' / ');
-                    highlightStocks.textContent = preferred || stockPool.slice(0, 3).map(s => s.name).join(' / ') || '待補';
+                        .slice(0, 3);
+                    highlightStocks.innerHTML = preferredStocks.length
+                        ? preferredStocks.map(s => `<button onclick="event.stopPropagation(); loadMapWorkspace('${topEntry.key}'); setTimeout(() => openHighlightStock('${s.id}'), 120);" class="rounded-full border border-emerald-700/40 bg-emerald-950/30 px-3 py-1 text-xs font-bold text-emerald-300 hover:border-emerald-500 hover:text-white">${s.name}</button>`).join('')
+                        : '<span class="text-slate-500 text-sm">待補</span>';
                 }
             }
             if (versionTrack) {
-                versionTrack.innerHTML = datedMaps.slice(0, 6).map((item, idx) => `
+                versionTrack.innerHTML = newestFirst.slice(0, 6).map((item, idx) => `
                     <div class="rounded-xl border ${idx === 0 ? 'border-amber-700/40 bg-amber-950/20' : 'border-slate-800 bg-slate-950/40'} px-3 py-2">
                         <div class="flex items-center justify-between gap-3">
                             <div class="min-w-0">
@@ -587,6 +600,7 @@
             const mapData = mapsRepository[mapKey];
             if (!mapData) return;
             currentMapData = mapData;
+            currentMapKey = mapKey;
 
             document.getElementById('panel-home').classList.add('hidden');
             document.getElementById('panel-map-workspace').classList.remove('hidden');
