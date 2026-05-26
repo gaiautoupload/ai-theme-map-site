@@ -691,14 +691,31 @@
             return `${role}｜${timeframe}`;
         }
 
+        function relationText(stock) {
+            return stock?.relation_to_theme || linkageRoleLabel(stock);
+        }
+
+        function benefitStageText(stock) {
+            return stock?.benefit_stage || (stock?.stock_tier === 'core' ? '第一圈' : stock?.stock_tier === 'extended' ? '第二圈' : '第三圈');
+        }
+
+        function linkageText(stock) {
+            return stock?.linkage_strength || linkageStrengthLabel(stock);
+        }
+
+        function linkageDriverText(stock) {
+            return stock?.linkage_driver || buildLinkageReason(stock);
+        }
+
         function renderLinkageSummary(stock) {
-            return `${linkageRoleLabel(stock)}｜${linkageStrengthLabel(stock)}`;
+            return `${relationText(stock)}｜${linkageText(stock)}`;
         }
 
         function renderModalLinkage(stock) {
-            const strength = linkageStrengthLabel(stock);
-            const role = linkageRoleLabel(stock);
-            const reason = buildLinkageReason(stock);
+            const strength = linkageText(stock);
+            const role = relationText(stock);
+            const reason = linkageDriverText(stock);
+            const stage = benefitStageText(stock);
             const tone = linkageBucket(stock) === 'strong'
                 ? 'border-fuchsia-800/50 bg-fuchsia-950/20 text-fuchsia-200'
                 : linkageBucket(stock) === 'medium'
@@ -707,8 +724,9 @@
             return `
                 <div class="rounded-xl border ${tone} p-3 space-y-1.5">
                     <div class="font-semibold">${role} · ${strength}</div>
-                    <div class="leading-5">${reason}</div>
-                    <div class="text-[11px] text-slate-400">與題材連動邏輯：${stock?.pros || stock?.role || '待補充'}</div>
+                    <div class="leading-5">受惠位階：${stage}</div>
+                    <div class="leading-5">連動原因：${reason}</div>
+                    <div class="text-[11px] text-slate-400">與題材連動邏輯：${stock?.relation_note || stock?.pros || stock?.role || '待補充'}</div>
                 </div>
             `;
         }
