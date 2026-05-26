@@ -420,23 +420,42 @@
         }
 
         // 異步載入 vLLM 動態產出的資料庫
+        async function fetchJsonWithFallback(urls) {
+            let lastError = null;
+            for (const url of urls) {
+                try {
+                    const response = await fetch(url, { cache: 'no-store' });
+                    if (!response.ok) throw new Error(`HTTP ${response.status} @ ${url}`);
+                    const data = await response.json();
+                    return { data, url };
+                } catch (err) {
+                    lastError = err;
+                    console.warn('JSON load failed:', url, err);
+                }
+            }
+            throw lastError || new Error('No JSON source available');
+        }
+
         window.onload = async function() {
             try {
-                const response = await fetch('./maps_repo.json', { cache: 'no-store' });
-                if (!response.ok) throw new Error("遠端 HTTP 狀態碼錯誤");
-                const rawRepo = await response.json();
+                const versionStamp = Date.now();
+                const { data: rawRepo, url } = await fetchJsonWithFallback([
+                    `./maps_repo.json?v=${versionStamp}`,
+                    './maps_repo.json',
+                    './maps_repo_v2.json',
+                    './maps_repo_v3.json'
+                ]);
                 mapsRepository = normalizeRepository(rawRepo);
-                console.log("成功加載動態 Wiki 數據庫！主題數：", Object.keys(mapsRepository).length);
+                console.log("成功加載動態 Wiki 數據庫！主題數：", Object.keys(mapsRepository).length, 'source=', url);
             } catch (err) {
                 console.error("讀取動態數據庫失敗，採用備用防錯提示:", err);
-                // 應對本地雙擊開啟產生的 CORS 限制
                 mapsRepository = {
                     "error_local": {
                         title: "資料庫加載失敗 ⚠️",
-                        date: "2026-05-25",
-                        heat: "CORS 限制中",
-                        period: "請確認已透過 Python 啟動本地伺服器",
-                        desc: "偵測不到 maps_repo.json。請確保你在 D:\\map 目錄下執行了 python -m http.server 或是執行過 vLLM.py 生成了實體檔案。",
+                        date: "--",
+                        heat: "資料未載入",
+                        period: "請檢查 GitHub Pages 是否成功同步 maps_repo.json",
+                        desc: "站點沒有成功讀到主資料庫。請確認 publish_site.py 是否已同步 maps_repo.json，或檢查瀏覽器快取。",
                         icon: "alert-triangle",
                         color: "from-red-600 to-orange-500",
                         concepts: [],
