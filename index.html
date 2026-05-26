@@ -398,8 +398,12 @@
             return mapData
                 && typeof mapData === 'object'
                 && typeof mapData.title === 'string'
-                && Array.isArray(mapData.concepts)
-                && Array.isArray(mapData.stocks);
+                && Array.isArray(mapData.stocks)
+                && (
+                    Array.isArray(mapData.concepts)
+                    || Array.isArray(mapData.tech_lessons)
+                    || Array.isArray(mapData.structure_layers)
+                );
         }
 
         function normalizeRepository(rawRepo) {
