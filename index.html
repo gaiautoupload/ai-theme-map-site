@@ -222,6 +222,7 @@
                     <div id="mobile-theme-summary" class="space-y-2"></div>
                     <button id="mobile-theme-detail-toggle" type="button" onclick="toggleMobileThemeDetail()" class="w-full rounded-xl border border-slate-700 bg-slate-900/80 px-4 py-2.5 text-sm font-semibold text-slate-200">看細節</button>
                     <div id="mobile-theme-detail" class="hidden rounded-2xl border border-slate-800 bg-slate-950/60 p-4 text-sm text-slate-300 leading-7"></div>
+                    <div id="representative-stocks-container" class="grid grid-cols-1 gap-3"></div>
                 </div>
                 <div class="grid grid-cols-1 xl:grid-cols-3 gap-4 mobile-overview-compact">
                     <div class="xl:col-span-2 bg-slate-900 border border-slate-800 rounded-xl p-6 space-y-4">
@@ -423,6 +424,52 @@
             return normalized;
         }
 
+        function stockCode(stock) {
+            if (!stock || typeof stock !== 'object') return '--';
+            return stock.ticker || stock.symbol || stock.code || stock.stock_code || '--';
+        }
+
+        function topRepresentativeStocks(mapData, limit = 6) {
+            const pool = Array.isArray(mapData?.stocks) ? mapData.stocks : [];
+            return pool
+                .slice()
+                .sort((a, b) => {
+                    const stageRank = x => benefitStageText(x) === '第一圈' ? 0 : benefitStageText(x) === '第二圈' ? 1 : 2;
+                    const scoreA = (stageRank(a) * -100) + (Number(a?.pureLevel || 0) * 10) + Number(a?.barrierLevel || 0);
+                    const scoreB = (stageRank(b) * -100) + (Number(b?.pureLevel || 0) * 10) + Number(b?.barrierLevel || 0);
+                    return scoreB - scoreA;
+                })
+                .slice(0, limit);
+        }
+
+        function evolutionSummary(mapData) {
+            return [
+                (mapData?.trigger_events || [])[0] || (mapData?.heat_drivers || [])[0] || '市場開始注意這個題材的起點',
+                (mapData?.heat_drivers || [])[1] || (mapData?.capital_flow || [])[0]?.stage || '資金與供應鏈開始擴散',
+                (mapData?.watch_signals || [])[0] || (mapData?.timeline_phases || [])[0]?.focus || '現在最該觀察的驗證訊號'
+            ].filter(Boolean).slice(0, 3);
+        }
+
+        function renderRepresentativeStocks(mapData) {
+            const container = document.getElementById('representative-stocks-container');
+            if (!container) return;
+            const picks = topRepresentativeStocks(mapData, 6);
+            container.innerHTML = picks.length
+                ? picks.map(stock => `
+                    <button onclick="openModal('${stock.id}')" class="text-left rounded-2xl border border-emerald-800/30 bg-emerald-950/20 p-4 hover:border-emerald-600/50 transition">
+                        <div class="flex items-center justify-between gap-3">
+                            <div>
+                                <div class="text-sm font-bold text-emerald-200">${stock.name}</div>
+                                <div class="text-[11px] font-mono text-emerald-400/80">${stockCode(stock)}</div>
+                            </div>
+                            <div class="text-[11px] px-2 py-1 rounded-full border border-emerald-700/40 text-emerald-300">${benefitStageText(stock)}</div>
+                        </div>
+                        <div class="mt-2 text-xs text-slate-300">${stock.role || linkageRoleLabel(stock) || '代表股'}</div>
+                    </button>
+                `).join('')
+                : '<div class="text-slate-500 text-sm">尚無代表股資料</div>';
+        }
+
         // 異步載入 vLLM 動態產出的資料庫
         window.onload = async function() {
             try {
@@ -566,32 +613,24 @@
 
             grid.innerHTML = '';
 
-            const broadened = [];
             keys.forEach(key => {
-                broadened.push({ key, mode: 'main' });
-                const related = mapsRepository[key]?.related_themes || [];
-                related.slice(0, 2).forEach((theme, idx) => {
-                    broadened.push({ key, mode: 'related', relatedTheme: theme, relatedIndex: idx });
-                });
-            });
-
-            broadened.forEach(entry => {
-                const map = mapsRepository[entry.key];
+                const map = mapsRepository[key];
                 if (!map) return;
-                const isRelated = entry.mode === 'related';
                 const card = document.createElement('div');
-                card.className = `bg-slate-900 border ${isRelated ? 'border-cyan-900/40' : 'border-slate-800'} rounded-2xl p-5 hover:border-slate-700 transition cursor-pointer flex flex-col justify-between shadow-lg hover:shadow-indigo-950/20`;
-                card.onclick = () => loadMapWorkspace(entry.key);
-                const title = isRelated ? `延伸主題：${entry.relatedTheme}` : map.title;
-                const subtitle = isRelated ? `源自主題：${map.title}` : `📅 發布時程: ${map.date}`;
-                const summary = isRelated ? `從「${map.title}」延伸追蹤的關聯題材，方便會員擴大觀察範圍。` : (map.desc || '');
-                const thesis = isRelated ? shortenText((map.watch_signals || [])[0] || (map.trigger_events || [])[0] || map.thesis || '', 52) : (map.thesis || '');
-                const tagText = isRelated ? `${entry.relatedTheme} · 延伸觀察` : (map.theme_tags || []).slice(0,3).join(' · ');
+                card.className = `bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-slate-700 transition cursor-pointer flex flex-col justify-between shadow-lg hover:shadow-indigo-950/20`;
+                card.onclick = () => loadMapWorkspace(key);
+                const title = map.title;
+                const subtitle = `📅 發布時程: ${map.date}`;
+                const summary = map.desc || '';
+                const thesis = map.thesis || '';
+                const tagText = (map.theme_tags || []).slice(0,3).join(' · ');
+                const evo = evolutionSummary(map);
+                const reps = topRepresentativeStocks(map, 3);
                 card.innerHTML = `
                     <div>
                         <div class="flex items-center gap-3 mb-3">
-                            <div class="bg-gradient-to-tr ${isRelated ? 'from-cyan-700 to-blue-600' : (map.color || 'from-indigo-500 to-cyan-500')} p-2 rounded-xl text-white shadow-md">
-                                <i data-lucide="${isRelated ? 'sparkles' : (map.icon || 'layers')}" class="w-5 h-5"></i>
+                            <div class="bg-gradient-to-tr ${(map.color || 'from-indigo-500 to-cyan-500')} p-2 rounded-xl text-white shadow-md">
+                                <i data-lucide="${map.icon || 'layers'}" class="w-5 h-5"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-slate-100 text-sm line-clamp-2">${title}</h4>
@@ -599,19 +638,23 @@
                             </div>
                         </div>
                         <p class="text-xs text-slate-400 leading-relaxed line-clamp-3 mb-3 h-15">${summary}</p>
-                        <p class="text-[11px] text-cyan-300/90 leading-relaxed line-clamp-2 mb-4">${thesis}</p>
+                        <p class="text-[11px] text-cyan-300/90 leading-relaxed line-clamp-2 mb-3">${thesis}</p>
+                        <div class="rounded-xl border border-slate-800/70 bg-slate-950/40 p-3 mb-3">
+                            <div class="text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-2">題材演變</div>
+                            <div class="space-y-1">${evo.map(item => `<div class='text-[11px] text-slate-300'>• ${shortenText(item, 44)}</div>`).join('')}</div>
+                        </div>
                     </div>
                     <div class="border-t border-slate-800/60 pt-3 space-y-2 text-[11px]">
                         <div class="flex items-center justify-between gap-2">
-                            <span class="text-red-400 bg-red-950/40 px-2 py-0.5 rounded-md border border-red-900/40 font-medium">${isRelated ? '延伸主題' : map.heat}</span>
-                            <span class="text-amber-300 bg-amber-950/40 px-2 py-0.5 rounded-md border border-amber-900/40 font-medium">${isRelated ? '關聯追蹤' : `火勢 ${map.heat_score ?? '--'}`}</span>
+                            <span class="text-red-400 bg-red-950/40 px-2 py-0.5 rounded-md border border-red-900/40 font-medium">${map.heat}</span>
+                            <span class="text-amber-300 bg-amber-950/40 px-2 py-0.5 rounded-md border border-amber-900/40 font-medium">火勢 ${map.heat_score ?? '--'}</span>
                         </div>
                         <div class="text-slate-500 line-clamp-2">${tagText}</div>
                         <div class="rounded-xl border border-emerald-800/30 bg-emerald-950/20 px-3 py-2">
-                            <div class="text-[10px] uppercase tracking-[0.2em] text-emerald-400/80 mb-1">優先關注</div>
-                            <div class="text-xs font-bold text-emerald-300 line-clamp-2">${(map.stocks || []).slice(0, 3).map(s => s.name).join(' / ') || '待補'}</div>
+                            <div class="text-[10px] uppercase tracking-[0.2em] text-emerald-400/80 mb-1">代表股</div>
+                            <div class="text-xs font-bold text-emerald-300 line-clamp-2">${reps.map(s => `${s.name}(${stockCode(s)})`).join(' / ') || '待補'}</div>
                         </div>
-                        <span class="text-indigo-400 font-semibold hover:underline flex items-center gap-1">探索核心架構 <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
+                        <span class="text-indigo-400 font-semibold hover:underline flex items-center gap-1">進入主題頁 <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
                     </div>
                 `;
                 grid.appendChild(card);
@@ -669,17 +712,18 @@
             }
             if (summaryEl) {
                 const summaryLines = [
-                    mapData.thesis || mapData.title || '尚無摘要',
-                    (mapData.trigger_events || [])[0] || (mapData.heat_drivers || [])[0] || '尚無驅動描述',
-                    (mapData.watch_signals || [])[0] || (mapData.related_themes || [])[0] || '尚無觀察重點'
+                    `題材：${mapData.title || '尚無主題名稱'}`,
+                    `演變：${((mapData.trigger_events || [])[0] || (mapData.heat_drivers || [])[0] || '尚無演變說明')}`,
+                    `代表股：${topRepresentativeStocks(mapData, 3).map(s => `${s.name}(${stockCode(s)})`).join(' / ') || '尚無代表股'}`
                 ].filter(Boolean).slice(0, 3);
-                summaryEl.innerHTML = summaryLines.map(line => `<div class="rounded-xl border border-slate-800 bg-slate-950/50 px-3 py-2 text-xs text-slate-200 leading-5">${shortenText(line, 60)}</div>`).join('');
+                summaryEl.innerHTML = summaryLines.map(line => `<div class="rounded-xl border border-slate-800 bg-slate-950/50 px-3 py-2 text-xs text-slate-200 leading-5">${shortenText(line, 90)}</div>`).join('');
             }
             if (detailEl) {
                 detailEl.innerHTML = `
                     <div class="space-y-3">
-                        <div><div class="text-[11px] text-slate-500 mb-1">主題 Thesis</div><div>${mapData.thesis || mapData.title || '尚無內容'}</div></div>
-                        <div><div class="text-[11px] text-slate-500 mb-1">深度描述</div><div>${mapData.long_description || mapData.description || '尚無細節描述'}</div></div>
+                        <div><div class="text-[11px] text-slate-500 mb-1">這是什麼題材</div><div>${mapData.thesis || mapData.title || '尚無內容'}</div></div>
+                        <div><div class="text-[11px] text-slate-500 mb-1">它如何演變</div><div>${evolutionSummary(mapData).join(' → ')}</div></div>
+                        <div><div class="text-[11px] text-slate-500 mb-1">代表股票</div><div>${topRepresentativeStocks(mapData, 5).map(s => `${s.name}(${stockCode(s)})`).join(' / ') || '尚無代表股'}</div></div>
                     </div>
                 `;
                 detailEl.classList.add('hidden');
@@ -719,6 +763,7 @@
             renderStructureLayers(mapData);
             renderTimelinePhases(mapData);
             renderCapitalFlow(mapData);
+            renderRepresentativeStocks(mapData);
 
             initWorkspaceModules();
             switchTab('overview');
@@ -759,8 +804,8 @@
 
             // 填入 PK 選單
             currentMapData.stocks.forEach((stock, idx) => {
-                let optA = new Option(`${stock.name} (${stock.code})`, stock.id);
-                let optB = new Option(`${stock.name} (${stock.code})`, stock.id);
+                let optA = new Option(`${stock.name} (${stockCode(stock)})`, stock.id);
+                let optB = new Option(`${stock.name} (${stockCode(stock)})`, stock.id);
                 if(idx === 0) optA.selected = true;
                 if(idx === 1 || (idx === 0 && currentMapData.stocks.length === 1)) optB.selected = true; 
                 selectA.add(optA); selectB.add(optB);
@@ -908,7 +953,7 @@
                         <div class="min-w-0 flex-1">
                             <div class="flex items-start justify-between gap-2">
                                 <div class="min-w-0">
-                                    <div class="truncate text-sm font-bold text-slate-100">${stock.name} <span class="text-[11px] text-indigo-400 font-mono">${stock.code}</span></div>
+                                    <div class="truncate text-sm font-bold text-slate-100">${stock.name} <span class="text-[11px] text-indigo-400 font-mono">${stockCode(stock)}</span></div>
                                     <div class="mt-0.5 truncate text-[11px] text-slate-500">${renderLinkageSummary(stock)}</div>
                                 </div>
                                 <div class="shrink-0 text-right">
@@ -931,7 +976,7 @@
             if (!currentMapData || !currentMapData.stocks) return;
 
             const filtered = currentMapData.stocks.filter(stock => {
-                const targetText = (stock.name + stock.code + stock.role + stock.sector).toLowerCase();
+                const targetText = (stock.name + stockCode(stock) + stock.role + stock.sector).toLowerCase();
                 const matchText = targetText.includes(filterText.toLowerCase());
                 const matchSector = filterSectorId === 'all' || stock.sectorId === filterSectorId;
                 return matchText && matchSector;
@@ -953,7 +998,7 @@
                             ★
                         </button>
                     </td>
-                    <td class="py-3.5 px-4 font-bold text-slate-100">${stock.name} <span class="text-xs text-indigo-400 font-mono block sm:inline">[${stock.code}]</span></td>
+                    <td class="py-3.5 px-4 font-bold text-slate-100">${stock.name} <span class="text-xs text-indigo-400 font-mono block sm:inline">[${stockCode(stock)}]</span></td>
                     <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded bg-slate-800 text-xs text-slate-300 border border-slate-700/40">${stock.sector}</span></td>
                     <td class="py-3.5 px-4 text-slate-300 text-xs max-w-xs">
                         <div class="truncate">${stock.role}</div>
@@ -1140,7 +1185,7 @@
                     <div>
                         <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-2">
                             <div>
-                                <h4 class="font-bold text-lg text-slate-100">${stock.name} <span class="text-xs font-mono text-indigo-400">[${stock.code}]</span></h4>
+                                <h4 class="font-bold text-lg text-slate-100">${stock.name} <span class="text-xs font-mono text-indigo-400">[${stockCode(stock)}]</span></h4>
                                 <span class="text-[10px] text-slate-400 bg-slate-950 px-2 py-0.5 rounded border border-slate-800 mt-1 inline-block">${stock.sector}</span>
                             </div>
                             <div class="text-right">
@@ -1197,7 +1242,7 @@
                 const div = document.createElement('div');
                 div.className = "flex items-center justify-between bg-slate-950/60 p-2 border border-slate-800/60 rounded-lg text-xs";
                 div.innerHTML = `
-                    <span class="font-medium text-slate-200 cursor-pointer hover:text-indigo-400" onclick="openModal('${stock.id}')">${stock.name} <span class="text-[10px] text-slate-500 font-mono">(${stock.code})</span></span>
+                    <span class="font-medium text-slate-200 cursor-pointer hover:text-indigo-400" onclick="openModal('${stock.id}')">${stock.name} <span class="text-[10px] text-slate-500 font-mono">(${stockCode(stock)})</span></span>
                     <button onclick="toggleWatchlist('${stock.id}')" class="text-red-400/80 hover:text-red-400 transition"><i data-lucide="trash-2" class="w-3.5 h-3.5"></i></button>
                 `;
                 container.appendChild(div);
@@ -1210,7 +1255,7 @@
             const stock = currentMapData.stocks.find(s => s.id === stockId);
             if(!stock) return;
 
-            document.getElementById('modal-stock-name').innerHTML = `${stock.name} <span class="text-sm text-slate-400 font-mono">${stock.code}</span>`;
+            document.getElementById('modal-stock-name').innerHTML = `${stock.name} <span class="text-sm text-slate-400 font-mono">${stockCode(stock)}</span>`;
             document.getElementById('modal-stock-sector').textContent = stock.sector;
             document.getElementById('modal-stock-pure').textContent = `★ ${Number(stock.pureLevel).toFixed(1)} / 5.0`;
             document.getElementById('modal-stock-barrier').textContent = `🛡️ ${Number(stock.barrierLevel).toFixed(1)} / 5.0`;
