@@ -25,9 +25,12 @@
         ::-webkit-scrollbar-track { background: #0b0f19; }
         ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
         .mobile-stock-card { display: none; }
+        .mobile-theme-hero { display: none; }
         @media (max-width: 767px) {
             .desktop-stock-table { display: none; }
             .mobile-stock-card { display: block; }
+            .mobile-theme-hero { display: block; }
+            .mobile-overview-compact { display: none; }
             .mobile-modal-sheet {
                 width: 100%;
                 max-width: 100%;
@@ -156,7 +159,36 @@
 
         <main class="lg:col-span-3 space-y-6">
             <section id="sec-overview" class="tab-content space-y-6">
-                <div class="grid grid-cols-1 xl:grid-cols-3 gap-4">
+                <div id="mobile-theme-hero" class="mobile-theme-hero bg-gradient-to-br from-slate-900 via-slate-950 to-indigo-950 border border-slate-800 rounded-2xl p-5 shadow-xl space-y-4">
+                    <div class="flex items-start justify-between gap-3">
+                        <div>
+                            <div class="text-[11px] uppercase tracking-[0.25em] text-slate-500">Theme Focus</div>
+                            <div id="mobile-theme-title" class="mt-1 text-lg font-bold text-white leading-snug"></div>
+                        </div>
+                        <div class="shrink-0">
+                            <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="27" cy="27" r="26" stroke="#334155" stroke-width="2"/>
+                                <path d="M27 9L31.8 21.2L45 27L31.8 32.8L27 45L22.2 32.8L9 27L22.2 21.2L27 9Z" fill="#22d3ee" fill-opacity="0.22" stroke="#22d3ee" stroke-width="2"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2">
+                        <div class="rounded-xl border border-slate-800 bg-slate-950/70 p-3">
+                            <div class="text-[10px] text-slate-500">熱度</div>
+                            <div id="mobile-theme-heat" class="mt-1 text-sm font-bold text-red-300"></div>
+                        </div>
+                        <div class="rounded-xl border border-slate-800 bg-slate-950/70 p-3">
+                            <div class="text-[10px] text-slate-500">分數</div>
+                            <div id="mobile-theme-score" class="mt-1 text-sm font-bold text-amber-300"></div>
+                        </div>
+                        <div class="rounded-xl border border-slate-800 bg-slate-950/70 p-3">
+                            <div class="text-[10px] text-slate-500">階段</div>
+                            <div id="mobile-theme-period" class="mt-1 text-sm font-bold text-indigo-300"></div>
+                        </div>
+                    </div>
+                    <div id="mobile-theme-signals" class="grid grid-cols-1 gap-2"></div>
+                </div>
+                <div class="grid grid-cols-1 xl:grid-cols-3 gap-4 mobile-overview-compact">
                     <div class="xl:col-span-2 bg-slate-900 border border-slate-800 rounded-xl p-6 space-y-4">
                         <div>
                             <div class="text-[11px] text-slate-500 mb-1">主題 Thesis</div>
@@ -274,7 +306,7 @@
                     </div>
                 </div>
 
-                <div id="stock-mobile-list" class="mobile-stock-card space-y-3"></div>
+                <div id="stock-mobile-list" class="mobile-stock-card space-y-2"></div>
             </section>
 
             <section id="sec-comparison" class="tab-content hidden space-y-6">
@@ -472,6 +504,10 @@
             document.getElementById('map-heat-hero').textContent = mapData.heat || '未分類';
             document.getElementById('map-heat-score-hero').textContent = `${mapData.heat_score ?? '--'} / 100`;
             document.getElementById('map-period-hero').textContent = mapData.period || '觀察期';
+            document.getElementById('mobile-theme-title').textContent = mapData.title || '未命名主題';
+            document.getElementById('mobile-theme-heat').textContent = mapData.heat || '未分類';
+            document.getElementById('mobile-theme-score').textContent = `${mapData.heat_score ?? '--'}`;
+            document.getElementById('mobile-theme-period').textContent = mapData.period || '觀察期';
 
             const longDescEl = document.getElementById('map-long-desc');
             longDescEl.innerHTML = `
@@ -616,30 +652,30 @@
                 return;
             }
             filtered.forEach(stock => {
-                const card = document.createElement('div');
-                card.className = 'rounded-xl border border-slate-800 bg-slate-900 p-4 shadow-lg';
-                card.innerHTML = `
-                    <div class="flex items-start justify-between gap-3">
-                        <div>
-                            <div class="text-base font-bold text-slate-100">${stock.name}</div>
-                            <div class="text-xs text-slate-400 font-mono">${stock.code} · ${stock.market || ''}</div>
+                const row = document.createElement('button');
+                row.type = 'button';
+                row.className = 'w-full rounded-xl border border-slate-800 bg-slate-900 px-3 py-3 text-left shadow-sm active:scale-[0.99] transition';
+                row.setAttribute('onclick', `openModal('${stock.id}')`);
+                row.innerHTML = `
+                    <div class="flex items-start gap-3">
+                        <button onclick="event.stopPropagation(); toggleWatchlist('${stock.id}')" class="mt-0.5 w-6 shrink-0 text-sm ${watchlist.includes(stock.id) ? 'text-amber-400' : 'text-slate-600'}">★</button>
+                        <div class="min-w-0 flex-1">
+                            <div class="flex items-start justify-between gap-2">
+                                <div class="min-w-0">
+                                    <div class="truncate text-sm font-bold text-slate-100">${stock.name} <span class="text-[11px] text-indigo-400 font-mono">${stock.code}</span></div>
+                                    <div class="mt-0.5 truncate text-[11px] text-slate-500">${stock.sector || '概念股'} ｜ ${stockTierLabel(stock.stock_tier)}</div>
+                                </div>
+                                <div class="shrink-0 text-right">
+                                    <div class="text-[11px] font-bold text-amber-300">${Number(stock.pureLevel).toFixed(1)}</div>
+                                    <div class="text-[10px] text-slate-500">純度</div>
+                                </div>
+                            </div>
+                            <div class="mt-1 truncate text-[12px] text-slate-300">${stock.role || ''}</div>
+                            <div class="mt-1 truncate text-[11px] text-slate-500">${stripHtml(summarizeStockSources(stock))}</div>
                         </div>
-                        <button onclick="toggleWatchlist('${stock.id}')" class="text-slate-400 hover:text-white transition">${watchlist.includes(stock.id) ? '★' : '☆'}</button>
                     </div>
-                    <div class="mt-2 flex flex-wrap gap-2 text-[11px]">
-                        <span class="px-2 py-1 rounded bg-indigo-950 border border-indigo-800 text-indigo-300">${stock.sector || '概念股'}</span>
-                        <span class="px-2 py-1 rounded bg-emerald-950/40 border border-emerald-900/40 text-emerald-300">${stockTierLabel(stock.stock_tier)}</span>
-                        <span class="px-2 py-1 rounded bg-cyan-950/40 border border-cyan-900/40 text-cyan-300">${evidenceTypeLabel(stock.evidence_type)}</span>
-                    </div>
-                    <div class="mt-3 text-sm text-slate-300 leading-6">${stock.role || ''}</div>
-                    <div class="mt-2 text-xs text-slate-500">${summarizeStockSources(stock)}</div>
-                    <div class="mt-3 grid grid-cols-2 gap-2 text-xs">
-                        <div class="rounded-lg border border-slate-800 bg-slate-950/60 p-3 text-amber-300">純度 ${Number(stock.pureLevel).toFixed(1)}</div>
-                        <div class="rounded-lg border border-slate-800 bg-slate-950/60 p-3 text-emerald-300">壁壘 ${Number(stock.barrierLevel).toFixed(1)}</div>
-                    </div>
-                    <button onclick="openModal('${stock.id}')" class="mt-3 w-full rounded-lg bg-cyan-600/90 py-2.5 text-sm font-semibold text-white">查看來源與詳細分析</button>
                 `;
-                container.appendChild(card);
+                container.appendChild(row);
             });
         }
 
@@ -726,6 +762,12 @@
             container.innerHTML = items.map(item => `<div class="text-xs border rounded-lg px-3 py-2 ${toneClass[tone] || toneClass.slate}">${item}</div>`).join('');
         }
 
+        function stripHtml(input) {
+            const div = document.createElement('div');
+            div.innerHTML = input || '';
+            return (div.textContent || div.innerText || '').replace(/\s+/g, ' ').trim();
+        }
+
         function renderMetaPanels(mapData) {
             const tags = document.getElementById('theme-tags-container');
             if (tags) {
@@ -735,6 +777,16 @@
             }
             renderBulletList('trigger-events-container', mapData.trigger_events || [], '尚無觸發事件', 'amber');
             renderBulletList('watch-signals-container', mapData.watch_signals || [], '尚無觀察訊號', 'emerald');
+            const mobileSignals = document.getElementById('mobile-theme-signals');
+            if (mobileSignals) {
+                const items = [
+                    ...(mapData.trigger_events || []).slice(0, 2).map(x => ({ tone: 'amber', text: x })),
+                    ...(mapData.watch_signals || []).slice(0, 2).map(x => ({ tone: 'emerald', text: x }))
+                ].slice(0, 4);
+                mobileSignals.innerHTML = items.length
+                    ? items.map(item => `<div class="rounded-xl border ${item.tone === 'amber' ? 'border-amber-900/40 bg-amber-950/20 text-amber-200' : 'border-emerald-900/40 bg-emerald-950/20 text-emerald-200'} px-3 py-2 text-xs leading-5">${item.text}</div>`).join('')
+                    : `<div class="rounded-xl border border-slate-800 bg-slate-950/50 px-3 py-2 text-xs text-slate-500">暫無關鍵訊號</div>`;
+            }
             renderBulletList('heat-drivers-container', mapData.heat_drivers || [], '尚無火勢驅動資料', 'red');
             renderBulletList('risks-container', mapData.risks || [], '尚無風險提示', 'slate');
 
