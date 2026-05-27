@@ -381,6 +381,13 @@
                 </div>
                 <button onclick="closeModal()" class="text-slate-400 hover:text-white transition"><i data-lucide="x" class="w-5 h-5"></i></button>
             </div>
+            <div class="flex flex-wrap items-center gap-2 rounded-xl border border-slate-800/60 bg-slate-950 p-3">
+                <button id="modal-watchlist-btn" onclick="toggleWatchlistFromModal()" class="inline-flex items-center gap-2 rounded-lg border border-indigo-800 bg-indigo-950/40 px-3 py-2 text-sm font-semibold text-indigo-300 hover:bg-indigo-950/70 transition">
+                    <i data-lucide="bookmark-plus" class="w-4 h-4"></i>
+                    <span id="modal-watchlist-btn-text">加入我的追蹤名單</span>
+                </button>
+                <span class="text-[11px] text-slate-500">把這檔先收進右側追蹤清單，之後再回來看。</span>
+            </div>
             <div class="grid grid-cols-2 gap-4 bg-slate-950 p-4 rounded-xl border border-slate-800/60 text-sm">
                 <div><span class="text-slate-400 block text-xs">題材純度分數</span><span id="modal-stock-pure" class="text-amber-400 font-bold">★ -</span></div>
                 <div><span class="text-slate-400 block text-xs">核心技術壁壘</span><span id="modal-stock-barrier" class="text-emerald-400 font-bold">🛡️ -</span></div>
@@ -412,6 +419,7 @@
         let mapsRepository = {};
         let currentMapData = null;
         let currentMapKey = null;
+        let currentModalStockId = null;
         const WATCHLIST_STORAGE_KEY = 'ai_theme_watchlist_v1';
         let watchlist = [];
 
@@ -517,7 +525,7 @@
             try {
                 const versionStamp = Date.now();
                 const versionedMapCandidates = [
-                    './maps_repo_20260527_084135.json',
+                    './maps_repo_20260527_084711.json',
                     './maps_repo.json',
                     './maps_repo_v4.json',
                     './maps_repo_v3.json',
@@ -997,6 +1005,16 @@
             }).join('');
         }
 
+        function renderWatchlistAction(stock) {
+            const watched = watchlist.includes(stock.id);
+            return `
+                <button onclick="event.stopPropagation(); toggleWatchlist('${stock.id}')" class="inline-flex items-center justify-center gap-1 rounded-md border px-2.5 py-1.5 text-[11px] font-semibold transition ${watched ? 'border-amber-700/60 bg-amber-950/30 text-amber-300 hover:bg-amber-950/50' : 'border-slate-700 bg-slate-950/80 text-slate-300 hover:border-indigo-700 hover:text-indigo-300'}">
+                    <i data-lucide="${watched ? 'bookmark-check' : 'bookmark-plus'}" class="w-3.5 h-3.5"></i>
+                    <span>${watched ? '已追蹤' : '加入追蹤'}</span>
+                </button>
+            `;
+        }
+
         function renderMobileStockCards(filtered) {
             const container = document.getElementById('stock-mobile-list');
             if (!container) return;
@@ -1011,8 +1029,7 @@
                 row.className = 'w-full rounded-xl border border-slate-800 bg-slate-900 px-3 py-3 text-left shadow-sm active:scale-[0.99] transition';
                 row.setAttribute('onclick', `openModal('${stock.id}')`);
                 row.innerHTML = `
-                    <div class="flex items-start gap-3">
-                        <button onclick="event.stopPropagation(); toggleWatchlist('${stock.id}')" class="mt-0.5 w-6 shrink-0 text-sm ${watchlist.includes(stock.id) ? 'text-amber-400' : 'text-slate-600'}">★</button>
+                    <div class="flex items-start justify-between gap-3">
                         <div class="min-w-0 flex-1">
                             <div class="flex items-start justify-between gap-2">
                                 <div class="min-w-0">
@@ -1026,11 +1043,13 @@
                             </div>
                             <div class="mt-1 truncate text-[11px] text-slate-300">${shortenText(stock.role || stock.sector || '概念股', 24)}</div>
                             <div class="mt-1 truncate text-[11px] text-slate-500">${shortenText(stripHtml(summarizeStockSources(stock)) || stockTierLabel(stock.stock_tier), 28)}</div>
+                            <div class="mt-3">${renderWatchlistAction(stock)}</div>
                         </div>
                     </div>
                 `;
                 container.appendChild(row);
             });
+            lucide.createIcons();
         }
 
         function getExpandedStocks(stocks = []) {
@@ -1109,9 +1128,7 @@
                 tr.className = "hover:bg-slate-800/40 transition border-b border-slate-800/60";
                 tr.innerHTML = `
                     <td class="py-3.5 px-4 text-center">
-                        <button onclick="toggleWatchlist('${stock.id}')" class="transition ${isWatched ? 'text-amber-400 scale-110' : 'text-slate-600 hover:text-amber-400'}">
-                            ★
-                        </button>
+                        ${renderWatchlistAction(stock)}
                     </td>
                     <td class="py-3.5 px-4 font-bold text-slate-100">${stock.name} <span class="text-xs text-indigo-400 font-mono block sm:inline">[${stock.code}]</span></td>
                     <td class="py-3.5 px-4"><span class="px-2 py-0.5 rounded bg-slate-800 text-xs text-slate-300 border border-slate-700/40">${stock.sector}</span></td>
@@ -1393,21 +1410,31 @@
         function renderWatchlist() {
             const container = document.getElementById('watchlist-container');
             container.innerHTML = '';
-            if(watchlist.length === 0) {
-                container.innerHTML = `<p class="text-[11px] text-slate-500 text-center py-2">目前沒有追蹤個股</p>`;
-                return;
-            }
             const stockPool = getStockPool();
             watchlist = watchlist.filter(id => stockPool.some(s => s.id === id));
             document.getElementById('watchlist-count').textContent = watchlist.length;
+            if(watchlist.length === 0) {
+                container.innerHTML = `
+                    <div class="rounded-lg border border-dashed border-slate-700/70 bg-slate-950/40 p-3 text-center">
+                        <div class="text-[11px] text-slate-400 font-semibold">還沒有追蹤股票</div>
+                        <div class="mt-1 text-[11px] text-slate-500 leading-relaxed">到概念股列表或股票詳細頁，按「加入追蹤」就會出現在這裡。</div>
+                    </div>`;
+                return;
+            }
             watchlist.forEach(id => {
                 const stock = stockPool.find(s => s.id === id);
                 if(!stock) return;
                 const div = document.createElement('div');
-                div.className = "flex items-center justify-between bg-slate-950/60 p-2 border border-slate-800/60 rounded-lg text-xs";
+                div.className = "bg-slate-950/60 p-3 border border-slate-800/60 rounded-lg text-xs space-y-2";
                 div.innerHTML = `
-                    <span class="font-medium text-slate-200 cursor-pointer hover:text-indigo-400" onclick="openModal('${stock.id}')">${stock.name} <span class="text-[10px] text-slate-500 font-mono">(${stock.code})</span></span>
-                    <button onclick="toggleWatchlist('${stock.id}')" class="text-red-400/80 hover:text-red-400 transition"><i data-lucide="trash-2" class="w-3.5 h-3.5"></i></button>
+                    <div class="flex items-start justify-between gap-2">
+                        <div class="min-w-0">
+                            <button onclick="openModal('${stock.id}')" class="text-left font-medium text-slate-200 hover:text-indigo-400 transition">${stock.name} <span class="text-[10px] text-slate-500 font-mono">(${stock.code})</span></button>
+                            <div class="mt-1 text-[11px] text-slate-500">${stock.sector || '未分類'} ｜ ${stockTierLabel(stock.stock_tier)}</div>
+                        </div>
+                        <button onclick="toggleWatchlist('${stock.id}')" class="text-red-400/80 hover:text-red-400 transition"><i data-lucide="trash-2" class="w-3.5 h-3.5"></i></button>
+                    </div>
+                    <div class="text-[11px] text-slate-400 leading-relaxed">${shortenText(stock.role || stock.pros || '待補追蹤理由', 42)}</div>
                 `;
                 container.appendChild(div);
             });
@@ -1415,10 +1442,27 @@
         }
 
         // Modal 控制
+        function updateModalWatchlistButton(stockId) {
+            const btn = document.getElementById('modal-watchlist-btn');
+            const text = document.getElementById('modal-watchlist-btn-text');
+            if (!btn || !text) return;
+            const watched = watchlist.includes(stockId);
+            btn.className = `inline-flex items-center gap-2 rounded-lg border px-3 py-2 text-sm font-semibold transition ${watched ? 'border-amber-700 bg-amber-950/40 text-amber-300 hover:bg-amber-950/60' : 'border-indigo-800 bg-indigo-950/40 text-indigo-300 hover:bg-indigo-950/70'}`;
+            btn.innerHTML = `${watched ? '<i data-lucide="bookmark-check" class="w-4 h-4"></i>' : '<i data-lucide="bookmark-plus" class="w-4 h-4"></i>'}<span id="modal-watchlist-btn-text">${watched ? '已加入追蹤名單' : '加入我的追蹤名單'}</span>`;
+        }
+
+        function toggleWatchlistFromModal() {
+            if (!currentModalStockId) return;
+            toggleWatchlist(currentModalStockId);
+            updateModalWatchlistButton(currentModalStockId);
+            lucide.createIcons();
+        }
+
         function openModal(stockId) {
             const stockPool = getStockPool();
             const stock = stockPool.find(s => s.id === stockId);
             if(!stock) return;
+            currentModalStockId = stock.id;
 
             document.getElementById('modal-stock-name').innerHTML = `${stock.name} <span class="text-sm text-slate-400 font-mono">${stock.code}</span>`;
             document.getElementById('modal-stock-sector').textContent = stock.sector;
@@ -1439,11 +1483,13 @@
             document.getElementById('modal-stock-sources').innerHTML = renderModalSources(stock);
             document.getElementById('modal-stock-desc').textContent = stock.desc;
 
+            updateModalWatchlistButton(stock.id);
             document.getElementById('stock-modal').classList.remove('hidden');
             lucide.createIcons();
         }
 
         function closeModal() {
+            currentModalStockId = null;
             document.getElementById('stock-modal').classList.add('hidden');
         }
 
