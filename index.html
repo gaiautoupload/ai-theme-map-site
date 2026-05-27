@@ -486,7 +486,7 @@
             try {
                 const versionStamp = Date.now();
                 const versionedMapCandidates = [
-                    './maps_repo_20260527_014604.json',
+                    './maps_repo_20260527_083647.json',
                     './maps_repo.json',
                     './maps_repo_v4.json',
                     './maps_repo_v3.json',
@@ -522,6 +522,8 @@
 
         function showMap(mapKey) {
             loadMapWorkspace(mapKey);
+            const workspace = document.getElementById('panel-map-workspace');
+            if (workspace) workspace.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
         function openHighlightStock(stockId) {
@@ -649,15 +651,15 @@
                         </div>
                         <div class="mb-3 rounded-xl border border-cyan-900/30 bg-cyan-950/15 px-3 py-3">
                             <div class="text-[10px] uppercase tracking-[0.2em] text-cyan-400/80 mb-1">破題</div>
-                            <p class="text-xs text-cyan-200 leading-relaxed line-clamp-3">${opening}</p>
+                            <p class="text-xs text-cyan-200 leading-relaxed">${opening}</p>
                         </div>
                         <div class="grid grid-cols-2 gap-2 mb-3 text-[11px]">
-                            <div class="rounded-xl border border-emerald-900/30 bg-emerald-950/15 px-3 py-2"><div class="text-slate-500 mb-1">TAM</div><div class="font-bold text-emerald-300 line-clamp-2">${tamText}</div></div>
-                            <div class="rounded-xl border border-cyan-900/30 bg-cyan-950/15 px-3 py-2"><div class="text-slate-500 mb-1">CAGR</div><div class="font-bold text-cyan-300 line-clamp-2">${cagrText}</div></div>
-                            <div class="rounded-xl border border-amber-900/30 bg-amber-950/15 px-3 py-2"><div class="text-slate-500 mb-1">題材階段</div><div class="font-bold text-amber-300 line-clamp-2">${stageText}</div></div>
-                            <div class="rounded-xl border border-fuchsia-900/30 bg-fuchsia-950/15 px-3 py-2"><div class="text-slate-500 mb-1">誰賺最多</div><div class="font-bold text-fuchsia-300 line-clamp-2">${valueCaptureText}</div></div>
+                            <div class="rounded-xl border border-emerald-900/30 bg-emerald-950/15 px-3 py-2"><div class="text-slate-500 mb-1">TAM</div><div class="font-bold text-emerald-300">${tamText}</div></div>
+                            <div class="rounded-xl border border-cyan-900/30 bg-cyan-950/15 px-3 py-2"><div class="text-slate-500 mb-1">CAGR</div><div class="font-bold text-cyan-300">${cagrText}</div></div>
+                            <div class="rounded-xl border border-amber-900/30 bg-amber-950/15 px-3 py-2"><div class="text-slate-500 mb-1">題材階段</div><div class="font-bold text-amber-300">${stageText}</div></div>
+                            <div class="rounded-xl border border-fuchsia-900/30 bg-fuchsia-950/15 px-3 py-2"><div class="text-slate-500 mb-1">誰賺最多</div><div class="font-bold text-fuchsia-300">${valueCaptureText}</div></div>
                         </div>
-                        <p class="text-xs text-slate-400 leading-relaxed line-clamp-3 mb-3 h-15">${summary || '尚無摘要'}</p>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-3">${summary || '尚無摘要'}</p>
                     </div>
                     <div class="border-t border-slate-800/60 pt-3 space-y-2 text-[11px]">
                         <div class="flex items-center justify-between gap-2">
@@ -667,13 +669,13 @@
                         <div class="text-slate-500 line-clamp-2">${tagText || '尚無標籤'}</div>
                         <div class="rounded-xl border border-emerald-800/30 bg-emerald-950/20 px-3 py-2">
                             <div class="text-[10px] uppercase tracking-[0.2em] text-emerald-400/80 mb-1">優先關注</div>
-                            <div class="text-xs font-bold text-emerald-300 line-clamp-2">${(map.stocks || []).slice(0, 3).map(s => s.name).join(' / ') || '待補'}</div>
+                            <div class="text-xs font-bold text-emerald-300">${(map.stocks || []).slice(0, 3).map(s => s.name).join(' / ') || '待補'}</div>
                         </div>
                         <div class="rounded-xl border border-slate-800 bg-slate-950/50 px-3 py-2">
                             <div class="text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-1">納入主題一起看</div>
-                            <div class="text-xs text-slate-300 line-clamp-2">${relatedText || '目前無延伸主題'}</div>
+                            <div class="text-xs text-slate-300">${relatedText || '目前無延伸主題'}</div>
                         </div>
-                        <span class="text-indigo-400 font-semibold hover:underline flex items-center gap-1">進入主題 <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
+                        <span class="text-indigo-400 font-semibold hover:underline flex items-center gap-1">展開完整內容 / 詳細 <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
                     </div>
                 `;
                 grid.appendChild(card);
