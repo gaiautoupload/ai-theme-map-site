@@ -500,9 +500,16 @@
         function persistWatchlist() {
             try {
                 localStorage.setItem(WATCHLIST_STORAGE_KEY, JSON.stringify(watchlist));
+                return true;
             } catch (err) {
                 console.warn('watchlist save failed', err);
+                showToast('瀏覽器限制，追蹤名單無法儲存');
+                return false;
             }
+        }
+
+        function getStockPool() {
+            return getExpandedStocks(currentMapData?.stocks || []);
         }
 
         async function bootstrapApp() {
@@ -510,7 +517,7 @@
             try {
                 const versionStamp = Date.now();
                 const versionedMapCandidates = [
-                    './maps_repo_20260527_084001.json',
+                    './maps_repo_20260527_084135.json',
                     './maps_repo.json',
                     './maps_repo_v4.json',
                     './maps_repo_v3.json',
@@ -1081,7 +1088,7 @@
             const tbody = document.getElementById('stock-table-body');
             tbody.innerHTML = '';
             if (!currentMapData || !currentMapData.stocks) return;
-            const stockPool = getExpandedStocks(currentMapData.stocks);
+            const stockPool = getStockPool();
 
             const filtered = stockPool.filter(stock => {
                 const targetText = (stock.name + stock.code + stock.role + stock.sector).toLowerCase();
@@ -1309,8 +1316,9 @@
         function renderComparison() {
             const idA = document.getElementById('compare-a').value;
             const idB = document.getElementById('compare-b').value;
-            const stockA = currentMapData.stocks.find(s => s.id === idA);
-            const stockB = currentMapData.stocks.find(s => s.id === idB);
+            const stockPool = getStockPool();
+            const stockA = stockPool.find(s => s.id === idA);
+            const stockB = stockPool.find(s => s.id === idB);
             
             const container = document.getElementById('comparison-result-cards');
             container.innerHTML = '';
@@ -1358,15 +1366,16 @@
 
         // 追蹤清單控制邏輯
         function toggleWatchlist(stockId) {
-            const index = watchlist.indexOf(stockId);
+            const normalizedId = String(stockId || '').trim();
+            if (!normalizedId) return;
+            const index = watchlist.indexOf(normalizedId);
             if(index === -1) {
-                watchlist.push(stockId);
-                showToast("已成功加入追蹤名單");
+                watchlist.push(normalizedId);
+                if (persistWatchlist()) showToast("已成功加入追蹤名單");
             } else {
                 watchlist.splice(index, 1);
-                showToast("已從追蹤名單移除");
+                if (persistWatchlist()) showToast("已從追蹤名單移除");
             }
-            persistWatchlist();
             document.getElementById('watchlist-count').textContent = watchlist.length;
             renderWatchlist();
             filterTable(); // 同步重繪主表格星號
@@ -1374,11 +1383,11 @@
 
         function clearWatchlist() {
             watchlist = [];
-            persistWatchlist();
+            const saved = persistWatchlist();
             document.getElementById('watchlist-count').textContent = 0;
             renderWatchlist();
             filterTable();
-            showToast('已清空追蹤名單');
+            if (saved) showToast('已清空追蹤名單');
         }
 
         function renderWatchlist() {
@@ -1388,7 +1397,9 @@
                 container.innerHTML = `<p class="text-[11px] text-slate-500 text-center py-2">目前沒有追蹤個股</p>`;
                 return;
             }
-            const stockPool = getExpandedStocks(currentMapData?.stocks || []);
+            const stockPool = getStockPool();
+            watchlist = watchlist.filter(id => stockPool.some(s => s.id === id));
+            document.getElementById('watchlist-count').textContent = watchlist.length;
             watchlist.forEach(id => {
                 const stock = stockPool.find(s => s.id === id);
                 if(!stock) return;
@@ -1405,7 +1416,7 @@
 
         // Modal 控制
         function openModal(stockId) {
-            const stockPool = getExpandedStocks(currentMapData?.stocks || []);
+            const stockPool = getStockPool();
             const stock = stockPool.find(s => s.id === stockId);
             if(!stock) return;
 
