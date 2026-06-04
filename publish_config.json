@@ -1,0 +1,15 @@
+{
+  "source_dir": "D:/ai-theme-map-site",
+  "site_repo_dir": "D:/ai-theme-map-site",
+  "copy_files": [
+    "index.html",
+    "maps_repo.json"
+  ],
+  "rename_map": {},
+  "git_branch": "main",
+  "run_generator_first": false,
+  "generator_command": [
+    "python",
+    "map_generator.py"
+  ]
+}
