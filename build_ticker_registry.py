@@ -30,8 +30,30 @@ def normalize_aliases(*values: str) -> list[str]:
     return aliases
 
 
+def load_cached_registry() -> Dict[str, Dict[str, Any]]:
+    if not OUTPUT_FILE.exists():
+        return {}
+    try:
+        data = json.loads(OUTPUT_FILE.read_text(encoding="utf-8"))
+        if isinstance(data, dict):
+            return data
+    except Exception as exc:
+        print(f"讀取既有 ticker registry 失敗，將忽略快取：{exc}")
+    return {}
+
+
+def fetch_json(url: str, label: str):
+    try:
+        return requests.get(url, headers=HEADERS, timeout=TIMEOUT).json()
+    except Exception as exc:
+        print(f"{label} 下載失敗，改用既有 registry 快取補足：{exc}")
+        return None
+
+
 def build_twse_registry() -> Dict[str, Dict[str, Any]]:
-    data = requests.get(TWSE_URL, headers=HEADERS, timeout=TIMEOUT).json()
+    data = fetch_json(TWSE_URL, "TWSE")
+    if data is None:
+        return {}
     registry: Dict[str, Dict[str, Any]] = {}
     for row in data:
         code = str(row.get("公司代號", "")).strip()
@@ -50,7 +72,9 @@ def build_twse_registry() -> Dict[str, Dict[str, Any]]:
 
 
 def build_tpex_registry() -> Dict[str, Dict[str, Any]]:
-    data = requests.get(TPEX_URL, headers=HEADERS, timeout=TIMEOUT).json()
+    data = fetch_json(TPEX_URL, "TPEX")
+    if data is None:
+        return {}
     registry: Dict[str, Dict[str, Any]] = {}
     for row in data:
         code = str(row.get("SecuritiesCompanyCode", "")).strip()
@@ -68,8 +92,22 @@ def build_tpex_registry() -> Dict[str, Dict[str, Any]]:
 
 
 def build_registry() -> Dict[str, Dict[str, Any]]:
-    merged = build_twse_registry()
-    merged.update(build_tpex_registry())
+    cached = load_cached_registry()
+    merged: Dict[str, Dict[str, Any]] = {}
+    twse = build_twse_registry()
+    tpex = build_tpex_registry()
+    if twse:
+        merged.update(twse)
+    else:
+        merged.update({k: v for k, v in cached.items() if v.get("market") == "TWSE"})
+    if tpex:
+        merged.update(tpex)
+    else:
+        merged.update({k: v for k, v in cached.items() if v.get("market") == "TPEX"})
+    if not merged and cached:
+        merged.update(cached)
+    if not merged:
+        raise RuntimeError("無法建立 ticker registry：官方來源與既有快取皆不可用")
     return dict(sorted(merged.items(), key=lambda kv: kv[0]))
 
 
