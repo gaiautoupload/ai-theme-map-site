@@ -3,8 +3,15 @@ __pycache__/
 *.pyo
 *.log
 .env
+.env.*
 .DS_Store
 Thumbs.db
 last_vllm_raw_output.txt
+search_cache.json
+report.txt
 *.backup.json
 maps_repo.stage*.json
+
+# keep publish_config examples, but avoid local private config in future source mirrors
+map/publish_config.json
+ai-theme-map-site/publish_config.json

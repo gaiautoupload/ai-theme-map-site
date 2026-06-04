@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Runtime cache / generated heavy files
+search_cache.json
+last_vllm_raw_output.txt
+report.txt
+*.log
+*.tmp
+
+# Local publish / secrets
+publish_config.json
+search_context.json
+*secret*
+*token*
+*password*
+
+# Backups / transient generated snapshots
+*.backup.json
+maps_repo.stage*.json
+
+# Keep these tracked intentionally if present:
+# - maps_repo.json current site data
+# - ticker_registry_tw.json official registry snapshot
+# - discovered_themes.json latest discovery snapshot
+# - evidence/*.json evidence files

@@ -1,0 +1,11 @@
+{
+  "source_dir": "D:/map",
+  "site_repo_dir": "D:/ai-theme-map-site",
+  "copy_files": ["Index.html", "maps_repo.json"],
+  "rename_map": {
+    "Index.html": "index.html"
+  },
+  "git_branch": "main",
+  "run_generator_first": false,
+  "generator_command": ["python", "map_generator.py"]
+}

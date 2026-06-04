@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Autonomous Theme Map Repository",
+  "type": "object",
+  "additionalProperties": {
+    "type": "object",
+    "required": [
+      "title", "date", "updated_at", "heat", "heat_score", "period", "desc", "thesis",
+      "icon", "color", "theme_tags", "trigger_events", "risks", "watch_signals",
+      "related_themes", "tech_lessons", "structure_layers", "capital_flow",
+      "timeline_phases", "concepts", "stocks", "sources"
+    ],
+    "properties": {
+      "title": { "type": "string" },
+      "date": { "type": "string" },
+      "updated_at": { "type": "string" },
+      "heat": { "type": "string" },
+      "heat_score": { "type": "integer", "minimum": 0, "maximum": 100 },
+      "period": { "type": "string" },
+      "desc": { "type": "string" },
+      "thesis": { "type": "string" },
+      "icon": { "type": "string" },
+      "color": { "type": "string" },
+      "theme_tags": { "type": "array", "items": { "type": "string" } },
+      "trigger_events": { "type": "array", "items": { "type": "string" } },
+      "risks": { "type": "array", "items": { "type": "string" } },
+      "watch_signals": { "type": "array", "items": { "type": "string" } },
+      "related_themes": { "type": "array", "items": { "type": "string" } },
+      "tech_lessons": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["title", "subtitle", "problem", "mechanism", "why_now", "desc"],
+          "properties": {
+            "title": { "type": "string" },
+            "subtitle": { "type": "string" },
+            "problem": { "type": "string" },
+            "mechanism": { "type": "string" },
+            "why_now": { "type": "string" },
+            "desc": { "type": "string" }
+          }
+        }
+      },
+      "structure_layers": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["name", "position", "summary", "key_points", "beneficiaries"],
+          "properties": {
+            "name": { "type": "string" },
+            "position": { "type": "string" },
+            "summary": { "type": "string" },
+            "key_points": { "type": "array", "items": { "type": "string" } },
+            "beneficiaries": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      },
+      "capital_flow": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["phase", "timeframe", "focus", "logic", "beneficiary_groups"],
+          "properties": {
+            "phase": { "type": "string" },
+            "timeframe": { "type": "string" },
+            "focus": { "type": "string" },
+            "logic": { "type": "string" },
+            "beneficiary_groups": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      },
+      "timeline_phases": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["phase", "timeframe", "summary", "winners"],
+          "properties": {
+            "phase": { "type": "string" },
+            "timeframe": { "type": "string" },
+            "summary": { "type": "string" },
+            "winners": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      },
+      "concepts": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["title", "subtitle", "desc"],
+          "properties": {
+            "title": { "type": "string" },
+            "subtitle": { "type": "string" },
+            "desc": { "type": "string" }
+          }
+        }
+      },
+      "stocks": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["id", "name", "code", "sector", "sectorId", "role", "timeframe", "pureLevel", "barrierLevel", "pros", "cons", "catalyst", "desc"],
+          "properties": {
+            "id": { "type": "string" },
+            "name": { "type": "string" },
+            "code": { "type": "string" },
+            "sector": { "type": "string" },
+            "sectorId": { "type": "string" },
+            "role": { "type": "string" },
+            "timeframe": { "type": "string" },
+            "pureLevel": { "type": "number" },
+            "barrierLevel": { "type": "number" },
+            "pros": { "type": "string" },
+            "cons": { "type": "string" },
+            "catalyst": { "type": "string" },
+            "desc": { "type": "string" }
+          }
+        }
+      },
+      "sources": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["type", "label", "note"],
+          "properties": {
+            "type": { "type": "string" },
+            "label": { "type": "string" },
+            "note": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

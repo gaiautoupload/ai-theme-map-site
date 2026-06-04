@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+*.log
+.env
+.DS_Store
+Thumbs.db
+last_vllm_raw_output.txt
+*.backup.json
+maps_repo.stage*.json
