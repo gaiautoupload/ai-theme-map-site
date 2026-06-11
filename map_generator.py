@@ -654,6 +654,10 @@ def pick_theme_expansion_candidates(topic_seed: str, registry: Dict[str, Any], e
     for code, entry in registry.items():
         if code in existing_codes or not isinstance(entry, dict):
             continue
+        ind = str(entry.get("industry", "")).strip()
+        # 排除傳統非科技板塊，如水泥(01)、食品(02)、紡織(04)、玻璃(09)、造紙(10)、鋼鐵(11)、營造(14)、航運(15)、觀光(16)、金融(17)、百貨(18)
+        if ind in {"01", "02", "04", "09", "10", "11", "14", "15", "16", "17", "18"}:
+            continue
         name = str(entry.get("name", ""))
         industry = str(entry.get("industry", ""))
         hay = f"{name} {industry} {' '.join(entry.get('aliases', []))}".lower()
