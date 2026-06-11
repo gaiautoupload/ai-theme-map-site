@@ -310,7 +310,7 @@ def persist_evidence(query: str, results: List[Dict[str, str]]) -> None:
 
 def search(query: str) -> List[Dict[str, str]]:
     cache = load_cache()
-    if query in cache and isinstance(cache[query], list) and cache[query]:
+    if query in cache and isinstance(cache[query], list):
         return cache[query]
 
     results: List[Dict[str, str]] = []

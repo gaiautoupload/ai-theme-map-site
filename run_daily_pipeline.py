@@ -18,6 +18,7 @@ def with_default_env():
     env.setdefault("MAP_SEARCH_MIN_DELAY", "3.5")
     env.setdefault("MAP_SEARCH_MAX_DELAY", "7.5")
     env.setdefault("MAP_SEARCH_FETCH_ENABLED", "1")
+    env.setdefault("MAP_MAX_TOKENS_PER_STEP", "8000")
     return env
 
 
