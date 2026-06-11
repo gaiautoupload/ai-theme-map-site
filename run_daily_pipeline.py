@@ -35,6 +35,7 @@ def main():
     run_step("theme discovery", [python_exe, "theme_discovery.py"], env)
     run_step("build theme evidence", [python_exe, "evidence_builder.py"], env)
     run_step("rebuild maps repo from discovery", [python_exe, "rebuild_maps_repo_from_discovery.py"], env)
+    run_step("build stocks wiki", [python_exe, "build_stocks_wiki.py"], env)
     run_step("publish site", [python_exe, "publish_site.py"], env)
     print("\nDaily pipeline 完成")
 

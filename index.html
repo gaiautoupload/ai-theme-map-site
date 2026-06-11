@@ -46,16 +46,22 @@
 
     <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-3 cursor-pointer" onclick="showDashboardHome()">
-                <div class="bg-gradient-to-tr from-cyan-500 to-indigo-600 p-2 rounded-lg text-white shadow-lg shadow-indigo-500/20">
-                    <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
+            <div class="flex items-center gap-8">
+                <div class="flex items-center gap-3 cursor-pointer" onclick="showDashboardHome()">
+                    <div class="bg-gradient-to-tr from-cyan-500 to-indigo-600 p-2 rounded-lg text-white shadow-lg shadow-indigo-500/20">
+                        <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
+                            LLM 投資決策 Wiki 平台
+                        </h1>
+                        <p class="text-xs text-slate-400">動態主題式先進產業鏈研究與佈局地圖</p>
+                    </div>
                 </div>
-                <div>
-                    <h1 class="text-lg font-bold bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
-                        LLM 投資決策 Wiki 平台
-                    </h1>
-                    <p class="text-xs text-slate-400">動態主題式先進產業鏈研究與佈局地圖</p>
-                </div>
+                <nav class="hidden md:flex items-center gap-4 border-l border-slate-800 pl-6 h-8">
+                    <button onclick="showDashboardHome()" id="nav-btn-home" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition">主題雷達</button>
+                    <button onclick="showStockWiki()" id="nav-btn-wiki" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition">個股 Wiki</button>
+                </nav>
             </div>
             <div id="header-status" class="hidden sm:flex items-center gap-4">
                 </div>
@@ -152,6 +158,41 @@
                 <div class="col-span-full py-12 text-center text-slate-500">
                     <i data-lucide="loader" class="w-8 h-8 animate-spin mx-auto mb-3"></i>
                     正在載入 maps_repo.json 數據庫...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="panel-stock-wiki" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-1 space-y-8 hidden">
+        <div class="bg-gradient-to-r from-indigo-950/40 via-slate-900 to-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
+            <div>
+                <h2 class="text-xl font-bold text-slate-200 mb-2">全市場上市櫃個股 LLM Wiki</h2>
+                <p class="text-sm text-slate-400 leading-relaxed">提供台股所有上市櫃公司由 LLM 彙整的產業結構、主營業務、營收佔比與概念股分類，並可跳轉查看相關產業主題地圖。</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+                <div class="flex items-center gap-2 bg-slate-950 border border-slate-800 px-3 py-2.5 rounded-xl flex-1 w-full">
+                    <i data-lucide="search" class="w-5 h-5 text-slate-500"></i>
+                    <input type="text" id="wiki-search" oninput="filterWiki()" placeholder="搜尋股票代號、名稱、主營產品、或產業分類..." class="bg-transparent border-none text-sm text-slate-200 focus:outline-none w-full">
+                </div>
+                <div class="flex gap-2 w-full md:w-auto shrink-0 overflow-x-auto pb-1 md:pb-0" id="wiki-tier-filters">
+                    <button onclick="filterWikiTier('all')" class="wiki-tier-btn px-4 py-2 text-xs font-semibold rounded-xl border border-indigo-900 bg-indigo-950/20 text-indigo-400 hover:bg-indigo-950/40 transition" id="btn-wiki-tier-all">全部 (0)</button>
+                    <button onclick="filterWikiTier('core')" class="wiki-tier-btn px-4 py-2 text-xs font-semibold rounded-xl border border-slate-800 bg-slate-900 hover:bg-slate-800 text-slate-400 transition" id="btn-wiki-tier-core">Core 題材股 (0)</button>
+                    <button onclick="filterWikiTier('extended')" class="wiki-tier-btn px-4 py-2 text-xs font-semibold rounded-xl border border-slate-800 bg-slate-900 hover:bg-slate-800 text-slate-400 transition" id="btn-wiki-tier-extended">其他上市櫃 (0)</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="space-y-4">
+            <div class="flex items-center gap-2 border-b border-slate-800 pb-3">
+                <i data-lucide="database" class="w-5 h-5 text-indigo-400"></i>
+                <h3 class="text-base font-bold text-slate-300">個股資料庫</h3>
+            </div>
+            
+            <div id="wiki-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="col-span-full py-12 text-center text-slate-500">
+                    <i data-lucide="loader" class="w-8 h-8 animate-spin mx-auto mb-3"></i>
+                    正在載入 stocks_wiki.json 數據庫...
                 </div>
             </div>
         </div>
@@ -417,6 +458,8 @@
 
     <script>
         let mapsRepository = {};
+        let stocksWiki = {};
+        let wikiFilterTier = 'all';
         let currentMapData = null;
         let currentMapKey = null;
         let currentModalStockId = null;
@@ -522,10 +565,10 @@
 
         async function bootstrapApp() {
             loadWatchlist();
+            const versionStamp = Date.now();
             try {
-                const versionStamp = Date.now();
                 const versionedMapCandidates = [
-                    './maps_repo_20260611_183352.json',
+                    './maps_repo_20260612_000958.json',
                     './maps_repo.json'
                 ];
                 const { data: rawRepo, url } = await fetchJsonWithFallback([
@@ -550,6 +593,17 @@
                     }
                 };
             }
+
+            try {
+                const wikiRes = await fetch(`./stocks_wiki.json?v=${versionStamp}`);
+                if (wikiRes.ok) {
+                    stocksWiki = await wikiRes.json();
+                    console.log("成功加載個股 Wiki 數據庫！個股數：", Object.keys(stocksWiki).length);
+                }
+            } catch (e) {
+                console.warn("載入個股 Wiki 失敗：", e);
+            }
+
             renderDashboardHome();
             lucide.createIcons();
         }
@@ -1456,8 +1510,43 @@
         }
 
         function openModal(stockId) {
-            const stockPool = getStockPool();
-            const stock = stockPool.find(s => s.id === stockId);
+            let stock = null;
+            if (currentMapData) {
+                const stockPool = getStockPool();
+                stock = stockPool.find(s => s.id === stockId);
+            }
+            
+            // 如果在主題內找不到，試著從全市場個股 Wiki 載入
+            if (!stock && stocksWiki[stockId]) {
+                const wiki = stocksWiki[stockId];
+                const details = wiki.details || {};
+                stock = {
+                    id: wiki.code,
+                    code: wiki.code,
+                    name: wiki.name,
+                    sector: wiki.industry,
+                    role: wiki.summary,
+                    desc: wiki.summary,
+                    pureLevel: details.pureLevel || 0,
+                    barrierLevel: details.barrierLevel || 0,
+                    ai_revenue_exposure: details.ai_revenue_exposure || '待補資料',
+                    gross_margin_impact: details.gross_margin_impact || '待補資料',
+                    pricing_power: details.pricing_power || '待補資料',
+                    value_capture_score: details.value_capture_score || 0,
+                    substitution_risk: details.substitution_risk || '待補資料',
+                    commercialization_phase: details.commercialization_phase || '待補資料',
+                    customer_concentration: '待補資料',
+                    switching_cost: '待補資料',
+                    pros: details.pros || '提供相關產業產品與服務。',
+                    cons: details.cons || '無特定題材警示，請依基本面為準。',
+                    catalyst: details.catalyst || '板塊輪動與營收放量。',
+                    stock_tier: wiki.tier,
+                    evidence_type: 'inferred',
+                    linkage: [],
+                    sources: []
+                };
+            }
+
             if(!stock) return;
             currentModalStockId = stock.id;
 
@@ -1498,6 +1587,154 @@
             setTimeout(() => {
                 toast.className = "fixed bottom-5 right-5 bg-indigo-600 text-white text-xs font-semibold py-2.5 px-4 rounded-lg shadow-lg transform translate-y-20 opacity-0 transition duration-300 z-50 flex items-center gap-2";
             }, 2000);
+        }
+
+        // 個股 Wiki 導覽控制與渲染
+        function showStockWiki() {
+            document.getElementById('panel-home').classList.add('hidden');
+            document.getElementById('panel-map-workspace').classList.add('hidden');
+            document.getElementById('panel-stock-wiki').classList.remove('hidden');
+            
+            document.getElementById('nav-btn-home').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            document.getElementById('nav-btn-wiki').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition";
+            
+            renderStockWiki();
+        }
+        
+        function showDashboardHome() {
+            document.getElementById('panel-stock-wiki').classList.add('hidden');
+            document.getElementById('panel-map-workspace').classList.add('hidden');
+            document.getElementById('panel-home').classList.remove('hidden');
+            
+            document.getElementById('nav-btn-home').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition";
+            document.getElementById('nav-btn-wiki').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            
+            renderDashboardHome();
+        }
+
+        function renderStockWiki() {
+            const grid = document.getElementById('wiki-grid');
+            if (!grid) return;
+            grid.innerHTML = '';
+            
+            const searchVal = document.getElementById('wiki-search').value.trim().toLowerCase();
+            const keys = Object.keys(stocksWiki);
+            
+            let coreCount = 0;
+            let extendedCount = 0;
+            keys.forEach(k => {
+                if (stocksWiki[k].tier === 'core') coreCount++;
+                else extendedCount++;
+            });
+            
+            document.getElementById('btn-wiki-tier-all').textContent = `全部 (${keys.length})`;
+            document.getElementById('btn-wiki-tier-core').textContent = `Core 題材股 (${coreCount})`;
+            document.getElementById('btn-wiki-tier-extended').textContent = `其他上市櫃 (${extendedCount})`;
+            
+            document.querySelectorAll('.wiki-tier-btn').forEach(btn => {
+                btn.className = "wiki-tier-btn px-4 py-2 text-xs font-semibold rounded-xl border border-slate-800 bg-slate-900 text-slate-400 hover:bg-slate-800 transition";
+            });
+            if (wikiFilterTier === 'all') {
+                document.getElementById('btn-wiki-tier-all').className = "wiki-tier-btn px-4 py-2 text-xs font-semibold rounded-xl border border-indigo-900 bg-indigo-950/40 text-indigo-300 transition";
+            } else if (wikiFilterTier === 'core') {
+                document.getElementById('btn-wiki-tier-core').className = "wiki-tier-btn px-4 py-2 text-xs font-semibold rounded-xl border border-indigo-900 bg-indigo-950/40 text-indigo-300 transition";
+            } else if (wikiFilterTier === 'extended') {
+                document.getElementById('btn-wiki-tier-extended').className = "wiki-tier-btn px-4 py-2 text-xs font-semibold rounded-xl border border-indigo-900 bg-indigo-950/40 text-indigo-300 transition";
+            }
+            
+            const filteredKeys = keys.filter(k => {
+                const wiki = stocksWiki[k];
+                if (wikiFilterTier !== 'all' && wiki.tier !== wikiFilterTier) return false;
+                
+                if (searchVal) {
+                    const matchCode = wiki.code.toLowerCase().includes(searchVal);
+                    const matchName = wiki.name.toLowerCase().includes(searchVal);
+                    const matchIndustry = wiki.industry.toLowerCase().includes(searchVal);
+                    const matchSummary = (wiki.summary || '').toLowerCase().includes(searchVal);
+                    const matchProducts = (wiki.products || []).some(p => p.toLowerCase().includes(searchVal));
+                    return matchCode || matchName || matchIndustry || matchSummary || matchProducts;
+                }
+                return true;
+            });
+            
+            if (filteredKeys.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center text-slate-500 py-8">找不到符合搜尋條件的個股。</div>`;
+                return;
+            }
+            
+            const renderedKeys = filteredKeys.slice(0, 150);
+            
+            renderedKeys.forEach(k => {
+                const wiki = stocksWiki[k];
+                const card = document.createElement('div');
+                card.className = 'bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-slate-700 transition flex flex-col justify-between shadow-lg cursor-pointer';
+                card.onclick = () => openModal(wiki.code);
+                
+                const badge = wiki.tier === 'core' 
+                    ? `<span class="px-2 py-0.5 rounded-md bg-indigo-950/60 border border-indigo-800/50 text-indigo-400 text-[10px] font-bold">Core</span>`
+                    : `<span class="px-2 py-0.5 rounded-md bg-slate-950 border border-slate-800 text-slate-500 text-[10px] font-medium">Extended</span>`;
+                    
+                const productsBadges = (wiki.products || []).map(p => 
+                    `<span class="px-2 py-0.5 rounded-md bg-slate-950 border border-slate-800/60 text-slate-400 text-[10px]">${p}</span>`
+                ).join(' ');
+                
+                const relatedThemesBadges = (wiki.themes || []).map(t => {
+                    const mapKey = Object.keys(mapsRepository).find(key => mapsRepository[key].title === t);
+                    if (mapKey) {
+                        return `<button onclick="event.stopPropagation(); loadMapWorkspace('${mapKey}')" class="px-2 py-0.5 rounded-md bg-emerald-950/30 border border-emerald-900/40 text-emerald-400 hover:text-white hover:border-emerald-500 text-[10px] transition">${t}</button>`;
+                    }
+                    return `<span class="px-2 py-0.5 rounded-md bg-slate-950 border border-slate-800 text-slate-500 text-[10px]">${t}</span>`;
+                }).join(' ');
+
+                card.innerHTML = `
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <h4 class="font-bold text-slate-200">${wiki.name}</h4>
+                                <span class="text-xs text-slate-500 font-mono">${wiki.code}</span>
+                            </div>
+                            <div class="flex items-center gap-1.5">
+                                ${badge}
+                                <span class="text-[10px] text-slate-400 bg-slate-950 px-2 py-0.5 rounded-md border border-slate-800/80">${wiki.industry}</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-400 leading-relaxed min-h-[36px]">${wiki.summary || '提供相關產業產品與服務。'}</p>
+                        <div class="flex flex-wrap gap-1 pt-1">
+                            ${productsBadges}
+                        </div>
+                    </div>
+                    ${wiki.themes && wiki.themes.length > 0 ? `
+                        <div class="border-t border-slate-800/60 mt-4 pt-3 space-y-1.5">
+                            <div class="text-[9px] uppercase tracking-wider text-slate-500 font-bold">參與主題</div>
+                            <div class="flex flex-wrap gap-1">${relatedThemesBadges}</div>
+                        </div>
+                    ` : ''}
+                    <div class="mt-4 pt-2 flex justify-end">
+                        <button class="text-xs font-bold text-indigo-400 hover:text-indigo-300 flex items-center gap-1 transition">
+                            查看 LLM 深度分析 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+            
+            if (filteredKeys.length > 150) {
+                const hint = document.createElement('div');
+                hint.className = 'col-span-full text-center text-xs text-slate-500 py-4';
+                hint.textContent = `... 已隱藏其餘 ${filteredKeys.length - 150} 筆結果，請輸入關鍵字精確搜尋 ...`;
+                grid.appendChild(hint);
+            }
+            
+            lucide.createIcons();
+        }
+        
+        function filterWiki() {
+            renderStockWiki();
+        }
+        
+        function filterWikiTier(tier) {
+            wikiFilterTier = tier;
+            renderStockWiki();
         }
     </script>
 </body>

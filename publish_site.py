@@ -12,7 +12,7 @@ EXAMPLE_PATH = Path(__file__).with_name('publish_config.json.example')
 DEFAULT_CONFIG = {
     "source_dir": "D:/ai-theme-map-site",
     "site_repo_dir": "D:/ai-theme-map-site",
-    "copy_files": ["index.html", "maps_repo.json"],
+    "copy_files": ["index.html", "maps_repo.json", "stocks_wiki.json"],
     "rename_map": {},
     "git_branch": "main",
     "run_generator_first": False,
