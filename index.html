@@ -124,9 +124,35 @@
                     </div>
                 </div>
 
-                <!-- Right: TradingView K-Line Widget -->
-                <div class="lg:col-span-2 h-[320px] bg-slate-900 border border-slate-800/60 rounded-xl overflow-hidden shadow-lg relative">
-                    <div id="tv-chart-taiex" class="w-full h-full"></div>
+                <!-- Right: Charts Area (Main TAIEX Futures + US Tech Giants) -->
+                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Main TAIEX Futures Chart -->
+                    <div class="md:col-span-2 h-[320px] bg-slate-900 border border-slate-800/60 rounded-xl overflow-hidden shadow-lg relative">
+                        <div id="tv-chart-taiex" class="w-full h-full"></div>
+                    </div>
+                    <!-- US Tech Leaders Mini Grid -->
+                    <div class="md:col-span-1 grid grid-cols-2 md:grid-cols-1 gap-2">
+                        <!-- TSM ADR -->
+                        <div class="h-[76px] bg-slate-900 border border-slate-800/60 rounded-xl overflow-hidden relative" title="台積電 ADR (TSM)">
+                            <div id="tv-chart-tsm" class="w-full h-full"></div>
+                            <div class="absolute top-1 left-2 pointer-events-none bg-slate-950/75 backdrop-blur-sm px-1.5 py-0.5 rounded text-[9px] font-bold text-slate-300 border border-slate-800">TSM ADR</div>
+                        </div>
+                        <!-- NVIDIA -->
+                        <div class="h-[76px] bg-slate-900 border border-slate-800/60 rounded-xl overflow-hidden relative" title="輝達 (NVDA)">
+                            <div id="tv-chart-nvda" class="w-full h-full"></div>
+                            <div class="absolute top-1 left-2 pointer-events-none bg-slate-950/75 backdrop-blur-sm px-1.5 py-0.5 rounded text-[9px] font-bold text-slate-300 border border-slate-800">NVIDIA</div>
+                        </div>
+                        <!-- Apple -->
+                        <div class="h-[76px] bg-slate-900 border border-slate-800/60 rounded-xl overflow-hidden relative" title="蘋果 (AAPL)">
+                            <div id="tv-chart-aapl" class="w-full h-full"></div>
+                            <div class="absolute top-1 left-2 pointer-events-none bg-slate-950/75 backdrop-blur-sm px-1.5 py-0.5 rounded text-[9px] font-bold text-slate-300 border border-slate-800">APPLE</div>
+                        </div>
+                        <!-- Micron -->
+                        <div class="h-[76px] bg-slate-900 border border-slate-800/60 rounded-xl overflow-hidden relative" title="美光 (MU)">
+                            <div id="tv-chart-mu" class="w-full h-full"></div>
+                            <div class="absolute top-1 left-2 pointer-events-none bg-slate-950/75 backdrop-blur-sm px-1.5 py-0.5 rounded text-[9px] font-bold text-slate-300 border border-slate-800">MICRON</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -1089,6 +1115,29 @@
             }).join('');
         }
 
+        function renderMiniChart(symbol, containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            container.innerHTML = '';
+            new TradingView.widget({
+                "width": "100%",
+                "height": "100%",
+                "symbol": symbol,
+                "interval": "D",
+                "timezone": "America/New_York",
+                "theme": "dark",
+                "style": "3", // Area style
+                "locale": "zh_TW",
+                "toolbar_bg": "#111827",
+                "enable_publishing": false,
+                "hide_top_toolbar": true,
+                "hide_legend": true,
+                "hide_side_toolbar": true,
+                "save_image": false,
+                "container_id": containerId
+            });
+        }
+
         let tvWidget = null;
         function renderTradingViewChart() {
             if (typeof TradingView === 'undefined') {
@@ -1100,9 +1149,10 @@
             if (!container) return;
             container.innerHTML = ''; // Clear container
 
+            // Revert back to TAIFEX:TXF1! which works for third-party embeds
             tvWidget = new TradingView.widget({
                 "autosize": true,
-                "symbol": "INDEX:TAIEX",
+                "symbol": "TAIFEX:TXF1!",
                 "interval": "D",
                 "timezone": "Asia/Taipei",
                 "theme": "dark",
@@ -1117,6 +1167,12 @@
                     "MASimple@tv-basicstudies"
                 ]
             });
+
+            // Render the 4 Mini US/Tech charts
+            renderMiniChart("NYSE:TSM", "tv-chart-tsm");
+            renderMiniChart("NASDAQ:NVDA", "tv-chart-nvda");
+            renderMiniChart("NASDAQ:AAPL", "tv-chart-aapl");
+            renderMiniChart("NASDAQ:MU", "tv-chart-mu");
         }
 
         async function triggerMacroRefresh() {
@@ -2327,13 +2383,26 @@
                 return;
             }
 
-            // Update external links immediately
+            // Update external links immediately based on stock market (Taiwan vs US)
+            const isTaiwanStock = /^\d+$/.test(code);
             if (linksContainer && linkTV && linkYahoo) {
                 linksContainer.classList.remove('hidden');
-                linkTV.href = `https://www.tradingview.com/symbols/TWSE-${code}/`;
-                linkYahoo.href = `https://tw.stock.yahoo.com/quote/${code}.TW`;
+                if (isTaiwanStock) {
+                    linkTV.href = `https://www.tradingview.com/symbols/TWSE-${code}/`;
+                    linkYahoo.href = `https://tw.stock.yahoo.com/quote/${code}.TW`;
+                } else {
+                    linkTV.href = `https://www.tradingview.com/symbols/${code}/`;
+                    linkYahoo.href = `https://finance.yahoo.com/quote/${code}`;
+                }
             }
 
+            // If it's a Taiwan stock, hide the K-line preview container because TWSE blocks external widget embeds
+            if (isTaiwanStock) {
+                container.classList.add('hidden');
+                return;
+            }
+
+            // Otherwise, it's a US stock (e.g. NVDA, AAPL, MU) which supports external embeds
             container.classList.remove('hidden');
             tvChartDiv.innerHTML = '<div class="absolute inset-0 flex items-center justify-center text-xs text-slate-500"><i class="w-4 h-4 animate-spin mr-2 border-2 border-indigo-500 border-t-transparent rounded-full"></i> 正在載入個股技術圖表...</div>';
 
@@ -2347,10 +2416,12 @@
 
                 tvChartDiv.innerHTML = ''; // Clear loading spinner
 
-                // Detect prefix: TWSE: prefix for pure numeric codes
+                // We default to US stock parameters since Taiwan stocks return early
                 let symbol = code;
-                if (/^\d+$/.test(code)) {
-                    symbol = `TWSE:${code}`;
+                if (code.toUpperCase() === 'TSM') {
+                    symbol = 'NYSE:TSM';
+                } else if (!symbol.includes(':')) {
+                    symbol = `NASDAQ:${code}`;
                 }
 
                 modalTvWidget = new TradingView.widget({
@@ -2358,7 +2429,7 @@
                     "height": "100%",
                     "symbol": symbol,
                     "interval": "D",
-                    "timezone": "Asia/Taipei",
+                    "timezone": "America/New_York",
                     "theme": "dark",
                     "style": "1",
                     "locale": "zh_TW",
