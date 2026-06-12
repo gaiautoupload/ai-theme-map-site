@@ -30,8 +30,7 @@ def main():
         return
 
     if REPO_FILE.exists():
-        REPO_FILE.unlink()
-        print(f"已清空舊資料庫：{REPO_FILE}")
+        print(f"保留既存資料庫，新主題將進行增量合併：{REPO_FILE}")
 
     count = 0
     for item in themes:

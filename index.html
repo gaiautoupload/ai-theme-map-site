@@ -162,8 +162,8 @@
                 <h3 class="text-base font-bold text-slate-300">主題雷達牆 (依火勢與更新時間排序)</h3>
             </div>
             
-            <div id="maps-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="col-span-full py-12 text-center text-slate-500">
+            <div id="maps-container" class="space-y-10">
+                <div class="py-12 text-center text-slate-500">
                     <i data-lucide="loader" class="w-8 h-8 animate-spin mx-auto mb-3"></i>
                     正在載入 maps_repo.json 數據庫...
                 </div>
@@ -587,7 +587,7 @@
             const versionStamp = Date.now();
             try {
                 const versionedMapCandidates = [
-                    './maps_repo_20260612_113620.json',
+                    './maps_repo_20260612_115713.json',
                     './maps_repo.json'
                 ];
                 const { data: rawRepo, url } = await fetchJsonWithFallback([
@@ -714,80 +714,98 @@
             document.getElementById('header-status').innerHTML = '';
             updateSiteMeta();
 
-            const grid = document.getElementById('maps-grid');
-            grid.innerHTML = '';
+            const container = document.getElementById('maps-container');
+            container.innerHTML = '';
 
             const keys = Object.keys(mapsRepository);
             if(keys.length === 0) {
-                grid.innerHTML = `<div class="col-span-full text-center text-slate-500 py-8">目前數據庫內無資料，請先執行 vLLM.py</div>`;
+                container.innerHTML = `<div class="text-center text-slate-500 py-8">目前數據庫內無資料，請先執行 vLLM.py</div>`;
                 return;
             }
 
-            keys.sort((a, b) => {
-                const dateA = String(mapsRepository[a]?.updated_at || mapsRepository[a]?.date || '');
-                const dateB = String(mapsRepository[b]?.updated_at || mapsRepository[b]?.date || '');
-                const byDate = dateB.localeCompare(dateA);
-                if (byDate !== 0) return byDate;
-                const scoreA = Number(mapsRepository[a]?.heat_score || 0);
-                const scoreB = Number(mapsRepository[b]?.heat_score || 0);
-                return scoreB - scoreA;
-            });
-
+            // Group by Year/Month
+            const groups = {};
             keys.forEach(key => {
                 const map = mapsRepository[key];
                 if (!map) return;
-                const card = document.createElement('div');
-                card.className = 'bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-slate-700 transition cursor-pointer flex flex-col justify-between shadow-lg hover:shadow-indigo-950/20';
-                card.onclick = () => loadMapWorkspace(key);
-                const opening = map.thesis || map.desc || map.title || '尚無主題摘要';
-                const summary = map.desc || map.long_description || map.description || map.thesis || '';
-                const tagText = (map.theme_tags || []).slice(0, 3).join(' · ');
-                const relatedText = (map.related_themes || []).slice(0, 3).join(' / ');
-                const tamText = map.market_size_tam || '待補資料';
-                const cagrText = map.market_cagr || '待補資料';
-                const stageText = map.theme_stage || map.period || '觀察期';
-                const valueCaptureText = map.primary_value_capture || '待補資料';
-                card.innerHTML = `
-                    <div>
-                        <div class="flex items-center gap-3 mb-3">
-                            <div class="bg-gradient-to-tr ${map.color || 'from-indigo-500 to-cyan-500'} p-2 rounded-xl text-white shadow-md">
-                                <i data-lucide="${map.icon || 'layers'}" class="w-5 h-5"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-slate-100 text-sm line-clamp-2">${map.title}</h4>
-                                <span class="text-[10px] text-slate-500 block font-mono">📅 發布時程: ${map.date}</span>
-                            </div>
-                        </div>
-                        <div class="mb-3 rounded-xl border border-cyan-900/30 bg-cyan-950/15 px-3 py-3">
-                            <div class="text-[10px] uppercase tracking-[0.2em] text-cyan-400/80 mb-1">破題</div>
-                            <p class="text-xs text-cyan-200 leading-relaxed">${opening}</p>
-                        </div>
-                        <div class="grid grid-cols-2 gap-2 mb-3 text-[11px]">
-                            <div class="rounded-xl border border-emerald-900/30 bg-emerald-950/15 px-3 py-2"><div class="text-slate-500 mb-1">TAM</div><div class="font-bold text-emerald-300">${tamText}</div></div>
-                            <div class="rounded-xl border border-cyan-900/30 bg-cyan-950/15 px-3 py-2"><div class="text-slate-500 mb-1">CAGR</div><div class="font-bold text-cyan-300">${cagrText}</div></div>
-                            <div class="rounded-xl border border-amber-900/30 bg-amber-950/15 px-3 py-2"><div class="text-slate-500 mb-1">題材階段</div><div class="font-bold text-amber-300">${stageText}</div></div>
-                            <div class="rounded-xl border border-fuchsia-900/30 bg-fuchsia-950/15 px-3 py-2"><div class="text-slate-500 mb-1">誰賺最多</div><div class="font-bold text-fuchsia-300">${valueCaptureText}</div></div>
-                        </div>
-                        <p class="text-xs text-slate-400 leading-relaxed mb-3">${summary || '尚無摘要'}</p>
+                const dStr = map.date || (map.updated_at ? map.updated_at.split('T')[0] : '');
+                let mLabel = '更早以前';
+                if (dStr && dStr.match(/^\d{4}-\d{2}/)) {
+                    const parts = dStr.split('-');
+                    mLabel = `${parts[0]} 年 ${parts[1]} 月`;
+                }
+                if (!groups[mLabel]) groups[mLabel] = [];
+                groups[mLabel].push(key);
+            });
+
+            // Sort months (newest first)
+            const sortedMonths = Object.keys(groups).sort((a, b) => {
+                if (a === '更早以前') return 1;
+                if (b === '更早以前') return -1;
+                return b.localeCompare(a);
+            });
+
+            sortedMonths.forEach(monthLabel => {
+                const monthKeys = groups[monthLabel];
+                const section = document.createElement('div');
+                section.className = 'space-y-4';
+                section.innerHTML = `
+                    <div class="flex items-center gap-3 border-l-4 border-indigo-500 pl-3 py-1 bg-slate-900/40 rounded-r-lg">
+                        <span class="text-base font-black text-slate-200 tracking-wide">${monthLabel}</span>
+                        <span class="text-[10px] text-indigo-400 bg-indigo-950/60 border border-indigo-800/40 px-2.5 py-0.5 rounded-full font-bold font-mono">${monthKeys.length} 個產業主題</span>
                     </div>
-                    <div class="border-t border-slate-800/60 pt-3 space-y-2 text-[11px]">
-                        <div class="flex items-center justify-between gap-2">
-                            <span class="text-red-400 bg-red-950/40 px-2 py-0.5 rounded-md border border-red-900/40 font-medium">${map.heat}</span>
-                            <span class="text-amber-300 bg-amber-950/40 px-2 py-0.5 rounded-md border border-amber-900/40 font-medium">火勢 ${map.heat_score ?? '--'}</span>
-                        </div>
-                        <div class="text-slate-500 line-clamp-2">${tagText || '尚無標籤'}</div>
-                        <div class="rounded-xl border border-emerald-800/30 bg-emerald-950/20 px-3 py-2">
-                            <div class="text-[10px] uppercase tracking-[0.2em] text-emerald-400/80 mb-1">優先關注</div>
-                            <div class="text-xs font-bold text-emerald-300">${(map.stocks || []).slice(0, 3).map(s => s.name).join(' / ') || '待補'}</div>
-                        </div>
-                        <div class="rounded-xl border border-slate-800 bg-slate-950/50 px-3 py-2">
-                            <div class="text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-1">納入主題一起看</div>
-                            <div class="text-xs text-slate-300">${relatedText || '目前無延伸主題'}</div>
-                        </div>
-                        <span class="text-indigo-400 font-semibold hover:underline flex items-center gap-1">展開完整內容 / 詳細 <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
-                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 maps-month-grid"></div>
                 `;
-                grid.appendChild(card);
+                
+                const grid = section.querySelector('.maps-month-grid');
+                
+                monthKeys.forEach(key => {
+                    const map = mapsRepository[key];
+                    if (!map) return;
+                    const card = document.createElement('div');
+                    card.className = 'bg-slate-900 border border-slate-800 rounded-2xl p-5 hover:border-slate-700 transition cursor-pointer flex flex-col justify-between shadow-lg hover:shadow-indigo-950/20';
+                    card.onclick = () => loadMapWorkspace(key);
+                    const opening = map.thesis || map.desc || map.title || '尚無主題摘要';
+                    const summary = map.desc || map.long_description || map.description || map.thesis || '';
+                    const tamText = map.market_size_tam || '待補資料';
+                    const cagrText = map.market_cagr || '待補資料';
+                    const stageText = map.theme_stage || map.period || '觀察期';
+                    const valueCaptureText = map.primary_value_capture || '待補資料';
+                    
+                    card.innerHTML = `
+                        <div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="bg-gradient-to-tr ${map.color || 'from-indigo-500 to-cyan-500'} p-2 rounded-xl text-white shadow-md">
+                                    <i data-lucide="${map.icon || 'layers'}" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-100 text-sm line-clamp-2">${map.title}</h4>
+                                    <span class="text-[10px] text-slate-500 block font-mono">📅 發布時程: ${map.date || '--'}</span>
+                                </div>
+                            </div>
+                            <div class="mb-3 rounded-xl border border-cyan-900/30 bg-cyan-950/15 px-3 py-3">
+                                <div class="text-[10px] uppercase tracking-[0.2em] text-cyan-400/80 mb-1">破題</div>
+                                <p class="text-xs text-cyan-200 leading-relaxed line-clamp-2">${opening}</p>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2 mb-3 text-[11px]">
+                                <div class="rounded-xl border border-emerald-900/30 bg-emerald-950/15 px-3 py-2"><div class="text-slate-500 mb-1">TAM</div><div class="font-bold text-emerald-300 line-clamp-1">${tamText}</div></div>
+                                <div class="rounded-xl border border-cyan-900/30 bg-cyan-950/15 px-3 py-2"><div class="text-slate-500 mb-1">CAGR</div><div class="font-bold text-cyan-300 line-clamp-1">${cagrText}</div></div>
+                                <div class="rounded-xl border border-amber-900/30 bg-amber-950/15 px-3 py-2"><div class="text-slate-500 mb-1">題材階段</div><div class="font-bold text-amber-300 line-clamp-1">${stageText}</div></div>
+                                <div class="rounded-xl border border-fuchsia-900/30 bg-fuchsia-950/15 px-3 py-2"><div class="text-slate-500 mb-1">誰賺最多</div><div class="font-bold text-fuchsia-300 line-clamp-1">${valueCaptureText}</div></div>
+                            </div>
+                            <p class="text-xs text-slate-400 leading-relaxed mb-3 line-clamp-2">${summary || '尚無摘要'}</p>
+                        </div>
+                        <div class="border-t border-slate-800/60 pt-3 space-y-2 text-[11px]">
+                            <div class="flex items-center justify-between gap-2">
+                                <span class="text-red-400 bg-red-950/40 px-2 py-0.5 rounded-md border border-red-900/40 font-medium">${map.heat}</span>
+                                <span class="text-amber-300 bg-amber-950/40 px-2 py-0.5 rounded-md border border-amber-900/40 font-medium">火勢 ${map.heat_score ?? '--'}</span>
+                            </div>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+                
+                container.appendChild(section);
             });
             lucide.createIcons();
         }
