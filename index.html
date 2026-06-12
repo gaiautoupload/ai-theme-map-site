@@ -156,7 +156,7 @@
                     <div class="bg-emerald-500/10 p-1.5 rounded-lg border border-emerald-500/20 text-emerald-400">
                         <i data-lucide="trending-up" class="w-4 h-4"></i>
                     </div>
-                    <h3 class="text-sm font-bold text-slate-200">未來一個月爆發潛力推薦個股 (Top 5)</h3>
+                    <h3 class="text-sm font-bold text-slate-200">未來一個月爆發潛力推薦個股 (Top 10)</h3>
                 </div>
                 <div class="overflow-x-auto">
                     <table class="w-full text-left text-xs text-slate-300">
@@ -632,7 +632,7 @@
             const versionStamp = Date.now();
             try {
                 const versionedMapCandidates = [
-                    './maps_repo_20260612_121151.json',
+                    './maps_repo_20260612_121659.json',
                     './maps_repo.json'
                 ];
                 const { data: rawRepo, url } = await fetchJsonWithFallback([
@@ -883,8 +883,10 @@
                 const map = mapsRepository[mapKey];
                 if (!map || !map.stocks) return;
                 map.stocks.forEach(stock => {
-                    const code = stock.code || stock.id;
+                    const code = String(stock.code || stock.id || '').trim();
                     if (!code || seenCodes.has(code)) return;
+                    // Filter out placeholders like F11, S11 or anything not starting with a digit
+                    if (code.startsWith('F') || code.startsWith('S') || !/^\d+/.test(code)) return;
                     seenCodes.add(code);
                     
                     const wiki = stocksWiki[code] || {};
@@ -914,7 +916,7 @@
                     const scoreB = (b.pureLevel * 5) + (b.barrierLevel * 3) + (b.heatScore / 20) + (b.value_capture_score / 25);
                     return scoreB - scoreA;
                 })
-                .slice(0, 5);
+                .slice(0, 10);
 
             potentialTbody.innerHTML = potentialList.map(s => `
                 <tr class="hover:bg-slate-800/30 transition cursor-pointer" onclick="openModal('${s.code}')">
@@ -938,6 +940,9 @@
             
             if (watchlist && watchlist.length > 0) {
                 watchlist.forEach(code => {
+                    // Prevent potential list stocks from showing in weakening list
+                    if (potentialList.some(p => p.code === code)) return;
+
                     const wiki = stocksWiki[code];
                     if (!wiki) return;
                     const details = wiki.details || {};
@@ -961,6 +966,9 @@
             if (weakeningCandidates.length < 5) {
                 const systemWarnings = allCoreStocks
                     .filter(s => {
+                        // Prevent potential list stocks from showing in weakening list
+                        if (potentialList.some(p => p.code === s.code)) return false;
+
                         const hasHighRisk = s.substitution_risk.includes('高') || s.substitution_risk.includes('中') || s.substitution_risk.includes('面臨') || s.substitution_risk.includes('競爭');
                         const lowBarrier = s.barrierLevel < 3.0;
                         return (hasHighRisk || lowBarrier) && !weakeningCandidates.some(c => c.code === s.code);
