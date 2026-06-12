@@ -85,7 +85,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
                 <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
                     <div class="text-[11px] text-slate-500 mb-1">投資切入</div>
-                    <div class="text-sm font-bold text-cyan-300">先看 TAM / CAGR / 商業化節奏</div>
+                    <div class="text-sm font-bold text-cyan-300">先看 潛在市場規模 (TAM) / 年複合成長率 (CAGR) / 商業化節奏</div>
                 </div>
                 <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
                     <div class="text-[11px] text-slate-500 mb-1">決策重點</div>
@@ -96,18 +96,10 @@
                     <div class="text-sm font-bold text-emerald-300">投資人的獲利雷達與預警牆</div>
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
-                <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
-                    <div class="text-[11px] text-slate-500 mb-1">Producer</div>
-                    <div class="text-sm font-bold text-amber-200">pioter</div>
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
                     <div class="text-[11px] text-slate-500 mb-1">網站作者</div>
                     <div class="text-sm font-bold text-cyan-200">pioter</div>
-                </div>
-                <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
-                    <div class="text-[11px] text-slate-500 mb-1">今日正式版</div>
-                    <div class="text-sm font-bold text-emerald-200" id="site-formal-version">2026-05-26 正式版</div>
                 </div>
                 <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
                     <div class="text-[11px] text-slate-500 mb-1">更新日期</div>
@@ -132,11 +124,11 @@
                             <div id="home-highlight-date" class="font-bold text-cyan-300">--</div>
                         </div>
                         <div class="rounded-xl border border-slate-800 bg-slate-950/50 p-3">
-                            <div class="text-slate-500 mb-1">潛在市場規模 TAM</div>
+                            <div class="text-slate-500 mb-1">潛在市場規模 (TAM)</div>
                             <div id="home-highlight-tam" class="font-bold text-emerald-300">--</div>
                         </div>
                         <div class="rounded-xl border border-slate-800 bg-slate-950/50 p-3">
-                            <div class="text-slate-500 mb-1">CAGR</div>
+                            <div class="text-slate-500 mb-1">年複合成長率 (CAGR)</div>
                             <div id="home-highlight-cagr" class="font-bold text-cyan-300">--</div>
                         </div>
                         <div class="rounded-xl border border-slate-800 bg-slate-950/50 p-3">
@@ -270,11 +262,11 @@
                     </div>
                     <div class="grid grid-cols-2 lg:grid-cols-4 gap-2">
                         <div class="rounded-xl border border-slate-800 bg-slate-950/70 p-3">
-                            <div class="text-[10px] text-slate-500">潛在市場規模 TAM</div>
+                            <div class="text-[10px] text-slate-500">潛在市場規模 (TAM)</div>
                             <div id="mobile-theme-tam" class="mt-1 text-sm font-bold text-emerald-300"></div>
                         </div>
                         <div class="rounded-xl border border-slate-800 bg-slate-950/70 p-3">
-                            <div class="text-[10px] text-slate-500">CAGR</div>
+                            <div class="text-[10px] text-slate-500">年複合成長率 (CAGR)</div>
                             <div id="mobile-theme-cagr" class="mt-1 text-sm font-bold text-cyan-300"></div>
                         </div>
                         <div class="rounded-xl border border-slate-800 bg-slate-950/70 p-3">
@@ -587,7 +579,7 @@
             const versionStamp = Date.now();
             try {
                 const versionedMapCandidates = [
-                    './maps_repo_20260612_115713.json',
+                    './maps_repo_20260612_120341.json',
                     './maps_repo.json'
                 ];
                 const { data: rawRepo, url } = await fetchJsonWithFallback([
@@ -641,6 +633,15 @@
             openModal(stockId);
         }
 
+        function formatDisplayTime(isoString) {
+            if (!isoString) return '--';
+            let formatted = String(isoString).replace('T', ' ');
+            if (formatted.includes('+08:00')) {
+                formatted = formatted.replace('+08:00', ' 台灣時間');
+            }
+            return formatted;
+        }
+
         function updateSiteMeta() {
             const metaEl = document.getElementById('site-updated-at');
             const keys = Object.keys(mapsRepository || {});
@@ -656,7 +657,7 @@
                 .filter(item => item.date)
                 .sort((a, b) => String(b.date).localeCompare(String(a.date)));
             const newestFirst = [...datedMaps];
-            metaEl.textContent = datedMaps[0]?.date || '尚無資料';
+            metaEl.textContent = formatDisplayTime(datedMaps[0]?.date) || '尚無資料';
 
             const topEntry = newestFirst[0] || datedMaps[0] || null;
             const topMap = topEntry?.map || mapsRepository[keys[0]];
@@ -671,7 +672,7 @@
             if (topMap) {
                 if (highlightTitle) highlightTitle.textContent = topMap.title || '今日主題';
                 if (highlightThesis) highlightThesis.textContent = shortenText(topMap.thesis || topMap.desc || '今日亮點整理中', 88);
-                if (highlightDate) highlightDate.textContent = topMap.date || topMap.updated_at || '--';
+                if (highlightDate) highlightDate.textContent = formatDisplayTime(topMap.date || topMap.updated_at);
                 if (highlightTam) highlightTam.textContent = shortenText(topMap.market_size_tam || '待補資料', 28);
                 if (highlightCagr) highlightCagr.textContent = shortenText(topMap.market_cagr || '待補資料', 28);
                 if (highlightFlow) highlightFlow.textContent = shortenText((topMap.trigger_events || [])[0] || (topMap.heat_drivers || [])[0] || topMap.period || '主線整理中', 28);
@@ -697,7 +698,7 @@
                     <div class="rounded-xl border ${idx === 0 ? 'border-amber-700/40 bg-amber-950/20' : 'border-slate-800 bg-slate-950/40'} px-3 py-2">
                         <div class="flex items-center justify-between gap-3">
                             <div class="min-w-0">
-                                <div class="text-xs font-bold ${idx === 0 ? 'text-amber-300' : 'text-slate-200'} truncate">${item.date}${idx === 0 ? ' ・ 今日提案' : ''}</div>
+                                <div class="text-xs font-bold ${idx === 0 ? 'text-amber-300' : 'text-slate-200'} truncate">${formatDisplayTime(item.date)}${idx === 0 ? ' ・ 今日提案' : ''}</div>
                                 <div class="text-[11px] text-slate-500 truncate">${item.map?.title || item.key}</div>
                             </div>
                             <button onclick="showMap('${item.key}')" class="text-[11px] px-2 py-1 rounded-lg border border-slate-700 text-slate-300 hover:text-white hover:border-slate-500">查看</button>
@@ -788,8 +789,8 @@
                                 <p class="text-xs text-cyan-200 leading-relaxed line-clamp-2">${opening}</p>
                             </div>
                             <div class="grid grid-cols-2 gap-2 mb-3 text-[11px]">
-                                <div class="rounded-xl border border-emerald-900/30 bg-emerald-950/15 px-3 py-2"><div class="text-slate-500 mb-1">TAM</div><div class="font-bold text-emerald-300 line-clamp-1">${tamText}</div></div>
-                                <div class="rounded-xl border border-cyan-900/30 bg-cyan-950/15 px-3 py-2"><div class="text-slate-500 mb-1">CAGR</div><div class="font-bold text-cyan-300 line-clamp-1">${cagrText}</div></div>
+                                <div class="rounded-xl border border-emerald-900/30 bg-emerald-950/15 px-3 py-2"><div class="text-slate-500 mb-1">市場規模 (TAM)</div><div class="font-bold text-emerald-300 line-clamp-1">${tamText}</div></div>
+                                <div class="rounded-xl border border-cyan-900/30 bg-cyan-950/15 px-3 py-2"><div class="text-slate-500 mb-1">年複合成長率 (CAGR)</div><div class="font-bold text-cyan-300 line-clamp-1">${cagrText}</div></div>
                                 <div class="rounded-xl border border-amber-900/30 bg-amber-950/15 px-3 py-2"><div class="text-slate-500 mb-1">題材階段</div><div class="font-bold text-amber-300 line-clamp-1">${stageText}</div></div>
                                 <div class="rounded-xl border border-fuchsia-900/30 bg-fuchsia-950/15 px-3 py-2"><div class="text-slate-500 mb-1">誰賺最多</div><div class="font-bold text-fuchsia-300 line-clamp-1">${valueCaptureText}</div></div>
                             </div>
@@ -834,11 +835,11 @@
             document.getElementById('map-period-hero').textContent = mapData.period || '觀察期';
             document.getElementById('header-status').innerHTML = `
                 <div class="hidden xl:flex items-center gap-2 text-xs text-slate-400">
-                    <span class="px-2 py-1 rounded-lg border border-slate-700 bg-slate-900">提案日期 ${mapData.date || '--'}</span>
-                    <span class="px-2 py-1 rounded-lg border border-emerald-700/40 bg-emerald-950/20 text-emerald-300">TAM ${mapData.market_size_tam || '待補資料'}</span>
-                    <span class="px-2 py-1 rounded-lg border border-cyan-700/40 bg-cyan-950/20 text-cyan-300">CAGR ${mapData.market_cagr || '待補資料'}</span>
+                    <span class="px-2 py-1 rounded-lg border border-slate-700 bg-slate-900">提案日期 ${formatDisplayTime(mapData.date)}</span>
+                    <span class="px-2 py-1 rounded-lg border border-emerald-700/40 bg-emerald-950/20 text-emerald-300">市場規模 (TAM) ${mapData.market_size_tam || '待補資料'}</span>
+                    <span class="px-2 py-1 rounded-lg border border-cyan-700/40 bg-cyan-950/20 text-cyan-300">年複合成長率 (CAGR) ${mapData.market_cagr || '待補資料'}</span>
                     <span class="px-2 py-1 rounded-lg border border-amber-700/40 bg-amber-950/20 text-amber-300">${mapData.theme_stage || mapData.period || '觀察期'}</span>
-                    <span class="px-2 py-1 rounded-lg border border-slate-700 bg-slate-900">更新 ${mapData.updated_at || mapData.date || '--'}</span>
+                    <span class="px-2 py-1 rounded-lg border border-slate-700 bg-slate-900">更新 ${formatDisplayTime(mapData.updated_at || mapData.date)}</span>
                 </div>
             `;
             document.getElementById('mobile-theme-title').textContent = mapData.title || '未命名主題';
