@@ -2494,10 +2494,19 @@
             if (linksContainer && linkTV && linkYahoo) {
                 linksContainer.classList.remove('hidden');
                 if (isTaiwanStock) {
-                    linkTV.href = `https://www.tradingview.com/symbols/TWSE-${code}/`;
+                    // Detect TWSE vs TPEX from stocksWiki
+                    let market = "TWSE";
+                    if (stocksWiki[code] && stocksWiki[code].market) {
+                        market = stocksWiki[code].market.toUpperCase();
+                    }
+                    linkTV.href = `https://www.tradingview.com/chart/?symbol=${market}%3A${code}`;
                     linkYahoo.href = `https://tw.stock.yahoo.com/quote/${code}.TW`;
                 } else {
-                    linkTV.href = `https://www.tradingview.com/symbols/${code}/`;
+                    let market = "NASDAQ";
+                    if (code.toUpperCase() === 'TSM') {
+                        market = "NYSE";
+                    }
+                    linkTV.href = `https://www.tradingview.com/chart/?symbol=${market}%3A${code}`;
                     linkYahoo.href = `https://finance.yahoo.com/quote/${code}`;
                 }
             }
