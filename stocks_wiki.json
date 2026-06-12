@@ -5053,20 +5053,26 @@
     "themes": [
       "地緣管制下的磷化銦光電晶片供應鏈重組"
     ],
-    "summary": "聯電作為台灣第二大晶圓代工廠，其技術多元性使其有能力承接部分InP相關的特殊製程需求，特別是在地緣管制導致海外代工受限時，具備備援價值。",
+    "summary": "全球第二大晶圓代工廠，聚焦成熟製程與特色工藝，積極佈局車用與IoT市場。",
     "products": [
-      "中游：外延生長（Epitaxy）與晶片製造"
+      "邏輯晶片代工",
+      "嵌入式記憶體 (eNVM)",
+      "類比與電源管理IC"
     ],
     "details": {
-      "pureLevel": 2.5,
-      "barrierLevel": 4.0,
-      "pros": "擁有成熟的特殊製程技術，具備發展InP相關製程的基礎能力，可作為地緣管制下的備援代工選擇。",
-      "cons": "目前主要營收來自CMOS製程，InP製程尚未量產，技術轉換需時。",
-      "catalyst": "若國產InP製程技術突破，聯電可能成為重要的代工夥伴。",
-      "pricing_power": "中",
-      "ai_revenue_exposure": "低",
-      "commercialization_phase": "早期開發期"
-    }
+      "pureLevel": 4.8,
+      "barrierLevel": 4.2,
+      "ai_revenue_exposure": "AI直接佔比低 (<5%)，主要透過HPC與車用晶片間接受惠",
+      "gross_margin_impact": "受惠產能利用率回升與產品組合優化，預期毛利率穩步回升",
+      "pricing_power": "中，成熟製程競爭激烈但具客戶黏性",
+      "value_capture_score": 75,
+      "substitution_risk": "中，面臨大陸廠價格戰與台積電先進製程擠壓",
+      "commercialization_phase": "成熟製程已量產，新廠擴充與新產品驗證中",
+      "pros": "技術成熟穩定，車用與工業市場佈局完整，財務結構穩健",
+      "cons": "AI先進製程市佔率低，受全球半導體景氣循環影響大",
+      "catalyst": "車用晶片需求爆發與產能利用率顯著提升"
+    },
+    "updated_at": "2026-06-12"
   },
   "2305": {
     "code": "2305",
@@ -5165,13 +5171,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "全球最大電子代工廠，持續擴大AI伺服器、電動車與雲端佈局。",
+    "summary": "全球最大代工廠，AI伺服器出貨放量，積極佈局AI伺服器與自動駕駛轉型。",
     "products": [
-      "AI伺服器",
-      "雲端設備",
-      "電動車零組件"
-    ]
+      "AI伺服器與高效能運算(HPC)",
+      "雲端運算基礎設施",
+      "自動駕駛與智慧載具"
+    ],
+    "details": {
+      "pureLevel": 4.8,
+      "barrierLevel": 4.5,
+      "ai_revenue_exposure": "AI伺服器營收佔比持續提升，預估佔伺服器業務比重已達30-40%以上",
+      "gross_margin_impact": "受惠高毛利AI伺服器與HPC產品出貨比重增加，預期整體毛利率結構性改善",
+      "pricing_power": "中高，具備規模經濟與關鍵客戶綁定優勢，但面臨陸廠價格競爭壓力",
+      "value_capture_score": 88,
+      "substitution_risk": "低，技術整合能力強且客戶轉換成本高，但需防範客戶自製或分散供應鏈風險",
+      "commercialization_phase": "AI伺服器已大量量產出貨，HPC與自動駕駛業務持續放量中",
+      "pros": "受惠AI浪潮帶動伺服器訂單強勁，自動駕駛與5G佈局逐步展現規模效益",
+      "cons": "地緣政治風險與客戶集中度偏高，傳統消費性電子需求復甦力道仍待觀察",
+      "catalyst": "AI伺服器訂單能見度延長及自動駕駛業務獲大型車廠大單認證"
+    },
+    "updated_at": "2026-06-12"
   },
   "2321": {
     "code": "2321",
@@ -5270,13 +5289,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "全球晶圓代工龍頭，領先先進製程，全力投入AI與高效能運算。",
+    "summary": "全球晶圓代工龍頭，AI先進製程與CoWoS產能緊繃，營收年增逾30%。",
     "products": [
-      "先進製程",
-      "AI晶片代工",
-      "高效能運算"
-    ]
+      "3奈米/2奈米先進製程",
+      "CoWoS先進封裝",
+      "AI伺服器與HPC晶片代工"
+    ],
+    "details": {
+      "pureLevel": 5.0,
+      "barrierLevel": 5.0,
+      "ai_revenue_exposure": "AI相關營收佔比超過50%，為主要成長引擎",
+      "gross_margin_impact": "受惠高毛利先進製程與封裝放量，預期毛利率維持高位或微升",
+      "pricing_power": "極高，具備絕對定價權與產能分配主導權",
+      "value_capture_score": 98,
+      "substitution_risk": "極低，技術壁壘與客戶黏性極高，三星與英特爾難以短期取代",
+      "commercialization_phase": "已全面量產，2奈米與CoWoS產能持續擴充中",
+      "pros": "全球唯一具備先進製程與先進封裝規模量產能力，AI需求結構性強勁",
+      "cons": "地緣政治風險與過度依賴單一市場（美國/中國）之潛在監管壓力",
+      "catalyst": "2奈米量產進度、CoWoS產能擴張速度及AI資本支出持續性"
+    },
+    "updated_at": "2026-06-12"
   },
   "2331": {
     "code": "2331",
@@ -6545,13 +6577,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "全球手機SoC設計龍頭，持續強化AIoT與汽車電子晶片佈局。",
+    "summary": "全球手機SoC龍頭，積極佈局AI PC與車用晶片，轉型AI邊緣運算核心供應商。",
     "products": [
       "手機SoC晶片",
-      "AIoT晶片",
-      "汽車電子晶片"
-    ]
+      "AI PC處理器",
+      "車用資訊娛樂系統晶片"
+    ],
+    "details": {
+      "pureLevel": 4.8,
+      "barrierLevel": 4.5,
+      "ai_revenue_exposure": "AI手機與AI PC佔比快速提升，預估佔整體營收20-30%",
+      "gross_margin_impact": "高階旗艦晶片與AI產品結構優化，預期毛利率維持高檔或微幅提升",
+      "pricing_power": "高，在手機中階與旗艦市場具定價主導權",
+      "value_capture_score": 88,
+      "substitution_risk": "中，面臨高通競爭與蘋果自研晶片威脅",
+      "commercialization_phase": "AI PC與車用晶片已量產出貨並持續放量",
+      "pros": "手機市場市佔率穩固，AI PC與車用業務提供第二成長曲線",
+      "cons": "消費性電子需求復甦緩慢，地緣政治與供應鏈風險",
+      "catalyst": "AI手機換機潮啟動與AI PC市場滲透率提升"
+    },
+    "updated_at": "2026-06-12"
   },
   "2455": {
     "code": "2455",
