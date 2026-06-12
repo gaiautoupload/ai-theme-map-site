@@ -824,6 +824,41 @@
                     </div>
                 </div>
             </div>
+
+            <!-- 總經與商品連動說明 -->
+            <div class="bg-slate-950/60 border border-indigo-900/30 rounded-xl p-4 space-y-3 mt-6">
+                <div class="text-xs font-bold text-indigo-400 flex items-center gap-2">
+                    <i data-lucide="info" class="w-3.5 h-3.5"></i> 全球總經與台股波動連動邏輯
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-[11px] text-slate-300">
+                    <div class="bg-slate-900/60 border border-slate-800/40 rounded-lg p-3">
+                        <div class="text-indigo-400 font-bold mb-1">美元指數 (DXY) ↔ 外資流向</div>
+                        <p class="text-slate-400">美元強勢 ➡️ 資金撤出新興市場 ➡️ 外資賣超台股權值股 (如台積電) 造成大盤承壓。美元走弱時則有利外資買盤回流。</p>
+                    </div>
+                    <div class="bg-slate-900/60 border border-slate-800/40 rounded-lg p-3">
+                        <div class="text-emerald-400 font-bold mb-1">美元/新台幣 ↔ 出口與匯差</div>
+                        <p class="text-slate-400">新台幣貶值 (數值上升) ➡️ 電子出口商 (如代工廠、IC 設計) 毛利率改善並產生匯兌利益；但若貶值過快易引發外資獲利了結賣壓。</p>
+                    </div>
+                    <div class="bg-slate-900/60 border border-slate-800/40 rounded-lg p-3">
+                        <div class="text-amber-400 font-bold mb-1">日圓匯率 ↔ 工具機與轉單</div>
+                        <p class="text-slate-400">日圓貶值 (USD/JPY 上升) ➡️ 日本工具機與被動元件 (如村田) 價格更具競爭力，對台廠 (如國巨、上銀) 易產生壓價競爭壓力。</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-[11px] text-slate-300 pt-1">
+                    <div class="bg-slate-900/60 border border-slate-800/40 rounded-lg p-3">
+                        <div class="text-yellow-400 font-bold mb-1">黃金價格 ↔ 避險情緒與概念股</div>
+                        <p class="text-slate-400">黃金上漲 ➡️ 全球地緣政治或金融風險升溫，市場防禦性心態 (Risk-off) 增強。台股黃金/貴金屬回收概念股 (佳龍、光洋科) 常受資金青睞。</p>
+                    </div>
+                    <div class="bg-slate-900/60 border border-slate-800/40 rounded-lg p-3">
+                        <div class="text-cyan-400 font-bold mb-1">原油價格 ↔ 通膨壓力與塑化</div>
+                        <p class="text-slate-400">油價大漲 ➡️ 推升全球通膨預期，衝擊航運成本；但有利於台股上游塑化族群 (如台塑四寶) 的營收與產品報價上揚。</p>
+                    </div>
+                    <div class="bg-slate-900/60 border border-slate-800/40 rounded-lg p-3">
+                        <div class="text-teal-400 font-bold mb-1">銅價走勢 ↔ 工業景氣與 PCB / 電纜</div>
+                        <p class="text-slate-400">銅是工業之母，銅價上漲代表實體經濟與基礎建設復甦。但銅價大漲會推升電線電纜 (如華新) 與 PCB 銅箔基板 (CCL，如台光電) 的原料成本。</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -859,26 +894,26 @@
                     <div class="bg-slate-950 border border-slate-800/60 rounded-xl p-3 space-y-2">
                         <div class="flex items-center justify-between text-xs">
                             <div class="flex items-center gap-2">
-                                <span class="font-bold text-slate-200">SK 海力士 (SK Hynix)</span>
+                                <span class="font-bold text-slate-200">SK 海力士 GDR</span>
                                 <span class="text-[10px] px-1.5 py-0.5 rounded bg-cyan-950/60 border border-cyan-900/30 text-cyan-300">HBM 主導者</span>
                             </div>
-                            <span class="text-cyan-500 font-mono">KRX:000660</span>
+                            <span class="text-cyan-500 font-mono">FRA:HY9H</span>
                         </div>
                         <div class="h-[260px] rounded-lg overflow-hidden relative border border-slate-800/40">
                             <div id="tv-chart-ind-skhynix" class="w-full h-full"></div>
                         </div>
-                        <p class="text-[10px] text-slate-500 leading-relaxed">SK 海力士是 HBM (高頻寬記憶體) 市場龍頭，獨家供應 NVIDIA。其股價為 HBM 報價與 AI 記憶體需求的最直接風向標，連動台灣 HBM 供應鏈 (力成、南茂)。</p>
+                        <p class="text-[10px] text-slate-500 leading-relaxed">SK 海力士是 HBM (高頻寬記憶體) 市場龍頭，獨家供應 NVIDIA。此處採用法蘭克福證交所發行的 GDR 代號 (FRA:HY9H) 以繞過韓國交易所 Widget 限制，走勢與母股完全同步，連動台灣 HBM 封測供應鏈 (力成、南茂)。</p>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <!-- Samsung (005930.KS) -->
+                    <!-- Samsung (SMSN) -->
                     <div class="bg-slate-950 border border-slate-800/60 rounded-xl p-3 space-y-2">
                         <div class="flex items-center justify-between text-xs">
                             <div class="flex items-center gap-2">
-                                <span class="font-bold text-slate-200">三星電子</span>
+                                <span class="font-bold text-slate-200">三星電子 GDR</span>
                                 <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-950/60 border border-emerald-900/30 text-emerald-300">記憶體霸主</span>
                             </div>
-                            <span class="text-emerald-500 font-mono text-[10px]">KRX:005930</span>
+                            <span class="text-emerald-500 font-mono text-[10px]">LSE:SMSN</span>
                         </div>
                         <div class="h-[180px] rounded-lg overflow-hidden relative border border-slate-800/40">
                             <div id="tv-chart-ind-samsung" class="w-full h-full"></div>
@@ -1264,7 +1299,7 @@
             const versionStamp = Date.now();
             try {
                 const versionedMapCandidates = [
-                    './maps_repo_20260612_160825.json',
+                    './maps_repo_20260612_161348.json',
                     './maps_repo.json'
                 ];
                 const { data: rawRepo, url } = await fetchJsonWithFallback([
@@ -3049,8 +3084,8 @@
             }
             // Memory & Semiconductor
             renderMiniChart("NASDAQ:MU", "tv-chart-ind-mu");
-            renderMiniChart("KRX:000660", "tv-chart-ind-skhynix");
-            renderMiniChart("KRX:005930", "tv-chart-ind-samsung");
+            renderMiniChart("FRA:HY9H", "tv-chart-ind-skhynix");
+            renderMiniChart("LSE:SMSN", "tv-chart-ind-samsung");
             renderMiniChart("NASDAQ:SOXX", "tv-chart-ind-soxx");
             renderMiniChart("NASDAQ:WDC", "tv-chart-ind-wdc");
             // Industrial Commodities & Energy
