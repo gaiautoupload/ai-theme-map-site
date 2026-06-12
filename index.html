@@ -63,6 +63,7 @@
                     <button onclick="showDashboardHome()" id="nav-btn-home" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition">投研首頁</button>
                     <button onclick="showThemeLibrary()" id="nav-btn-library" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition">主題地圖庫</button>
                     <button onclick="showStockWiki()" id="nav-btn-wiki" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition">個股 Wiki</button>
+                    <button onclick="showTechDocs()" id="nav-btn-tech" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition">技術說明</button>
                 </nav>
             </div>
             <div class="relative hidden lg:block w-72 mx-4 z-50">
@@ -125,30 +126,30 @@
                 </div>
 
                 <!-- Right: Charts Area (Main TAIEX Futures + US Tech Giants) -->
-                <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="lg:col-span-2 space-y-4">
                     <!-- Main TAIEX Futures Chart -->
-                    <div class="md:col-span-2 h-[320px] bg-slate-900 border border-slate-800/60 rounded-xl overflow-hidden shadow-lg relative">
+                    <div class="h-[320px] bg-slate-900 border border-slate-800/60 rounded-2xl overflow-hidden shadow-lg relative">
                         <div id="tv-chart-taiex" class="w-full h-full"></div>
                     </div>
                     <!-- US Tech Leaders Mini Grid -->
-                    <div class="md:col-span-1 grid grid-cols-2 md:grid-cols-1 gap-2">
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
                         <!-- TSM ADR -->
-                        <div class="h-[76px] bg-slate-900 border border-slate-800/60 rounded-xl overflow-hidden relative" title="台積電 ADR (TSM)">
+                        <div class="h-[140px] bg-slate-900 border border-slate-800/60 rounded-xl overflow-hidden relative" title="台積電 ADR (TSM)">
                             <div id="tv-chart-tsm" class="w-full h-full"></div>
                             <div class="absolute top-1 left-2 pointer-events-none bg-slate-950/75 backdrop-blur-sm px-1.5 py-0.5 rounded text-[9px] font-bold text-slate-300 border border-slate-800">TSM ADR</div>
                         </div>
                         <!-- NVIDIA -->
-                        <div class="h-[76px] bg-slate-900 border border-slate-800/60 rounded-xl overflow-hidden relative" title="輝達 (NVDA)">
+                        <div class="h-[140px] bg-slate-900 border border-slate-800/60 rounded-xl overflow-hidden relative" title="輝達 (NVDA)">
                             <div id="tv-chart-nvda" class="w-full h-full"></div>
                             <div class="absolute top-1 left-2 pointer-events-none bg-slate-950/75 backdrop-blur-sm px-1.5 py-0.5 rounded text-[9px] font-bold text-slate-300 border border-slate-800">NVIDIA</div>
                         </div>
                         <!-- Apple -->
-                        <div class="h-[76px] bg-slate-900 border border-slate-800/60 rounded-xl overflow-hidden relative" title="蘋果 (AAPL)">
+                        <div class="h-[140px] bg-slate-900 border border-slate-800/60 rounded-xl overflow-hidden relative" title="蘋果 (AAPL)">
                             <div id="tv-chart-aapl" class="w-full h-full"></div>
                             <div class="absolute top-1 left-2 pointer-events-none bg-slate-950/75 backdrop-blur-sm px-1.5 py-0.5 rounded text-[9px] font-bold text-slate-300 border border-slate-800">APPLE</div>
                         </div>
                         <!-- Micron -->
-                        <div class="h-[76px] bg-slate-900 border border-slate-800/60 rounded-xl overflow-hidden relative" title="美光 (MU)">
+                        <div class="h-[140px] bg-slate-900 border border-slate-800/60 rounded-xl overflow-hidden relative" title="美光 (MU)">
                             <div id="tv-chart-mu" class="w-full h-full"></div>
                             <div class="absolute top-1 left-2 pointer-events-none bg-slate-950/75 backdrop-blur-sm px-1.5 py-0.5 rounded text-[9px] font-bold text-slate-300 border border-slate-800">MICRON</div>
                         </div>
@@ -630,6 +631,109 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="comparison-result-cards"></div>
             </section>
         </main>
+    </div>
+
+    <!-- 技術說明分頁 -->
+    <div id="panel-tech-docs" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-1 space-y-8 hidden">
+        <div class="bg-gradient-to-r from-indigo-950/40 via-slate-900 to-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-6">
+            <div>
+                <h2 class="text-xl font-bold bg-gradient-to-r from-cyan-400 to-indigo-400 bg-clip-text text-transparent mb-2">平台技術架構與數據流程說明</h2>
+                <p class="text-sm text-slate-400 leading-relaxed">本平台為無伺服器（Serverless）架構設計，每日藉由 Python 自動化管線整合大模型及 Web 實時搜尋，將市場結構分析與個股關聯重新精確對齊為投資決策地圖。</p>
+            </div>
+
+            <!-- Architecture Diagram -->
+            <div class="border border-slate-800/80 bg-slate-950 p-6 rounded-xl space-y-6">
+                <h3 class="text-sm font-bold text-cyan-400 uppercase tracking-wider flex items-center gap-2">
+                    <i data-lucide="git-branch" class="w-4 h-4"></i> 數據流與管線架構 (Data Pipeline Workflow)
+                </h3>
+                
+                <div class="flex justify-center py-4 bg-slate-950/50 rounded-lg border border-slate-850">
+                    <svg viewBox="0 0 800 300" class="w-full max-w-3xl text-slate-300 font-sans" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                        <defs>
+                            <linearGradient id="grad-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#06b6d4" />
+                                <stop offset="100%" stop-color="#3b82f6" />
+                            </linearGradient>
+                            <linearGradient id="grad-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#6366f1" />
+                                <stop offset="100%" stop-color="#a855f7" />
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Step 1 -->
+                        <rect x="20" y="80" width="130" height="70" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+                        <text x="85" y="110" font-size="12" font-weight="bold" fill="#67e8f9" text-anchor="middle">1. 探索與抓取</text>
+                        <text x="85" y="130" font-size="10" fill="#94a3b8" text-anchor="middle">證交所與財經新聞</text>
+
+                        <!-- Step 2 -->
+                        <rect x="180" y="80" width="130" height="70" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+                        <text x="245" y="110" font-size="12" font-weight="bold" fill="#67e8f9" text-anchor="middle">2. 大局分析研判</text>
+                        <text x="245" y="130" font-size="10" fill="#94a3b8" text-anchor="middle">大盤ABC波段推演</text>
+
+                        <!-- Step 3 -->
+                        <rect x="340" y="80" width="130" height="70" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+                        <text x="405" y="110" font-size="12" font-weight="bold" fill="#67e8f9" text-anchor="middle">3. 題材探索與篩選</text>
+                        <text x="405" y="130" font-size="10" fill="#94a3b8" text-anchor="middle">動態挖掘熱門主題</text>
+
+                        <!-- Step 4 -->
+                        <rect x="500" y="80" width="130" height="70" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+                        <text x="565" y="110" font-size="12" font-weight="bold" fill="#67e8f9" text-anchor="middle">4. 證物關聯分析</text>
+                        <text x="565" y="130" font-size="10" fill="#94a3b8" text-anchor="middle">個股Moat/純度評級</text>
+
+                        <!-- Step 5 -->
+                        <rect x="660" y="80" width="120" height="70" rx="8" fill="url(#grad-blue)" stroke="#0891b2" stroke-width="1.5"/>
+                        <text x="720" y="110" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">5. 靜態佈署</text>
+                        <text x="720" y="130" font-size="10" fill="#e2e8f0" text-anchor="middle">GitHub Pages</text>
+
+                        <!-- Connectors -->
+                        <path d="M 150 115 L 180 115" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+                        <path d="M 310 115 L 340 115" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+                        <path d="M 470 115 L 500 115" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+                        <path d="M 630 115 L 660 115" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+                        
+                        <defs>
+                            <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#475569" />
+                            </marker>
+                        </defs>
+
+                        <!-- Database Box -->
+                        <path d="M 350 210 C 350 200, 450 200, 450 210 L 450 250 C 450 260, 350 260, 350 250 Z" fill="#1e1b4b" stroke="#4338ca" stroke-width="1.5"/>
+                        <ellipse cx="400" cy="210" rx="50" ry="10" fill="#312e81" stroke="#4338ca" stroke-width="1.5" />
+                        <text x="400" y="240" font-size="11" font-weight="bold" fill="#a5b4fc" text-anchor="middle">JSON 結構化資料庫</text>
+                        
+                        <path d="M 245 150 L 245 225 L 350 225" stroke="#4f46e5" stroke-dasharray="4" stroke-width="1.5"/>
+                        <path d="M 565 150 L 565 225 L 450 225" stroke="#4f46e5" stroke-dasharray="4" stroke-width="1.5"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Tech Details Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                <div class="bg-slate-950 p-5 rounded-xl border border-slate-800/60 space-y-3">
+                    <h4 class="text-xs font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
+                        <i data-lucide="check-circle" class="w-4 h-4"></i> 後端每日更新管線 (Cron / Scheduler)
+                    </h4>
+                    <ul class="space-y-2 text-xs text-slate-300 list-disc list-inside leading-relaxed">
+                        <li><strong>數據抓取層</strong>：整合 `build_ticker_registry.py`，串接證交所 OpenAPI 確保標的代碼正確。</li>
+                        <li><strong>智能決策層</strong>：`theme_discovery.py` 與 `evidence_builder.py` 自動分析當日財經熱度、籌碼與量能變化，挖掘熱點概念股。</li>
+                        <li><strong>Wiki 結構化</strong>：`build_stocks_wiki.py` 自動產出個股的主營佔比、競爭利基與催化劑。</li>
+                        <li><strong>發布與部署</strong>：`publish_site.py` 執行靜態封裝、建立版本指標、發布至 GitHub 部署。</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-950 p-5 rounded-xl border border-slate-800/60 space-y-3">
+                    <h4 class="text-xs font-bold text-indigo-400 uppercase tracking-wider flex items-center gap-1.5">
+                        <i data-lucide="cpu" class="w-4 h-4"></i> 前端無伺服器渲染 (Serverless Frontend)
+                    </h4>
+                    <ul class="space-y-2 text-xs text-slate-300 list-disc list-inside leading-relaxed">
+                        <li><strong>純靜態高速載入</strong>：利用網頁預載入與快取防護，在 client-side 動態解析 `maps_repo.json`、`stocks_wiki.json` 與 `market_reports.json`。</li>
+                        <li><strong>動態 K 線串接</strong>：使用 TradingView 輕量化 Widget 技術，直連全球金融市場報價。</li>
+                        <li><strong>防 CORS 快取穿透</strong>：大盤及熱點主題採非同步 Promise 等待與重試邏輯，避免跨域阻擋。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div id="stock-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-0 md:p-4 hidden">
@@ -1199,10 +1303,12 @@
             if (document.getElementById('panel-theme-library')) document.getElementById('panel-theme-library').classList.remove('hidden');
             document.getElementById('panel-stock-wiki').classList.add('hidden');
             document.getElementById('panel-map-workspace').classList.add('hidden');
+            if (document.getElementById('panel-tech-docs')) document.getElementById('panel-tech-docs').classList.add('hidden');
 
             document.getElementById('nav-btn-home').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             if (document.getElementById('nav-btn-library')) document.getElementById('nav-btn-library').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition";
             document.getElementById('nav-btn-wiki').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-tech')) document.getElementById('nav-btn-tech').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
 
             renderThemeLibrary();
             lucide.createIcons();
@@ -2460,10 +2566,12 @@
             document.getElementById('panel-home').classList.add('hidden');
             if (document.getElementById('panel-theme-library')) document.getElementById('panel-theme-library').classList.add('hidden');
             document.getElementById('panel-map-workspace').classList.add('hidden');
+            if (document.getElementById('panel-tech-docs')) document.getElementById('panel-tech-docs').classList.add('hidden');
             document.getElementById('panel-stock-wiki').classList.remove('hidden');
             
             document.getElementById('nav-btn-home').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             if (document.getElementById('nav-btn-library')) document.getElementById('nav-btn-library').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-tech')) document.getElementById('nav-btn-tech').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             document.getElementById('nav-btn-wiki').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition";
             
             renderStockWiki();
@@ -2473,13 +2581,30 @@
             document.getElementById('panel-stock-wiki').classList.add('hidden');
             if (document.getElementById('panel-theme-library')) document.getElementById('panel-theme-library').classList.add('hidden');
             document.getElementById('panel-map-workspace').classList.add('hidden');
+            if (document.getElementById('panel-tech-docs')) document.getElementById('panel-tech-docs').classList.add('hidden');
             document.getElementById('panel-home').classList.remove('hidden');
             
             document.getElementById('nav-btn-home').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition";
             if (document.getElementById('nav-btn-library')) document.getElementById('nav-btn-library').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             document.getElementById('nav-btn-wiki').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-tech')) document.getElementById('nav-btn-tech').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             
             renderDashboardHome();
+        }
+
+        function showTechDocs() {
+            document.getElementById('panel-home').classList.add('hidden');
+            if (document.getElementById('panel-theme-library')) document.getElementById('panel-theme-library').classList.add('hidden');
+            document.getElementById('panel-stock-wiki').classList.add('hidden');
+            document.getElementById('panel-map-workspace').classList.add('hidden');
+            if (document.getElementById('panel-tech-docs')) document.getElementById('panel-tech-docs').classList.remove('hidden');
+            
+            document.getElementById('nav-btn-home').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-library')) document.getElementById('nav-btn-library').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            document.getElementById('nav-btn-wiki').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-tech')) document.getElementById('nav-btn-tech').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition";
+            
+            lucide.createIcons();
         }
 
         function renderStockWiki() {
