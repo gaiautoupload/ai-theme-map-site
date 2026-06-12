@@ -65,6 +65,7 @@
                     <button onclick="showStockWiki()" id="nav-btn-wiki" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition">個股 Wiki</button>
                     <button onclick="showMacroPage()" id="nav-btn-macro" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition">全球總經</button>
                     <button onclick="showIndustryPricing()" id="nav-btn-industry" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition">產業報價</button>
+                    <button onclick="showChipsAnalysis()" id="nav-btn-chips" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition">法人籌碼</button>
                     <button onclick="showTechDocs()" id="nav-btn-tech" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition">技術說明</button>
                 </nav>
             </div>
@@ -1123,6 +1124,102 @@
         </div>
     </div>
 
+    <!-- 法人籌碼分頁 -->
+    <div id="panel-chips-analysis" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-1 space-y-8 hidden">
+        <div class="bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-xl font-bold bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent mb-2">三大法人籌碼與題材集體發動分析</h2>
+                    <p class="text-sm text-slate-400 leading-relaxed">追蹤每日三大法人（外資、投信、自營商）同步進駐之強勢股，並結合主題地圖篩選出「法人集體發動」的熱門概念板塊。</p>
+                </div>
+                <div class="text-right text-xs text-slate-500 font-mono">
+                    <div>資料日期：<span id="chips-data-date" class="text-emerald-400 font-bold">-</span></div>
+                    <div>最後更新：<span id="chips-update-time">-</span></div>
+                </div>
+            </div>
+
+            <!-- 🔥 今日法人集體佈局焦點題材 -->
+            <div class="space-y-4">
+                <div class="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-2 pb-2 border-b border-slate-800/80">
+                    <i data-lucide="flame" class="w-4 h-4 text-amber-500 animate-pulse"></i> 今日法人焦點集體佈局題材 (同買 + 外資爆量量增)
+                </div>
+                <div id="chips-focus-themes-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Dynamic rendering focus themes here -->
+                </div>
+            </div>
+
+            <!-- 篩選表格與明細分頁 -->
+            <div class="space-y-6">
+                <!-- Tabs for Tables -->
+                <div class="flex items-center gap-2 border-b border-slate-800 pb-px">
+                    <button onclick="switchChipsTab('cohort')" id="tab-btn-cohort" class="px-4 py-2 text-xs font-bold border-b-2 border-emerald-500 text-emerald-400 transition">今日法人同買股</button>
+                    <button onclick="switchChipsTab('surge')" id="tab-btn-surge" class="px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition">外資爆量同買股</button>
+                    <button onclick="switchChipsTab('top100')" id="tab-btn-top100" class="px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition">今日買超前100排行</button>
+                </div>
+
+                <!-- Cohort Buys Table -->
+                <div id="chips-table-cohort" class="overflow-x-auto bg-slate-950/60 border border-slate-800/80 rounded-xl p-4">
+                    <table class="w-full text-left text-xs text-slate-300">
+                        <thead>
+                            <tr class="text-slate-500 border-b border-slate-800/60 font-bold pb-2">
+                                <th class="pb-2">股號</th>
+                                <th class="pb-2">名稱</th>
+                                <th class="pb-2 text-right">外資 (張)</th>
+                                <th class="pb-2 text-right">投信 (張)</th>
+                                <th class="pb-2 text-right">自營商 (張)</th>
+                                <th class="pb-2 text-right text-emerald-400">合計買超 (張)</th>
+                                <th class="pb-2 pl-4">參與題材</th>
+                            </tr>
+                        </thead>
+                        <tbody id="chips-cohort-tbody" class="divide-y divide-slate-800/40">
+                            <!-- Dynamic rows -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Surge Buys Table -->
+                <div id="chips-table-surge" class="overflow-x-auto bg-slate-950/60 border border-slate-800/80 rounded-xl p-4 hidden">
+                    <table class="w-full text-left text-xs text-slate-300">
+                        <thead>
+                            <tr class="text-slate-500 border-b border-slate-800/60 font-bold pb-2">
+                                <th class="pb-2">股號</th>
+                                <th class="pb-2">名稱</th>
+                                <th class="pb-2 text-right text-cyan-400">外資買超 (張)</th>
+                                <th class="pb-2 text-right">投信 (張)</th>
+                                <th class="pb-2 text-right">自營商 (張)</th>
+                                <th class="pb-2 text-right">合計買超 (張)</th>
+                                <th class="pb-2 pl-4">參與題材</th>
+                            </tr>
+                        </thead>
+                        <tbody id="chips-surge-tbody" class="divide-y divide-slate-800/40">
+                            <!-- Dynamic rows -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Top 100 Buys Table -->
+                <div id="chips-table-top100" class="overflow-x-auto bg-slate-950/60 border border-slate-800/80 rounded-xl p-4 hidden">
+                    <table class="w-full text-left text-xs text-slate-300">
+                        <thead>
+                            <tr class="text-slate-500 border-b border-slate-800/60 font-bold pb-2">
+                                <th class="pb-2">股號</th>
+                                <th class="pb-2">名稱</th>
+                                <th class="pb-2 text-right">外資 (張)</th>
+                                <th class="pb-2 text-right">投信 (張)</th>
+                                <th class="pb-2 text-right">自營商 (張)</th>
+                                <th class="pb-2 text-right text-teal-400">合計買超 (張)</th>
+                                <th class="pb-2 pl-4">參與題材</th>
+                            </tr>
+                        </thead>
+                        <tbody id="chips-top100-tbody" class="divide-y divide-slate-800/40">
+                            <!-- Dynamic rows -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="stock-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-0 md:p-4 hidden">
         <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl p-6 space-y-4 mobile-modal-sheet">
             <div class="flex items-center justify-between border-b border-slate-800 pb-3">
@@ -1299,7 +1396,7 @@
             const versionStamp = Date.now();
             try {
                 const versionedMapCandidates = [
-                    './maps_repo_20260612_180056.json',
+                    './maps_repo_20260613_003029.json',
                     './maps_repo.json'
                 ];
                 const { data: rawRepo, url } = await fetchJsonWithFallback([
@@ -1696,6 +1793,7 @@
             if (document.getElementById('panel-tech-docs')) document.getElementById('panel-tech-docs').classList.add('hidden');
             if (document.getElementById('panel-macro-market')) document.getElementById('panel-macro-market').classList.add('hidden');
             if (document.getElementById('panel-industry-pricing')) document.getElementById('panel-industry-pricing').classList.add('hidden');
+            if (document.getElementById('panel-chips-analysis')) document.getElementById('panel-chips-analysis').classList.add('hidden');
 
             document.getElementById('nav-btn-home').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             if (document.getElementById('nav-btn-library')) document.getElementById('nav-btn-library').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition";
@@ -1703,6 +1801,7 @@
             if (document.getElementById('nav-btn-tech')) document.getElementById('nav-btn-tech').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             if (document.getElementById('nav-btn-macro')) document.getElementById('nav-btn-macro').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             if (document.getElementById('nav-btn-industry')) document.getElementById('nav-btn-industry').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-chips')) document.getElementById('nav-btn-chips').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
 
             renderThemeLibrary();
             lucide.createIcons();
@@ -3063,6 +3162,7 @@
             document.getElementById('panel-map-workspace').classList.add('hidden');
             if (document.getElementById('panel-tech-docs')) document.getElementById('panel-tech-docs').classList.add('hidden');
             if (document.getElementById('panel-macro-market')) document.getElementById('panel-macro-market').classList.add('hidden');
+            if (document.getElementById('panel-chips-analysis')) document.getElementById('panel-chips-analysis').classList.add('hidden');
             if (document.getElementById('panel-industry-pricing')) document.getElementById('panel-industry-pricing').classList.remove('hidden');
 
             document.getElementById('nav-btn-home').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
@@ -3070,6 +3170,7 @@
             document.getElementById('nav-btn-wiki').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             if (document.getElementById('nav-btn-tech')) document.getElementById('nav-btn-tech').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             if (document.getElementById('nav-btn-macro')) document.getElementById('nav-btn-macro').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-chips')) document.getElementById('nav-btn-chips').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             if (document.getElementById('nav-btn-industry')) document.getElementById('nav-btn-industry').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition";
 
             renderIndustryCharts();
@@ -3095,6 +3196,163 @@
             renderMiniChart("CAPITALCOM:TIN", "tv-chart-ind-tin");
             renderMiniChart("TVC:PLATINUM", "tv-chart-ind-platinum");
             renderMiniChart("INDEX:BDI", "tv-chart-ind-bdi");
+        }
+
+        // ==========================================
+        // 三大法人籌碼分析分頁控制與渲染
+        // ==========================================
+        function switchChipsTab(tabName) {
+            document.getElementById('chips-table-cohort').classList.add('hidden');
+            document.getElementById('chips-table-surge').classList.add('hidden');
+            document.getElementById('chips-table-top100').classList.add('hidden');
+            
+            document.getElementById('tab-btn-cohort').className = "px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition";
+            document.getElementById('tab-btn-surge').className = "px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition";
+            document.getElementById('tab-btn-top100').className = "px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition";
+            
+            if (tabName === 'cohort') {
+                document.getElementById('chips-table-cohort').classList.remove('hidden');
+                document.getElementById('tab-btn-cohort').className = "px-4 py-2 text-xs font-bold border-b-2 border-emerald-500 text-emerald-400 transition";
+            } else if (tabName === 'surge') {
+                document.getElementById('chips-table-surge').classList.remove('hidden');
+                document.getElementById('tab-btn-surge').className = "px-4 py-2 text-xs font-bold border-b-2 border-emerald-500 text-emerald-400 transition";
+            } else if (tabName === 'top100') {
+                document.getElementById('chips-table-top100').classList.remove('hidden');
+                document.getElementById('tab-btn-top100').className = "px-4 py-2 text-xs font-bold border-b-2 border-emerald-500 text-emerald-400 transition";
+            }
+        }
+
+        function showChipsAnalysis() {
+            document.getElementById('panel-home').classList.add('hidden');
+            if (document.getElementById('panel-theme-library')) document.getElementById('panel-theme-library').classList.add('hidden');
+            document.getElementById('panel-stock-wiki').classList.add('hidden');
+            document.getElementById('panel-map-workspace').classList.add('hidden');
+            if (document.getElementById('panel-tech-docs')) document.getElementById('panel-tech-docs').classList.add('hidden');
+            if (document.getElementById('panel-macro-market')) document.getElementById('panel-macro-market').classList.add('hidden');
+            if (document.getElementById('panel-industry-pricing')) document.getElementById('panel-industry-pricing').classList.add('hidden');
+            document.getElementById('panel-chips-analysis').classList.remove('hidden');
+
+            document.getElementById('nav-btn-home').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-library')) document.getElementById('nav-btn-library').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            document.getElementById('nav-btn-wiki').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-tech')) document.getElementById('nav-btn-tech').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-macro')) document.getElementById('nav-btn-macro').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-industry')) document.getElementById('nav-btn-industry').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-chips')) document.getElementById('nav-btn-chips').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition";
+
+            loadAndRenderChips();
+        }
+
+        async function loadAndRenderChips() {
+            const focusContainer = document.getElementById('chips-focus-themes-container');
+            const cohortTbody = document.getElementById('chips-cohort-tbody');
+            const surgeTbody = document.getElementById('chips-surge-tbody');
+            const topTbody = document.getElementById('chips-top100-tbody');
+
+            if (!focusContainer) return;
+            
+            focusContainer.innerHTML = '<div class="col-span-2 py-8 text-center text-slate-500">載入中...</div>';
+            cohortTbody.innerHTML = '<tr><td colspan="7" class="py-4 text-center text-slate-500">載入中...</td></tr>';
+            
+            try {
+                const response = await fetch('./institutional_chips_summary.json');
+                if (!response.ok) {
+                    throw new Error('未找到最新的籌碼摘要資料，請執行 daily pipeline 進行抓取。');
+                }
+                const summary = await response.json();
+                
+                document.getElementById('chips-data-date').textContent = summary.date.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3');
+                document.getElementById('chips-update-time').textContent = summary.update_time;
+
+                focusContainer.innerHTML = '';
+                if (summary.focus_themes && summary.focus_themes.length > 0) {
+                    summary.focus_themes.forEach(theme => {
+                        const stocksHTML = theme.stocks.map(s => `
+                            <div class="flex items-center justify-between py-1 border-b border-slate-800/40 text-[11px]">
+                                <div class="flex items-center gap-1">
+                                    <span class="text-slate-400 font-mono">${s.symbol}</span>
+                                    <span class="text-slate-200 font-bold hover:text-cyan-400 cursor-pointer" onclick="showStockDetailsFromChips('${s.symbol}')">${s.name}</span>
+                                </div>
+                                <div class="flex items-center gap-3 font-mono text-[10px]">
+                                    <span class="text-emerald-400" title="外資">外:${s.foreign_net > 0 ? '+' + s.foreign_net : s.foreign_net}</span>
+                                    <span class="text-violet-400" title="投信">投:${s.trust_net > 0 ? '+' + s.trust_net : s.trust_net}</span>
+                                    <span class="text-slate-300 font-bold" title="合計">合:${s.total_net > 0 ? '+' + s.total_net : s.total_net}</span>
+                                </div>
+                            </div>
+                        `).join('');
+
+                        const card = document.createElement('div');
+                        card.className = "bg-slate-950 border border-amber-900/30 hover:border-amber-500/50 rounded-xl p-4 space-y-3 transition shadow-lg relative overflow-hidden group";
+                        card.innerHTML = `
+                            <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-amber-500/5 to-transparent rounded-full -mr-6 -mt-6 group-hover:scale-125 transition"></div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-extrabold text-amber-400 bg-amber-950/40 border border-amber-900/40 px-2 py-0.5 rounded flex items-center gap-1">
+                                    <i data-lucide="flame" class="w-3.5 h-3.5 text-amber-500 animate-bounce"></i> 今日焦點佈局
+                                </span>
+                                <span class="text-[10px] text-slate-500 font-mono">合計吸金: <strong class="text-slate-300 font-bold font-mono">${theme.total_net_buy}</strong> 張</span>
+                            </div>
+                            <h4 class="text-sm font-bold text-slate-100">${theme.theme_name}</h4>
+                            <div class="space-y-1 bg-slate-900/40 border border-slate-900 rounded-lg p-2 max-h-[140px] overflow-y-auto">
+                                ${stocksHTML}
+                            </div>
+                        `;
+                        focusContainer.appendChild(card);
+                    });
+                } else {
+                    focusContainer.innerHTML = `
+                        <div class="col-span-2 border border-slate-800/80 bg-slate-950/40 rounded-xl py-8 text-center text-slate-500 text-xs">
+                            <i data-lucide="alert-circle" class="w-6 h-6 mx-auto mb-2 text-slate-600"></i>
+                            今日暫無符合「三大法人同買且外資量增爆量」2檔（含）以上的概念題材。
+                        </div>
+                    `;
+                }
+
+                const renderRows = (stocks, tbody) => {
+                    tbody.innerHTML = '';
+                    if (stocks && stocks.length > 0) {
+                        stocks.forEach(s => {
+                            const tr = document.createElement('tr');
+                            tr.className = "hover:bg-slate-900/30 transition text-[11px] border-b border-slate-800/40";
+                            tr.innerHTML = `
+                                <td class="py-2.5 font-mono text-slate-400">${s.symbol}</td>
+                                <td class="py-2.5 font-bold text-slate-200 hover:text-cyan-400 cursor-pointer" onclick="showStockDetailsFromChips('${s.symbol}')">${s.name}</td>
+                                <td class="py-2.5 text-right font-mono ${s.foreign_net > 0 ? 'text-emerald-400' : s.foreign_net < 0 ? 'text-red-400' : 'text-slate-500'}">${s.foreign_net > 0 ? '+' + s.foreign_net : s.foreign_net}</td>
+                                <td class="py-2.5 text-right font-mono ${s.trust_net > 0 ? 'text-emerald-400' : s.trust_net < 0 ? 'text-red-400' : 'text-slate-500'}">${s.trust_net > 0 ? '+' + s.trust_net : s.trust_net}</td>
+                                <td class="py-2.5 text-right font-mono ${s.dealer_net > 0 ? 'text-emerald-400' : s.dealer_net < 0 ? 'text-red-400' : 'text-slate-500'}">${s.dealer_net > 0 ? '+' + s.dealer_net : s.dealer_net}</td>
+                                <td class="py-2.5 text-right font-mono font-bold ${s.total_net > 0 ? 'text-emerald-400' : s.total_net < 0 ? 'text-red-400' : 'text-slate-500'}">${s.total_net > 0 ? '+' + s.total_net : s.total_net}</td>
+                                <td class="py-2.5 pl-4 text-slate-400 text-[10px] max-w-[200px] truncate" title="${(s.themes || []).join(', ')}">${(s.themes || []).join(', ') || '-'}</td>
+                            `;
+                            tbody.appendChild(tr);
+                        });
+                    } else {
+                        tbody.innerHTML = '<tr><td colspan="7" class="py-6 text-center text-slate-600">今日暫無符合條件之個股。</td></tr>';
+                    }
+                };
+
+                renderRows(summary.cohort_buys, cohortTbody);
+                renderRows(summary.foreign_surges, surgeTbody);
+                renderRows(summary.top_buys, topTbody);
+
+                lucide.createIcons();
+            } catch (err) {
+                console.error(err);
+                focusContainer.innerHTML = `
+                    <div class="col-span-2 border border-red-900/30 bg-red-950/10 rounded-xl py-8 text-center text-red-400 text-xs">
+                        <i data-lucide="alert-triangle" class="w-6 h-6 mx-auto mb-2 text-red-500"></i>
+                        ${err.message || '無法下載或載入籌碼統計數據'}
+                    </div>
+                `;
+                cohortTbody.innerHTML = `<tr><td colspan="7" class="py-6 text-center text-red-400 text-xs">${err.message || '資料載入失敗'}</td></tr>`;
+            }
+        }
+
+        function showStockDetailsFromChips(symbol) {
+            showStockWiki();
+            const searchInput = document.getElementById('wiki-search');
+            if (searchInput) {
+                searchInput.value = symbol;
+                renderStockWiki();
+            }
         }
 
         function renderStockWiki() {
