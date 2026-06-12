@@ -615,6 +615,10 @@
                 </div>
                 <button onclick="closeModal()" class="text-slate-400 hover:text-white transition"><i data-lucide="x" class="w-5 h-5"></i></button>
             </div>
+            <!-- TradingView Stock K-Line Widget -->
+            <div id="modal-tv-chart-container" class="h-[240px] bg-slate-950 border border-slate-800/60 rounded-xl overflow-hidden shadow-inner hidden relative">
+                <div id="tv-chart-stock" class="w-full h-full"></div>
+            </div>
             <div class="flex flex-wrap items-center gap-2 rounded-xl border border-slate-800/60 bg-slate-950 p-3">
                 <button id="modal-watchlist-btn" onclick="toggleWatchlistFromModal()" class="inline-flex items-center gap-2 rounded-lg border border-indigo-800 bg-indigo-950/40 px-3 py-2 text-sm font-semibold text-indigo-300 hover:bg-indigo-950/70 transition">
                     <i data-lucide="bookmark-plus" class="w-4 h-4"></i>
@@ -1079,7 +1083,8 @@
         let tvWidget = null;
         function renderTradingViewChart() {
             if (typeof TradingView === 'undefined') {
-                console.warn('TradingView library not loaded yet.');
+                console.warn('TradingView library not loaded yet, retrying in 200ms...');
+                setTimeout(renderTradingViewChart, 200);
                 return;
             }
             const container = document.getElementById('tv-chart-taiex');
@@ -2281,11 +2286,63 @@
             updateModalWatchlistButton(stock.id);
             document.getElementById('stock-modal').classList.remove('hidden');
             lucide.createIcons();
+
+            // Render TradingView Chart for this stock
+            renderStockTradingViewChart(stock.code);
         }
 
         function closeModal() {
             currentModalStockId = null;
             document.getElementById('stock-modal').classList.add('hidden');
+            const container = document.getElementById('modal-tv-chart-container');
+            if (container) container.classList.add('hidden');
+            const tvChartDiv = document.getElementById('tv-chart-stock');
+            if (tvChartDiv) tvChartDiv.innerHTML = '';
+        }
+
+        let modalTvWidget = null;
+        function renderStockTradingViewChart(code) {
+            const container = document.getElementById('modal-tv-chart-container');
+            const tvChartDiv = document.getElementById('tv-chart-stock');
+            if (!container || !tvChartDiv) return;
+
+            if (!code) {
+                container.classList.add('hidden');
+                return;
+            }
+
+            container.classList.remove('hidden');
+            tvChartDiv.innerHTML = ''; // Clear
+
+            if (typeof TradingView === 'undefined') {
+                console.warn('TradingView library not loaded yet for stock chart, retrying in 200ms...');
+                setTimeout(() => renderStockTradingViewChart(code), 200);
+                return;
+            }
+
+            // Detect prefix: TWSE: prefix for pure numeric codes
+            let symbol = code;
+            if (/^\d+$/.test(code)) {
+                symbol = `TWSE:${code}`;
+            }
+
+            modalTvWidget = new TradingView.widget({
+                "autosize": true,
+                "symbol": symbol,
+                "interval": "D",
+                "timezone": "Asia/Taipei",
+                "theme": "dark",
+                "style": "1",
+                "locale": "zh_TW",
+                "toolbar_bg": "#111827",
+                "enable_publishing": false,
+                "hide_side_toolbar": true,
+                "allow_symbol_change": false,
+                "container_id": "tv-chart-stock",
+                "studies": [
+                    "MASimple@tv-basicstudies"
+                ]
+            });
         }
 
         // Toast Helper
