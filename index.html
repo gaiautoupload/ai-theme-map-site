@@ -741,7 +741,7 @@
             const versionStamp = Date.now();
             try {
                 const versionedMapCandidates = [
-                    './maps_repo_20260612_140044.json',
+                    './maps_repo_20260612_140939.json',
                     './maps_repo.json'
                 ];
                 const { data: rawRepo, url } = await fetchJsonWithFallback([
@@ -850,6 +850,35 @@
                 if (highlightFlow) highlightFlow.textContent = shortenText((topMap.trigger_events || [])[0] || (topMap.heat_drivers || [])[0] || topMap.period || '主線整理中', 28);
                 if (highlightStocks) {
                     const stockPool = (topMap.stocks || []);
+                    const preferredStocks = stockPool
+                        .filter(s => ['strong', 'medium'].includes(linkageBucket(s)) || ['第一圈', '第二圈'].includes(benefitStageText(s)))
+                        .sort((a, b) => {
+                            const stageRank = x => benefitStageText(x) === '第一圈' ? 0 : benefitStageText(x) === '第二圈' ? 1 : 2;
+                            const scoreA = (Number(a.pureLevel || 0) * 10) + Number(a.barrierLevel || 0);
+                            const scoreB = (Number(b.pureLevel || 0) * 10) + Number(b.barrierLevel || 0);
+                            if (stageRank(a) !== stageRank(b)) return stageRank(a) - stageRank(b);
+                            return scoreB - scoreA;
+                        })
+                        .slice(0, 3);
+                    highlightStocks.innerHTML = preferredStocks.length
+                        ? preferredStocks.map(s => `<button onclick="event.stopPropagation(); loadMapWorkspace('${topEntry.key}'); setTimeout(() => openHighlightStock('${s.id}'), 120);" class="rounded-full border border-emerald-700/40 bg-emerald-950/30 px-3 py-1 text-xs font-bold text-emerald-300 hover:border-emerald-500 hover:text-white">${s.name}</button>`).join('')
+                        : '<span class="text-slate-500 text-sm">待補</span>';
+                }
+            }
+            if (versionTrack) {
+                versionTrack.innerHTML = newestFirst.slice(0, 6).map((item, idx) => `
+                    <div class="rounded-xl border ${idx === 0 ? 'border-amber-700/40 bg-amber-950/20' : 'border-slate-800 bg-slate-950/40'} px-3 py-2">
+                        <div class="flex items-center justify-between gap-3">
+                            <div class="min-w-0">
+                                <div class="text-xs font-bold ${idx === 0 ? 'text-amber-300' : 'text-slate-200'} truncate">${formatDisplayTime(item.date)}${idx === 0 ? ' ・ 今日提案' : ''}</div>
+                                <div class="text-[11px] text-slate-500 truncate">${item.map?.title || item.key}</div>
+                            </div>
+                            <button onclick="showMap('${item.key}')" class="text-[11px] px-2 py-1 rounded-lg border border-slate-700 text-slate-300 hover:text-white hover:border-slate-500">查看</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
                 // 渲染首頁列表 (市場投研首頁)
         function renderDashboardHome() {
             document.getElementById('panel-home').classList.remove('hidden');
