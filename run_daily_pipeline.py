@@ -25,7 +25,10 @@ def with_default_env():
 def run_step(name, cmd, env):
     print(f"\n=== {name} ===")
     print(">", " ".join(cmd))
-    subprocess.run(cmd, cwd=str(BASE_DIR), check=True, env=env)
+    try:
+        subprocess.run(cmd, cwd=str(BASE_DIR), check=True, env=env)
+    except Exception as e:
+        print(f"警告：執行步驟 '{name}' 失敗但繼續執行其餘步驟。錯誤：{e}")
 
 
 def main():

@@ -92,6 +92,31 @@ def extract_json_object(text: str) -> dict:
         raise ValueError("JSON 結尾不完整")
     return json.loads(cleaned[start:end])
 
+VLLM_ALIVE = None
+
+def check_vllm_alive() -> bool:
+    global VLLM_ALIVE
+    if VLLM_ALIVE is not None:
+        return VLLM_ALIVE
+    print("正在檢測 vLLM 伺服器連線狀態...")
+    try:
+        payload = {
+            "model": MODEL_NAME,
+            "messages": [{"role": "user", "content": "ping"}],
+            "max_tokens": 5,
+        }
+        res = requests.post(
+            VLLM_URL,
+            headers={"Content-Type": "application/json"},
+            json=payload,
+            timeout=5
+        )
+        VLLM_ALIVE = (res.status_code == 200)
+    except Exception:
+        VLLM_ALIVE = False
+    print(f"vLLM 伺服器連線檢測結果：{'可用' if VLLM_ALIVE else '不可用'}")
+    return VLLM_ALIVE
+
 def call_vllm_json(system_prompt: str, user_prompt: str, max_tokens: int = 4000, temperature: float = 0.35) -> dict:
     payload = {
         "model": MODEL_NAME,
@@ -115,6 +140,8 @@ def call_vllm_json(system_prompt: str, user_prompt: str, max_tokens: int = 4000,
     return extract_json_object(content)
 
 def generate_report():
+    if not check_vllm_alive():
+        raise RuntimeError("vLLM 伺服器未啟用或不可用，跳過每日大盤投研日報生成。")
     print("正在搜集今日市場與大盤數據...")
     queries = [
         "台股 大盤 技術分析 收盤",
@@ -122,17 +149,17 @@ def generate_report():
         "台灣 經濟成長率 企業盈餘 總經"
     ]
     
-    combined_results = []
+    search_context_parts = []
     for q in queries:
         try:
             print(f"搜尋：{q}")
             res = search(q)
             if res:
-                combined_results.append(res)
+                search_context_parts.append(format_search_context(q, res))
         except Exception as e:
             print(f"搜尋失敗：{q}", e)
             
-    search_context = format_search_context(combined_results)
+    search_context = "\n\n".join(search_context_parts)
     
     today_str = datetime.date.today().strftime("%Y-%m-%d")
     user_prompt = f"""

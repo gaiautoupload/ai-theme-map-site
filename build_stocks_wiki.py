@@ -43,6 +43,31 @@ WIKI_STRUCTURE_SYSTEM_PROMPT = """
 3. 估值與評分需合理客觀，符合台灣上市櫃公司實際情況。
 """
 
+VLLM_ALIVE = None
+
+def check_vllm_alive() -> bool:
+    global VLLM_ALIVE
+    if VLLM_ALIVE is not None:
+        return VLLM_ALIVE
+    print("正在檢測 vLLM 伺服器連線狀態...")
+    try:
+        payload = {
+            "model": MODEL_NAME,
+            "messages": [{"role": "user", "content": "ping"}],
+            "max_tokens": 5,
+        }
+        res = requests.post(
+            VLLM_URL,
+            headers={"Content-Type": "application/json"},
+            json=payload,
+            timeout=5
+        )
+        VLLM_ALIVE = (res.status_code == 200)
+    except Exception:
+        VLLM_ALIVE = False
+    print(f"vLLM 伺服器連線檢測結果：{'可用' if VLLM_ALIVE else '不可用'}")
+    return VLLM_ALIVE
+
 def call_vllm_json(system_prompt: str, user_prompt: str, max_tokens: int = 3000, temperature: float = 0.3) -> dict:
     payload = {
         "model": MODEL_NAME,
@@ -66,6 +91,8 @@ def call_vllm_json(system_prompt: str, user_prompt: str, max_tokens: int = 3000,
     return json.loads(content)
 
 def update_single_stock(code, name, industry, market, existing_record):
+    if not check_vllm_alive():
+        raise RuntimeError("vLLM 伺服器未啟用或不可用，跳過 LLM 分析與 Web Search。")
     search_query = f"{code} {name} 主營產品 業務 轉型 營收"
     print(f"-> Searching web for: {search_query}")
     search_results = search(search_query)
