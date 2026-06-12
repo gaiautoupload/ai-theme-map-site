@@ -59,7 +59,8 @@
                     </div>
                 </div>
                 <nav class="hidden md:flex items-center gap-4 border-l border-slate-800 pl-6 h-8">
-                    <button onclick="showDashboardHome()" id="nav-btn-home" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition">主題雷達</button>
+                    <button onclick="showDashboardHome()" id="nav-btn-home" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition">投研首頁</button>
+                    <button onclick="showThemeLibrary()" id="nav-btn-library" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition">主題地圖庫</button>
                     <button onclick="showStockWiki()" id="nav-btn-wiki" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition">個股 Wiki</button>
                 </nav>
             </div>
@@ -77,10 +78,170 @@
     </header>
 
     <div id="panel-home" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-1 space-y-8">
+        <!-- 頂部投研日報與市場策略 -->
+        <div id="macro-report-section" class="bg-gradient-to-br from-indigo-950/35 via-slate-900 to-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-slate-800 pb-4 gap-4">
+                <div class="space-y-1">
+                    <div class="text-[10px] uppercase tracking-[0.25em] text-cyan-400 font-bold flex items-center gap-1.5">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                        Latest Market Insight / 投研大局觀
+                    </div>
+                    <h2 id="macro-title" class="text-xl md:text-2xl font-black text-slate-100 leading-snug">載入中...</h2>
+                </div>
+                <div class="text-slate-500 text-xs font-semibold bg-slate-950 px-3 py-1.5 rounded-xl border border-slate-800 flex items-center gap-2 self-start md:self-auto">
+                    <i data-lucide="calendar-days" class="w-4 h-4 text-indigo-400"></i>
+                    報告日期：<span id="macro-date" class="font-mono text-slate-300">--</span>
+                </div>
+            </div>
+
+            <!-- TAIEX Summary -->
+            <div class="bg-slate-950/40 border border-slate-800 rounded-xl p-4 space-y-2">
+                <div class="flex items-center gap-2 text-cyan-400 font-bold text-xs uppercase tracking-wider">
+                    <i data-lucide="bar-chart-2" class="w-4 h-4"></i> 加權指數與大盤研判
+                </div>
+                <p id="macro-taiex-summary" class="text-xs text-slate-300 leading-relaxed">載入中...</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- ABC wave analysis -->
+                <div class="bg-slate-950/30 border border-slate-800 rounded-xl p-5 space-y-3">
+                    <div class="flex items-center gap-2 text-amber-400 font-bold text-xs uppercase tracking-wider pb-2 border-b border-slate-800/60">
+                        <i data-lucide="spline" class="w-4 h-4"></i> 技術分析 ABC 波段推演
+                    </div>
+                    <p id="macro-abc-intro" class="text-xs text-slate-400 leading-relaxed mb-3"></p>
+                    <div id="macro-abc-details" class="text-xs text-slate-300 space-y-2 leading-relaxed">
+                    </div>
+                </div>
+
+                <!-- Global Indices Status -->
+                <div class="bg-slate-950/30 border border-slate-800 rounded-xl p-5 space-y-3">
+                    <div class="flex items-center gap-2 text-indigo-400 font-bold text-xs uppercase tracking-wider pb-2 border-b border-slate-800/60">
+                        <i data-lucide="globe" class="w-4 h-4"></i> 全球主要指數多空位階
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs text-slate-300">
+                            <thead>
+                                <tr class="text-slate-500 border-b border-slate-800/60 pb-1.5 font-bold">
+                                    <th class="pb-1.5">指數名稱</th>
+                                    <th class="pb-1.5">波段高點</th>
+                                    <th class="pb-1.5 text-right">當前技術特徵</th>
+                                </tr>
+                            </thead>
+                            <tbody id="macro-global-status" class="divide-y divide-slate-800/40">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fundamentals and advice -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- GDP & Corporate Profit -->
+                <div class="lg:col-span-2 bg-slate-950/30 border border-slate-800 rounded-xl p-5 space-y-3">
+                    <div class="flex items-center gap-2 text-emerald-400 font-bold text-xs uppercase tracking-wider pb-2 border-b border-slate-800/60">
+                        <i data-lucide="trending-up" class="w-4 h-4"></i> 經濟成長與企業盈餘支撐
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                        <div class="bg-slate-900/40 border border-slate-800/80 p-3 rounded-xl">
+                            <div class="text-slate-500 mb-1">GDP 成長率</div>
+                            <div id="macro-gdp" class="font-bold text-emerald-300">--</div>
+                        </div>
+                        <div class="bg-slate-900/40 border border-slate-800/80 p-3 rounded-xl">
+                            <div class="text-slate-500 mb-1">企業盈餘成長</div>
+                            <div id="macro-earnings" class="font-bold text-cyan-300">--</div>
+                        </div>
+                        <div class="bg-slate-900/40 border border-slate-800/80 p-3 rounded-xl">
+                            <div class="text-slate-500 mb-1">AI 產業基建</div>
+                            <div id="macro-ai" class="font-bold text-amber-300">--</div>
+                        </div>
+                    </div>
+                    <p id="macro-fundamental-summary" class="text-xs text-slate-400 leading-relaxed mt-2"></p>
+                </div>
+
+                <!-- Operation Advice -->
+                <div class="bg-gradient-to-br from-indigo-950/60 to-slate-900 border border-indigo-900/40 rounded-xl p-5 space-y-3">
+                    <div class="flex items-center gap-2 text-indigo-300 font-bold text-xs uppercase tracking-wider pb-2 border-b border-indigo-900/30">
+                        <i data-lucide="shield-alert" class="w-4 h-4 text-indigo-400"></i> 操作建議與風險控管
+                    </div>
+                    <p id="macro-advice" class="text-xs text-slate-300 leading-relaxed font-medium"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 今日焦點活躍題材 (Dynamic Active Themes) -->
+        <div class="space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="flame" class="w-5 h-5 text-red-500"></i>
+                    <h3 class="text-base font-bold text-slate-300">今日時序焦點題材 (動態從最新搜尋與報告載入)</h3>
+                </div>
+                <span class="text-xs text-slate-500">與地圖庫及個股 Wiki 雙向整合</span>
+            </div>
+            <div id="active-themes-container" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Rendered dynamically -->
+            </div>
+        </div>
+
+        <!-- 決策雷達：潛力爆發與轉弱預警 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+            <!-- 潛力爆發前五大 -->
+            <div class="space-y-4">
+                <div class="flex items-center gap-2 pb-2 border-b border-slate-800">
+                    <div class="bg-emerald-500/10 p-1.5 rounded-lg border border-emerald-500/20 text-emerald-400">
+                        <i data-lucide="trending-up" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-slate-200">未來一個月爆發潛力推薦個股 (Top 10)</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs text-slate-300">
+                        <thead>
+                            <tr class="text-slate-500 border-b border-slate-800/60 pb-2">
+                                <th class="pb-2">股號名稱</th>
+                                <th class="pb-2">參與主題</th>
+                                <th class="pb-2 text-center">純度 / 壁壘</th>
+                                <th class="pb-2 text-right">商用放量時程</th>
+                            </tr>
+                        </thead>
+                        <tbody id="home-potential-stocks" class="divide-y divide-slate-800/40">
+                            <tr><td colspan="4" class="py-4 text-center text-slate-500">計算中...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 轉弱警示與建議剔除 -->
+            <div class="space-y-4">
+                <div class="flex items-center gap-2 pb-2 border-b border-slate-800">
+                    <div class="bg-red-500/10 p-1.5 rounded-lg border border-red-500/20 text-red-400">
+                        <i data-lucide="trending-down" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-slate-200">名單轉弱警示與建議汰弱留強 (防雷預警)</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs text-slate-300">
+                        <thead>
+                            <tr class="text-slate-500 border-b border-slate-800/60 pb-2">
+                                <th class="pb-2">股號名稱</th>
+                                <th class="pb-2">警示原因</th>
+                                <th class="pb-2 text-center">替代風險</th>
+                                <th class="pb-2 text-right">建議動作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="home-weakening-stocks" class="divide-y divide-slate-800/40">
+                            <tr><td colspan="4" class="py-4 text-center text-slate-500">計算中...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主題地圖庫分頁 -->
+    <div id="panel-theme-library" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-1 space-y-8 hidden">
         <div class="bg-gradient-to-r from-indigo-950/40 via-slate-900 to-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
             <div>
-                <h2 class="text-xl font-bold text-slate-200 mb-2">歡迎來到 AI 產業決策 Wiki</h2>
-                <p class="text-sm text-slate-400 leading-relaxed">這不是工程展示牆，而是投資決策雷達。先看題材天花板、商業化時程、誰賺最多，再往下拆解供應鏈位置、概念股排序與資金火勢。請選擇下方主題進入研究：</p>
+                <h2 class="text-xl font-bold text-slate-200 mb-2">先進產業主題地圖庫 (Theme Library)</h2>
+                <p class="text-sm text-slate-400 leading-relaxed">此處收錄了歷史至今累積的產業主題地圖。先看題材天花板、商業化時程、誰賺最多，再往下拆解供應鏈位置、概念股排序與資金火勢。請選擇下方主題地圖進入研究：</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
                 <div class="bg-slate-950/50 border border-slate-800 rounded-xl p-4">
@@ -148,63 +309,10 @@
             </div>
         </div>
 
-        <!-- 決策雷達：潛力爆發與轉弱預警 -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
-            <!-- 潛力爆發前五大 -->
-            <div class="space-y-4">
-                <div class="flex items-center gap-2 pb-2 border-b border-slate-800">
-                    <div class="bg-emerald-500/10 p-1.5 rounded-lg border border-emerald-500/20 text-emerald-400">
-                        <i data-lucide="trending-up" class="w-4 h-4"></i>
-                    </div>
-                    <h3 class="text-sm font-bold text-slate-200">未來一個月爆發潛力推薦個股 (Top 10)</h3>
-                </div>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left text-xs text-slate-300">
-                        <thead>
-                            <tr class="text-slate-500 border-b border-slate-800/60 pb-2">
-                                <th class="pb-2">股號名稱</th>
-                                <th class="pb-2">參與主題</th>
-                                <th class="pb-2 text-center">純度 / 壁壘</th>
-                                <th class="pb-2 text-right">商用放量時程</th>
-                            </tr>
-                        </thead>
-                        <tbody id="home-potential-stocks" class="divide-y divide-slate-800/40">
-                            <tr><td colspan="4" class="py-4 text-center text-slate-500">計算中...</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- 轉弱警示與建議剔除 -->
-            <div class="space-y-4">
-                <div class="flex items-center gap-2 pb-2 border-b border-slate-800">
-                    <div class="bg-red-500/10 p-1.5 rounded-lg border border-red-500/20 text-red-400">
-                        <i data-lucide="trending-down" class="w-4 h-4"></i>
-                    </div>
-                    <h3 class="text-sm font-bold text-slate-200">名單轉弱警示與建議汰弱留強 (防雷預警)</h3>
-                </div>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left text-xs text-slate-300">
-                        <thead>
-                            <tr class="text-slate-500 border-b border-slate-800/60 pb-2">
-                                <th class="pb-2">股號名稱</th>
-                                <th class="pb-2">警示原因</th>
-                                <th class="pb-2 text-center">替代風險</th>
-                                <th class="pb-2 text-right">建議動作</th>
-                            </tr>
-                        </thead>
-                        <tbody id="home-weakening-stocks" class="divide-y divide-slate-800/40">
-                            <tr><td colspan="4" class="py-4 text-center text-slate-500">計算中...</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
         <div class="space-y-4">
             <div class="flex items-center gap-2 border-b border-slate-800 pb-3">
                 <i data-lucide="calendar" class="w-5 h-5 text-indigo-400"></i>
-                <h3 class="text-base font-bold text-slate-300">主題雷達牆 (依火勢與更新時間排序)</h3>
+                <h3 class="text-base font-bold text-slate-300">主題地圖庫 (依火勢與更新時間排序)</h3>
             </div>
             
             <div id="maps-container" class="space-y-10">
@@ -258,8 +366,8 @@
     <div id="panel-map-workspace" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-1 grid grid-cols-1 lg:grid-cols-4 gap-6 w-full hidden">
         
         <aside class="space-y-6 lg:col-span-1">
-            <button onclick="showDashboardHome()" class="w-full flex items-center justify-center gap-2 py-2 px-4 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white rounded-xl text-xs font-bold transition">
-                <i data-lucide="arrow-left" class="w-4 h-4"></i> 返回地圖導覽首頁
+            <button onclick="showThemeLibrary()" class="w-full flex items-center justify-center gap-2 py-2 px-4 bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 hover:text-white rounded-xl text-xs font-bold transition">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> 返回主題地圖庫
             </button>
 
             <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 space-y-2">
@@ -522,6 +630,7 @@
 
     <script>
         let mapsRepository = {};
+        let marketReports = [];
         let stocksWiki = {};
         let wikiFilterTier = 'all';
         let currentMapData = null;
@@ -632,7 +741,7 @@
             const versionStamp = Date.now();
             try {
                 const versionedMapCandidates = [
-                    './maps_repo_20260612_121659.json',
+                    './maps_repo_20260612_140025.json',
                     './maps_repo.json'
                 ];
                 const { data: rawRepo, url } = await fetchJsonWithFallback([
@@ -666,6 +775,16 @@
                 }
             } catch (e) {
                 console.warn("載入個股 Wiki 失敗：", e);
+            }
+
+            try {
+                const reportsRes = await fetch(`./market_reports.json?v=${versionStamp}`);
+                if (reportsRes.ok) {
+                    marketReports = await reportsRes.json();
+                    console.log("成功加載投研日報數據庫！報告數：", marketReports.length);
+                }
+            } catch (e) {
+                console.warn("載入投研日報失敗：", e);
             }
 
             renderDashboardHome();
@@ -731,49 +850,176 @@
                 if (highlightFlow) highlightFlow.textContent = shortenText((topMap.trigger_events || [])[0] || (topMap.heat_drivers || [])[0] || topMap.period || '主線整理中', 28);
                 if (highlightStocks) {
                     const stockPool = (topMap.stocks || []);
-                    const preferredStocks = stockPool
-                        .filter(s => ['strong', 'medium'].includes(linkageBucket(s)) || ['第一圈', '第二圈'].includes(benefitStageText(s)))
-                        .sort((a, b) => {
-                            const stageRank = x => benefitStageText(x) === '第一圈' ? 0 : benefitStageText(x) === '第二圈' ? 1 : 2;
-                            const scoreA = (Number(a.pureLevel || 0) * 10) + Number(a.barrierLevel || 0);
-                            const scoreB = (Number(b.pureLevel || 0) * 10) + Number(b.barrierLevel || 0);
-                            if (stageRank(a) !== stageRank(b)) return stageRank(a) - stageRank(b);
-                            return scoreB - scoreA;
-                        })
-                        .slice(0, 3);
-                    highlightStocks.innerHTML = preferredStocks.length
-                        ? preferredStocks.map(s => `<button onclick="event.stopPropagation(); loadMapWorkspace('${topEntry.key}'); setTimeout(() => openHighlightStock('${s.id}'), 120);" class="rounded-full border border-emerald-700/40 bg-emerald-950/30 px-3 py-1 text-xs font-bold text-emerald-300 hover:border-emerald-500 hover:text-white">${s.name}</button>`).join('')
-                        : '<span class="text-slate-500 text-sm">待補</span>';
-                }
+                // 渲染首頁列表 (市場投研首頁)
+        function renderDashboardHome() {
+            document.getElementById('panel-home').classList.remove('hidden');
+            if (document.getElementById('panel-theme-library')) document.getElementById('panel-theme-library').classList.add('hidden');
+            document.getElementById('panel-stock-wiki').classList.add('hidden');
+            document.getElementById('panel-map-workspace').classList.add('hidden');
+            document.getElementById('header-status').innerHTML = '';
+
+            // Update nav buttons active styles
+            document.getElementById('nav-btn-home').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition";
+            if (document.getElementById('nav-btn-library')) document.getElementById('nav-btn-library').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            document.getElementById('nav-btn-wiki').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+
+            const container = document.getElementById('macro-report-section');
+            if (!container) return;
+
+            const report = marketReports && marketReports[0] ? marketReports[0] : null;
+            if (!report) {
+                container.innerHTML = `
+                    <div class="py-12 text-center text-slate-500">
+                        <i data-lucide="alert-circle" class="w-8 h-8 mx-auto mb-3 text-amber-500"></i>
+                        目前投研日報數據庫無資料。請確認 market_reports.json 是否存在於伺服器上。
+                    </div>
+                `;
+                return;
             }
-            if (versionTrack) {
-                versionTrack.innerHTML = newestFirst.slice(0, 6).map((item, idx) => `
-                    <div class="rounded-xl border ${idx === 0 ? 'border-amber-700/40 bg-amber-950/20' : 'border-slate-800 bg-slate-950/40'} px-3 py-2">
-                        <div class="flex items-center justify-between gap-3">
-                            <div class="min-w-0">
-                                <div class="text-xs font-bold ${idx === 0 ? 'text-amber-300' : 'text-slate-200'} truncate">${formatDisplayTime(item.date)}${idx === 0 ? ' ・ 今日提案' : ''}</div>
-                                <div class="text-[11px] text-slate-500 truncate">${item.map?.title || item.key}</div>
+
+            // Set Title & Date
+            document.getElementById('macro-title').textContent = report.title || '今日投研大局觀';
+            document.getElementById('macro-date').textContent = report.date || '--';
+            document.getElementById('macro-taiex-summary').textContent = report.taiex_summary || '無大盤分析資訊';
+
+            // Set ABC wave analysis
+            const abc = report.abc_wave_analysis || {};
+            const abcIntro = document.getElementById('macro-abc-intro');
+            if (abcIntro) abcIntro.textContent = abc.intro || '';
+            const abcDetails = document.getElementById('macro-abc-details');
+            if (abcDetails && abc.analysis) {
+                // Parse markdown-like list to HTML list items
+                const lines = abc.analysis.split('\n').filter(l => l.trim());
+                abcDetails.innerHTML = lines.map(line => {
+                    const cleanLine = line.replace(/^\-\s+\*\*/, '').replace(/^\-\s+/, '').replace(/\*\*/g, '');
+                    const parts = cleanLine.split('：');
+                    if (parts.length > 1) {
+                        return `<div class="py-1 border-b border-slate-800/40"><strong class="text-amber-400 font-bold">${parts[0]}：</strong><span class="text-slate-300">${parts[1]}</span></div>`;
+                    }
+                    return `<div class="py-1 border-b border-slate-800/40">${cleanLine}</div>`;
+                }).join('');
+            }
+
+            // Set Global status table
+            const globalStatus = document.getElementById('macro-global-status');
+            if (globalStatus && report.global_status) {
+                globalStatus.innerHTML = report.global_status.map(idx => `
+                    <tr class="hover:bg-slate-800/20 transition">
+                        <td class="py-2.5 font-bold text-slate-200">${idx.name}</td>
+                        <td class="py-2.5 font-mono text-cyan-400">${idx.peak}</td>
+                        <td class="py-2.5 text-right font-medium text-slate-300">${idx.desc}</td>
+                    </tr>
+                `).join('');
+            }
+
+            // Set Fundamentals
+            const fundamentals = report.fundamentals || {};
+            const gdpEl = document.getElementById('macro-gdp');
+            if (gdpEl) gdpEl.textContent = fundamentals.gdp_growth || '--';
+            const earningsEl = document.getElementById('macro-earnings');
+            if (earningsEl) earningsEl.textContent = fundamentals.earnings_growth || '--';
+            const aiEl = document.getElementById('macro-ai');
+            if (aiEl) aiEl.textContent = fundamentals.ai_industry || '--';
+            const fundSummary = document.getElementById('macro-fundamental-summary');
+            if (fundSummary) fundSummary.textContent = fundamentals.summary || '';
+
+            // Set Operation Advice
+            const adviceEl = document.getElementById('macro-advice');
+            if (adviceEl) adviceEl.textContent = report.operation_advice || '';
+
+            // Render Dynamic Active Themes
+            renderActiveThemes(report.thematic_categories);
+
+            // Render Decision Radar Tables
+            renderDecisionRadar();
+        }
+
+        // Render dynamic active themes in report homepage
+        function renderActiveThemes(categories) {
+            const container = document.getElementById('active-themes-container');
+            if (!container) return;
+
+            if (!categories || categories.length === 0) {
+                container.innerHTML = `<div class="col-span-2 text-center text-slate-500 py-6">今日尚無焦點動態題材資訊。</div>`;
+                return;
+            }
+
+            container.innerHTML = categories.map(cat => {
+                // Try to map this category to an existing theme key
+                const mapKey = Object.keys(mapsRepository).find(key => 
+                    mapsRepository[key].title === cat.category_name || 
+                    mapsRepository[key].theme_name === cat.category_name
+                );
+
+                const stocksHtml = (cat.stocks || []).map(s => `
+                    <div onclick="openModal('${s.code}')" class="group/item flex items-start justify-between gap-3 p-2 bg-slate-950/60 border border-slate-800/60 hover:border-slate-700/80 hover:bg-slate-900/40 rounded-xl cursor-pointer transition">
+                        <div class="space-y-0.5 min-w-0">
+                            <div class="flex items-center gap-1.5">
+                                <span class="font-bold text-slate-200 text-xs">${s.name}</span>
+                                <span class="text-[9px] text-slate-500 font-mono">${s.code}</span>
                             </div>
-                            <button onclick="showMap('${item.key}')" class="text-[11px] px-2 py-1 rounded-lg border border-slate-700 text-slate-300 hover:text-white hover:border-slate-500">查看</button>
+                            <p class="text-[10px] text-slate-400 leading-relaxed truncate group-hover/item:text-slate-300 transition">${s.role}</p>
+                        </div>
+                        <div class="bg-indigo-950/40 text-[9px] text-indigo-400 border border-indigo-900/40 px-1.5 py-0.5 rounded-md self-center font-bold">
+                            Wiki
                         </div>
                     </div>
                 `).join('');
-            }
+
+                const linkButtonHtml = mapKey ? `
+                    <button onclick="showMap('${mapKey}')" class="flex items-center gap-1 px-3 py-1.5 bg-indigo-950/40 hover:bg-indigo-900/40 text-indigo-300 hover:text-white border border-indigo-900/40 hover:border-indigo-700 rounded-xl text-[10px] font-bold transition">
+                        <i data-lucide="compass" class="w-3 h-3"></i> 進入完整地圖
+                    </button>
+                ` : '';
+
+                return `
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 shadow-lg space-y-4 hover:border-slate-700/80 transition flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between gap-3">
+                                <h4 class="font-black text-slate-100 text-sm flex items-center gap-2">
+                                    <span class="w-1.5 h-3 bg-indigo-500 rounded-full"></span>
+                                    ${cat.category_name}
+                                </h4>
+                                ${linkButtonHtml}
+                            </div>
+                            <div class="rounded-xl border border-cyan-900/30 bg-cyan-950/15 px-3 py-2.5">
+                                <div class="text-[9px] uppercase tracking-[0.2em] text-cyan-400 font-bold mb-1">焦點亮點</div>
+                                <p class="text-xs text-cyan-200 leading-relaxed">${cat.highlight}</p>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 pr-1 max-h-72 overflow-y-auto">
+                                ${stocksHtml}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
         }
 
-        // 渲染首頁列表
-        function renderDashboardHome() {
-            document.getElementById('panel-home').classList.remove('hidden');
+        // 切換並渲染主題地圖庫分頁
+        function showThemeLibrary() {
+            document.getElementById('panel-home').classList.add('hidden');
+            if (document.getElementById('panel-theme-library')) document.getElementById('panel-theme-library').classList.remove('hidden');
+            document.getElementById('panel-stock-wiki').classList.add('hidden');
             document.getElementById('panel-map-workspace').classList.add('hidden');
-            document.getElementById('header-status').innerHTML = '';
+
+            document.getElementById('nav-btn-home').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-library')) document.getElementById('nav-btn-library').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition";
+            document.getElementById('nav-btn-wiki').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+
+            renderThemeLibrary();
+            lucide.createIcons();
+        }
+
+        function renderThemeLibrary() {
             updateSiteMeta();
 
             const container = document.getElementById('maps-container');
+            if (!container) return;
             container.innerHTML = '';
 
             const keys = Object.keys(mapsRepository);
             if(keys.length === 0) {
-                container.innerHTML = `<div class="text-center text-slate-500 py-8">目前數據庫內無資料，請先執行 vLLM.py</div>`;
+                container.innerHTML = `<div class="text-center text-slate-500 py-8">目前地圖庫無資料。</div>`;
                 return;
             }
 
@@ -858,7 +1104,7 @@
                         <div class="border-t border-slate-800/60 pt-3 space-y-2 text-[11px]">
                             <div class="flex items-center justify-between gap-2">
                                 <span class="text-red-400 bg-red-950/40 px-2 py-0.5 rounded-md border border-red-900/40 font-medium">${map.heat}</span>
-                                <span class="text-amber-300 bg-amber-950/40 px-2 py-0.5 rounded-md border border-amber-900/40 font-medium">火勢 ${map.heat_score ?? '--'}</span>
+                                <span class="text-amber-300 bg-amber-950/40 px-2 py-0.5 rounded-md border border-amber-800/40 font-medium">火勢 ${map.heat_score ?? '--'}</span>
                             </div>
                         </div>
                     `;
@@ -867,8 +1113,6 @@
                 
                 container.appendChild(section);
             });
-            renderDecisionRadar();
-            lucide.createIcons();
         }
 
         function renderDecisionRadar() {
@@ -1929,10 +2173,12 @@
         // 個股 Wiki 導覽控制與渲染
         function showStockWiki() {
             document.getElementById('panel-home').classList.add('hidden');
+            if (document.getElementById('panel-theme-library')) document.getElementById('panel-theme-library').classList.add('hidden');
             document.getElementById('panel-map-workspace').classList.add('hidden');
             document.getElementById('panel-stock-wiki').classList.remove('hidden');
             
             document.getElementById('nav-btn-home').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-library')) document.getElementById('nav-btn-library').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             document.getElementById('nav-btn-wiki').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition";
             
             renderStockWiki();
@@ -1940,10 +2186,12 @@
         
         function showDashboardHome() {
             document.getElementById('panel-stock-wiki').classList.add('hidden');
+            if (document.getElementById('panel-theme-library')) document.getElementById('panel-theme-library').classList.add('hidden');
             document.getElementById('panel-map-workspace').classList.add('hidden');
             document.getElementById('panel-home').classList.remove('hidden');
             
             document.getElementById('nav-btn-home').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition";
+            if (document.getElementById('nav-btn-library')) document.getElementById('nav-btn-library').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             document.getElementById('nav-btn-wiki').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             
             renderDashboardHome();
