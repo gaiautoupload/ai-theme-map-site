@@ -148,6 +148,59 @@
             </div>
         </div>
 
+        <!-- 決策雷達：潛力爆發與轉弱預警 -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+            <!-- 潛力爆發前五大 -->
+            <div class="space-y-4">
+                <div class="flex items-center gap-2 pb-2 border-b border-slate-800">
+                    <div class="bg-emerald-500/10 p-1.5 rounded-lg border border-emerald-500/20 text-emerald-400">
+                        <i data-lucide="trending-up" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-slate-200">未來一個月爆發潛力推薦個股 (Top 5)</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs text-slate-300">
+                        <thead>
+                            <tr class="text-slate-500 border-b border-slate-800/60 pb-2">
+                                <th class="pb-2">股號名稱</th>
+                                <th class="pb-2">參與主題</th>
+                                <th class="pb-2 text-center">純度 / 壁壘</th>
+                                <th class="pb-2 text-right">商用放量時程</th>
+                            </tr>
+                        </thead>
+                        <tbody id="home-potential-stocks" class="divide-y divide-slate-800/40">
+                            <tr><td colspan="4" class="py-4 text-center text-slate-500">計算中...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 轉弱警示與建議剔除 -->
+            <div class="space-y-4">
+                <div class="flex items-center gap-2 pb-2 border-b border-slate-800">
+                    <div class="bg-red-500/10 p-1.5 rounded-lg border border-red-500/20 text-red-400">
+                        <i data-lucide="trending-down" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="text-sm font-bold text-slate-200">名單轉弱警示與建議汰弱留強 (防雷預警)</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs text-slate-300">
+                        <thead>
+                            <tr class="text-slate-500 border-b border-slate-800/60 pb-2">
+                                <th class="pb-2">股號名稱</th>
+                                <th class="pb-2">警示原因</th>
+                                <th class="pb-2 text-center">替代風險</th>
+                                <th class="pb-2 text-right">建議動作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="home-weakening-stocks" class="divide-y divide-slate-800/40">
+                            <tr><td colspan="4" class="py-4 text-center text-slate-500">計算中...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
         <div class="space-y-4">
             <div class="flex items-center gap-2 border-b border-slate-800 pb-3">
                 <i data-lucide="calendar" class="w-5 h-5 text-indigo-400"></i>
@@ -579,7 +632,7 @@
             const versionStamp = Date.now();
             try {
                 const versionedMapCandidates = [
-                    './maps_repo_20260612_120616.json',
+                    './maps_repo_20260612_121151.json',
                     './maps_repo.json'
                 ];
                 const { data: rawRepo, url } = await fetchJsonWithFallback([
@@ -814,7 +867,139 @@
                 
                 container.appendChild(section);
             });
+            renderDecisionRadar();
             lucide.createIcons();
+        }
+
+        function renderDecisionRadar() {
+            const potentialTbody = document.getElementById('home-potential-stocks');
+            const weakeningTbody = document.getElementById('home-weakening-stocks');
+            if (!potentialTbody || !weakeningTbody) return;
+
+            const allCoreStocks = [];
+            const seenCodes = new Set();
+
+            Object.keys(mapsRepository).forEach(mapKey => {
+                const map = mapsRepository[mapKey];
+                if (!map || !map.stocks) return;
+                map.stocks.forEach(stock => {
+                    const code = stock.code || stock.id;
+                    if (!code || seenCodes.has(code)) return;
+                    seenCodes.add(code);
+                    
+                    const wiki = stocksWiki[code] || {};
+                    const details = wiki.details || {};
+                    
+                    allCoreStocks.push({
+                        code: code,
+                        name: stock.name || wiki.name || '未命名',
+                        sector: stock.sector || wiki.industry || '未分類',
+                        pureLevel: Number(stock.pureLevel ?? details.pureLevel ?? 0),
+                        barrierLevel: Number(stock.barrierLevel ?? details.barrierLevel ?? 0),
+                        pricing_power: stock.pricing_power || details.pricing_power || '中',
+                        value_capture_score: Number(stock.value_capture_score ?? details.value_capture_score ?? 50),
+                        commercialization_phase: stock.commercialization_phase || details.commercialization_phase || '量產出貨',
+                        substitution_risk: stock.substitution_risk || details.substitution_risk || '低',
+                        themeTitle: map.title,
+                        mapKey: mapKey,
+                        heatScore: Number(map.heat_score || 50),
+                        stage: map.theme_stage || map.period || ''
+                    });
+                });
+            });
+
+            const potentialList = [...allCoreStocks]
+                .sort((a, b) => {
+                    const scoreA = (a.pureLevel * 5) + (a.barrierLevel * 3) + (a.heatScore / 20) + (a.value_capture_score / 25);
+                    const scoreB = (b.pureLevel * 5) + (b.barrierLevel * 3) + (b.heatScore / 20) + (b.value_capture_score / 25);
+                    return scoreB - scoreA;
+                })
+                .slice(0, 5);
+
+            potentialTbody.innerHTML = potentialList.map(s => `
+                <tr class="hover:bg-slate-800/30 transition cursor-pointer" onclick="openModal('${s.code}')">
+                    <td class="py-2.5 font-semibold text-slate-100 flex flex-col">
+                        <span>${s.name}</span>
+                        <span class="text-[10px] text-slate-500 font-mono">${s.code}</span>
+                    </td>
+                    <td class="py-2.5">
+                        <span class="text-indigo-300 font-medium line-clamp-1">${s.themeTitle}</span>
+                    </td>
+                    <td class="py-2.5 text-center font-mono">
+                        <span class="text-amber-400">★${s.pureLevel.toFixed(1)}</span>
+                        <span class="text-slate-500">/</span>
+                        <span class="text-emerald-400">🛡️${s.barrierLevel.toFixed(1)}</span>
+                    </td>
+                    <td class="py-2.5 text-right font-medium text-emerald-400">${s.commercialization_phase}</td>
+                </tr>
+            `).join('');
+
+            let weakeningCandidates = [];
+            
+            if (watchlist && watchlist.length > 0) {
+                watchlist.forEach(code => {
+                    const wiki = stocksWiki[code];
+                    if (!wiki) return;
+                    const details = wiki.details || {};
+                    const subRisk = details.substitution_risk || '低';
+                    const hasHighRisk = subRisk.includes('高') || subRisk.includes('中') || subRisk.includes('面臨') || subRisk.includes('競爭');
+                    const lowBarrier = Number(details.barrierLevel || 3.5) < 3.0;
+                    
+                    if (hasHighRisk || lowBarrier) {
+                        weakeningCandidates.push({
+                            code: code,
+                            name: wiki.name,
+                            reason: hasHighRisk ? '同業與陸廠競爭加劇，替代風險高' : '技術壁壘較低，定價權受壓',
+                            substitution_risk: subRisk,
+                            action: '建議減碼 / 移出追蹤',
+                            isFromWatchlist: true
+                        });
+                    }
+                });
+            }
+
+            if (weakeningCandidates.length < 5) {
+                const systemWarnings = allCoreStocks
+                    .filter(s => {
+                        const hasHighRisk = s.substitution_risk.includes('高') || s.substitution_risk.includes('中') || s.substitution_risk.includes('面臨') || s.substitution_risk.includes('競爭');
+                        const lowBarrier = s.barrierLevel < 3.0;
+                        return (hasHighRisk || lowBarrier) && !weakeningCandidates.some(c => c.code === s.code);
+                    })
+                    .map(s => {
+                        const hasHighRisk = s.substitution_risk.includes('高') || s.substitution_risk.includes('中') || s.substitution_risk.includes('面臨') || s.substitution_risk.includes('競爭');
+                        return {
+                            code: s.code,
+                            name: s.name,
+                            reason: hasHighRisk ? '陸廠擴產競爭，同質性替代風險高' : '技術壁壘與切換成本較低',
+                            substitution_risk: s.substitution_risk,
+                            action: '防雷警示 / 謹慎追高',
+                            isFromWatchlist: false
+                        };
+                    });
+                
+                weakeningCandidates = [...weakeningCandidates, ...systemWarnings].slice(0, 5);
+            }
+
+            if (weakeningCandidates.length === 0) {
+                weakeningTbody.innerHTML = `<tr><td colspan="4" class="py-4 text-center text-slate-500">目前暫無發現轉弱警示個股。</td></tr>`;
+            } else {
+                weakeningTbody.innerHTML = weakeningCandidates.map(s => `
+                    <tr class="hover:bg-slate-800/30 transition cursor-pointer" onclick="openModal('${s.code}')">
+                        <td class="py-2.5 font-semibold text-slate-100 flex flex-col">
+                            <span class="flex items-center gap-1">
+                                ${s.name}
+                                ${s.isFromWatchlist ? '<span class="text-[9px] bg-amber-950 border border-amber-800/60 text-amber-300 px-1 rounded">追蹤中</span>' : ''}
+                            </span>
+                            <span class="text-[10px] text-slate-500 font-mono">${s.code}</span>
+                        </td>
+                        <td class="py-2.5 text-slate-400">
+                            <span class="line-clamp-1">${s.reason}</span>
+                        </td>
+                        <td class="py-2.5 text-center font-semibold text-amber-500">${s.substitution_risk}</td>
+                        <td class="py-2.5 text-right font-bold text-red-400">${s.action}</td>
+                    </tr>
+                `).join('');
+            }
         }
 
         // 載入特定地圖工作區
