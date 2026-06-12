@@ -63,6 +63,8 @@
                     <button onclick="showDashboardHome()" id="nav-btn-home" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition">投研首頁</button>
                     <button onclick="showThemeLibrary()" id="nav-btn-library" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition">主題地圖庫</button>
                     <button onclick="showStockWiki()" id="nav-btn-wiki" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition">個股 Wiki</button>
+                    <button onclick="showMacroPage()" id="nav-btn-macro" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition">全球總經</button>
+                    <button onclick="showIndustryPricing()" id="nav-btn-industry" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition">產業報價</button>
                     <button onclick="showTechDocs()" id="nav-btn-tech" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition">技術說明</button>
                 </nav>
             </div>
@@ -113,11 +115,11 @@
                         <p id="macro-taiex-summary" class="text-xs text-slate-300 leading-relaxed">載入中...</p>
                     </div>
                     
-                    <!-- Auto/Manual Refresh control -->
+                    <!-- Manual Refresh control -->
                     <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between gap-4 text-[10px] text-slate-500">
                         <div class="flex items-center gap-1.5">
-                            <i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-indigo-400 animate-spin"></i>
-                            每 60 秒自動更新
+                            <i data-lucide="info" class="w-3.5 h-3.5 text-indigo-400"></i>
+                            點擊按鈕獲取最新市場報告
                         </div>
                         <button onclick="triggerMacroRefresh()" class="flex items-center gap-1.5 px-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-[10px] font-bold transition">
                             <i data-lucide="refresh-cw" class="w-3 h-3"></i> 手動整理
@@ -737,6 +739,355 @@
         </div>
     </div>
 
+    <!-- 全球總經與原物料/外匯分頁 -->
+    <div id="panel-macro-market" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-1 space-y-8 hidden">
+        <div class="bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-6">
+            <div>
+                <h2 class="text-xl font-bold bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent mb-2">全球總經觀測站 (Forex & Commodities)</h2>
+                <p class="text-sm text-slate-400 leading-relaxed">追蹤影響全球通貨膨脹、央行貨幣政策以及台灣外銷電子產業至關重要的關鍵商品與外匯走勢。</p>
+            </div>
+
+            <!-- Commodities Section -->
+            <div class="space-y-4">
+                <div class="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-2 pb-2 border-b border-slate-800/80">
+                    <i data-lucide="gem" class="w-4 h-4"></i> 全球關鍵大宗原物料 (Commodities)
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Gold -->
+                    <div class="bg-slate-950 border border-slate-800/60 rounded-xl p-3 space-y-2">
+                        <div class="flex items-center justify-between text-xs font-bold text-slate-200">
+                            <span>黃金期貨 (Gold)</span>
+                            <span class="text-amber-500">COMEX:GC1!</span>
+                        </div>
+                        <div class="h-[240px] rounded-lg overflow-hidden relative border border-slate-800/40">
+                            <div id="tv-chart-macro-gold" class="w-full h-full"></div>
+                        </div>
+                    </div>
+                    <!-- Crude Oil -->
+                    <div class="bg-slate-950 border border-slate-800/60 rounded-xl p-3 space-y-2">
+                        <div class="flex items-center justify-between text-xs font-bold text-slate-200">
+                            <span>紐約輕原油 (Crude Oil)</span>
+                            <span class="text-cyan-500">NYMEX:CL1!</span>
+                        </div>
+                        <div class="h-[240px] rounded-lg overflow-hidden relative border border-slate-800/40">
+                            <div id="tv-chart-macro-oil" class="w-full h-full"></div>
+                        </div>
+                    </div>
+                    <!-- Copper -->
+                    <div class="bg-slate-950 border border-slate-800/60 rounded-xl p-3 space-y-2">
+                        <div class="flex items-center justify-between text-xs font-bold text-slate-200">
+                            <span>高級銅期貨 (Copper)</span>
+                            <span class="text-emerald-500">COMEX:HG1!</span>
+                        </div>
+                        <div class="h-[240px] rounded-lg overflow-hidden relative border border-slate-800/40">
+                            <div id="tv-chart-macro-copper" class="w-full h-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Forex Section -->
+            <div class="space-y-4 pt-4">
+                <div class="text-xs font-bold text-indigo-400 uppercase tracking-wider flex items-center gap-2 pb-2 border-b border-slate-800/80">
+                    <i data-lucide="coins" class="w-4 h-4"></i> 國際匯率與美元指數 (Foreign Exchange)
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- USD/TWD -->
+                    <div class="bg-slate-950 border border-slate-800/60 rounded-xl p-3 space-y-2">
+                        <div class="flex items-center justify-between text-xs font-bold text-slate-200">
+                            <span>美元/新台幣 (USD/TWD)</span>
+                            <span class="text-indigo-400">FX_IDC:USDTWD</span>
+                        </div>
+                        <div class="h-[240px] rounded-lg overflow-hidden relative border border-slate-800/40">
+                            <div id="tv-chart-macro-usdtwd" class="w-full h-full"></div>
+                        </div>
+                    </div>
+                    <!-- DXY -->
+                    <div class="bg-slate-950 border border-slate-800/60 rounded-xl p-3 space-y-2">
+                        <div class="flex items-center justify-between text-xs font-bold text-slate-200">
+                            <span>美元指數 (DXY)</span>
+                            <span class="text-indigo-400">INDEX:DXY</span>
+                        </div>
+                        <div class="h-[240px] rounded-lg overflow-hidden relative border border-slate-800/40">
+                            <div id="tv-chart-macro-dxy" class="w-full h-full"></div>
+                        </div>
+                    </div>
+                    <!-- USD/JPY -->
+                    <div class="bg-slate-950 border border-slate-800/60 rounded-xl p-3 space-y-2">
+                        <div class="flex items-center justify-between text-xs font-bold text-slate-200">
+                            <span>美元/日圓 (USD/JPY)</span>
+                            <span class="text-indigo-400">FX:USDJPY</span>
+                        </div>
+                        <div class="h-[240px] rounded-lg overflow-hidden relative border border-slate-800/40">
+                            <div id="tv-chart-macro-usdjpy" class="w-full h-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 記憶體報價與產業連動分頁 -->
+    <div id="panel-industry-pricing" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-1 space-y-8 hidden">
+        <div class="bg-gradient-to-br from-violet-950/30 via-slate-900 to-slate-950 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-6">
+            <div>
+                <h2 class="text-xl font-bold bg-gradient-to-r from-fuchsia-400 via-violet-400 to-cyan-400 bg-clip-text text-transparent mb-2">記憶體報價與產業連動觀測站</h2>
+                <p class="text-sm text-slate-400 leading-relaxed">追蹤 DRAM/NAND/HBM 記憶體報價走勢及工業金屬、天然氣等直接影響台灣半導體供應鏈成本與台股波動的關鍵產業指標。記憶體報價波動直接影響台股南亞科、華邦電、群聯、威剛等族群走勢。</p>
+            </div>
+
+            <!-- 記憶體產業指標 -->
+            <div class="space-y-4">
+                <div class="text-xs font-bold text-fuchsia-400 uppercase tracking-wider flex items-center gap-2 pb-2 border-b border-slate-800/80">
+                    <i data-lucide="cpu" class="w-4 h-4"></i> 記憶體與半導體產業 K 線指標 (Memory & Semiconductor)
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Micron (MU) - DRAM/NAND pricing proxy -->
+                    <div class="bg-slate-950 border border-slate-800/60 rounded-xl p-3 space-y-2">
+                        <div class="flex items-center justify-between text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-slate-200">美光科技 (Micron)</span>
+                                <span class="text-[10px] px-1.5 py-0.5 rounded bg-fuchsia-950/60 border border-fuchsia-900/30 text-fuchsia-300">DRAM/NAND 風向</span>
+                            </div>
+                            <span class="text-fuchsia-500 font-mono">NASDAQ:MU</span>
+                        </div>
+                        <div class="h-[260px] rounded-lg overflow-hidden relative border border-slate-800/40">
+                            <div id="tv-chart-ind-mu" class="w-full h-full"></div>
+                        </div>
+                        <p class="text-[10px] text-slate-500 leading-relaxed">美光是全球第三大 DRAM 廠，其營收與股價走勢是 DRAM/NAND 報價的領先指標。美光上漲通常暗示記憶體景氣回溫，連動南亞科 (2408)、華邦電 (2344)。</p>
+                    </div>
+                    <!-- SK Hynix (000660.KS) - HBM leader -->
+                    <div class="bg-slate-950 border border-slate-800/60 rounded-xl p-3 space-y-2">
+                        <div class="flex items-center justify-between text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-slate-200">SK 海力士 (SK Hynix)</span>
+                                <span class="text-[10px] px-1.5 py-0.5 rounded bg-cyan-950/60 border border-cyan-900/30 text-cyan-300">HBM 主導者</span>
+                            </div>
+                            <span class="text-cyan-500 font-mono">KRX:000660</span>
+                        </div>
+                        <div class="h-[260px] rounded-lg overflow-hidden relative border border-slate-800/40">
+                            <div id="tv-chart-ind-skhynix" class="w-full h-full"></div>
+                        </div>
+                        <p class="text-[10px] text-slate-500 leading-relaxed">SK 海力士是 HBM (高頻寬記憶體) 市場龍頭，獨家供應 NVIDIA。其股價為 HBM 報價與 AI 記憶體需求的最直接風向標，連動台灣 HBM 供應鏈 (力成、南茂)。</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Samsung (005930.KS) -->
+                    <div class="bg-slate-950 border border-slate-800/60 rounded-xl p-3 space-y-2">
+                        <div class="flex items-center justify-between text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-slate-200">三星電子</span>
+                                <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-950/60 border border-emerald-900/30 text-emerald-300">記憶體霸主</span>
+                            </div>
+                            <span class="text-emerald-500 font-mono text-[10px]">KRX:005930</span>
+                        </div>
+                        <div class="h-[180px] rounded-lg overflow-hidden relative border border-slate-800/40">
+                            <div id="tv-chart-ind-samsung" class="w-full h-full"></div>
+                        </div>
+                    </div>
+                    <!-- SOXX - Semiconductor ETF -->
+                    <div class="bg-slate-950 border border-slate-800/60 rounded-xl p-3 space-y-2">
+                        <div class="flex items-center justify-between text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-slate-200">費半指數 ETF</span>
+                                <span class="text-[10px] px-1.5 py-0.5 rounded bg-amber-950/60 border border-amber-900/30 text-amber-300">半導體景氣</span>
+                            </div>
+                            <span class="text-amber-500 font-mono text-[10px]">NASDAQ:SOXX</span>
+                        </div>
+                        <div class="h-[180px] rounded-lg overflow-hidden relative border border-slate-800/40">
+                            <div id="tv-chart-ind-soxx" class="w-full h-full"></div>
+                        </div>
+                    </div>
+                    <!-- WDC - Western Digital (NAND) -->
+                    <div class="bg-slate-950 border border-slate-800/60 rounded-xl p-3 space-y-2">
+                        <div class="flex items-center justify-between text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-slate-200">威騰電子 (WDC)</span>
+                                <span class="text-[10px] px-1.5 py-0.5 rounded bg-indigo-950/60 border border-indigo-900/30 text-indigo-300">NAND 指標</span>
+                            </div>
+                            <span class="text-indigo-500 font-mono text-[10px]">NASDAQ:WDC</span>
+                        </div>
+                        <div class="h-[180px] rounded-lg overflow-hidden relative border border-slate-800/40">
+                            <div id="tv-chart-ind-wdc" class="w-full h-full"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 記憶體報價連動說明 -->
+                <div class="bg-slate-950/60 border border-violet-900/30 rounded-xl p-4 space-y-3">
+                    <div class="text-xs font-bold text-violet-400 flex items-center gap-2">
+                        <i data-lucide="info" class="w-3.5 h-3.5"></i> 記憶體報價連動邏輯
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-[11px] text-slate-300">
+                        <div class="bg-slate-900/60 border border-slate-800/40 rounded-lg p-3">
+                            <div class="text-fuchsia-400 font-bold mb-1">DRAM 報價 → 南亞科/華邦電</div>
+                            <p class="text-slate-400">DRAM 合約價漲 → 記憶體模組廠毛利率改善 → 台股記憶體族群估值上修。觀察美光 (MU) 財報 guidance 是最即時的領先訊號。</p>
+                        </div>
+                        <div class="bg-slate-900/60 border border-slate-800/40 rounded-lg p-3">
+                            <div class="text-cyan-400 font-bold mb-1">HBM 需求 → 力成/南茂/日月光</div>
+                            <p class="text-slate-400">SK 海力士 HBM 出貨量直接影響台灣封測供應鏈。HBM3e 放量期 → 力成 (6239)、南茂 (8150) 等封裝代工訂單爆發。</p>
+                        </div>
+                        <div class="bg-slate-900/60 border border-slate-800/40 rounded-lg p-3">
+                            <div class="text-amber-400 font-bold mb-1">NAND 報價 → 群聯/威剛/創見</div>
+                            <p class="text-slate-400">NAND Flash 合約價回升 → SSD 控制器與模組廠營收重返成長。WDC 和三星的 NAND 產能利用率是關鍵觀察指標。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 工業金屬與能源 -->
+            <div class="space-y-4 pt-4">
+                <div class="text-xs font-bold text-teal-400 uppercase tracking-wider flex items-center gap-2 pb-2 border-b border-slate-800/80">
+                    <i data-lucide="factory" class="w-4 h-4"></i> 工業原物料與能源 (影響台股成本面)
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Natural Gas -->
+                    <div class="bg-slate-950 border border-slate-800/60 rounded-xl p-3 space-y-2">
+                        <div class="flex items-center justify-between text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-slate-200">天然氣 (Nat Gas)</span>
+                                <span class="text-[10px] px-1.5 py-0.5 rounded bg-orange-950/60 border border-orange-900/30 text-orange-300">電力成本</span>
+                            </div>
+                            <span class="text-orange-500 font-mono text-[10px]">NYMEX:NG1!</span>
+                        </div>
+                        <div class="h-[200px] rounded-lg overflow-hidden relative border border-slate-800/40">
+                            <div id="tv-chart-ind-natgas" class="w-full h-full"></div>
+                        </div>
+                        <p class="text-[10px] text-slate-500">天然氣價格影響全球發電成本，直接衝擊晶圓代工與半導體廠電費支出。</p>
+                    </div>
+                    <!-- Nickel -->
+                    <div class="bg-slate-950 border border-slate-800/60 rounded-xl p-3 space-y-2">
+                        <div class="flex items-center justify-between text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-slate-200">鎳 (Nickel)</span>
+                                <span class="text-[10px] px-1.5 py-0.5 rounded bg-teal-950/60 border border-teal-900/30 text-teal-300">電池材料</span>
+                            </div>
+                            <span class="text-teal-500 font-mono text-[10px]">TVC:NICKEL</span>
+                        </div>
+                        <div class="h-[200px] rounded-lg overflow-hidden relative border border-slate-800/40">
+                            <div id="tv-chart-ind-nickel" class="w-full h-full"></div>
+                        </div>
+                        <p class="text-[10px] text-slate-500">鎳是電動車電池正極材料核心，價格波動影響鴻海、和碩等代工廠供應鏈。</p>
+                    </div>
+                    <!-- Aluminum -->
+                    <div class="bg-slate-950 border border-slate-800/60 rounded-xl p-3 space-y-2">
+                        <div class="flex items-center justify-between text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-slate-200">鋁 (Aluminum)</span>
+                                <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700/30 text-slate-300">機殼/散熱</span>
+                            </div>
+                            <span class="text-slate-400 font-mono text-[10px]">TVC:ALUMINUM</span>
+                        </div>
+                        <div class="h-[200px] rounded-lg overflow-hidden relative border border-slate-800/40">
+                            <div id="tv-chart-ind-aluminum" class="w-full h-full"></div>
+                        </div>
+                        <p class="text-[10px] text-slate-500">鋁價影響電子產品機殼 (可成、鴻準) 及散熱模組 (雙鴻、奇鋐) 成本。</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Tin -->
+                    <div class="bg-slate-950 border border-slate-800/60 rounded-xl p-3 space-y-2">
+                        <div class="flex items-center justify-between text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-slate-200">錫 (Tin)</span>
+                                <span class="text-[10px] px-1.5 py-0.5 rounded bg-amber-950/60 border border-amber-900/30 text-amber-300">焊接材料</span>
+                            </div>
+                            <span class="text-amber-500 font-mono text-[10px]">TVC:TIN</span>
+                        </div>
+                        <div class="h-[200px] rounded-lg overflow-hidden relative border border-slate-800/40">
+                            <div id="tv-chart-ind-tin" class="w-full h-full"></div>
+                        </div>
+                        <p class="text-[10px] text-slate-500">錫是 PCB 焊接核心材料，價格上漲直接增加台灣 PCB 族群 (欣興、臻鼎) 製造成本。</p>
+                    </div>
+                    <!-- Platinum -->
+                    <div class="bg-slate-950 border border-slate-800/60 rounded-xl p-3 space-y-2">
+                        <div class="flex items-center justify-between text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-slate-200">白金 (Platinum)</span>
+                                <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700/30 text-slate-300">觸媒/氫能</span>
+                            </div>
+                            <span class="text-slate-400 font-mono text-[10px]">TVC:PLATINUM</span>
+                        </div>
+                        <div class="h-[200px] rounded-lg overflow-hidden relative border border-slate-800/40">
+                            <div id="tv-chart-ind-platinum" class="w-full h-full"></div>
+                        </div>
+                        <p class="text-[10px] text-slate-500">白金是燃料電池催化劑，與氫能源概念股 (中興電、亞力) 有長期連動。</p>
+                    </div>
+                    <!-- Baltic Dry Index (BDI) -->
+                    <div class="bg-slate-950 border border-slate-800/60 rounded-xl p-3 space-y-2">
+                        <div class="flex items-center justify-between text-xs">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-slate-200">波羅的海乾散貨 (BDI)</span>
+                                <span class="text-[10px] px-1.5 py-0.5 rounded bg-blue-950/60 border border-blue-900/30 text-blue-300">航運景氣</span>
+                            </div>
+                            <span class="text-blue-500 font-mono text-[10px]">INDEX:BDI</span>
+                        </div>
+                        <div class="h-[200px] rounded-lg overflow-hidden relative border border-slate-800/40">
+                            <div id="tv-chart-ind-bdi" class="w-full h-full"></div>
+                        </div>
+                        <p class="text-[10px] text-slate-500">BDI 反映全球航運與原物料貿易需求，是台股航運股 (長榮、陽明、萬海) 報價先行指標。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 台股連動關係總覽 -->
+            <div class="bg-slate-950/60 border border-slate-800 rounded-xl p-5 space-y-4">
+                <div class="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
+                    <i data-lucide="link" class="w-4 h-4 text-violet-400"></i> 產業報價 ↔ 台股連動速查表
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-xs text-slate-300">
+                        <thead>
+                            <tr class="text-slate-500 border-b border-slate-800/60 pb-1.5 font-bold">
+                                <th class="pb-2 pr-4">報價指標</th>
+                                <th class="pb-2 pr-4">漲 → 台股影響</th>
+                                <th class="pb-2 pr-4">跌 → 台股影響</th>
+                                <th class="pb-2">連動台股族群</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800/40">
+                            <tr class="hover:bg-slate-900/50 transition">
+                                <td class="py-2.5 pr-4 font-bold text-fuchsia-300">DRAM 合約價</td>
+                                <td class="py-2.5 pr-4 text-emerald-400">記憶體族群估值上修 ↑</td>
+                                <td class="py-2.5 pr-4 text-red-400">庫存跌價損失風險 ↓</td>
+                                <td class="py-2.5"><span class="text-slate-200">南亞科 (2408)、華邦電 (2344)、威剛 (3260)</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-900/50 transition">
+                                <td class="py-2.5 pr-4 font-bold text-cyan-300">HBM 出貨</td>
+                                <td class="py-2.5 pr-4 text-emerald-400">封測供應鏈爆單 ↑</td>
+                                <td class="py-2.5 pr-4 text-red-400">AI 資本支出放緩 ↓</td>
+                                <td class="py-2.5"><span class="text-slate-200">力成 (6239)、南茂 (8150)、日月光 (3711)</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-900/50 transition">
+                                <td class="py-2.5 pr-4 font-bold text-amber-300">NAND Flash</td>
+                                <td class="py-2.5 pr-4 text-emerald-400">SSD/模組廠毛利改善 ↑</td>
+                                <td class="py-2.5 pr-4 text-red-400">通路庫存壓力 ↓</td>
+                                <td class="py-2.5"><span class="text-slate-200">群聯 (8299)、創見 (2451)、宜鼎 (5765)</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-900/50 transition">
+                                <td class="py-2.5 pr-4 font-bold text-orange-300">天然氣</td>
+                                <td class="py-2.5 pr-4 text-red-400">晶圓廠電力成本增加 ↓</td>
+                                <td class="py-2.5 pr-4 text-emerald-400">製造成本下降 ↑</td>
+                                <td class="py-2.5"><span class="text-slate-200">台積電 (2330)、聯電 (2303)、世界 (5347)</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-900/50 transition">
+                                <td class="py-2.5 pr-4 font-bold text-teal-300">鎳/鋁/銅</td>
+                                <td class="py-2.5 pr-4 text-red-400">電子代工成本壓力 ↓</td>
+                                <td class="py-2.5 pr-4 text-emerald-400">材料成本舒緩 ↑</td>
+                                <td class="py-2.5"><span class="text-slate-200">鴻海 (2317)、可成 (2474)、雙鴻 (3324)</span></td>
+                            </tr>
+                            <tr class="hover:bg-slate-900/50 transition">
+                                <td class="py-2.5 pr-4 font-bold text-blue-300">BDI 航運指數</td>
+                                <td class="py-2.5 pr-4 text-emerald-400">航運股運價上修 ↑</td>
+                                <td class="py-2.5 pr-4 text-red-400">全球貿易需求疲弱 ↓</td>
+                                <td class="py-2.5"><span class="text-slate-200">長榮 (2603)、陽明 (2609)、萬海 (2615)</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="stock-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-0 md:p-4 hidden">
         <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl p-6 space-y-4 mobile-modal-sheet">
             <div class="flex items-center justify-between border-b border-slate-800 pb-3">
@@ -1308,11 +1659,15 @@
             document.getElementById('panel-stock-wiki').classList.add('hidden');
             document.getElementById('panel-map-workspace').classList.add('hidden');
             if (document.getElementById('panel-tech-docs')) document.getElementById('panel-tech-docs').classList.add('hidden');
+            if (document.getElementById('panel-macro-market')) document.getElementById('panel-macro-market').classList.add('hidden');
+            if (document.getElementById('panel-industry-pricing')) document.getElementById('panel-industry-pricing').classList.add('hidden');
 
             document.getElementById('nav-btn-home').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             if (document.getElementById('nav-btn-library')) document.getElementById('nav-btn-library').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition";
             document.getElementById('nav-btn-wiki').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             if (document.getElementById('nav-btn-tech')) document.getElementById('nav-btn-tech').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-macro')) document.getElementById('nav-btn-macro').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-industry')) document.getElementById('nav-btn-industry').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
 
             renderThemeLibrary();
             lucide.createIcons();
@@ -2580,11 +2935,15 @@
             if (document.getElementById('panel-theme-library')) document.getElementById('panel-theme-library').classList.add('hidden');
             document.getElementById('panel-map-workspace').classList.add('hidden');
             if (document.getElementById('panel-tech-docs')) document.getElementById('panel-tech-docs').classList.add('hidden');
+            if (document.getElementById('panel-macro-market')) document.getElementById('panel-macro-market').classList.add('hidden');
+            if (document.getElementById('panel-industry-pricing')) document.getElementById('panel-industry-pricing').classList.add('hidden');
             document.getElementById('panel-stock-wiki').classList.remove('hidden');
             
             document.getElementById('nav-btn-home').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             if (document.getElementById('nav-btn-library')) document.getElementById('nav-btn-library').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             if (document.getElementById('nav-btn-tech')) document.getElementById('nav-btn-tech').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-macro')) document.getElementById('nav-btn-macro').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-industry')) document.getElementById('nav-btn-industry').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             document.getElementById('nav-btn-wiki').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition";
             
             renderStockWiki();
@@ -2595,12 +2954,16 @@
             if (document.getElementById('panel-theme-library')) document.getElementById('panel-theme-library').classList.add('hidden');
             document.getElementById('panel-map-workspace').classList.add('hidden');
             if (document.getElementById('panel-tech-docs')) document.getElementById('panel-tech-docs').classList.add('hidden');
+            if (document.getElementById('panel-macro-market')) document.getElementById('panel-macro-market').classList.add('hidden');
+            if (document.getElementById('panel-industry-pricing')) document.getElementById('panel-industry-pricing').classList.add('hidden');
             document.getElementById('panel-home').classList.remove('hidden');
             
             document.getElementById('nav-btn-home').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition";
             if (document.getElementById('nav-btn-library')) document.getElementById('nav-btn-library').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             document.getElementById('nav-btn-wiki').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             if (document.getElementById('nav-btn-tech')) document.getElementById('nav-btn-tech').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-macro')) document.getElementById('nav-btn-macro').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-industry')) document.getElementById('nav-btn-industry').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             
             renderDashboardHome();
         }
@@ -2610,14 +2973,93 @@
             if (document.getElementById('panel-theme-library')) document.getElementById('panel-theme-library').classList.add('hidden');
             document.getElementById('panel-stock-wiki').classList.add('hidden');
             document.getElementById('panel-map-workspace').classList.add('hidden');
+            if (document.getElementById('panel-macro-market')) document.getElementById('panel-macro-market').classList.add('hidden');
+            if (document.getElementById('panel-industry-pricing')) document.getElementById('panel-industry-pricing').classList.add('hidden');
             if (document.getElementById('panel-tech-docs')) document.getElementById('panel-tech-docs').classList.remove('hidden');
             
             document.getElementById('nav-btn-home').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             if (document.getElementById('nav-btn-library')) document.getElementById('nav-btn-library').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             document.getElementById('nav-btn-wiki').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-macro')) document.getElementById('nav-btn-macro').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-industry')) document.getElementById('nav-btn-industry').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
             if (document.getElementById('nav-btn-tech')) document.getElementById('nav-btn-tech').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition";
             
             lucide.createIcons();
+        }
+
+        function showMacroPage() {
+            document.getElementById('panel-home').classList.add('hidden');
+            if (document.getElementById('panel-theme-library')) document.getElementById('panel-theme-library').classList.add('hidden');
+            document.getElementById('panel-stock-wiki').classList.add('hidden');
+            document.getElementById('panel-map-workspace').classList.add('hidden');
+            if (document.getElementById('panel-tech-docs')) document.getElementById('panel-tech-docs').classList.add('hidden');
+            if (document.getElementById('panel-industry-pricing')) document.getElementById('panel-industry-pricing').classList.add('hidden');
+            if (document.getElementById('panel-macro-market')) document.getElementById('panel-macro-market').classList.remove('hidden');
+
+            document.getElementById('nav-btn-home').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-library')) document.getElementById('nav-btn-library').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            document.getElementById('nav-btn-wiki').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-tech')) document.getElementById('nav-btn-tech').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-industry')) document.getElementById('nav-btn-industry').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-macro')) document.getElementById('nav-btn-macro').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition";
+
+            renderMacroCharts();
+            lucide.createIcons();
+        }
+
+        function renderMacroCharts() {
+            if (typeof TradingView === 'undefined') {
+                console.warn('TradingView library not loaded yet for macro charts, retrying...');
+                setTimeout(renderMacroCharts, 200);
+                return;
+            }
+            renderMiniChart("COMEX:GC1!", "tv-chart-macro-gold");
+            renderMiniChart("NYMEX:CL1!", "tv-chart-macro-oil");
+            renderMiniChart("COMEX:HG1!", "tv-chart-macro-copper");
+            renderMiniChart("FX_IDC:USDTWD", "tv-chart-macro-usdtwd");
+            renderMiniChart("INDEX:DXY", "tv-chart-macro-dxy");
+            renderMiniChart("FX:USDJPY", "tv-chart-macro-usdjpy");
+        }
+
+        function showIndustryPricing() {
+            document.getElementById('panel-home').classList.add('hidden');
+            if (document.getElementById('panel-theme-library')) document.getElementById('panel-theme-library').classList.add('hidden');
+            document.getElementById('panel-stock-wiki').classList.add('hidden');
+            document.getElementById('panel-map-workspace').classList.add('hidden');
+            if (document.getElementById('panel-tech-docs')) document.getElementById('panel-tech-docs').classList.add('hidden');
+            if (document.getElementById('panel-macro-market')) document.getElementById('panel-macro-market').classList.add('hidden');
+            if (document.getElementById('panel-industry-pricing')) document.getElementById('panel-industry-pricing').classList.remove('hidden');
+
+            document.getElementById('nav-btn-home').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-library')) document.getElementById('nav-btn-library').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            document.getElementById('nav-btn-wiki').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-tech')) document.getElementById('nav-btn-tech').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-macro')) document.getElementById('nav-btn-macro').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            if (document.getElementById('nav-btn-industry')) document.getElementById('nav-btn-industry').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition";
+
+            renderIndustryCharts();
+            lucide.createIcons();
+        }
+
+        function renderIndustryCharts() {
+            if (typeof TradingView === 'undefined') {
+                console.warn('TradingView library not loaded yet for industry charts, retrying...');
+                setTimeout(renderIndustryCharts, 200);
+                return;
+            }
+            // Memory & Semiconductor
+            renderMiniChart("NASDAQ:MU", "tv-chart-ind-mu");
+            renderMiniChart("KRX:000660", "tv-chart-ind-skhynix");
+            renderMiniChart("KRX:005930", "tv-chart-ind-samsung");
+            renderMiniChart("NASDAQ:SOXX", "tv-chart-ind-soxx");
+            renderMiniChart("NASDAQ:WDC", "tv-chart-ind-wdc");
+            // Industrial Commodities & Energy
+            renderMiniChart("NYMEX:NG1!", "tv-chart-ind-natgas");
+            renderMiniChart("TVC:NICKEL", "tv-chart-ind-nickel");
+            renderMiniChart("TVC:ALUMINUM", "tv-chart-ind-aluminum");
+            renderMiniChart("TVC:TIN", "tv-chart-ind-tin");
+            renderMiniChart("TVC:PLATINUM", "tv-chart-ind-platinum");
+            renderMiniChart("INDEX:BDI", "tv-chart-ind-bdi");
         }
 
         function renderStockWiki() {
