@@ -439,7 +439,11 @@
                     <i data-lucide="bookmark-plus" class="w-4 h-4"></i>
                     <span id="modal-watchlist-btn-text">加入我的追蹤名單</span>
                 </button>
-                <span class="text-[11px] text-slate-500">把這檔先收進右側追蹤清單，之後再回來看。</span>
+                <button id="modal-live-update-btn" onclick="triggerLiveUpdate()" class="inline-flex items-center gap-2 rounded-lg border border-cyan-800 bg-cyan-950/40 px-3 py-2 text-sm font-semibold text-cyan-300 hover:bg-cyan-950/70 transition">
+                    <i data-lucide="search" class="w-4 h-4"></i>
+                    <span id="modal-live-update-btn-text">Live Web Search & LLM 更新</span>
+                </button>
+                <span class="text-[11px] text-slate-500 block w-full sm:w-auto">實時抓取最新財報與供應鏈動態並重新結構化為 Wiki。</span>
             </div>
             <div class="grid grid-cols-2 gap-4 bg-slate-950 p-4 rounded-xl border border-slate-800/60 text-sm">
                 <div><span class="text-slate-400 block text-xs">題材純度分數</span><span id="modal-stock-pure" class="text-amber-400 font-bold">★ -</span></div>
@@ -583,7 +587,7 @@
             const versionStamp = Date.now();
             try {
                 const versionedMapCandidates = [
-                    './maps_repo_20260612_103942.json',
+                    './maps_repo_20260612_104211.json',
                     './maps_repo.json'
                 ];
                 const { data: rawRepo, url } = await fetchJsonWithFallback([
@@ -1947,6 +1951,48 @@
                     wikiSearch.value = themeName;
                     filterWiki();
                 }
+            }
+        }
+
+        async function triggerLiveUpdate() {
+            if (!currentModalStockId) return;
+            
+            const btn = document.getElementById('modal-live-update-btn');
+            const text = document.getElementById('modal-live-update-btn-text');
+            if (!btn || !text) return;
+            
+            const originalText = text.textContent;
+            btn.disabled = true;
+            text.innerHTML = `<span class="flex items-center gap-1"><i data-lucide="loader" class="w-4 h-4 animate-spin"></i> 搜尋與 LLM 分析中...</span>`;
+            lucide.createIcons();
+            
+            try {
+                const response = await fetch(`/api/update_stock?code=${currentModalStockId}`);
+                if (!response.ok) {
+                    const errData = await response.json();
+                    throw new Error(errData.error || `HTTP ${response.status}`);
+                }
+                const updatedStock = await response.json();
+                
+                // Update local memory cache
+                stocksWiki[currentModalStockId] = updatedStock;
+                
+                // Re-open modal to refresh all fields
+                openModal(currentModalStockId);
+                
+                // Refresh parent grid list if visible
+                if (!document.getElementById('panel-stock-wiki').classList.contains('hidden')) {
+                    renderStockWiki();
+                }
+                
+                showToast("個股 LLM Wiki 結構化更新完成！");
+            } catch (err) {
+                console.error("Live Update Failed:", err);
+                showToast(`更新失敗：${err.message || '本功能需在本地運行 python web_server.py 才能使用'}`);
+            } finally {
+                btn.disabled = false;
+                text.textContent = originalText;
+                lucide.createIcons();
             }
         }
 
