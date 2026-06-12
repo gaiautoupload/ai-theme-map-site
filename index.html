@@ -125,19 +125,20 @@
                     </div>
                 </div>
 
-                <!-- Right: Charts Area (Main TAIEX Futures + US Tech Giants) -->
+                <!-- Right: Charts Area (Main TAIEX Index + TSMC ADR + US Tech Giants) -->
                 <div class="lg:col-span-2 space-y-4">
-                    <!-- Main TAIEX Futures Chart -->
-                    <div class="h-[320px] bg-slate-900 border border-slate-800/60 rounded-2xl overflow-hidden shadow-lg relative">
-                        <div id="tv-chart-taiex" class="w-full h-full"></div>
+                    <!-- Main Charts Grid: TAIEX + TSM ADR -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="h-[320px] bg-slate-900 border border-slate-800/60 rounded-2xl overflow-hidden shadow-lg relative">
+                            <div id="tv-chart-taiex" class="w-full h-full"></div>
+                        </div>
+                        <div class="h-[320px] bg-slate-900 border border-slate-800/60 rounded-2xl overflow-hidden shadow-lg relative" title="台積電 ADR (TSM)">
+                            <div id="tv-chart-tsm" class="w-full h-full"></div>
+                            <div class="absolute top-1 left-2 pointer-events-none bg-slate-950/75 backdrop-blur-sm px-1.5 py-0.5 rounded text-[9px] font-bold text-slate-300 border border-slate-800">TSM ADR (台積電)</div>
+                        </div>
                     </div>
                     <!-- US Tech Leaders Mini Grid -->
-                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
-                        <!-- TSM ADR -->
-                        <div class="h-[140px] bg-slate-900 border border-slate-800/60 rounded-xl overflow-hidden relative" title="台積電 ADR (TSM)">
-                            <div id="tv-chart-tsm" class="w-full h-full"></div>
-                            <div class="absolute top-1 left-2 pointer-events-none bg-slate-950/75 backdrop-blur-sm px-1.5 py-0.5 rounded text-[9px] font-bold text-slate-300 border border-slate-800">TSM ADR</div>
-                        </div>
+                    <div class="grid grid-cols-3 gap-3">
                         <!-- NVIDIA -->
                         <div class="h-[140px] bg-slate-900 border border-slate-800/60 rounded-xl overflow-hidden relative" title="輝達 (NVDA)">
                             <div id="tv-chart-nvda" class="w-full h-full"></div>
@@ -960,27 +961,6 @@
 
             renderDashboardHome();
             lucide.createIcons();
-
-            // 每 60 秒自動背景載入最新投研與大盤數據
-            setInterval(async () => {
-                const autoStamp = Date.now();
-                try {
-                    const wikiRes = await fetch(`./stocks_wiki.json?v=${autoStamp}`);
-                    if (wikiRes.ok) stocksWiki = await wikiRes.json();
-
-                    const reportsRes = await fetch(`./market_reports.json?v=${autoStamp}`);
-                    if (reportsRes.ok) {
-                        marketReports = await reportsRes.json();
-                        // 僅在用戶處於首頁面板時，才重新渲染以避免影響個股 Wiki 或地圖工作區的使用
-                        if (!document.getElementById('panel-home').classList.contains('hidden')) {
-                            renderDashboardHome();
-                            console.log("Auto-refreshed latest macro data");
-                        }
-                    }
-                } catch (e) {
-                    console.warn("Auto-refresh failed", e);
-                }
-            }, 60000);
         }
 
         window.addEventListener('DOMContentLoaded', bootstrapApp);
@@ -1243,37 +1223,61 @@
         }
 
         let tvWidget = null;
+        let tsmWidget = null;
         function renderTradingViewChart() {
             if (typeof TradingView === 'undefined') {
                 console.warn('TradingView library not loaded yet, retrying in 200ms...');
                 setTimeout(renderTradingViewChart, 200);
                 return;
             }
-            const container = document.getElementById('tv-chart-taiex');
-            if (!container) return;
-            container.innerHTML = ''; // Clear container
+            
+            // Render TAIEX Index Chart
+            const taiexContainer = document.getElementById('tv-chart-taiex');
+            if (taiexContainer) {
+                taiexContainer.innerHTML = '';
+                tvWidget = new TradingView.widget({
+                    "autosize": true,
+                    "symbol": "INDEX:TAIEX",
+                    "interval": "D",
+                    "timezone": "Asia/Taipei",
+                    "theme": "dark",
+                    "style": "1",
+                    "locale": "zh_TW",
+                    "toolbar_bg": "#111827",
+                    "enable_publishing": false,
+                    "hide_side_toolbar": false,
+                    "allow_symbol_change": false,
+                    "container_id": "tv-chart-taiex",
+                    "studies": [
+                        "MASimple@tv-basicstudies"
+                    ]
+                });
+            }
 
-            // Revert back to TAIFEX:TXF1! which works for third-party embeds
-            tvWidget = new TradingView.widget({
-                "autosize": true,
-                "symbol": "TAIFEX:TXF1!",
-                "interval": "D",
-                "timezone": "Asia/Taipei",
-                "theme": "dark",
-                "style": "1",
-                "locale": "zh_TW",
-                "toolbar_bg": "#111827",
-                "enable_publishing": false,
-                "hide_side_toolbar": false,
-                "allow_symbol_change": false,
-                "container_id": "tv-chart-taiex",
-                "studies": [
-                    "MASimple@tv-basicstudies"
-                ]
-            });
+            // Render TSM ADR Chart (Full Size)
+            const tsmContainer = document.getElementById('tv-chart-tsm');
+            if (tsmContainer) {
+                tsmContainer.innerHTML = '';
+                tsmWidget = new TradingView.widget({
+                    "autosize": true,
+                    "symbol": "NYSE:TSM",
+                    "interval": "D",
+                    "timezone": "America/New_York",
+                    "theme": "dark",
+                    "style": "1",
+                    "locale": "zh_TW",
+                    "toolbar_bg": "#111827",
+                    "enable_publishing": false,
+                    "hide_side_toolbar": false,
+                    "allow_symbol_change": false,
+                    "container_id": "tv-chart-tsm",
+                    "studies": [
+                        "MASimple@tv-basicstudies"
+                    ]
+                });
+            }
 
-            // Render the 4 Mini US/Tech charts
-            renderMiniChart("NYSE:TSM", "tv-chart-tsm");
+            // Render the other 3 Mini US/Tech charts
             renderMiniChart("NASDAQ:NVDA", "tv-chart-nvda");
             renderMiniChart("NASDAQ:AAPL", "tv-chart-aapl");
             renderMiniChart("NASDAQ:MU", "tv-chart-mu");
