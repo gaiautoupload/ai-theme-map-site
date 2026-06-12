@@ -63,6 +63,14 @@
                     <button onclick="showStockWiki()" id="nav-btn-wiki" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition">個股 Wiki</button>
                 </nav>
             </div>
+            <div class="relative hidden lg:block w-72 mx-4 z-50">
+                <div class="flex items-center gap-2 bg-slate-950 border border-slate-800 px-3 py-1.5 rounded-xl">
+                    <i data-lucide="search" class="w-4 h-4 text-slate-500"></i>
+                    <input type="text" id="global-stock-search" oninput="handleGlobalSearch(this.value)" placeholder="個股快速搜尋..." class="bg-transparent border-none text-xs text-slate-200 focus:outline-none w-full">
+                </div>
+                <div id="global-search-results" class="absolute left-0 right-0 mt-1 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl max-h-60 overflow-y-auto hidden divide-y divide-slate-800/50">
+                </div>
+            </div>
             <div id="header-status" class="hidden sm:flex items-center gap-4">
                 </div>
         </div>
@@ -171,9 +179,13 @@
             </div>
             
             <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
-                <div class="flex items-center gap-2 bg-slate-950 border border-slate-800 px-3 py-2.5 rounded-xl flex-1 w-full">
-                    <i data-lucide="search" class="w-5 h-5 text-slate-500"></i>
-                    <input type="text" id="wiki-search" oninput="filterWiki()" placeholder="搜尋股票代號、名稱、主營產品、或產業分類..." class="bg-transparent border-none text-sm text-slate-200 focus:outline-none w-full">
+                <div class="relative flex-1 w-full z-30">
+                    <div class="flex items-center gap-2 bg-slate-950 border border-slate-800 px-3 py-2.5 rounded-xl">
+                        <i data-lucide="search" class="w-5 h-5 text-slate-500"></i>
+                        <input type="text" id="wiki-search" oninput="handleWikiSearch(this.value)" placeholder="搜尋股票代號、名稱、主營產品、或產業分類..." class="bg-transparent border-none text-sm text-slate-200 focus:outline-none w-full">
+                    </div>
+                    <div id="wiki-search-results" class="absolute left-0 right-0 mt-1 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl max-h-60 overflow-y-auto hidden divide-y divide-slate-800/50">
+                    </div>
                 </div>
                 <div class="flex gap-2 w-full md:w-auto shrink-0 overflow-x-auto pb-1 md:pb-0" id="wiki-tier-filters">
                     <button onclick="filterWikiTier('all')" class="wiki-tier-btn px-4 py-2 text-xs font-semibold rounded-xl border border-indigo-900 bg-indigo-950/20 text-indigo-400 hover:bg-indigo-950/40 transition" id="btn-wiki-tier-all">全部 (0)</button>
@@ -445,8 +457,11 @@
                 <div><span class="text-xs font-semibold text-red-400 uppercase tracking-wider block mb-1">❌ 投資潛在潛在風險 (Cons)</span><p id="modal-stock-cons" class="text-slate-300 leading-relaxed"></p></div>
                 <div><span class="text-xs font-semibold text-amber-500 uppercase tracking-wider block mb-1">🚀 關鍵催化劑事件 (Catalyst)</span><p id="modal-stock-catalyst" class="text-slate-300 leading-relaxed"></p></div>
                 <div><span class="text-xs font-semibold text-violet-400 uppercase tracking-wider block mb-1">🏷️ 股票層級 / 證據型態</span><p id="modal-stock-tags" class="text-slate-300 leading-relaxed"></p></div>
+                <div><span class="text-xs font-semibold text-cyan-400 uppercase tracking-wider block mb-1">🏷️ 主營產品與產業分類 (點擊篩選 Wiki)</span><div id="modal-stock-product-tags" class="flex flex-wrap gap-1.5 py-1"></div></div>
+                <div><span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider block mb-1">🎯 參與產業主題</span><div id="modal-stock-theme-tags" class="flex flex-wrap gap-1.5 py-1"></div></div>
                 <div><span class="text-xs font-semibold text-fuchsia-400 uppercase tracking-wider block mb-1">🔄 題材關係 / 連動強度</span><div id="modal-stock-linkage" class="text-slate-300 leading-relaxed text-xs space-y-2"></div></div>
                 <div><span class="text-xs font-semibold text-sky-400 uppercase tracking-wider block mb-1">🔗 來源 / 分析師 / 投顧</span><div id="modal-stock-sources" class="text-slate-300 leading-relaxed text-xs space-y-2"></div></div>
+                <div><span class="text-xs font-semibold text-indigo-400 uppercase tracking-wider block mb-1">👥 相關概念股 (推薦連動)</span><div id="modal-stock-related" class="flex flex-wrap gap-1.5 py-1"></div></div>
                 <div class="border-t border-slate-800/80 pt-3"><span class="text-xs font-semibold text-slate-400 block mb-1">📊 深度供應鏈背景分析</span><p id="modal-stock-desc" class="text-slate-400 leading-relaxed text-xs bg-slate-950/40 p-3 rounded-lg border border-slate-800/40"></p></div>
             </div>
         </div>
@@ -568,7 +583,7 @@
             const versionStamp = Date.now();
             try {
                 const versionedMapCandidates = [
-                    './maps_repo_20260612_000958.json',
+                    './maps_repo_20260612_103942.json',
                     './maps_repo.json'
                 ];
                 const { data: rawRepo, url } = await fetchJsonWithFallback([
@@ -1569,6 +1584,106 @@
             document.getElementById('modal-stock-sources').innerHTML = renderModalSources(stock);
             document.getElementById('modal-stock-desc').textContent = stock.desc;
 
+            // Render Product Tags & Industry Tag
+            const productTagsContainer = document.getElementById('modal-stock-product-tags');
+            if (productTagsContainer) {
+                productTagsContainer.innerHTML = '';
+                if (stock.sector) {
+                    const indTag = document.createElement('button');
+                    indTag.className = "px-2.5 py-1 rounded-lg bg-slate-950 border border-indigo-900/60 text-indigo-400 hover:text-white hover:bg-indigo-950/40 text-xs transition duration-200";
+                    indTag.textContent = stock.sector;
+                    indTag.onclick = () => searchTag(stock.sector);
+                    productTagsContainer.appendChild(indTag);
+                }
+                const wiki = stocksWiki[stock.id];
+                if (wiki && Array.isArray(wiki.products)) {
+                    wiki.products.forEach(p => {
+                        const pTag = document.createElement('button');
+                        pTag.className = "px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-slate-300 hover:text-white hover:border-indigo-500 text-xs transition duration-200";
+                        pTag.textContent = p;
+                        pTag.onclick = () => searchTag(p);
+                        productTagsContainer.appendChild(pTag);
+                    });
+                }
+            }
+
+            // Render Theme Tags
+            const themeTagsContainer = document.getElementById('modal-stock-theme-tags');
+            if (themeTagsContainer) {
+                themeTagsContainer.innerHTML = '';
+                const wiki = stocksWiki[stock.id];
+                if (wiki && Array.isArray(wiki.themes) && wiki.themes.length > 0) {
+                    wiki.themes.forEach(t => {
+                        const tTag = document.createElement('button');
+                        tTag.className = "px-2.5 py-1 rounded-lg bg-emerald-950/40 border border-emerald-900/60 text-emerald-400 hover:text-white hover:bg-emerald-950/60 text-xs transition duration-200";
+                        tTag.textContent = t;
+                        tTag.onclick = () => clickTheme(t);
+                        themeTagsContainer.appendChild(tTag);
+                    });
+                } else {
+                    themeTagsContainer.innerHTML = `<span class="text-xs text-slate-500">暫無參與產業主題</span>`;
+                }
+            }
+
+            // Calculate & Render Related Stocks
+            const relatedContainer = document.getElementById('modal-stock-related');
+            if (relatedContainer) {
+                relatedContainer.innerHTML = '';
+                const currentWiki = stocksWiki[stock.id];
+                if (currentWiki) {
+                    const relatedStocks = [];
+                    const allStockKeys = Object.keys(stocksWiki);
+                    
+                    for (const code of allStockKeys) {
+                        if (code === stock.id) continue;
+                        const otherWiki = stocksWiki[code];
+                        let score = 0;
+                        
+                        // Theme match (highest priority)
+                        if (currentWiki.themes && otherWiki.themes) {
+                            const commonThemes = currentWiki.themes.filter(t => otherWiki.themes.includes(t));
+                            score += commonThemes.length * 5;
+                        }
+                        
+                        // Product match
+                        if (currentWiki.products && otherWiki.products) {
+                            const commonProducts = currentWiki.products.filter(p => otherWiki.products.includes(p));
+                            score += commonProducts.length * 3;
+                        }
+                        
+                        // Industry match
+                        if (currentWiki.industry === otherWiki.industry) {
+                            score += 2;
+                        }
+                        
+                        if (score > 0) {
+                            relatedStocks.push({
+                                code: otherWiki.code,
+                                name: otherWiki.name,
+                                industry: otherWiki.industry,
+                                score: score
+                            });
+                        }
+                    }
+                    
+                    relatedStocks.sort((a, b) => b.score - a.score || a.code.localeCompare(b.code));
+                    const topRelated = relatedStocks.slice(0, 6);
+                    if (topRelated.length > 0) {
+                        topRelated.forEach(rel => {
+                            const btn = document.createElement('button');
+                            btn.className = "px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 text-slate-300 hover:text-white hover:border-indigo-500 text-xs transition duration-200";
+                            btn.innerHTML = `${rel.name} <span class="font-mono text-slate-500 text-[10px]">${rel.code}</span>`;
+                            btn.onclick = () => openModal(rel.code);
+                            relatedContainer.appendChild(btn);
+                        });
+                    } else {
+                        relatedContainer.innerHTML = `<span class="text-xs text-slate-500">暫無推薦關聯個股</span>`;
+                    }
+                } else {
+                    relatedContainer.innerHTML = `<span class="text-xs text-slate-500">暫無推薦關聯個股</span>`;
+                }
+            }
+
             updateModalWatchlistButton(stock.id);
             document.getElementById('stock-modal').classList.remove('hidden');
             lucide.createIcons();
@@ -1736,6 +1851,116 @@
             wikiFilterTier = tier;
             renderStockWiki();
         }
+
+        // New helper functions for search and tag navigation
+        function handleGlobalSearch(val) {
+            const container = document.getElementById('global-search-results');
+            if (!container) return;
+            const query = val.trim().toLowerCase();
+            if (!query) {
+                container.classList.add('hidden');
+                return;
+            }
+            const results = searchStocksInWiki(query).slice(0, 6);
+            if (results.length === 0) {
+                container.innerHTML = `<div class="p-3 text-xs text-slate-500">無匹配個股</div>`;
+            } else {
+                container.innerHTML = results.map(wiki => `
+                    <div onclick="selectSearchResult('${wiki.code}', 'global-stock-search', 'global-search-results')" class="p-3 hover:bg-slate-800 cursor-pointer flex items-center justify-between transition border-b border-slate-800/40">
+                        <div>
+                            <div class="text-xs font-bold text-slate-200">${wiki.name} <span class="font-mono text-slate-500 text-[10px]">${wiki.code}</span></div>
+                            <div class="text-[10px] text-slate-400 mt-0.5 line-clamp-1">${wiki.summary || ''}</div>
+                        </div>
+                        <span class="text-[9px] px-1.5 py-0.5 rounded bg-slate-950 border border-slate-800 text-slate-400">${wiki.industry}</span>
+                    </div>
+                `).join('');
+            }
+            container.classList.remove('hidden');
+        }
+
+        function handleWikiSearch(val) {
+            filterWiki();
+            const container = document.getElementById('wiki-search-results');
+            if (!container) return;
+            const query = val.trim().toLowerCase();
+            if (!query) {
+                container.classList.add('hidden');
+                return;
+            }
+            const results = searchStocksInWiki(query).slice(0, 6);
+            if (results.length === 0) {
+                container.innerHTML = `<div class="p-3 text-xs text-slate-500">無匹配個股</div>`;
+            } else {
+                container.innerHTML = results.map(wiki => `
+                    <div onclick="selectSearchResult('${wiki.code}', 'wiki-search', 'wiki-search-results')" class="p-3 hover:bg-slate-800 cursor-pointer flex items-center justify-between transition border-b border-slate-800/40">
+                        <div>
+                            <div class="text-sm font-bold text-slate-200">${wiki.name} <span class="font-mono text-slate-500">${wiki.code}</span></div>
+                            <div class="text-xs text-slate-400 mt-0.5 line-clamp-1">${wiki.summary || ''}</div>
+                        </div>
+                        <span class="text-[10px] px-2 py-0.5 rounded bg-slate-950 border border-slate-800 text-slate-400">${wiki.industry}</span>
+                    </div>
+                `).join('');
+            }
+            container.classList.remove('hidden');
+        }
+
+        function searchStocksInWiki(query) {
+            const keys = Object.keys(stocksWiki);
+            return keys.map(k => stocksWiki[k]).filter(wiki => {
+                const matchCode = wiki.code.toLowerCase().includes(query);
+                const matchName = wiki.name.toLowerCase().includes(query);
+                const matchIndustry = wiki.industry.toLowerCase().includes(query);
+                const matchSummary = (wiki.summary || '').toLowerCase().includes(query);
+                const matchProducts = (wiki.products || []).some(p => p.toLowerCase().includes(query));
+                return matchCode || matchName || matchIndustry || matchSummary || matchProducts;
+            });
+        }
+
+        function selectSearchResult(code, inputId, resultsId) {
+            document.getElementById(inputId).value = '';
+            document.getElementById(resultsId).classList.add('hidden');
+            openModal(code);
+        }
+
+        function searchTag(tagName) {
+            closeModal();
+            showStockWiki();
+            const wikiSearch = document.getElementById('wiki-search');
+            if (wikiSearch) {
+                wikiSearch.value = tagName;
+                filterWiki();
+                wikiSearch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        function clickTheme(themeName) {
+            closeModal();
+            const mapKey = Object.keys(mapsRepository).find(key => mapsRepository[key].title === themeName);
+            if (mapKey) {
+                loadMapWorkspace(mapKey);
+                const workspace = document.getElementById('panel-map-workspace');
+                if (workspace) workspace.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                showStockWiki();
+                const wikiSearch = document.getElementById('wiki-search');
+                if (wikiSearch) {
+                    wikiSearch.value = themeName;
+                    filterWiki();
+                }
+            }
+        }
+
+        // Close search results when clicking outside
+        document.addEventListener('click', function(e) {
+            const globalResults = document.getElementById('global-search-results');
+            if (globalResults && !e.target.closest('#global-stock-search') && !e.target.closest('#global-search-results')) {
+                globalResults.classList.add('hidden');
+            }
+            const wikiResults = document.getElementById('wiki-search-results');
+            if (wikiResults && !e.target.closest('#wiki-search') && !e.target.closest('#wiki-search-results')) {
+                wikiResults.classList.add('hidden');
+            }
+        });
     </script>
 </body>
 </html>
