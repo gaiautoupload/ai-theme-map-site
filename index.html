@@ -757,7 +757,7 @@
                     <div class="bg-slate-950 border border-slate-800/60 rounded-xl p-3 space-y-2">
                         <div class="flex items-center justify-between text-xs font-bold text-slate-200">
                             <span>黃金期貨 (Gold)</span>
-                            <span class="text-amber-500">COMEX:GC1!</span>
+                            <span class="text-amber-500">TVC:GOLD</span>
                         </div>
                         <div class="h-[240px] rounded-lg overflow-hidden relative border border-slate-800/40">
                             <div id="tv-chart-macro-gold" class="w-full h-full"></div>
@@ -767,7 +767,7 @@
                     <div class="bg-slate-950 border border-slate-800/60 rounded-xl p-3 space-y-2">
                         <div class="flex items-center justify-between text-xs font-bold text-slate-200">
                             <span>紐約輕原油 (Crude Oil)</span>
-                            <span class="text-cyan-500">NYMEX:CL1!</span>
+                            <span class="text-cyan-500">TVC:USOIL</span>
                         </div>
                         <div class="h-[240px] rounded-lg overflow-hidden relative border border-slate-800/40">
                             <div id="tv-chart-macro-oil" class="w-full h-full"></div>
@@ -777,7 +777,7 @@
                     <div class="bg-slate-950 border border-slate-800/60 rounded-xl p-3 space-y-2">
                         <div class="flex items-center justify-between text-xs font-bold text-slate-200">
                             <span>高級銅期貨 (Copper)</span>
-                            <span class="text-emerald-500">COMEX:HG1!</span>
+                            <span class="text-emerald-500">TVC:COPPER</span>
                         </div>
                         <div class="h-[240px] rounded-lg overflow-hidden relative border border-slate-800/40">
                             <div id="tv-chart-macro-copper" class="w-full h-full"></div>
@@ -947,7 +947,7 @@
                                 <span class="font-bold text-slate-200">天然氣 (Nat Gas)</span>
                                 <span class="text-[10px] px-1.5 py-0.5 rounded bg-orange-950/60 border border-orange-900/30 text-orange-300">電力成本</span>
                             </div>
-                            <span class="text-orange-500 font-mono text-[10px]">NYMEX:NG1!</span>
+                            <span class="text-orange-500 font-mono text-[10px]">TVC:NATGAS</span>
                         </div>
                         <div class="h-[200px] rounded-lg overflow-hidden relative border border-slate-800/40">
                             <div id="tv-chart-ind-natgas" class="w-full h-full"></div>
@@ -961,7 +961,7 @@
                                 <span class="font-bold text-slate-200">鎳 (Nickel)</span>
                                 <span class="text-[10px] px-1.5 py-0.5 rounded bg-teal-950/60 border border-teal-900/30 text-teal-300">電池材料</span>
                             </div>
-                            <span class="text-teal-500 font-mono text-[10px]">TVC:NICKEL</span>
+                            <span class="text-teal-500 font-mono text-[10px]">CAPITALCOM:NICKEL</span>
                         </div>
                         <div class="h-[200px] rounded-lg overflow-hidden relative border border-slate-800/40">
                             <div id="tv-chart-ind-nickel" class="w-full h-full"></div>
@@ -975,7 +975,7 @@
                                 <span class="font-bold text-slate-200">鋁 (Aluminum)</span>
                                 <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700/30 text-slate-300">機殼/散熱</span>
                             </div>
-                            <span class="text-slate-400 font-mono text-[10px]">TVC:ALUMINUM</span>
+                            <span class="text-slate-400 font-mono text-[10px]">CAPITALCOM:ALUMINUM</span>
                         </div>
                         <div class="h-[200px] rounded-lg overflow-hidden relative border border-slate-800/40">
                             <div id="tv-chart-ind-aluminum" class="w-full h-full"></div>
@@ -991,7 +991,7 @@
                                 <span class="font-bold text-slate-200">錫 (Tin)</span>
                                 <span class="text-[10px] px-1.5 py-0.5 rounded bg-amber-950/60 border border-amber-900/30 text-amber-300">焊接材料</span>
                             </div>
-                            <span class="text-amber-500 font-mono text-[10px]">TVC:TIN</span>
+                            <span class="text-amber-500 font-mono text-[10px]">CAPITALCOM:TIN</span>
                         </div>
                         <div class="h-[200px] rounded-lg overflow-hidden relative border border-slate-800/40">
                             <div id="tv-chart-ind-tin" class="w-full h-full"></div>
@@ -1264,7 +1264,7 @@
             const versionStamp = Date.now();
             try {
                 const versionedMapCandidates = [
-                    './maps_repo_20260612_160207.json',
+                    './maps_repo_20260612_160825.json',
                     './maps_repo.json'
                 ];
                 const { data: rawRepo, url } = await fetchJsonWithFallback([
@@ -3013,9 +3013,9 @@
                 setTimeout(renderMacroCharts, 200);
                 return;
             }
-            renderMiniChart("COMEX:GC1!", "tv-chart-macro-gold");
-            renderMiniChart("NYMEX:CL1!", "tv-chart-macro-oil");
-            renderMiniChart("COMEX:HG1!", "tv-chart-macro-copper");
+            renderMiniChart("TVC:GOLD", "tv-chart-macro-gold");
+            renderMiniChart("TVC:USOIL", "tv-chart-macro-oil");
+            renderMiniChart("TVC:COPPER", "tv-chart-macro-copper");
             renderMiniChart("FX_IDC:USDTWD", "tv-chart-macro-usdtwd");
             renderMiniChart("INDEX:DXY", "tv-chart-macro-dxy");
             renderMiniChart("FX:USDJPY", "tv-chart-macro-usdjpy");
@@ -3054,10 +3054,10 @@
             renderMiniChart("NASDAQ:SOXX", "tv-chart-ind-soxx");
             renderMiniChart("NASDAQ:WDC", "tv-chart-ind-wdc");
             // Industrial Commodities & Energy
-            renderMiniChart("NYMEX:NG1!", "tv-chart-ind-natgas");
-            renderMiniChart("TVC:NICKEL", "tv-chart-ind-nickel");
-            renderMiniChart("TVC:ALUMINUM", "tv-chart-ind-aluminum");
-            renderMiniChart("TVC:TIN", "tv-chart-ind-tin");
+            renderMiniChart("TVC:NATGAS", "tv-chart-ind-natgas");
+            renderMiniChart("CAPITALCOM:NICKEL", "tv-chart-ind-nickel");
+            renderMiniChart("CAPITALCOM:ALUMINUM", "tv-chart-ind-aluminum");
+            renderMiniChart("CAPITALCOM:TIN", "tv-chart-ind-tin");
             renderMiniChart("TVC:PLATINUM", "tv-chart-ind-platinum");
             renderMiniChart("INDEX:BDI", "tv-chart-ind-bdi");
         }
