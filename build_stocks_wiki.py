@@ -1,7 +1,10 @@
 import json
 import os
+import datetime
 from pathlib import Path
 import requests
+
+from search_provider import search, format_search_context
 
 # 環境變數與設定
 VLLM_URL = os.getenv("MAP_VLLM_URL", "https://vllm-a5000.iii-ei-stack.com/v1/chat/completions")
@@ -12,17 +15,35 @@ REGISTRY_FILE = Path("ticker_registry_tw.json")
 MAPS_REPO_FILE = Path("maps_repo.json")
 WIKI_FILE = Path("stocks_wiki.json")
 
-BATCH_SIZE = 50
+WIKI_STRUCTURE_SYSTEM_PROMPT = """
+你是一個台股產業鏈研究分析師與估值專家。你的任務是閱讀某家公司的搜尋與背景資訊，透過 "LLM Wiki" 技術，為這家公司建立高度結構化的產業與技術分析 Profile。
 
-SYSTEM_PROMPT = """
-你是一個台股產業研究助理。請為輸入的上市櫃公司列表，產生每家公司的主營業務精華（15至30字，包含核心地位與近期轉型）與核心產品線。
-請務必遵守以下要求：
-1. 只能輸出合法 JSON 格式。
-2. 業務精華必須是繁體中文，精準簡短。
-3. 核心產品線為 2 ~ 4 個關鍵詞的陣列。
+請務必根據所提供的最新新聞、公司結構與主營業務脈絡，產出符合以下格式的 JSON 物件：
+{
+  "summary": "業務精華（15-30字，描述核心地位與近期轉型）",
+  "products": ["核心產品1", "核心產品2", "核心產品3"],
+  "details": {
+    "pureLevel": 4.5, // 題材純度分數 (0.0 到 5.0 的浮點數，依據該公司題材業務營收佔比或關鍵性)
+    "barrierLevel": 4.0, // 核心技術壁壘 (0.0 到 5.0 的浮點數，依據專利、客戶黏性、Switching cost 或認證門檻)
+    "ai_revenue_exposure": "營收佔比估算 (例如 '10-15%' 或 '主要以傳統伺服器為主，AI 佔比 <5%')",
+    "gross_margin_impact": "毛利率走勢與結構影響 (例如 '受惠高毛利產品放量，預期毛利率提升 2-3%')",
+    "pricing_power": "定價權評估 (例如 '高，因屬獨家供應商' 或 '中，市場競爭者眾')",
+    "value_capture_score": 85, // 價值捕獲得分 (0 到 100 的整數)
+    "substitution_risk": "替代風險評估 (例如 '低，認證期長達 2 年' 或 '中，面臨陸廠殺價競爭')",
+    "commercialization_phase": "營收放量與商用時程 (例如 '已開始量產出貨' 或 '樣品送樣驗證中，預期 2027 放量')",
+    "pros": "聯網核心競爭優勢與正面因素 (簡明一句話)",
+    "cons": "投資潛在風險與負面因素 (簡明一句話)",
+    "catalyst": "關鍵催化劑事件 (簡明一句話)"
+  }
+}
+
+請務必遵守：
+1. 只能輸出合法 JSON 格式，不要包含 markdown 標籤或額外說明文字。
+2. 內容一律使用繁體中文。
+3. 估值與評分需合理客觀，符合台灣上市櫃公司實際情況。
 """
 
-def call_vllm_json(system_prompt: str, user_prompt: str, max_tokens: int = 4000, temperature: float = 0.3) -> dict:
+def call_vllm_json(system_prompt: str, user_prompt: str, max_tokens: int = 3000, temperature: float = 0.3) -> dict:
     payload = {
         "model": MODEL_NAME,
         "messages": [
@@ -44,35 +65,43 @@ def call_vllm_json(system_prompt: str, user_prompt: str, max_tokens: int = 4000,
     content = data["choices"][0]["message"]["content"].strip()
     return json.loads(content)
 
-def build_batch_prompt(stocks_batch: list) -> str:
-    input_lines = []
-    for item in stocks_batch:
-        input_lines.append(f"- {item['code']} ({item['name']}, 產業別: {item['industry']})")
+def update_single_stock(code, name, industry, market, existing_record):
+    search_query = f"{code} {name} 主營產品 業務 轉型 營收"
+    print(f"-> Searching web for: {search_query}")
+    search_results = search(search_query)
+    search_context = format_search_context(search_query, search_results)
     
-    input_str = "\n".join(input_lines)
-    return f"""
-請為以下公司列表，產生對應的業務精華與主要產品線。
+    user_prompt = f"""
+請為以下個股建立結構化 LLM Wiki 分析：
+公司代號：{code}
+公司名稱：{name}
+產業分類：{industry}
 
-【公司列表】
-{input_str}
-
-【輸出 JSON 結構】
-{{
-  "公司代號1": {{
-    "summary": "業務精華（15-30字）",
-    "products": ["產品1", "產品2"]
-  }},
-  "公司代號2": {{
-    "summary": "業務精華",
-    "products": ["產品1", "產品2"]
-  }}
-}}
+【搜尋取得的最新背景資料與新聞摘要】
+{search_context}
 """
+    llm_response = call_vllm_json(WIKI_STRUCTURE_SYSTEM_PROMPT, user_prompt)
+    
+    themes = existing_record.get("themes", [])
+    tier = existing_record.get("tier", "extended")
+    
+    new_record = {
+        "code": code,
+        "name": name,
+        "industry": industry,
+        "market": market,
+        "tier": tier,
+        "themes": themes,
+        "summary": llm_response.get("summary", f"提供 {industry} 相關產品與服務。"),
+        "products": llm_response.get("products", [industry]),
+        "details": llm_response.get("details", {}),
+        "updated_at": datetime.date.today().isoformat()
+    }
+    return new_record
 
 def main():
-    print("=== 開始建置/更新全市場個股 LLM Wiki ===")
+    print("=== 開始建置/更新全市場個股 LLM Wiki (完全基於 Web Search) ===")
     
-    # 1. 載入資料源
     if not REGISTRY_FILE.exists():
         print(f"錯誤：找不到 {REGISTRY_FILE}，請先執行 build_ticker_registry.py")
         return
@@ -85,7 +114,6 @@ def main():
         except Exception as e:
             print(f"讀取 maps_repo 失敗：{e}")
 
-    # 2. 載入現有 Wiki 快取
     wiki_data = {}
     if WIKI_FILE.exists():
         try:
@@ -94,7 +122,7 @@ def main():
         except Exception as e:
             print(f"讀取現有 Wiki 失敗，將重新生成：{e}")
 
-    # 3. 收集 maps_repo (Tier 1) 中現有的所有個股資訊與關聯主題
+    # 1. 收集 maps_repo (Tier 1) 中現有的所有個股資訊與關聯主題
     theme_stock_map = {}
     for map_key, map_val in maps_repo.items():
         theme_title = map_val.get("title", "")
@@ -111,7 +139,7 @@ def main():
             if theme_title and theme_title not in theme_stock_map[code]["themes"]:
                 theme_stock_map[code]["themes"].append(theme_title)
 
-    # 4. 對齊並分類
+    # 2. 對齊與篩選需要生成/更新的個股
     to_generate = []
     
     for code, entry in registry.items():
@@ -119,10 +147,7 @@ def main():
         industry = entry.get("industry", "未分類")
         market = entry.get("market", "")
         
-        # 判斷是否為 Core 級 (出現在主題地圖中)
         is_core = code in theme_stock_map
-        
-        # 基礎結構
         stock_wiki = wiki_data.get(code, {})
         stock_wiki["code"] = code
         stock_wiki["name"] = name
@@ -146,54 +171,54 @@ def main():
                 "ai_revenue_exposure": core_info.get("ai_revenue_exposure"),
                 "commercialization_phase": core_info.get("commercialization_phase")
             }
+            stock_wiki["updated_at"] = stock_wiki.get("updated_at") or datetime.date.today().isoformat()
             wiki_data[code] = stock_wiki
         else:
-            # Extended 級，檢查快取中是否已有 summary 與 products
             stock_wiki.setdefault("themes", [])
             stock_wiki.setdefault("details", {})
-            if "summary" not in stock_wiki or "products" not in stock_wiki:
+            # 如果沒有 updated_at，代表它是舊版無 Web Search 盲猜生成的資料，需要重新生成
+            if "updated_at" not in stock_wiki:
                 to_generate.append({
                     "code": code,
                     "name": name,
-                    "industry": industry
+                    "industry": industry,
+                    "market": market
                 })
             wiki_data[code] = stock_wiki
 
-    # 5. 批次處理未生成的個股
+    # 3. 逐一針對缺乏真實 Web Search 資料的個股進行更新
     if to_generate:
-        print(f"共有 {len(to_generate)} 檔新增或未生成的股票，將以每批 {BATCH_SIZE} 檔進行 AI 批次生成。")
-        for i in range(0, len(to_generate), BATCH_SIZE):
-            batch = to_generate[i:i+BATCH_SIZE]
-            print(f"正在生成第 {i+1} ~ {i+len(batch)} 檔...")
-            prompt = build_batch_prompt(batch)
-            try:
-                response_json = call_vllm_json(SYSTEM_PROMPT, prompt)
-                # 寫入快取中
-                for item in batch:
-                    code = item["code"]
-                    res = response_json.get(code, {})
-                    if "summary" in res and "products" in res:
-                        wiki_data[code]["summary"] = res["summary"]
-                        wiki_data[code]["products"] = res["products"]
-                    else:
-                        wiki_data[code]["summary"] = f"提供 {item['industry']} 相關產品與服務。"
-                        wiki_data[code]["products"] = [item["industry"]]
-            except Exception as e:
-                print(f"批次生成失敗 ({i}~{i+len(batch)}): {e}")
-                # 填入保底資料避免卡死
-                for item in batch:
-                    code = item["code"]
-                    wiki_data[code]["summary"] = wiki_data[code].get("summary") or f"提供 {item['industry']} 相關產品與服務。"
-                    wiki_data[code]["products"] = wiki_data[code].get("products") or [item["industry"]]
+        print(f"共有 {len(to_generate)} 檔股票需要進行 Web Search + LLM 結構化生成。")
+        success_count = 0
+        
+        for idx, item in enumerate(to_generate, 1):
+            code = item["code"]
+            name = item["name"]
+            industry = item["industry"]
+            market = item["market"]
             
-            # 每次批次完存檔，避免中斷全毀
-            WIKI_FILE.write_text(json.dumps(wiki_data, ensure_ascii=False, indent=2), encoding="utf-8")
+            print(f"[{idx}/{len(to_generate)}] 正在分析 {code} ({name})...")
+            try:
+                existing_record = wiki_data.get(code, {})
+                new_record = update_single_stock(code, name, industry, market, existing_record)
+                wiki_data[code] = new_record
+                success_count += 1
+                
+                # 每成功 5 檔寫入存檔
+                if success_count % 5 == 0:
+                    WIKI_FILE.write_text(json.dumps(wiki_data, ensure_ascii=False, indent=2), encoding="utf-8")
+                    print(f"-> 累計生成成功 {success_count} 檔，已即時存檔。")
+            except Exception as e:
+                print(f"-> 分析 {code} 失敗: {e}")
+                # 保底資料
+                wiki_data[code]["summary"] = wiki_data[code].get("summary") or f"提供 {industry} 相關產品與服務。"
+                wiki_data[code]["products"] = wiki_data[code].get("products") or [industry]
+                wiki_data[code]["updated_at"] = datetime.date.today().isoformat()
+                
+        WIKI_FILE.write_text(json.dumps(wiki_data, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"=== 生成完成！共成功更新 {success_count} 檔 ===")
     else:
-        print("所有個股快取完整，無需發起新的 AI 批次生成。")
-
-    # 6. 最後存檔與總結
-    WIKI_FILE.write_text(json.dumps(wiki_data, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"=== 個股 LLM Wiki 建置完成！共產出 {len(wiki_data)} 檔 Wiki 資料 ===")
+        print("所有個股皆已具備 Web Search 動態分析快取，無需重新生成。")
 
 if __name__ == "__main__":
     main()
