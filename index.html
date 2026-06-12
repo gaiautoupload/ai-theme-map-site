@@ -619,6 +619,15 @@
             <div id="modal-tv-chart-container" class="h-[240px] bg-slate-950 border border-slate-800/60 rounded-xl overflow-hidden shadow-inner hidden relative">
                 <div id="tv-chart-stock" class="w-full h-full"></div>
             </div>
+            <!-- Interactive External Links -->
+            <div id="modal-external-links" class="flex items-center gap-2 justify-end text-xs hidden">
+                <a id="link-tradingview" href="#" target="_blank" class="inline-flex items-center gap-1 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition border border-slate-700/60">
+                    <i data-lucide="line-chart" class="w-3.5 h-3.5 text-indigo-400"></i> TradingView 完整圖表
+                </a>
+                <a id="link-yahoo" href="#" target="_blank" class="inline-flex items-center gap-1 px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg transition border border-slate-700/60">
+                    <i data-lucide="trending-up" class="w-3.5 h-3.5 text-emerald-400"></i> Yahoo 股市行情
+                </a>
+            </div>
             <div class="flex flex-wrap items-center gap-2 rounded-xl border border-slate-800/60 bg-slate-950 p-3">
                 <button id="modal-watchlist-btn" onclick="toggleWatchlistFromModal()" class="inline-flex items-center gap-2 rounded-lg border border-indigo-800 bg-indigo-950/40 px-3 py-2 text-sm font-semibold text-indigo-300 hover:bg-indigo-950/70 transition">
                     <i data-lucide="bookmark-plus" class="w-4 h-4"></i>
@@ -2298,51 +2307,71 @@
             if (container) container.classList.add('hidden');
             const tvChartDiv = document.getElementById('tv-chart-stock');
             if (tvChartDiv) tvChartDiv.innerHTML = '';
+            const linksContainer = document.getElementById('modal-external-links');
+            if (linksContainer) linksContainer.classList.add('hidden');
         }
 
         let modalTvWidget = null;
         function renderStockTradingViewChart(code) {
             const container = document.getElementById('modal-tv-chart-container');
             const tvChartDiv = document.getElementById('tv-chart-stock');
+            const linksContainer = document.getElementById('modal-external-links');
+            const linkTV = document.getElementById('link-tradingview');
+            const linkYahoo = document.getElementById('link-yahoo');
+
             if (!container || !tvChartDiv) return;
 
             if (!code) {
                 container.classList.add('hidden');
+                if (linksContainer) linksContainer.classList.add('hidden');
                 return;
+            }
+
+            // Update external links immediately
+            if (linksContainer && linkTV && linkYahoo) {
+                linksContainer.classList.remove('hidden');
+                linkTV.href = `https://www.tradingview.com/symbols/TWSE-${code}/`;
+                linkYahoo.href = `https://tw.stock.yahoo.com/quote/${code}.TW`;
             }
 
             container.classList.remove('hidden');
-            tvChartDiv.innerHTML = ''; // Clear
+            tvChartDiv.innerHTML = '<div class="absolute inset-0 flex items-center justify-center text-xs text-slate-500"><i class="w-4 h-4 animate-spin mr-2 border-2 border-indigo-500 border-t-transparent rounded-full"></i> 正在載入個股技術圖表...</div>';
 
-            if (typeof TradingView === 'undefined') {
-                console.warn('TradingView library not loaded yet for stock chart, retrying in 200ms...');
-                setTimeout(() => renderStockTradingViewChart(code), 200);
-                return;
-            }
+            // Delay execution by 150ms to ensure the modal display style has updated and layout is calculated
+            setTimeout(() => {
+                if (typeof TradingView === 'undefined') {
+                    console.warn('TradingView library not loaded yet for stock chart, retrying...');
+                    setTimeout(() => renderStockTradingViewChart(code), 200);
+                    return;
+                }
 
-            // Detect prefix: TWSE: prefix for pure numeric codes
-            let symbol = code;
-            if (/^\d+$/.test(code)) {
-                symbol = `TWSE:${code}`;
-            }
+                tvChartDiv.innerHTML = ''; // Clear loading spinner
 
-            modalTvWidget = new TradingView.widget({
-                "autosize": true,
-                "symbol": symbol,
-                "interval": "D",
-                "timezone": "Asia/Taipei",
-                "theme": "dark",
-                "style": "1",
-                "locale": "zh_TW",
-                "toolbar_bg": "#111827",
-                "enable_publishing": false,
-                "hide_side_toolbar": true,
-                "allow_symbol_change": false,
-                "container_id": "tv-chart-stock",
-                "studies": [
-                    "MASimple@tv-basicstudies"
-                ]
-            });
+                // Detect prefix: TWSE: prefix for pure numeric codes
+                let symbol = code;
+                if (/^\d+$/.test(code)) {
+                    symbol = `TWSE:${code}`;
+                }
+
+                modalTvWidget = new TradingView.widget({
+                    "width": "100%",
+                    "height": "100%",
+                    "symbol": symbol,
+                    "interval": "D",
+                    "timezone": "Asia/Taipei",
+                    "theme": "dark",
+                    "style": "1",
+                    "locale": "zh_TW",
+                    "toolbar_bg": "#111827",
+                    "enable_publishing": false,
+                    "hide_side_toolbar": true,
+                    "allow_symbol_change": false,
+                    "container_id": "tv-chart-stock",
+                    "studies": [
+                        "MASimple@tv-basicstudies"
+                    ]
+                });
+            }, 150);
         }
 
         // Toast Helper
