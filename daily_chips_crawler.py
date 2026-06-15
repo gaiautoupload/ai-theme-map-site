@@ -461,8 +461,10 @@ def analyze_chips(target_date):
             focus_themes.append(t_info)
             
     # 依題材總買超金額排序
-    focus_themes = sorted(focus_themes, key=lambda x: x["total_net_buy"], reverse=True)
-    
+    # 4.5 計算外本比與投本比的獨立排行 (限買超 > 0，由大到小)
+    top_foreign_ratio = sorted([r for r in today_records if r.get("foreign_ratio", 0) > 0], key=lambda x: x["foreign_ratio"], reverse=True)[:50]
+    top_trust_ratio = sorted([r for r in today_records if r.get("trust_ratio", 0) > 0], key=lambda x: x["trust_ratio"], reverse=True)[:50]
+
     # 5. 輸出統計檔案
     summary_data = {
         "date": target_date,
@@ -470,7 +472,9 @@ def analyze_chips(target_date):
         "focus_themes": focus_themes,               # 今日法人集體佈局焦點題材 (同買 + 爆量且 >= 2檔)
         "cohort_buys": sorted(cohort_buys, key=lambda x: x["total_net"], reverse=True)[:50],  # 今日法人同買明細 (前50)
         "foreign_surges": sorted(foreign_surges, key=lambda x: x["foreign_net"], reverse=True)[:50], # 今日外資爆量個股
-        "top_buys": top_buys                         # 今日全部買超前100大個股
+        "top_buys": top_buys,                        # 今日全部買超前100大個股
+        "top_foreign_ratio": top_foreign_ratio,      # 今日外本比排行 (前50)
+        "top_trust_ratio": top_trust_ratio           # 今日投本比排行 (前50)
     }
     
     with open(SUMMARY_JSON_PATH, "w", encoding="utf-8") as f:

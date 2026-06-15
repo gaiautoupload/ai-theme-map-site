@@ -1242,10 +1242,12 @@
             <!-- 篩選表格與明細分頁 -->
             <div class="space-y-6">
                 <!-- Tabs for Tables -->
-                <div class="flex items-center gap-2 border-b border-slate-800 pb-px">
-                    <button onclick="switchChipsTab('cohort')" id="tab-btn-cohort" class="px-4 py-2 text-xs font-bold border-b-2 border-emerald-500 text-emerald-400 transition">今日法人同買股</button>
-                    <button onclick="switchChipsTab('surge')" id="tab-btn-surge" class="px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition">外資爆量同買股</button>
-                    <button onclick="switchChipsTab('top100')" id="tab-btn-top100" class="px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition">今日買超前100排行</button>
+                <div class="flex items-center gap-2 border-b border-slate-800 pb-px overflow-x-auto no-scrollbar">
+                    <button onclick="switchChipsTab('cohort')" id="tab-btn-cohort" class="px-4 py-2 text-xs font-bold border-b-2 border-emerald-500 text-emerald-400 transition whitespace-nowrap">今日法人同買股</button>
+                    <button onclick="switchChipsTab('surge')" id="tab-btn-surge" class="px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition whitespace-nowrap">外資爆量同買股</button>
+                    <button onclick="switchChipsTab('top100')" id="tab-btn-top100" class="px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition whitespace-nowrap">今日買超前100排行</button>
+                    <button onclick="switchChipsTab('foreign_ratio')" id="tab-btn-foreign_ratio" class="px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition whitespace-nowrap">外本比排行 (前50)</button>
+                    <button onclick="switchChipsTab('trust_ratio')" id="tab-btn-trust_ratio" class="px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition whitespace-nowrap">投本比排行 (前50)</button>
                 </div>
 
                 <!-- Cohort Buys Table -->
@@ -1309,6 +1311,50 @@
                             </tr>
                         </thead>
                         <tbody id="chips-top100-tbody" class="divide-y divide-slate-800/40">
+                            <!-- Dynamic rows -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Foreign Ratio Ranking Table -->
+                <div id="chips-table-foreign_ratio" class="overflow-x-auto bg-slate-950/60 border border-slate-800/80 rounded-xl p-4 hidden">
+                    <table class="w-full text-left text-xs text-slate-300">
+                        <thead>
+                            <tr class="text-slate-500 border-b border-slate-800/60 font-bold pb-2">
+                                <th class="pb-2">股號</th>
+                                <th class="pb-2">名稱</th>
+                                <th class="pb-2 text-right">外資 (張)</th>
+                                <th class="pb-2 text-right text-cyan-400 font-extrabold">外本比 (%) ▲</th>
+                                <th class="pb-2 text-right">投信 (張)</th>
+                                <th class="pb-2 text-right text-purple-400">投本比 (%)</th>
+                                <th class="pb-2 text-right">自營商 (張)</th>
+                                <th class="pb-2 text-right text-emerald-400">合計買超 (張)</th>
+                                <th class="pb-2 pl-4">參與題材</th>
+                            </tr>
+                        </thead>
+                        <tbody id="chips-foreign_ratio-tbody" class="divide-y divide-slate-800/40">
+                            <!-- Dynamic rows -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Trust Ratio Ranking Table -->
+                <div id="chips-table-trust_ratio" class="overflow-x-auto bg-slate-950/60 border border-slate-800/80 rounded-xl p-4 hidden">
+                    <table class="w-full text-left text-xs text-slate-300">
+                        <thead>
+                            <tr class="text-slate-500 border-b border-slate-800/60 font-bold pb-2">
+                                <th class="pb-2">股號</th>
+                                <th class="pb-2">名稱</th>
+                                <th class="pb-2 text-right">外資 (張)</th>
+                                <th class="pb-2 text-right text-cyan-400">外本比 (%)</th>
+                                <th class="pb-2 text-right">投信 (張)</th>
+                                <th class="pb-2 text-right text-purple-400 font-extrabold">投本比 (%) ▲</th>
+                                <th class="pb-2 text-right">自營商 (張)</th>
+                                <th class="pb-2 text-right text-emerald-400">合計買超 (張)</th>
+                                <th class="pb-2 pl-4">參與題材</th>
+                            </tr>
+                        </thead>
+                        <tbody id="chips-trust_ratio-tbody" class="divide-y divide-slate-800/40">
                             <!-- Dynamic rows -->
                         </tbody>
                     </table>
@@ -1493,7 +1539,7 @@
             const versionStamp = Date.now();
             try {
                 const versionedMapCandidates = [
-                    './maps_repo_20260615_200555.json',
+                    './maps_repo_20260616_023748.json',
                     './maps_repo.json'
                 ];
                 const { data: rawRepo, url } = await fetchJsonWithFallback([
@@ -3358,20 +3404,30 @@
             document.getElementById('chips-table-cohort').classList.add('hidden');
             document.getElementById('chips-table-surge').classList.add('hidden');
             document.getElementById('chips-table-top100').classList.add('hidden');
+            document.getElementById('chips-table-foreign_ratio').classList.add('hidden');
+            document.getElementById('chips-table-trust_ratio').classList.add('hidden');
             
-            document.getElementById('tab-btn-cohort').className = "px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition";
-            document.getElementById('tab-btn-surge').className = "px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition";
-            document.getElementById('tab-btn-top100').className = "px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition";
+            document.getElementById('tab-btn-cohort').className = "px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition whitespace-nowrap";
+            document.getElementById('tab-btn-surge').className = "px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition whitespace-nowrap";
+            document.getElementById('tab-btn-top100').className = "px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition whitespace-nowrap";
+            document.getElementById('tab-btn-foreign_ratio').className = "px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition whitespace-nowrap";
+            document.getElementById('tab-btn-trust_ratio').className = "px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition whitespace-nowrap";
             
             if (tabName === 'cohort') {
                 document.getElementById('chips-table-cohort').classList.remove('hidden');
-                document.getElementById('tab-btn-cohort').className = "px-4 py-2 text-xs font-bold border-b-2 border-emerald-500 text-emerald-400 transition";
+                document.getElementById('tab-btn-cohort').className = "px-4 py-2 text-xs font-bold border-b-2 border-emerald-500 text-emerald-400 transition whitespace-nowrap";
             } else if (tabName === 'surge') {
                 document.getElementById('chips-table-surge').classList.remove('hidden');
-                document.getElementById('tab-btn-surge').className = "px-4 py-2 text-xs font-bold border-b-2 border-emerald-500 text-emerald-400 transition";
+                document.getElementById('tab-btn-surge').className = "px-4 py-2 text-xs font-bold border-b-2 border-emerald-500 text-emerald-400 transition whitespace-nowrap";
             } else if (tabName === 'top100') {
                 document.getElementById('chips-table-top100').classList.remove('hidden');
-                document.getElementById('tab-btn-top100').className = "px-4 py-2 text-xs font-bold border-b-2 border-emerald-500 text-emerald-400 transition";
+                document.getElementById('tab-btn-top100').className = "px-4 py-2 text-xs font-bold border-b-2 border-emerald-500 text-emerald-400 transition whitespace-nowrap";
+            } else if (tabName === 'foreign_ratio') {
+                document.getElementById('chips-table-foreign_ratio').classList.remove('hidden');
+                document.getElementById('tab-btn-foreign_ratio').className = "px-4 py-2 text-xs font-bold border-b-2 border-emerald-500 text-emerald-400 transition whitespace-nowrap";
+            } else if (tabName === 'trust_ratio') {
+                document.getElementById('chips-table-trust_ratio').classList.remove('hidden');
+                document.getElementById('tab-btn-trust_ratio').className = "px-4 py-2 text-xs font-bold border-b-2 border-emerald-500 text-emerald-400 transition whitespace-nowrap";
             }
         }
 
@@ -3388,11 +3444,17 @@
             const cohortTbody = document.getElementById('chips-cohort-tbody');
             const surgeTbody = document.getElementById('chips-surge-tbody');
             const topTbody = document.getElementById('chips-top100-tbody');
+            const foreignRatioTbody = document.getElementById('chips-foreign_ratio-tbody');
+            const trustRatioTbody = document.getElementById('chips-trust_ratio-tbody');
 
             if (!focusContainer) return;
             
             focusContainer.innerHTML = '<div class="col-span-2 py-8 text-center text-slate-500">載入中...</div>';
-            cohortTbody.innerHTML = '<tr><td colspan="7" class="py-4 text-center text-slate-500">載入中...</td></tr>';
+            cohortTbody.innerHTML = '<tr><td colspan="9" class="py-4 text-center text-slate-500">載入中...</td></tr>';
+            if (surgeTbody) surgeTbody.innerHTML = '<tr><td colspan="9" class="py-4 text-center text-slate-500">載入中...</td></tr>';
+            if (topTbody) topTbody.innerHTML = '<tr><td colspan="9" class="py-4 text-center text-slate-500">載入中...</td></tr>';
+            if (foreignRatioTbody) foreignRatioTbody.innerHTML = '<tr><td colspan="9" class="py-4 text-center text-slate-500">載入中...</td></tr>';
+            if (trustRatioTbody) trustRatioTbody.innerHTML = '<tr><td colspan="9" class="py-4 text-center text-slate-500">載入中...</td></tr>';
             
             try {
                 const response = await fetch('./institutional_chips_summary.json');
@@ -3534,6 +3596,8 @@
                 renderRows(summary.cohort_buys, cohortTbody);
                 renderRows(summary.foreign_surges, surgeTbody);
                 renderRows(summary.top_buys, topTbody);
+                renderRows(summary.top_foreign_ratio, foreignRatioTbody);
+                renderRows(summary.top_trust_ratio, trustRatioTbody);
 
                 lucide.createIcons();
             } catch (err) {
@@ -3544,7 +3608,7 @@
                         ${err.message || '無法下載或載入籌碼統計數據'}
                     </div>
                 `;
-                cohortTbody.innerHTML = `<tr><td colspan="7" class="py-6 text-center text-red-400 text-xs">${err.message || '資料載入失敗'}</td></tr>`;
+                cohortTbody.innerHTML = `<tr><td colspan="9" class="py-6 text-center text-red-400 text-xs">${err.message || '資料載入失敗'}</td></tr>`;
             }
         }
 
