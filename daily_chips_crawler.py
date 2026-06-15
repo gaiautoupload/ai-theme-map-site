@@ -240,6 +240,85 @@ def get_stock_themes():
             
     return stock_themes
 
+def get_outstanding_shares():
+    """
+    獲取並快取上市櫃公司已發行張數(千股)資料，用於計算「投本比」與「外本比」
+    """
+    cache_file = os.path.join(PROJECT_DIR, "outstanding_shares.json")
+    shares_map = {}
+    if os.path.exists(cache_file):
+        try:
+            with open(cache_file, "r", encoding="utf-8") as f:
+                shares_map = json.load(f)
+            print(f"從快取載入 {len(shares_map)} 筆個股發行張數資料")
+            return shares_map
+        except Exception as e:
+            print("讀取發行張數快取失敗，重新獲取", e)
+            
+    print("正在下載 TWSE / TPEx 已發行張數與股本資料...")
+    # 1. TWSE 上市基本資料 (包含已發行普通股數)
+    try:
+        url_twse = "https://openapi.twse.com.tw/v1/opendata/t187ap03_L"
+        res = requests.get(url_twse, timeout=20, verify=False)
+        data = res.json()
+        if data and len(data) > 0:
+            # 尋找包含 TDR 或普通股發行的欄位，考量 CP950 亂碼，進行動態特徵匹配
+            first = data[0]
+            code_key = None
+            for k in first.keys():
+                val = str(first.get(k, "")).strip()
+                if len(val) == 4 and val.isdigit():
+                    code_key = k
+                    break
+            
+            shares_key = next((k for k in first.keys() if "TDR" in k), None)
+            
+            # 備用方案
+            candidate_keys = list(first.keys())
+            if not code_key and len(candidate_keys) > 1:
+                code_key = candidate_keys[1]
+            if not shares_key and len(candidate_keys) > 32:
+                shares_key = candidate_keys[32]
+            
+            if code_key and shares_key:
+                print(f"動態匹配 TWSE 欄位 - 代號欄位: {code_key}, 股數欄位: {shares_key}")
+                for row in data:
+                    code = str(row.get(code_key, "")).strip()
+                    val_str = str(row.get(shares_key, "0")).strip().replace(",", "")
+                    if code.isdigit() and val_str.isdigit():
+                        # 已發行普通股數以「股」為單位，轉為「張(千股)」除以1000
+                        shares_map[code] = float(val_str) / 1000.0
+            print(f"TWSE 已發行張數載入完成，目前累計: {len(shares_map)} 筆")
+    except Exception as e:
+        print("下載 TWSE 已發行普通股數失敗", e)
+        
+    # 2. TPEx 上櫃行情資料 (包含 Capitals 實收資本額)
+    try:
+        url_tpex = "https://www.tpex.org.tw/openapi/v1/tpex_mainboard_quotes"
+        res = requests.get(url_tpex, timeout=20, verify=False)
+        data = res.json()
+        if data:
+            for row in data:
+                code = str(row.get("SecuritiesCompanyCode", "")).strip()
+                cap_val = row.get("Capitals")
+                if code.isdigit() and cap_val is not None:
+                    # Capitals 以元為單位。面額多為 10 元。
+                    # 已發行張數(千股) = Capitals / 10 / 1000 = Capitals / 10000
+                    shares_map[code] = float(cap_val) / 10000.0
+            print(f"TPEx 已發行張數載入完成，目前累計: {len(shares_map)} 筆")
+    except Exception as e:
+        print("下載 TPEx 股本資料失敗", e)
+        
+    if shares_map:
+        try:
+            with open(cache_file, "w", encoding="utf-8") as f:
+                json.dump(shares_map, f, ensure_ascii=False, indent=2)
+            print(f"已儲存發行張數快取檔案: {cache_file} (總計 {len(shares_map)} 筆)")
+        except Exception as e:
+            print("寫入發行張數快取失敗", e)
+            
+    return shares_map
+
 def analyze_chips(target_date):
     """
     分析籌碼，並產出 summary JSON
@@ -288,6 +367,8 @@ def analyze_chips(target_date):
     
     # 載入個股題材對照表
     stock_themes = get_stock_themes()
+    # 載入發行張數/股本對照表
+    shares_map = get_outstanding_shares()
     
     # 3. 執行過濾與計算
     cohort_buys = []       # 三大法人同買
@@ -326,11 +407,19 @@ def analyze_chips(target_date):
             if f_net > 500:
                 is_surge = True
                 
-        # 附加題材資訊
+        # 附加題材資訊與投本比/外本比
         r_themes = stock_themes.get(sym, [])
         r["themes"] = r_themes
         r["is_cohort"] = is_cohort
         r["is_surge"] = is_surge
+        
+        shares = shares_map.get(sym, 0.0)
+        if shares > 0:
+            r["foreign_ratio"] = round((f_net / shares) * 100, 3)
+            r["trust_ratio"] = round((t_net / shares) * 100, 3)
+        else:
+            r["foreign_ratio"] = 0.0
+            r["trust_ratio"] = 0.0
         
         if is_cohort:
             cohort_buys.append(r)
@@ -355,7 +444,9 @@ def analyze_chips(target_date):
                 "foreign_net": r["foreign_net"],
                 "trust_net": r["trust_net"],
                 "dealer_net": r["dealer_net"],
-                "total_net": r["total_net"]
+                "total_net": r["total_net"],
+                "foreign_ratio": r["foreign_ratio"],
+                "trust_ratio": r["trust_ratio"]
             })
             theme_clusters[theme]["total_foreign_buy"] += r["foreign_net"]
             theme_clusters[theme]["total_trust_buy"] += r["trust_net"]

@@ -75,15 +75,19 @@
             </div>
         </div>
         
-        <div class="border-t border-slate-800 bg-slate-900/50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center overflow-x-auto gap-3 no-scrollbar">
-                <button onclick="showDashboardHome()" id="nav-btn-home" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition whitespace-nowrap">投研首頁</button>
-                <button onclick="showThemeLibrary()" id="nav-btn-library" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">主題地圖庫</button>
-                <button onclick="showStockWiki()" id="nav-btn-wiki" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">個股 Wiki</button>
-                <button onclick="showMacroPage()" id="nav-btn-macro" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">全球總經</button>
-                <button onclick="showIndustryPricing()" id="nav-btn-industry" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">產業報價</button>
-                <button onclick="showChipsAnalysis()" id="nav-btn-chips" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">法人籌碼</button>
-                <button onclick="showTechDocs()" id="nav-btn-tech" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">技術說明</button>
+        <div class="border-t border-slate-800 bg-slate-900/50 py-2 space-y-2">
+            <!-- Row 1: Core Analysis Tools -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center overflow-x-auto gap-2.5 no-scrollbar">
+                <button onclick="showDashboardHome()" id="nav-btn-home" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-slate-800 transition whitespace-nowrap">投研首頁</button>
+                <button onclick="showChipsAnalysis()" id="nav-btn-chips" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">法人籌碼</button>
+                <button onclick="showThemeLibrary()" id="nav-btn-library" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">主題地圖庫</button>
+                <button onclick="showIndustryPricing()" id="nav-btn-industry" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">產業報價</button>
+            </div>
+            <!-- Row 2: Macro, Wiki, Technical Documents -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center overflow-x-auto gap-2.5 no-scrollbar border-t border-slate-800/30 pt-2">
+                <button onclick="showMacroPage()" id="nav-btn-macro" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">全球總經</button>
+                <button onclick="showStockWiki()" id="nav-btn-wiki" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">個股 Wiki</button>
+                <button onclick="showTechDocs()" id="nav-btn-tech" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">技術說明</button>
             </div>
         </div>
     </header>
@@ -1252,7 +1256,9 @@
                                 <th class="pb-2">股號</th>
                                 <th class="pb-2">名稱</th>
                                 <th class="pb-2 text-right">外資 (張)</th>
+                                <th class="pb-2 text-right text-cyan-400">外本比 (%)</th>
                                 <th class="pb-2 text-right">投信 (張)</th>
+                                <th class="pb-2 text-right text-purple-400">投本比 (%)</th>
                                 <th class="pb-2 text-right">自營商 (張)</th>
                                 <th class="pb-2 text-right text-emerald-400">合計買超 (張)</th>
                                 <th class="pb-2 pl-4">參與題材</th>
@@ -1272,7 +1278,9 @@
                                 <th class="pb-2">股號</th>
                                 <th class="pb-2">名稱</th>
                                 <th class="pb-2 text-right text-cyan-400">外資買超 (張)</th>
+                                <th class="pb-2 text-right text-cyan-400">外本比 (%)</th>
                                 <th class="pb-2 text-right">投信 (張)</th>
+                                <th class="pb-2 text-right text-purple-400">投本比 (%)</th>
                                 <th class="pb-2 text-right">自營商 (張)</th>
                                 <th class="pb-2 text-right">合計買超 (張)</th>
                                 <th class="pb-2 pl-4">參與題材</th>
@@ -1292,7 +1300,9 @@
                                 <th class="pb-2">股號</th>
                                 <th class="pb-2">名稱</th>
                                 <th class="pb-2 text-right">外資 (張)</th>
+                                <th class="pb-2 text-right text-cyan-400">外本比 (%)</th>
                                 <th class="pb-2 text-right">投信 (張)</th>
+                                <th class="pb-2 text-right text-purple-400">投本比 (%)</th>
                                 <th class="pb-2 text-right">自營商 (張)</th>
                                 <th class="pb-2 text-right text-teal-400">合計買超 (張)</th>
                                 <th class="pb-2 pl-4">參與題材</th>
@@ -1483,7 +1493,7 @@
             const versionStamp = Date.now();
             try {
                 const versionedMapCandidates = [
-                    './maps_repo_20260615_175100.json',
+                    './maps_repo_20260615_200555.json',
                     './maps_repo.json'
                 ];
                 const { data: rawRepo, url } = await fetchJsonWithFallback([
@@ -3499,11 +3509,17 @@
                         stocks.forEach(s => {
                             const tr = document.createElement('tr');
                             tr.className = "hover:bg-slate-900/30 transition text-[11px] border-b border-slate-800/40";
+                            
+                            const fRatioStr = s.foreign_ratio ? (s.foreign_ratio > 0 ? '+' + s.foreign_ratio + '%' : s.foreign_ratio + '%') : '0.00%';
+                            const tRatioStr = s.trust_ratio ? (s.trust_ratio > 0 ? '+' + s.trust_ratio + '%' : s.trust_ratio + '%') : '0.00%';
+                            
                             tr.innerHTML = `
                                 <td class="py-2.5 font-mono text-slate-400">${s.symbol}</td>
                                 <td class="py-2.5 font-bold text-slate-200 hover:text-cyan-400 cursor-pointer" onclick="showStockDetailsFromChips('${s.symbol}')">${s.name}</td>
                                 <td class="py-2.5 text-right font-mono ${s.foreign_net > 0 ? 'text-emerald-400' : s.foreign_net < 0 ? 'text-red-400' : 'text-slate-500'}">${s.foreign_net > 0 ? '+' + s.foreign_net : s.foreign_net}</td>
+                                <td class="py-2.5 text-right font-mono text-cyan-300 font-bold">${fRatioStr}</td>
                                 <td class="py-2.5 text-right font-mono ${s.trust_net > 0 ? 'text-emerald-400' : s.trust_net < 0 ? 'text-red-400' : 'text-slate-500'}">${s.trust_net > 0 ? '+' + s.trust_net : s.trust_net}</td>
+                                <td class="py-2.5 text-right font-mono text-purple-300 font-bold">${tRatioStr}</td>
                                 <td class="py-2.5 text-right font-mono ${s.dealer_net > 0 ? 'text-emerald-400' : s.dealer_net < 0 ? 'text-red-400' : 'text-slate-500'}">${s.dealer_net > 0 ? '+' + s.dealer_net : s.dealer_net}</td>
                                 <td class="py-2.5 text-right font-mono font-bold ${s.total_net > 0 ? 'text-emerald-400' : s.total_net < 0 ? 'text-red-400' : 'text-slate-500'}">${s.total_net > 0 ? '+' + s.total_net : s.total_net}</td>
                                 <td class="py-2.5 pl-4 text-slate-400 text-[10px] max-w-[200px] truncate" title="${(s.themes || []).join(', ')}">${(s.themes || []).join(', ') || '-'}</td>
@@ -3511,7 +3527,7 @@
                             tbody.appendChild(tr);
                         });
                     } else {
-                        tbody.innerHTML = '<tr><td colspan="7" class="py-6 text-center text-slate-600">今日暫無符合條件之個股。</td></tr>';
+                        tbody.innerHTML = '<tr><td colspan="9" class="py-6 text-center text-slate-600">今日暫無符合條件之個股。</td></tr>';
                     }
                 };
 

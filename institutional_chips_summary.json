@@ -1,6 +1,6 @@
 {
   "date": "20260615",
-  "update_time": "2026-06-15 17:50:48",
+  "update_time": "2026-06-15 20:05:36",
   "focus_themes": [
     {
       "theme_name": "金融",
@@ -11,7 +11,9 @@
           "foreign_net": 30980,
           "trust_net": 2641,
           "dealer_net": 1218,
-          "total_net": 34839
+          "total_net": 34839,
+          "foreign_ratio": 0.183,
+          "trust_ratio": 0.016
         },
         {
           "symbol": "2881",
@@ -19,7 +21,9 @@
           "foreign_net": 7170,
           "trust_net": 2532,
           "dealer_net": 573,
-          "total_net": 10275
+          "total_net": 10275,
+          "foreign_ratio": 0.051,
+          "trust_ratio": 0.018
         }
       ],
       "total_foreign_buy": 38150,
@@ -35,7 +39,9 @@
           "foreign_net": 10254,
           "trust_net": 640,
           "dealer_net": 1824,
-          "total_net": 12717
+          "total_net": 12717,
+          "foreign_ratio": 0.336,
+          "trust_ratio": 0.021
         },
         {
           "symbol": "4938",
@@ -43,7 +49,9 @@
           "foreign_net": 5599,
           "trust_net": 52,
           "dealer_net": 582,
-          "total_net": 6233
+          "total_net": 6233,
+          "foreign_ratio": 0.209,
+          "trust_ratio": 0.002
         },
         {
           "symbol": "2324",
@@ -51,36 +59,14 @@
           "foreign_net": 1251,
           "trust_net": 11,
           "dealer_net": 1404,
-          "total_net": 2666
+          "total_net": 2666,
+          "foreign_ratio": 0.028,
+          "trust_ratio": 0.0
         }
       ],
       "total_foreign_buy": 17104,
       "total_trust_buy": 703,
       "total_net_buy": 21616
-    },
-    {
-      "theme_name": "晶圓代工",
-      "stocks": [
-        {
-          "symbol": "5347",
-          "name": "世界",
-          "foreign_net": 10456,
-          "trust_net": 375,
-          "dealer_net": 545,
-          "total_net": 11376
-        },
-        {
-          "symbol": "2330",
-          "name": "台積電",
-          "foreign_net": 9647,
-          "trust_net": 80,
-          "dealer_net": 107,
-          "total_net": 9834
-        }
-      ],
-      "total_foreign_buy": 20103,
-      "total_trust_buy": 455,
-      "total_net_buy": 21210
     },
     {
       "theme_name": "被動元件",
@@ -89,17 +75,11 @@
           "symbol": "2327",
           "name": "國巨*",
           "foreign_net": 12238,
-          "trust_net": 334,
+          "trust_net": 790,
           "dealer_net": 362,
-          "total_net": 12934
-        },
-        {
-          "symbol": "6175",
-          "name": "立敦",
-          "foreign_net": 5908,
-          "trust_net": 1,
-          "dealer_net": 135,
-          "total_net": 6044
+          "total_net": 13390,
+          "foreign_ratio": 0.591,
+          "trust_ratio": 0.038
         },
         {
           "symbol": "2492",
@@ -107,12 +87,14 @@
           "foreign_net": 351,
           "trust_net": 50,
           "dealer_net": 187,
-          "total_net": 588
+          "total_net": 588,
+          "foreign_ratio": 0.072,
+          "trust_ratio": 0.01
         }
       ],
-      "total_foreign_buy": 18497,
-      "total_trust_buy": 385,
-      "total_net_buy": 19566
+      "total_foreign_buy": 12589,
+      "total_trust_buy": 840,
+      "total_net_buy": 13978
     },
     {
       "theme_name": "PCB",
@@ -123,7 +105,9 @@
           "foreign_net": 7989,
           "trust_net": 395,
           "dealer_net": 224,
-          "total_net": 8608
+          "total_net": 8608,
+          "foreign_ratio": 1.6,
+          "trust_ratio": 0.079
         },
         {
           "symbol": "3044",
@@ -131,7 +115,9 @@
           "foreign_net": 1876,
           "trust_net": 72,
           "dealer_net": 59,
-          "total_net": 2007
+          "total_net": 2007,
+          "foreign_ratio": 0.357,
+          "trust_ratio": 0.014
         }
       ],
       "total_foreign_buy": 9865,
@@ -152,7 +138,9 @@
         "金融"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.028,
+      "trust_ratio": 0.133
     },
     {
       "date": "20260615",
@@ -166,7 +154,9 @@
         "金融"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.183,
+      "trust_ratio": 0.016
     },
     {
       "date": "20260615",
@@ -178,7 +168,9 @@
       "total_net": 29800,
       "themes": [],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -192,7 +184,9 @@
         "半導體"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.361,
+      "trust_ratio": 0.098
     },
     {
       "date": "20260615",
@@ -206,7 +200,9 @@
         "玻璃陶瓷"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.41,
+      "trust_ratio": 0.022
     },
     {
       "date": "20260615",
@@ -220,7 +216,25 @@
         "塑膠"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.155,
+      "trust_ratio": 0.011
+    },
+    {
+      "date": "20260615",
+      "symbol": "2327",
+      "name": "國巨*",
+      "foreign_net": 12238,
+      "trust_net": 790,
+      "dealer_net": 362,
+      "total_net": 13390,
+      "themes": [
+        "被動元件"
+      ],
+      "is_cohort": true,
+      "is_surge": true,
+      "foreign_ratio": 0.591,
+      "trust_ratio": 0.038
     },
     {
       "date": "20260615",
@@ -234,21 +248,9 @@
         "被動元件/石英"
       ],
       "is_cohort": true,
-      "is_surge": true
-    },
-    {
-      "date": "20260615",
-      "symbol": "2327",
-      "name": "國巨*",
-      "foreign_net": 12238,
-      "trust_net": 334,
-      "dealer_net": 362,
-      "total_net": 12934,
-      "themes": [
-        "被動元件"
-      ],
-      "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 2.788,
+      "trust_ratio": 0.178
     },
     {
       "date": "20260615",
@@ -262,7 +264,9 @@
         "電腦及週邊"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.336,
+      "trust_ratio": 0.021
     },
     {
       "date": "20260615",
@@ -276,7 +280,9 @@
         "晶圓代工"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": false,
+      "foreign_ratio": 5.599,
+      "trust_ratio": 0.201
     },
     {
       "date": "20260615",
@@ -290,7 +296,9 @@
         "金融"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.051,
+      "trust_ratio": 0.018
     },
     {
       "date": "20260615",
@@ -304,21 +312,25 @@
         "鋼鐵"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.057,
+      "trust_ratio": 0.003
     },
     {
       "date": "20260615",
       "symbol": "2330",
       "name": "台積電",
       "foreign_net": 9647,
-      "trust_net": 80,
+      "trust_net": 86,
       "dealer_net": 107,
-      "total_net": 9834,
+      "total_net": 9840,
       "themes": [
         "晶圓代工"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.037,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -332,7 +344,9 @@
         "AI伺服器/代工"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.062,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -346,7 +360,9 @@
         "PCB"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 1.6,
+      "trust_ratio": 0.079
     },
     {
       "date": "20260615",
@@ -360,7 +376,9 @@
         "紡織纖維"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.157,
+      "trust_ratio": 0.002
     },
     {
       "date": "20260615",
@@ -372,7 +390,9 @@
       "total_net": 7791,
       "themes": [],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -386,7 +406,9 @@
         "電腦及週邊"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.209,
+      "trust_ratio": 0.002
     },
     {
       "date": "20260615",
@@ -400,7 +422,9 @@
         "被動元件"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": false,
+      "foreign_ratio": 39.355,
+      "trust_ratio": 0.007
     },
     {
       "date": "20260615",
@@ -414,7 +438,9 @@
         "電器電纜"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.061,
+      "trust_ratio": 0.005
     },
     {
       "date": "20260615",
@@ -428,7 +454,9 @@
         "半導體"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.193,
+      "trust_ratio": 0.001
     },
     {
       "date": "20260615",
@@ -442,7 +470,9 @@
         "IC載板"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.129,
+      "trust_ratio": 0.062
     },
     {
       "date": "20260615",
@@ -454,7 +484,9 @@
       "total_net": 3000,
       "themes": [],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -468,7 +500,9 @@
         "電腦及週邊"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.028,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -482,7 +516,9 @@
         "貿易百貨"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.063,
+      "trust_ratio": 0.087
     },
     {
       "date": "20260615",
@@ -496,7 +532,9 @@
         "PCB"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.357,
+      "trust_ratio": 0.014
     },
     {
       "date": "20260615",
@@ -510,21 +548,9 @@
         "IC設計"
       ],
       "is_cohort": true,
-      "is_surge": true
-    },
-    {
-      "date": "20260615",
-      "symbol": "6488",
-      "name": "環球晶",
-      "foreign_net": 1172,
-      "trust_net": 692,
-      "dealer_net": 34,
-      "total_net": 1898,
-      "themes": [
-        "矽晶圓"
-      ],
-      "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.065,
+      "trust_ratio": 0.033
     },
     {
       "date": "20260615",
@@ -538,7 +564,25 @@
         "電腦及週邊"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.183,
+      "trust_ratio": 0.006
+    },
+    {
+      "date": "20260615",
+      "symbol": "6488",
+      "name": "環球晶",
+      "foreign_net": 1172,
+      "trust_net": 269,
+      "dealer_net": 34,
+      "total_net": 1475,
+      "themes": [
+        "矽晶圓"
+      ],
+      "is_cohort": true,
+      "is_surge": true,
+      "foreign_ratio": 2.451,
+      "trust_ratio": 0.563
     },
     {
       "date": "20260615",
@@ -552,7 +596,9 @@
         "半導體設備"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.334,
+      "trust_ratio": 0.188
     },
     {
       "date": "20260615",
@@ -564,7 +610,9 @@
       "total_net": 985,
       "themes": [],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 6.508,
+      "trust_ratio": 0.165
     },
     {
       "date": "20260615",
@@ -578,7 +626,9 @@
         "PCB/銅箔"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": false,
+      "foreign_ratio": 2.522,
+      "trust_ratio": 0.063
     },
     {
       "date": "20260615",
@@ -592,7 +642,25 @@
         "電腦及週邊"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.031,
+      "trust_ratio": 0.008
+    },
+    {
+      "date": "20260615",
+      "symbol": "3008",
+      "name": "大立光",
+      "foreign_net": 408,
+      "trust_net": 146,
+      "dealer_net": 64,
+      "total_net": 619,
+      "themes": [
+        "光電"
+      ],
+      "is_cohort": true,
+      "is_surge": true,
+      "foreign_ratio": 0.312,
+      "trust_ratio": 0.112
     },
     {
       "date": "20260615",
@@ -606,21 +674,9 @@
         "被動元件"
       ],
       "is_cohort": true,
-      "is_surge": true
-    },
-    {
-      "date": "20260615",
-      "symbol": "3008",
-      "name": "大立光",
-      "foreign_net": 408,
-      "trust_net": 79,
-      "dealer_net": 64,
-      "total_net": 552,
-      "themes": [
-        "光電"
-      ],
-      "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.072,
+      "trust_ratio": 0.01
     },
     {
       "date": "20260615",
@@ -634,7 +690,9 @@
         "化學"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.16,
+      "trust_ratio": 0.011
     },
     {
       "date": "20260615",
@@ -648,7 +706,9 @@
         "電池材料"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 1.928,
+      "trust_ratio": 0.254
     },
     {
       "date": "20260615",
@@ -662,7 +722,9 @@
         "電腦及週邊"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.043,
+      "trust_ratio": 0.011
     },
     {
       "date": "20260615",
@@ -676,21 +738,9 @@
         "鋼鐵"
       ],
       "is_cohort": true,
-      "is_surge": false
-    },
-    {
-      "date": "20260615",
-      "symbol": "3653",
-      "name": "健策",
-      "foreign_net": 244,
-      "trust_net": 6,
-      "dealer_net": 3,
-      "total_net": 253,
-      "themes": [
-        "散熱"
-      ],
-      "is_cohort": true,
-      "is_surge": true
+      "is_surge": false,
+      "foreign_ratio": 0.033,
+      "trust_ratio": 0.021
     },
     {
       "date": "20260615",
@@ -704,7 +754,9 @@
         "電子零組件"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.084,
+      "trust_ratio": 0.006
     },
     {
       "date": "20260615",
@@ -718,7 +770,9 @@
         "IC設計"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.007,
+      "trust_ratio": 0.004
     },
     {
       "date": "20260615",
@@ -732,21 +786,25 @@
         "通信網路"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.016,
+      "trust_ratio": 0.002
     },
     {
       "date": "20260615",
       "symbol": "2379",
       "name": "瑞昱",
       "foreign_net": 56,
-      "trust_net": 89,
+      "trust_net": 91,
       "dealer_net": 26,
-      "total_net": 171,
+      "total_net": 173,
       "themes": [
         "IC設計"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.011,
+      "trust_ratio": 0.018
     },
     {
       "date": "20260615",
@@ -758,7 +816,9 @@
       "total_net": 166,
       "themes": [],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 1.007,
+      "trust_ratio": 0.218
     },
     {
       "date": "20260615",
@@ -772,7 +832,9 @@
         "電機機械"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.087,
+      "trust_ratio": 0.057
     },
     {
       "date": "20260615",
@@ -784,7 +846,9 @@
       "total_net": 126,
       "themes": [],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 2.025,
+      "trust_ratio": 0.988
     },
     {
       "date": "20260615",
@@ -798,21 +862,25 @@
         "35"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.109,
+      "trust_ratio": 0.018
     },
     {
       "date": "20260615",
       "symbol": "2395",
       "name": "研華",
       "foreign_net": 5,
-      "trust_net": 32,
+      "trust_net": 29,
       "dealer_net": 25,
-      "total_net": 63,
+      "total_net": 60,
       "themes": [
         "電腦及週邊"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.001,
+      "trust_ratio": 0.003
     },
     {
       "date": "20260615",
@@ -826,7 +894,23 @@
         "矽光子/光通訊"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.292,
+      "trust_ratio": 0.184
+    },
+    {
+      "date": "20260615",
+      "symbol": "7734",
+      "name": "印能科技",
+      "foreign_net": 11,
+      "trust_net": 20,
+      "dealer_net": 8,
+      "total_net": 40,
+      "themes": [],
+      "is_cohort": true,
+      "is_surge": false,
+      "foreign_ratio": 0.393,
+      "trust_ratio": 0.714
     }
   ],
   "foreign_surges": [
@@ -842,7 +926,9 @@
         "金融"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.183,
+      "trust_ratio": 0.016
     },
     {
       "date": "20260615",
@@ -854,21 +940,25 @@
       "total_net": 29800,
       "themes": [],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
       "symbol": "2327",
       "name": "國巨*",
       "foreign_net": 12238,
-      "trust_net": 334,
+      "trust_net": 790,
       "dealer_net": 362,
-      "total_net": 12934,
+      "total_net": 13390,
       "themes": [
         "被動元件"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.591,
+      "trust_ratio": 0.038
     },
     {
       "date": "20260615",
@@ -882,21 +972,9 @@
         "玻璃陶瓷"
       ],
       "is_cohort": true,
-      "is_surge": true
-    },
-    {
-      "date": "20260615",
-      "symbol": "5347",
-      "name": "世界",
-      "foreign_net": 10456,
-      "trust_net": 375,
-      "dealer_net": 545,
-      "total_net": 11376,
-      "themes": [
-        "晶圓代工"
-      ],
-      "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.41,
+      "trust_ratio": 0.022
     },
     {
       "date": "20260615",
@@ -910,21 +988,25 @@
         "電腦及週邊"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.336,
+      "trust_ratio": 0.021
     },
     {
       "date": "20260615",
       "symbol": "2330",
       "name": "台積電",
       "foreign_net": 9647,
-      "trust_net": 80,
+      "trust_net": 86,
       "dealer_net": 107,
-      "total_net": 9834,
+      "total_net": 9840,
       "themes": [
         "晶圓代工"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.037,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -938,7 +1020,9 @@
         "被動元件/石英"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 2.788,
+      "trust_ratio": 0.178
     },
     {
       "date": "20260615",
@@ -952,7 +1036,9 @@
         "AI伺服器/代工"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.062,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -966,7 +1052,9 @@
         "紡織纖維"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.157,
+      "trust_ratio": 0.002
     },
     {
       "date": "20260615",
@@ -980,7 +1068,9 @@
         "PCB"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 1.6,
+      "trust_ratio": 0.079
     },
     {
       "date": "20260615",
@@ -994,21 +1084,9 @@
         "金融"
       ],
       "is_cohort": true,
-      "is_surge": true
-    },
-    {
-      "date": "20260615",
-      "symbol": "6175",
-      "name": "立敦",
-      "foreign_net": 5908,
-      "trust_net": 1,
-      "dealer_net": 135,
-      "total_net": 6044,
-      "themes": [
-        "被動元件"
-      ],
-      "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.051,
+      "trust_ratio": 0.018
     },
     {
       "date": "20260615",
@@ -1022,7 +1100,9 @@
         "電腦及週邊"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.209,
+      "trust_ratio": 0.002
     },
     {
       "date": "20260615",
@@ -1034,7 +1114,9 @@
       "total_net": 3000,
       "themes": [],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1048,7 +1130,9 @@
         "PCB"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.357,
+      "trust_ratio": 0.014
     },
     {
       "date": "20260615",
@@ -1062,21 +1146,25 @@
         "電腦及週邊"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.028,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
       "symbol": "6488",
       "name": "環球晶",
       "foreign_net": 1172,
-      "trust_net": 692,
+      "trust_net": 269,
       "dealer_net": 34,
-      "total_net": 1898,
+      "total_net": 1475,
       "themes": [
         "矽晶圓"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 2.451,
+      "trust_ratio": 0.563
     },
     {
       "date": "20260615",
@@ -1090,35 +1178,25 @@
         "IC設計"
       ],
       "is_cohort": true,
-      "is_surge": true
-    },
-    {
-      "date": "20260615",
-      "symbol": "8358",
-      "name": "金居",
-      "foreign_net": 637,
-      "trust_net": 16,
-      "dealer_net": 278,
-      "total_net": 931,
-      "themes": [
-        "PCB/銅箔"
-      ],
-      "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.065,
+      "trust_ratio": 0.033
     },
     {
       "date": "20260615",
       "symbol": "3008",
       "name": "大立光",
       "foreign_net": 408,
-      "trust_net": 79,
+      "trust_net": 146,
       "dealer_net": 64,
-      "total_net": 552,
+      "total_net": 619,
       "themes": [
         "光電"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.312,
+      "trust_ratio": 0.112
     },
     {
       "date": "20260615",
@@ -1132,21 +1210,9 @@
         "被動元件"
       ],
       "is_cohort": true,
-      "is_surge": true
-    },
-    {
-      "date": "20260615",
-      "symbol": "3653",
-      "name": "健策",
-      "foreign_net": 244,
-      "trust_net": 6,
-      "dealer_net": 3,
-      "total_net": 253,
-      "themes": [
-        "散熱"
-      ],
-      "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.072,
+      "trust_ratio": 0.01
     }
   ],
   "top_buys": [
@@ -1160,7 +1226,9 @@
       "total_net": 667526,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1172,7 +1240,9 @@
       "total_net": 59532,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1184,7 +1254,9 @@
       "total_net": 48895,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1196,7 +1268,9 @@
       "total_net": 44003,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1210,7 +1284,9 @@
         "金融"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.028,
+      "trust_ratio": 0.133
     },
     {
       "date": "20260615",
@@ -1224,7 +1300,9 @@
         "金融"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.183,
+      "trust_ratio": 0.016
     },
     {
       "date": "20260615",
@@ -1236,7 +1314,9 @@
       "total_net": 29800,
       "themes": [],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1248,7 +1328,9 @@
       "total_net": 28504,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1262,7 +1344,9 @@
         "航運"
       ],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.564,
+      "trust_ratio": -0.11
     },
     {
       "date": "20260615",
@@ -1276,7 +1360,9 @@
         "金融"
       ],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.17,
+      "trust_ratio": -0.004
     },
     {
       "date": "20260615",
@@ -1290,7 +1376,9 @@
         "航運"
       ],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.354,
+      "trust_ratio": -0.003
     },
     {
       "date": "20260615",
@@ -1302,7 +1390,9 @@
       "total_net": 22730,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1314,7 +1404,9 @@
       "total_net": 22653,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1328,7 +1420,9 @@
         "半導體"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.361,
+      "trust_ratio": 0.098
     },
     {
       "date": "20260615",
@@ -1340,7 +1434,9 @@
       "total_net": 18694,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1352,7 +1448,9 @@
       "total_net": 18299,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1366,7 +1464,9 @@
         "金融"
       ],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.122,
+      "trust_ratio": -0.0
     },
     {
       "date": "20260615",
@@ -1378,7 +1478,9 @@
       "total_net": 17482,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1390,7 +1492,9 @@
       "total_net": 16662,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1402,7 +1506,9 @@
       "total_net": 16054,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1416,7 +1522,9 @@
         "金融"
       ],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.136,
+      "trust_ratio": -0.055
     },
     {
       "date": "20260615",
@@ -1428,7 +1536,9 @@
       "total_net": 15212,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1442,7 +1552,9 @@
         "玻璃陶瓷"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.41,
+      "trust_ratio": 0.022
     },
     {
       "date": "20260615",
@@ -1456,7 +1568,9 @@
         "塑膠"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.155,
+      "trust_ratio": 0.011
     },
     {
       "date": "20260615",
@@ -1468,7 +1582,9 @@
       "total_net": 13972,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1480,7 +1596,25 @@
       "total_net": 13940,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260615",
+      "symbol": "2327",
+      "name": "國巨*",
+      "foreign_net": 12238,
+      "trust_net": 790,
+      "dealer_net": 362,
+      "total_net": 13390,
+      "themes": [
+        "被動元件"
+      ],
+      "is_cohort": true,
+      "is_surge": true,
+      "foreign_ratio": 0.591,
+      "trust_ratio": 0.038
     },
     {
       "date": "20260615",
@@ -1494,7 +1628,9 @@
         "光電"
       ],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.828,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1508,21 +1644,9 @@
         "被動元件/石英"
       ],
       "is_cohort": true,
-      "is_surge": true
-    },
-    {
-      "date": "20260615",
-      "symbol": "2327",
-      "name": "國巨*",
-      "foreign_net": 12238,
-      "trust_net": 334,
-      "dealer_net": 362,
-      "total_net": 12934,
-      "themes": [
-        "被動元件"
-      ],
-      "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 2.788,
+      "trust_ratio": 0.178
     },
     {
       "date": "20260615",
@@ -1536,7 +1660,9 @@
         "電腦及週邊"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.336,
+      "trust_ratio": 0.021
     },
     {
       "date": "20260615",
@@ -1548,7 +1674,9 @@
       "total_net": 12707,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1562,7 +1690,9 @@
         "半導體"
       ],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 2.026,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1576,7 +1706,9 @@
         "塑膠"
       ],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.194,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1588,7 +1720,9 @@
       "total_net": 12293,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1602,7 +1736,9 @@
         "塑膠"
       ],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.182,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1614,7 +1750,9 @@
       "total_net": 11646,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1628,7 +1766,9 @@
         "晶圓代工"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": false,
+      "foreign_ratio": 5.599,
+      "trust_ratio": 0.201
     },
     {
       "date": "20260615",
@@ -1640,7 +1780,9 @@
       "total_net": 10419,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1654,7 +1796,9 @@
         "金融"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.051,
+      "trust_ratio": 0.018
     },
     {
       "date": "20260615",
@@ -1668,21 +1812,25 @@
         "鋼鐵"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.057,
+      "trust_ratio": 0.003
     },
     {
       "date": "20260615",
       "symbol": "2330",
       "name": "台積電",
       "foreign_net": 9647,
-      "trust_net": 80,
+      "trust_net": 86,
       "dealer_net": 107,
-      "total_net": 9834,
+      "total_net": 9840,
       "themes": [
         "晶圓代工"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.037,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1694,7 +1842,9 @@
       "total_net": 9635,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1706,7 +1856,9 @@
       "total_net": 9412,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1720,7 +1872,9 @@
         "AI伺服器/代工"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.062,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1734,7 +1888,9 @@
         "PCB"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 1.6,
+      "trust_ratio": 0.079
     },
     {
       "date": "20260615",
@@ -1748,7 +1904,9 @@
         "紡織纖維"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.157,
+      "trust_ratio": 0.002
     },
     {
       "date": "20260615",
@@ -1762,7 +1920,9 @@
         "化學"
       ],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.752,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1776,7 +1936,9 @@
         "金融"
       ],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.137,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1790,7 +1952,9 @@
         "金融"
       ],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.065,
+      "trust_ratio": -0.001
     },
     {
       "date": "20260615",
@@ -1802,7 +1966,9 @@
       "total_net": 7791,
       "themes": [],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1814,7 +1980,9 @@
       "total_net": 7704,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1826,7 +1994,9 @@
       "total_net": 7656,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1840,7 +2010,9 @@
         "光電"
       ],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 2.34,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1852,7 +2024,9 @@
       "total_net": 7493,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1864,7 +2038,9 @@
       "total_net": 7374,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1876,7 +2052,9 @@
       "total_net": 7306,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1890,7 +2068,9 @@
         "半導體"
       ],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 2.138,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1902,7 +2082,9 @@
       "total_net": 6971,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1916,7 +2098,9 @@
         "金融"
       ],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.084,
+      "trust_ratio": -0.044
     },
     {
       "date": "20260615",
@@ -1928,7 +2112,9 @@
       "total_net": 6489,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": false,
+      "foreign_ratio": 36.026,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1942,7 +2128,9 @@
         "電腦及週邊"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.209,
+      "trust_ratio": 0.002
     },
     {
       "date": "20260615",
@@ -1956,7 +2144,9 @@
         "被動元件"
       ],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": false,
+      "foreign_ratio": 39.355,
+      "trust_ratio": 0.007
     },
     {
       "date": "20260615",
@@ -1968,7 +2158,9 @@
       "total_net": 6039,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 8.683,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -1982,7 +2174,9 @@
         "電器電纜"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.061,
+      "trust_ratio": 0.005
     },
     {
       "date": "20260615",
@@ -1996,7 +2190,9 @@
         "半導體"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.193,
+      "trust_ratio": 0.001
     },
     {
       "date": "20260615",
@@ -2008,7 +2204,9 @@
       "total_net": 5526,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2022,7 +2220,9 @@
         "半導體"
       ],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 2.3,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2036,7 +2236,9 @@
         "水泥"
       ],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.068,
+      "trust_ratio": 0.004
     },
     {
       "date": "20260615",
@@ -2048,7 +2250,9 @@
       "total_net": 5084,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2060,7 +2264,9 @@
       "total_net": 5080,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2074,7 +2280,9 @@
         "金融"
       ],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.073,
+      "trust_ratio": -0.038
     },
     {
       "date": "20260615",
@@ -2086,7 +2294,9 @@
       "total_net": 4974,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2098,7 +2308,9 @@
       "total_net": 4952,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2112,7 +2324,9 @@
         "光電"
       ],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.813,
+      "trust_ratio": -0.001
     },
     {
       "date": "20260615",
@@ -2126,7 +2340,9 @@
         "金融"
       ],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.029,
+      "trust_ratio": -0.0
     },
     {
       "date": "20260615",
@@ -2138,7 +2354,9 @@
       "total_net": 4728,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2152,7 +2370,9 @@
         "電子通路"
       ],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 1.889,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2164,7 +2384,9 @@
       "total_net": 4313,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2176,7 +2398,9 @@
       "total_net": 4142,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2188,7 +2412,9 @@
       "total_net": 4121,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2202,7 +2428,9 @@
         "電子零組件"
       ],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 4.509,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2214,7 +2442,9 @@
       "total_net": 3918,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": false,
+      "foreign_ratio": 11.818,
+      "trust_ratio": -0.018
     },
     {
       "date": "20260615",
@@ -2228,7 +2458,9 @@
         "被動元件"
       ],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 2.516,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2242,7 +2474,9 @@
         "金融"
       ],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.194,
+      "trust_ratio": -0.023
     },
     {
       "date": "20260615",
@@ -2256,7 +2490,9 @@
         "電腦及週邊"
       ],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 2.682,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2268,7 +2504,9 @@
       "total_net": 3653,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": false,
+      "foreign_ratio": 0.227,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2280,7 +2518,9 @@
       "total_net": 3632,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2292,7 +2532,9 @@
       "total_net": 3518,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2304,7 +2546,9 @@
       "total_net": 3398,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2318,7 +2562,9 @@
         "IC載板"
       ],
       "is_cohort": true,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.129,
+      "trust_ratio": 0.062
     },
     {
       "date": "20260615",
@@ -2332,7 +2578,9 @@
         "航運"
       ],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.111,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2344,7 +2592,9 @@
       "total_net": 3271,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2356,7 +2606,9 @@
       "total_net": 3194,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2370,7 +2622,9 @@
         "金融"
       ],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.017,
+      "trust_ratio": -0.002
     },
     {
       "date": "20260615",
@@ -2382,7 +2636,9 @@
       "total_net": 3023,
       "themes": [],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2394,7 +2650,9 @@
       "total_net": 3000,
       "themes": [],
       "is_cohort": true,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2408,7 +2666,9 @@
         "IC載板"
       ],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.527,
+      "trust_ratio": -0.063
     },
     {
       "date": "20260615",
@@ -2422,7 +2682,9 @@
         "金融"
       ],
       "is_cohort": false,
-      "is_surge": false
+      "is_surge": false,
+      "foreign_ratio": -0.04,
+      "trust_ratio": 0.058
     },
     {
       "date": "20260615",
@@ -2434,7 +2696,9 @@
       "total_net": 2830,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": true,
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
     },
     {
       "date": "20260615",
@@ -2446,7 +2710,9 @@
       "total_net": 2768,
       "themes": [],
       "is_cohort": false,
-      "is_surge": true
+      "is_surge": false,
+      "foreign_ratio": 33.926,
+      "trust_ratio": 0.0
     }
   ]
 }
