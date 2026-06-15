@@ -81,6 +81,18 @@ class LLMWikiHTTPHandler(SimpleHTTPRequestHandler):
                 self.send_response_json(200, updated_entry)
             except Exception as e:
                 self.send_error_json(500, f"Error updating stock: {str(e)}")
+        elif parsed_url.path == "/api/update_macro":
+            try:
+                from generate_daily_report import generate_macro_analysis
+                generate_macro_analysis()
+                macro_file = Path("macro_ai_analysis.json")
+                if macro_file.exists():
+                    macro_data = json.loads(macro_file.read_text(encoding="utf-8"))
+                    self.send_response_json(200, macro_data)
+                else:
+                    self.send_error_json(500, "macro_ai_analysis.json was not created.")
+            except Exception as e:
+                self.send_error_json(500, f"Error updating macro: {str(e)}")
         else:
             super().do_GET()
 
