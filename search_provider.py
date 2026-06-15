@@ -198,11 +198,12 @@ def parse_rss_items(xml_text: str) -> List[Dict[str, str]]:
     return items
 
 
-def fetch_text(url: str) -> str:
+def fetch_text(url: str, timeout: int = SEARCH_TIMEOUT, skip_sleep: bool = False) -> str:
     if blocked_url(url):
         return ""
-    safe_sleep()
-    resp = requests.get(url, headers=build_headers(), timeout=SEARCH_TIMEOUT, allow_redirects=True)
+    if not skip_sleep:
+        safe_sleep()
+    resp = requests.get(url, headers=build_headers(), timeout=timeout, allow_redirects=True)
     if resp.status_code >= 400:
         return ""
     return resp.text
@@ -213,7 +214,8 @@ def fetch_rss_source(source_name: str, query_terms: List[str]) -> List[Dict[str,
     matched: List[Dict[str, str]] = []
     for endpoint in endpoints:
         try:
-            xml_text = fetch_text(endpoint)
+            # RSS feeds are public and fast; skip sleep and timeout in 3 seconds to avoid hanging
+            xml_text = fetch_text(endpoint, timeout=3, skip_sleep=True)
             items = parse_rss_items(xml_text)
             for item in items:
                 combined = " ".join([
@@ -250,13 +252,15 @@ def build_mops_search_url(query: str) -> str:
 
 def enrich_results(results: List[Dict[str, str]]) -> List[Dict[str, str]]:
     enriched: List[Dict[str, str]] = []
-    for item in results:
+    for idx, item in enumerate(results):
         result = dict(item)
-        if FETCH_ENABLED:
+        if FETCH_ENABLED and idx < 3:
             try:
                 result["content"] = strip_html_tags(fetch_text(result.get("url", "")))[:FETCH_MAX_CHARS]
             except Exception:
                 result["content"] = ""
+        else:
+            result["content"] = ""
         enriched.append(result)
     return enriched
 

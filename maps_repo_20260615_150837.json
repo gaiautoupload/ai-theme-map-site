@@ -16059,5 +16059,597 @@
         "note": "查詢主題：供應鏈重組下的東協製造與友岸外包\n以下是主題 evidence 白名單上下文：\n官方補查入口：\n- TWSE: https://www.twse.com.tw/zh/search/news?query=%E4%BE%9B%E6%87%89%E9%8F%88%E9%87%8D%E7%B5%84%E4%B8%8B%E7%9A%84%E6%9D%B1%E5%8D%94%E8%A3%BD%E9%80%A0%E8%88%87%E5%8F%8B%E5%B2%B8%E5%A4%96%E5%8C%85\n- TPEx: https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?l=zh-tw&keyword=%E4%BE%9B%E6%87%89%E9%8F%88%E9%87%8D%E7%B5%84%E4%B8%8B%E7%9A%84%E6%9D%B1%E5%8D%94%E8%A3%BD%E9%80%A0%E8%88%87%E5%8F%8B%E5%B2%B8%E5%A4%96%E5%8C%8"
       }
     ]
+  },
+  "map_AI_散熱與液冷供應鏈升級_20260615_150817": {
+    "title": "AI 散熱與液冷供應鏈升級",
+    "date": "2026-06-15",
+    "updated_at": "2026-06-15T15:08:17+08:00",
+    "heat": "AI 散熱與液冷供應鏈升級",
+    "heat_score": 88,
+    "heat_drivers": [
+      "AI 晶片功耗突破風冷物理極限 (TDP > 1000W)",
+      "Hyperscalers 資料中心 PUE 法規與能效壓力",
+      "環保法規 (PFAS) 驅動冷卻液材料大換血",
+      "Agentic AI 企業級採用加速算力密度需求"
+    ],
+    "period": "2025 - 2027",
+    "desc": "本主題聚焦於 AI 資料中心從風冷轉向液冷的產業結構性升級。涵蓋冷卻液材料、冷卻分配單元 (CDU)、快接頭 (QD) 及系統整合四大環節。在 AI 應用爆發與環保法規雙重驅動下，散熱供應鏈正經歷從低毛利組件到高價值材料與服務的價值重估。",
+    "thesis": "AI 算力競賽的本質已從單純的晶片效能轉向「熱管理效率」。隨著單機櫃功率密度急劇上升，液冷從「可選配件」轉變為「基礎設施剛需」。投資核心不在於單純的組件製造，而在於掌握「高壁壘材料（環保冷卻液）」與「系統整合能力（CDU/密封）」的供應鏈龍頭。資金將沿著「材料認證 -> 組件放量 -> 系統整合」的路徑輪動，優先佈局具備定價權的上游材料與關鍵接口供應商。",
+    "market_size_tam": "待補資料",
+    "market_size_tam_source_type": "待補資料",
+    "market_cagr": "待補資料",
+    "market_cagr_source_type": "待補資料",
+    "theme_stage": "小規模導入與標準建立期 (Early Growth)",
+    "why_now": "1. 技術瓶頸：NVIDIA Blackwell 等新一代晶片功耗飆升，風冷已無法滿足散熱需求，液冷成為唯一解。2. 法規驅動：全球對 PFAS 化學品的限制趨嚴，迫使傳統氟化液供應商轉型，催生新型環保冷卻液的認證與替代商機。3. 需求爆發：ChatGPT 用戶破億及 Agentic AI 企業部署加速，導致資料中心算力密度急劇上升，Hyperscalers 開始大規模規劃液冷機房。",
+    "key_bottleneck": "1. 材料認證週期長：新型環保冷卻液需通過嚴格的安全與兼容性測試，進入門檻高。2. 泄漏風險與標準缺失：液冷系統對密封技術要求極高，缺乏統一的行業標準導致客戶擔憂維護成本與可靠性。3. 供應鏈韌性：關鍵組件 (如高階泵浦、QD) 依賴少數全球供應商，產能擴充需時。",
+    "primary_value_capture": "1. 材料層：透過專利與認證壁壘獲取高額溢價 (高毛利)。2. 組件層：透過系統整合能力與能效優化服務獲取價值。3. 服務層：透過長期維護合約與 Retrofit 服務形成經常性收入。",
+    "market_narrative": "AI 基礎設施的「隱形冠軍」。市場正從關注晶片設計轉向關注「如何讓晶片持續高效運行」。液冷供應鏈被視為 AI 硬體中的「賣水人」，具備高確定性與長週期成長性。特別是在環保法規背景下，掌握新型冷卻液配方的公司將成為新的戰略資源。",
+    "evidence_confidence": "高",
+    "icon": "cpu",
+    "color": "from-cyan-500 to-indigo-600",
+    "theme_tags": [
+      "AI Infrastructure",
+      "Liquid Cooling",
+      "Data Center",
+      "Green Tech",
+      "Materials Science",
+      "Thermal Management"
+    ],
+    "trigger_events": [
+      "主要 Hyperscalers (AWS, Azure, GCP) 宣布新一代液冷機房建設計畫",
+      "新型環保冷卻液通過主要晶片廠 (NVIDIA, AMD) 認證",
+      "國際環保組織或政府發布更嚴格的 PFAS 限制法規",
+      "伺服器大廠 (Dell, HPE, Supermicro) 推出全液冷伺服器機型並放量"
+    ],
+    "risks": [
+      "冷卻液技術路線分歧 (浸沒式 vs. 冷板式) 導致標準混亂",
+      "環保法規放緩或新型材料成本過高抑制採用速度",
+      "風冷技術改進 (如液冷輔助風冷) 延緩全面液冷轉型",
+      "地緣政治影響關鍵材料或組件的供應鏈穩定性"
+    ],
+    "watch_signals": [
+      "液冷伺服器出貨量佔比數據",
+      "新型冷卻液廠商的認證進度與訂單公告",
+      "資料中心 PUE 指標改善情況",
+      "主要伺服器大廠的液冷營收佔比變化"
+    ],
+    "related_themes": [
+      "AI 晶片供應鏈",
+      "資料中心基礎設施",
+      "綠色能源與能效管理",
+      "半導體材料科學"
+    ],
+    "tech_lessons": [
+      {
+        "title": "從風冷到液冷：散熱物理極限的跨越",
+        "subtitle": "理解 AI 晶片功耗飆升對散熱架構的根本性挑戰",
+        "problem": "傳統風冷散熱在單顆 AI 晶片功耗突破 1000W 後遭遇物理瓶頸，無法有效移除高密度熱流，導致晶片降頻或損壞。",
+        "mechanism": "液冷技術利用流體（冷卻液）的高比熱容，直接接觸熱源（Cold Plate）或浸沒整個伺服器，將熱量帶出並透過冷卻塔交換。這不僅提升熱傳導效率，更降低風扇噪音與能耗。",
+        "why_now": "隨著 ChatGPT 等應用用戶破億及 Agentic AI 企業級採用加速，資料中心 GPU 集群密度急劇上升，風冷已無法滿足下一代高算力機房的 TDP（熱設計功耗）需求，液冷從「可選」變為「必選」。",
+        "desc": "本模組解析為何 AI 算力增長伴隨的是熱能危機，以及液冷如何成為維持高運算效率的關鍵基礎設施。"
+      },
+      {
+        "title": "冷卻液與材料科學：液冷供應鏈的核心價值",
+        "subtitle": "電子氟化液與高導熱材料的技術壁壘",
+        "problem": "液冷系統需要具備高絕緣性、低黏度、高沸點且對電子元件無腐蝕的冷卻液，傳統水基冷卻液無法直接用於電子元件接觸，而氟化液成本高昂且供應受限。",
+        "mechanism": "技術重點在於開發高性能電子氟化液（如 3M Novec 替代品）及高導熱塗層、密封材料。這些材料決定了液冷系統的穩定性、壽命及維護成本。",
+        "why_now": "全球環保法規趨嚴（如 PFAS 限制）迫使傳統氟化液供應商轉型，同時 AI 晶片廠與資料中心營運商急需替代方案以確保供應鏈韌性，帶動新材料研發與認證商機。",
+        "desc": "探討液冷系統中隱形但關鍵的材料科學，分析哪些公司掌握高階冷卻液與導熱材料的專利與產能。"
+      },
+      {
+        "title": "冷卻分配單元（CDU）與流體控制：液冷的「心臟」",
+        "subtitle": "精密流體管理技術在液冷架構中的角色",
+        "problem": "液冷系統需精確控制冷卻液的流量、壓力與溫度，以應對 AI 晶片負載的瞬間波動。若控制不當，易產生氣蝕、泄漏或熱點不均。",
+        "mechanism": "CDU 作為液冷系統的核心節點，負責將冷卻液從冷卻塔輸送至伺服器冷板，並維持系統壓力平衡與溫度穩定。其包含泵浦、熱交換器、過濾系統及精密感測器。",
+        "why_now": "隨著液冷規模化，CDU 的可靠性與能效比（PUE 影響因子）成為資料中心設計關鍵。具備自主開發 CDU 技術的廠商，能提供更完整的解決方案，提升市場佔有率。",
+        "desc": "介紹 CDU 在液冷供應鏈中的樞紐地位，以及如何透過精密流體控制提升整體資料中心能效。"
+      },
+      {
+        "title": "快接頭（QD）與密封技術：液冷系統的可靠性關鍵",
+        "subtitle": "防止泄漏與維護便利性的工程挑戰",
+        "problem": "液冷系統在長期運行中面臨泄漏風險，一旦發生將導致昂貴的硬體損壞與停機損失。同時，模組化維護需要快速連接與斷開冷卻管線。",
+        "mechanism": "快接頭（Quick Disconnect, QD）技術需具備零泄漏、低阻力損耗及高耐用性。密封材料與機械結構設計決定了連接的可靠性，是液冷系統安全運行的最後防線。",
+        "why_now": "隨著液冷從實驗性部署轉向大規模商用，維護便利性與安全性成為客戶關注焦點。高品質 QD 供應商能降低資料中心營運風險，獲得更高溢價。",
+        "desc": "分析液冷系統中易被忽視但至關重要的連接與密封技術，探討其對系統可靠性與維護成本的影響。"
+      }
+    ],
+    "structure_layers": [
+      {
+        "name": "核心散熱介質與材料層",
+        "position": "上游關鍵化學材料",
+        "summary": "提供高絕緣、高導熱且符合環保法規的冷卻液（如電子氟化液替代品）及高導熱界面材料。此層為液冷系統的「血液」，技術壁壘最高，且受環保法規（PFAS限制）驅動產生替代性商機。",
+        "key_points": [
+          "傳統氟化液面臨環保法規淘汰，新型環保冷卻液認證成為進入門檻",
+          "高導熱塗層與密封材料決定系統壽命與維護頻率",
+          "材料科學專利構成長期護城河，具備定價權"
+        ],
+        "beneficiaries": [
+          "掌握新型環保冷卻液配方的化學巨頭",
+          "高階導熱界面材料（TIM）供應商"
+        ],
+        "pricing_power": "高（技術壟斷與認證週期長）",
+        "margin_profile": "高毛利（>40%），具定價權",
+        "value_capture": "透過材料專利與認證壁壘獲取高額溢價",
+        "entry_barrier": "極高（研發週期長、環保認證嚴格）",
+        "leader_type": "全球性化學材料巨頭或垂直整合的新材料創企"
+      },
+      {
+        "name": "精密流體控制與分配層",
+        "position": "中游核心組件",
+        "summary": "製造冷卻分配單元（CDU）、泵浦與熱交換器。CDU 是液冷系統的「心臟」，負責精確控制流量、壓力與溫度，直接影響資料中心 PUE 與運算穩定性。",
+        "key_points": [
+          "CDU 技術整合度高，需具備流體力學模擬與精密控制能力",
+          "能效比（PUE 影響因子）是客戶採購關鍵指標",
+          "從單一組件供應商轉向系統解決方案提供商的趨勢明顯"
+        ],
+        "beneficiaries": [
+          "具備自主開發 CDU 技術的工業自動化廠商",
+          "精密泵浦與熱交換器製造商"
+        ],
+        "pricing_power": "中高（系統整合能力決定溢價）",
+        "margin_profile": "中高毛利（25-35%），隨規模擴大優化",
+        "value_capture": "透過系統整合與能效優化服務獲取價值",
+        "entry_barrier": "高（需跨領域整合機械、電子與軟體控制）",
+        "leader_type": "工業自動化龍頭或專注於數據中心基礎設施的專業廠商"
+      },
+      {
+        "name": "連接與密封可靠性層",
+        "position": "中游關鍵接口",
+        "summary": "提供快接頭（QD）、管路與密封解決方案。解決液冷系統泄漏風險與維護難題，是系統可靠性的「最後防線」。隨著液冷規模化，維護便利性成為關鍵競爭點。",
+        "key_points": [
+          "零泄漏技術與低阻力損耗設計是核心競爭力",
+          "模組化設計降低資料中心維護成本與停機風險",
+          "與伺服器廠商（OEM/ODM）的協同設計能力至關重要"
+        ],
+        "beneficiaries": [
+          "高階工業連接器製造商",
+          "精密密封技術供應商"
+        ],
+        "pricing_power": "中（依賴與大廠綁定關係）",
+        "margin_profile": "中毛利（20-30%），規模效應顯著",
+        "value_capture": "透過降低客戶營運風險（OPEX）獲取價值",
+        "entry_barrier": "中高（需通過嚴格的安全與耐久性測試）",
+        "leader_type": "全球連接器巨頭或專注於液冷接口的專業廠商"
+      },
+      {
+        "name": "系統整合與部署服務層",
+        "position": "下游應用與服務",
+        "summary": "將散熱組件整合至伺服器或資料中心基礎設施，提供設計、安裝與維護服務。此層直接面對終端客戶（Hyperscalers），負責將技術轉化為實際運算能力。",
+        "key_points": [
+          "與伺服器 OEM/ODM 深度綁定，共同開發散熱模組",
+          "提供從風冷到液冷的改造（Retrofit）服務需求增長",
+          "服務收入佔比提升，形成經常性收入來源"
+        ],
+        "beneficiaries": [
+          "伺服器製造商（具備液冷整合能力者）",
+          "資料中心基礎設施解決方案提供商"
+        ],
+        "pricing_power": "中（受客戶議價能力影響）",
+        "margin_profile": "中低毛利（15-25%），但營收規模大",
+        "value_capture": "透過整體解決方案與長期維護合約獲取價值",
+        "entry_barrier": "中（需具備大規模交付與服務網絡）",
+        "leader_type": "大型伺服器製造商或專業基礎設施服務商"
+      }
+    ],
+    "capital_flow": [
+      {
+        "phase": "法規驅動與材料驗證期",
+        "timeframe": "2024 - 2025",
+        "focus": "上游關鍵化學材料與研發",
+        "logic": "資金首先湧入具備新型環保冷卻液研發能力與專利佈局的化學材料商。此階段市場焦點在於解決 PFAS 限制下的替代方案，技術壁壘最高，具備定價權。投資者關注認證進度與專利數量，而非短期營收。",
+        "beneficiary_groups": [
+          "全球性化學材料巨頭",
+          "垂直整合的新材料創企"
+        ]
+      },
+      {
+        "phase": "小規模導入與標準建立期",
+        "timeframe": "2025 - 2026",
+        "focus": "中游核心組件 (CDU, QD)",
+        "logic": "隨著液冷從實驗性部署轉向大規模商用，資金轉向具備自主開發 CDU 技術的工業自動化廠商及高階連接器供應商。此階段營收開始顯現增長，市場關注系統可靠性驗證與標準建立。具備與伺服器大廠綁定關係的組件供應商獲得溢價。",
+        "beneficiary_groups": [
+          "具備自主開發 CDU 技術的工業自動化廠商",
+          "高階工業連接器製造商",
+          "精密密封技術供應商"
+        ]
+      },
+      {
+        "phase": "大規模量產與生態系成熟期",
+        "timeframe": "2026 - 2027+",
+        "focus": "下游系統整合與服務",
+        "logic": "液冷成為 AI 資料中心標配，市場進入大規模量產階段。資金流向具備規模交付能力的系統整合商與伺服器製造商。服務收入佔比提升，形成經常性收入來源。投資者關注市場滲透率與維護合約規模，享受規模經濟與服務溢價。",
+        "beneficiary_groups": [
+          "具備液冷整合能力的伺服器製造商",
+          "資料中心基礎設施解決方案提供商"
+        ]
+      }
+    ],
+    "timeline_phases": [
+      {
+        "phase": "法規驅動與材料驗證期",
+        "timeframe": "2024 - 2025",
+        "summary": "受環保法規（PFAS限制）驅動，傳統冷卻液供應商轉型，新型環保冷卻液進入認證階段。市場焦點在於材料科學突破與早期技術驗證。",
+        "winners": [
+          "擁有新型環保冷卻液配方的化學材料商",
+          "早期參與標準制定的技術領先者"
+        ],
+        "investment_phase": "主題萌芽與技術佈局",
+        "revenue_meaning": "營收貢獻有限，主要為研發投入與小批量試產",
+        "watch_metric": "新型冷卻液認證進度、專利申請數量",
+        "expected_market_focus": "材料科學研發、法規合規性評估"
+      },
+      {
+        "phase": "小規模導入與標準建立期",
+        "timeframe": "2025 - 2026",
+        "summary": "AI 晶片功耗突破風冷極限，Hyperscalers 開始在部分機房導入液冷。CDU 與連接器供應商開始放量，市場焦點在於系統可靠性驗證與標準建立。",
+        "winners": [
+          "具備 CDU 自主開發能力的工業自動化廠商",
+          "與伺服器大廠綁定的連接器供應商"
+        ],
+        "investment_phase": "主題發酵與業績驗證",
+        "revenue_meaning": "營收開始顯現增長，特別是 CDU 與連接器環節",
+        "watch_metric": "液冷伺服器出貨量佔比、PUE 改善數據",
+        "expected_market_focus": "系統整合能力、可靠性測試結果"
+      },
+      {
+        "phase": "大規模量產與生態系成熟期",
+        "timeframe": "2026 - 2027+",
+        "summary": "液冷成為 AI 資料中心標配，市場進入大規模量產階段。材料、組件與系統整合商全面受益，服務與維護市場規模擴大。",
+        "winners": [
+          "具備規模交付能力的系統整合商",
+          "擁有成熟產品線的材料與組件供應商"
+        ],
+        "investment_phase": "主題成熟與業績爆發",
+        "revenue_meaning": "營收大幅增長，服務收入佔比提升",
+        "watch_metric": "液冷市場滲透率、維護合約規模",
+        "expected_market_focus": "規模經濟、服務網絡覆蓋"
+      }
+    ],
+    "concepts": [
+      {
+        "title": "液冷物理極限",
+        "subtitle": "風冷瓶頸與液冷必要性",
+        "desc": "AI 晶片功耗突破風冷散熱極限，液冷成為維持高算力運行的必要技術路徑。"
+      },
+      {
+        "title": "關鍵材料壁壘",
+        "subtitle": "電子氟化液與導熱材料",
+        "desc": "高絕緣、高導熱且環保的冷卻液與密封材料，是液冷供應鏈的核心價值與技術壁壘。"
+      },
+      {
+        "title": "精密流體控制",
+        "subtitle": "CDU 與系統穩定性",
+        "desc": "冷卻分配單元（CDU）負責精確管理冷卻液流量與溫度，是液冷系統穩定運行的心臟。"
+      },
+      {
+        "title": "可靠性與維護",
+        "subtitle": "快接頭與密封技術",
+        "desc": "零泄漏的快接頭（QD）與密封技術，決定液冷系統的安全性與長期維護成本。"
+      }
+    ],
+    "stocks": [
+      {
+        "id": "00886",
+        "code": "00886",
+        "name": "永豐美國科技",
+        "sector": "延伸供應鏈",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 散熱與液冷供應鏈升級 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TPEX",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "00887",
+        "code": "00887",
+        "name": "永豐中國科技50大",
+        "sector": "延伸供應鏈",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 散熱與液冷供應鏈升級 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TPEX",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "009807",
+        "code": "009807",
+        "name": "台新標普科技精選",
+        "sector": "延伸供應鏈",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 散熱與液冷供應鏈升級 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TPEX",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "020025",
+        "code": "020025",
+        "name": "統一亞洲半導體N",
+        "sector": "延伸供應鏈",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 散熱與液冷供應鏈升級 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TPEX",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "020041",
+        "code": "020041",
+        "name": "兆豐半導體氣候N",
+        "sector": "延伸供應鏈",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 散熱與液冷供應鏈升級 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TPEX",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1313",
+        "code": "1313",
+        "name": "聯成",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 散熱與液冷供應鏈升級 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1340",
+        "code": "1340",
+        "name": "勝悅-KY",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 散熱與液冷供應鏈升級 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1503",
+        "code": "1503",
+        "name": "士電",
+        "sector": "05",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 散熱與液冷供應鏈升級 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1504",
+        "code": "1504",
+        "name": "東元",
+        "sector": "05",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 散熱與液冷供應鏈升級 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1513",
+        "code": "1513",
+        "name": "中興電",
+        "sector": "05",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 散熱與液冷供應鏈升級 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      }
+    ],
+    "sources": [
+      {
+        "type": "model-inference",
+        "label": "本地 vLLM 多步推理",
+        "note": "search_mode=search_augmented; pipeline_mode=multi_step"
+      },
+      {
+        "type": "context",
+        "label": "search_context",
+        "note": "查詢主題：AI 散熱與液冷供應鏈升級\n以下是主題 evidence 白名單上下文：\n【global_news】\n[global_news-1] 標題：ChatGPT hits a billion monthly app users despite souring public AI sentiment\n    來源：https://www.cnbc.com/2026/06/12/chatgpt-a-billion-monthly-app-users-despite-souring-public-ai-sentiment.html\n    來源名稱：CNBC\n    來源分類：global_news\n    發布時間：Fri, 12 Jun 2026 06:07:18 GMT\n    內容：ChatGPT: a billion monthly app users despite souring public AI sentiment Skip Navigation Markets Pre-Markets U.S. Markets Europe Markets China Markets "
+      }
+    ]
   }
 }
