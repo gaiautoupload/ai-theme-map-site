@@ -1213,13 +1213,25 @@
                 </div>
             </div>
 
-            <!-- 🔥 今日法人集體佈局焦點題材 -->
-            <div class="space-y-4">
-                <div class="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-2 pb-2 border-b border-slate-800/80">
-                    <i data-lucide="flame" class="w-4 h-4 text-amber-500 animate-pulse"></i> 今日法人焦點集體佈局題材 (同買 + 外資爆量量增)
+            <!-- 🔥 今日法人集體佈局焦點與金流排行 -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Left: 焦點佈局題材 (占 2 欄) -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-2 pb-2 border-b border-slate-800/80">
+                        <i data-lucide="flame" class="w-4 h-4 text-amber-500 animate-pulse"></i> 今日法人焦點集體佈局題材 (同買 + 外資爆量量增)
+                    </div>
+                    <div id="chips-focus-themes-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Dynamic rendering focus themes here -->
+                    </div>
                 </div>
-                <div id="chips-focus-themes-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <!-- Dynamic rendering focus themes here -->
+                <!-- Right: 金流熱門排行 (占 1 欄) -->
+                <div class="space-y-4">
+                    <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-2 pb-2 border-b border-slate-800/80">
+                        <i data-lucide="line-chart" class="w-4 h-4 text-emerald-400"></i> 今日法人資金流入題材排行 (Top Themes Capital Inflow)
+                    </div>
+                    <div id="chips-theme-flow-container" class="bg-slate-950/60 border border-slate-800 rounded-xl p-4 space-y-3">
+                        <!-- Dynamic rendering inflow ranks -->
+                    </div>
                 </div>
             </div>
 
@@ -1471,7 +1483,7 @@
             const versionStamp = Date.now();
             try {
                 const versionedMapCandidates = [
-                    './maps_repo_20260615_170044.json',
+                    './maps_repo_20260615_174422.json',
                     './maps_repo.json'
                 ];
                 const { data: rawRepo, url } = await fetchJsonWithFallback([
@@ -3383,6 +3395,62 @@
                 document.getElementById('chips-update-time').textContent = summary.update_time;
 
                 focusContainer.innerHTML = '';
+                
+                // Calculate Theme/Industry Inflow dynamically
+                const themeInflow = {};
+                const targetList = summary.cohort_buys || [];
+                targetList.forEach(s => {
+                    const themes = s.themes || [];
+                    const netBuy = s.total_net || 0;
+                    themes.forEach(t => {
+                        if (!themeInflow[t]) {
+                            themeInflow[t] = {
+                                themeName: t,
+                                count: 0,
+                                totalNet: 0,
+                                stocks: []
+                            };
+                        }
+                        themeInflow[t].count += 1;
+                        themeInflow[t].totalNet += netBuy;
+                        themeInflow[t].stocks.push(s.name);
+                    });
+                });
+
+                const sortedInflow = Object.values(themeInflow)
+                    .filter(item => item.totalNet > 0)
+                    .sort((a, b) => b.totalNet - a.totalNet)
+                    .slice(0, 5);
+
+                const flowContainer = document.getElementById('chips-theme-flow-container');
+                if (flowContainer) {
+                    if (sortedInflow.length > 0) {
+                        flowContainer.innerHTML = sortedInflow.map((item, idx) => {
+                            let rankColor = 'text-emerald-400';
+                            if (idx === 0) rankColor = 'text-amber-400';
+                            else if (idx === 1) rankColor = 'text-cyan-300';
+                            
+                            return `
+                                <div class="flex flex-col gap-1 py-2 border-b border-slate-800/40 text-xs">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-2">
+                                            <span class="w-5 h-5 flex items-center justify-center rounded bg-slate-900 font-mono font-bold ${rankColor}">#${idx + 1}</span>
+                                            <span class="text-slate-100 font-bold">${item.themeName}</span>
+                                        </div>
+                                        <span class="font-mono font-bold text-emerald-400">+${item.totalNet} 張</span>
+                                    </div>
+                                    <div class="flex items-center justify-between text-[10px] text-slate-500">
+                                        <span>共 ${item.count} 檔發動</span>
+                                        <span class="max-w-[150px] truncate text-slate-400" title="${item.stocks.join(', ')}">${item.stocks.slice(0, 3).join(', ')}${item.stocks.length > 3 ? '...' : ''}</span>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('');
+                    } else {
+                        flowContainer.innerHTML = '<div class="py-4 text-center text-slate-500 text-xs">今日無明顯同買資金流入題材。</div>';
+                    }
+                }
+
                 if (summary.focus_themes && summary.focus_themes.length > 0) {
                     summary.focus_themes.forEach(theme => {
                         const stocksHTML = theme.stocks.map(s => `

@@ -244,6 +244,34 @@ def get_stock_themes():
         except Exception as e:
             print(f"解析 maps_repo.json 出錯: {e}")
             
+    # 3. 備用：若個股仍無題材對照，則以其在 ticker_registry_tw.json 中的產業分類作為預設主題
+    registry_path = os.path.join(PROJECT_DIR, "ticker_registry_tw.json")
+    if os.path.exists(registry_path):
+        industry_map = {
+            "01": "水泥工業", "02": "食品工業", "03": "塑膠工業", "04": "紡織纖維",
+            "05": "電機機械", "06": "電器電纜", "07": "化學工業", "08": "玻璃陶瓷",
+            "09": "造紙工業", "10": "鋼鐵工業", "11": "橡膠工業", "12": "汽車工業",
+            "13": "電子工業", "14": "建材營造", "15": "航運業", "16": "觀光餐旅",
+            "17": "金融保險業", "18": "貿易百貨", "19": "綜合", "20": "其他",
+            "21": "化學工業", "22": "生技醫療業", "23": "油電燃氣業", "24": "半導體業",
+            "25": "電腦及週邊設備業", "26": "光電業", "27": "通信網路業", "28": "電子零組件業",
+            "29": "電子通路業", "30": "資訊服務業", "31": "其他電子業"
+        }
+        try:
+            with open(registry_path, "r", encoding="utf-8") as f:
+                registry = json.load(f)
+            for sym, info in registry.items():
+                ind = info.get("industry")
+                if ind and ind != "未分類":
+                    mapped_name = industry_map.get(ind, ind)
+                    if sym not in stock_themes:
+                        stock_themes[sym] = []
+                    if not stock_themes[sym]:
+                        stock_themes[sym].append(mapped_name)
+            print(f"完成整合產業分類作為備用題材，目前個股題材/產業庫總共: {len(stock_themes)} 筆對照")
+        except Exception as e:
+            print(f"解析 ticker_registry_tw.json 出錯: {e}")
+            
     return stock_themes
 
 def analyze_chips(target_date):
