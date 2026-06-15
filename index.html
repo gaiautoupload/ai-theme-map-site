@@ -41,44 +41,50 @@
                 margin-top: auto;
             }
         }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col antialiased">
 
     <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-8">
-                <div class="flex items-center gap-3 cursor-pointer" onclick="showDashboardHome()">
-                    <div class="bg-gradient-to-tr from-cyan-500 to-indigo-600 p-2 rounded-lg text-white shadow-lg shadow-indigo-500/20">
-                        <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <h1 class="text-lg font-bold bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
-                            LLM 投資決策 Wiki 平台
-                        </h1>
-                        <p class="text-xs text-slate-400">動態主題式先進產業鏈研究與佈局地圖</p>
-                    </div>
+            <div class="flex items-center gap-3 cursor-pointer" onclick="showDashboardHome()">
+                <div class="bg-gradient-to-tr from-cyan-500 to-indigo-600 p-2 rounded-lg text-white shadow-lg shadow-indigo-500/20">
+                    <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
                 </div>
-                <nav class="hidden md:flex items-center gap-4 border-l border-slate-800 pl-6 h-8">
-                    <button onclick="showDashboardHome()" id="nav-btn-home" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition">投研首頁</button>
-                    <button onclick="showThemeLibrary()" id="nav-btn-library" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition">主題地圖庫</button>
-                    <button onclick="showStockWiki()" id="nav-btn-wiki" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition">個股 Wiki</button>
-                    <button onclick="showMacroPage()" id="nav-btn-macro" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition">全球總經</button>
-                    <button onclick="showIndustryPricing()" id="nav-btn-industry" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition">產業報價</button>
-                    <button onclick="showChipsAnalysis()" id="nav-btn-chips" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition">法人籌碼</button>
-                    <button onclick="showTechDocs()" id="nav-btn-tech" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition">技術說明</button>
-                </nav>
-            </div>
-            <div class="relative hidden lg:block w-72 mx-4 z-50">
-                <div class="flex items-center gap-2 bg-slate-950 border border-slate-800 px-3 py-1.5 rounded-xl">
-                    <i data-lucide="search" class="w-4 h-4 text-slate-500"></i>
-                    <input type="text" id="global-stock-search" oninput="handleGlobalSearch(this.value)" placeholder="個股快速搜尋..." class="bg-transparent border-none text-xs text-slate-200 focus:outline-none w-full">
-                </div>
-                <div id="global-search-results" class="absolute left-0 right-0 mt-1 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl max-h-60 overflow-y-auto hidden divide-y divide-slate-800/50">
+                <div>
+                    <h1 class="text-lg font-bold bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
+                        LLM 投資決策 Wiki 平台
+                    </h1>
+                    <p class="text-xs text-slate-400">動態主題式先進產業鏈研究與佈局地圖</p>
                 </div>
             </div>
-            <div id="header-status" class="hidden sm:flex items-center gap-4">
+            
+            <div class="flex items-center gap-4">
+                <div class="relative hidden lg:block w-72 z-50">
+                    <div class="flex items-center gap-2 bg-slate-950 border border-slate-800 px-3 py-1.5 rounded-xl">
+                        <i data-lucide="search" class="w-4 h-4 text-slate-500"></i>
+                        <input type="text" id="global-stock-search" oninput="handleGlobalSearch(this.value)" placeholder="個股快速搜尋..." class="bg-transparent border-none text-xs text-slate-200 focus:outline-none w-full">
+                    </div>
+                    <div id="global-search-results" class="absolute left-0 right-0 mt-1 bg-slate-900 border border-slate-800 rounded-xl shadow-2xl max-h-60 overflow-y-auto hidden divide-y divide-slate-800/50">
+                    </div>
                 </div>
+                <div id="header-status" class="hidden sm:flex items-center gap-4">
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-slate-800 bg-slate-900/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center overflow-x-auto gap-3 no-scrollbar">
+                <button onclick="showDashboardHome()" id="nav-btn-home" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition whitespace-nowrap">投研首頁</button>
+                <button onclick="showThemeLibrary()" id="nav-btn-library" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">主題地圖庫</button>
+                <button onclick="showStockWiki()" id="nav-btn-wiki" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">個股 Wiki</button>
+                <button onclick="showMacroPage()" id="nav-btn-macro" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">全球總經</button>
+                <button onclick="showIndustryPricing()" id="nav-btn-industry" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">產業報價</button>
+                <button onclick="showChipsAnalysis()" id="nav-btn-chips" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">法人籌碼</button>
+                <button onclick="showTechDocs()" id="nav-btn-tech" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">技術說明</button>
+            </div>
         </div>
     </header>
 
