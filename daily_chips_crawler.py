@@ -176,99 +176,65 @@ def save_to_db(records):
 
 def get_stock_themes():
     """
-    從 stocks_wiki.json 與 maps_repo.json 中解析 股號 -> 題材清單
+    從大眾投資人看得懂的常見板塊對照表，以及 ticker_registry_tw.json 產業分類中，
+    建立乾淨、通俗易懂的 股號 -> 題材清單（排除複雜月地圖主題名稱）。
     """
-    import re
     stock_themes = {}
     
-    # 1. 優先從 stocks_wiki.json 載入
-    stocks_wiki_path = os.path.join(PROJECT_DIR, "stocks_wiki.json")
-    if os.path.exists(stocks_wiki_path):
-        try:
-            with open(stocks_wiki_path, "r", encoding="utf-8") as f:
-                wiki = json.load(f)
-            for sym, info in wiki.items():
-                themes = info.get("themes", [])
-                if themes:
-                    if sym not in stock_themes:
-                        stock_themes[sym] = []
-                    for t in themes:
-                        if t not in stock_themes[sym]:
-                            stock_themes[sym].append(t)
-            print(f"成功從 stocks_wiki.json 載入 {len(stock_themes)} 筆個股題材對照")
-        except Exception as e:
-            print(f"解析 stocks_wiki.json 出錯: {e}")
-            
-    # 遞迴掃描器，用來掃描所有字串欄位中的 (股號) 與 symbol 鍵值
-    def scan_obj_for_symbols(obj, current_key=None):
-        syms = []
-        if isinstance(obj, str):
-            for m in re.finditer(r'\((\d{4,6})\)', obj):
-                syms.append(m.group(1))
-            if current_key in ["symbol", "ticker", "code"] and re.match(r'^\d{4,6}$', obj):
-                syms.append(obj)
-        elif isinstance(obj, (int, float)):
-            val_str = str(int(obj))
-            if current_key in ["symbol", "ticker", "code"] and re.match(r'^\d{4,6}$', val_str):
-                syms.append(val_str)
-        elif isinstance(obj, list):
-            for item in obj:
-                syms.extend(scan_obj_for_symbols(item, current_key))
-        elif isinstance(obj, dict):
-            for k, val in obj.items():
-                syms.extend(scan_obj_for_symbols(val, k))
-        return syms
-
-    # 2. 輔助/備用從 maps_repo.json 載入
-    if os.path.exists(MAPS_REPO_PATH):
-        try:
-            with open(MAPS_REPO_PATH, "r", encoding="utf-8") as f:
-                repo = json.load(f)
-            
-            for map_id, map_data in repo.items():
-                if not isinstance(map_data, dict):
-                    continue
-                theme_name = map_data.get("theme_name") or map_data.get("title")
-                if not theme_name:
-                    continue
-                
-                # 掃描整張地圖的所有欄位，找出所有提及的股號
-                found_symbols = scan_obj_for_symbols(map_data)
-                for sym in found_symbols:
-                    if sym not in stock_themes:
-                        stock_themes[sym] = []
-                    if theme_name not in stock_themes[sym]:
-                        stock_themes[sym].append(theme_name)
-                                
-            print(f"完成整合 maps_repo.json，個股題材庫總共: {len(stock_themes)} 筆對照")
-        except Exception as e:
-            print(f"解析 maps_repo.json 出錯: {e}")
-            
-    # 3. 備用：若個股仍無題材對照，則以其在 ticker_registry_tw.json 中的產業分類作為預設主題
+    # 1. 優先使用大眾投資人最熟悉、直觀的熱門概念板塊對照表
+    COMMON_THEME_MAP = {
+        # 晶圓代工與半導體
+        "2330": ["晶圓代工"], "2303": ["晶圓代工"], "5347": ["晶圓代工"], "6488": ["矽晶圓"], "3707": ["矽晶圓"],
+        # 先進封裝與封測設備
+        "3711": ["半導體封測"], "3131": ["先進封裝設備"], "3583": ["先進封裝設備"], "6187": ["先進封裝"], "2404": ["半導體設備"],
+        # IC 設計
+        "2454": ["IC設計"], "3034": ["IC設計"], "2379": ["IC設計"], "3661": ["IP/IC設計"], "3443": ["IP/IC設計"], "3529": ["IP/IC設計"],
+        # 被動元件與石英元件
+        "2327": ["被動元件"], "2492": ["被動元件"], "6175": ["被動元件"], "3042": ["被動元件/石英"], "3026": ["被動元件"], "2478": ["被動元件"],
+        # PCB、銅箔基板、載板
+        "3044": ["PCB"], "6191": ["PCB"], "2368": ["PCB"], "8358": ["PCB/銅箔"], "2383": ["銅箔基板/CCL"], "6213": ["銅箔基板/CCL"], "6274": ["銅箔基板/CCL"], "3037": ["IC載板"], "3189": ["IC載板"], "8046": ["IC載板"],
+        # 矽光子與光通訊
+        "3081": ["矽光子/光通訊"], "4979": ["矽光子/光通訊"], "3234": ["矽光子/光通訊"], "6451": ["矽光子/光通訊"], "3363": ["矽光子/光通訊"], "4908": ["矽光子/光通訊"], "3450": ["矽光子/光通訊"],
+        # 散熱與機殼
+        "3017": ["散熱/機殼"], "3324": ["散熱/機殼"], "2421": ["散熱/機殼"], "3653": ["散熱"], "6230": ["散熱"],
+        # 金融股
+        "2883": ["金融"], "2881": ["金融"], "2882": ["金融"], "2880": ["金融"], "2884": ["金融"], "2885": ["金融"], "2886": ["金融"], "2891": ["金融"], "2892": ["金融"], "2887": ["金融"], "2888": ["金融"], "2801": ["金融"], "2890": ["金融"], "5880": ["金融"], "5871": ["金融"],
+        # AI伺服器/代工
+        "2317": ["AI伺服器/代工"], "2382": ["AI伺服器/代工"], "3231": ["AI伺服器/代工"], "2356": ["AI伺服器/代工"], "6669": ["AI伺服器/代工"], "2308": ["電源供應器"],
+        # 重電與綠能電力
+        "1513": ["重電/電力系統"], "1514": ["重電/電力系統"], "1519": ["重電/電力系統"], "1503": ["重電/電力系統"], "6806": ["綠能/電力"],
+        # 低軌衛星
+        "3491": ["低軌衛星"], "2314": ["低軌衛星"], "6285": ["低軌衛星"],
+        # 其他材料
+        "6509": ["電池材料"],
+    }
+    
+    for sym, themes in COMMON_THEME_MAP.items():
+        stock_themes[sym] = list(themes)
+        
+    # 2. 備用：若不在常見熱門表，則載入 ticker_registry_tw.json 產業分類並進行通俗化轉換
     registry_path = os.path.join(PROJECT_DIR, "ticker_registry_tw.json")
     if os.path.exists(registry_path):
         industry_map = {
-            "01": "水泥工業", "02": "食品工業", "03": "塑膠工業", "04": "紡織纖維",
-            "05": "電機機械", "06": "電器電纜", "07": "化學工業", "08": "玻璃陶瓷",
-            "09": "造紙工業", "10": "鋼鐵工業", "11": "橡膠工業", "12": "汽車工業",
-            "13": "電子工業", "14": "建材營造", "15": "航運業", "16": "觀光餐旅",
-            "17": "金融保險業", "18": "貿易百貨", "19": "綜合", "20": "其他",
-            "21": "化學工業", "22": "生技醫療業", "23": "油電燃氣業", "24": "半導體業",
-            "25": "電腦及週邊設備業", "26": "光電業", "27": "通信網路業", "28": "電子零組件業",
-            "29": "電子通路業", "30": "資訊服務業", "31": "其他電子業"
+            "01": "水泥", "02": "食品", "03": "塑膠", "04": "紡織纖維",
+            "05": "電機機械", "06": "電器電纜", "07": "化學", "08": "玻璃陶瓷",
+            "09": "造紙", "10": "鋼鐵", "11": "橡膠", "12": "汽車",
+            "13": "電子", "14": "建材營造", "15": "航運", "16": "觀光餐旅",
+            "17": "金融", "18": "貿易百貨", "19": "綜合", "20": "其他",
+            "21": "化學", "22": "生技醫療", "23": "油電燃氣", "24": "半導體",
+            "25": "電腦及週邊", "26": "光電", "27": "通信網路", "28": "電子零組件",
+            "29": "電子通路", "30": "資訊服務", "31": "其他電子"
         }
         try:
             with open(registry_path, "r", encoding="utf-8") as f:
                 registry = json.load(f)
             for sym, info in registry.items():
+                if sym in stock_themes:
+                    continue  # 已經有常見對照表了，跳過
                 ind = info.get("industry")
                 if ind and ind != "未分類":
                     mapped_name = industry_map.get(ind, ind)
-                    if sym not in stock_themes:
-                        stock_themes[sym] = []
-                    if not stock_themes[sym]:
-                        stock_themes[sym].append(mapped_name)
-            print(f"完成整合產業分類作為備用題材，目前個股題材/產業庫總共: {len(stock_themes)} 筆對照")
+                    stock_themes[sym] = [mapped_name]
         except Exception as e:
             print(f"解析 ticker_registry_tw.json 出錯: {e}")
             
