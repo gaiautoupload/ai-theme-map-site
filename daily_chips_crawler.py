@@ -3,7 +3,11 @@ import sys
 import json
 import sqlite3
 import requests
+import urllib3
 from datetime import datetime, timedelta
+
+# 停用 SSL 憑證警告
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # 設定專案路徑與檔案路徑
 PROJECT_DIR = r"D:\ai-theme-map-site"
@@ -50,7 +54,7 @@ def fetch_twse_data(date_str):
     url = f"https://www.twse.com.tw/fund/T86?response=json&date={date_str}&selectType=ALLBUT0999"
     print(f"抓取證交所資料 ({date_str}): {url}")
     try:
-        resp = requests.get(url, timeout=15)
+        resp = requests.get(url, timeout=15, verify=False)
         if resp.status_code != 200:
             print(f"證交所請求失敗，狀態碼: {resp.status_code}")
             return []
@@ -103,7 +107,7 @@ def fetch_tpex_data(date_str):
     url = f"https://www.tpex.org.tw/openapi/v1/tpex_3insti_daily_trading?date={formatted_date}"
     print(f"抓取櫃買中心資料 ({formatted_date}): {url}")
     try:
-        resp = requests.get(url, timeout=15)
+        resp = requests.get(url, timeout=15, verify=False)
         if resp.status_code != 200:
             print(f"櫃買中心請求失敗，狀態碼: {resp.status_code}")
             return []

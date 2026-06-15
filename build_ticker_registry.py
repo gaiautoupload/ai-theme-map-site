@@ -4,6 +4,10 @@ from pathlib import Path
 from typing import Dict, Any
 
 import requests
+import urllib3
+
+# 停用 SSL 憑證警告
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 OUTPUT_FILE = Path(os.getenv("MAP_TICKER_REGISTRY", "ticker_registry_tw.json"))
 TIMEOUT = int(os.getenv("MAP_SEARCH_TIMEOUT", "30"))
@@ -44,9 +48,9 @@ def load_cached_registry() -> Dict[str, Dict[str, Any]]:
 
 def fetch_json(url: str, label: str):
     try:
-        return requests.get(url, headers=HEADERS, timeout=TIMEOUT).json()
+        return requests.get(url, headers=HEADERS, timeout=TIMEOUT, verify=False).json()
     except Exception as exc:
-        print(f"{label} 下載失敗，改用既有 registry 快取補足：{exc}")
+        print(f"{label} 下載，或寫入 registry 取得失敗：{exc}")
         return None
 
 
