@@ -141,7 +141,7 @@
                         </div>
                     </div>
                     <!-- US Tech Leaders Mini Grid -->
-                    <div class="grid grid-cols-3 gap-3">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
                         <!-- NVIDIA -->
                         <div class="h-[140px] bg-slate-900 border border-slate-800/60 rounded-xl overflow-hidden relative" title="輝達 (NVDA)">
                             <div id="tv-chart-nvda" class="w-full h-full"></div>
@@ -156,6 +156,11 @@
                         <div class="h-[140px] bg-slate-900 border border-slate-800/60 rounded-xl overflow-hidden relative" title="美光 (MU)">
                             <div id="tv-chart-mu" class="w-full h-full"></div>
                             <div class="absolute top-1 left-2 pointer-events-none bg-slate-950/75 backdrop-blur-sm px-1.5 py-0.5 rounded text-[9px] font-bold text-slate-300 border border-slate-800">MICRON</div>
+                        </div>
+                        <!-- UMC ADR -->
+                        <div class="h-[140px] bg-slate-900 border border-slate-800/60 rounded-xl overflow-hidden relative" title="聯電 ADR (UMC)">
+                            <div id="tv-chart-umc" class="w-full h-full"></div>
+                            <div class="absolute top-1 left-2 pointer-events-none bg-slate-950/75 backdrop-blur-sm px-1.5 py-0.5 rounded text-[9px] font-bold text-slate-300 border border-slate-800">UMC ADR (聯電)</div>
                         </div>
                     </div>
                 </div>
@@ -1396,7 +1401,7 @@
             const versionStamp = Date.now();
             try {
                 const versionedMapCandidates = [
-                    './maps_repo_20260615_150837.json',
+                    './maps_repo_20260615_150944.json',
                     './maps_repo.json'
                 ];
                 const { data: rawRepo, url } = await fetchJsonWithFallback([
@@ -1760,10 +1765,11 @@
                 });
             }
 
-            // Render the other 3 Mini US/Tech charts
+            // Render the other 4 Mini US/Tech/ADR charts
             renderMiniChart("NASDAQ:NVDA", "tv-chart-nvda");
             renderMiniChart("NASDAQ:AAPL", "tv-chart-aapl");
             renderMiniChart("NASDAQ:MU", "tv-chart-mu");
+            renderMiniChart("NYSE:UMC", "tv-chart-umc");
         }
 
         async function triggerMacroRefresh() {
@@ -2059,6 +2065,12 @@
             currentMapKey = mapKey;
 
             document.getElementById('panel-home').classList.add('hidden');
+            if (document.getElementById('panel-theme-library')) document.getElementById('panel-theme-library').classList.add('hidden');
+            document.getElementById('panel-stock-wiki').classList.add('hidden');
+            if (document.getElementById('panel-tech-docs')) document.getElementById('panel-tech-docs').classList.add('hidden');
+            if (document.getElementById('panel-macro-market')) document.getElementById('panel-macro-market').classList.add('hidden');
+            if (document.getElementById('panel-industry-pricing')) document.getElementById('panel-industry-pricing').classList.add('hidden');
+            if (document.getElementById('panel-chips-analysis')) document.getElementById('panel-chips-analysis').classList.add('hidden');
             document.getElementById('panel-map-workspace').classList.remove('hidden');
 
             // 頂部狀態更新
