@@ -1584,7 +1584,13 @@
             const abcDetails = document.getElementById('macro-abc-details');
             if (abcDetails && abc.analysis) {
                 // Parse markdown-like list to HTML list items
-                const lines = abc.analysis.split('\n').filter(l => l.trim());
+                let lines = [];
+                if (typeof abc.analysis === 'string') {
+                    lines = abc.analysis.split('\n');
+                } else if (Array.isArray(abc.analysis)) {
+                    lines = abc.analysis;
+                }
+                lines = lines.filter(l => l && l.trim());
                 abcDetails.innerHTML = lines.map(line => {
                     const cleanLine = line.replace(/^\-\s+\*\*/, '').replace(/^\-\s+/, '').replace(/\*\*/g, '');
                     const parts = cleanLine.split('：');
@@ -1798,6 +1804,7 @@
 
         // 切換並渲染主題地圖庫分頁
         function showThemeLibrary() {
+            window.scrollTo(0, 0);
             document.getElementById('panel-home').classList.add('hidden');
             if (document.getElementById('panel-theme-library')) document.getElementById('panel-theme-library').classList.remove('hidden');
             document.getElementById('panel-stock-wiki').classList.add('hidden');
@@ -2065,6 +2072,7 @@
 
         // 載入特定地圖工作區
         function loadMapWorkspace(mapKey) {
+            window.scrollTo(0, 0);
             const mapData = mapsRepository[mapKey];
             if (!mapData) return;
             currentMapData = mapData;
@@ -3083,6 +3091,7 @@
 
         // 個股 Wiki 導覽控制與渲染
         function showStockWiki() {
+            window.scrollTo(0, 0);
             document.getElementById('panel-home').classList.add('hidden');
             if (document.getElementById('panel-theme-library')) document.getElementById('panel-theme-library').classList.add('hidden');
             document.getElementById('panel-map-workspace').classList.add('hidden');
@@ -3102,6 +3111,7 @@
         }
         
         function showDashboardHome() {
+            window.scrollTo(0, 0);
             document.getElementById('panel-stock-wiki').classList.add('hidden');
             if (document.getElementById('panel-theme-library')) document.getElementById('panel-theme-library').classList.add('hidden');
             document.getElementById('panel-map-workspace').classList.add('hidden');
@@ -3121,6 +3131,7 @@
         }
 
         function showTechDocs() {
+            window.scrollTo(0, 0);
             document.getElementById('panel-home').classList.add('hidden');
             if (document.getElementById('panel-theme-library')) document.getElementById('panel-theme-library').classList.add('hidden');
             document.getElementById('panel-stock-wiki').classList.add('hidden');
@@ -3140,6 +3151,7 @@
         }
 
         function showMacroPage() {
+            window.scrollTo(0, 0);
             document.getElementById('panel-home').classList.add('hidden');
             if (document.getElementById('panel-theme-library')) document.getElementById('panel-theme-library').classList.add('hidden');
             document.getElementById('panel-stock-wiki').classList.add('hidden');
@@ -3174,6 +3186,7 @@
         }
 
         function showIndustryPricing() {
+            window.scrollTo(0, 0);
             document.getElementById('panel-home').classList.add('hidden');
             if (document.getElementById('panel-theme-library')) document.getElementById('panel-theme-library').classList.add('hidden');
             document.getElementById('panel-stock-wiki').classList.add('hidden');
@@ -3241,6 +3254,7 @@
         }
 
         function showChipsAnalysis() {
+            window.scrollTo(0, 0);
             document.getElementById('panel-home').classList.add('hidden');
             if (document.getElementById('panel-theme-library')) document.getElementById('panel-theme-library').classList.add('hidden');
             document.getElementById('panel-stock-wiki').classList.add('hidden');
