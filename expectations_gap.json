@@ -22,18 +22,18 @@
   {
     "category": "儲存設備 (Storage)",
     "target": "硬碟 (HDD) 供給缺口",
-    "market_expect": "市場原認為硬碟產業已趨成熟，PC需求衰退導致需求萎縮",
-    "real_data": "AI推論帶動HDD需求年增40-50%，供給僅增30-35%，缺口持續2-3年",
-    "gap_space": "需求增速大幅超越供給，價格重估彈性極大，獲利擴張空間顯著",
+    "market_expect": "市場原認為硬碟產業已成熟，PC需求衰退導致需求萎縮",
+    "real_data": "AI推論帶動需求年增40-50%，供給僅增30-35%，ODM庫存僅剩1-2周",
+    "gap_space": "供需缺口擴大，價格重估彈性極大，供不應求持續2-3年",
     "concept_stocks": [
       "8299 群聯",
       "2344 華邦電",
-      "2353 宏碁",
-      "2357 華碩"
+      "3035 智原",
+      "2454 聯發科"
     ],
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
-    "source": "鉅亨網：大摩預警硬碟結構性供不應求，雙雄受惠強者恆強",
+    "source": "鉅亨網：大摩預警硬碟結構性供不應求",
     "last_update": "2026-06-16"
   },
   {
@@ -69,34 +69,34 @@
   {
     "category": "先進半導體 (Advanced Semiconductor)",
     "target": "輝達 Blackwell (GB300/B300) 及 HBM/DRAM 供應鏈",
-    "market_expect": "產品進入生命週期尾聲，供貨趨於寬鬆，需求正常衰退",
+    "market_expect": "產品進入生命週期尾聲，供貨應趨於寬鬆，庫存壓力釋放",
     "real_data": "GB300/B300 庫存極度緊缺，需求遠超華爾街預估，HBM 產能為主要瓶頸",
-    "gap_space": "供需結構性緊壓持續，輝達提前鎖定貨源優勢擴大，供應鏈估值重估空間大",
+    "gap_space": "供需結構性擠壓持續，HBM/DRAM 瓶頸強化護城河，估值溢價合理",
     "concept_stocks": [
       "2344 華邦電",
+      "2303 聯電",
+      "2454 聯發科",
+      "3711 日月光投控",
       "2451 創見",
       "3017 奇鋐",
       "2388 威盛",
       "6770 力積電",
-      "3711 日月光投控",
       "2330 台積電",
       "2408 南亞科"
     ],
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
     "source": "Wedbush 研報指出 Blackwell 需求超預期，HBM 與 DRAM 產能瓶頸束縛行業",
-    "last_update": "2026-06-16"
+    "last_update": "2026-06-11"
   },
   {
     "category": "光通訊與散熱 (Optical & Thermal)",
     "target": "光 PD (Photodiode) 元件",
-    "market_expect": "原預期日系廠商仍佔主導，市場對供應穩定性無過度擔憂",
-    "real_data": "日商淡出致供應銳減，現貨市場嚴重供不應求，引發漲價潮",
-    "gap_space": "供給缺口引發價格重估，鼎元獲轉單帶來額外營收成長動能",
+    "market_expect": "市場原預期日系廠商仍佔主導，供應穩定無大缺口",
+    "real_data": "日系淡出致供應銳減，現貨嚴重供不應求，鼎元獲美系大廠轉單",
+    "gap_space": "供給缺口引發漲價效應，獲利結構因量價齊升而質變",
     "concept_stocks": [
-      "2426 鼎元",
-      "2301 光寶科",
-      "2383 台光電"
+      "2426 鼎元"
     ],
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
@@ -120,9 +120,9 @@
   {
     "category": "記憶體 (Memory)",
     "target": "DRAM 供給缺口與價格重估",
-    "market_expect": "市場原預期記憶體價格遵循傳統週期性波動，每五年跌價9成",
-    "real_data": "大摩指出價格飆漲六倍，2027年PC DRAM缺口15%，平均售價恐大漲67%",
-    "gap_space": "價格重估彈性極大，漲幅達疫情通膨時期的八至九倍，結構性危機確認",
+    "market_expect": "市場原預期為傳統週期性波動，漲幅有限且可預測",
+    "real_data": "價格飆漲六倍，2027年PC DRAM缺口15%，平均售價恐大漲67%",
+    "gap_space": "價格重估彈性極大，從週期性漲價轉為結構性短缺，估值邏輯徹底改寫",
     "concept_stocks": [
       "2344 華邦電",
       "2337 旺宏",
@@ -131,7 +131,7 @@
     ],
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
-    "source": "鉅亨網/大摩研報：AI引爆結構性供應危機，記憶體價格飆漲六倍",
+    "source": "鉅亨網：大摩預警記憶體結構性危機與價格飆漲",
     "last_update": "2026-06-16"
   },
   {
@@ -217,13 +217,14 @@
   {
     "category": "記憶體 (Memory)",
     "target": "快閃記憶體 (NAND Flash) 成本與供給",
-    "market_expect": "原預期記憶體價格溫和上漲，屬週期性波動",
-    "real_data": "記憶體成本兩年暴漲五倍，Xbox因缺料無法足量生產",
-    "gap_space": "成本飆升幅度遠超預期，供應鏈結構性短缺確認",
+    "market_expect": "市場原預期記憶體價格溫和上漲，屬週期性波動",
+    "real_data": "記憶體成本兩年暴漲五倍，供應短缺成數位經濟風險",
+    "gap_space": "成本飆升幅度遠超預期，結構性短缺導致估值重估",
     "concept_stocks": [
       "2344 華邦電",
       "2337 旺宏",
-      "2451 創見"
+      "2451 創見",
+      "3260 威剛"
     ],
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
@@ -240,7 +241,8 @@
       "2344 華邦電",
       "2451 創見",
       "3260 威剛",
-      "8299 群聯"
+      "8299 群聯",
+      "3481 群創"
     ],
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",

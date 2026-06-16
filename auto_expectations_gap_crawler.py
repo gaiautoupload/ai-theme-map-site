@@ -174,6 +174,117 @@ def normalize_category(cat):
         return "AI 基礎設施 (AI Infrastructure)"
     return cat_clean
 
+def is_duplicate_target(t1, t2):
+    t1_lower = t1.lower()
+    t2_lower = t2.lower()
+    
+    # 1. Oracle / AI Cloud Infrastructure
+    if any(kw in t1_lower for kw in ["oracle", "甲骨文", "gpu 運算需求", "雲端運算", "ai 雲端基礎設施"]) and \
+       any(kw in t2_lower for kw in ["oracle", "甲骨文", "gpu 運算需求", "雲端運算", "ai 雲端基礎設施"]):
+        return True
+        
+    # 2. Blackwell
+    if any(kw in t1_lower for kw in ["blackwell", "輝達"]) and \
+       any(kw in t2_lower for kw in ["blackwell", "輝達"]):
+        return True
+        
+    # 3. DRAM/HBM Cycle
+    if any(kw in t1_lower for kw in ["景氣循環", "hbm 估值", "dram 價格"]) and \
+       any(kw in t2_lower for kw in ["景氣循環", "hbm 估值", "dram 價格"]):
+        if not any(kw in t1_lower + t2_lower for kw in ["美光", "micron", "硬碟", "hdd", "nor flash", "ddr4", "nand"]):
+            return True
+            
+    # 4. Micron
+    if any(kw in t1_lower for kw in ["美光", "micron"]) and \
+       any(kw in t2_lower for kw in ["美光", "micron"]):
+        return True
+
+    # 5. HDD
+    if any(kw in t1_lower for kw in ["硬碟", "hdd"]) and \
+       any(kw in t2_lower for kw in ["硬碟", "hdd"]):
+        return True
+
+    # 6. Nor Flash
+    if "nor flash" in t1_lower and "nor flash" in t2_lower:
+        return True
+
+    # 7. DDR4
+    if "ddr4" in t1_lower and "ddr4" in t2_lower:
+        return True
+
+    # 8. KIOXIA NAND
+    if "kioxia" in t1_lower and "kioxia" in t2_lower:
+        return True
+
+    # 9. SKhynix
+    if "skhynix" in t1_lower and "skhynix" in t2_lower:
+        return True
+
+    # 10. PLP
+    if "plp" in t1_lower and "plp" in t2_lower:
+        return True
+
+    # 11. Photodiode / 光PD
+    if any(kw in t1_lower for kw in ["光 pd", "photodiode", "鼎元"]) and \
+       any(kw in t2_lower for kw in ["光 pd", "photodiode", "鼎元"]):
+        return True
+
+    # 12. CPO
+    if "cpo" in t1_lower and "cpo" in t2_lower:
+        if not any(kw in t1_lower + t2_lower for kw in ["鼎元", "光 pd"]):
+            return True
+
+    return t1_lower == t2_lower
+
+def merge_gap_items(item1, item2):
+    # Merge concept stocks
+    stocks1 = item1.get("concept_stocks", [])
+    stocks2 = item2.get("concept_stocks", [])
+    merged_stocks = list(stocks1)
+    for s in stocks2:
+        if s not in merged_stocks:
+            merged_stocks.append(s)
+            
+    # Choose longer/more descriptive fields
+    real_data = item1.get("real_data", "")
+    if len(item2.get("real_data", "")) > len(real_data):
+        real_data = item2.get("real_data", "")
+        
+    market_expect = item1.get("market_expect", "")
+    if len(item2.get("market_expect", "")) > len(market_expect):
+        market_expect = item2.get("market_expect", "")
+        
+    gap_space = item1.get("gap_space", "")
+    if len(item2.get("gap_space", "")) > len(gap_space):
+        gap_space = item2.get("gap_space", "")
+        
+    # Standardize target name (prefer the cleaner one)
+    target1 = item1.get("target", "")
+    target2 = item2.get("target", "")
+    target = target1
+    # Prefer standardized names
+    if "輝達 Blackwell" in target2 or len(target2) < len(target1) and "Blackwell" in target2:
+        target = target2
+    elif "AI 雲端基礎設施" in target2 and "甲骨文" in target2:
+        target = target2
+    elif "美光" in target2 and len(target2) < len(target1):
+        target = target2
+
+    merged = dict(item1)
+    merged["concept_stocks"] = merged_stocks
+    merged["real_data"] = real_data
+    merged["market_expect"] = market_expect
+    merged["gap_space"] = gap_space
+    merged["target"] = target
+    
+    # Pick latest date
+    date1 = item1.get("last_update", "")
+    date2 = item2.get("last_update", "")
+    if date2 > date1:
+        merged["last_update"] = date2
+        
+    return merged
+
 def main():
     print("=== 自動預期反差/追夢空間搜查引擎啟動 ===")
 
@@ -324,7 +435,7 @@ def main():
             target = new_item.get("target")
             match_idx = -1
             for idx, ext in enumerate(existing_gaps):
-                if ext.get("target") == target:
+                if is_duplicate_target(ext.get("target", ""), target):
                     match_idx = idx
                     break
                     
@@ -332,8 +443,8 @@ def main():
                 if existing_gaps[match_idx].get("target") in initial_targets:
                     print(f"保留核心初始手動項目：{target}，跳過自動覆蓋。")
                 else:
-                    existing_gaps[match_idx] = new_item
-                    print(f"更新已有項目：{target}")
+                    existing_gaps[match_idx] = merge_gap_items(existing_gaps[match_idx], new_item)
+                    print(f"合併/更新已有項目：{existing_gaps[match_idx]['target']}")
                     updated_count += 1
             else:
                 existing_gaps.append(new_item)
