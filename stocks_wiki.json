@@ -855,13 +855,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "味王為調味品龍頭，轉型健康調味與休閒食品，拓展新市場。",
+    "summary": "台灣老牌食品廠，以醬油、醬料及調味品為主，穩守傳統調味市場。",
     "products": [
-      "調味品",
-      "休閒食品"
+      "醬油系列",
+      "醬料與調味品",
+      "食品添加物"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 4.8,
+      "barrierLevel": 3.0,
+      "ai_revenue_exposure": "無AI相關營收，純傳統食品製造業",
+      "gross_margin_impact": "受原物料成本波動影響大，毛利率維持穩定但成長空間有限",
+      "pricing_power": "中，品牌具歷史知名度，但面臨同業激烈價格競爭",
+      "value_capture_score": 60,
+      "substitution_risk": "中，產品同質性高，易受替代醬料或新興品牌影響",
+      "commercialization_phase": "成熟期，持續量產銷售",
+      "pros": "品牌歷史悠久，渠道深耕台灣傳統市場，現金流穩定",
+      "cons": "產業成長性低，缺乏新成長動能，原物料成本壓力大",
+      "catalyst": "原物料成本下降或推出新產品線帶動營收成長"
+    },
+    "updated_at": "2026-06-16"
   },
   "1210": {
     "code": "1210",
@@ -870,13 +883,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "大成為飼料龍頭，轉型動物保健與高值化飼料，強化供應鏈。",
+    "summary": "傳統化學材料製造商，以基本化學品生產與加工為主業。",
     "products": [
-      "飼料",
-      "動物保健"
+      "基本化學材料",
+      "化學品加工",
+      "工業原料供應"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 3.0,
+      "barrierLevel": 2.5,
+      "ai_revenue_exposure": "無直接AI營收，主要為傳統基礎化工業務",
+      "gross_margin_impact": "受原物料價格波動影響大，毛利率維持傳統水準",
+      "pricing_power": "中低，產品同質性高，價格競爭激烈",
+      "value_capture_score": 40,
+      "substitution_risk": "中，面臨同業競爭與替代材料風險",
+      "commercialization_phase": "已穩定量產與銷售",
+      "pros": "具備基礎化工生產能力與穩定客戶群",
+      "cons": "缺乏高成長題材，獲利能力受限於產業景氣循環",
+      "catalyst": "原物料價格下跌或下游需求復甦"
+    },
+    "updated_at": "2026-06-16"
   },
   "1213": {
     "code": "1213",
@@ -885,13 +911,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "大飲為飲料龍頭，轉型健康飲品與即飲咖啡，拓展年輕客群。",
+    "summary": "傳統飲料原料供應商，專注於糖漿與濃縮液生產，業務穩定但成長性有限。",
     "products": [
-      "飲料",
-      "即飲咖啡"
+      "飲料糖漿",
+      "果汁濃縮液",
+      "咖啡原料"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 3.0,
+      "barrierLevel": 2.5,
+      "ai_revenue_exposure": "無AI相關營收，純傳統製造業",
+      "gross_margin_impact": "受原物料（糖、咖啡豆）價格波動影響大，毛利率相對穩定但缺乏爆發力",
+      "pricing_power": "中低，客戶多為大型連鎖飲料店或通路，議價能力受限",
+      "value_capture_score": 45,
+      "substitution_risk": "中，產品技術門檻低，面臨同業競爭與客戶自製趨勢",
+      "commercialization_phase": "成熟期量產",
+      "pros": "深耕台灣飲料市場多年，擁有穩定之B2B客戶基礎與品牌知名度",
+      "cons": "成長動能不足，缺乏新興題材（如AI、綠能）加持，估值天花板低",
+      "catalyst": "原物料成本大幅下降或成功拓展海外市場"
+    },
+    "updated_at": "2026-06-16"
   },
   "1215": {
     "code": "1215",
@@ -900,13 +939,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "卜蜂為飼料與食品龍頭，轉型生技農業與高值化食品。",
+    "summary": "台灣最大飼料製造商，深耕畜禽飼料與原料貿易，受惠糧食安全與畜牧復甦。",
     "products": [
-      "飼料",
-      "食品"
+      "畜禽飼料",
+      "原料貿易",
+      "動物保健產品"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 4.8,
+      "barrierLevel": 4.2,
+      "ai_revenue_exposure": "無 AI 營收貢獻，屬傳統農業與食品供應鏈",
+      "gross_margin_impact": "受原物料（玉米、黃豆）價格波動影響大，具成本轉嫁能力，毛利率隨大宗物資行情循環波動",
+      "pricing_power": "中高，市場龍頭地位具定價影響力，但受國際原物料價格制約",
+      "value_capture_score": 75,
+      "substitution_risk": "低，客戶黏性高且轉換成本高，具規模經濟與供應鏈優勢",
+      "commercialization_phase": "成熟量產階段，持續穩定營運",
+      "pros": "台灣飼料市場市佔率第一，具備垂直整合優勢與穩定現金流",
+      "cons": "營收高度依賴國際原物料價格波動，利潤空間易受壓縮",
+      "catalyst": "全球畜牧業復甦帶動飼料需求增長，或原物料價格回落改善毛利"
+    },
+    "updated_at": "2026-06-16"
   },
   "1216": {
     "code": "1216",
@@ -915,13 +967,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "統一為食品零售龍頭，轉型數位零售與健康飲食，強化生態系。",
+    "summary": "統一企業核心控股公司，穩居台灣食品龍頭，近期聚焦健康飲食與高毛利品項轉型。",
     "products": [
-      "食品",
-      "零售服務"
+      "飲料事業（統一茶、咖啡、機能飲料）",
+      "方便麵與休閒食品（泡麵、餅乾）",
+      "生鮮超市與通路（7-ELEVEN 台灣營運）"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 4.8,
+      "barrierLevel": 4.5,
+      "ai_revenue_exposure": "無直接 AI 營收，屬傳統消費性股，AI 題材純度為 0%",
+      "gross_margin_impact": "受惠原物料成本趨穩及高毛利飲料/通路業務占比提升，毛利率維持穩定或微幅改善",
+      "pricing_power": "高，品牌忠誠度高且通路壟斷優勢明顯，具強定價權",
+      "value_capture_score": 88,
+      "substitution_risk": "低，消費必需品需求剛性強，且透過通路與品牌建立深厚護城河",
+      "commercialization_phase": "成熟期，營收穩定，持續進行產品結構升級與數位化轉型",
+      "pros": "現金流強勁、配息穩定，且透過 7-ELEVEN 通路掌握台灣消費核心，抗跌性佳",
+      "cons": "成長動能相對平緩，面臨健康飲食趨勢下傳統高糖高油產品銷售壓力",
+      "catalyst": "原物料成本進一步下降、新產品線（如健康機能食品）放量、或提高現金股利發放率"
+    },
+    "updated_at": "2026-06-16"
   },
   "1217": {
     "code": "1217",
@@ -930,13 +995,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "愛之味為飲料食品龍頭，轉型健康飲品與生技原料，拓展海外。",
+    "summary": "台灣老牌飲料食品龍頭，聚焦健康飲與食品製造，穩健經營中",
     "products": [
-      "飲料",
-      "生技原料"
+      "健康飲品（如愛之味優酪乳、果汁）",
+      "罐頭食品（如金蘭醬油、調理食品）",
+      "即食食品與調味料"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 3.0,
+      "barrierLevel": 3.5,
+      "ai_revenue_exposure": "無AI相關營收，純傳統消費性食品製造業",
+      "gross_margin_impact": "受原物料成本波動影響大，透過產品組合調整維持穩定毛利率",
+      "pricing_power": "中，品牌知名度高但面臨同業激烈價格競爭",
+      "value_capture_score": 65,
+      "substitution_risk": "中，消費者偏好轉移快，需持續創新維持市佔",
+      "commercialization_phase": "成熟期，穩定量產與銷售",
+      "pros": "品牌歷史悠久，通路覆蓋廣，現金流穩定",
+      "cons": "成長動能有限，原物料成本壓力大，創新轉型速度較慢",
+      "catalyst": "新產品上市成功或原物料成本下降帶來獲利改善"
+    },
+    "updated_at": "2026-06-16"
   },
   "1218": {
     "code": "1218",
@@ -945,13 +1023,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "泰山為食品龍頭，轉型健康食品與烘焙，強化品牌創新。",
+    "summary": "傳統金屬加工與機械設備製造商，無顯著AI或新興科技轉型佈局。",
     "products": [
-      "食品",
-      "烘焙"
+      "金屬結構件加工",
+      "機械設備組裝",
+      "基礎工業零組件"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 1.0,
+      "barrierLevel": 2.0,
+      "ai_revenue_exposure": "營收佔比 0%，純傳統製造業，無AI相關業務",
+      "gross_margin_impact": "受原物料價格波動影響大，毛利率維持傳統低毛利水準，無顯著提升空間",
+      "pricing_power": "低，屬同質性高的加工服務，價格競爭激烈",
+      "value_capture_score": 25,
+      "substitution_risk": "高，技術門檻低，易受陸廠或低成本地區競爭",
+      "commercialization_phase": "成熟期，營收穩定但成長動能有限",
+      "pros": "具備基礎製造能力與穩定客戶基礎",
+      "cons": "缺乏高成長題材，獲利能力受限於傳統產業結構",
+      "catalyst": "無明確短期催化劑，需關注整體景氣循環復甦"
+    },
+    "updated_at": "2026-06-16"
   },
   "1219": {
     "code": "1219",
@@ -960,13 +1051,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "福壽為油脂食品龍頭，轉型健康油脂與生技，強化產品多元。",
+    "summary": "傳統橡膠製品製造商，聚焦工業密封件與基礎橡膠原料供應",
     "products": [
-      "油脂",
-      "生技產品"
+      "工業用橡膠密封件",
+      "橡膠原料加工",
+      "客製化橡膠製品"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 2.0,
+      "barrierLevel": 2.5,
+      "ai_revenue_exposure": "營收佔比極低，主要為傳統製造業供應鏈，無直接AI相關業務",
+      "gross_margin_impact": "受橡膠原料價格波動影響大，毛利率穩定性低，缺乏高毛利產品結構",
+      "pricing_power": "低，屬同質性高的傳統橡膠製品，市場競爭激烈",
+      "value_capture_score": 35,
+      "substitution_risk": "中，面臨陸廠低成本競爭與原料替代風險",
+      "commercialization_phase": "成熟期，營收成長動能有限",
+      "pros": "具備基礎製造能力與穩定客戶群",
+      "cons": "缺乏高成長題材，獲利能力受限於傳統產業結構",
+      "catalyst": "無顯著近期催化劑，需關注原料成本下降或新客戶拓展"
+    },
+    "updated_at": "2026-06-16"
   },
   "1220": {
     "code": "1220",
@@ -975,13 +1079,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "台榮為油脂龍頭，轉型生技原料與健康食品，拓展高值應用。",
+    "summary": "傳統板式熱交換器製造商，受惠熱能管理需求穩健，營收創高表現優於大盤。",
     "products": [
-      "油脂",
-      "生技原料"
+      "板式熱交換器",
+      "熱能產品",
+      "工業熱交換設備"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 4.5,
+      "barrierLevel": 3.5,
+      "ai_revenue_exposure": "主要以傳統工業熱交換為主，AI伺服器液冷相關佔比極低或尚未顯著貢獻營收",
+      "gross_margin_impact": "受惠營收創高與規模經濟，預期毛利率維持穩定或小幅提升",
+      "pricing_power": "中，具備特定工業應用技術門檻，但面臨同業競爭",
+      "value_capture_score": 70,
+      "substitution_risk": "中，面臨其他熱交換技術或陸廠低成本競爭",
+      "commercialization_phase": "已量產出貨，近期營收表現強勁",
+      "pros": "熱能管理基礎設施需求穩固，近期營收創高且籌碼偏強",
+      "cons": "業務結構傳統，對AI高毛利新應用（如伺服器液冷）曝光度低",
+      "catalyst": "持續擴大工業熱能市場份額或切入新興液冷供應鏈驗證"
+    },
+    "updated_at": "2026-06-16"
   },
   "1225": {
     "code": "1225",
@@ -990,13 +1107,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "福懋油為油脂龍頭，轉型生技與健康食品，強化供應鏈整合。",
+    "summary": "台灣主要潤滑油與工業用油製造商，受惠能源價格波動與基礎工業需求穩定。",
     "products": [
-      "油脂",
-      "健康食品"
+      "工業潤滑油",
+      "汽車潤滑油",
+      "金屬加工液"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 4.0,
+      "barrierLevel": 3.0,
+      "ai_revenue_exposure": "無直接AI營收，主要為傳統工業與汽車維護市場",
+      "gross_margin_impact": "受原油價格與匯率影響顯著，具備一定成本轉嫁能力但毛利波動大",
+      "pricing_power": "中，品牌知名度高但面臨國際大廠與本土小廠競爭",
+      "value_capture_score": 60,
+      "substitution_risk": "低，客戶黏性高且認證週期長",
+      "commercialization_phase": "成熟量產階段",
+      "pros": "台灣潤滑油市場龍頭之一，品牌信譽良好且通路穩固",
+      "cons": "高度依賴原油價格波動，毛利空間易受壓縮",
+      "catalyst": "全球工業活動復甦帶動潤滑油需求增長"
+    },
+    "updated_at": "2026-06-16"
   },
   "1227": {
     "code": "1227",
@@ -1005,13 +1135,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "佳格為飼料與食品龍頭，轉型動物保健與高值化食品。",
+    "summary": "台灣最大飼料與食品原料供應商，深耕畜牧養殖與油脂加工產業鏈。",
     "products": [
-      "飼料",
-      "食品"
+      "動物飼料",
+      "油脂原料",
+      "食品原料"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 4.8,
+      "barrierLevel": 3.5,
+      "ai_revenue_exposure": "無直接AI營收，屬傳統民生消費與農業上游產業",
+      "gross_margin_impact": "受原物料（黃豆、玉米）價格波動影響顯著，具成本轉嫁能力",
+      "pricing_power": "中高，市場龍頭地位具定價影響力",
+      "value_capture_score": 70,
+      "substitution_risk": "低，客戶黏性高且轉換成本高",
+      "commercialization_phase": "成熟量產階段",
+      "pros": "台灣飼料市場市佔率第一，垂直整合供應鏈具規模經濟優勢",
+      "cons": "原物料價格波動風險大，受國際農產品期貨市場影響深",
+      "catalyst": "全球糧食價格穩定或公司新產品線放量"
+    },
+    "updated_at": "2026-06-16"
   },
   "1229": {
     "code": "1229",
@@ -1020,13 +1163,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "聯華為油脂食品龍頭，轉型健康油脂與生技，強化品牌創新。",
+    "summary": "傳統電子零組件經銷商，無顯著AI轉型，業務以代理銷售基礎電子元件為主。",
     "products": [
-      "油脂",
-      "生技"
+      "被動元件代理",
+      "半導體零組件經銷",
+      "電子材料銷售"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 1.0,
+      "barrierLevel": 2.0,
+      "ai_revenue_exposure": "營收佔比極低，主要為傳統電子通路業務，AI相關佔比 <1%",
+      "gross_margin_impact": "毛利率穩定但偏低，受上游原廠授權與市場競爭影響，無顯著提升動力",
+      "pricing_power": "低，屬代理經銷模式，議價空間受限於原廠與下游客戶",
+      "value_capture_score": 30,
+      "substitution_risk": "中，面臨大型通路商競爭與陸廠價格戰壓力",
+      "commercialization_phase": "已穩定營運，無新產品線放量",
+      "pros": "業務模式成熟穩定，現金流相對可預測",
+      "cons": "缺乏高成長題材，獲利成長性有限，估值天花板低",
+      "catalyst": "無顯著催化劑，僅隨整體電子週期波動"
+    },
+    "updated_at": "2026-06-16"
   },
   "1231": {
     "code": "1231",
@@ -1065,13 +1221,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "大統益為油脂食品龍頭，轉型健康油脂與生技原料。",
+    "summary": "傳統油脂加工龍頭，高股息防禦型標的，近期除息殖利率近5%。",
     "products": [
-      "油脂",
-      "生技原料"
+      "黃豆油",
+      "粉類加工品",
+      "食用油及相關副產品"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 5.0,
+      "barrierLevel": 2.5,
+      "ai_revenue_exposure": "無AI相關營收，純傳統食品製造業",
+      "gross_margin_impact": "受原物料（黃豆）價格波動影響大，毛利率相對穩定但成長空間有限",
+      "pricing_power": "中，具品牌知名度但面臨同業競爭與原物料成本轉嫁壓力",
+      "value_capture_score": 65,
+      "substitution_risk": "低，消費習慣黏性高，但面臨健康飲食趨勢挑戰",
+      "commercialization_phase": "成熟期，穩定量產與銷售",
+      "pros": "現金殖利率具吸引力（近5%），業務穩定，現金流充沛",
+      "cons": "成長性低，缺乏新題材催化，受原物料價格波動影響獲利",
+      "catalyst": "除息配發現金股利7.2元，吸引股息投資人"
+    },
+    "updated_at": "2026-06-16"
   },
   "1233": {
     "code": "1233",
@@ -1080,13 +1249,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "天仁為茶葉龍頭，轉型茶飲文化與生技，拓展國際市場。",
+    "summary": "傳統茶葉加工與通路龍頭，穩健經營中，無顯著AI或新興科技轉型佈局",
     "products": [
-      "茶葉",
-      "茶飲"
+      "紅茶與烏龍茶葉",
+      "茶葉禮盒與伴手禮",
+      "茶葉加工原料與批發"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 1.0,
+      "barrierLevel": 2.5,
+      "ai_revenue_exposure": "營收佔比估算 (0%，純傳統茶葉產業)",
+      "gross_margin_impact": "毛利率結構穩定，受原物料成本波動影響，無顯著高毛利產品轉型",
+      "pricing_power": "中，品牌具知名度但面臨同業競爭",
+      "value_capture_score": 40,
+      "substitution_risk": "中，面臨進口茶葉與新興飲料品牌競爭",
+      "commercialization_phase": "成熟期，常態性量產與銷售",
+      "pros": "台灣老牌茶葉品牌，擁有完整上下游產銷體系與穩定通路",
+      "cons": "產業成長性有限，缺乏高成長題材與技術壁壘",
+      "catalyst": "節慶禮盒銷售旺季或品牌聯名合作"
+    },
+    "updated_at": "2026-06-16"
   },
   "1234": {
     "code": "1234",
@@ -1095,13 +1277,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "黑松為飲料龍頭，轉型健康飲品與生技，強化品牌多元化。",
+    "summary": "傳統飲料龍頭，穩健現金流，聚焦健康飲與品牌升級轉型",
     "products": [
-      "飲料",
-      "生技"
+      "黑松沙士",
+      "礦泉水與包裝水",
+      "茶飲與機能性飲料"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 1.0,
+      "barrierLevel": 3.5,
+      "ai_revenue_exposure": "無AI相關營收，純傳統飲料製造業",
+      "gross_margin_impact": "受原物料成本波動影響，透過產品組合優化維持穩定毛利率",
+      "pricing_power": "中，具品牌知名度但面臨同業激烈價格競爭",
+      "value_capture_score": 60,
+      "substitution_risk": "中，消費者口味轉移與新興健康飲品競爭",
+      "commercialization_phase": "成熟期，穩定量產與銷售",
+      "pros": "擁有台灣市場最深厚的品牌資產與龐大通路網絡",
+      "cons": "成長動能有限，依賴傳統碳酸飲料與季節性產品",
+      "catalyst": "新品類擴張與海外市場佈局成效"
+    },
+    "updated_at": "2026-06-16"
   },
   "1235": {
     "code": "1235",
@@ -1110,13 +1305,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "興泰為食品龍頭，轉型健康食品與烘焙，拓展年輕客群。",
+    "summary": "熱交換器與熱能設備製造商，受惠能源轉型與工業冷卻需求，營收創高。",
     "products": [
-      "食品",
-      "烘焙"
+      "板式熱交換器",
+      "熱能產品",
+      "工業冷卻系統"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 4.5,
+      "barrierLevel": 4.0,
+      "ai_revenue_exposure": "AI伺服器散熱需求為次要應用，主要營收來自傳統工業與能源領域",
+      "gross_margin_impact": "受惠高毛利產品放量與規模經濟，預期毛利率維持穩定或小幅提升",
+      "pricing_power": "中高，具備特定技術認證與客戶黏性",
+      "value_capture_score": 75,
+      "substitution_risk": "中，面臨陸廠競爭，但高端應用具技術壁壘",
+      "commercialization_phase": "已量產出貨，近期營收創高",
+      "pros": "熱能管理技術成熟，受惠全球能源轉型與工業自動化趨勢",
+      "cons": "原物料價格波動影響成本，地緣政治可能影響出口",
+      "catalyst": "AI伺服器散熱需求擴散至工業領域，帶動高端熱交換器訂單成長"
+    },
+    "updated_at": "2026-06-16"
   },
   "1236": {
     "code": "1236",
@@ -1125,13 +1333,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "宏亞為巧克力食品龍頭，轉型健康零食與文創，拓展國際。",
+    "summary": "傳統食品製造商，以巧克力與糕點為主，近期無顯著AI或高科技轉型動態",
     "products": [
-      "巧克力",
-      "文創商品"
+      "巧克力製品",
+      "糕餅禮盒",
+      "麵包與零食"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 1.0,
+      "barrierLevel": 2.5,
+      "ai_revenue_exposure": "0%，無AI相關營收",
+      "gross_margin_impact": "受原物料成本波動影響大，毛利率穩定性取決於成本控管與產品組合調整",
+      "pricing_power": "中，品牌具一定知名度但面臨同業激烈價格競爭",
+      "value_capture_score": 45,
+      "substitution_risk": "中，消費選擇多樣，替代門檻低",
+      "commercialization_phase": "成熟期，常態性量產銷售",
+      "pros": "擁有穩定之傳統食品消費基礎與品牌認知度",
+      "cons": "成長動能有限，缺乏高毛利新產品或科技轉型題材",
+      "catalyst": "節慶禮盒銷售旺季表現或原物料成本下降"
+    },
+    "updated_at": "2026-06-16"
   },
   "1240": {
     "code": "1240",
@@ -1140,13 +1361,26 @@
     "market": "TPEX",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "茂生農經為農業經銷龍頭，轉型生技原料與健康食品。",
+    "summary": "半導體廠房整廠工程與醫療器材雙軌營運，近期無特定AI題材催化。",
     "products": [
-      "農產品",
-      "生技原料"
+      "半導體廠房整廠系統建造",
+      "無塵室與機電系統",
+      "紅外線與雷射醫療器材"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 1.0,
+      "barrierLevel": 3.5,
+      "ai_revenue_exposure": "無直接AI營收，主要為半導體廠房建設服務，間接受AI伺服器擴廠需求帶動",
+      "gross_margin_impact": "受工程項目規模與成本控管影響，毛利率波動取決於新案承接結構",
+      "pricing_power": "中，具備特定製程無塵室技術門檻，但工程業競爭激烈",
+      "value_capture_score": 45,
+      "substitution_risk": "中，面臨其他廠房工程商競爭，但客戶黏性取決於技術認證與過往績優紀錄",
+      "commercialization_phase": "廠房工程依客戶建廠時程執行，醫療器材持續銷售中",
+      "pros": "受惠全球半導體擴產潮，廠房整廠工程訂單具穩定性",
+      "cons": "醫療器材業務規模較小，且工程業現金流受專案進度影響大",
+      "catalyst": "主要半導體大廠（如台積電）宣布新廠擴建或AI伺服器廠房動工"
+    },
+    "updated_at": "2026-06-16"
   },
   "1256": {
     "code": "1256",
@@ -1155,13 +1389,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "鮮活果汁為果汁龍頭，轉型生技萃取與健康飲品，拓展海外。",
+    "summary": "台灣鮮榨果汁龍頭，主打鮮活概念，近期積極拓展海外市場與B2B業務。",
     "products": [
-      "果汁",
-      "生技萃取"
+      "鮮榨果汁",
+      "果泥",
+      "果汁濃縮液"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 4.8,
+      "barrierLevel": 3.5,
+      "ai_revenue_exposure": "無AI相關營收，純傳統食品飲料業",
+      "gross_margin_impact": "受原物料（水果）價格波動影響大，規模經濟有助於穩定毛利率",
+      "pricing_power": "中，品牌具一定知名度但面臨同業競爭",
+      "value_capture_score": 65,
+      "substitution_risk": "中，消費者偏好易變，且面臨罐裝果汁與新興健康飲品競爭",
+      "commercialization_phase": "已量產並穩定銷售，持續拓展通路",
+      "pros": "擁有完整供應鏈與鮮榨技術，品牌認知度高，海外市場拓展具潛力",
+      "cons": "原物料成本波動風險高，且受季節性與氣候影響大",
+      "catalyst": "海外市場營收占比提升或成功開發大型B2B客戶"
+    },
+    "updated_at": "2026-06-16"
   },
   "1259": {
     "code": "1259",
@@ -1170,13 +1417,26 @@
     "market": "TPEX",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "安心為食品龍頭，轉型健康食品與生技，強化品牌創新。",
+    "summary": "傳統電子零組件製造商，近期無顯著AI或新技術轉型動態。",
     "products": [
-      "食品",
-      "生技"
+      "電子零組件",
+      "機械加工",
+      "基礎組裝"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 1.0,
+      "barrierLevel": 2.0,
+      "ai_revenue_exposure": "無AI相關營收，主要為傳統製造業務",
+      "gross_margin_impact": "受傳統製造業競爭影響，毛利率維持穩定但成長空間有限",
+      "pricing_power": "低，市場競爭激烈，屬價格接受者",
+      "value_capture_score": 30,
+      "substitution_risk": "中，面臨同業價格競爭與供應鏈轉移風險",
+      "commercialization_phase": "成熟期，常規量產出貨",
+      "pros": "業務穩定，無重大轉型風險",
+      "cons": "缺乏高成長題材，估值空間受限",
+      "catalyst": "無特定近期催化劑"
+    },
+    "updated_at": "2026-06-16"
   },
   "1264": {
     "code": "1264",
@@ -1185,13 +1445,26 @@
     "market": "TPEX",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "德麥為烘焙原料龍頭，轉型生技原料與健康食品，拓展國際。",
+    "summary": "傳統食品原料供應商，近期無顯著AI或高科技轉型動態，業務維持常規營運。",
     "products": [
+      "食品添加物",
       "烘焙原料",
-      "生技原料"
+      "調味料"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 1.0,
+      "barrierLevel": 2.0,
+      "ai_revenue_exposure": "無AI相關營收，純傳統食品原料業務",
+      "gross_margin_impact": "受原物料價格波動影響，毛利率維持穩定但無顯著提升空間",
+      "pricing_power": "中低，市場競爭激烈，屬同質性產品",
+      "value_capture_score": 30,
+      "substitution_risk": "中，面臨同業價格競爭與客戶自製替代風險",
+      "commercialization_phase": "已量產銷售，屬成熟期業務",
+      "pros": "擁有穩定之傳統客戶群與通路基礎",
+      "cons": "缺乏高成長題材，營收成長動能有限",
+      "catalyst": "原物料成本下降帶來之毛利改善"
+    },
+    "updated_at": "2026-06-16"
   },
   "1268": {
     "code": "1268",
@@ -1200,13 +1473,26 @@
     "market": "TPEX",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "漢來美食為餐飲龍頭，轉型數位餐飲與生技，強化品牌體驗。",
+    "summary": "漢來美食為台灣知名餐飲集團，核心業務涵蓋漢來大飯店與漢來海港餐廳，近期聚焦於品牌升級與數位轉型。",
     "products": [
-      "餐飲服務",
-      "生技"
+      "漢來大飯店住宿服務",
+      "漢來海港餐廳自助餐",
+      "漢來名廚精緻餐飲"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 4.8,
+      "barrierLevel": 4.2,
+      "ai_revenue_exposure": "營收佔比估算 (例如 '10-15%' 或 '主要以傳統伺服器為主，AI 佔比 <5%')",
+      "gross_margin_impact": "毛利率走勢與結構影響 (例如 '受惠高毛利產品放量，預期毛利率提升 2-3%')",
+      "pricing_power": "定價權評估 (例如 '高，因屬獨家供應商' 或 '中，市場競爭者眾')",
+      "value_capture_score": 75,
+      "substitution_risk": "替代風險評估 (例如 '低，認證期長達 2 年' 或 '中，面臨陸廠殺價競爭')",
+      "commercialization_phase": "營收放量與商用時程 (例如 '已開始量產出貨' 或 '樣品送樣驗證中，預期 2027 放量')",
+      "pros": "聯網核心競爭優勢與正面因素 (簡明一句話)",
+      "cons": "投資潛在風險與負面因素 (簡明一句話)",
+      "catalyst": "關鍵催化劑事件 (簡明一句話)"
+    },
+    "updated_at": "2026-06-16"
   },
   "1294": {
     "code": "1294",
@@ -1215,13 +1501,26 @@
     "market": "TPEX",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "漢田生技為生技龍頭，轉型精準醫療與健康食品，拓展海外。",
+    "summary": "傳統生技製藥企業，近期無顯著AI或新藥轉型消息，股價波動屬市場情緒反應。",
     "products": [
-      "生技產品",
-      "健康食品"
+      "傳統中成藥",
+      "保健食品",
+      "一般生技製劑"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 1.0,
+      "barrierLevel": 2.5,
+      "ai_revenue_exposure": "無AI相關營收，純傳統生技業務",
+      "gross_margin_impact": "毛利率穩定，無顯著結構性變化",
+      "pricing_power": "中低，面臨同業競爭與原物料成本波動",
+      "value_capture_score": 30,
+      "substitution_risk": "中，產品同質性高，轉換成本低",
+      "commercialization_phase": "成熟期，穩定量產銷售",
+      "pros": "擁有傳統生技製藥執照與穩定通路",
+      "cons": "缺乏高成長題材，營收規模小，易受市場情緒影響",
+      "catalyst": "新藥開發進展或大型通路訂單"
+    },
+    "updated_at": "2026-06-16"
   },
   "1295": {
     "code": "1295",
@@ -1230,13 +1529,26 @@
     "market": "TPEX",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "生合為生技龍頭，轉型精準醫療與健康食品，強化研發創新。",
+    "summary": "生合(1295)為台灣知名生技食品公司，專注於保健食品研發製造與通路銷售。",
     "products": [
-      "生技產品",
-      "健康食品"
+      "保健食品與營養補充品",
+      "功能性飲料",
+      "生技原料與代工服務"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 4.8,
+      "barrierLevel": 3.5,
+      "ai_revenue_exposure": "無AI相關營收，純傳統生技食品業務",
+      "gross_margin_impact": "受惠高毛利保健食品產品組合優化，毛利率維持穩定或微幅提升",
+      "pricing_power": "中，品牌具知名度但面臨同業競爭與通路議價壓力",
+      "value_capture_score": 70,
+      "substitution_risk": "中，產品同質性高，消費者轉換成本低",
+      "commercialization_phase": "已量產並持續銷售，依賴既有通路與電商營運",
+      "pros": "品牌知名度高，擁有完整上下游整合能力與多元通路佈局",
+      "cons": "市場競爭激烈，原物料成本波動影響獲利，成長動能受限",
+      "catalyst": "新產品上市、電商渠道擴張或大廠合作契機"
+    },
+    "updated_at": "2026-06-16"
   },
   "1301": {
     "code": "1301",
@@ -1325,13 +1637,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "台聚為石化龍頭，轉型高值化材料與綠能，推動低碳製造。",
+    "summary": "台塑集團基礎化工龍頭，聚焦乙烯、PE等石化原料生產與銷售",
     "products": [
-      "石化產品",
-      "高值材料"
+      "聚乙烯 (PE)",
+      "乙烯",
+      "石化中間原料"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 4.8,
+      "barrierLevel": 3.5,
+      "ai_revenue_exposure": "無直接AI營收，屬傳統石化上游原料供應商",
+      "gross_margin_impact": "受原油價格與供需週期影響大，毛利隨產業景氣循環波動",
+      "pricing_power": "中，價格跟隨國際石化指數調整",
+      "value_capture_score": 60,
+      "substitution_risk": "低，具規模經濟與集團垂直整合優勢",
+      "commercialization_phase": "已穩定量產並長期供應",
+      "pros": "台塑集團垂直整合優勢，具備規模經濟與成本控管能力",
+      "cons": "高度依賴原油價格波動與全球石化供需週期，成長性較低",
+      "catalyst": "全球石化供需改善或原油價格穩定帶來的毛利修復"
+    },
+    "updated_at": "2026-06-16"
   },
   "1305": {
     "code": "1305",
@@ -1340,13 +1665,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "華夏為石化龍頭，轉型高值化材料與綠能，強化供應鏈整合。",
+    "summary": "傳統塑膠製品製造商，受惠塑化族群景氣回溫與油價回落帶動股價同步走揚。",
     "products": [
-      "石化產品",
-      "綠能技術"
+      "塑膠布",
+      "塑膠皮",
+      "塑膠管"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 1.0,
+      "barrierLevel": 2.0,
+      "ai_revenue_exposure": "無直接AI營收，屬傳統傳產，僅間接受市場情緒與油價影響",
+      "gross_margin_impact": "受惠油價下跌降低原料成本，預期毛利率小幅改善",
+      "pricing_power": "低，屬同質性高之傳統塑膠加工品，價格競爭激烈",
+      "value_capture_score": 30,
+      "substitution_risk": "中，面臨其他塑膠加工廠競爭，且受替代材料影響",
+      "commercialization_phase": "穩定量產中",
+      "pros": "股價淨值比低，具低股價淨值比起漲之技術面特徵",
+      "cons": "業務缺乏高成長題材，營收成長動能有限，受景氣循環影響大",
+      "catalyst": "塑化族群整體漲勢與油價穩定下跌帶來成本優勢"
+    },
+    "updated_at": "2026-06-16"
   },
   "1307": {
     "code": "1307",
@@ -1395,14 +1733,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "國內PE龙头，聚焦高階聚烯烃材料，拓展新能源與光電應用領域。",
+    "summary": "台塑集團旗下聚苯乙烯(PS)與ABS核心供應商，專注於通用型塑膠原料生產。",
     "products": [
-      "PE",
-      "高階聚烯烃",
-      "新能源材料"
+      "通用聚苯乙烯(PS)",
+      "ABS樹脂",
+      "高衝擊聚苯乙烯(HIPS)"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 4.8,
+      "barrierLevel": 3.5,
+      "ai_revenue_exposure": "營收佔比極低，主要為傳統石化原料，非AI直接受益標的",
+      "gross_margin_impact": "受原油價格與供需週期影響大，毛利率隨石化產業景氣循環波動",
+      "pricing_power": "中，受台塑集團內部定價策略與全球石化供需影響",
+      "value_capture_score": 60,
+      "substitution_risk": "低，具規模經濟優勢與集團垂直整合效益",
+      "commercialization_phase": "已穩定量產並長期供應全球市場",
+      "pros": "隸屬台塑集團，具備原料取得優勢與規模經濟，成本控管能力強",
+      "cons": "營收高度依賴傳統石化週期，缺乏高成長新興應用題材",
+      "catalyst": "全球石化供需改善或原油成本下降帶來毛利修復"
+    },
+    "updated_at": "2026-06-16"
   },
   "1309": {
     "code": "1309",
@@ -1491,14 +1841,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "國內PS龙头，強化高價値特殊聚苯乙烯，布局生物降解材料轉型。",
+    "summary": "台灣基礎石化原料龍頭，聚焦乙烯、丙烯等石化上游原料供應。",
     "products": [
-      "PS",
-      "特殊聚苯乙烯",
-      "生物降解材料"
+      "乙烯",
+      "丙烯",
+      "聚苯乙烯"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 4.8,
+      "barrierLevel": 4.2,
+      "ai_revenue_exposure": "無直接AI營收，屬傳統石化上游基礎原料供應商",
+      "gross_margin_impact": "受原油價格與石腦油價差波動影響大，毛利率具高度週期性",
+      "pricing_power": "中，價格跟隨國際石化原料市場波動",
+      "value_capture_score": 65,
+      "substitution_risk": "低，具備規模經濟與完整產業鏈整合優勢",
+      "commercialization_phase": "成熟量產階段",
+      "pros": "台灣最大乙烯、丙烯生產廠，具備規模經濟與完整上下游整合優勢",
+      "cons": "營收與獲利高度依賴原油價格波動及全球石化供需週期",
+      "catalyst": "原油價格穩定或下游需求復甦帶動價差擴大"
+    },
+    "updated_at": "2026-06-16"
   },
   "1313": {
     "code": "1313",
@@ -1624,14 +1986,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "全球PC板龙头，深耕光電與建築材料，拓展車用與醫療級應用。",
+    "summary": "傳統電子零組件通路商，無AI相關業務，屬保守型標的",
     "products": [
-      "PC板",
-      "光電材料",
-      "車用材料"
+      "電子零組件代理經銷",
+      "工業控制元件銷售",
+      "一般電子材料貿易"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 0.0,
+      "barrierLevel": 1.5,
+      "ai_revenue_exposure": "無AI業務營收，純傳統通路業務",
+      "gross_margin_impact": "毛利率維持傳統通路低水準，無顯著結構性提升",
+      "pricing_power": "低，屬同質性高的代理經銷市場",
+      "value_capture_score": 20,
+      "substitution_risk": "中，面臨大型通路商競爭與客戶直採風險",
+      "commercialization_phase": "常規營運中",
+      "pros": "業務穩定，無高估值泡沫風險",
+      "cons": "成長動能不足，缺乏市場關注題材",
+      "catalyst": "無顯著近期催化劑"
+    },
+    "updated_at": "2026-06-16"
   },
   "1319": {
     "code": "1319",
@@ -1640,14 +2014,26 @@
     "market": "TWSE",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "國內尼龍66纤维龙头，強化功能性紡織品，拓展運動與防護市場。",
+    "summary": "傳統汽機車零件製造商，受惠關稅調降與新廠擴產，下半年接單穩健增溫。",
     "products": [
-      "尼龍66",
-      "功能性纤维",
-      "防護織物"
+      "汽機車零件",
+      "模具製造",
+      "金屬加工件"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 4.5,
+      "barrierLevel": 3.5,
+      "ai_revenue_exposure": "無直接AI營收，主要為傳統汽車零組件製造",
+      "gross_margin_impact": "受惠銷美關稅由27.5%調降至15%，客戶採購力道回升，預期下半年接單穩健增溫",
+      "pricing_power": "中，屬汽車供應鏈一階或二階供應商，具一定客戶黏性但面臨成本競爭",
+      "value_capture_score": 75,
+      "substitution_risk": "中，面臨同業競爭，但透過台南科工、七股等新廠擴產鞏固產能優勢",
+      "commercialization_phase": "台南科工廠已完工，七股廠預計年底完工，新市廠持續推進中",
+      "pros": "5月獲利創同期第三高，銷美關稅調降利好需求，新廠擴產奠定未來3-5年成長基礎",
+      "cons": "受匯率波動影響（5月認列匯兌損失），傳統汽車產業成長性相對有限",
+      "catalyst": "七股新廠年底完工啟用，下半年接單因關稅調降而穩健增溫"
+    },
+    "updated_at": "2026-06-16"
   },
   "1321": {
     "code": "1321",

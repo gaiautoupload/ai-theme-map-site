@@ -57,7 +57,12 @@
                     <h1 class="text-lg font-bold bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
                         LLM 投資決策 Wiki 平台
                     </h1>
-                    <p class="text-xs text-slate-400">動態主題式先進產業鏈研究與佈局地圖</p>
+                    <p class="text-[10px] sm:text-xs text-slate-400 flex flex-wrap items-center gap-1.5 mt-0.5">
+                        <span>動態主題式先進產業鏈研究與佈局地圖</span>
+                        <span class="hidden sm:inline text-slate-700">|</span>
+                        <span class="bg-indigo-950/40 border border-indigo-900/40 px-1.5 py-0.5 rounded text-[9px] text-indigo-300 font-bold font-mono">作者: pioter</span>
+                        <span class="bg-cyan-950/40 border border-cyan-900/40 px-1.5 py-0.5 rounded text-[9px] text-cyan-300 font-bold font-mono">AI分析師: +1000</span>
+                    </p>
                 </div>
             </div>
             
@@ -1601,7 +1606,7 @@
             const versionStamp = Date.now();
             try {
                 const versionedMapCandidates = [
-                    './maps_repo_20260616_114503.json',
+                    './maps_repo_20260616_114739.json',
                     './maps_repo.json'
                 ];
                 const { data: rawRepo, url } = await fetchJsonWithFallback([
