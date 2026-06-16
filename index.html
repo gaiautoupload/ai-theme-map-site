@@ -80,15 +80,15 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center overflow-x-auto gap-2.5 no-scrollbar">
                 <button onclick="showDashboardHome()" id="nav-btn-home" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-slate-800 transition whitespace-nowrap">投研首頁</button>
                 <button onclick="showChipsAnalysis()" id="nav-btn-chips" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">法人籌碼</button>
+                <button onclick="showExpectationsGap()" id="nav-btn-expectations" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">預期反差/追夢空間</button>
                 <button onclick="showThemeLibrary()" id="nav-btn-library" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">主題地圖庫</button>
-                <button onclick="showIndustryPricing()" id="nav-btn-industry" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">產業報價</button>
             </div>
             <!-- Row 2: Macro, Wiki, Technical Documents -->
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center overflow-x-auto gap-2.5 no-scrollbar border-t border-slate-800/30 pt-2">
+                <button onclick="showIndustryPricing()" id="nav-btn-industry" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">產業報價</button>
                 <button onclick="showMacroPage()" id="nav-btn-macro" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">全球總經</button>
                 <button onclick="showStockWiki()" id="nav-btn-wiki" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">個股 Wiki</button>
                 <button onclick="showTechDocs()" id="nav-btn-tech" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">技術說明</button>
-                <button onclick="showExpectationsGap()" id="nav-btn-expectations" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">預期反差/追夢空間</button>
             </div>
         </div>
     </header>
@@ -1420,8 +1420,8 @@
             <p class="text-sm text-slate-400 leading-relaxed">對比法人/市場普遍預估值與最新法說會、供應鏈現況數據之巨大落差。落差空間越大，估值重估（Re-rating）帶動的追價夢想空間越寬廣。</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="expectations-cards-container">
-            <!-- Expectations Cards will be dynamically rendered here -->
+        <div class="space-y-10" id="expectations-cards-container">
+            <!-- Expectations Cards grouped by category will be dynamically rendered here -->
         </div>
     </div>
 
@@ -1601,7 +1601,7 @@
             const versionStamp = Date.now();
             try {
                 const versionedMapCandidates = [
-                    './maps_repo_20260616_111605.json',
+                    './maps_repo_20260616_112339.json',
                     './maps_repo.json'
                 ];
                 const { data: rawRepo, url } = await fetchJsonWithFallback([
@@ -1748,9 +1748,9 @@
             document.getElementById('header-status').innerHTML = '';
 
             // Update nav buttons active styles
-            document.getElementById('nav-btn-home').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition";
-            if (document.getElementById('nav-btn-library')) document.getElementById('nav-btn-library').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
-            document.getElementById('nav-btn-wiki').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition";
+            document.getElementById('nav-btn-home').className = "px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-slate-800 transition";
+            if (document.getElementById('nav-btn-library')) document.getElementById('nav-btn-library').className = "px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition";
+            document.getElementById('nav-btn-wiki').className = "px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition";
 
             const container = document.getElementById('macro-report-section');
             if (!container) return;
@@ -2025,7 +2025,7 @@
             ];
             btns.forEach(id => {
                 const el = document.getElementById(id);
-                if (el) el.className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-slate-400 hover:text-white transition whitespace-nowrap";
+                if (el) el.className = "px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition whitespace-nowrap";
             });
             window.scrollTo(0, 0);
         }
@@ -2034,7 +2034,7 @@
         function showThemeLibrary() {
             hideAllPanels();
             if (document.getElementById('panel-theme-library')) document.getElementById('panel-theme-library').classList.remove('hidden');
-            if (document.getElementById('nav-btn-library')) document.getElementById('nav-btn-library').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition whitespace-nowrap";
+            if (document.getElementById('nav-btn-library')) document.getElementById('nav-btn-library').className = "px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-slate-800 transition whitespace-nowrap";
 
             renderThemeLibrary();
             lucide.createIcons();
@@ -3320,7 +3320,7 @@
         function showStockWiki() {
             hideAllPanels();
             document.getElementById('panel-stock-wiki').classList.remove('hidden');
-            document.getElementById('nav-btn-wiki').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition whitespace-nowrap";
+            document.getElementById('nav-btn-wiki').className = "px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-slate-800 transition whitespace-nowrap";
             
             renderStockWiki();
         }
@@ -3328,7 +3328,7 @@
         function showDashboardHome() {
             hideAllPanels();
             document.getElementById('panel-home').classList.remove('hidden');
-            document.getElementById('nav-btn-home').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition whitespace-nowrap";
+            document.getElementById('nav-btn-home').className = "px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-slate-800 transition whitespace-nowrap";
             
             renderDashboardHome();
         }
@@ -3336,7 +3336,7 @@
         function showTechDocs() {
             hideAllPanels();
             if (document.getElementById('panel-tech-docs')) document.getElementById('panel-tech-docs').classList.remove('hidden');
-            if (document.getElementById('nav-btn-tech')) document.getElementById('nav-btn-tech').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition whitespace-nowrap";
+            if (document.getElementById('nav-btn-tech')) document.getElementById('nav-btn-tech').className = "px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-slate-800 transition whitespace-nowrap";
             
             lucide.createIcons();
         }
@@ -3344,7 +3344,7 @@
         function showMacroPage() {
             hideAllPanels();
             if (document.getElementById('panel-macro-market')) document.getElementById('panel-macro-market').classList.remove('hidden');
-            if (document.getElementById('nav-btn-macro')) document.getElementById('nav-btn-macro').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition whitespace-nowrap";
+            if (document.getElementById('nav-btn-macro')) document.getElementById('nav-btn-macro').className = "px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-slate-800 transition whitespace-nowrap";
 
             renderMacroCharts();
             loadMacroAIAnalysis();
@@ -3446,7 +3446,7 @@
         function showIndustryPricing() {
             hideAllPanels();
             if (document.getElementById('panel-industry-pricing')) document.getElementById('panel-industry-pricing').classList.remove('hidden');
-            if (document.getElementById('nav-btn-industry')) document.getElementById('nav-btn-industry').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition whitespace-nowrap";
+            if (document.getElementById('nav-btn-industry')) document.getElementById('nav-btn-industry').className = "px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-slate-800 transition whitespace-nowrap";
 
             renderIndustryCharts();
             lucide.createIcons();
@@ -3580,7 +3580,7 @@
         function showChipsAnalysis() {
             hideAllPanels();
             if (document.getElementById('panel-chips-analysis')) document.getElementById('panel-chips-analysis').classList.remove('hidden');
-            if (document.getElementById('nav-btn-chips')) document.getElementById('nav-btn-chips').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition whitespace-nowrap";
+            if (document.getElementById('nav-btn-chips')) document.getElementById('nav-btn-chips').className = "px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-slate-800 transition whitespace-nowrap";
 
             loadAndRenderChips();
         }
@@ -3714,89 +3714,124 @@
         function showExpectationsGap() {
             hideAllPanels();
             if (document.getElementById('panel-expectations')) document.getElementById('panel-expectations').classList.remove('hidden');
-            if (document.getElementById('nav-btn-expectations')) document.getElementById('nav-btn-expectations').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition whitespace-nowrap";
+            if (document.getElementById('nav-btn-expectations')) document.getElementById('nav-btn-expectations').className = "px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-slate-800 transition whitespace-nowrap";
             loadAndRenderExpectations();
         }
 
         async function loadAndRenderExpectations() {
             const container = document.getElementById('expectations-cards-container');
             if (!container) return;
-            container.innerHTML = '<div class="col-span-2 py-12 text-center text-slate-500">載入中...</div>';
+            container.innerHTML = '<div class="py-12 text-center text-slate-500">載入中...</div>';
             try {
                 const response = await fetch('./expectations_gap.json');
                 const list = await response.json();
                 container.innerHTML = '';
+                
+                // Group items by category
+                const groups = {};
                 list.forEach(item => {
-                    const card = document.createElement('div');
-                    card.className = "bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4 hover:border-amber-500/40 transition relative overflow-hidden group";
+                    const cat = item.category || '其他題材';
+                    if (!groups[cat]) groups[cat] = [];
+                    groups[cat].push(item);
+                });
+                
+                // Render each category group
+                const sortedCategories = Object.keys(groups).sort();
+                sortedCategories.forEach(cat => {
+                    const section = document.createElement('div');
+                    section.className = "space-y-4";
                     
-                    const stocksHTML = (item.concept_stocks || []).map(s => {
-                        const parts = s.split(' ');
-                        const code = parts[0];
-                        const name = parts[1] || s;
-                        return `<span onclick="showStockDetailsFromChips('${code}')" class="px-2.5 py-1 bg-slate-850 hover:bg-indigo-900 border border-slate-700/60 hover:border-indigo-600 rounded-lg text-xs text-slate-200 font-bold cursor-pointer transition flex items-center gap-1">
-                            <span class="font-mono text-slate-400 text-[10px]">${code}</span> ${name}
-                        </span>`;
-                    }).join('');
-
-                    card.innerHTML = `
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-500/5 to-transparent rounded-full -mr-8 -mt-8 group-hover:scale-125 transition"></div>
-                        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800/60 pb-3">
-                            <div class="flex items-center gap-2">
-                                <span class="px-2 py-0.5 rounded bg-amber-950/40 border border-amber-800/40 text-amber-400 text-xs font-bold">${item.category}</span>
-                                <h3 class="text-base font-bold text-slate-100">${item.target}</h3>
-                            </div>
-                            <span class="text-[10px] text-slate-500 font-mono">📅 更新日期: ${item.last_update}</span>
-                        </div>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-7 gap-4 items-center bg-slate-950/40 border border-slate-800/40 rounded-xl p-4">
-                            <div class="md:col-span-3 space-y-1">
-                                <div class="text-[10px] text-slate-500 uppercase tracking-wider flex items-center gap-1">
-                                    <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-slate-500"></i> 法人/市場先前預期
-                                </div>
-                                <div class="text-xs font-semibold text-slate-400 font-mono">${item.market_expect}</div>
-                            </div>
-                            <div class="md:col-span-1 flex justify-center py-2 md:py-0">
-                                <div class="flex items-center justify-center w-8 h-8 rounded-full bg-amber-950/80 border border-amber-800/80 shadow-md">
-                                    <i data-lucide="zap" class="w-4 h-4 text-amber-400 animate-pulse"></i>
-                                </div>
-                            </div>
-                            <div class="md:col-span-3 space-y-1">
-                                <div class="text-[10px] text-amber-400 uppercase tracking-wider flex items-center gap-1 font-bold">
-                                    <i data-lucide="flame" class="w-3.5 h-3.5 text-amber-400"></i> 實質數據 / 最新傳聞
-                                </div>
-                                <div class="text-base font-black text-amber-300 font-mono bg-amber-950/25 border border-amber-900/30 px-3 py-1.5 rounded-lg inline-block">${item.real_data}</div>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
-                            <div class="space-y-1">
-                                <div class="text-[10px] text-slate-500">📊 預期差距 (估值重估潛能)</div>
-                                <div class="text-xs text-emerald-400 font-bold bg-emerald-950/30 border border-emerald-900/30 px-2 py-1 rounded-lg inline-flex items-center gap-1">
-                                    <i data-lucide="trending-up" class="w-3.5 h-3.5 text-emerald-400"></i> ${item.gap_space}
-                                </div>
-                            </div>
-                            <div class="space-y-1">
-                                <div class="text-[10px] text-slate-500">💡 追夢空間評估</div>
-                                <div class="text-xs text-cyan-300 font-bold bg-cyan-950/30 border border-cyan-900/30 px-2 py-1 rounded-lg inline-flex items-center gap-1">
-                                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-cyan-300"></i> ${item.dream_rating}
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="border-t border-slate-800/40 pt-3 space-y-2">
-                            <div class="text-[10px] text-slate-500">🎯 主要關聯概念股 (點擊可直接引導看 Wiki)</div>
-                            <div class="flex flex-wrap gap-2">
-                                ${stocksHTML}
-                            </div>
+                    const header = `
+                        <div class="flex items-center gap-2.5 border-b border-slate-800/80 pb-2.5 mt-2">
+                            <span class="w-2 h-2 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.6)]"></span>
+                            <h3 class="text-sm font-black text-slate-200 tracking-wider uppercase">${cat}</h3>
+                            <span class="text-[9px] bg-slate-950 px-2 py-0.5 rounded border border-slate-800/80 text-slate-400 font-bold font-mono">${groups[cat].length} 項預期反差</span>
                         </div>
                     `;
-                    container.appendChild(card);
+                    
+                    const grid = document.createElement('div');
+                    grid.className = "grid grid-cols-1 md:grid-cols-2 gap-6";
+                    
+                    groups[cat].forEach(item => {
+                        const card = document.createElement('div');
+                        card.className = "bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4 hover:border-amber-500/40 transition relative overflow-hidden group";
+                        
+                        const stocksHTML = (item.concept_stocks || []).map(s => {
+                            const parts = s.split(' ');
+                            const code = parts[0];
+                            const name = parts[1] || s;
+                            return `<span onclick="showStockDetailsFromChips('${code}')" class="px-2.5 py-1 bg-slate-850 hover:bg-indigo-900 border border-slate-700/60 hover:border-indigo-600 rounded-lg text-xs text-slate-200 font-bold cursor-pointer transition flex items-center gap-1">
+                                <span class="font-mono text-slate-400 text-[10px]">${code}</span> ${name}
+                            </span>`;
+                        }).join('');
+                        
+                        card.innerHTML = `
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-500/5 to-transparent rounded-full -mr-8 -mt-8 group-hover:scale-125 transition"></div>
+                            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800/60 pb-3">
+                                <h3 class="text-base font-bold text-slate-100">${item.target}</h3>
+                                <span class="text-[10px] text-slate-500 font-mono">📅 更新日期: ${item.last_update}</span>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-7 gap-4 items-center bg-slate-950/40 border border-slate-800/40 rounded-xl p-4">
+                                <div class="md:col-span-3 space-y-1">
+                                    <div class="text-[10px] text-slate-500 uppercase tracking-wider flex items-center gap-1">
+                                        <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-slate-500"></i> 法人/市場先前預期
+                                    </div>
+                                    <div class="text-xs font-semibold text-slate-400 font-mono">${item.market_expect}</div>
+                                </div>
+                                <div class="md:col-span-1 flex justify-center py-2 md:py-0">
+                                    <div class="flex items-center justify-center w-8 h-8 rounded-full bg-amber-950/80 border border-amber-800/80 shadow-md">
+                                        <i data-lucide="zap" class="w-4 h-4 text-amber-400 animate-pulse"></i>
+                                    </div>
+                                </div>
+                                <div class="md:col-span-3 space-y-1">
+                                    <div class="text-[10px] text-amber-400 uppercase tracking-wider flex items-center gap-1 font-bold">
+                                        <i data-lucide="flame" class="w-3.5 h-3.5 text-amber-400"></i> 實質數據 / 最新傳聞
+                                    </div>
+                                    <div class="text-base font-black text-amber-300 font-mono bg-amber-950/25 border border-amber-900/30 px-3 py-1.5 rounded-lg inline-block">${item.real_data}</div>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+                                <div class="space-y-1">
+                                    <div class="text-[10px] text-slate-500">📊 預期差距 (估值重估潛能)</div>
+                                    <div class="text-xs text-emerald-400 font-bold bg-emerald-950/30 border border-emerald-900/30 px-2 py-1 rounded-lg inline-flex items-center gap-1">
+                                        <i data-lucide="trending-up" class="w-3.5 h-3.5 text-emerald-400"></i> ${item.gap_space}
+                                    </div>
+                                </div>
+                                <div class="space-y-1">
+                                    <div class="text-[10px] text-slate-500">💡 追夢空間評估</div>
+                                    <div class="text-xs text-cyan-300 font-bold bg-cyan-950/30 border border-cyan-900/30 px-2 py-1 rounded-lg inline-flex items-center gap-1">
+                                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-cyan-300"></i> ${item.dream_rating}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="border-t border-slate-800/40 pt-3 space-y-2">
+                                <div class="text-[10px] text-slate-500">🎯 主要關聯概念股 (點擊可直接引導看 Wiki)</div>
+                                <div class="flex flex-wrap gap-2">
+                                    ${stocksHTML}
+                                </div>
+                            </div>
+                            
+                            <div class="border-t border-slate-800/40 pt-3 flex items-center justify-between text-[10px] text-slate-500">
+                                <span class="flex items-center gap-1">
+                                    <i data-lucide="newspaper" class="w-3.5 h-3.5 text-slate-500"></i>
+                                    消息來源: <span class="text-slate-400 font-medium font-mono">${item.source || '未提供'}</span>
+                                </span>
+                            </div>
+                        `;
+                        grid.appendChild(card);
+                    });
+                    
+                    section.innerHTML = header;
+                    section.appendChild(grid);
+                    container.appendChild(section);
                 });
                 lucide.createIcons();
             } catch (e) {
                 console.error(e);
-                container.innerHTML = `<div class="col-span-2 py-12 text-center text-red-400 text-xs font-semibold">載入預期反差數據失敗: ${e.message}</div>`;
+                container.innerHTML = `<div class="py-12 text-center text-red-400 text-xs font-semibold">載入預期反差數據失敗: ${e.message}</div>`;
             }
         }
 

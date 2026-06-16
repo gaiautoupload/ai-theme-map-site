@@ -158,6 +158,22 @@ def fetch_cnyes_article_text(news_id: int) -> str:
         print(f"獲取 鉅亨網 新聞全文失敗 (ID {news_id}): {e}")
     return ""
 
+def normalize_category(cat):
+    if not cat:
+        return "其他題材"
+    cat_clean = cat.strip()
+    if "先進半導體" in cat_clean or "Advanced Semiconductor" in cat_clean:
+        return "先進半導體 (Advanced Semiconductor)"
+    if "記憶體" in cat_clean or "Memory" in cat_clean:
+        return "記憶體 (Memory)"
+    if "儲存" in cat_clean or "Storage" in cat_clean:
+        return "儲存設備 (Storage)"
+    if "光通訊" in cat_clean or "Optical" in cat_clean or "散熱" in cat_clean or "Thermal" in cat_clean:
+        return "光通訊與散熱 (Optical & Thermal)"
+    if "AI 基礎設施" in cat_clean or "AI Infrastructure" in cat_clean or "Infrastructure" in cat_clean:
+        return "AI 基礎設施 (AI Infrastructure)"
+    return cat_clean
+
 def main():
     print("=== 自動預期反差/追夢空間搜查引擎啟動 ===")
 
@@ -269,6 +285,8 @@ def main():
                 date_str = datetime.now().strftime("%Y-%m-%d")
                 
             gap_data["last_update"] = date_str
+            # 類別標準化
+            gap_data["category"] = normalize_category(gap_data.get("category", ""))
             # 如果 source 未指定，用標題
             if not gap_data.get("source"):
                 gap_data["source"] = f"鉅亨網：{title[:15]}..."
@@ -324,13 +342,17 @@ def main():
     else:
         print("\n今日無新提取到的預期反差數據，僅對既有項目進行代碼校對。")
 
-    # 對所有項目進行概念股代碼與名稱校正
+    # 對所有項目進行概念股代碼與名稱校正以及類別標準化
     for gap in existing_gaps:
+        gap["category"] = normalize_category(gap.get("category", ""))
         orig = gap.get("concept_stocks", [])
         corrected = correct_concept_stocks(orig, name_map)
         gap["concept_stocks"] = corrected
         if orig != corrected:
             print(f"校正 {gap.get('target')} 的概念股代碼：{orig} -> {corrected}")
+            
+    # 按照類別與 target 排序，使同類型的整理在一起
+    existing_gaps.sort(key=lambda x: (x.get("category", ""), x.get("target", "")))
             
     # 存回檔案
     try:
