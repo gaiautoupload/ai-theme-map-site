@@ -11,17 +11,31 @@ set MAP_SEARCH_MIN_DELAY=3.5
 set MAP_SEARCH_MAX_DELAY=7.5
 set MAP_SEARCH_FETCH_ENABLED=1
 
+:: 偵測 Python 路徑
+set PYTHON_EXE=python
+where python >nul 2>nul
+if errorlevel 1 (
+    if exist "C:\Users\pioterlee\AppData\Local\Python\pythoncore-3.14-64\python.exe" (
+        set PYTHON_EXE="C:\Users\pioterlee\AppData\Local\Python\pythoncore-3.14-64\python.exe"
+    ) else (
+        for /d %%d in ("%USERPROFILE%\AppData\Local\Programs\Python\Python*") do (
+            if exist "%%d\python.exe" set PYTHON_EXE="%%d\python.exe"
+        )
+    )
+)
+
 echo 正在執行每日排程更新管線...
-python run_daily_pipeline.py
+echo 使用 Python 執行檔: %PYTHON_EXE%
+%PYTHON_EXE% run_daily_pipeline.py
 if errorlevel 1 goto :fail
 
 echo.
 echo Daily pipeline completed successfully.
-pause
+timeout /t 10
 exit /b 0
 
 :fail
 echo.
 echo Daily pipeline failed.
-pause
+timeout /t 10
 exit /b 1

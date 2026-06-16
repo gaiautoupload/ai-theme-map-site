@@ -2,9 +2,9 @@
   {
     "category": "AI 基礎設施 (AI Infrastructure)",
     "target": "AI 雲端基礎設施與 GPU 運算需求 (甲骨文效應)",
-    "market_expect": "市場預期資本支出過高引發擔憂，質疑 AI 需求合理性",
+    "market_expect": "市場預期 AI 資本支出龐大，擔憂需求合理性與現金流壓力",
     "real_data": "甲骨文 RPO 暴增 363% 至 6380 億美元，雲端營收年增 47% 遠超預期",
-    "gap_space": "RPO 遠超預期顯示 AI 合約能支撐龐大資本支出，估值重估空間大",
+    "gap_space": "RPO 遠超預期，顯示 AI 合約實質落地，資本支出獲客戶預付款支撐",
     "concept_stocks": [
       "2330 台積電",
       "2454 聯發科",
@@ -12,7 +12,8 @@
       "2353 宏碁",
       "3231 緯創",
       "3017 奇鋐",
-      "3324 雙鴻"
+      "3324 雙鴻",
+      "3034 聯詠"
     ],
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
@@ -52,24 +53,8 @@
   },
   {
     "category": "先進半導體 (Advanced Semiconductor)",
-    "target": "台積電面板級封裝 (PLP)",
-    "market_expect": "市場原預期先進封裝聚焦CoWoS，PLP技術尚處早期研發或試產階段",
-    "real_data": "台積電已確保AI大客戶，試產線今年運行，明年直接進入大規模量產",
-    "gap_space": "量產時程大幅提前，技術領先優勢確認，估值邏輯從研發轉為實質貢獻",
-    "concept_stocks": [
-      "2330 台積電",
-      "6150 撼訊",
-      "7769 鴻勁"
-    ],
-    "dream_rating": "利多估值重估",
-    "impact_direction": "bullish",
-    "source": "韓媒 etnews 報導台積電 PLP 明年量產",
-    "last_update": "2026-06-16"
-  },
-  {
-    "category": "先進半導體 (Advanced Semiconductor)",
-    "target": "輝達 Blackwell (GB300/B300) 及 HBM/DRAM 供應鏈",
-    "market_expect": "產品進入生命週期尾聲，供貨應趨於寬鬆，庫存壓力釋放",
+    "target": "NVIDIA Blackwell 架構晶片 (GB300/B300)",
+    "market_expect": "產品進入生命週期尾聲，供貨應趨於寬鬆，符合傳統週期規律",
     "real_data": "GB300/B300 庫存極度緊缺，需求遠超華爾街預估，HBM 產能為主要瓶頸",
     "gap_space": "供需結構性擠壓持續，HBM/DRAM 瓶頸強化護城河，估值溢價合理",
     "concept_stocks": [
@@ -90,11 +75,41 @@
     "last_update": "2026-06-11"
   },
   {
+    "category": "先進半導體 (Advanced Semiconductor)",
+    "target": "台積電面板級封裝 (PLP)",
+    "market_expect": "市場原預期先進封裝聚焦CoWoS，PLP技術尚處早期研發或試產階段",
+    "real_data": "台積電已確保AI大客戶，試產線今年運行，明年直接進入大規模量產",
+    "gap_space": "量產時程大幅提前，技術領先優勢確認，估值邏輯從研發轉為實質貢獻",
+    "concept_stocks": [
+      "2330 台積電",
+      "6150 撼訊",
+      "7769 鴻勁"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "韓媒 etnews 報導台積電 PLP 明年量產",
+    "last_update": "2026-06-16"
+  },
+  {
+    "category": "光通訊與散熱 (Optical & Thermal)",
+    "target": "AI 液冷散熱與精密金屬加工產能",
+    "market_expect": "市場預期傳統 3C 業務主導，對 AI 散熱貢獻與產能擴張速度持保守看法",
+    "real_data": "3C 占比將從 75% 降至 20%，2026 年底泰國新產能開出，已打入 AI 液冷供應鏈",
+    "gap_space": "產品結構劇烈轉型，AI 高毛利產品占比大幅提升，估值邏輯從傳統製造轉向 AI 散熱",
+    "concept_stocks": [
+      "8431 匯鑽科"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "新聞報導：匯鑽科把握 AI 需求加速擴充新產能",
+    "last_update": "2026-06-16"
+  },
+  {
     "category": "光通訊與散熱 (Optical & Thermal)",
     "target": "光 PD (Photodiode) 元件",
-    "market_expect": "市場原預期日系廠商仍佔主導，供應穩定無大缺口",
+    "market_expect": "日系廠商逐步淡出，市場預期供應將出現結構性短缺",
     "real_data": "日系淡出致供應銳減，現貨嚴重供不應求，鼎元獲美系大廠轉單",
-    "gap_space": "供給缺口引發漲價效應，獲利結構因量價齊升而質變",
+    "gap_space": "供給缺口擴大，高階 PD 總量與單價雙升，獲利結構質變",
     "concept_stocks": [
       "2426 鼎元"
     ],
@@ -143,7 +158,9 @@
     "concept_stocks": [
       "2344 華邦電",
       "2451 創見",
-      "2408 南亞科"
+      "2408 南亞科",
+      "3260 威剛",
+      "8299 群聯"
     ],
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
@@ -212,6 +229,21 @@
     "dream_rating": "利多追夢空間大",
     "impact_direction": "bullish",
     "source": "供應鏈法說會/最新通路傳聞",
+    "last_update": "2026-06-16"
+  },
+  {
+    "category": "記憶體 (Memory)",
+    "target": "伺服器 DRAM (Server DRAM)",
+    "market_expect": "市場先前預期 Q3 價格季增 10-15%",
+    "real_data": "外資上調 Q3 季增 30%，全年漲幅達 40-45%",
+    "gap_space": "價格預期大幅上修，AI 需求佔比重估至 70% 以上",
+    "concept_stocks": [
+      "2408 南亞科",
+      "2344 華邦電"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "新聞標題：DRAM下半年傳再漲40-45%",
     "last_update": "2026-06-16"
   },
   {
