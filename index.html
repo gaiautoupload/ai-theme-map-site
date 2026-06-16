@@ -88,6 +88,7 @@
                 <button onclick="showMacroPage()" id="nav-btn-macro" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">全球總經</button>
                 <button onclick="showStockWiki()" id="nav-btn-wiki" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">個股 Wiki</button>
                 <button onclick="showTechDocs()" id="nav-btn-tech" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">技術說明</button>
+                <button onclick="showExpectationsGap()" id="nav-btn-expectations" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition whitespace-nowrap">預期反差/追夢空間</button>
             </div>
         </div>
     </header>
@@ -1221,8 +1222,17 @@
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <!-- Left: 焦點佈局題材 (占 2 欄) -->
                 <div class="lg:col-span-2 space-y-4">
-                    <div class="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-2 pb-2 border-b border-slate-800/80">
-                        <i data-lucide="flame" class="w-4 h-4 text-amber-500 animate-pulse"></i> 今日法人焦點集體佈局題材 (同買 + 外資爆量量增)
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pb-2 border-b border-slate-800/80">
+                        <div class="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-2">
+                            <i data-lucide="flame" class="w-4 h-4 text-amber-500 animate-pulse"></i> 今日法人焦點題材分析
+                        </div>
+                        <!-- Sub-tabs for Themes -->
+                        <div class="flex items-center gap-1 bg-slate-900/60 p-0.5 rounded-lg border border-slate-800 self-start">
+                            <button onclick="switchThemeCategory('cohort')" id="theme-btn-cohort" class="px-2.5 py-1 text-[10px] font-bold rounded text-amber-400 bg-slate-800 transition">同買題材</button>
+                            <button onclick="switchThemeCategory('surge')" id="theme-btn-surge" class="px-2.5 py-1 text-[10px] font-bold rounded text-slate-400 hover:text-white transition">爆量題材</button>
+                            <button onclick="switchThemeCategory('foreign_ratio')" id="theme-btn-foreign_ratio" class="px-2.5 py-1 text-[10px] font-bold rounded text-slate-400 hover:text-white transition">外本比領跑</button>
+                            <button onclick="switchThemeCategory('trust_ratio')" id="theme-btn-trust_ratio" class="px-2.5 py-1 text-[10px] font-bold rounded text-slate-400 hover:text-white transition">投本比領跑</button>
+                        </div>
                     </div>
                     <div id="chips-focus-themes-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <!-- Dynamic rendering focus themes here -->
@@ -1244,13 +1254,15 @@
                 <!-- Tabs for Tables -->
                 <div class="flex items-center gap-2 border-b border-slate-800 pb-px overflow-x-auto no-scrollbar">
                     <button onclick="switchChipsTab('cohort')" id="tab-btn-cohort" class="px-4 py-2 text-xs font-bold border-b-2 border-emerald-500 text-emerald-400 transition whitespace-nowrap">今日法人同買股</button>
-                    <button onclick="switchChipsTab('surge')" id="tab-btn-surge" class="px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition whitespace-nowrap">外資爆量同買股</button>
-                    <button onclick="switchChipsTab('top100')" id="tab-btn-top100" class="px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition whitespace-nowrap">今日買超前100排行</button>
+                    <button onclick="switchChipsTab('foreign_buys')" id="tab-btn-foreign_buys" class="px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition whitespace-nowrap">外資買超排行</button>
+                    <button onclick="switchChipsTab('trust_buys')" id="tab-btn-trust_buys" class="px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition whitespace-nowrap">投信買超排行</button>
+                    <button onclick="switchChipsTab('foreign_surges')" id="tab-btn-foreign_surges" class="px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition whitespace-nowrap">外資爆量股</button>
+                    <button onclick="switchChipsTab('trust_surges')" id="tab-btn-trust_surges" class="px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition whitespace-nowrap">投信爆量股</button>
                     <button onclick="switchChipsTab('foreign_ratio')" id="tab-btn-foreign_ratio" class="px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition whitespace-nowrap">外本比排行 (前50)</button>
                     <button onclick="switchChipsTab('trust_ratio')" id="tab-btn-trust_ratio" class="px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition whitespace-nowrap">投本比排行 (前50)</button>
                 </div>
 
-                <!-- Cohort Buys Table -->
+                <!-- 1. Cohort Buys Table -->
                 <div id="chips-table-cohort" class="overflow-x-auto bg-slate-950/60 border border-slate-800/80 rounded-xl p-4">
                     <table class="w-full text-left text-xs text-slate-300">
                         <thead>
@@ -1258,9 +1270,7 @@
                                 <th class="pb-2">股號</th>
                                 <th class="pb-2">名稱</th>
                                 <th class="pb-2 text-right">外資 (張)</th>
-                                <th class="pb-2 text-right text-cyan-400">外本比 (%)</th>
                                 <th class="pb-2 text-right">投信 (張)</th>
-                                <th class="pb-2 text-right text-purple-400">投本比 (%)</th>
                                 <th class="pb-2 text-right">自營商 (張)</th>
                                 <th class="pb-2 text-right text-emerald-400">合計買超 (張)</th>
                                 <th class="pb-2 pl-4">參與題材</th>
@@ -1272,8 +1282,8 @@
                     </table>
                 </div>
 
-                <!-- Surge Buys Table -->
-                <div id="chips-table-surge" class="overflow-x-auto bg-slate-950/60 border border-slate-800/80 rounded-xl p-4 hidden">
+                <!-- 2. Foreign Buys Table -->
+                <div id="chips-table-foreign_buys" class="overflow-x-auto bg-slate-950/60 border border-slate-800/80 rounded-xl p-4 hidden">
                     <table class="w-full text-left text-xs text-slate-300">
                         <thead>
                             <tr class="text-slate-500 border-b border-slate-800/60 font-bold pb-2">
@@ -1282,41 +1292,81 @@
                                 <th class="pb-2 text-right text-cyan-400">外資買超 (張)</th>
                                 <th class="pb-2 text-right text-cyan-400">外本比 (%)</th>
                                 <th class="pb-2 text-right">投信 (張)</th>
-                                <th class="pb-2 text-right text-purple-400">投本比 (%)</th>
+                                <th class="pb-2 text-right">投本比 (%)</th>
                                 <th class="pb-2 text-right">自營商 (張)</th>
-                                <th class="pb-2 text-right">合計買超 (張)</th>
+                                <th class="pb-2 text-right text-emerald-400">合計買超 (張)</th>
                                 <th class="pb-2 pl-4">參與題材</th>
                             </tr>
                         </thead>
-                        <tbody id="chips-surge-tbody" class="divide-y divide-slate-800/40">
+                        <tbody id="chips-foreign_buys-tbody" class="divide-y divide-slate-800/40">
                             <!-- Dynamic rows -->
                         </tbody>
                     </table>
                 </div>
 
-                <!-- Top 100 Buys Table -->
-                <div id="chips-table-top100" class="overflow-x-auto bg-slate-950/60 border border-slate-800/80 rounded-xl p-4 hidden">
+                <!-- 3. Trust Buys Table -->
+                <div id="chips-table-trust_buys" class="overflow-x-auto bg-slate-950/60 border border-slate-800/80 rounded-xl p-4 hidden">
                     <table class="w-full text-left text-xs text-slate-300">
                         <thead>
                             <tr class="text-slate-500 border-b border-slate-800/60 font-bold pb-2">
                                 <th class="pb-2">股號</th>
                                 <th class="pb-2">名稱</th>
                                 <th class="pb-2 text-right">外資 (張)</th>
-                                <th class="pb-2 text-right text-cyan-400">外本比 (%)</th>
-                                <th class="pb-2 text-right">投信 (張)</th>
+                                <th class="pb-2 text-right">外本比 (%)</th>
+                                <th class="pb-2 text-right text-purple-400">投信買超 (張)</th>
                                 <th class="pb-2 text-right text-purple-400">投本比 (%)</th>
                                 <th class="pb-2 text-right">自營商 (張)</th>
-                                <th class="pb-2 text-right text-teal-400">合計買超 (張)</th>
+                                <th class="pb-2 text-right text-emerald-400">合計買超 (張)</th>
                                 <th class="pb-2 pl-4">參與題材</th>
                             </tr>
                         </thead>
-                        <tbody id="chips-top100-tbody" class="divide-y divide-slate-800/40">
+                        <tbody id="chips-trust_buys-tbody" class="divide-y divide-slate-800/40">
                             <!-- Dynamic rows -->
                         </tbody>
                     </table>
                 </div>
 
-                <!-- Foreign Ratio Ranking Table -->
+                <!-- 4. Foreign Surges Table -->
+                <div id="chips-table-foreign_surges" class="overflow-x-auto bg-slate-950/60 border border-slate-800/80 rounded-xl p-4 hidden">
+                    <table class="w-full text-left text-xs text-slate-300">
+                        <thead>
+                            <tr class="text-slate-500 border-b border-slate-800/60 font-bold pb-2">
+                                <th class="pb-2">股號</th>
+                                <th class="pb-2">名稱</th>
+                                <th class="pb-2 text-right text-cyan-400">外資爆量 (張)</th>
+                                <th class="pb-2 text-right">投信 (張)</th>
+                                <th class="pb-2 text-right">自營商 (張)</th>
+                                <th class="pb-2 text-right">合計買超 (張)</th>
+                                <th class="pb-2 pl-4">參與題材</th>
+                            </tr>
+                        </thead>
+                        <tbody id="chips-foreign_surges-tbody" class="divide-y divide-slate-800/40">
+                            <!-- Dynamic rows -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 5. Trust Surges Table -->
+                <div id="chips-table-trust_surges" class="overflow-x-auto bg-slate-950/60 border border-slate-800/80 rounded-xl p-4 hidden">
+                    <table class="w-full text-left text-xs text-slate-300">
+                        <thead>
+                            <tr class="text-slate-500 border-b border-slate-800/60 font-bold pb-2">
+                                <th class="pb-2">股號</th>
+                                <th class="pb-2">名稱</th>
+                                <th class="pb-2 text-right">外資 (張)</th>
+                                <th class="pb-2 text-right text-purple-400">投信爆量 (張)</th>
+                                <th class="pb-2 text-right">自營商 (張)</th>
+                                <th class="pb-2 text-right">合計買超 (張)</th>
+                                <th class="pb-2 pl-4">參與題材</th>
+                            </tr>
+                        </thead>
+                        <tbody id="chips-trust_surges-tbody" class="divide-y divide-slate-800/40">
+                            <!-- Dynamic rows -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 6. Foreign Ratio Ranking Table -->
                 <div id="chips-table-foreign_ratio" class="overflow-x-auto bg-slate-950/60 border border-slate-800/80 rounded-xl p-4 hidden">
                     <table class="w-full text-left text-xs text-slate-300">
                         <thead>
@@ -1338,7 +1388,7 @@
                     </table>
                 </div>
 
-                <!-- Trust Ratio Ranking Table -->
+                <!-- 7. Trust Ratio Ranking Table -->
                 <div id="chips-table-trust_ratio" class="overflow-x-auto bg-slate-950/60 border border-slate-800/80 rounded-xl p-4 hidden">
                     <table class="w-full text-left text-xs text-slate-300">
                         <thead>
@@ -1360,6 +1410,18 @@
                     </table>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- 預期反差 / 追夢空間 Panel -->
+    <div id="panel-expectations" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-1 space-y-8 hidden">
+        <div>
+            <h2 class="text-xl font-bold bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent mb-2">預期反差與估值重估 (Expectation Gap & Dream Space)</h2>
+            <p class="text-sm text-slate-400 leading-relaxed">對比法人/市場普遍預估值與最新法說會、供應鏈現況數據之巨大落差。落差空間越大，估值重估（Re-rating）帶動的追價夢想空間越寬廣。</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="expectations-cards-container">
+            <!-- Expectations Cards will be dynamically rendered here -->
         </div>
     </div>
 
@@ -1539,7 +1601,7 @@
             const versionStamp = Date.now();
             try {
                 const versionedMapCandidates = [
-                    './maps_repo_20260616_103903.json',
+                    './maps_repo_20260616_105023.json',
                     './maps_repo.json'
                 ];
                 const { data: rawRepo, url } = await fetchJsonWithFallback([
@@ -1943,7 +2005,8 @@
                 'panel-tech-docs',
                 'panel-macro-market',
                 'panel-industry-pricing',
-                'panel-chips-analysis'
+                'panel-chips-analysis',
+                'panel-expectations'
             ];
             panels.forEach(id => {
                 const el = document.getElementById(id);
@@ -1957,7 +2020,8 @@
                 'nav-btn-macro',
                 'nav-btn-industry',
                 'nav-btn-chips',
-                'nav-btn-tech'
+                'nav-btn-tech',
+                'nav-btn-expectations'
             ];
             btns.forEach(id => {
                 const el = document.getElementById(id);
@@ -2043,17 +2107,21 @@
                     
                     const opening = map.thesis || map.desc || map.title || '尚無主題摘要';
                     const summary = map.desc || map.long_description || map.description || map.thesis || '';
-                    const tamText = map.market_size_tam || '待補資料';
-                    const cagrText = map.market_cagr || '待補資料';
                     const stageText = map.theme_stage || map.period || '觀察期';
                     const valueCaptureText = map.primary_value_capture || '待補資料';
+                    
+                    const topStocks = (map.stocks || [])
+                        .slice(0, 3)
+                        .map(s => s.name || s.id || '')
+                        .filter(Boolean);
+                    const topStocksText = topStocks.length > 0 ? topStocks.join(', ') : '尚無資料';
                     
                     card.innerHTML = `
                         <div>
                             <div class="flex items-center gap-3 mb-3">
                                 <div class="bg-gradient-to-tr ${map.color || 'from-indigo-500 to-cyan-500'} p-2 rounded-xl text-white shadow-md relative">
                                     <i data-lucide="${map.icon || 'layers'}" class="w-5 h-5"></i>
-                                    <span class="absolute -top-1.5 -right-1.5 bg-slate-950 text-indigo-400 text-[9px] font-bold px-1.5 py-0.5 rounded border border-slate-800 font-mono">#${cardNum}</span>
+                                    <span class="absolute -top-1.5 -right-1.5 bg-slate-950 text-indigo-400 text-[9px] font-bold px-1.5 py-0.5 rounded border border-slate-800 font-mono font-bold">#${cardNum}</span>
                                 </div>
                                 <div class="flex-1 min-w-0">
                                     <h4 class="font-bold text-slate-100 text-sm line-clamp-1">${map.title}</h4>
@@ -2068,10 +2136,18 @@
                                 <p class="text-xs text-cyan-200 leading-relaxed line-clamp-2">${opening}</p>
                             </div>
                             <div class="grid grid-cols-2 gap-2 mb-3 text-[11px]">
-                                <div class="rounded-xl border border-emerald-900/30 bg-emerald-950/15 px-3 py-2"><div class="text-slate-500 mb-1">市場規模 (TAM)</div><div class="font-bold text-emerald-300 line-clamp-1">${tamText}</div></div>
-                                <div class="rounded-xl border border-cyan-900/30 bg-cyan-950/15 px-3 py-2"><div class="text-slate-500 mb-1">年複合成長率 (CAGR)</div><div class="font-bold text-cyan-300 line-clamp-1">${cagrText}</div></div>
-                                <div class="rounded-xl border border-amber-900/30 bg-amber-950/15 px-3 py-2"><div class="text-slate-500 mb-1">題材階段</div><div class="font-bold text-amber-300 line-clamp-1">${stageText}</div></div>
-                                <div class="rounded-xl border border-fuchsia-900/30 bg-fuchsia-950/15 px-3 py-2"><div class="text-slate-500 mb-1">誰賺最多</div><div class="font-bold text-fuchsia-300 line-clamp-1">${valueCaptureText}</div></div>
+                                <div class="col-span-2 rounded-xl border border-emerald-900/30 bg-emerald-950/15 px-3 py-2">
+                                    <div class="text-slate-500 mb-1">主導概念股 (前三)</div>
+                                    <div class="font-bold text-emerald-300 line-clamp-1">${topStocksText}</div>
+                                </div>
+                                <div class="rounded-xl border border-amber-900/30 bg-amber-950/15 px-3 py-2">
+                                    <div class="text-slate-500 mb-1">題材階段</div>
+                                    <div class="font-bold text-amber-300 line-clamp-1">${stageText}</div>
+                                </div>
+                                <div class="rounded-xl border border-fuchsia-900/30 bg-fuchsia-950/15 px-3 py-2">
+                                    <div class="text-slate-500 mb-1">誰賺最多</div>
+                                    <div class="font-bold text-fuchsia-300 line-clamp-1">${valueCaptureText}</div>
+                                </div>
                             </div>
                             <p class="text-xs text-slate-400 leading-relaxed mb-3 line-clamp-2">${summary || '尚無摘要'}</p>
                         </div>
@@ -2081,7 +2157,7 @@
                                 <span class="text-amber-300 bg-amber-950/40 px-2 py-0.5 rounded-md border border-amber-800/40 font-medium">火勢 ${map.heat_score ?? '--'}</span>
                             </div>
                         </div>
-                    `;
+                    \`;
                     grid.appendChild(card);
                 });
                 
@@ -3396,39 +3472,109 @@
             renderMiniChart("TVC:PLATINUM", "tv-chart-ind-platinum");
             renderMiniChart("INDEX:BDI", "tv-chart-ind-bdi");
         }
-
         // ==========================================
         // 三大法人籌碼分析分頁控制與渲染
         // ==========================================
-        function switchChipsTab(tabName) {
-            document.getElementById('chips-table-cohort').classList.add('hidden');
-            document.getElementById('chips-table-surge').classList.add('hidden');
-            document.getElementById('chips-table-top100').classList.add('hidden');
-            document.getElementById('chips-table-foreign_ratio').classList.add('hidden');
-            document.getElementById('chips-table-trust_ratio').classList.add('hidden');
-            
-            document.getElementById('tab-btn-cohort').className = "px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition whitespace-nowrap";
-            document.getElementById('tab-btn-surge').className = "px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition whitespace-nowrap";
-            document.getElementById('tab-btn-top100').className = "px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition whitespace-nowrap";
-            document.getElementById('tab-btn-foreign_ratio').className = "px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition whitespace-nowrap";
-            document.getElementById('tab-btn-trust_ratio').className = "px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition whitespace-nowrap";
-            
-            if (tabName === 'cohort') {
-                document.getElementById('chips-table-cohort').classList.remove('hidden');
-                document.getElementById('tab-btn-cohort').className = "px-4 py-2 text-xs font-bold border-b-2 border-emerald-500 text-emerald-400 transition whitespace-nowrap";
-            } else if (tabName === 'surge') {
-                document.getElementById('chips-table-surge').classList.remove('hidden');
-                document.getElementById('tab-btn-surge').className = "px-4 py-2 text-xs font-bold border-b-2 border-emerald-500 text-emerald-400 transition whitespace-nowrap";
-            } else if (tabName === 'top100') {
-                document.getElementById('chips-table-top100').classList.remove('hidden');
-                document.getElementById('tab-btn-top100').className = "px-4 py-2 text-xs font-bold border-b-2 border-emerald-500 text-emerald-400 transition whitespace-nowrap";
-            } else if (tabName === 'foreign_ratio') {
-                document.getElementById('chips-table-foreign_ratio').classList.remove('hidden');
-                document.getElementById('tab-btn-foreign_ratio').className = "px-4 py-2 text-xs font-bold border-b-2 border-emerald-500 text-emerald-400 transition whitespace-nowrap";
-            } else if (tabName === 'trust_ratio') {
-                document.getElementById('chips-table-trust_ratio').classList.remove('hidden');
-                document.getElementById('tab-btn-trust_ratio').className = "px-4 py-2 text-xs font-bold border-b-2 border-emerald-500 text-emerald-400 transition whitespace-nowrap";
+        let currentChipsData = null;
+        let currentThemeCategory = 'cohort';
+
+        function switchThemeCategory(category) {
+            currentThemeCategory = category;
+            const buttons = ['cohort', 'surge', 'foreign_ratio', 'trust_ratio'];
+            buttons.forEach(btn => {
+                const el = document.getElementById(`theme-btn-${btn}`);
+                if (el) {
+                    if (btn === category) {
+                        el.className = "px-2.5 py-1 text-[10px] font-bold rounded text-amber-400 bg-slate-800 transition";
+                    } else {
+                        el.className = "px-2.5 py-1 text-[10px] font-bold rounded text-slate-400 hover:text-white transition";
+                    }
+                }
+            });
+            renderThemeCards();
+        }
+
+        function renderThemeCards() {
+            const focusContainer = document.getElementById('chips-focus-themes-container');
+            if (!focusContainer || !currentChipsData) return;
+            focusContainer.innerHTML = '';
+
+            const themesKey = `${currentThemeCategory}_themes`;
+            const themes = currentChipsData[themesKey] || [];
+
+            if (themes.length > 0) {
+                themes.forEach(theme => {
+                    const stocksHTML = theme.stocks.map(s => {
+                        let ratioLabel = '';
+                        if (currentThemeCategory === 'foreign_ratio') {
+                            ratioLabel = `<span class="text-cyan-400 font-bold ml-1">外本:${s.foreign_ratio}%</span>`;
+                        } else if (currentThemeCategory === 'trust_ratio') {
+                            ratioLabel = `<span class="text-purple-400 font-bold ml-1">投本:${s.trust_ratio}%</span>`;
+                        }
+                        return `
+                            <div class="flex items-center justify-between py-1 border-b border-slate-800/40 text-[11px]">
+                                <div class="flex items-center gap-1">
+                                    <span class="text-slate-400 font-mono">${s.symbol}</span>
+                                    <span class="text-slate-200 font-bold hover:text-cyan-400 cursor-pointer" onclick="showStockDetailsFromChips('${s.symbol}')">${s.name}</span>
+                                </div>
+                                <div class="flex items-center gap-2 font-mono text-[10px]">
+                                    <span class="text-emerald-400" title="外資">外:${s.foreign_net > 0 ? '+' + s.foreign_net : s.foreign_net}</span>
+                                    <span class="text-violet-400" title="投信">投:${s.trust_net > 0 ? '+' + s.trust_net : s.trust_net}</span>
+                                    <span class="text-slate-300 font-bold" title="合計">合:${s.total_net > 0 ? '+' + s.total_net : s.total_net}</span>
+                                    ${ratioLabel}
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+
+                    let valLabel = '合計吸金';
+                    let valUnit = '張';
+                    if (currentThemeCategory === 'foreign_ratio' || currentThemeCategory === 'trust_ratio') {
+                        valLabel = '合計比率';
+                        valUnit = '%';
+                    }
+
+                    const card = document.createElement('div');
+                    card.className = "bg-slate-950 border border-amber-900/30 hover:border-amber-500/50 rounded-xl p-4 space-y-3 transition shadow-lg relative overflow-hidden group";
+                    card.innerHTML = `
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-amber-500/5 to-transparent rounded-full -mr-6 -mt-6 group-hover:scale-125 transition"></div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-extrabold text-amber-400 bg-amber-950/40 border border-amber-900/40 px-2 py-0.5 rounded flex items-center gap-1">
+                                <i data-lucide="flame" class="w-3.5 h-3.5 text-amber-500 animate-bounce"></i> 今日焦點佈局
+                            </span>
+                            <span class="text-[10px] text-slate-500 font-mono">${valLabel}: <strong class="text-slate-300 font-bold font-mono">${theme.total_net_buy}</strong> ${valUnit}</span>
+                        </div>
+                        <h4 class="text-sm font-bold text-slate-100">${theme.theme_name}</h4>
+                        <div class="space-y-1 bg-slate-900/40 border border-slate-900 rounded-lg p-2 max-h-[140px] overflow-y-auto">
+                            ${stocksHTML}
+                        </div>
+                    `;
+                    focusContainer.appendChild(card);
+                });
+            } else {
+                focusContainer.innerHTML = `
+                    <div class="col-span-2 border border-slate-800/80 bg-slate-950/40 rounded-xl py-8 text-center text-slate-500 text-xs">
+                        <i data-lucide="alert-circle" class="w-6 h-6 mx-auto mb-2 text-slate-600"></i>
+                        今日暫無符合條件的概念題材。
+                    </div>
+                `;
             }
+            lucide.createIcons();
+        }
+
+        function switchChipsTab(tabName) {
+            const tabs = ['cohort', 'foreign_buys', 'trust_buys', 'foreign_surges', 'trust_surges', 'foreign_ratio', 'trust_ratio'];
+            tabs.forEach(tab => {
+                const tableEl = document.getElementById(`chips-table-${tab}`);
+                const btnEl = document.getElementById(`tab-btn-${tab}`);
+                if (tableEl) tableEl.classList.add('hidden');
+                if (btnEl) btnEl.className = "px-4 py-2 text-xs font-bold border-b-2 border-transparent text-slate-400 hover:text-white transition whitespace-nowrap";
+            });
+            
+            const targetTable = document.getElementById(`chips-table-${tabName}`);
+            const targetBtn = document.getElementById(`tab-btn-${tabName}`);
+            if (targetTable) targetTable.classList.remove('hidden');
+            if (targetBtn) targetBtn.className = "px-4 py-2 text-xs font-bold border-b-2 border-emerald-500 text-emerald-400 transition whitespace-nowrap";
         }
 
         function showChipsAnalysis() {
@@ -3442,15 +3588,21 @@
         async function loadAndRenderChips() {
             const focusContainer = document.getElementById('chips-focus-themes-container');
             const cohortTbody = document.getElementById('chips-cohort-tbody');
-            const surgeTbody = document.getElementById('chips-surge-tbody');
+            const fBuysTbody = document.getElementById('chips-foreign_buys-tbody');
+            const tBuysTbody = document.getElementById('chips-trust_buys-tbody');
+            const fSurgesTbody = document.getElementById('chips-foreign_surges-tbody');
+            const tSurgesTbody = document.getElementById('chips-trust_surges-tbody');
             const foreignRatioTbody = document.getElementById('chips-foreign_ratio-tbody');
             const trustRatioTbody = document.getElementById('chips-trust_ratio-tbody');
 
             if (!focusContainer) return;
             
             focusContainer.innerHTML = '<div class="col-span-2 py-8 text-center text-slate-500">載入中...</div>';
-            cohortTbody.innerHTML = '<tr><td colspan="9" class="py-4 text-center text-slate-500">載入中...</td></tr>';
-            if (surgeTbody) surgeTbody.innerHTML = '<tr><td colspan="9" class="py-4 text-center text-slate-500">載入中...</td></tr>';
+            cohortTbody.innerHTML = '<tr><td colspan="7" class="py-4 text-center text-slate-500">載入中...</td></tr>';
+            if (fBuysTbody) fBuysTbody.innerHTML = '<tr><td colspan="9" class="py-4 text-center text-slate-500">載入中...</td></tr>';
+            if (tBuysTbody) tBuysTbody.innerHTML = '<tr><td colspan="9" class="py-4 text-center text-slate-500">載入中...</td></tr>';
+            if (fSurgesTbody) fSurgesTbody.innerHTML = '<tr><td colspan="7" class="py-4 text-center text-slate-500">載入中...</td></tr>';
+            if (tSurgesTbody) tSurgesTbody.innerHTML = '<tr><td colspan="7" class="py-4 text-center text-slate-500">載入中...</td></tr>';
             if (foreignRatioTbody) foreignRatioTbody.innerHTML = '<tr><td colspan="9" class="py-4 text-center text-slate-500">載入中...</td></tr>';
             if (trustRatioTbody) trustRatioTbody.innerHTML = '<tr><td colspan="9" class="py-4 text-center text-slate-500">載入中...</td></tr>';
             
@@ -3460,11 +3612,12 @@
                     throw new Error('未找到最新的籌碼摘要資料，請執行 daily pipeline 進行抓取。');
                 }
                 const summary = await response.json();
+                currentChipsData = summary;
                 
                 document.getElementById('chips-data-date').textContent = summary.date.replace(/(\d{4})(\d{2})(\d{2})/, '$1-$2-$3');
                 document.getElementById('chips-update-time').textContent = summary.update_time;
 
-                focusContainer.innerHTML = '';
+                renderThemeCards();
                 
                 const flowContainer = document.getElementById('chips-theme-flow-container');
                 if (flowContainer) {
@@ -3496,50 +3649,9 @@
                     }
                 }
 
-                if (summary.focus_themes && summary.focus_themes.length > 0) {
-                    summary.focus_themes.forEach(theme => {
-                        const stocksHTML = theme.stocks.map(s => `
-                            <div class="flex items-center justify-between py-1 border-b border-slate-800/40 text-[11px]">
-                                <div class="flex items-center gap-1">
-                                    <span class="text-slate-400 font-mono">${s.symbol}</span>
-                                    <span class="text-slate-200 font-bold hover:text-cyan-400 cursor-pointer" onclick="showStockDetailsFromChips('${s.symbol}')">${s.name}</span>
-                                </div>
-                                <div class="flex items-center gap-3 font-mono text-[10px]">
-                                    <span class="text-emerald-400" title="外資">外:${s.foreign_net > 0 ? '+' + s.foreign_net : s.foreign_net}</span>
-                                    <span class="text-violet-400" title="投信">投:${s.trust_net > 0 ? '+' + s.trust_net : s.trust_net}</span>
-                                    <span class="text-slate-300 font-bold" title="合計">合:${s.total_net > 0 ? '+' + s.total_net : s.total_net}</span>
-                                </div>
-                            </div>
-                        `).join('');
-
-                        const card = document.createElement('div');
-                        card.className = "bg-slate-950 border border-amber-900/30 hover:border-amber-500/50 rounded-xl p-4 space-y-3 transition shadow-lg relative overflow-hidden group";
-                        card.innerHTML = `
-                            <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-amber-500/5 to-transparent rounded-full -mr-6 -mt-6 group-hover:scale-125 transition"></div>
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs font-extrabold text-amber-400 bg-amber-950/40 border border-amber-900/40 px-2 py-0.5 rounded flex items-center gap-1">
-                                    <i data-lucide="flame" class="w-3.5 h-3.5 text-amber-500 animate-bounce"></i> 今日焦點佈局
-                                </span>
-                                <span class="text-[10px] text-slate-500 font-mono">合計吸金: <strong class="text-slate-300 font-bold font-mono">${theme.total_net_buy}</strong> 張</span>
-                            </div>
-                            <h4 class="text-sm font-bold text-slate-100">${theme.theme_name}</h4>
-                            <div class="space-y-1 bg-slate-900/40 border border-slate-900 rounded-lg p-2 max-h-[140px] overflow-y-auto">
-                                ${stocksHTML}
-                            </div>
-                        `;
-                        focusContainer.appendChild(card);
-                    });
-                } else {
-                    focusContainer.innerHTML = `
-                        <div class="col-span-2 border border-slate-800/80 bg-slate-950/40 rounded-xl py-8 text-center text-slate-500 text-xs">
-                            <i data-lucide="alert-circle" class="w-6 h-6 mx-auto mb-2 text-slate-600"></i>
-                            今日暫無符合「三大法人同買且外資量增爆量」2檔（含）以上的概念題材。
-                        </div>
-                    `;
-                }
-
-                const renderRows = (stocks, tbody) => {
+                const renderRows = (stocks, tbody, showRatios = true) => {
                     tbody.innerHTML = '';
+                    const cols = showRatios ? 9 : 7;
                     if (stocks && stocks.length > 0) {
                         stocks.forEach(s => {
                             const tr = document.createElement('tr');
@@ -3548,28 +3660,43 @@
                             const fRatioStr = s.foreign_ratio ? (s.foreign_ratio > 0 ? '+' + s.foreign_ratio + '%' : s.foreign_ratio + '%') : '0.00%';
                             const tRatioStr = s.trust_ratio ? (s.trust_ratio > 0 ? '+' + s.trust_ratio + '%' : s.trust_ratio + '%') : '0.00%';
                             
-                            tr.innerHTML = `
-                                <td class="py-2.5 font-mono text-slate-400">${s.symbol}</td>
-                                <td class="py-2.5 font-bold text-slate-200 hover:text-cyan-400 cursor-pointer" onclick="showStockDetailsFromChips('${s.symbol}')">${s.name}</td>
-                                <td class="py-2.5 text-right font-mono ${s.foreign_net > 0 ? 'text-emerald-400' : s.foreign_net < 0 ? 'text-red-400' : 'text-slate-500'}">${s.foreign_net > 0 ? '+' + s.foreign_net : s.foreign_net}</td>
-                                <td class="py-2.5 text-right font-mono text-cyan-300 font-bold">${fRatioStr}</td>
-                                <td class="py-2.5 text-right font-mono ${s.trust_net > 0 ? 'text-emerald-400' : s.trust_net < 0 ? 'text-red-400' : 'text-slate-500'}">${s.trust_net > 0 ? '+' + s.trust_net : s.trust_net}</td>
-                                <td class="py-2.5 text-right font-mono text-purple-300 font-bold">${tRatioStr}</td>
-                                <td class="py-2.5 text-right font-mono ${s.dealer_net > 0 ? 'text-emerald-400' : s.dealer_net < 0 ? 'text-red-400' : 'text-slate-500'}">${s.dealer_net > 0 ? '+' + s.dealer_net : s.dealer_net}</td>
-                                <td class="py-2.5 text-right font-mono font-bold ${s.total_net > 0 ? 'text-emerald-400' : s.total_net < 0 ? 'text-red-400' : 'text-slate-500'}">${s.total_net > 0 ? '+' + s.total_net : s.total_net}</td>
-                                <td class="py-2.5 pl-4 text-slate-400 text-[10px] max-w-[200px] truncate" title="${(s.themes || []).join(', ')}">${(s.themes || []).join(', ') || '-'}</td>
-                            `;
+                            if (showRatios) {
+                                tr.innerHTML = `
+                                    <td class="py-2.5 font-mono text-slate-400">${s.symbol}</td>
+                                    <td class="py-2.5 font-bold text-slate-200 hover:text-cyan-400 cursor-pointer" onclick="showStockDetailsFromChips('${s.symbol}')">${s.name}</td>
+                                    <td class="py-2.5 text-right font-mono ${s.foreign_net > 0 ? 'text-emerald-400' : s.foreign_net < 0 ? 'text-red-400' : 'text-slate-500'}">${s.foreign_net > 0 ? '+' + s.foreign_net : s.foreign_net}</td>
+                                    <td class="py-2.5 text-right font-mono text-cyan-300 font-bold">${fRatioStr}</td>
+                                    <td class="py-2.5 text-right font-mono ${s.trust_net > 0 ? 'text-emerald-400' : s.trust_net < 0 ? 'text-red-400' : 'text-slate-500'}">${s.trust_net > 0 ? '+' + s.trust_net : s.trust_net}</td>
+                                    <td class="py-2.5 text-right font-mono text-purple-300 font-bold">${tRatioStr}</td>
+                                    <td class="py-2.5 text-right font-mono ${s.dealer_net > 0 ? 'text-emerald-400' : s.dealer_net < 0 ? 'text-red-400' : 'text-slate-500'}">${s.dealer_net > 0 ? '+' + s.dealer_net : s.dealer_net}</td>
+                                    <td class="py-2.5 text-right font-mono font-bold ${s.total_net > 0 ? 'text-emerald-400' : s.total_net < 0 ? 'text-red-400' : 'text-slate-500'}">${s.total_net > 0 ? '+' + s.total_net : s.total_net}</td>
+                                    <td class="py-2.5 pl-4 text-slate-400 text-[10px] max-w-[200px] truncate" title="${(s.themes || []).join(', ')}">${(s.themes || []).join(', ') || '-'}</td>
+                                `;
+                            } else {
+                                tr.innerHTML = `
+                                    <td class="py-2.5 font-mono text-slate-400">${s.symbol}</td>
+                                    <td class="py-2.5 font-bold text-slate-200 hover:text-cyan-400 cursor-pointer" onclick="showStockDetailsFromChips('${s.symbol}')">${s.name}</td>
+                                    <td class="py-2.5 text-right font-mono ${s.foreign_net > 0 ? 'text-emerald-400' : s.foreign_net < 0 ? 'text-red-400' : 'text-slate-500'}">${s.foreign_net > 0 ? '+' + s.foreign_net : s.foreign_net}</td>
+                                    <td class="py-2.5 text-right font-mono ${s.trust_net > 0 ? 'text-emerald-400' : s.trust_net < 0 ? 'text-red-400' : 'text-slate-500'}">${s.trust_net > 0 ? '+' + s.trust_net : s.trust_net}</td>
+                                    <td class="py-2.5 text-right font-mono ${s.dealer_net > 0 ? 'text-emerald-400' : s.dealer_net < 0 ? 'text-red-400' : 'text-slate-500'}">${s.dealer_net > 0 ? '+' + s.dealer_net : s.dealer_net}</td>
+                                    <td class="py-2.5 text-right font-mono font-bold ${s.total_net > 0 ? 'text-emerald-400' : s.total_net < 0 ? 'text-red-400' : 'text-slate-500'}">${s.total_net > 0 ? '+' + s.total_net : s.total_net}</td>
+                                    <td class="py-2.5 pl-4 text-slate-400 text-[10px] max-w-[200px] truncate" title="${(s.themes || []).join(', ')}">${(s.themes || []).join(', ') || '-'}</td>
+                                `;
+                            }
                             tbody.appendChild(tr);
                         });
                     } else {
-                        tbody.innerHTML = '<tr><td colspan="9" class="py-6 text-center text-slate-600">今日暫無符合條件之個股。</td></tr>';
+                        tbody.innerHTML = `<tr><td colspan="${cols}" class="py-6 text-center text-slate-600">今日暫無符合條件之個股。</td></tr>`;
                     }
                 };
 
-                renderRows(summary.cohort_buys, cohortTbody);
-                renderRows(summary.foreign_surges, surgeTbody);
-                renderRows(summary.top_foreign_ratio, foreignRatioTbody);
-                renderRows(summary.top_trust_ratio, trustRatioTbody);
+                renderRows(summary.cohort_buys, cohortTbody, false);
+                if (fBuysTbody) renderRows(summary.top_foreign_buys, fBuysTbody, true);
+                if (tBuysTbody) renderRows(summary.top_trust_buys, tBuysTbody, true);
+                if (fSurgesTbody) renderRows(summary.foreign_surges, fSurgesTbody, false);
+                if (tSurgesTbody) renderRows(summary.trust_surges, tSurgesTbody, false);
+                if (foreignRatioTbody) renderRows(summary.top_foreign_ratio, foreignRatioTbody, true);
+                if (trustRatioTbody) renderRows(summary.top_trust_ratio, trustRatioTbody, true);
 
                 lucide.createIcons();
             } catch (err) {
@@ -3580,12 +3707,100 @@
                         ${err.message || '無法下載或載入籌碼統計數據'}
                     </div>
                 `;
-                cohortTbody.innerHTML = `<tr><td colspan="9" class="py-6 text-center text-red-400 text-xs">${err.message || '資料載入失敗'}</td></tr>`;
+                cohortTbody.innerHTML = `<tr><td colspan="7" class="py-6 text-center text-red-400 text-xs">${err.message || '資料載入失敗'}</td></tr>`;
+            }
+        }
+
+        function showExpectationsGap() {
+            hideAllPanels();
+            if (document.getElementById('panel-expectations')) document.getElementById('panel-expectations').classList.remove('hidden');
+            if (document.getElementById('nav-btn-expectations')) document.getElementById('nav-btn-expectations').className = "px-3 py-1.5 rounded-lg text-sm font-semibold text-white bg-slate-800 transition whitespace-nowrap";
+            loadAndRenderExpectations();
+        }
+
+        async function loadAndRenderExpectations() {
+            const container = document.getElementById('expectations-cards-container');
+            if (!container) return;
+            container.innerHTML = '<div class="col-span-2 py-12 text-center text-slate-500">載入中...</div>';
+            try {
+                const response = await fetch('./expectations_gap.json');
+                const list = await response.json();
+                container.innerHTML = '';
+                list.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = "bg-slate-900/60 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4 hover:border-amber-500/40 transition relative overflow-hidden group";
+                    
+                    const stocksHTML = (item.concept_stocks || []).map(s => {
+                        const parts = s.split(' ');
+                        const code = parts[0];
+                        const name = parts[1] || s;
+                        return `<span onclick="showStockDetailsFromChips('${code}')" class="px-2.5 py-1 bg-slate-850 hover:bg-indigo-900 border border-slate-700/60 hover:border-indigo-600 rounded-lg text-xs text-slate-200 font-bold cursor-pointer transition flex items-center gap-1">
+                            <span class="font-mono text-slate-400 text-[10px]">${code}</span> ${name}
+                        </span>`;
+                    }).join('');
+
+                    card.innerHTML = `
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-500/5 to-transparent rounded-full -mr-8 -mt-8 group-hover:scale-125 transition"></div>
+                        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800/60 pb-3">
+                            <div class="flex items-center gap-2">
+                                <span class="px-2 py-0.5 rounded bg-amber-950/40 border border-amber-800/40 text-amber-400 text-xs font-bold">${item.category}</span>
+                                <h3 class="text-base font-bold text-slate-100">${item.target}</h3>
+                            </div>
+                            <span class="text-[10px] text-slate-500 font-mono">📅 更新日期: ${item.last_update}</span>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-7 gap-4 items-center bg-slate-950/40 border border-slate-800/40 rounded-xl p-4">
+                            <div class="md:col-span-3 space-y-1">
+                                <div class="text-[10px] text-slate-500 uppercase tracking-wider flex items-center gap-1">
+                                    <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-slate-500"></i> 法人/市場先前預期
+                                </div>
+                                <div class="text-xs font-semibold text-slate-400 font-mono">${item.market_expect}</div>
+                            </div>
+                            <div class="md:col-span-1 flex justify-center py-2 md:py-0">
+                                <div class="flex items-center justify-center w-8 h-8 rounded-full bg-amber-950/80 border border-amber-800/80 shadow-md">
+                                    <i data-lucide="zap" class="w-4 h-4 text-amber-400 animate-pulse"></i>
+                                </div>
+                            </div>
+                            <div class="md:col-span-3 space-y-1">
+                                <div class="text-[10px] text-amber-400 uppercase tracking-wider flex items-center gap-1 font-bold">
+                                    <i data-lucide="flame" class="w-3.5 h-3.5 text-amber-400"></i> 實質數據 / 最新傳聞
+                                </div>
+                                <div class="text-base font-black text-amber-300 font-mono bg-amber-950/25 border border-amber-900/30 px-3 py-1.5 rounded-lg inline-block">${item.real_data}</div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+                            <div class="space-y-1">
+                                <div class="text-[10px] text-slate-500">📊 預期差距 (估值重估潛能)</div>
+                                <div class="text-xs text-emerald-400 font-bold bg-emerald-950/30 border border-emerald-900/30 px-2 py-1 rounded-lg inline-flex items-center gap-1">
+                                    <i data-lucide="trending-up" class="w-3.5 h-3.5 text-emerald-400"></i> ${item.gap_space}
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <div class="text-[10px] text-slate-500">💡 追夢空間評估</div>
+                                <div class="text-xs text-cyan-300 font-bold bg-cyan-950/30 border border-cyan-900/30 px-2 py-1 rounded-lg inline-flex items-center gap-1">
+                                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-cyan-300"></i> ${item.dream_rating}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-slate-800/40 pt-3 space-y-2">
+                            <div class="text-[10px] text-slate-500">🎯 主要關聯概念股 (點擊可直接引導看 Wiki)</div>
+                            <div class="flex flex-wrap gap-2">
+                                ${stocksHTML}
+                            </div>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+                lucide.createIcons();
+            } catch (e) {
+                console.error(e);
+                container.innerHTML = `<div class="col-span-2 py-12 text-center text-red-400 text-xs font-semibold">載入預期反差數據失敗: ${e.message}</div>`;
             }
         }
 
         function showStockDetailsFromChips(symbol) {
-            showStockWiki();
             const searchInput = document.getElementById('wiki-search');
             if (searchInput) {
                 searchInput.value = symbol;
