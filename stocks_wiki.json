@@ -17634,18 +17634,31 @@
   "4721": {
     "code": "4721",
     "name": "美琪瑪",
-    "industry": "",
+    "industry": "化學",
     "market": "TPEX",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "塑膠射出成型專家，發展精密醫療器材，強化自動化生產與無塵室技術。",
+    "summary": "專業化學材料商，為全球領先之 PTA 氧化觸媒與電池正極材料原料 (鈷、鎳) 製造商。",
     "products": [
-      "塑膠射出",
-      "醫療器材",
-      "自動化生產"
+      "氧化觸媒",
+      "硫酸鎳",
+      "硫酸鈷",
+      "電池材料"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 4.0,
+      "barrierLevel": 3.5,
+      "ai_revenue_exposure": "受惠電動車電池材料需求，無直接 AI 暴露",
+      "gross_margin_impact": "受金屬原料 (鈷、鎳) 價格波動影響較大",
+      "pricing_power": "中上，為觸媒與電池材料核心供應商",
+      "value_capture_score": 75,
+      "substitution_risk": "低，客戶認證期長，與大廠關係緊密",
+      "commercialization_phase": "已量產出貨",
+      "pros": "全球最大觸媒供應商之一，受惠新能源趨勢",
+      "cons": "金屬原料價格波動大，易受存貨跌價損失影響",
+      "catalyst": "電動車需求回溫與金屬價格反彈"
+    },
+    "updated_at": "2026-06-16"
   },
   "4722": {
     "code": "4722",
@@ -29801,18 +29814,30 @@
   "8043": {
     "code": "8043",
     "name": "蜜望實",
-    "industry": "",
+    "industry": "電子通路",
     "market": "TPEX",
     "tier": "extended",
     "themes": [],
-    "details": {},
-    "summary": "生物技術與醫療器材公司，聚焦檢測與治療設備，拓展居家醫療。",
+    "summary": "電子零組件代理商，主要代理日商被動元件 (如 Murata 產品)，深耕電子通路。",
     "products": [
-      "醫療檢測設備",
-      "治療器材",
-      "居家醫療產品"
+      "被動元件",
+      "電容器",
+      "電子零組件通路"
     ],
-    "updated_at": "2026-06-13"
+    "details": {
+      "pureLevel": 3.0,
+      "barrierLevel": 2.5,
+      "ai_revenue_exposure": "無直接 AI 營收，主要為被動元件通路代理",
+      "gross_margin_impact": "主要受被動元件產業供需與日圓匯率變動影響",
+      "pricing_power": "中，代理日商大廠產品",
+      "value_capture_score": 60,
+      "substitution_risk": "中，面臨其他電子通路商競爭",
+      "commercialization_phase": "已量產出貨",
+      "pros": "長期代理日商 Murata 產品，客戶基礎穩健",
+      "cons": "營收高度受單一代理品牌與被動元件循環影響",
+      "catalyst": "被動元件回溫與日圓波動"
+    },
+    "updated_at": "2026-06-16"
   },
   "8044": {
     "code": "8044",

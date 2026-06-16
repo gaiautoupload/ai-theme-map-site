@@ -1,6 +1,6 @@
 {
   "date": "20260616",
-  "update_time": "2026-06-16 11:22:54",
+  "update_time": "2026-06-16 11:27:47",
   "cohort_themes": [
     {
       "theme_name": "晶圓代工",
@@ -102,34 +102,9 @@
   "surge_themes": [],
   "foreign_ratio_themes": [
     {
-      "theme_name": "生技醫療",
-      "total_net_buy": 39.603,
-      "count": 2,
-      "stocks": [
-        {
-          "symbol": "8043",
-          "name": "蜜望實",
-          "foreign_net": 2198,
-          "trust_net": 0,
-          "total_net": 2265,
-          "foreign_ratio": 27.507,
-          "trust_ratio": 0.0
-        },
-        {
-          "symbol": "4721",
-          "name": "美琪瑪",
-          "foreign_net": 907,
-          "trust_net": 0,
-          "total_net": 963,
-          "foreign_ratio": 12.096,
-          "trust_ratio": 0.0
-        }
-      ]
-    },
-    {
       "theme_name": "被動元件",
-      "total_net_buy": 39.355,
-      "count": 1,
+      "total_net_buy": 66.862,
+      "count": 2,
       "stocks": [
         {
           "symbol": "6175",
@@ -139,6 +114,15 @@
           "total_net": 6044,
           "foreign_ratio": 39.355,
           "trust_ratio": 0.007
+        },
+        {
+          "symbol": "8043",
+          "name": "蜜望實",
+          "foreign_net": 2198,
+          "trust_net": 0,
+          "total_net": 2265,
+          "foreign_ratio": 27.507,
+          "trust_ratio": 0.0
         }
       ]
     },
@@ -249,6 +233,22 @@
           "trust_net": 0,
           "total_net": 2605,
           "foreign_ratio": 6.559,
+          "trust_ratio": 0.0
+        }
+      ]
+    },
+    {
+      "theme_name": "化學",
+      "total_net_buy": 12.096,
+      "count": 1,
+      "stocks": [
+        {
+          "symbol": "4721",
+          "name": "美琪瑪",
+          "foreign_net": 907,
+          "trust_net": 0,
+          "total_net": 963,
+          "foreign_ratio": 12.096,
           "trust_ratio": 0.0
         }
       ]
@@ -720,7 +720,7 @@
       "dealer_net": 67,
       "total_net": 2265,
       "themes": [
-        "生技醫療"
+        "被動元件"
       ],
       "foreign_ratio": 27.507,
       "trust_ratio": 0.0
@@ -1070,7 +1070,7 @@
       "dealer_net": 56,
       "total_net": 963,
       "themes": [
-        "生技醫療"
+        "化學"
       ],
       "foreign_ratio": 12.096,
       "trust_ratio": 0.0
@@ -1664,7 +1664,7 @@
       "dealer_net": 67,
       "total_net": 2265,
       "themes": [
-        "生技醫療"
+        "被動元件"
       ],
       "foreign_ratio": 27.507,
       "trust_ratio": 0.0
@@ -1790,7 +1790,7 @@
       "dealer_net": 56,
       "total_net": 963,
       "themes": [
-        "生技醫療"
+        "化學"
       ],
       "foreign_ratio": 12.096,
       "trust_ratio": 0.0
@@ -2716,58 +2716,12 @@
     },
     {
       "theme_name": "被動元件",
-      "count": 2,
-      "total_net": 6054,
+      "count": 3,
+      "total_net": 8319,
       "stocks": [
         "立敦",
-        "來思達"
-      ]
-    },
-    {
-      "theme_name": "生技醫療",
-      "count": 40,
-      "total_net": 5883,
-      "stocks": [
         "蜜望實",
-        "光洋科",
-        "美琪瑪",
-        "圓祥生技",
-        "華宏",
-        "雷笛克光學",
-        "加高",
-        "信立",
-        "富驊",
-        "共信-KY",
-        "同亨",
-        "安葆",
-        "銳澤",
-        "力新",
-        "森田",
-        "台林",
-        "順藥",
-        "三圓",
-        "美而快",
-        "東友",
-        "太醫",
-        "三貝德",
-        "加捷生醫",
-        "光明",
-        "台翰",
-        "醫揚",
-        "漢田生技",
-        "杏昌",
-        "明基醫",
-        "訊聯基因",
-        "醫影",
-        "合世",
-        "惠普",
-        "東生華",
-        "樂威科-KY",
-        "聿新科",
-        "萬達寵物",
-        "生泰",
-        "欣大健康",
-        "強生"
+        "來思達"
       ]
     },
     {
@@ -2794,6 +2748,43 @@
         "虎門科技",
         "明係",
         "旭品"
+      ]
+    },
+    {
+      "theme_name": "AI伺服器/代工",
+      "count": 30,
+      "total_net": 4406,
+      "stocks": [
+        "佶優",
+        "光聯",
+        "堡達",
+        "高技",
+        "建榮",
+        "凱鈺",
+        "德宏",
+        "霖宏",
+        "合一",
+        "廣穎",
+        "永純",
+        "宣德",
+        "驊訊",
+        "新門",
+        "福裕",
+        "協益",
+        "國眾",
+        "迅德",
+        "由田",
+        "通泰",
+        "磐亞",
+        "崇友",
+        "淳紳",
+        "青雲",
+        "位速",
+        "長佳",
+        "長盛",
+        "皇將",
+        "銘旺實",
+        "至興"
       ]
     }
   ]
