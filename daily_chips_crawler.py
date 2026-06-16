@@ -424,8 +424,7 @@ def analyze_chips(target_date):
         conn.close()
         return
     
-    # 2. 取得近 5 日的外資買超紀錄，用來判斷「量增/爆量」
-    # 我們需要找出這一天之前的 5 個交易日日期
+    # 2. 取得近 5 日的買超紀錄，用來判斷「量增/爆量」
     cursor.execute("""
         SELECT DISTINCT date FROM chips_history 
         WHERE date < ? 
@@ -434,20 +433,25 @@ def analyze_chips(target_date):
     past_dates = [row["date"] for row in cursor.fetchall()]
     print(f"歷史對比交易日: {past_dates}")
     
-    # 載入歷史外資買超數據
+    # 載入歷史外資與投信買超數據
     past_foreign_sums = {}
+    past_trust_sums = {}
     if past_dates:
         placeholders = ",".join("?" for _ in past_dates)
         cursor.execute(f"""
-            SELECT symbol, foreign_net FROM chips_history 
+            SELECT symbol, foreign_net, trust_net FROM chips_history 
             WHERE date IN ({placeholders})
         """, past_dates)
         for row in cursor.fetchall():
             sym = row["symbol"]
-            val = row["foreign_net"]
+            f_val = row["foreign_net"]
+            t_val = row["trust_net"]
             if sym not in past_foreign_sums:
                 past_foreign_sums[sym] = []
-            past_foreign_sums[sym].append(val)
+            past_foreign_sums[sym].append(f_val)
+            if sym not in past_trust_sums:
+                past_trust_sums[sym] = []
+            past_trust_sums[sym].append(t_val)
             
     conn.close()
     
@@ -456,44 +460,47 @@ def analyze_chips(target_date):
     # 載入發行張數/股本對照表
     shares_map = get_outstanding_shares()
     
-    # 3. 執行過濾與計算
+    # 3. 執行過濾與計算各列表
     cohort_buys = []       # 三大法人同買
-    foreign_surges = []    # 外資爆量同買
-    top_buys = []          # 今日排行前 50 名
-    
-    # 排行排序 (以三大法人合計買超為主)
-    sorted_today = sorted(today_records, key=lambda x: x["total_net"], reverse=True)
-    top_buys = sorted_today[:100]  # 取前 100 筆為排行榜
+    foreign_surges = []    # 外資爆量股
+    trust_surges = []      # 投信爆量股
     
     for r in today_records:
         sym = r["symbol"]
         f_net = r["foreign_net"]
         t_net = r["trust_net"]
         d_net = r["dealer_net"]
-        tot_net = r["total_net"]
         
         # 條件 1: 三大法人同買 (都 > 0)
         is_cohort = (f_net > 0 and t_net > 0 and d_net > 0)
         
         # 條件 2: 外資爆量量增
-        # 量增定義：今日外資買超張數 > 歷史 5 日平均買超的 1.5 倍
-        # 且今日外資買超必須 > 100 張 (防小量干擾)
-        is_surge = False
-        hist_vals = past_foreign_sums.get(sym, [])
-        
-        # 如果有歷史資料，計算平均買超 (只看買超日，若都是賣超則設為 50 作為基準值以防除以零或雜訊)
-        if hist_vals:
-            # 只取歷史中大於 0 的買超值，若沒有則設為基值
-            pos_hist = [v for v in hist_vals if v > 0]
-            avg_hist = sum(pos_hist) / len(pos_hist) if pos_hist else 50
-            if f_net > avg_hist * 1.5 and f_net > 100:
-                is_surge = True
-        else:
-            # 沒有歷史資料時，採用絕對高買超張數 (如大於 500 張) 作為爆量判定
-            if f_net > 500:
-                is_surge = True
-                
-        # 附加題材資訊與投本比/外本比
+        is_surge_foreign = False
+        if f_net > 0:
+            hist_vals_f = past_foreign_sums.get(sym, [])
+            if hist_vals_f:
+                pos_hist_f = [v for v in hist_vals_f if v > 0]
+                avg_hist_f = sum(pos_hist_f) / len(pos_hist_f) if pos_hist_f else 50
+                if f_net > avg_hist_f * 1.5 and f_net > 100:
+                    is_surge_foreign = True
+            else:
+                if f_net > 500:
+                    is_surge_foreign = True
+                    
+        # 條件 3: 投信爆量量增
+        is_surge_trust = False
+        if t_net > 0:
+            hist_vals_t = past_trust_sums.get(sym, [])
+            if hist_vals_t:
+                pos_hist_t = [v for v in hist_vals_t if v > 0]
+                avg_hist_t = sum(pos_hist_t) / len(pos_hist_t) if pos_hist_t else 50
+                if t_net > avg_hist_t * 1.5 and t_net > 100:
+                    is_surge_trust = True
+            else:
+                if t_net > 500:
+                    is_surge_trust = True
+                    
+        # 附加題材與比率資訊
         r_themes = stock_themes.get(sym, [])
         if not r_themes:
             name = r["name"]
@@ -504,8 +511,6 @@ def analyze_chips(target_date):
             else:
                 r_themes = ["其他類股"]
         r["themes"] = r_themes
-        r["is_cohort"] = is_cohort
-        r["is_surge"] = is_surge
         
         shares = shares_map.get(sym, 0.0)
         if shares > 0:
@@ -517,51 +522,63 @@ def analyze_chips(target_date):
         
         if is_cohort:
             cohort_buys.append(r)
-            if is_surge:
-                foreign_surges.append(r)
-                
-    # 4. 進行「題材群聚/分群」分析 (針對外資爆量且同買的個股)
-    theme_clusters = {}
-    for r in foreign_surges:
-        for theme in r["themes"]:
-            if theme not in theme_clusters:
-                theme_clusters[theme] = {
-                    "theme_name": theme,
-                    "stocks": [],
-                    "total_foreign_buy": 0,
-                    "total_trust_buy": 0,
-                    "total_net_buy": 0
-                }
-            theme_clusters[theme]["stocks"].append({
-                "symbol": r["symbol"],
-                "name": r["name"],
-                "foreign_net": r["foreign_net"],
-                "trust_net": r["trust_net"],
-                "dealer_net": r["dealer_net"],
-                "total_net": r["total_net"],
-                "foreign_ratio": r["foreign_ratio"],
-                "trust_ratio": r["trust_ratio"]
-            })
-            theme_clusters[theme]["total_foreign_buy"] += r["foreign_net"]
-            theme_clusters[theme]["total_trust_buy"] += r["trust_net"]
-            theme_clusters[theme]["total_net_buy"] += r["total_net"]
-            
-    # 過濾出至少有 2 檔股票集體發動的題材
-    focus_themes = []
-    for t_info in theme_clusters.values():
-        if len(t_info["stocks"]) >= 2:
-            # 排序個股買超
-            t_info["stocks"] = sorted(t_info["stocks"], key=lambda x: x["total_net"], reverse=True)
-            focus_themes.append(t_info)
-            
-    # 依題材總買超金額排序
-    focus_themes = sorted(focus_themes, key=lambda x: x["total_net_buy"], reverse=True)
+        if is_surge_foreign:
+            foreign_surges.append(r)
+        if is_surge_trust:
+            trust_surges.append(r)
 
-    # 4.5 計算外本比與投本比的獨立排行 (限買超 > 0，由大到小)
-    top_foreign_ratio = sorted([r for r in today_records if r.get("foreign_ratio", 0) > 0], key=lambda x: x["foreign_ratio"], reverse=True)[:50]
-    top_trust_ratio = sorted([r for r in today_records if r.get("trust_ratio", 0) > 0], key=lambda x: x["trust_ratio"], reverse=True)[:50]
+    # 4. 排序與限額產出 7 大獨立表
+    cohort_buys = sorted(cohort_buys, key=lambda x: x["total_net"], reverse=True)[:100] # 同買前 100
+    top_foreign_buys = sorted([r for r in today_records if r["foreign_net"] > 0], key=lambda x: x["foreign_net"], reverse=True)[:50]
+    top_trust_buys = sorted([r for r in today_records if r["trust_net"] > 0], key=lambda x: x["trust_net"], reverse=True)[:50]
+    
+    foreign_surges = sorted(foreign_surges, key=lambda x: x["foreign_net"], reverse=True)[:50]
+    trust_surges = sorted(trust_surges, key=lambda x: x["trust_net"], reverse=True)[:50]
+    
+    top_foreign_ratio = sorted([r for r in today_records if r["foreign_ratio"] > 0], key=lambda x: x["foreign_ratio"], reverse=True)[:50]
+    top_trust_ratio = sorted([r for r in today_records if r["trust_ratio"] > 0], key=lambda x: x["trust_ratio"], reverse=True)[:50]
 
-    # 4.6 計算昨日與今日三大法人同買題材之資金淨流入排行 (排除 ETF、權證與其他通用類)
+    # 5. 分類題材分組函數
+    def group_by_theme(stock_list, sort_key="total_net", limit_themes=6):
+        theme_map = {}
+        for r in stock_list:
+            themes = r.get("themes", [])
+            for t in themes:
+                if t in {"ETF/債券", "權證/衍生商品", "其他類股", "其他電子", "其他", "電子科技", "電子零組件業", "指數基金"}:
+                    continue
+                if t not in theme_map:
+                    theme_map[t] = {
+                        "theme_name": t,
+                        "total_net_buy": 0,
+                        "count": 0,
+                        "stocks": []
+                    }
+                theme_map[t]["count"] += 1
+                theme_map[t]["total_net_buy"] += r.get(sort_key, 0)
+                theme_map[t]["stocks"].append({
+                    "symbol": r["symbol"],
+                    "name": r["name"],
+                    "foreign_net": r["foreign_net"],
+                    "trust_net": r["trust_net"],
+                    "total_net": r["total_net"],
+                    "foreign_ratio": r["foreign_ratio"],
+                    "trust_ratio": r["trust_ratio"]
+                })
+        
+        result = list(theme_map.values())
+        for item in result:
+            item["stocks"] = sorted(item["stocks"], key=lambda x: x.get(sort_key, 0), reverse=True)
+            if isinstance(item["total_net_buy"], float):
+                item["total_net_buy"] = round(item["total_net_buy"], 3)
+        return sorted(result, key=lambda x: x["total_net_buy"], reverse=True)[:limit_themes]
+
+    # 計算 4 類題材分析
+    cohort_themes = group_by_theme(cohort_buys, sort_key="total_net")
+    surge_themes = group_by_theme(foreign_surges + trust_surges, sort_key="total_net")
+    foreign_ratio_themes = group_by_theme(top_foreign_ratio, sort_key="foreign_ratio")
+    trust_ratio_themes = group_by_theme(top_trust_ratio, sort_key="trust_ratio")
+
+    # 6. 計算今日題材資金淨流入排行
     theme_inflows = {}
     for r in today_records:
         net_buy = r.get("total_net", 0)
@@ -583,23 +600,33 @@ def analyze_chips(target_date):
 
     top_theme_inflows = []
     for t_name, info in theme_inflows.items():
-        # 題材內個股按法人合計買超張數降序排序
         sorted_stocks = sorted(info["stocks"], key=lambda x: x[1], reverse=True)
         info["stocks"] = [name for name, val in sorted_stocks]
         top_theme_inflows.append(info)
 
     top_theme_inflows = sorted(top_theme_inflows, key=lambda x: x["total_net"], reverse=True)[:5]
 
-    # 5. 輸出統計檔案
+    # 7. 輸出統計檔案
     summary_data = {
         "date": target_date,
         "update_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "focus_themes": focus_themes,               # 今日法人集體佈局焦點題材 (同買 + 爆量且 >= 2檔)
-        "cohort_buys": sorted(cohort_buys, key=lambda x: x["total_net"], reverse=True)[:50],  # 今日法人同買明細 (前50)
-        "foreign_surges": sorted(foreign_surges, key=lambda x: x["foreign_net"], reverse=True)[:50], # 今日外資爆量個股
-        "top_foreign_ratio": top_foreign_ratio,      # 今日外本比排行 (前50)
-        "top_trust_ratio": top_trust_ratio,          # 今日投本比排行 (前50)
-        "theme_inflows": top_theme_inflows           # 今日題材資金流入排行 (前5)
+        
+        # 題材分類數據
+        "cohort_themes": cohort_themes,
+        "surge_themes": surge_themes,
+        "foreign_ratio_themes": foreign_ratio_themes,
+        "trust_ratio_themes": trust_ratio_themes,
+        
+        # 7 大排行數據
+        "cohort_buys": cohort_buys,
+        "top_foreign_buys": top_foreign_buys,
+        "top_trust_buys": top_trust_buys,
+        "foreign_surges": foreign_surges,
+        "trust_surges": trust_surges,
+        "top_foreign_ratio": top_foreign_ratio,
+        "top_trust_ratio": top_trust_ratio,
+        
+        "theme_inflows": top_theme_inflows
     }
     
     with open(SUMMARY_JSON_PATH, "w", encoding="utf-8") as f:
@@ -628,7 +655,18 @@ def main():
         save_to_db(all_records)
         analyze_chips(date_str)
     else:
-        print(f"未抓取到 {date_str} 的任何法人籌碼資料，略過存庫與分析。")
+        print(f"未抓取到 {date_str} 的任何法人籌碼資料，尋找資料庫中最新的日期...")
+        conn = sqlite3.connect(DB_PATH)
+        cursor = conn.cursor()
+        cursor.execute("SELECT MAX(date) FROM chips_history")
+        row = cursor.fetchone()
+        latest_date = row[0] if row else None
+        conn.close()
+        if latest_date:
+            print(f"找到最新日期: {latest_date}，將使用此日期進行分析...")
+            analyze_chips(latest_date)
+        else:
+            print("資料庫中無任何歷史資料。")
 
 if __name__ == "__main__":
     main()
