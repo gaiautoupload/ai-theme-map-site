@@ -212,33 +212,119 @@ def get_stock_themes():
     for sym, themes in COMMON_THEME_MAP.items():
         stock_themes[sym] = list(themes)
         
-    # 2. 備用：若不在常見熱門表，則載入 ticker_registry_tw.json 產業分類並進行通俗化轉換
+    # 2. 備用：若不在常見熱門表，則載入 ticker_registry_tw.json 產業分類與 stocks_wiki.json 簡介進行細緻的題材分類
     registry_path = os.path.join(PROJECT_DIR, "ticker_registry_tw.json")
+    wiki_path = os.path.join(PROJECT_DIR, "stocks_wiki.json")
+    
+    industry_map = {
+        "01": "水泥", "02": "食品", "03": "塑膠", "04": "紡織纖維",
+        "05": "電機機械", "06": "電器電纜", "07": "化學", "08": "玻璃陶瓷",
+        "09": "造紙", "10": "鋼鐵", "11": "橡膠", "12": "汽車",
+        "13": "電子", "14": "建材營造", "15": "航運", "16": "觀光餐旅",
+        "17": "金融", "18": "貿易百貨", "19": "綜合", "20": "其他",
+        "21": "化學", "22": "生技醫療", "23": "油電燃氣", "24": "半導體",
+        "25": "電腦及週邊", "26": "光電", "27": "通信網路", "28": "電子零組件",
+        "29": "電子通路", "30": "資訊服務", "31": "其他電子"
+    }
+    
+    wiki_data = {}
+    if os.path.exists(wiki_path):
+        try:
+            with open(wiki_path, "r", encoding="utf-8") as f:
+                wiki_data = json.load(f)
+        except Exception as e:
+            print("讀取 stocks_wiki.json 失敗:", e)
+
+    def match_keyword_theme(sym, name, desc_text):
+        desc = desc_text.upper()
+        if "晶圓代工" in desc or "TSMC" in desc:
+            return ["晶圓代工"]
+        if "先進封裝" in desc or "封測" in desc or "測試介面" in desc or "測試載板" in desc or "探針" in desc or "IC測試" in desc:
+            return ["半導體封測"]
+        if "IC設計" in desc or "IP/IC設計" in desc or "矽智財" in desc or "晶片設計" in desc:
+            return ["IC設計"]
+        if "矽晶圓" in desc or "環球晶" in desc or "合晶" in desc:
+            return ["矽晶圓"]
+        if "矽光子" in desc or "光通訊" in desc or "CPO" in desc or "光收發" in desc:
+            return ["矽光子/光通訊"]
+        if "被動元件" in desc or "電感" in desc or "電容" in desc or "電阻" in desc or "石英" in desc:
+            return ["被動元件"]
+        if "IC載板" in desc or "ABF" in desc or "BT載板" in desc:
+            return ["IC載板"]
+        if "銅箔基板" in desc or "CCL" in desc:
+            return ["銅箔基板/CCL"]
+        if "PCB" in desc or "印刷電路板" in desc or "銅箔" in desc:
+            return ["PCB"]
+        if "散熱" in desc or "機殼" in desc or "水冷" in desc or "液冷" in desc or "風扇" in desc:
+            return ["散熱/機殼"]
+        if "伺服器" in desc or "代工" in desc or "組裝" in desc or "AI伺服器" in desc:
+            return ["AI伺服器/代工"]
+        if "重電" in desc or "電力" in desc or "變壓器" in desc or "電網" in desc or "綠能" in desc:
+            return ["重電/電力系統"]
+        if "低軌衛星" in desc or "衛星" in desc or "航太" in desc:
+            return ["低軌衛星"]
+        if "記憶體" in desc or "DRAM" in desc or "FLASH" in desc or "NOR" in desc:
+            return ["記憶體"]
+        if "生技" in desc or "新藥" in desc or "醫療" in desc or "製藥" in desc or "保健" in desc:
+            return ["生技醫療"]
+        if "金融" in desc or "金控" in desc or "銀行" in desc or "證券" in desc or "保險" in desc or "壽險" in desc:
+            return ["金融"]
+        if "航運" in desc or "航空" in desc or "貨櫃" in desc or "散裝" in desc:
+            return ["航運"]
+        return []
+
     if os.path.exists(registry_path):
-        industry_map = {
-            "01": "水泥", "02": "食品", "03": "塑膠", "04": "紡織纖維",
-            "05": "電機機械", "06": "電器電纜", "07": "化學", "08": "玻璃陶瓷",
-            "09": "造紙", "10": "鋼鐵", "11": "橡膠", "12": "汽車",
-            "13": "電子", "14": "建材營造", "15": "航運", "16": "觀光餐旅",
-            "17": "金融", "18": "貿易百貨", "19": "綜合", "20": "其他",
-            "21": "化學", "22": "生技醫療", "23": "油電燃氣", "24": "半導體",
-            "25": "電腦及週邊", "26": "光電", "27": "通信網路", "28": "電子零組件",
-            "29": "電子通路", "30": "資訊服務", "31": "其他電子"
-        }
         try:
             with open(registry_path, "r", encoding="utf-8") as f:
                 registry = json.load(f)
             for sym, info in registry.items():
-                if sym in stock_themes:
-                    continue  # 已經有常見對照表了，跳過
+                name = info.get("name", "")
+                if sym in stock_themes and stock_themes[sym]:
+                    continue
+                
+                # 試圖利用 Wiki 中的簡介進行主題抽取
+                wiki_stock = wiki_data.get(sym)
+                extracted_themes = []
+                if wiki_stock:
+                    desc_content = (wiki_stock.get("summary", "") + " " + " ".join(wiki_stock.get("products", [])))
+                    extracted_themes = match_keyword_theme(sym, name, desc_content)
+                
+                if extracted_themes:
+                    stock_themes[sym] = extracted_themes
+                    continue
+                
+                # 試圖利用股票名稱本身關鍵字抽取
+                extracted_themes = match_keyword_theme(sym, name, name)
+                if extracted_themes:
+                    stock_themes[sym] = extracted_themes
+                    continue
+                
+                # 若無，則使用產業分類
                 ind = info.get("industry")
-                if ind and ind != "未分類":
-                    mapped_name = industry_map.get(ind, ind)
-                    stock_themes[sym] = [mapped_name]
+                if ind and ind != "未分類" and ind in industry_map:
+                    stock_themes[sym] = [industry_map[ind]]
+                    continue
+                
+                # 最後 Fallback 機制
+                if sym.startswith("00") or "債" in name or "高股息" in name or "ETF" in name.upper() or "正2" in name or "反1" in name:
+                    stock_themes[sym] = ["ETF/債券"]
+                elif len(sym) >= 6:
+                    stock_themes[sym] = ["權證/衍生商品"]
+                elif "生技" in name or "醫" in name or "藥" in name:
+                    stock_themes[sym] = ["生技醫療"]
+                elif "金融" in name or "金控" in name or "銀行" in name or "證券" in name or "保險" in name:
+                    stock_themes[sym] = ["金融"]
+                elif "光" in name:
+                    stock_themes[sym] = ["光電/光通訊"]
+                elif "科" in name or "電" in name or "資" in name:
+                    stock_themes[sym] = ["電子科技"]
+                else:
+                    stock_themes[sym] = ["其他類股"]
         except Exception as e:
-            print(f"解析 ticker_registry_tw.json 出錯: {e}")
+            print(f"解析 ticker_registry_tw.json 題材補正出錯: {e}")
             
     return stock_themes
+
 
 def get_outstanding_shares():
     """
@@ -409,6 +495,14 @@ def analyze_chips(target_date):
                 
         # 附加題材資訊與投本比/外本比
         r_themes = stock_themes.get(sym, [])
+        if not r_themes:
+            name = r["name"]
+            if sym.startswith("00") or "債" in name or "高股息" in name or "ETF" in name.upper() or "正2" in name or "反1" in name or "加權" in name or "台灣" in name:
+                r_themes = ["ETF/債券"]
+            elif len(sym) >= 6:
+                r_themes = ["權證/衍生商品"]
+            else:
+                r_themes = ["其他類股"]
         r["themes"] = r_themes
         r["is_cohort"] = is_cohort
         r["is_surge"] = is_surge
@@ -461,9 +555,40 @@ def analyze_chips(target_date):
             focus_themes.append(t_info)
             
     # 依題材總買超金額排序
+    focus_themes = sorted(focus_themes, key=lambda x: x["total_net_buy"], reverse=True)
+
     # 4.5 計算外本比與投本比的獨立排行 (限買超 > 0，由大到小)
     top_foreign_ratio = sorted([r for r in today_records if r.get("foreign_ratio", 0) > 0], key=lambda x: x["foreign_ratio"], reverse=True)[:50]
     top_trust_ratio = sorted([r for r in today_records if r.get("trust_ratio", 0) > 0], key=lambda x: x["trust_ratio"], reverse=True)[:50]
+
+    # 4.6 計算昨日與今日三大法人同買題材之資金淨流入排行 (排除 ETF、權證與其他通用類)
+    theme_inflows = {}
+    for r in today_records:
+        net_buy = r.get("total_net", 0)
+        if net_buy > 0:
+            themes = r.get("themes", [])
+            for t in themes:
+                if t in {"ETF/債券", "權證/衍生商品", "其他類股", "其他電子", "其他", "電子科技", "電子零組件業", "指數基金"}:
+                    continue
+                if t not in theme_inflows:
+                    theme_inflows[t] = {
+                        "theme_name": t,
+                        "count": 0,
+                        "total_net": 0,
+                        "stocks": []
+                    }
+                theme_inflows[t]["count"] += 1
+                theme_inflows[t]["total_net"] += net_buy
+                theme_inflows[t]["stocks"].append((r["name"], net_buy))
+
+    top_theme_inflows = []
+    for t_name, info in theme_inflows.items():
+        # 題材內個股按法人合計買超張數降序排序
+        sorted_stocks = sorted(info["stocks"], key=lambda x: x[1], reverse=True)
+        info["stocks"] = [name for name, val in sorted_stocks]
+        top_theme_inflows.append(info)
+
+    top_theme_inflows = sorted(top_theme_inflows, key=lambda x: x["total_net"], reverse=True)[:5]
 
     # 5. 輸出統計檔案
     summary_data = {
@@ -472,9 +597,9 @@ def analyze_chips(target_date):
         "focus_themes": focus_themes,               # 今日法人集體佈局焦點題材 (同買 + 爆量且 >= 2檔)
         "cohort_buys": sorted(cohort_buys, key=lambda x: x["total_net"], reverse=True)[:50],  # 今日法人同買明細 (前50)
         "foreign_surges": sorted(foreign_surges, key=lambda x: x["foreign_net"], reverse=True)[:50], # 今日外資爆量個股
-        "top_buys": top_buys,                        # 今日全部買超前100大個股
         "top_foreign_ratio": top_foreign_ratio,      # 今日外本比排行 (前50)
-        "top_trust_ratio": top_trust_ratio           # 今日投本比排行 (前50)
+        "top_trust_ratio": top_trust_ratio,          # 今日投本比排行 (前50)
+        "theme_inflows": top_theme_inflows           # 今日題材資金流入排行 (前5)
     }
     
     with open(SUMMARY_JSON_PATH, "w", encoding="utf-8") as f:

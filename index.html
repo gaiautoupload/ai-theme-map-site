@@ -1539,7 +1539,7 @@
             const versionStamp = Date.now();
             try {
                 const versionedMapCandidates = [
-                    './maps_repo_20260616_023748.json',
+                    './maps_repo_20260616_102801.json',
                     './maps_repo.json'
                 ];
                 const { data: rawRepo, url } = await fetchJsonWithFallback([
@@ -3443,7 +3443,6 @@
             const focusContainer = document.getElementById('chips-focus-themes-container');
             const cohortTbody = document.getElementById('chips-cohort-tbody');
             const surgeTbody = document.getElementById('chips-surge-tbody');
-            const topTbody = document.getElementById('chips-top100-tbody');
             const foreignRatioTbody = document.getElementById('chips-foreign_ratio-tbody');
             const trustRatioTbody = document.getElementById('chips-trust_ratio-tbody');
 
@@ -3452,7 +3451,6 @@
             focusContainer.innerHTML = '<div class="col-span-2 py-8 text-center text-slate-500">載入中...</div>';
             cohortTbody.innerHTML = '<tr><td colspan="9" class="py-4 text-center text-slate-500">載入中...</td></tr>';
             if (surgeTbody) surgeTbody.innerHTML = '<tr><td colspan="9" class="py-4 text-center text-slate-500">載入中...</td></tr>';
-            if (topTbody) topTbody.innerHTML = '<tr><td colspan="9" class="py-4 text-center text-slate-500">載入中...</td></tr>';
             if (foreignRatioTbody) foreignRatioTbody.innerHTML = '<tr><td colspan="9" class="py-4 text-center text-slate-500">載入中...</td></tr>';
             if (trustRatioTbody) trustRatioTbody.innerHTML = '<tr><td colspan="9" class="py-4 text-center text-slate-500">載入中...</td></tr>';
             
@@ -3468,36 +3466,11 @@
 
                 focusContainer.innerHTML = '';
                 
-                // Calculate Theme/Industry Inflow dynamically
-                const themeInflow = {};
-                const targetList = summary.cohort_buys || [];
-                targetList.forEach(s => {
-                    const themes = s.themes || [];
-                    const netBuy = s.total_net || 0;
-                    themes.forEach(t => {
-                        if (!themeInflow[t]) {
-                            themeInflow[t] = {
-                                themeName: t,
-                                count: 0,
-                                totalNet: 0,
-                                stocks: []
-                            };
-                        }
-                        themeInflow[t].count += 1;
-                        themeInflow[t].totalNet += netBuy;
-                        themeInflow[t].stocks.push(s.name);
-                    });
-                });
-
-                const sortedInflow = Object.values(themeInflow)
-                    .filter(item => item.totalNet > 0)
-                    .sort((a, b) => b.totalNet - a.totalNet)
-                    .slice(0, 5);
-
                 const flowContainer = document.getElementById('chips-theme-flow-container');
                 if (flowContainer) {
-                    if (sortedInflow.length > 0) {
-                        flowContainer.innerHTML = sortedInflow.map((item, idx) => {
+                    const inflows = summary.theme_inflows || [];
+                    if (inflows.length > 0) {
+                        flowContainer.innerHTML = inflows.map((item, idx) => {
                             let rankColor = 'text-emerald-400';
                             if (idx === 0) rankColor = 'text-amber-400';
                             else if (idx === 1) rankColor = 'text-cyan-300';
@@ -3507,9 +3480,9 @@
                                     <div class="flex items-center justify-between">
                                         <div class="flex items-center gap-2">
                                             <span class="w-5 h-5 flex items-center justify-center rounded bg-slate-900 font-mono font-bold ${rankColor}">#${idx + 1}</span>
-                                            <span class="text-slate-100 font-bold">${item.themeName}</span>
+                                            <span class="text-slate-100 font-bold">${item.theme_name}</span>
                                         </div>
-                                        <span class="font-mono font-bold text-emerald-400">+${item.totalNet} 張</span>
+                                        <span class="font-mono font-bold text-emerald-400">+${item.total_net} 張</span>
                                     </div>
                                     <div class="flex items-center justify-between text-[10px] text-slate-500">
                                         <span>共 ${item.count} 檔發動</span>
@@ -3595,7 +3568,6 @@
 
                 renderRows(summary.cohort_buys, cohortTbody);
                 renderRows(summary.foreign_surges, surgeTbody);
-                renderRows(summary.top_buys, topTbody);
                 renderRows(summary.top_foreign_ratio, foreignRatioTbody);
                 renderRows(summary.top_trust_ratio, trustRatioTbody);
 
