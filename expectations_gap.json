@@ -13,7 +13,10 @@
       "3231 緯創",
       "3017 奇鋐",
       "3324 雙鴻",
-      "3034 聯詠"
+      "3034 聯詠",
+      "2317 鴻海",
+      "2382 廣達",
+      "3035 智原"
     ],
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
@@ -76,6 +79,38 @@
   },
   {
     "category": "先進半導體 (Advanced Semiconductor)",
+    "target": "三星代工產能與先進製程",
+    "market_expect": "市場原預期台積電壟斷先進製程，三星良率落後難獲大單",
+    "real_data": "三星獲Google、AMD、比亞迪洽談，2nm I/O裸片與德州廠產能受矚目",
+    "gap_space": "三星從邊緣角色轉為關鍵備援，先進製程市佔率重估空間顯著",
+    "concept_stocks": [
+      "2344 華邦電",
+      "2303 聯電",
+      "2454 聯發科"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "日經亞洲：台積電產能吃緊，三星迎來Google、AMD等客戶詢價轉機",
+    "last_update": "2026-06-17"
+  },
+  {
+    "category": "先進半導體 (Advanced Semiconductor)",
+    "target": "先進封裝設備 (CoWoS/HBM相關)",
+    "market_expect": "市場預期產能擴張需時，交期延長屬常態性波動",
+    "real_data": "產能僅滿足25%需求，下單交期延至一年以上，需求見度至2030年",
+    "gap_space": "供需缺口極大，營收認列受限設備驗收，估值重估空間極高",
+    "concept_stocks": [
+      "3131 弘塑",
+      "3707 漢磊",
+      "6214 精誠"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "弘塑股東會：產能塞爆，交期延至一年以上",
+    "last_update": "2026-06-17"
+  },
+  {
+    "category": "先進半導體 (Advanced Semiconductor)",
     "target": "台積電面板級封裝 (PLP)",
     "market_expect": "市場原預期先進封裝聚焦CoWoS，PLP技術尚處早期研發或試產階段",
     "real_data": "台積電已確保AI大客戶，試產線今年運行，明年直接進入大規模量產",
@@ -131,6 +166,42 @@
     "impact_direction": "bullish",
     "source": "新聞報導：匯鑽科CPO處理接單加速且自主生產水冷散熱組件，泰國新增產能12月開出",
     "last_update": "2026-06-15"
+  },
+  {
+    "category": "被動元件 (Passive Components)",
+    "target": "鋁電解電容 (Aluminum Electrolytic Capacitors)",
+    "market_expect": "市場原預期被動元件處於去庫存階段，需求平淡，價格維持穩定或小幅波動",
+    "real_data": "尼吉康因訂單超產能及成本飆升，宣布全面調漲鋁電價格，供需出現結構性緊張",
+    "gap_space": "從去庫存預期轉為供給缺口與成本推動型漲價，估值邏輯由防禦轉為成長追夢",
+    "concept_stocks": [
+      "3026 禾伸堂",
+      "3028 增你強",
+      "3090 日電貿",
+      "2375 凱美",
+      "8042 金山電",
+      "2472 立隆電"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "業界流傳尼吉康漲價通知及代理商受惠消息",
+    "last_update": "2026-06-17"
+  },
+  {
+    "category": "被動元件 (Passive Components)",
+    "target": "高階 MLCC (AI伺服器/車用)",
+    "market_expect": "市場原預期MLCC為傳統週期性復甦，需求成長平緩且供給充足",
+    "real_data": "AI伺服器MLCC用量暴增182%，國產替代需求強勁，三環集團Q1獲利年增近50%",
+    "gap_space": "AI需求結構性改變導致供給缺口擴大，估值邏輯從週期轉向成長，重估空間大",
+    "concept_stocks": [
+      "2327 國巨*",
+      "2492 華新科",
+      "2319 旺詮",
+      "6471 三環"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "優分析：高盛指出AI時代MLCC需求激增，高階品供不應求",
+    "last_update": "2026-06-17"
   },
   {
     "category": "記憶體 (Memory)",
@@ -280,5 +351,19 @@
     "impact_direction": "bullish",
     "source": "鉅亨網/Finbold：Wolfe Research 大幅上調美光目標價 127%",
     "last_update": "2026-06-15"
+  },
+  {
+    "category": "記憶體 (Memory)",
+    "target": "記憶體成本侵蝕與高毛利產品結構",
+    "market_expect": "市場預期記憶體漲價將侵蝕系統廠獲利，壓縮毛利率",
+    "real_data": "華碩高毛利筆電與AI伺服器占比提升，預期毛利率優於均值14%以上",
+    "gap_space": "高毛利產品結構抵消記憶體成本壓力，獲利韌性超預期",
+    "concept_stocks": [
+      "2357 華碩"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "新聞標題：雙箭齊發力抗記憶體漲價潮",
+    "last_update": "2026-06-17"
   }
 ]

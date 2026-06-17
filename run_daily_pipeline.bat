@@ -3,30 +3,32 @@ chcp 65001 >nul
 setlocal
 cd /d D:\ai-theme-map-site
 
-set MAP_VLLM_URL=https://vllm-a5000.iii-ei-stack.com/v1/chat/completions
-set MAP_MODEL_NAME=cyankiwi/Qwen3.6-35B-A3B-AWQ-4bit
-set MAP_SEARCH_MODE=search_augmented
-set MAP_SEARCH_BACKEND=whitelist_rss
-set MAP_SEARCH_MIN_DELAY=3.5
-set MAP_SEARCH_MAX_DELAY=7.5
-set MAP_SEARCH_FETCH_ENABLED=1
+set "MAP_VLLM_URL=https://vllm-a5000.iii-ei-stack.com/v1/chat/completions"
+set "MAP_MODEL_NAME=cyankiwi/Qwen3.6-35B-A3B-AWQ-4bit"
+set "MAP_SEARCH_MODE=search_augmented"
+set "MAP_SEARCH_BACKEND=whitelist_rss"
+set "MAP_SEARCH_MIN_DELAY=3.5"
+set "MAP_SEARCH_MAX_DELAY=7.5"
+set "MAP_SEARCH_FETCH_ENABLED=1"
+set "PYTHONPATH=%CD%\.python-packages;%PYTHONPATH%"
 
-:: 偵測 Python 路徑
-set PYTHON_EXE=python
+set "PYTHON_EXE=python"
 where python >nul 2>nul
 if errorlevel 1 (
-    if exist "C:\Users\pioterlee\AppData\Local\Python\pythoncore-3.14-64\python.exe" (
-        set PYTHON_EXE="C:\Users\pioterlee\AppData\Local\Python\pythoncore-3.14-64\python.exe"
+    if exist "%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe" (
+        set "PYTHON_EXE=%USERPROFILE%\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe"
+    ) else if exist "C:\Users\pioterlee\AppData\Local\Python\pythoncore-3.14-64\python.exe" (
+        set "PYTHON_EXE=C:\Users\pioterlee\AppData\Local\Python\pythoncore-3.14-64\python.exe"
     ) else (
         for /d %%d in ("%USERPROFILE%\AppData\Local\Programs\Python\Python*") do (
-            if exist "%%d\python.exe" set PYTHON_EXE="%%d\python.exe"
+            if exist "%%d\python.exe" set "PYTHON_EXE=%%d\python.exe"
         )
     )
 )
 
-echo 正在執行每日排程更新管線...
-echo 使用 Python 執行檔: %PYTHON_EXE%
-%PYTHON_EXE% run_daily_pipeline.py
+echo Starting daily pipeline...
+echo Python executable: %PYTHON_EXE%
+"%PYTHON_EXE%" run_daily_pipeline.py
 if errorlevel 1 goto :fail
 
 echo.
