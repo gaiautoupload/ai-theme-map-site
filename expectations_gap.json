@@ -70,6 +70,23 @@
   },
   {
     "category": "先進半導體 (Advanced Semiconductor)",
+    "target": "CoWoS 產能與 WFE 市場",
+    "market_expect": "原預期 WFE 增速約 21%，先進封裝競爭較溫和，供需缺口預期較小",
+    "real_data": "2026 WFE 增速上調至 28%，CoWoS 月產能達 11.5 萬片，供需缺口仍達 10-20%",
+    "gap_space": "增速上調 7-11 個百分點，封裝價格漲幅為晶圓 2-4 倍，利潤重估空間大",
+    "concept_stocks": [
+      "2330 台積電",
+      "3711 日月光投控",
+      "2449 京元電子",
+      "3037 欣興"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "摩根大通 2026/6/17 半導體產業報告",
+    "last_update": "2026-06-19"
+  },
+  {
+    "category": "先進半導體 (Advanced Semiconductor)",
     "target": "NVIDIA Blackwell 架構晶片 (GB300/B300)",
     "market_expect": "產品進入生命週期尾聲，供貨應趨於寬鬆，符合傳統週期規律",
     "real_data": "GB300/B300 庫存極度緊缺，需求遠超華爾街預估，HBM 產能為主要瓶頸",
@@ -285,6 +302,39 @@
   },
   {
     "category": "記憶體 (Memory)",
+    "target": "DRAM 與 NAND 供給與 AI 需求",
+    "market_expect": "市場原預期記憶體為傳統週期性波動，估值偏低",
+    "real_data": "AI 伺服器需求強勁，蘋果漲價證實成本轉嫁能力與需求剛性",
+    "gap_space": "AI 結構性需求重估估值，本益比向上修正空間大",
+    "concept_stocks": [
+      "2344 華邦電",
+      "2451 創見",
+      "8299 群聯"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "巴隆周刊/華爾街日報：蘋果漲價證實記憶體需求強勁",
+    "last_update": "2026-06-19"
+  },
+  {
+    "category": "記憶體 (Memory)",
+    "target": "DRAM 超級周期與常規 DRAM 供需缺口",
+    "market_expect": "市場原預期漲價主因為 HBM 需求爆發，常規 DRAM 僅隨動",
+    "real_data": "花旗指出常規 DRAM 供需失衡為漲價主力，2026 年 ASP 漲 200%",
+    "gap_space": "預期差距極大，常規 DRAM 估值重估空間顯著，供給缺口達 5%",
+    "concept_stocks": [
+      "2344 華邦電",
+      "2451 創見",
+      "3260 威剛",
+      "2337 旺宏"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "花旗銀行：DRAM 超級周期才剛開始，常規 DRAM 漲價超預期",
+    "last_update": "2026-06-19"
+  },
+  {
+    "category": "記憶體 (Memory)",
     "target": "DRAM/HBM 供給缺口",
     "market_expect": "市場原預期傳統週期波動，短缺情況可能在短期內緩解或平穩過渡",
     "real_data": "德銀預測短缺將持續至2028年，營收預估上修至351億美元，獲利預期顯著上修",
@@ -299,6 +349,23 @@
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
     "source": "德意志銀行：調升美光目標價至1500美元，預警記憶體短缺持續至2028年",
+    "last_update": "2026-06-18"
+  },
+  {
+    "category": "記憶體 (Memory)",
+    "target": "DRAM/NAND 供給缺口與價格",
+    "market_expect": "市場原預期記憶體價格溫和上漲，蘋果可透過規模優勢吸收成本",
+    "real_data": "AI 需求擠壓產能，記憶體價格飆升四倍，蘋果被迫轉嫁成本並面臨漲價",
+    "gap_space": "價格重估彈性極大，蘋果成本轉嫁效應確認，記憶體需求結構性短缺持續",
+    "concept_stocks": [
+      "2344 華邦電",
+      "2337 旺宏",
+      "2451 創見",
+      "3260 威剛"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "華爾街日報：庫克證實記憶體短缺推升成本，蘋果漲價無可避免",
     "last_update": "2026-06-18"
   },
   {
@@ -332,6 +399,22 @@
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
     "source": "鉅亨網：記憶體漲價荒誕現實，SSD 售價抵三台主機",
+    "last_update": "2026-06-18"
+  },
+  {
+    "category": "記憶體 (Memory)",
+    "target": "NAND Flash SSD",
+    "market_expect": "市場預期記憶體價格溫和上漲，終端產品漲價幅度可控",
+    "real_data": "8TB SSD 價格達 2959 美元，可買 3 台 PS5 Pro，漲價荒誕",
+    "gap_space": "終端溢價極高，成本轉嫁能力超預期，估值重估空間大",
+    "concept_stocks": [
+      "2344 華邦電",
+      "2337 旺宏",
+      "2451 創見"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "鉅亨網：記憶體漲價荒誕現實，SSD 價格抵三台主機",
     "last_update": "2026-06-18"
   },
   {
