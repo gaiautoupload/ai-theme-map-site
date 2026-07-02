@@ -1,6 +1,23 @@
 [
   {
     "category": "AI 基礎設施 (AI Infrastructure)",
+    "target": "AI GPU 算力出租市場 (GPU Cloud Computing)",
+    "market_expect": "市場預期 AI 算力持續短缺，雲端供應商利潤持續擴張",
+    "real_data": "Meta 宣布出租富餘算力，暗示推理階段利用率僅 30-50%，產能可能過剩",
+    "gap_space": "預期從「短缺」逆轉為「過剩」，GPU 租金與雲端估值面臨重估壓力",
+    "concept_stocks": [
+      "2317 鴻海",
+      "2330 台積電",
+      "2382 廣達",
+      "3231 緯創"
+    ],
+    "dream_rating": "利空估值重估",
+    "impact_direction": "bearish",
+    "source": "彭博社與美媒報導 Meta 進軍雲端算力出租市場",
+    "last_update": "2026-07-02"
+  },
+  {
+    "category": "AI 基礎設施 (AI Infrastructure)",
     "target": "AI 雲端基礎設施與 GPU 運算需求 (甲骨文效應)",
     "market_expect": "市場預期 AI 資本支出龐大，擔憂需求合理性與現金流壓力",
     "real_data": "甲骨文 RPO 暴增 363% 至 6380 億美元，雲端營收年增 47% 遠超預期",
@@ -165,6 +182,22 @@
   },
   {
     "category": "先進半導體 (Advanced Semiconductor)",
+    "target": "CoWoS 產能與 AI 供應鏈零組件",
+    "market_expect": "市場擔憂 AI 半導體週期已見頂，景氣即將衰退",
+    "real_data": "野村示警 2026 下半年現史詩級短缺，2027 漲價勢在必行",
+    "gap_space": "預期差距極大，從見頂擔憂轉為長期可持續性與獲利上修",
+    "concept_stocks": [
+      "2330 台積電",
+      "2454 聯發科",
+      "3711 日月光投控"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "野村證券研究報告：AI 半導體週期遠未見頂，示警供應鏈錯配",
+    "last_update": "2026-07-02"
+  },
+  {
+    "category": "先進半導體 (Advanced Semiconductor)",
     "target": "CoWoS 產能與 WFE 市場",
     "market_expect": "原預期 WFE 增速約 21%，先進封裝競爭較溫和，供需缺口預期較小",
     "real_data": "2026 WFE 增速上調至 28%，CoWoS 月產能達 11.5 萬片，供需缺口仍達 10-20%",
@@ -313,6 +346,22 @@
     "last_update": "2026-06-16"
   },
   {
+    "category": "先進半導體 (Advanced Semiconductor)",
+    "target": "華為昇騰950 AI晶片",
+    "market_expect": "市場預期輝達壟斷AI加速器市場，CUDA生態護城河難以被挑戰",
+    "real_data": "華為以輝達H20四分之一價格，提供2.87倍推理性能，切入南韓市場",
+    "gap_space": "性價比極高，可能加速去輝達化，重估非輝達供應鏈價值",
+    "concept_stocks": [
+      "2317 鴻海",
+      "2330 台積電",
+      "2344 華邦電"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "新聞報導：華為昇騰950進軍南韓，以四分之一價格挑戰輝達霸權",
+    "last_update": "2026-07-02"
+  },
+  {
     "category": "光通訊與散熱 (Optical & Thermal)",
     "target": "AI 液冷散熱與精密金屬加工產能",
     "market_expect": "市場預期傳統 3C 業務主導，對 AI 散熱貢獻與產能擴張速度持保守看法",
@@ -453,6 +502,18 @@
     "concept_stocks": [],
     "dream_rating": "利多估值重估",
     "impact_direction": "bearish",
+    "source": "優分析：美國商務部公布5月貿易逆差遠超預期",
+    "last_update": "2026-06-26"
+  },
+  {
+    "category": "宏觀經濟/外匯",
+    "target": "美國商品貿易逆差",
+    "market_expect": "市場預估逆差約850億美元，預期溫和擴大",
+    "real_data": "實質逆差達1,058億美元，遠超預期且創新高",
+    "gap_space": "逆差規模超出預期約208億美元，顯示進口需求極強",
+    "concept_stocks": [],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
     "source": "優分析：美國商務部公布5月貿易逆差遠超預期",
     "last_update": "2026-06-26"
   },
@@ -818,6 +879,23 @@
   },
   {
     "category": "記憶體 (Memory)",
+    "target": "DRAM 供給缺口與價格",
+    "market_expect": "市場原預期為傳統週期性波動或疫情後供應鏈中斷導致的短缺",
+    "real_data": "2026 Q2 伺服器 DRAM 合約價季增 50-55%，累計漲幅達 700%",
+    "gap_space": "AI 產能轉移導致供給收縮幅度遠超預期，價格重估彈性極大",
+    "concept_stocks": [
+      "2344 華邦電",
+      "2337 旺宏",
+      "2451 創見",
+      "3260 威剛"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "優分析：TrendForce 數據顯示 DRAM 價格因 AI 需求暴漲",
+    "last_update": "2026-07-01"
+  },
+  {
+    "category": "記憶體 (Memory)",
     "target": "DRAM 供給缺口與價格重估",
     "market_expect": "市場原預期為傳統週期性波動，漲幅有限且可預測",
     "real_data": "價格飆漲六倍，2027年PC DRAM缺口15%，平均售價恐大漲67%",
@@ -884,6 +962,22 @@
     "impact_direction": "bullish",
     "source": "MarketWatch：記憶體股獲利暴增但估值仍便宜，市場對循環性存疑",
     "last_update": "2026-06-19"
+  },
+  {
+    "category": "記憶體 (Memory)",
+    "target": "DRAM 與 NAND Flash 供給缺口",
+    "market_expect": "過去視為景氣循環股，波動大，外資多採本淨比估值，預期價格隨週期波動",
+    "real_data": "AI Token 消耗量暴增 7 倍，庫克稱百年一遇缺貨，高階產能被壟斷，估值轉為本益比",
+    "gap_space": "結構性短缺導致價格與獲利穩定性大幅提升，估值邏輯從週期性轉向成長性，重估空間極大",
+    "concept_stocks": [
+      "2408 南亞科",
+      "2344 華邦電",
+      "8299 群聯"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "優分析：林信富分析 AI 帶動記憶體百年一遇大缺貨，庫克焦慮求援",
+    "last_update": "2026-07-01"
   },
   {
     "category": "記憶體 (Memory)",
@@ -1007,6 +1101,22 @@
   },
   {
     "category": "記憶體 (Memory)",
+    "target": "DRAM/NAND 供給缺口與供應鏈重構",
+    "market_expect": "市場預期記憶體價格溫和上漲，供應鏈維持三星、海力士、美光三寡頭壟斷格局",
+    "real_data": "AI需求導致記憶體價格暴漲，蘋果被迫尋求中國長鑫、長江雙供貨以緩解成本壓力",
+    "gap_space": "供給缺口遠超預期，價格重估彈性極大，供應鏈出現結構性斷裂與替代風險",
+    "concept_stocks": [
+      "3481 群創",
+      "2344 華邦電",
+      "2451 創見"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "彭博社/FT：蘋果傳洽購中國長鑫長江記憶體以應對AI引發的供應短缺",
+    "last_update": "2026-07-02"
+  },
+  {
+    "category": "記憶體 (Memory)",
     "target": "DRAM/NAND 供給缺口與價格",
     "market_expect": "市場原預期記憶體價格溫和上漲，蘋果可透過規模優勢吸收成本",
     "real_data": "AI 需求擠壓產能，記憶體價格飆升四倍，蘋果被迫轉嫁成本並面臨漲價",
@@ -1054,6 +1164,23 @@
     "impact_direction": "bullish",
     "source": "美光Q3財報會議：CEO看好AI需求續強，供需緊張延續至2027年後",
     "last_update": "2026-06-25"
+  },
+  {
+    "category": "記憶體 (Memory)",
+    "target": "DRAM/NAND 價格與供需缺口",
+    "market_expect": "美光股價已反映AI利多，預期漲幅受限，短期面臨獲利了結賣壓",
+    "real_data": "KeyBanc指出2027年產能仍不足填補缺口，預期價格漲勢持續至2026年",
+    "gap_space": "供需缺口比預期更長，價格上漲週期延長，估值重估空間大",
+    "concept_stocks": [
+      "2344 華邦電",
+      "2337 旺宏",
+      "2451 創見",
+      "8299 群聯"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "巴隆周刊/KeyBanc：記憶體合約價漲，2027年產能仍不足",
+    "last_update": "2026-07-02"
   },
   {
     "category": "記憶體 (Memory)",
@@ -1257,6 +1384,23 @@
     "impact_direction": "bullish",
     "source": "鉅亨網：記憶體漲價荒誕現實，SSD 價格抵三台主機",
     "last_update": "2026-06-18"
+  },
+  {
+    "category": "記憶體 (Memory)",
+    "target": "NAND Flash 供給缺口",
+    "market_expect": "市場預期晶片股獲利了結導致股價短期走弱，關注Meta雲端容量出售影響",
+    "real_data": "野村與美銀示警NAND短缺將延續至2027年，結構性缺貨遠未見頂",
+    "gap_space": "市場僅關注短期波動，低估長達三年的結構性缺貨帶來的定價權與估值重估空間",
+    "concept_stocks": [
+      "2344 華邦電",
+      "2337 旺宏",
+      "3034 聯詠",
+      "2451 創見"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "鉅亨網/野村/美銀：分析師示警NAND缺貨至2027年",
+    "last_update": "2026-07-02"
   },
   {
     "category": "記憶體 (Memory)",
