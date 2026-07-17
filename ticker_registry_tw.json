@@ -97,6 +97,13 @@
     "industry": "",
     "source": "TPEX OpenAPI tpex_mainboard_quotes"
   },
+  "009825": {
+    "name": "聯邦美國金融創新",
+    "market": "TPEX",
+    "aliases": [],
+    "industry": "",
+    "source": "TPEX OpenAPI tpex_mainboard_quotes"
+  },
   "020001": {
     "name": "富邦存股雙十N",
     "market": "TPEX",
@@ -106,13 +113,6 @@
   },
   "020025": {
     "name": "統一亞洲半導體N",
-    "market": "TPEX",
-    "aliases": [],
-    "industry": "",
-    "source": "TPEX OpenAPI tpex_mainboard_quotes"
-  },
-  "020027": {
-    "name": "元大上櫃ESG成長N",
     "market": "TPEX",
     "aliases": [],
     "industry": "",
@@ -10229,6 +10229,16 @@
       "DAXIN"
     ],
     "industry": "26",
+    "source": "TWSE OpenAPI t187ap03_L"
+  },
+  "5236": {
+    "name": "凌陽創新",
+    "market": "TWSE",
+    "aliases": [
+      "凌陽創新科技股份有限公司",
+      "SunplusIT"
+    ],
+    "industry": "24",
     "source": "TWSE OpenAPI t187ap03_L"
   },
   "5243": {
