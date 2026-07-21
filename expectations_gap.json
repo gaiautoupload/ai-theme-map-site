@@ -866,6 +866,22 @@
   },
   {
     "category": "先進半導體 (Advanced Semiconductor)",
+    "target": "台積電晶圓代工價格",
+    "market_expect": "市場預期台積電維持定價穩定，抗拒劇烈波動，長期維持客戶關係",
+    "real_data": "日經報導台積電與客戶協商，2027年起調漲晶圓代工價最高達10%",
+    "gap_space": "打破長期定價穩定預期，轉為成本推動型調漲，毛利率支撐力增強",
+    "concept_stocks": [
+      "2330 台積電",
+      "2454 聯發科",
+      "3034 聯詠"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "日經新聞：台積電傳明年起調漲晶圓代工價，漲幅最高10%",
+    "last_update": "2026-07-21"
+  },
+  {
+    "category": "先進半導體 (Advanced Semiconductor)",
     "target": "台積電面板級封裝 (PLP)",
     "market_expect": "市場原預期先進封裝聚焦CoWoS，PLP技術尚處早期研發或試產階段",
     "real_data": "台積電已確保AI大客戶，試產線今年運行，明年直接進入大規模量產",
@@ -1568,6 +1584,22 @@
   },
   {
     "category": "被動元件 (Passive Components)",
+    "target": "CCL (銅箔基板) 價格與供需",
+    "market_expect": "外資預期CCL第三季底二度調漲10-15%，AI需求強勁",
+    "real_data": "PCB廠指「長短料」嚴峻，EMS放緩提貨，需求萎縮風險升",
+    "gap_space": "漲價預期受阻，需求端因缺料放緩，價格傳導彈性受限",
+    "concept_stocks": [
+      "2383 台光電",
+      "1303 南亞",
+      "2301 光寶科"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "鉅亨網：外資報告與CCL廠主管訪談",
+    "last_update": "2026-07-20"
+  },
+  {
+    "category": "被動元件 (Passive Components)",
     "target": "勤誠(8210) 2026年EPS預估",
     "market_expect": "先前市場中位數預估EPS為49.65元",
     "real_data": "FactSet最新調查上修中位數至50.76元，最高估值52.12元",
@@ -2023,6 +2055,22 @@
   },
   {
     "category": "記憶體 (Memory)",
+    "target": "DRAM 供給缺口與 AI 需求",
+    "market_expect": "市場預期高價抑制需求，引發晶片通膨並降低換機意願",
+    "real_data": "AI 需求明年增 60-100%，供應增幅落後，短缺難緩解",
+    "gap_space": "供需失衡持續，價格支撐強勁，估值重估空間大",
+    "concept_stocks": [
+      "2344 華邦電",
+      "2451 創見",
+      "3260 威剛"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "鉅亨網：SK集團會長示警記憶體高價與AI需求爆發",
+    "last_update": "2026-07-20"
+  },
+  {
+    "category": "記憶體 (Memory)",
     "target": "DRAM 供給缺口與 PC 終端需求",
     "market_expect": "原預期記憶體短缺為週性波動，PC 市場維持穩定成長",
     "real_data": "Q2 PC 出貨年減 4.9%，短缺延至 2028，2026H2 成長明顯放緩",
@@ -2040,19 +2088,20 @@
   {
     "category": "記憶體 (Memory)",
     "target": "DRAM 供給缺口與價格",
-    "market_expect": "市場原預期為傳統週期性波動或疫情後供應鏈中斷導致的短缺",
+    "market_expect": "市場擔憂消費性電子疲軟拖累庫存，預期傳統週期波動或價格平穩",
     "real_data": "2026 Q2 伺服器 DRAM 合約價季增 50-55%，累計漲幅達 700%",
     "gap_space": "AI 產能轉移導致供給收縮幅度遠超預期，價格重估彈性極大",
     "concept_stocks": [
       "2344 華邦電",
       "2337 旺宏",
       "2451 創見",
-      "3260 威剛"
+      "3260 威剛",
+      "8271 宇瞻"
     ],
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
     "source": "優分析：TrendForce 數據顯示 DRAM 價格因 AI 需求暴漲",
-    "last_update": "2026-07-01"
+    "last_update": "2026-07-21"
   },
   {
     "category": "記憶體 (Memory)",
@@ -2154,7 +2203,7 @@
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
     "source": "MarketWatch：分析師大幅調升美光目標價，看好記憶體榮景延續",
-    "last_update": "2026-07-10"
+    "last_update": "2026-07-21"
   },
   {
     "category": "記憶體 (Memory)",
@@ -2187,6 +2236,23 @@
     "impact_direction": "bullish",
     "source": "MarketWatch：記憶體股獲利暴增但估值仍便宜，市場對循環性存疑",
     "last_update": "2026-06-19"
+  },
+  {
+    "category": "記憶體 (Memory)",
+    "target": "DRAM 與 HBM 供給缺口",
+    "market_expect": "市場擔憂記憶體業者積極擴產，恐導致未來供過於求並衝擊價格",
+    "real_data": "分析師與美光指出，現有產能遠不足應付需求，缺貨至少持續至 2027 年",
+    "gap_space": "市場預期供過於求，實質為結構性短缺，估值重估空間極大",
+    "concept_stocks": [
+      "2344 華邦電",
+      "2337 旺宏",
+      "2451 創見",
+      "8299 群聯"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "Seeking Alpha 報導：分析師反駁供過於求，指 DRAM、HBM 缺貨至 2027 年",
+    "last_update": "2026-07-21"
   },
   {
     "category": "記憶體 (Memory)",
@@ -2238,6 +2304,23 @@
     "impact_direction": "bullish",
     "source": "優分析：林信富分析 AI 帶動記憶體百年一遇大缺貨，庫克焦慮求援",
     "last_update": "2026-07-14"
+  },
+  {
+    "category": "記憶體 (Memory)",
+    "target": "DRAM 與 NAND Flash 價格及供需缺口",
+    "market_expect": "SK海力士警告價格不可持續，市場擔憂記憶體股下跌與泡沫破裂",
+    "real_data": "美光止跌反彈，華爾街預估Q3 DRAM漲15-20%，NAND漲30-40%，缺口延至2028年",
+    "gap_space": "利多估值重估，供需緊俏程度遠超預期，價格上漲動能持續至2027年後",
+    "concept_stocks": [
+      "2344 華邦電",
+      "2451 創見",
+      "2388 威盛",
+      "8299 群聯"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "鉅亨網/巴隆周刊：美光止跌反彈，華爾街預估DRAM、NAND續漲",
+    "last_update": "2026-07-21"
   },
   {
     "category": "記憶體 (Memory)",
@@ -2293,18 +2376,20 @@
   {
     "category": "記憶體 (Memory)",
     "target": "DRAM 與 NAND 價格",
-    "market_expect": "市場原預期為傳統週期性波動，漲幅有限且短期內回落",
-    "real_data": "AI 需求導致結構性短缺，價格暴漲且一年內無降價跡象",
-    "gap_space": "價格重估彈性極大，漲幅遠超傳統週期預期",
+    "market_expect": "市場原預期 Q3 均價漲幅受限，悲觀看衰財報不如預期",
+    "real_data": "美銀預估 Q3 DRAM 均價季增 21%，現貨連續八週上揚",
+    "gap_space": "價格預期上修約 3-8%，估值重估空間大",
     "concept_stocks": [
       "2344 華邦電",
       "2337 旺宏",
-      "2451 創見"
+      "2451 創見",
+      "2408 南亞科",
+      "8299 群聯"
     ],
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
     "source": "澎湃新聞：經銷商預警記憶體價格一年內難降",
-    "last_update": "2026-07-06"
+    "last_update": "2026-07-19"
   },
   {
     "category": "記憶體 (Memory)",
