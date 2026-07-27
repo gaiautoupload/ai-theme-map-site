@@ -701,12 +701,14 @@
       "6770 力積電",
       "2330 台積電",
       "2408 南亞科",
-      "2317 鴻海"
+      "2317 鴻海",
+      "2337 旺宏",
+      "3034 聯詠"
     ],
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
     "source": "Wedbush 研報指出 Blackwell 需求超預期，HBM 與 DRAM 產能瓶頸束縛行業",
-    "last_update": "2026-07-12"
+    "last_update": "2026-07-27"
   },
   {
     "category": "先進半導體 (Advanced Semiconductor)",
@@ -1060,7 +1062,7 @@
     "target": "英特爾 AI 伺服器 CPU 產能與代工轉型",
     "market_expect": "市場原預期英特爾轉型緩慢，代工業務缺乏重量級外部客戶，獲利恢復緩慢",
     "real_data": "Q2 營收年增 25% 創 15 年最快，獲利雙倍超預期，資料中心營收暴增 59%，產能供不應求",
-    "gap_space": "獲利與成長動能大幅超越預期，AI 伺服器需求結構性轉強，估值重估空間極大",
+    "gap_space": "AI 伺服器需求遠超預期，產能供不應求，毛利率大幅修復至 42%，估值重估空間大",
     "concept_stocks": [
       "2330 台積電",
       "2454 聯發科",
@@ -1155,6 +1157,22 @@
     "last_update": "2026-07-25"
   },
   {
+    "category": "先進半導體 (Advanced Semiconductor)",
+    "target": "高通 AI 晶片及台積電產能",
+    "market_expect": "法人原預期供應鏈瓶頸為週性現象，影響有限且短期可緩解",
+    "real_data": "高通宣布9月起雙位數漲價，AI需求導致結構性短缺持續至明年",
+    "gap_space": "短缺程度超預期，漲價轉嫁能力強，營收與毛利重估空間大",
+    "concept_stocks": [
+      "2330 台積電",
+      "2454 聯發科",
+      "3034 聯詠"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "鉅亨網/彭博：高通晶片9月起漲價 AI供應短缺持續惡化",
+    "last_update": "2026-07-25"
+  },
+  {
     "category": "光通訊與散熱 (Optical & Thermal)",
     "target": "AI 液冷散熱與精密金屬加工產能",
     "market_expect": "市場預期傳統 3C 業務主導，對 AI 散熱貢獻與產能擴張速度持保守看法",
@@ -1199,13 +1217,15 @@
   {
     "category": "光通訊與散熱 (Optical & Thermal)",
     "target": "光纖基礎設施與邊緣網路佈建",
-    "market_expect": "市場原預期電信營運商資本支出趨於保守，成長動能有限",
+    "market_expect": "市場預期電信營運商資本支出趨於保守，聚焦傳統5G覆蓋",
     "real_data": "AT&T Q2 營收獲利超預期，光纖+5G 雙引擎帶動用戶大增，現金流強勁",
     "gap_space": "AI 邊緣商機爆發，光纖需求結構性上修，資本支出維持高位",
     "concept_stocks": [
       "8086 宏捷科",
       "2301 光寶科",
-      "3596 智易"
+      "3596 智易",
+      "2353 宏碁",
+      "2382 廣達"
     ],
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
@@ -2525,6 +2545,22 @@
   },
   {
     "category": "記憶體 (Memory)",
+    "target": "DRAM 供給缺口與模組廠庫存策略",
+    "market_expect": "市場預期傳統週期波動，模組廠庫存維持常態水位，未預期長期短缺",
+    "real_data": "宇瞻Q2存貨暴增48%至124億，提前布局2027年DRAM供給吃緊與DDR4韌性",
+    "gap_space": "庫存水位大幅高於預期，若2027年缺貨持續，營收與獲利重估空間極大",
+    "concept_stocks": [
+      "8271 宇瞻",
+      "2344 華邦電",
+      "2337 旺宏"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "優分析：宇瞻庫存攀升至124億元，提前備貨迎戰2027年DRAM缺貨",
+    "last_update": "2026-07-27"
+  },
+  {
+    "category": "記憶體 (Memory)",
     "target": "DRAM 供給缺口與消費性電子漲價",
     "market_expect": "市場原預期記憶體為傳統週期性波動，AI 影響有限或僅限於伺服器端",
     "real_data": "AI 資料中心大量搶購導致消費端產能排擠，手機筆電恐漲價且短缺持續至 2027 年",
@@ -3745,6 +3781,23 @@
   },
   {
     "category": "記憶體 (Memory)",
+    "target": "SK Hynix HBM 與 AI 記憶體",
+    "market_expect": "法人預期 Q2 營收 84.1 兆韓元，營業利潤年增約 596%",
+    "real_data": "AI 記憶體紅利爆發，營收佔比達 75%，利潤率創 75-77% 歷史新高",
+    "gap_space": "AI 貢獻占比超預期，利潤率極高，估值重估空間巨大",
+    "concept_stocks": [
+      "2344 華邦電",
+      "2451 創見",
+      "3260 威剛",
+      "2337 旺宏"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "鉅亨網：SK海力士財報預期與人才流向分析",
+    "last_update": "2026-07-27"
+  },
+  {
+    "category": "記憶體 (Memory)",
     "target": "SK Hynix HBM 長約定價機制與 ASP 彈性",
     "market_expect": "市場預期 HBM 帶動營收利潤爆發性成長，獲利持續加速",
     "real_data": "HBM 長約鎖定價格致 ASP 漲幅受限，Q2 利潤低於共識約 8%",
@@ -4226,6 +4279,23 @@
     "impact_direction": "bullish",
     "source": "熱門股報導：鈺創6月營收飆新高，單周逆勢大漲2成",
     "last_update": "2026-07-10"
+  },
+  {
+    "category": "記憶體 (Memory)",
+    "target": "長鑫存儲 (CXMT) DRAM 產能與報價",
+    "market_expect": "市場預期長鑫僅為平價替代選項，靠低價搶市",
+    "real_data": "長鑫報價超越三星，訂單排至2027年，華為亦無優惠",
+    "gap_space": "從低價競爭轉為供給主導，估值邏輯由成本轉向稀缺性",
+    "concept_stocks": [
+      "3709 長鑫存儲(非上市，但影響台廠)",
+      "2344 華邦電",
+      "2337 旺宏",
+      "2451 創見"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "路透報導：長鑫存儲報價超車三星，需求飆升",
+    "last_update": "2026-07-26"
   },
   {
     "category": "記憶體 (Memory)",
