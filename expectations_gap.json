@@ -915,9 +915,9 @@
   {
     "category": "先進半導體 (Advanced Semiconductor)",
     "target": "NVIDIA Blackwell 架構晶片 (GB300/B300)",
-    "market_expect": "市場預期成長趨緩，估值修正反映成熟期，資金轉向其他半導體",
-    "real_data": "GB300/B300 庫存極度緊缺，需求遠超華爾街預估，HBM 產能為主要瓶頸",
-    "gap_space": "估值邏輯分歧：若折舊/融資問題證實，EPS 與估值需大幅下修，重估空間大",
+    "market_expect": "市場預期營收超預期、指引上調為預設劇本，關注點轉向 Rubin 接棒與長期訂單鎖定",
+    "real_data": "Jefferies 預估 Rubin 爬坡快於 Blackwell，OpenAI 長協鎖定 6000 億美元採購，但融資責任邊界成爭議",
+    "gap_space": "估值錨從單品週期切換至系統級 AI 工廠，若融資細節清晰則消除「以資產負債表換增長」疑慮",
     "concept_stocks": [
       "2344 華邦電",
       "2303 聯電",
@@ -931,12 +931,16 @@
       "2408 南亞科",
       "2317 鴻海",
       "2337 旺宏",
-      "3034 聯詠"
+      "3034 聯詠",
+      "3231 緯創",
+      "2382 廣達",
+      "3443 創意",
+      "3324 雙鴻"
     ],
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
     "source": "Wedbush 研報指出 Blackwell 需求超預期，HBM 與 DRAM 產能瓶頸束縛行業",
-    "last_update": "2026-08-01"
+    "last_update": "2026-08-26"
   },
   {
     "category": "先進半導體 (Advanced Semiconductor)",
@@ -1046,6 +1050,22 @@
     "impact_direction": "bullish",
     "source": "優分析：主計處公布Q2 GDP數據優於預期",
     "last_update": "2026-07-31"
+  },
+  {
+    "category": "先進半導體 (Advanced Semiconductor)",
+    "target": "台灣整體外銷訂單與AI半導體需求",
+    "market_expect": "市場預期7月外銷訂單年增率為54.6%",
+    "real_data": "實質數據達61.9%，美國訂單狂增88.9%，遠超預期",
+    "gap_space": "+7.3% 訂單增速落差，AI需求強勁確認，估值重估空間大",
+    "concept_stocks": [
+      "2330 台積電",
+      "2454 聯發科",
+      "2317 鴻海"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "優分析：7月外銷訂單年增61.9%超預期，美國訂單狂增",
+    "last_update": "2026-08-20"
   },
   {
     "category": "先進半導體 (Advanced Semiconductor)",
@@ -2188,6 +2208,23 @@
     "last_update": "2026-06-26"
   },
   {
+    "category": "太陽能 (Solar)",
+    "target": "N型矽片 (N-type Silicon Wafers)",
+    "market_expect": "市場預期供給端改善僅能止血，終端需求疲軟難以支撐持續漲價",
+    "real_data": "N型矽片單週暴漲40%，多晶矽單日漲近24%，價格反彈幅度超預期",
+    "gap_space": "漲幅達40%遠超預期，顯示供給收斂效應強於需求，估值有重估空間",
+    "concept_stocks": [
+      "2308 台達電",
+      "2317 鴻海",
+      "6244 茂迪",
+      "6121 新普"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "優分析：中國太陽能股走高，矽片單週漲40%",
+    "last_update": "2026-08-26"
+  },
+  {
     "category": "宏觀經濟",
     "target": "美國貿易逆差",
     "market_expect": "市場預估逆差為850億美元，預期溫和擴大",
@@ -2319,6 +2356,20 @@
     "impact_direction": "bullish",
     "source": "鉅亨網：盛群法說會宣布全面漲價10-20%",
     "last_update": "2026-07-30"
+  },
+  {
+    "category": "成衣製造 (Apparel Manufacturing)",
+    "target": "豐泰(9910) 2026年 EPS",
+    "market_expect": "市場原預期2026年EPS中位數為4.46元",
+    "real_data": "FactSet調查顯示EPS下修至4.33元，目標價75元",
+    "gap_space": "EPS下修0.13元，估值空間受限，獲利預期轉弱",
+    "concept_stocks": [
+      "9910 豐泰"
+    ],
+    "dream_rating": "利空估值修正",
+    "impact_direction": "bearish",
+    "source": "鉅亨網：FactSet調查豐泰EPS下修",
+    "last_update": "2026-08-26"
   },
   {
     "category": "新材料 (New Materials)",
@@ -2708,6 +2759,20 @@
   },
   {
     "category": "被動元件 (Passive Components)",
+    "target": "AI伺服器高規電容 (CAP/Hybrid)",
+    "market_expect": "原預期原材料成本上漲將持續壓縮毛利率，獲利成長受限",
+    "real_data": "客戶接受雙位數漲價，AI訂單能見度拉長，下半年營收季季高",
+    "gap_space": "毛利率觸底反彈，漲價效益轉化為純利，估值重估空間大",
+    "concept_stocks": [
+      "6449 鈺邦"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "鉅亨網：鈺邦法說會透露漲價效益與AI需求強勁",
+    "last_update": "2026-08-26"
+  },
+  {
+    "category": "被動元件 (Passive Components)",
     "target": "CCL (覆銅板) 及上游原材料",
     "market_expect": "市場原預期傳統週期波動，僅溫和復甦，未預期持續大幅調漲",
     "real_data": "年內第六度調漲，FR-4漲15%，反映AI伺服器帶動高階CCL供需極度緊張",
@@ -2737,6 +2802,22 @@
     "impact_direction": "bullish",
     "source": "鉅亨網：外資報告與CCL廠主管訪談",
     "last_update": "2026-07-20"
+  },
+  {
+    "category": "被動元件 (Passive Components)",
+    "target": "MLCC (積層陶瓷電容器)",
+    "market_expect": "市場原預期為傳統週期性波動，價格漲幅有限且庫存去化緩慢",
+    "real_data": "分銷庫存創歷史新低，單位價格指數單季漲7%，產能利用率達95%",
+    "gap_space": "量縮價漲趨勢加速，AI需求推升結構性緊缺，估值重估空間大",
+    "concept_stocks": [
+      "2327 國巨*",
+      "2492 華新科",
+      "3017 奇鋐"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "鉅亨網：瑞銀報告顯示MLCC供需緊繃、庫存創新低",
+    "last_update": "2026-08-26"
   },
   {
     "category": "被動元件 (Passive Components)",
@@ -3339,6 +3420,23 @@
   },
   {
     "category": "記憶體 (Memory)",
+    "target": "DRAM 供給缺口與 HBM 擠壓效應",
+    "market_expect": "市場原預期記憶體週期性復甦，價格溫和上漲或持平",
+    "real_data": "8月DRAM出口價格年增401%，海力士預警2027年或為歷史上最短缺年份",
+    "gap_space": "價格暴漲12.5倍，供給缺口從5.0%擴大至5.9%，短缺持續至2028年",
+    "concept_stocks": [
+      "2344 華邦電",
+      "2337 旺宏",
+      "2451 創見",
+      "3260 威剛"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "BlockBeats/朝鮮日報：韓國DRAM出口價格年增401%，海力士稱明年或為最短缺年份",
+    "last_update": "2026-08-26"
+  },
+  {
+    "category": "記憶體 (Memory)",
     "target": "DRAM 供給缺口與 HBM 產能排擠",
     "market_expect": "市場原預期傳統週期波動，短缺為短期現象，供需將於一年內恢復平衡",
     "real_data": "威剛預估短缺持續十年，TrendForce 指 2027 年 HBM 佔 30% 產能致供給僅滿足 60%",
@@ -3503,6 +3601,33 @@
     "impact_direction": "bullish",
     "source": "巴隆周刊/瑞銀分析師報告",
     "last_update": "2026-07-01"
+  },
+  {
+    "category": "記憶體 (Memory)",
+    "target": "DRAM 合約價格與美光長約影響",
+    "market_expect": "市場原預期美光長期投資計畫維持 2,000 億美元規模，產能擴張步伐相對穩健。",
+    "real_data": "法說上修 2026-2027 價格漲幅，EPS 預估達 135 美元，目標價暴漲 127% 至 1,250 美元",
+    "gap_space": "估值重估空間極大，EPS 預期從 21 美元躍升至 135 美元，差距逾 5 倍",
+    "concept_stocks": [
+      "2344 華邦電",
+      "2451 創見",
+      "3260 威剛",
+      "8299 群聯",
+      "3481 群創",
+      "2337 旺宏",
+      "3017 奇鋐",
+      "2408 南亞科",
+      "2388 威盛",
+      "6488 環球晶",
+      "2303 聯電",
+      "2330 台積電",
+      "2327 美光科技",
+      "3711 科林研發"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "鉅亨網/Finbold：Wolfe Research 大幅上調美光目標價 127%",
+    "last_update": "2026-08-26"
   },
   {
     "category": "記憶體 (Memory)",
@@ -4599,6 +4724,23 @@
   },
   {
     "category": "記憶體 (Memory)",
+    "target": "NAND Flash / DRAM 供給缺口",
+    "market_expect": "市場原預期記憶體價格溫和上漲，屬傳統週期性波動",
+    "real_data": "AI熱潮引發結構性短缺，成本轉嫁致硬體大漲，缺口持續至2027年",
+    "gap_space": "AI需求超預期，供給缺口延長至2027年，估值重估空間大",
+    "concept_stocks": [
+      "2344 華邦電",
+      "2337 旺宏",
+      "2451 創見",
+      "3260 威剛"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "鉅亨網：亞馬遜宣布硬體漲價，歸因於記憶體短缺",
+    "last_update": "2026-08-26"
+  },
+  {
+    "category": "記憶體 (Memory)",
     "target": "NAND Flash / DRAM 儲存晶片",
     "market_expect": "市場原預期漲價主因為日元貶值匯率因素",
     "real_data": "蘋果明確指出儲存半導體價格漲幅最明顯，AI需求推升成本",
@@ -4945,6 +5087,23 @@
   },
   {
     "category": "記憶體 (Memory)",
+    "target": "SK海力士股東回報與估值重估",
+    "market_expect": "預期第三季內公布回報計劃，回購規模受限於FCF 50%以內",
+    "real_data": "提前公布，回購40兆韓元，上調FCF分配至50%以上，2027年潛在回報達150兆韓元",
+    "gap_space": "時間與規模雙重超預期，FCF分配比例提升帶來極大估值重估空間",
+    "concept_stocks": [
+      "2344 華邦電",
+      "2337 旺宏",
+      "2451 創見",
+      "8299 群聯"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "BlockBeats：Meritz證券分析SK海力士超預期股東回報計劃",
+    "last_update": "2026-08-19"
+  },
+  {
+    "category": "記憶體 (Memory)",
     "target": "SLC NAND",
     "market_expect": "原預期成熟製程產能穩定，價格溫和波動或持平",
     "real_data": "MLC短缺轉單SLC，2026下半年價格暴漲120-170%",
@@ -5262,33 +5421,6 @@
   },
   {
     "category": "記憶體 (Memory)",
-    "target": "美光 (Micron) 長期合約與估值重估",
-    "market_expect": "市場原預期美光長期投資計畫維持 2,000 億美元規模，產能擴張步伐相對穩健。",
-    "real_data": "法說上修 2026-2027 價格漲幅，EPS 預估達 135 美元，目標價暴漲 127% 至 1,250 美元",
-    "gap_space": "估值重估空間極大，EPS 預期從 21 美元躍升至 135 美元，差距逾 5 倍",
-    "concept_stocks": [
-      "2344 華邦電",
-      "2451 創見",
-      "3260 威剛",
-      "8299 群聯",
-      "3481 群創",
-      "2337 旺宏",
-      "3017 奇鋐",
-      "2408 南亞科",
-      "2388 威盛",
-      "6488 環球晶",
-      "2303 聯電",
-      "2330 台積電",
-      "2327 美光科技",
-      "3711 科林研發"
-    ],
-    "dream_rating": "利多估值重估",
-    "impact_direction": "bullish",
-    "source": "鉅亨網/Finbold：Wolfe Research 大幅上調美光目標價 127%",
-    "last_update": "2026-08-01"
-  },
-  {
-    "category": "記憶體 (Memory)",
     "target": "華邦電 (Winbond) 2026年EPS",
     "market_expect": "市場先前預期2026年EPS中位數為20.72元",
     "real_data": "FactSet調查顯示EPS上修至21.27元，目標價236元",
@@ -5536,6 +5668,20 @@
     "impact_direction": "bullish",
     "source": "光寶科法說會公告 Q2 財報與營運展望",
     "last_update": "2026-07-31"
+  },
+  {
+    "category": "電源供應器 (Power Supply)",
+    "target": "博大 (8109) 工業/醫療高階電源產能",
+    "market_expect": "市場原預期電子業處於傳統週期波動，對利基型電源需求持保守態度",
+    "real_data": "接單能見度達明年Q1，越南廠投產挹注全年產能增3成，稼動率近滿載",
+    "gap_space": "產能擴張30%且訂單能見度極高，營收創新高預期強烈，估值重估空間大",
+    "concept_stocks": [
+      "8109 博大"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "鉅亨網：博大法說會公布接單樂觀及產能擴充計畫",
+    "last_update": "2026-08-26"
   },
   {
     "category": "電源供應器 (Power Supply)",
