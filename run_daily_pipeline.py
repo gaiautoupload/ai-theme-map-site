@@ -4,7 +4,7 @@ import sys
 from pathlib import Path
 
 os.environ.setdefault("MAP_VLLM_URL", "https://vllm-a5000.iii-ei-stack.com/v1/chat/completions")
-os.environ.setdefault("MAP_MODEL_NAME", "cyankiwi/Qwen3.6-35B-A3B-AWQ-4bit")
+os.environ.setdefault("MAP_MODEL_NAME", "cyankiwi/gemma-4-31B-it-AWQ-4bit")
 
 BASE_DIR = Path(__file__).resolve().parent
 LOCAL_PACKAGE_DIR = BASE_DIR / ".python-packages"
@@ -20,7 +20,7 @@ def with_default_env():
             else f"{LOCAL_PACKAGE_DIR}{os.pathsep}{existing_pythonpath}"
         )
     env.setdefault("MAP_VLLM_URL", "https://vllm-a5000.iii-ei-stack.com/v1/chat/completions")
-    env.setdefault("MAP_MODEL_NAME", "cyankiwi/Qwen3.6-35B-A3B-AWQ-4bit")
+    env.setdefault("MAP_MODEL_NAME", "cyankiwi/gemma-4-31B-it-AWQ-4bit")
     env.setdefault("MAP_SEARCH_MODE", "search_augmented")
     env.setdefault("MAP_SEARCH_BACKEND", "whitelist_rss")
     env.setdefault("MAP_SEARCH_MIN_DELAY", "3.5")

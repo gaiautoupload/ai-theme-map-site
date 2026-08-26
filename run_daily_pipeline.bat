@@ -4,7 +4,7 @@ setlocal
 cd /d D:\ai-theme-map-site
 
 set "MAP_VLLM_URL=https://vllm-a5000.iii-ei-stack.com/v1/chat/completions"
-set "MAP_MODEL_NAME=cyankiwi/Qwen3.6-35B-A3B-AWQ-4bit"
+set "MAP_MODEL_NAME=cyankiwi/gemma-4-31B-it-AWQ-4bit"
 set "MAP_SEARCH_MODE=search_augmented"
 set "MAP_SEARCH_BACKEND=whitelist_rss"
 set "MAP_SEARCH_MIN_DELAY=3.5"
