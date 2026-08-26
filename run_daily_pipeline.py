@@ -10,6 +10,9 @@ BASE_DIR = Path(__file__).resolve().parent
 LOCAL_PACKAGE_DIR = BASE_DIR / ".python-packages"
 DEFAULT_VLLM_URL = "https://vllm-a5000.iii-ei-stack.com/v1/chat/completions"
 DEFAULT_MODEL_NAME = "cyankiwi/gemma-4-31B-it-AWQ-4bit"
+FALLBACK_VLLM_BASE_URL = os.getenv("MAP_VLLM_FALLBACK_BASE_URL", "http://125.227.151.20:8003/v1")
+FALLBACK_VLLM_URL = FALLBACK_VLLM_BASE_URL.rstrip("/") + "/chat/completions"
+FALLBACK_MODEL_NAME = os.getenv("MAP_MODEL_FALLBACK", "nvidia/nemotron-3-super")
 
 
 def with_default_env():
@@ -34,30 +37,41 @@ def with_default_env():
 
 
 def select_available_model(env):
-    """Prefer the configured model, but follow the model currently served by vLLM."""
+    """Prefer the primary model, then dynamically switch to a served fallback."""
     if env.get("MAP_MODEL_AUTO_DISCOVER", "1").lower() not in {"1", "true", "yes"}:
         print(f"vLLM model auto-discovery disabled; using {env['MAP_MODEL_NAME']}")
         return
 
-    try:
-        import requests
+    import requests
 
-        endpoint = env["MAP_VLLM_URL"].split("/chat/completions", 1)[0].rstrip("/") + "/models"
-        response = requests.get(endpoint, timeout=20)
-        response.raise_for_status()
-        models = [item.get("id") for item in response.json().get("data", []) if item.get("id")]
-        if not models:
-            raise RuntimeError("vLLM returned no models")
+    primary_url = env["MAP_VLLM_URL"]
+    candidates = [
+        (primary_url, env.get("MAP_MODEL_NAME", "")),
+        (FALLBACK_VLLM_URL, FALLBACK_MODEL_NAME),
+    ]
+    errors = []
 
-        preferred = env.get("MAP_MODEL_NAME", "")
-        selected = preferred if preferred in models else models[0]
-        env["MAP_MODEL_NAME"] = selected
-        if selected != preferred:
-            print(f"vLLM model changed automatically: {preferred} -> {selected}")
-        else:
-            print(f"vLLM model confirmed: {selected}")
-    except Exception as error:
-        print(f"WARNING: unable to discover vLLM model; keeping {env['MAP_MODEL_NAME']}. Error: {error}")
+    for chat_url, preferred in candidates:
+        try:
+            endpoint = chat_url.split("/chat/completions", 1)[0].rstrip("/") + "/models"
+            response = requests.get(endpoint, timeout=20)
+            response.raise_for_status()
+            models = [item.get("id") for item in response.json().get("data", []) if item.get("id")]
+            if not models:
+                raise RuntimeError("vLLM returned no models")
+
+            selected = preferred if preferred in models else models[0]
+            env["MAP_VLLM_URL"] = chat_url
+            env["MAP_MODEL_NAME"] = selected
+            label = "primary" if chat_url == primary_url else "fallback"
+            print(f"vLLM {label} selected: {selected}")
+            return
+        except Exception as error:
+            errors.append(f"{chat_url}: {error}")
+
+    print("WARNING: all vLLM endpoints failed; keeping the configured endpoint/model.")
+    for error in errors:
+        print(f"- {error}")
 
 
 def run_step(name, cmd, env):
