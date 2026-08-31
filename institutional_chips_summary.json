@@ -1,499 +1,763 @@
 {
-  "date": "20260830",
-  "update_time": "2026-08-30 19:06:25",
+  "date": "20260831",
+  "update_time": "2026-08-31 19:07:15",
   "cohort_themes": [
     {
-      "theme_name": "被動元件",
-      "total_net_buy": 27957,
-      "count": 1,
+      "theme_name": "記憶體",
+      "total_net_buy": 28278,
+      "count": 2,
       "stocks": [
         {
-          "symbol": "1815",
-          "name": "富喬",
-          "foreign_net": 25453,
-          "trust_net": 1189,
-          "total_net": 27957,
-          "foreign_ratio": 43.471,
-          "trust_ratio": 2.031
+          "symbol": "2344",
+          "name": "華邦電",
+          "foreign_net": 13528,
+          "trust_net": 75,
+          "total_net": 15267,
+          "foreign_ratio": 0.301,
+          "trust_ratio": 0.002
+        },
+        {
+          "symbol": "1303",
+          "name": "南亞",
+          "foreign_net": 10703,
+          "trust_net": 1267,
+          "total_net": 13011,
+          "foreign_ratio": 0.135,
+          "trust_ratio": 0.016
         }
       ]
     },
     {
-      "theme_name": "IC載板",
-      "total_net_buy": 8308,
+      "theme_name": "化學",
+      "total_net_buy": 18657,
+      "count": 2,
+      "stocks": [
+        {
+          "symbol": "1717",
+          "name": "長興",
+          "foreign_net": 12571,
+          "trust_net": 3450,
+          "total_net": 16971,
+          "foreign_ratio": 1.072,
+          "trust_ratio": 0.294
+        },
+        {
+          "symbol": "4763",
+          "name": "材料*-KY",
+          "foreign_net": 1622,
+          "trust_net": 1,
+          "total_net": 1686,
+          "foreign_ratio": 0.164,
+          "trust_ratio": 0.0
+        }
+      ]
+    },
+    {
+      "theme_name": "PCB",
+      "total_net_buy": 11895,
+      "count": 2,
+      "stocks": [
+        {
+          "symbol": "2313",
+          "name": "華通",
+          "foreign_net": 6413,
+          "trust_net": 1266,
+          "total_net": 7900,
+          "foreign_ratio": 0.538,
+          "trust_ratio": 0.106
+        },
+        {
+          "symbol": "4958",
+          "name": "臻鼎-KY",
+          "foreign_net": 2178,
+          "trust_net": 1230,
+          "total_net": 3995,
+          "foreign_ratio": 0.202,
+          "trust_ratio": 0.114
+        }
+      ]
+    },
+    {
+      "theme_name": "AI伺服器/代工",
+      "total_net_buy": 10086,
+      "count": 2,
+      "stocks": [
+        {
+          "symbol": "2356",
+          "name": "英業達",
+          "foreign_net": 5121,
+          "trust_net": 748,
+          "total_net": 6650,
+          "foreign_ratio": 0.143,
+          "trust_ratio": 0.021
+        },
+        {
+          "symbol": "4938",
+          "name": "和碩",
+          "foreign_net": 3238,
+          "trust_net": 63,
+          "total_net": 3436,
+          "foreign_ratio": 0.121,
+          "trust_ratio": 0.002
+        }
+      ]
+    },
+    {
+      "theme_name": "PCB/銅箔",
+      "total_net_buy": 3916,
       "count": 1,
       "stocks": [
         {
-          "symbol": "3374",
-          "name": "精材",
-          "foreign_net": 4911,
-          "trust_net": 3336,
-          "total_net": 8308,
-          "foreign_ratio": 18.097,
-          "trust_ratio": 12.293
+          "symbol": "8358",
+          "name": "金居",
+          "foreign_net": 3516,
+          "trust_net": 9,
+          "total_net": 3916,
+          "foreign_ratio": 13.92,
+          "trust_ratio": 0.036
         }
       ]
     },
     {
       "theme_name": "散熱/機殼",
-      "total_net_buy": 2173,
+      "total_net_buy": 3258,
       "count": 1,
       "stocks": [
         {
           "symbol": "3324",
           "name": "雙鴻",
-          "foreign_net": 1597,
-          "trust_net": 460,
-          "total_net": 2173,
-          "foreign_ratio": 17.158,
-          "trust_ratio": 4.942
+          "foreign_net": 2452,
+          "trust_net": 560,
+          "total_net": 3258,
+          "foreign_ratio": 26.344,
+          "trust_ratio": 6.017
         }
       ]
     }
   ],
   "surge_themes": [
     {
-      "theme_name": "被動元件",
-      "total_net_buy": 29981,
-      "count": 5,
+      "theme_name": "金融",
+      "total_net_buy": 175140,
+      "count": 13,
       "stocks": [
         {
-          "symbol": "1815",
-          "name": "富喬",
-          "foreign_net": 25453,
-          "trust_net": 1189,
-          "total_net": 27957,
-          "foreign_ratio": 43.471,
-          "trust_ratio": 2.031
+          "symbol": "2887",
+          "name": "台新新光金",
+          "foreign_net": 35114,
+          "trust_net": 1227,
+          "total_net": 35163,
+          "foreign_ratio": 0.141,
+          "trust_ratio": 0.005
         },
         {
-          "symbol": "5498",
-          "name": "凱崴",
-          "foreign_net": 1351,
-          "trust_net": 0,
-          "total_net": 1394,
-          "foreign_ratio": 6.98,
+          "symbol": "2883",
+          "name": "凱基金",
+          "foreign_net": 29874,
+          "trust_net": 47,
+          "total_net": 28756,
+          "foreign_ratio": 0.176,
           "trust_ratio": 0.0
         },
         {
-          "symbol": "6284",
-          "name": "佳邦",
-          "foreign_net": 333,
-          "trust_net": 0,
-          "total_net": 346,
-          "foreign_ratio": 2.235,
+          "symbol": "2834",
+          "name": "臺企銀",
+          "foreign_net": 31633,
+          "trust_net": -2969,
+          "total_net": 28626,
+          "foreign_ratio": 0.326,
+          "trust_ratio": -0.031
+        },
+        {
+          "symbol": "2890",
+          "name": "永豐金",
+          "foreign_net": 23141,
+          "trust_net": 28,
+          "total_net": 21952,
+          "foreign_ratio": 0.16,
           "trust_ratio": 0.0
         },
         {
-          "symbol": "8040",
-          "name": "九暘",
-          "foreign_net": 150,
-          "trust_net": 0,
-          "total_net": 148,
-          "foreign_ratio": 1.556,
+          "symbol": "2880",
+          "name": "華南金",
+          "foreign_net": 17747,
+          "trust_net": -2221,
+          "total_net": 14112,
+          "foreign_ratio": 0.128,
+          "trust_ratio": -0.016
+        },
+        {
+          "symbol": "2882",
+          "name": "國泰金",
+          "foreign_net": 7894,
+          "trust_net": 2461,
+          "total_net": 10232,
+          "foreign_ratio": 0.054,
+          "trust_ratio": 0.017
+        },
+        {
+          "symbol": "5880",
+          "name": "合庫金",
+          "foreign_net": 8441,
+          "trust_net": 40,
+          "total_net": 8420,
+          "foreign_ratio": 0.054,
           "trust_ratio": 0.0
         },
         {
-          "symbol": "8182",
-          "name": "加高",
-          "foreign_net": 135,
+          "symbol": "9105",
+          "name": "泰金寶-DR",
+          "foreign_net": 8081,
           "trust_net": 0,
-          "total_net": 136,
-          "foreign_ratio": 1.261,
+          "total_net": 8170,
+          "foreign_ratio": 0.077,
           "trust_ratio": 0.0
+        },
+        {
+          "symbol": "2885",
+          "name": "元大金",
+          "foreign_net": 7731,
+          "trust_net": -1120,
+          "total_net": 6081,
+          "foreign_ratio": 0.058,
+          "trust_ratio": -0.008
+        },
+        {
+          "symbol": "2845",
+          "name": "遠東銀",
+          "foreign_net": 4038,
+          "trust_net": 0,
+          "total_net": 5844,
+          "foreign_ratio": 0.083,
+          "trust_ratio": 0.0
+        },
+        {
+          "symbol": "2812",
+          "name": "台中銀",
+          "foreign_net": 4597,
+          "trust_net": -9,
+          "total_net": 4544,
+          "foreign_ratio": 0.076,
+          "trust_ratio": -0.0
+        },
+        {
+          "symbol": "2891",
+          "name": "中信金",
+          "foreign_net": 508,
+          "trust_net": 3218,
+          "total_net": 2827,
+          "foreign_ratio": 0.003,
+          "trust_ratio": 0.016
+        },
+        {
+          "symbol": "9941",
+          "name": "裕融",
+          "foreign_net": 196,
+          "trust_net": 292,
+          "total_net": 413,
+          "foreign_ratio": 0.034,
+          "trust_ratio": 0.051
         }
       ]
     },
     {
-      "theme_name": "IC載板",
-      "total_net_buy": 8308,
+      "theme_name": "晶圓代工",
+      "total_net_buy": 76450,
       "count": 1,
       "stocks": [
         {
-          "symbol": "3374",
-          "name": "精材",
-          "foreign_net": 4911,
-          "trust_net": 3336,
-          "total_net": 8308,
-          "foreign_ratio": 18.097,
-          "trust_ratio": 12.293
+          "symbol": "6770",
+          "name": "力積電",
+          "foreign_net": 73710,
+          "trust_net": 0,
+          "total_net": 76450,
+          "foreign_ratio": 1.737,
+          "trust_ratio": 0.0
         }
       ]
     },
     {
-      "theme_name": "PCB",
-      "total_net_buy": 7747,
+      "theme_name": "塑膠",
+      "total_net_buy": 61847,
+      "count": 4,
+      "stocks": [
+        {
+          "symbol": "1301",
+          "name": "台塑",
+          "foreign_net": 24980,
+          "trust_net": 0,
+          "total_net": 26085,
+          "foreign_ratio": 0.392,
+          "trust_ratio": 0.0
+        },
+        {
+          "symbol": "1326",
+          "name": "台化",
+          "foreign_net": 18152,
+          "trust_net": 0,
+          "total_net": 19264,
+          "foreign_ratio": 0.31,
+          "trust_ratio": 0.0
+        },
+        {
+          "symbol": "1312",
+          "name": "國喬",
+          "foreign_net": 14188,
+          "trust_net": 0,
+          "total_net": 14625,
+          "foreign_ratio": 1.282,
+          "trust_ratio": 0.0
+        },
+        {
+          "symbol": "1304",
+          "name": "台聚",
+          "foreign_net": 1820,
+          "trust_net": 0,
+          "total_net": 1873,
+          "foreign_ratio": 0.153,
+          "trust_ratio": 0.0
+        }
+      ]
+    },
+    {
+      "theme_name": "光電",
+      "total_net_buy": 57125,
       "count": 3,
       "stocks": [
         {
-          "symbol": "4939",
-          "name": "亞電",
-          "foreign_net": 7582,
+          "symbol": "2409",
+          "name": "友達",
+          "foreign_net": 41264,
           "trust_net": 0,
-          "total_net": 7086,
-          "foreign_ratio": 77.209,
+          "total_net": 41205,
+          "foreign_ratio": 0.547,
           "trust_ratio": 0.0
         },
         {
-          "symbol": "1569",
-          "name": "濱川",
-          "foreign_net": 378,
+          "symbol": "2489",
+          "name": "瑞軒",
+          "foreign_net": 13501,
           "trust_net": 0,
-          "total_net": 392,
-          "foreign_ratio": 2.62,
+          "total_net": 13976,
+          "foreign_ratio": 2.213,
           "trust_ratio": 0.0
         },
         {
-          "symbol": "3360",
-          "name": "尚立",
-          "foreign_net": 269,
+          "symbol": "3019",
+          "name": "亞光",
+          "foreign_net": 1669,
           "trust_net": 0,
-          "total_net": 269,
-          "foreign_ratio": 3.521,
+          "total_net": 1944,
+          "foreign_ratio": 0.598,
+          "trust_ratio": 0.0
+        }
+      ]
+    },
+    {
+      "theme_name": "化學",
+      "total_net_buy": 43016,
+      "count": 5,
+      "stocks": [
+        {
+          "symbol": "1717",
+          "name": "長興",
+          "foreign_net": 12571,
+          "trust_net": 3450,
+          "total_net": 16971,
+          "foreign_ratio": 1.072,
+          "trust_ratio": 0.294
+        },
+        {
+          "symbol": "1717",
+          "name": "長興",
+          "foreign_net": 12571,
+          "trust_net": 3450,
+          "total_net": 16971,
+          "foreign_ratio": 1.072,
+          "trust_ratio": 0.294
+        },
+        {
+          "symbol": "1718",
+          "name": "中纖",
+          "foreign_net": 4908,
+          "trust_net": 0,
+          "total_net": 4961,
+          "foreign_ratio": 0.291,
+          "trust_ratio": 0.0
+        },
+        {
+          "symbol": "1710",
+          "name": "東聯",
+          "foreign_net": 2459,
+          "trust_net": 0,
+          "total_net": 2530,
+          "foreign_ratio": 0.278,
+          "trust_ratio": 0.0
+        },
+        {
+          "symbol": "1714",
+          "name": "和桐",
+          "foreign_net": 1535,
+          "trust_net": 0,
+          "total_net": 1583,
+          "foreign_ratio": 0.155,
           "trust_ratio": 0.0
         }
       ]
     },
     {
       "theme_name": "AI伺服器/代工",
-      "total_net_buy": 5148,
-      "count": 5,
+      "total_net_buy": 39707,
+      "count": 14,
       "stocks": [
         {
-          "symbol": "3105",
-          "name": "穩懋",
-          "foreign_net": 1383,
-          "trust_net": 2775,
-          "total_net": 4104,
-          "foreign_ratio": 3.262,
-          "trust_ratio": 6.546
-        },
-        {
-          "symbol": "5386",
-          "name": "青雲",
-          "foreign_net": 491,
+          "symbol": "2324",
+          "name": "仁寶",
+          "foreign_net": 11724,
           "trust_net": 0,
-          "total_net": 499,
-          "foreign_ratio": 13.608,
+          "total_net": 11678,
+          "foreign_ratio": 0.266,
           "trust_ratio": 0.0
         },
         {
-          "symbol": "4510",
-          "name": "高鋒",
-          "foreign_net": 250,
+          "symbol": "9904",
+          "name": "寶成",
+          "foreign_net": 7528,
+          "trust_net": 41,
+          "total_net": 7422,
+          "foreign_ratio": 0.255,
+          "trust_ratio": 0.001
+        },
+        {
+          "symbol": "2382",
+          "name": "廣達",
+          "foreign_net": 2660,
+          "trust_net": 1458,
+          "total_net": 3800,
+          "foreign_ratio": 0.069,
+          "trust_ratio": 0.038
+        },
+        {
+          "symbol": "8111",
+          "name": "立碁",
+          "foreign_net": 3279,
           "trust_net": 0,
-          "total_net": 250,
-          "foreign_ratio": 2.294,
+          "total_net": 3453,
+          "foreign_ratio": 30.054,
           "trust_ratio": 0.0
         },
         {
-          "symbol": "6727",
-          "name": "亞泰金屬",
-          "foreign_net": -54,
-          "trust_net": 180,
-          "total_net": 150,
-          "foreign_ratio": -2.009,
-          "trust_ratio": 6.695
+          "symbol": "4938",
+          "name": "和碩",
+          "foreign_net": 3238,
+          "trust_net": 63,
+          "total_net": 3436,
+          "foreign_ratio": 0.121,
+          "trust_ratio": 0.002
         },
         {
-          "symbol": "3147",
-          "name": "大綜",
-          "foreign_net": 147,
+          "symbol": "2312",
+          "name": "金寶",
+          "foreign_net": 2535,
           "trust_net": 0,
-          "total_net": 145,
-          "foreign_ratio": 3.365,
+          "total_net": 2680,
+          "foreign_ratio": 0.168,
           "trust_ratio": 0.0
-        }
-      ]
-    },
-    {
-      "theme_name": "記憶體",
-      "total_net_buy": 4509,
-      "count": 1,
-      "stocks": [
-        {
-          "symbol": "3264",
-          "name": "欣銓",
-          "foreign_net": 3897,
-          "trust_net": -1,
-          "total_net": 4509,
-          "foreign_ratio": 7.95,
-          "trust_ratio": -0.002
-        }
-      ]
-    },
-    {
-      "theme_name": "散熱/機殼",
-      "total_net_buy": 4346,
-      "count": 2,
-      "stocks": [
-        {
-          "symbol": "3324",
-          "name": "雙鴻",
-          "foreign_net": 1597,
-          "trust_net": 460,
-          "total_net": 2173,
-          "foreign_ratio": 17.158,
-          "trust_ratio": 4.942
         },
         {
-          "symbol": "3324",
-          "name": "雙鴻",
-          "foreign_net": 1597,
-          "trust_net": 460,
-          "total_net": 2173,
-          "foreign_ratio": 17.158,
-          "trust_ratio": 4.942
+          "symbol": "2455",
+          "name": "全新",
+          "foreign_net": 2300,
+          "trust_net": 329,
+          "total_net": 2342,
+          "foreign_ratio": 1.244,
+          "trust_ratio": 0.178
+        },
+        {
+          "symbol": "2455",
+          "name": "全新",
+          "foreign_net": 2300,
+          "trust_net": 329,
+          "total_net": 2342,
+          "foreign_ratio": 1.244,
+          "trust_ratio": 0.178
+        },
+        {
+          "symbol": "2376",
+          "name": "技嘉",
+          "foreign_net": 1325,
+          "trust_net": 443,
+          "total_net": 1768,
+          "foreign_ratio": 0.198,
+          "trust_ratio": 0.066
+        },
+        {
+          "symbol": "2376",
+          "name": "技嘉",
+          "foreign_net": 1325,
+          "trust_net": 443,
+          "total_net": 1768,
+          "foreign_ratio": 0.198,
+          "trust_ratio": 0.066
+        },
+        {
+          "symbol": "3141",
+          "name": "晶宏",
+          "foreign_net": 1451,
+          "trust_net": 0,
+          "total_net": 1433,
+          "foreign_ratio": 19.229,
+          "trust_ratio": 0.0
+        },
+        {
+          "symbol": "2027",
+          "name": "大成鋼",
+          "foreign_net": -3053,
+          "trust_net": 4088,
+          "total_net": 973,
+          "foreign_ratio": -0.118,
+          "trust_ratio": 0.158
+        },
+        {
+          "symbol": "2347",
+          "name": "聯強",
+          "foreign_net": -938,
+          "trust_net": 867,
+          "total_net": -225,
+          "foreign_ratio": -0.056,
+          "trust_ratio": 0.052
+        },
+        {
+          "symbol": "3231",
+          "name": "緯創",
+          "foreign_net": -4652,
+          "trust_net": 1272,
+          "total_net": -3163,
+          "foreign_ratio": -0.146,
+          "trust_ratio": 0.04
         }
       ]
     }
   ],
   "foreign_ratio_themes": [
     {
-      "theme_name": "PCB",
-      "total_net_buy": 83.35,
-      "count": 3,
+      "theme_name": "AI伺服器/代工",
+      "total_net_buy": 70.363,
+      "count": 7,
       "stocks": [
         {
-          "symbol": "4939",
-          "name": "亞電",
-          "foreign_net": 7582,
+          "symbol": "8111",
+          "name": "立碁",
+          "foreign_net": 3279,
           "trust_net": 0,
-          "total_net": 7086,
-          "foreign_ratio": 77.209,
+          "total_net": 3453,
+          "foreign_ratio": 30.054,
           "trust_ratio": 0.0
         },
         {
-          "symbol": "3360",
-          "name": "尚立",
-          "foreign_net": 269,
+          "symbol": "3141",
+          "name": "晶宏",
+          "foreign_net": 1451,
           "trust_net": 0,
-          "total_net": 269,
-          "foreign_ratio": 3.521,
+          "total_net": 1433,
+          "foreign_ratio": 19.229,
           "trust_ratio": 0.0
         },
         {
-          "symbol": "1569",
-          "name": "濱川",
-          "foreign_net": 378,
+          "symbol": "3490",
+          "name": "單井",
+          "foreign_net": 383,
           "trust_net": 0,
-          "total_net": 392,
-          "foreign_ratio": 2.62,
-          "trust_ratio": 0.0
-        }
-      ]
-    },
-    {
-      "theme_name": "被動元件",
-      "total_net_buy": 58.375,
-      "count": 5,
-      "stocks": [
-        {
-          "symbol": "1815",
-          "name": "富喬",
-          "foreign_net": 25453,
-          "trust_net": 1189,
-          "total_net": 27957,
-          "foreign_ratio": 43.471,
-          "trust_ratio": 2.031
-        },
-        {
-          "symbol": "5498",
-          "name": "凱崴",
-          "foreign_net": 1351,
-          "trust_net": 0,
-          "total_net": 1394,
-          "foreign_ratio": 6.98,
+          "total_net": 383,
+          "foreign_ratio": 6.963,
           "trust_ratio": 0.0
         },
         {
-          "symbol": "6199",
-          "name": "天品",
-          "foreign_net": 213,
+          "symbol": "3219",
+          "name": "倚強科",
+          "foreign_net": 411,
           "trust_net": 0,
-          "total_net": 212,
-          "foreign_ratio": 3.449,
+          "total_net": 413,
+          "foreign_ratio": 5.726,
           "trust_ratio": 0.0
         },
         {
-          "symbol": "6174",
-          "name": "安碁",
-          "foreign_net": 112,
+          "symbol": "6530",
+          "name": "創威",
+          "foreign_net": 181,
           "trust_net": 0,
-          "total_net": 113,
-          "foreign_ratio": 2.24,
+          "total_net": 181,
+          "foreign_ratio": 5.363,
           "trust_ratio": 0.0
         },
         {
-          "symbol": "6284",
-          "name": "佳邦",
-          "foreign_net": 333,
-          "trust_net": 0,
-          "total_net": 346,
-          "foreign_ratio": 2.235,
-          "trust_ratio": 0.0
-        }
-      ]
-    },
-    {
-      "theme_name": "半導體封測",
-      "total_net_buy": 45.031,
-      "count": 3,
-      "stocks": [
-        {
-          "symbol": "6173",
-          "name": "信昌電",
-          "foreign_net": 3534,
-          "trust_net": 0,
-          "total_net": 3808,
-          "foreign_ratio": 20.547,
-          "trust_ratio": 0.0
+          "symbol": "3260",
+          "name": "威剛",
+          "foreign_net": 504,
+          "trust_net": -1,
+          "total_net": 612,
+          "foreign_ratio": 1.53,
+          "trust_ratio": -0.003
         },
         {
-          "symbol": "6179",
-          "name": "亞通",
-          "foreign_net": 2888,
+          "symbol": "5432",
+          "name": "新門",
+          "foreign_net": 31,
           "trust_net": 0,
-          "total_net": 2939,
-          "foreign_ratio": 16.287,
-          "trust_ratio": 0.0
-        },
-        {
-          "symbol": "3265",
-          "name": "台星科",
-          "foreign_net": 1117,
-          "trust_net": 0,
-          "total_net": 1271,
-          "foreign_ratio": 8.197,
-          "trust_ratio": 0.0
-        }
-      ]
-    },
-    {
-      "theme_name": "光電/光通訊",
-      "total_net_buy": 28.919,
-      "count": 3,
-      "stocks": [
-        {
-          "symbol": "3441",
-          "name": "聯一光",
-          "foreign_net": 916,
-          "trust_net": 0,
-          "total_net": 860,
-          "foreign_ratio": 22.877,
-          "trust_ratio": 0.0
-        },
-        {
-          "symbol": "6517",
-          "name": "保勝光學",
-          "foreign_net": 119,
-          "trust_net": 0,
-          "total_net": 119,
-          "foreign_ratio": 3.892,
-          "trust_ratio": 0.0
-        },
-        {
-          "symbol": "3362",
-          "name": "先進光",
-          "foreign_net": 317,
-          "trust_net": 0,
-          "total_net": 403,
-          "foreign_ratio": 2.15,
+          "total_net": 31,
+          "foreign_ratio": 1.498,
           "trust_ratio": 0.0
         }
       ]
     },
     {
       "theme_name": "散熱/機殼",
-      "total_net_buy": 28.648,
-      "count": 4,
+      "total_net_buy": 44.412,
+      "count": 6,
       "stocks": [
         {
           "symbol": "3324",
           "name": "雙鴻",
-          "foreign_net": 1597,
-          "trust_net": 460,
-          "total_net": 2173,
-          "foreign_ratio": 17.158,
-          "trust_ratio": 4.942
+          "foreign_net": 2452,
+          "trust_net": 560,
+          "total_net": 3258,
+          "foreign_ratio": 26.344,
+          "trust_ratio": 6.017
+        },
+        {
+          "symbol": "3540",
+          "name": "曜越",
+          "foreign_net": 476,
+          "trust_net": 0,
+          "total_net": 500,
+          "foreign_ratio": 5.636,
+          "trust_ratio": 0.0
         },
         {
           "symbol": "3693",
           "name": "營邦",
-          "foreign_net": 237,
+          "foreign_net": 231,
           "trust_net": 0,
-          "total_net": 277,
-          "foreign_ratio": 5.513,
+          "total_net": 259,
+          "foreign_ratio": 5.373,
           "trust_ratio": 0.0
         },
         {
-          "symbol": "6588",
-          "name": "東典光電",
-          "foreign_net": 108,
+          "symbol": "2421",
+          "name": "建準",
+          "foreign_net": 9431,
           "trust_net": 0,
-          "total_net": 108,
-          "foreign_ratio": 3.112,
+          "total_net": 9656,
+          "foreign_ratio": 3.287,
           "trust_ratio": 0.0
         },
         {
-          "symbol": "6693",
-          "name": "廣閎科",
-          "foreign_net": 131,
+          "symbol": "3379",
+          "name": "彬台",
+          "foreign_net": 82,
           "trust_net": 0,
-          "total_net": 168,
-          "foreign_ratio": 2.865,
+          "total_net": 82,
+          "foreign_ratio": 2.156,
+          "trust_ratio": 0.0
+        },
+        {
+          "symbol": "6805",
+          "name": "富世達",
+          "foreign_net": 1108,
+          "trust_net": -620,
+          "total_net": 461,
+          "foreign_ratio": 1.616,
+          "trust_ratio": -0.904
+        }
+      ]
+    },
+    {
+      "theme_name": "光電/光通訊",
+      "total_net_buy": 14.929,
+      "count": 2,
+      "stocks": [
+        {
+          "symbol": "3441",
+          "name": "聯一光",
+          "foreign_net": 437,
+          "trust_net": 0,
+          "total_net": 442,
+          "foreign_ratio": 10.914,
+          "trust_ratio": 0.0
+        },
+        {
+          "symbol": "3362",
+          "name": "先進光",
+          "foreign_net": 592,
+          "trust_net": 0,
+          "total_net": 616,
+          "foreign_ratio": 4.015,
           "trust_ratio": 0.0
         }
       ]
     },
     {
-      "theme_name": "AI伺服器/代工",
-      "total_net_buy": 24.813,
-      "count": 5,
+      "theme_name": "PCB/銅箔",
+      "total_net_buy": 13.92,
+      "count": 1,
       "stocks": [
         {
-          "symbol": "5386",
-          "name": "青雲",
-          "foreign_net": 491,
+          "symbol": "8358",
+          "name": "金居",
+          "foreign_net": 3516,
+          "trust_net": 9,
+          "total_net": 3916,
+          "foreign_ratio": 13.92,
+          "trust_ratio": 0.036
+        }
+      ]
+    },
+    {
+      "theme_name": "IC載板",
+      "total_net_buy": 12.061,
+      "count": 2,
+      "stocks": [
+        {
+          "symbol": "3374",
+          "name": "精材",
+          "foreign_net": 2552,
+          "trust_net": 5685,
+          "total_net": 8129,
+          "foreign_ratio": 9.404,
+          "trust_ratio": 20.95
+        },
+        {
+          "symbol": "2070",
+          "name": "精湛",
+          "foreign_net": 111,
           "trust_net": 0,
-          "total_net": 499,
-          "foreign_ratio": 13.608,
+          "total_net": 111,
+          "foreign_ratio": 2.657,
+          "trust_ratio": 0.0
+        }
+      ]
+    },
+    {
+      "theme_name": "PCB",
+      "total_net_buy": 11.335,
+      "count": 2,
+      "stocks": [
+        {
+          "symbol": "5291",
+          "name": "邑昇",
+          "foreign_net": 238,
+          "trust_net": 0,
+          "total_net": 245,
+          "foreign_ratio": 5.966,
           "trust_ratio": 0.0
         },
         {
-          "symbol": "3147",
-          "name": "大綜",
-          "foreign_net": 147,
+          "symbol": "3498",
+          "name": "陽程",
+          "foreign_net": 329,
           "trust_net": 0,
-          "total_net": 145,
-          "foreign_ratio": 3.365,
-          "trust_ratio": 0.0
-        },
-        {
-          "symbol": "3105",
-          "name": "穩懋",
-          "foreign_net": 1383,
-          "trust_net": 2775,
-          "total_net": 4104,
-          "foreign_ratio": 3.262,
-          "trust_ratio": 6.546
-        },
-        {
-          "symbol": "4510",
-          "name": "高鋒",
-          "foreign_net": 250,
-          "trust_net": 0,
-          "total_net": 250,
-          "foreign_ratio": 2.294,
-          "trust_ratio": 0.0
-        },
-        {
-          "symbol": "4951",
-          "name": "精拓科",
-          "foreign_net": 78,
-          "trust_net": 0,
-          "total_net": 78,
-          "foreign_ratio": 2.284,
+          "total_net": 354,
+          "foreign_ratio": 5.369,
           "trust_ratio": 0.0
         }
       ]
@@ -501,490 +765,483 @@
   ],
   "trust_ratio_themes": [
     {
-      "theme_name": "AI伺服器/代工",
-      "total_net_buy": 13.241,
-      "count": 2,
-      "stocks": [
-        {
-          "symbol": "6727",
-          "name": "亞泰金屬",
-          "foreign_net": -54,
-          "trust_net": 180,
-          "total_net": 150,
-          "foreign_ratio": -2.009,
-          "trust_ratio": 6.695
-        },
-        {
-          "symbol": "3105",
-          "name": "穩懋",
-          "foreign_net": 1383,
-          "trust_net": 2775,
-          "total_net": 4104,
-          "foreign_ratio": 3.262,
-          "trust_ratio": 6.546
-        }
-      ]
-    },
-    {
       "theme_name": "IC載板",
-      "total_net_buy": 12.293,
+      "total_net_buy": 20.95,
       "count": 1,
       "stocks": [
         {
           "symbol": "3374",
           "name": "精材",
-          "foreign_net": 4911,
-          "trust_net": 3336,
-          "total_net": 8308,
-          "foreign_ratio": 18.097,
-          "trust_ratio": 12.293
+          "foreign_net": 2552,
+          "trust_net": 5685,
+          "total_net": 8129,
+          "foreign_ratio": 9.404,
+          "trust_ratio": 20.95
+        }
+      ]
+    },
+    {
+      "theme_name": "PCB",
+      "total_net_buy": 7.318,
+      "count": 6,
+      "stocks": [
+        {
+          "symbol": "6510",
+          "name": "精測",
+          "foreign_net": -35,
+          "trust_net": 214,
+          "total_net": 169,
+          "foreign_ratio": -1.064,
+          "trust_ratio": 6.508
+        },
+        {
+          "symbol": "2368",
+          "name": "金像電",
+          "foreign_net": -941,
+          "trust_net": 1662,
+          "total_net": 65,
+          "foreign_ratio": -0.182,
+          "trust_ratio": 0.321
+        },
+        {
+          "symbol": "3605",
+          "name": "宏致",
+          "foreign_net": -1946,
+          "trust_net": 434,
+          "total_net": -1484,
+          "foreign_ratio": -1.114,
+          "trust_ratio": 0.248
+        },
+        {
+          "symbol": "4958",
+          "name": "臻鼎-KY",
+          "foreign_net": 2178,
+          "trust_net": 1230,
+          "total_net": 3995,
+          "foreign_ratio": 0.202,
+          "trust_ratio": 0.114
+        },
+        {
+          "symbol": "2313",
+          "name": "華通",
+          "foreign_net": 6413,
+          "trust_net": 1266,
+          "total_net": 7900,
+          "foreign_ratio": 0.538,
+          "trust_ratio": 0.106
+        },
+        {
+          "symbol": "2467",
+          "name": "志聖",
+          "foreign_net": -66,
+          "trust_net": 33,
+          "total_net": -56,
+          "foreign_ratio": -0.042,
+          "trust_ratio": 0.021
         }
       ]
     },
     {
       "theme_name": "散熱/機殼",
-      "total_net_buy": 4.955,
+      "total_net_buy": 6.053,
       "count": 2,
       "stocks": [
         {
           "symbol": "3324",
           "name": "雙鴻",
-          "foreign_net": 1597,
-          "trust_net": 460,
-          "total_net": 2173,
-          "foreign_ratio": 17.158,
-          "trust_ratio": 4.942
+          "foreign_net": 2452,
+          "trust_net": 560,
+          "total_net": 3258,
+          "foreign_ratio": 26.344,
+          "trust_ratio": 6.017
         },
         {
-          "symbol": "3078",
-          "name": "僑威",
-          "foreign_net": -407,
-          "trust_net": 3,
-          "total_net": -404,
-          "foreign_ratio": -1.79,
-          "trust_ratio": 0.013
+          "symbol": "3706",
+          "name": "神達",
+          "foreign_net": -411,
+          "trust_net": 474,
+          "total_net": 417,
+          "foreign_ratio": -0.031,
+          "trust_ratio": 0.036
         }
       ]
     },
     {
-      "theme_name": "先進封裝",
-      "total_net_buy": 4.237,
-      "count": 1,
+      "theme_name": "矽光子/光通訊",
+      "total_net_buy": 2.695,
+      "count": 3,
       "stocks": [
         {
-          "symbol": "6187",
-          "name": "萬潤",
-          "foreign_net": 345,
-          "trust_net": 416,
-          "total_net": 723,
-          "foreign_ratio": 3.513,
-          "trust_ratio": 4.237
+          "symbol": "3081",
+          "name": "聯亞",
+          "foreign_net": -132,
+          "trust_net": 200,
+          "total_net": 92,
+          "foreign_ratio": -1.427,
+          "trust_ratio": 2.162
+        },
+        {
+          "symbol": "3008",
+          "name": "大立光",
+          "foreign_net": -509,
+          "trust_net": 402,
+          "total_net": -192,
+          "foreign_ratio": -0.389,
+          "trust_ratio": 0.307
+        },
+        {
+          "symbol": "3450",
+          "name": "聯鈞",
+          "foreign_net": 1864,
+          "trust_net": 329,
+          "total_net": 2193,
+          "foreign_ratio": 1.28,
+          "trust_ratio": 0.226
         }
       ]
     },
     {
-      "theme_name": "低軌衛星",
-      "total_net_buy": 3.706,
-      "count": 1,
+      "theme_name": "AI伺服器/代工",
+      "total_net_buy": 1.874,
+      "count": 10,
       "stocks": [
         {
-          "symbol": "3491",
-          "name": "昇達科",
-          "foreign_net": -337,
-          "trust_net": 255,
-          "total_net": -76,
-          "foreign_ratio": -4.898,
-          "trust_ratio": 3.706
+          "symbol": "3105",
+          "name": "穩懋",
+          "foreign_net": -6359,
+          "trust_net": 522,
+          "total_net": -5437,
+          "foreign_ratio": -15.0,
+          "trust_ratio": 1.231
+        },
+        {
+          "symbol": "2455",
+          "name": "全新",
+          "foreign_net": 2300,
+          "trust_net": 329,
+          "total_net": 2342,
+          "foreign_ratio": 1.244,
+          "trust_ratio": 0.178
+        },
+        {
+          "symbol": "2027",
+          "name": "大成鋼",
+          "foreign_net": -3053,
+          "trust_net": 4088,
+          "total_net": 973,
+          "foreign_ratio": -0.118,
+          "trust_ratio": 0.158
+        },
+        {
+          "symbol": "2376",
+          "name": "技嘉",
+          "foreign_net": 1325,
+          "trust_net": 443,
+          "total_net": 1768,
+          "foreign_ratio": 0.198,
+          "trust_ratio": 0.066
+        },
+        {
+          "symbol": "2347",
+          "name": "聯強",
+          "foreign_net": -938,
+          "trust_net": 867,
+          "total_net": -225,
+          "foreign_ratio": -0.056,
+          "trust_ratio": 0.052
+        },
+        {
+          "symbol": "6409",
+          "name": "旭隼",
+          "foreign_net": -47,
+          "trust_net": 44,
+          "total_net": 0,
+          "foreign_ratio": -0.054,
+          "trust_ratio": 0.05
+        },
+        {
+          "symbol": "3231",
+          "name": "緯創",
+          "foreign_net": -4652,
+          "trust_net": 1272,
+          "total_net": -3163,
+          "foreign_ratio": -0.146,
+          "trust_ratio": 0.04
+        },
+        {
+          "symbol": "5269",
+          "name": "祥碩",
+          "foreign_net": -62,
+          "trust_net": 30,
+          "total_net": -30,
+          "foreign_ratio": -0.084,
+          "trust_ratio": 0.04
+        },
+        {
+          "symbol": "2382",
+          "name": "廣達",
+          "foreign_net": 2660,
+          "trust_net": 1458,
+          "total_net": 3800,
+          "foreign_ratio": 0.069,
+          "trust_ratio": 0.038
+        },
+        {
+          "symbol": "2356",
+          "name": "英業達",
+          "foreign_net": 5121,
+          "trust_net": 748,
+          "total_net": 6650,
+          "foreign_ratio": 0.143,
+          "trust_ratio": 0.021
         }
       ]
     },
     {
       "theme_name": "半導體封測",
-      "total_net_buy": 2.856,
+      "total_net_buy": 0.808,
       "count": 2,
       "stocks": [
         {
-          "symbol": "5425",
-          "name": "台半",
-          "foreign_net": -4904,
-          "trust_net": 660,
-          "total_net": -4612,
-          "foreign_ratio": -18.612,
-          "trust_ratio": 2.505
-        },
-        {
           "symbol": "6640",
           "name": "均華",
-          "foreign_net": -35,
-          "trust_net": 10,
-          "total_net": -31,
-          "foreign_ratio": -1.227,
-          "trust_ratio": 0.351
+          "foreign_net": -21,
+          "trust_net": 17,
+          "total_net": 10,
+          "foreign_ratio": -0.736,
+          "trust_ratio": 0.596
+        },
+        {
+          "symbol": "2449",
+          "name": "京元電子",
+          "foreign_net": -16652,
+          "trust_net": 2591,
+          "total_net": -15129,
+          "foreign_ratio": -1.362,
+          "trust_ratio": 0.212
         }
       ]
     }
   ],
   "cohort_buys": [
     {
-      "date": "20260830",
-      "symbol": "1815",
-      "name": "富喬",
-      "foreign_net": 25453,
-      "trust_net": 1189,
-      "dealer_net": 1315,
-      "total_net": 27957,
+      "date": "20260831",
+      "symbol": "1717",
+      "name": "長興",
+      "foreign_net": 12571,
+      "trust_net": 3450,
+      "dealer_net": 950,
+      "total_net": 16971,
       "themes": [
-        "被動元件"
+        "化學"
       ],
-      "foreign_ratio": 43.471,
-      "trust_ratio": 2.031
+      "foreign_ratio": 1.072,
+      "trust_ratio": 0.294
     },
     {
-      "date": "20260830",
-      "symbol": "3374",
-      "name": "精材",
-      "foreign_net": 4911,
-      "trust_net": 3336,
-      "dealer_net": 61,
-      "total_net": 8308,
-      "themes": [
-        "IC載板"
-      ],
-      "foreign_ratio": 18.097,
-      "trust_ratio": 12.293
-    },
-    {
-      "date": "20260830",
-      "symbol": "3324",
-      "name": "雙鴻",
-      "foreign_net": 1597,
-      "trust_net": 460,
-      "dealer_net": 117,
-      "total_net": 2173,
-      "themes": [
-        "散熱/機殼"
-      ],
-      "foreign_ratio": 17.158,
-      "trust_ratio": 4.942
-    },
-    {
-      "date": "20260830",
-      "symbol": "3680",
-      "name": "家登",
-      "foreign_net": 30,
-      "trust_net": 45,
-      "dealer_net": 73,
-      "total_net": 148,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 0.312,
-      "trust_ratio": 0.468
-    }
-  ],
-  "top_foreign_buys": [
-    {
-      "date": "20260830",
-      "symbol": "1815",
-      "name": "富喬",
-      "foreign_net": 25453,
-      "trust_net": 1189,
-      "dealer_net": 1315,
-      "total_net": 27957,
-      "themes": [
-        "被動元件"
-      ],
-      "foreign_ratio": 43.471,
-      "trust_ratio": 2.031
-    },
-    {
-      "date": "20260830",
-      "symbol": "4939",
-      "name": "亞電",
-      "foreign_net": 7582,
-      "trust_net": 0,
-      "dealer_net": -495,
-      "total_net": 7086,
-      "themes": [
-        "PCB"
-      ],
-      "foreign_ratio": 77.209,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3374",
-      "name": "精材",
-      "foreign_net": 4911,
-      "trust_net": 3336,
-      "dealer_net": 61,
-      "total_net": 8308,
-      "themes": [
-        "IC載板"
-      ],
-      "foreign_ratio": 18.097,
-      "trust_ratio": 12.293
-    },
-    {
-      "date": "20260830",
-      "symbol": "3264",
-      "name": "欣銓",
-      "foreign_net": 3897,
-      "trust_net": -1,
-      "dealer_net": 613,
-      "total_net": 4509,
+      "date": "20260831",
+      "symbol": "2344",
+      "name": "華邦電",
+      "foreign_net": 13528,
+      "trust_net": 75,
+      "dealer_net": 1663,
+      "total_net": 15267,
       "themes": [
         "記憶體"
       ],
-      "foreign_ratio": 7.95,
-      "trust_ratio": -0.002
+      "foreign_ratio": 0.301,
+      "trust_ratio": 0.002
     },
     {
-      "date": "20260830",
-      "symbol": "6173",
-      "name": "信昌電",
-      "foreign_net": 3534,
-      "trust_net": 0,
-      "dealer_net": 274,
-      "total_net": 3808,
+      "date": "20260831",
+      "symbol": "1303",
+      "name": "南亞",
+      "foreign_net": 10703,
+      "trust_net": 1267,
+      "dealer_net": 1042,
+      "total_net": 13011,
       "themes": [
-        "半導體封測"
+        "記憶體"
       ],
-      "foreign_ratio": 20.547,
-      "trust_ratio": 0.0
+      "foreign_ratio": 0.135,
+      "trust_ratio": 0.016
     },
     {
-      "date": "20260830",
-      "symbol": "00888",
-      "name": "永豐台灣ESG",
-      "foreign_net": 3029,
-      "trust_net": 0,
-      "dealer_net": 3199,
-      "total_net": 6229,
+      "date": "20260831",
+      "symbol": "2313",
+      "name": "華通",
+      "foreign_net": 6413,
+      "trust_net": 1266,
+      "dealer_net": 221,
+      "total_net": 7900,
       "themes": [
-        "ETF/債券"
+        "PCB"
       ],
-      "foreign_ratio": 7.972,
-      "trust_ratio": 0.0
+      "foreign_ratio": 0.538,
+      "trust_ratio": 0.106
     },
     {
-      "date": "20260830",
-      "symbol": "6179",
-      "name": "亞通",
-      "foreign_net": 2888,
-      "trust_net": 0,
-      "dealer_net": 51,
-      "total_net": 2939,
-      "themes": [
-        "半導體封測"
-      ],
-      "foreign_ratio": 16.287,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "5314",
-      "name": "世紀*",
-      "foreign_net": 1661,
-      "trust_net": 0,
-      "dealer_net": 1443,
-      "total_net": 3104,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 5.688,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3324",
-      "name": "雙鴻",
-      "foreign_net": 1597,
-      "trust_net": 460,
-      "dealer_net": 117,
-      "total_net": 2173,
-      "themes": [
-        "散熱/機殼"
-      ],
-      "foreign_ratio": 17.158,
-      "trust_ratio": 4.942
-    },
-    {
-      "date": "20260830",
-      "symbol": "6547",
-      "name": "高端疫苗",
-      "foreign_net": 1434,
-      "trust_net": 0,
-      "dealer_net": -225,
-      "total_net": 1209,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 4.362,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3105",
-      "name": "穩懋",
-      "foreign_net": 1383,
-      "trust_net": 2775,
-      "dealer_net": -54,
-      "total_net": 4104,
+      "date": "20260831",
+      "symbol": "2356",
+      "name": "英業達",
+      "foreign_net": 5121,
+      "trust_net": 748,
+      "dealer_net": 780,
+      "total_net": 6650,
       "themes": [
         "AI伺服器/代工"
       ],
-      "foreign_ratio": 3.262,
-      "trust_ratio": 6.546
+      "foreign_ratio": 0.143,
+      "trust_ratio": 0.021
     },
     {
-      "date": "20260830",
-      "symbol": "5498",
-      "name": "凱崴",
-      "foreign_net": 1351,
-      "trust_net": 0,
-      "dealer_net": 43,
-      "total_net": 1394,
+      "date": "20260831",
+      "symbol": "4958",
+      "name": "臻鼎-KY",
+      "foreign_net": 2178,
+      "trust_net": 1230,
+      "dealer_net": 587,
+      "total_net": 3995,
       "themes": [
-        "被動元件"
+        "PCB"
       ],
-      "foreign_ratio": 6.98,
+      "foreign_ratio": 0.202,
+      "trust_ratio": 0.114
+    },
+    {
+      "date": "20260831",
+      "symbol": "8358",
+      "name": "金居",
+      "foreign_net": 3516,
+      "trust_net": 9,
+      "dealer_net": 390,
+      "total_net": 3916,
+      "themes": [
+        "PCB/銅箔"
+      ],
+      "foreign_ratio": 13.92,
+      "trust_ratio": 0.036
+    },
+    {
+      "date": "20260831",
+      "symbol": "4938",
+      "name": "和碩",
+      "foreign_net": 3238,
+      "trust_net": 63,
+      "dealer_net": 135,
+      "total_net": 3436,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 0.121,
+      "trust_ratio": 0.002
+    },
+    {
+      "date": "20260831",
+      "symbol": "3324",
+      "name": "雙鴻",
+      "foreign_net": 2452,
+      "trust_net": 560,
+      "dealer_net": 246,
+      "total_net": 3258,
+      "themes": [
+        "散熱/機殼"
+      ],
+      "foreign_ratio": 26.344,
+      "trust_ratio": 6.017
+    },
+    {
+      "date": "20260831",
+      "symbol": "6505",
+      "name": "台塑化",
+      "foreign_net": 2615,
+      "trust_net": 1,
+      "dealer_net": 257,
+      "total_net": 2873,
+      "themes": [
+        "油電燃氣"
+      ],
+      "foreign_ratio": 0.027,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "3265",
-      "name": "台星科",
-      "foreign_net": 1117,
-      "trust_net": 0,
-      "dealer_net": 154,
-      "total_net": 1271,
+      "date": "20260831",
+      "symbol": "4763",
+      "name": "材料*-KY",
+      "foreign_net": 1622,
+      "trust_net": 1,
+      "dealer_net": 63,
+      "total_net": 1686,
       "themes": [
-        "半導體封測"
+        "化學"
       ],
-      "foreign_ratio": 8.197,
+      "foreign_ratio": 0.164,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "3293",
-      "name": "鈊象",
-      "foreign_net": 1064,
-      "trust_net": -1460,
-      "dealer_net": -53,
-      "total_net": -449,
+      "date": "20260831",
+      "symbol": "2357",
+      "name": "華碩",
+      "foreign_net": 986,
+      "trust_net": 227,
+      "dealer_net": 83,
+      "total_net": 1296,
       "themes": [
-        "其他類股"
+        "電腦及週邊"
       ],
-      "foreign_ratio": 3.776,
-      "trust_ratio": -5.181
+      "foreign_ratio": 0.133,
+      "trust_ratio": 0.031
     },
     {
-      "date": "20260830",
-      "symbol": "6218",
-      "name": "豪勉",
-      "foreign_net": 937,
-      "trust_net": 0,
-      "dealer_net": -5,
-      "total_net": 932,
+      "date": "20260831",
+      "symbol": "1402",
+      "name": "遠東新",
+      "foreign_net": 441,
+      "trust_net": 30,
+      "dealer_net": 344,
+      "total_net": 815,
       "themes": [
-        "其他類股"
+        "紡織纖維"
       ],
-      "foreign_ratio": 14.581,
+      "foreign_ratio": 0.008,
+      "trust_ratio": 0.001
+    },
+    {
+      "date": "20260831",
+      "symbol": "1319",
+      "name": "東陽",
+      "foreign_net": 368,
+      "trust_net": 1,
+      "dealer_net": 10,
+      "total_net": 379,
+      "themes": [
+        "汽車"
+      ],
+      "foreign_ratio": 0.062,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "3441",
-      "name": "聯一光",
-      "foreign_net": 916,
-      "trust_net": 0,
-      "dealer_net": -56,
-      "total_net": 860,
+      "date": "20260831",
+      "symbol": "3661",
+      "name": "世芯-KY",
+      "foreign_net": 71,
+      "trust_net": 117,
+      "dealer_net": 27,
+      "total_net": 216,
       "themes": [
-        "光電/光通訊"
+        "IP/IC設計"
       ],
-      "foreign_ratio": 22.877,
-      "trust_ratio": 0.0
+      "foreign_ratio": 0.086,
+      "trust_ratio": 0.143
     },
     {
-      "date": "20260830",
-      "symbol": "4991",
-      "name": "環宇-KY",
-      "foreign_net": 831,
-      "trust_net": 0,
-      "dealer_net": -64,
-      "total_net": 767,
-      "themes": [
-        "晶圓代工"
-      ],
-      "foreign_ratio": 6.871,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3211",
-      "name": "順達",
-      "foreign_net": 796,
-      "trust_net": 0,
-      "dealer_net": -183,
-      "total_net": 613,
-      "themes": [
-        "IC載板"
-      ],
-      "foreign_ratio": 5.155,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "6190",
-      "name": "萬泰科",
-      "foreign_net": 751,
-      "trust_net": 0,
-      "dealer_net": 155,
-      "total_net": 906,
-      "themes": [
-        "電子科技"
-      ],
-      "foreign_ratio": 4.002,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "5347",
-      "name": "世界",
-      "foreign_net": 662,
-      "trust_net": -378,
-      "dealer_net": 192,
-      "total_net": 476,
-      "themes": [
-        "晶圓代工"
-      ],
-      "foreign_ratio": 0.355,
-      "trust_ratio": -0.202
-    },
-    {
-      "date": "20260830",
-      "symbol": "5443",
-      "name": "均豪",
-      "foreign_net": 576,
-      "trust_net": 0,
-      "dealer_net": 435,
-      "total_net": 1011,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 3.496,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "00970B",
-      "name": "台新BBB投等債20+",
-      "foreign_net": 539,
-      "trust_net": 0,
-      "dealer_net": 2939,
-      "total_net": 3478,
+      "date": "20260831",
+      "symbol": "00709",
+      "name": "富邦歐洲",
+      "foreign_net": 1,
+      "trust_net": 21,
+      "dealer_net": 13,
+      "total_net": 35,
       "themes": [
         "ETF/債券"
       ],
@@ -992,2153 +1249,4167 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "3707",
-      "name": "漢磊",
-      "foreign_net": 539,
-      "trust_net": 0,
-      "dealer_net": 5,
-      "total_net": 544,
+      "date": "20260831",
+      "symbol": "5288",
+      "name": "豐祥-KY",
+      "foreign_net": 12,
+      "trust_net": 5,
+      "dealer_net": 2,
+      "total_net": 19,
       "themes": [
-        "矽晶圓"
+        "電機機械"
       ],
-      "foreign_ratio": 1.359,
+      "foreign_ratio": 0.017,
+      "trust_ratio": 0.007
+    }
+  ],
+  "top_foreign_buys": [
+    {
+      "date": "20260831",
+      "symbol": "6770",
+      "name": "力積電",
+      "foreign_net": 73710,
+      "trust_net": 0,
+      "dealer_net": 2740,
+      "total_net": 76450,
+      "themes": [
+        "晶圓代工"
+      ],
+      "foreign_ratio": 1.737,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "6026",
-      "name": "福邦證",
-      "foreign_net": 516,
+      "date": "20260831",
+      "symbol": "2409",
+      "name": "友達",
+      "foreign_net": 41264,
       "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 516,
+      "dealer_net": -60,
+      "total_net": 41205,
+      "themes": [
+        "光電"
+      ],
+      "foreign_ratio": 0.547,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2887",
+      "name": "台新新光金",
+      "foreign_net": 35114,
+      "trust_net": 1227,
+      "dealer_net": -1178,
+      "total_net": 35163,
       "themes": [
         "金融"
       ],
-      "foreign_ratio": 1.302,
-      "trust_ratio": 0.0
+      "foreign_ratio": 0.141,
+      "trust_ratio": 0.005
     },
     {
-      "date": "20260830",
-      "symbol": "5386",
-      "name": "青雲",
-      "foreign_net": 491,
-      "trust_net": 0,
-      "dealer_net": 8,
-      "total_net": 499,
+      "date": "20260831",
+      "symbol": "2834",
+      "name": "臺企銀",
+      "foreign_net": 31633,
+      "trust_net": -2969,
+      "dealer_net": -37,
+      "total_net": 28626,
       "themes": [
-        "AI伺服器/代工"
+        "金融"
       ],
-      "foreign_ratio": 13.608,
-      "trust_ratio": 0.0
+      "foreign_ratio": 0.326,
+      "trust_ratio": -0.031
     },
     {
-      "date": "20260830",
-      "symbol": "6244",
-      "name": "茂迪",
-      "foreign_net": 481,
-      "trust_net": 0,
-      "dealer_net": -5,
-      "total_net": 476,
+      "date": "20260831",
+      "symbol": "2883",
+      "name": "凱基金",
+      "foreign_net": 29874,
+      "trust_net": 47,
+      "dealer_net": -1165,
+      "total_net": 28756,
       "themes": [
-        "重電/電力系統"
+        "金融"
       ],
-      "foreign_ratio": 1.243,
+      "foreign_ratio": 0.176,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "4716",
-      "name": "大立",
-      "foreign_net": 443,
-      "trust_net": 0,
-      "dealer_net": 5,
-      "total_net": 448,
+      "date": "20260831",
+      "symbol": "2892",
+      "name": "第一金",
+      "foreign_net": 27775,
+      "trust_net": -348,
+      "dealer_net": -235,
+      "total_net": 27192,
       "themes": [
-        "其他類股"
+        "金融"
       ],
-      "foreign_ratio": 4.691,
+      "foreign_ratio": 0.193,
+      "trust_ratio": -0.002
+    },
+    {
+      "date": "20260831",
+      "symbol": "1301",
+      "name": "台塑",
+      "foreign_net": 24980,
+      "trust_net": 0,
+      "dealer_net": 1105,
+      "total_net": 26085,
+      "themes": [
+        "塑膠"
+      ],
+      "foreign_ratio": 0.392,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "00955",
-      "name": "中信日本商社",
-      "foreign_net": 442,
+      "date": "20260831",
+      "symbol": "2890",
+      "name": "永豐金",
+      "foreign_net": 23141,
+      "trust_net": 28,
+      "dealer_net": -1218,
+      "total_net": 21952,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.16,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "00403A",
+      "name": "主動統一升級50",
+      "foreign_net": 19374,
       "trust_net": 0,
-      "dealer_net": -85,
-      "total_net": 357,
+      "dealer_net": 26235,
+      "total_net": 45608,
       "themes": [
         "ETF/債券"
       ],
-      "foreign_ratio": 0.734,
+      "foreign_ratio": 0.0,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "2221",
-      "name": "大甲",
-      "foreign_net": 432,
+      "date": "20260831",
+      "symbol": "1326",
+      "name": "台化",
+      "foreign_net": 18152,
       "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 432,
+      "dealer_net": 1112,
+      "total_net": 19264,
       "themes": [
-        "其他類股"
+        "塑膠"
       ],
-      "foreign_ratio": 10.207,
+      "foreign_ratio": 0.31,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "4908",
-      "name": "前鼎",
-      "foreign_net": 432,
-      "trust_net": 0,
-      "dealer_net": -108,
-      "total_net": 324,
-      "themes": [
-        "矽光子/光通訊"
-      ],
-      "foreign_ratio": 5.523,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "2061",
-      "name": "風青",
-      "foreign_net": 426,
-      "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 427,
-      "themes": [
-        "重電/電力系統"
-      ],
-      "foreign_ratio": 7.424,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3234",
-      "name": "光環",
-      "foreign_net": 425,
-      "trust_net": 0,
-      "dealer_net": -5,
-      "total_net": 420,
-      "themes": [
-        "矽光子/光通訊"
-      ],
-      "foreign_ratio": 3.813,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3081",
-      "name": "聯亞",
-      "foreign_net": 422,
-      "trust_net": -3,
-      "dealer_net": -30,
-      "total_net": 389,
-      "themes": [
-        "矽光子/光通訊"
-      ],
-      "foreign_ratio": 4.561,
-      "trust_ratio": -0.032
-    },
-    {
-      "date": "20260830",
-      "symbol": "4157",
-      "name": "太景*-KY",
-      "foreign_net": 399,
-      "trust_net": 0,
-      "dealer_net": 1,
-      "total_net": 400,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 0.561,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "1569",
-      "name": "濱川",
-      "foreign_net": 378,
-      "trust_net": 0,
-      "dealer_net": 14,
-      "total_net": 392,
-      "themes": [
-        "PCB"
-      ],
-      "foreign_ratio": 2.62,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3176",
-      "name": "基亞",
-      "foreign_net": 352,
-      "trust_net": 0,
-      "dealer_net": 1,
-      "total_net": 353,
-      "themes": [
-        "生技醫療"
-      ],
-      "foreign_ratio": 2.527,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "6187",
-      "name": "萬潤",
-      "foreign_net": 345,
-      "trust_net": 416,
-      "dealer_net": -38,
-      "total_net": 723,
-      "themes": [
-        "先進封裝"
-      ],
-      "foreign_ratio": 3.513,
-      "trust_ratio": 4.237
-    },
-    {
-      "date": "20260830",
-      "symbol": "6284",
-      "name": "佳邦",
-      "foreign_net": 333,
-      "trust_net": 0,
-      "dealer_net": 13,
-      "total_net": 346,
-      "themes": [
-        "被動元件"
-      ],
-      "foreign_ratio": 2.235,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3362",
-      "name": "先進光",
-      "foreign_net": 317,
-      "trust_net": 0,
-      "dealer_net": 86,
-      "total_net": 403,
-      "themes": [
-        "光電/光通訊"
-      ],
-      "foreign_ratio": 2.15,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3066",
-      "name": "李洲",
-      "foreign_net": 302,
-      "trust_net": 0,
-      "dealer_net": 1,
-      "total_net": 303,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 3.635,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "5392",
-      "name": "能率",
-      "foreign_net": 292,
-      "trust_net": 0,
-      "dealer_net": 365,
-      "total_net": 657,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 1.654,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3287",
-      "name": "廣寰科",
-      "foreign_net": 277,
-      "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 277,
-      "themes": [
-        "電子科技"
-      ],
-      "foreign_ratio": 6.3,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3360",
-      "name": "尚立",
-      "foreign_net": 269,
-      "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 269,
-      "themes": [
-        "PCB"
-      ],
-      "foreign_ratio": 3.521,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "5864",
-      "name": "致和證",
-      "foreign_net": 264,
-      "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 264,
+      "date": "20260831",
+      "symbol": "2880",
+      "name": "華南金",
+      "foreign_net": 17747,
+      "trust_net": -2221,
+      "dealer_net": -1413,
+      "total_net": 14112,
       "themes": [
         "金融"
       ],
-      "foreign_ratio": 0.581,
+      "foreign_ratio": 0.128,
+      "trust_ratio": -0.016
+    },
+    {
+      "date": "20260831",
+      "symbol": "00991A",
+      "name": "主動復華未來50",
+      "foreign_net": 16848,
+      "trust_net": -5631,
+      "dealer_net": 9759,
+      "total_net": 20977,
+      "themes": [
+        "ETF/債券"
+      ],
+      "foreign_ratio": 0.0,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "6274",
-      "name": "台燿",
-      "foreign_net": 258,
-      "trust_net": -52,
-      "dealer_net": 29,
-      "total_net": 235,
+      "date": "20260831",
+      "symbol": "2609",
+      "name": "陽明",
+      "foreign_net": 14788,
+      "trust_net": -7,
+      "dealer_net": 605,
+      "total_net": 15386,
       "themes": [
-        "銅箔基板/CCL"
+        "航運"
       ],
-      "foreign_ratio": 0.885,
-      "trust_ratio": -0.178
+      "foreign_ratio": 0.423,
+      "trust_ratio": -0.0
     },
     {
-      "date": "20260830",
-      "symbol": "4510",
-      "name": "高鋒",
-      "foreign_net": 250,
+      "date": "20260831",
+      "symbol": "1312",
+      "name": "國喬",
+      "foreign_net": 14188,
       "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 250,
+      "dealer_net": 437,
+      "total_net": 14625,
+      "themes": [
+        "塑膠"
+      ],
+      "foreign_ratio": 1.282,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2344",
+      "name": "華邦電",
+      "foreign_net": 13528,
+      "trust_net": 75,
+      "dealer_net": 1663,
+      "total_net": 15267,
+      "themes": [
+        "記憶體"
+      ],
+      "foreign_ratio": 0.301,
+      "trust_ratio": 0.002
+    },
+    {
+      "date": "20260831",
+      "symbol": "2489",
+      "name": "瑞軒",
+      "foreign_net": 13501,
+      "trust_net": 0,
+      "dealer_net": 475,
+      "total_net": 13976,
+      "themes": [
+        "光電"
+      ],
+      "foreign_ratio": 2.213,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2884",
+      "name": "玉山金",
+      "foreign_net": 12894,
+      "trust_net": 1252,
+      "dealer_net": -2075,
+      "total_net": 12070,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.08,
+      "trust_ratio": 0.008
+    },
+    {
+      "date": "20260831",
+      "symbol": "1717",
+      "name": "長興",
+      "foreign_net": 12571,
+      "trust_net": 3450,
+      "dealer_net": 950,
+      "total_net": 16971,
+      "themes": [
+        "化學"
+      ],
+      "foreign_ratio": 1.072,
+      "trust_ratio": 0.294
+    },
+    {
+      "date": "20260831",
+      "symbol": "2324",
+      "name": "仁寶",
+      "foreign_net": 11724,
+      "trust_net": 0,
+      "dealer_net": -46,
+      "total_net": 11678,
       "themes": [
         "AI伺服器/代工"
       ],
-      "foreign_ratio": 2.294,
+      "foreign_ratio": 0.266,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "4128",
-      "name": "中天",
-      "foreign_net": 243,
+      "date": "20260831",
+      "symbol": "1314",
+      "name": "中石化",
+      "foreign_net": 10820,
       "trust_net": 0,
-      "dealer_net": -4,
-      "total_net": 239,
+      "dealer_net": 34,
+      "total_net": 10854,
       "themes": [
-        "其他類股"
+        "重電/電力系統"
       ],
-      "foreign_ratio": 0.413,
+      "foreign_ratio": 0.286,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "4979",
-      "name": "華星光",
-      "foreign_net": 238,
-      "trust_net": 0,
-      "dealer_net": 120,
-      "total_net": 358,
+      "date": "20260831",
+      "symbol": "1303",
+      "name": "南亞",
+      "foreign_net": 10703,
+      "trust_net": 1267,
+      "dealer_net": 1042,
+      "total_net": 13011,
       "themes": [
-        "矽光子/光通訊"
+        "記憶體"
       ],
-      "foreign_ratio": 1.672,
-      "trust_ratio": 0.0
+      "foreign_ratio": 0.135,
+      "trust_ratio": 0.016
     },
     {
-      "date": "20260830",
-      "symbol": "3693",
-      "name": "營邦",
-      "foreign_net": 237,
+      "date": "20260831",
+      "symbol": "2421",
+      "name": "建準",
+      "foreign_net": 9431,
       "trust_net": 0,
-      "dealer_net": 40,
-      "total_net": 277,
+      "dealer_net": 225,
+      "total_net": 9656,
       "themes": [
         "散熱/機殼"
       ],
-      "foreign_ratio": 5.513,
+      "foreign_ratio": 3.287,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "6259",
-      "name": "百徽",
-      "foreign_net": 227,
+      "date": "20260831",
+      "symbol": "0056",
+      "name": "元大高股息",
+      "foreign_net": 9255,
       "trust_net": 0,
-      "dealer_net": 1,
-      "total_net": 228,
+      "dealer_net": 26374,
+      "total_net": 35629,
       "themes": [
-        "其他類股"
+        "ETF/債券"
       ],
-      "foreign_ratio": 8.091,
+      "foreign_ratio": 0.0,
       "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "00981A",
+      "name": "主動統一台股增長",
+      "foreign_net": 9041,
+      "trust_net": 0,
+      "dealer_net": 5495,
+      "total_net": 14536,
+      "themes": [
+        "ETF/債券"
+      ],
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "5880",
+      "name": "合庫金",
+      "foreign_net": 8441,
+      "trust_net": 40,
+      "dealer_net": -61,
+      "total_net": 8420,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.054,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2889",
+      "name": "國票金",
+      "foreign_net": 8144,
+      "trust_net": 0,
+      "dealer_net": -22,
+      "total_net": 8122,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.224,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "9105",
+      "name": "泰金寶-DR",
+      "foreign_net": 8081,
+      "trust_net": 0,
+      "dealer_net": 89,
+      "total_net": 8170,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.077,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2882",
+      "name": "國泰金",
+      "foreign_net": 7894,
+      "trust_net": 2461,
+      "dealer_net": -123,
+      "total_net": 10232,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.054,
+      "trust_ratio": 0.017
+    },
+    {
+      "date": "20260831",
+      "symbol": "2885",
+      "name": "元大金",
+      "foreign_net": 7731,
+      "trust_net": -1120,
+      "dealer_net": -531,
+      "total_net": 6081,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.058,
+      "trust_ratio": -0.008
+    },
+    {
+      "date": "20260831",
+      "symbol": "2408",
+      "name": "南亞科",
+      "foreign_net": 7647,
+      "trust_net": -31,
+      "dealer_net": 199,
+      "total_net": 7815,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 0.222,
+      "trust_ratio": -0.001
+    },
+    {
+      "date": "20260831",
+      "symbol": "9904",
+      "name": "寶成",
+      "foreign_net": 7528,
+      "trust_net": 41,
+      "dealer_net": -147,
+      "total_net": 7422,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 0.255,
+      "trust_ratio": 0.001
+    },
+    {
+      "date": "20260831",
+      "symbol": "2377",
+      "name": "微星",
+      "foreign_net": 7426,
+      "trust_net": -23,
+      "dealer_net": 732,
+      "total_net": 8136,
+      "themes": [
+        "散熱/機殼"
+      ],
+      "foreign_ratio": 0.879,
+      "trust_ratio": -0.003
+    },
+    {
+      "date": "20260831",
+      "symbol": "2313",
+      "name": "華通",
+      "foreign_net": 6413,
+      "trust_net": 1266,
+      "dealer_net": 221,
+      "total_net": 7900,
+      "themes": [
+        "PCB"
+      ],
+      "foreign_ratio": 0.538,
+      "trust_ratio": 0.106
+    },
+    {
+      "date": "20260831",
+      "symbol": "2886",
+      "name": "兆豐金",
+      "foreign_net": 6280,
+      "trust_net": -1727,
+      "dealer_net": -1049,
+      "total_net": 3504,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.042,
+      "trust_ratio": -0.012
+    },
+    {
+      "date": "20260831",
+      "symbol": "2801",
+      "name": "彰銀",
+      "foreign_net": 6043,
+      "trust_net": 608,
+      "dealer_net": -50,
+      "total_net": 6601,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.051,
+      "trust_ratio": 0.005
+    },
+    {
+      "date": "20260831",
+      "symbol": "2354",
+      "name": "鴻準",
+      "foreign_net": 5297,
+      "trust_net": 0,
+      "dealer_net": 509,
+      "total_net": 5806,
+      "themes": [
+        "散熱/機殼"
+      ],
+      "foreign_ratio": 0.374,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2356",
+      "name": "英業達",
+      "foreign_net": 5121,
+      "trust_net": 748,
+      "dealer_net": 780,
+      "total_net": 6650,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 0.143,
+      "trust_ratio": 0.021
+    },
+    {
+      "date": "20260831",
+      "symbol": "1718",
+      "name": "中纖",
+      "foreign_net": 4908,
+      "trust_net": 0,
+      "dealer_net": 53,
+      "total_net": 4961,
+      "themes": [
+        "化學"
+      ],
+      "foreign_ratio": 0.291,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "3042",
+      "name": "晶技",
+      "foreign_net": 4752,
+      "trust_net": 0,
+      "dealer_net": -128,
+      "total_net": 4624,
+      "themes": [
+        "被動元件/石英"
+      ],
+      "foreign_ratio": 1.385,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2812",
+      "name": "台中銀",
+      "foreign_net": 4597,
+      "trust_net": -9,
+      "dealer_net": -43,
+      "total_net": 4544,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.076,
+      "trust_ratio": -0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "3006",
+      "name": "晶豪科",
+      "foreign_net": 4437,
+      "trust_net": 0,
+      "dealer_net": 363,
+      "total_net": 4800,
+      "themes": [
+        "IC設計"
+      ],
+      "foreign_ratio": 1.49,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "00992A",
+      "name": "主動群益科技創新",
+      "foreign_net": 4318,
+      "trust_net": 0,
+      "dealer_net": 8515,
+      "total_net": 12833,
+      "themes": [
+        "ETF/債券"
+      ],
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2606",
+      "name": "裕民",
+      "foreign_net": 4191,
+      "trust_net": 0,
+      "dealer_net": 89,
+      "total_net": 4280,
+      "themes": [
+        "航運"
+      ],
+      "foreign_ratio": 0.496,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "00988A",
+      "name": "主動統一全球創新",
+      "foreign_net": 4159,
+      "trust_net": 0,
+      "dealer_net": -1708,
+      "total_net": 2451,
+      "themes": [
+        "ETF/債券"
+      ],
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2353",
+      "name": "宏碁",
+      "foreign_net": 4040,
+      "trust_net": 923,
+      "dealer_net": -176,
+      "total_net": 4787,
+      "themes": [
+        "電腦及週邊"
+      ],
+      "foreign_ratio": 0.133,
+      "trust_ratio": 0.03
+    },
+    {
+      "date": "20260831",
+      "symbol": "2845",
+      "name": "遠東銀",
+      "foreign_net": 4038,
+      "trust_net": 0,
+      "dealer_net": 1806,
+      "total_net": 5844,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.083,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2337",
+      "name": "旺宏",
+      "foreign_net": 4014,
+      "trust_net": 0,
+      "dealer_net": 201,
+      "total_net": 4215,
+      "themes": [
+        "記憶體"
+      ],
+      "foreign_ratio": 0.203,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "1216",
+      "name": "統一",
+      "foreign_net": 3932,
+      "trust_net": -1057,
+      "dealer_net": -443,
+      "total_net": 2433,
+      "themes": [
+        "食品"
+      ],
+      "foreign_ratio": 0.069,
+      "trust_ratio": -0.019
+    },
+    {
+      "date": "20260831",
+      "symbol": "00940",
+      "name": "元大台灣價值高息",
+      "foreign_net": 3848,
+      "trust_net": 0,
+      "dealer_net": 9204,
+      "total_net": 13052,
+      "themes": [
+        "ETF/債券"
+      ],
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "8358",
+      "name": "金居",
+      "foreign_net": 3516,
+      "trust_net": 9,
+      "dealer_net": 390,
+      "total_net": 3916,
+      "themes": [
+        "PCB/銅箔"
+      ],
+      "foreign_ratio": 13.92,
+      "trust_ratio": 0.036
     }
   ],
   "top_trust_buys": [
     {
-      "date": "20260830",
+      "date": "20260831",
+      "symbol": "2303",
+      "name": "聯電",
+      "foreign_net": -12716,
+      "trust_net": 6340,
+      "dealer_net": -1126,
+      "total_net": -7502,
+      "themes": [
+        "晶圓代工"
+      ],
+      "foreign_ratio": -0.101,
+      "trust_ratio": 0.05
+    },
+    {
+      "date": "20260831",
       "symbol": "3374",
       "name": "精材",
-      "foreign_net": 4911,
-      "trust_net": 3336,
-      "dealer_net": 61,
-      "total_net": 8308,
+      "foreign_net": 2552,
+      "trust_net": 5685,
+      "dealer_net": -108,
+      "total_net": 8129,
       "themes": [
         "IC載板"
       ],
-      "foreign_ratio": 18.097,
-      "trust_ratio": 12.293
+      "foreign_ratio": 9.404,
+      "trust_ratio": 20.95
     },
     {
-      "date": "20260830",
-      "symbol": "3105",
-      "name": "穩懋",
-      "foreign_net": 1383,
-      "trust_net": 2775,
-      "dealer_net": -54,
-      "total_net": 4104,
+      "date": "20260831",
+      "symbol": "2027",
+      "name": "大成鋼",
+      "foreign_net": -3053,
+      "trust_net": 4088,
+      "dealer_net": -62,
+      "total_net": 973,
       "themes": [
         "AI伺服器/代工"
       ],
-      "foreign_ratio": 3.262,
-      "trust_ratio": 6.546
+      "foreign_ratio": -0.118,
+      "trust_ratio": 0.158
     },
     {
-      "date": "20260830",
-      "symbol": "1815",
-      "name": "富喬",
-      "foreign_net": 25453,
-      "trust_net": 1189,
-      "dealer_net": 1315,
-      "total_net": 27957,
+      "date": "20260831",
+      "symbol": "1717",
+      "name": "長興",
+      "foreign_net": 12571,
+      "trust_net": 3450,
+      "dealer_net": 950,
+      "total_net": 16971,
       "themes": [
-        "被動元件"
+        "化學"
       ],
-      "foreign_ratio": 43.471,
-      "trust_ratio": 2.031
+      "foreign_ratio": 1.072,
+      "trust_ratio": 0.294
     },
     {
-      "date": "20260830",
-      "symbol": "6147",
-      "name": "頎邦",
-      "foreign_net": -5377,
-      "trust_net": 838,
-      "dealer_net": -1620,
-      "total_net": -6159,
+      "date": "20260831",
+      "symbol": "2891",
+      "name": "中信金",
+      "foreign_net": 508,
+      "trust_net": 3218,
+      "dealer_net": -900,
+      "total_net": 2827,
       "themes": [
-        "矽光子/光通訊"
+        "金融"
       ],
-      "foreign_ratio": -7.221,
-      "trust_ratio": 1.125
-    },
-    {
-      "date": "20260830",
-      "symbol": "5425",
-      "name": "台半",
-      "foreign_net": -4904,
-      "trust_net": 660,
-      "dealer_net": -368,
-      "total_net": -4612,
-      "themes": [
-        "半導體封測"
-      ],
-      "foreign_ratio": -18.612,
-      "trust_ratio": 2.505
-    },
-    {
-      "date": "20260830",
-      "symbol": "3324",
-      "name": "雙鴻",
-      "foreign_net": 1597,
-      "trust_net": 460,
-      "dealer_net": 117,
-      "total_net": 2173,
-      "themes": [
-        "散熱/機殼"
-      ],
-      "foreign_ratio": 17.158,
-      "trust_ratio": 4.942
-    },
-    {
-      "date": "20260830",
-      "symbol": "6187",
-      "name": "萬潤",
-      "foreign_net": 345,
-      "trust_net": 416,
-      "dealer_net": -38,
-      "total_net": 723,
-      "themes": [
-        "先進封裝"
-      ],
-      "foreign_ratio": 3.513,
-      "trust_ratio": 4.237
-    },
-    {
-      "date": "20260830",
-      "symbol": "3491",
-      "name": "昇達科",
-      "foreign_net": -337,
-      "trust_net": 255,
-      "dealer_net": 6,
-      "total_net": -76,
-      "themes": [
-        "低軌衛星"
-      ],
-      "foreign_ratio": -4.898,
-      "trust_ratio": 3.706
-    },
-    {
-      "date": "20260830",
-      "symbol": "6727",
-      "name": "亞泰金屬",
-      "foreign_net": -54,
-      "trust_net": 180,
-      "dealer_net": 24,
-      "total_net": 150,
-      "themes": [
-        "AI伺服器/代工"
-      ],
-      "foreign_ratio": -2.009,
-      "trust_ratio": 6.695
-    },
-    {
-      "date": "20260830",
-      "symbol": "4162",
-      "name": "智擎",
-      "foreign_net": -42,
-      "trust_net": 60,
-      "dealer_net": 1,
-      "total_net": 19,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": -0.288,
-      "trust_ratio": 0.412
-    },
-    {
-      "date": "20260830",
-      "symbol": "8436",
-      "name": "大江",
-      "foreign_net": -413,
-      "trust_net": 53,
-      "dealer_net": -3,
-      "total_net": -363,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": -3.508,
-      "trust_ratio": 0.45
-    },
-    {
-      "date": "20260830",
-      "symbol": "3680",
-      "name": "家登",
-      "foreign_net": 30,
-      "trust_net": 45,
-      "dealer_net": 73,
-      "total_net": 148,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 0.312,
-      "trust_ratio": 0.468
-    },
-    {
-      "date": "20260830",
-      "symbol": "6488",
-      "name": "環球晶",
-      "foreign_net": -1858,
-      "trust_net": 30,
-      "dealer_net": -1,
-      "total_net": -1828,
-      "themes": [
-        "矽晶圓"
-      ],
-      "foreign_ratio": -3.886,
-      "trust_ratio": 0.063
-    },
-    {
-      "date": "20260830",
-      "symbol": "5483",
-      "name": "中美晶",
-      "foreign_net": -1481,
-      "trust_net": 10,
-      "dealer_net": -9,
-      "total_net": -1480,
-      "themes": [
-        "矽晶圓"
-      ],
-      "foreign_ratio": -2.31,
+      "foreign_ratio": 0.003,
       "trust_ratio": 0.016
     },
     {
-      "date": "20260830",
-      "symbol": "6640",
-      "name": "均華",
-      "foreign_net": -35,
-      "trust_net": 10,
-      "dealer_net": -5,
-      "total_net": -31,
+      "date": "20260831",
+      "symbol": "2449",
+      "name": "京元電子",
+      "foreign_net": -16652,
+      "trust_net": 2591,
+      "dealer_net": -1068,
+      "total_net": -15129,
       "themes": [
         "半導體封測"
       ],
-      "foreign_ratio": -1.227,
-      "trust_ratio": 0.351
+      "foreign_ratio": -1.362,
+      "trust_ratio": 0.212
     },
     {
-      "date": "20260830",
-      "symbol": "3529",
-      "name": "力旺",
-      "foreign_net": -63,
-      "trust_net": 8,
-      "dealer_net": 8,
-      "total_net": -47,
+      "date": "20260831",
+      "symbol": "2882",
+      "name": "國泰金",
+      "foreign_net": 7894,
+      "trust_net": 2461,
+      "dealer_net": -123,
+      "total_net": 10232,
       "themes": [
-        "IP/IC設計"
+        "金融"
       ],
-      "foreign_ratio": -0.844,
-      "trust_ratio": 0.107
+      "foreign_ratio": 0.054,
+      "trust_ratio": 0.017
     },
     {
-      "date": "20260830",
-      "symbol": "3078",
-      "name": "僑威",
-      "foreign_net": -407,
-      "trust_net": 3,
-      "dealer_net": 0,
-      "total_net": -404,
+      "date": "20260831",
+      "symbol": "2368",
+      "name": "金像電",
+      "foreign_net": -941,
+      "trust_net": 1662,
+      "dealer_net": -657,
+      "total_net": 65,
+      "themes": [
+        "PCB"
+      ],
+      "foreign_ratio": -0.182,
+      "trust_ratio": 0.321
+    },
+    {
+      "date": "20260831",
+      "symbol": "0050",
+      "name": "元大台灣50",
+      "foreign_net": -16048,
+      "trust_net": 1577,
+      "dealer_net": -8373,
+      "total_net": -22844,
+      "themes": [
+        "ETF/債券"
+      ],
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2881",
+      "name": "富邦金",
+      "foreign_net": -1983,
+      "trust_net": 1473,
+      "dealer_net": -276,
+      "total_net": -787,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": -0.014,
+      "trust_ratio": 0.011
+    },
+    {
+      "date": "20260831",
+      "symbol": "2382",
+      "name": "廣達",
+      "foreign_net": 2660,
+      "trust_net": 1458,
+      "dealer_net": -318,
+      "total_net": 3800,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 0.069,
+      "trust_ratio": 0.038
+    },
+    {
+      "date": "20260831",
+      "symbol": "3231",
+      "name": "緯創",
+      "foreign_net": -4652,
+      "trust_net": 1272,
+      "dealer_net": 216,
+      "total_net": -3163,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": -0.146,
+      "trust_ratio": 0.04
+    },
+    {
+      "date": "20260831",
+      "symbol": "1303",
+      "name": "南亞",
+      "foreign_net": 10703,
+      "trust_net": 1267,
+      "dealer_net": 1042,
+      "total_net": 13011,
+      "themes": [
+        "記憶體"
+      ],
+      "foreign_ratio": 0.135,
+      "trust_ratio": 0.016
+    },
+    {
+      "date": "20260831",
+      "symbol": "2313",
+      "name": "華通",
+      "foreign_net": 6413,
+      "trust_net": 1266,
+      "dealer_net": 221,
+      "total_net": 7900,
+      "themes": [
+        "PCB"
+      ],
+      "foreign_ratio": 0.538,
+      "trust_ratio": 0.106
+    },
+    {
+      "date": "20260831",
+      "symbol": "2884",
+      "name": "玉山金",
+      "foreign_net": 12894,
+      "trust_net": 1252,
+      "dealer_net": -2075,
+      "total_net": 12070,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.08,
+      "trust_ratio": 0.008
+    },
+    {
+      "date": "20260831",
+      "symbol": "4958",
+      "name": "臻鼎-KY",
+      "foreign_net": 2178,
+      "trust_net": 1230,
+      "dealer_net": 587,
+      "total_net": 3995,
+      "themes": [
+        "PCB"
+      ],
+      "foreign_ratio": 0.202,
+      "trust_ratio": 0.114
+    },
+    {
+      "date": "20260831",
+      "symbol": "2887",
+      "name": "台新新光金",
+      "foreign_net": 35114,
+      "trust_net": 1227,
+      "dealer_net": -1178,
+      "total_net": 35163,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.141,
+      "trust_ratio": 0.005
+    },
+    {
+      "date": "20260831",
+      "symbol": "2542",
+      "name": "興富發",
+      "foreign_net": -1803,
+      "trust_net": 1016,
+      "dealer_net": 216,
+      "total_net": -571,
+      "themes": [
+        "建材營造"
+      ],
+      "foreign_ratio": -0.083,
+      "trust_ratio": 0.047
+    },
+    {
+      "date": "20260831",
+      "symbol": "2353",
+      "name": "宏碁",
+      "foreign_net": 4040,
+      "trust_net": 923,
+      "dealer_net": -176,
+      "total_net": 4787,
+      "themes": [
+        "電腦及週邊"
+      ],
+      "foreign_ratio": 0.133,
+      "trust_ratio": 0.03
+    },
+    {
+      "date": "20260831",
+      "symbol": "2347",
+      "name": "聯強",
+      "foreign_net": -938,
+      "trust_net": 867,
+      "dealer_net": -155,
+      "total_net": -225,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": -0.056,
+      "trust_ratio": 0.052
+    },
+    {
+      "date": "20260831",
+      "symbol": "3026",
+      "name": "禾伸堂",
+      "foreign_net": -258,
+      "trust_net": 865,
+      "dealer_net": -108,
+      "total_net": 499,
+      "themes": [
+        "被動元件"
+      ],
+      "foreign_ratio": -0.156,
+      "trust_ratio": 0.521
+    },
+    {
+      "date": "20260831",
+      "symbol": "2356",
+      "name": "英業達",
+      "foreign_net": 5121,
+      "trust_net": 748,
+      "dealer_net": 780,
+      "total_net": 6650,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 0.143,
+      "trust_ratio": 0.021
+    },
+    {
+      "date": "20260831",
+      "symbol": "2610",
+      "name": "華航",
+      "foreign_net": -2301,
+      "trust_net": 667,
+      "dealer_net": -125,
+      "total_net": -1759,
+      "themes": [
+        "航運"
+      ],
+      "foreign_ratio": -0.038,
+      "trust_ratio": 0.011
+    },
+    {
+      "date": "20260831",
+      "symbol": "3406",
+      "name": "玉晶光",
+      "foreign_net": 599,
+      "trust_net": 616,
+      "dealer_net": -100,
+      "total_net": 1115,
+      "themes": [
+        "光電"
+      ],
+      "foreign_ratio": 0.531,
+      "trust_ratio": 0.546
+    },
+    {
+      "date": "20260831",
+      "symbol": "2801",
+      "name": "彰銀",
+      "foreign_net": 6043,
+      "trust_net": 608,
+      "dealer_net": -50,
+      "total_net": 6601,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.051,
+      "trust_ratio": 0.005
+    },
+    {
+      "date": "20260831",
+      "symbol": "3324",
+      "name": "雙鴻",
+      "foreign_net": 2452,
+      "trust_net": 560,
+      "dealer_net": 246,
+      "total_net": 3258,
       "themes": [
         "散熱/機殼"
       ],
-      "foreign_ratio": -1.79,
-      "trust_ratio": 0.013
+      "foreign_ratio": 26.344,
+      "trust_ratio": 6.017
+    },
+    {
+      "date": "20260831",
+      "symbol": "3105",
+      "name": "穩懋",
+      "foreign_net": -6359,
+      "trust_net": 522,
+      "dealer_net": 401,
+      "total_net": -5437,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": -15.0,
+      "trust_ratio": 1.231
+    },
+    {
+      "date": "20260831",
+      "symbol": "00740B",
+      "name": "富邦全球投等債",
+      "foreign_net": 116,
+      "trust_net": 500,
+      "dealer_net": -426,
+      "total_net": 190,
+      "themes": [
+        "ETF/債券"
+      ],
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2618",
+      "name": "長榮航",
+      "foreign_net": 606,
+      "trust_net": 492,
+      "dealer_net": -656,
+      "total_net": 442,
+      "themes": [
+        "航運"
+      ],
+      "foreign_ratio": 0.011,
+      "trust_ratio": 0.009
+    },
+    {
+      "date": "20260831",
+      "symbol": "3706",
+      "name": "神達",
+      "foreign_net": -411,
+      "trust_net": 474,
+      "dealer_net": 355,
+      "total_net": 417,
+      "themes": [
+        "散熱/機殼"
+      ],
+      "foreign_ratio": -0.031,
+      "trust_ratio": 0.036
+    },
+    {
+      "date": "20260831",
+      "symbol": "3034",
+      "name": "聯詠",
+      "foreign_net": 63,
+      "trust_net": 465,
+      "dealer_net": -51,
+      "total_net": 477,
+      "themes": [
+        "IC設計"
+      ],
+      "foreign_ratio": 0.01,
+      "trust_ratio": 0.076
+    },
+    {
+      "date": "20260831",
+      "symbol": "009814",
+      "name": "富邦標普500",
+      "foreign_net": 0,
+      "trust_net": 450,
+      "dealer_net": -627,
+      "total_net": -177,
+      "themes": [
+        "ETF/債券"
+      ],
+      "foreign_ratio": 0.0,
+      "trust_ratio": 2.811
+    },
+    {
+      "date": "20260831",
+      "symbol": "2376",
+      "name": "技嘉",
+      "foreign_net": 1325,
+      "trust_net": 443,
+      "dealer_net": 0,
+      "total_net": 1768,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 0.198,
+      "trust_ratio": 0.066
+    },
+    {
+      "date": "20260831",
+      "symbol": "3605",
+      "name": "宏致",
+      "foreign_net": -1946,
+      "trust_net": 434,
+      "dealer_net": 28,
+      "total_net": -1484,
+      "themes": [
+        "PCB"
+      ],
+      "foreign_ratio": -1.114,
+      "trust_ratio": 0.248
+    },
+    {
+      "date": "20260831",
+      "symbol": "2855",
+      "name": "統一證",
+      "foreign_net": 569,
+      "trust_net": 418,
+      "dealer_net": 0,
+      "total_net": 987,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.036,
+      "trust_ratio": 0.026
+    },
+    {
+      "date": "20260831",
+      "symbol": "3008",
+      "name": "大立光",
+      "foreign_net": -509,
+      "trust_net": 402,
+      "dealer_net": -85,
+      "total_net": -192,
+      "themes": [
+        "矽光子/光通訊"
+      ],
+      "foreign_ratio": -0.389,
+      "trust_ratio": 0.307
+    },
+    {
+      "date": "20260831",
+      "symbol": "2301",
+      "name": "光寶科",
+      "foreign_net": -4477,
+      "trust_net": 331,
+      "dealer_net": 82,
+      "total_net": -4064,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": -0.193,
+      "trust_ratio": 0.014
+    },
+    {
+      "date": "20260831",
+      "symbol": "2455",
+      "name": "全新",
+      "foreign_net": 2300,
+      "trust_net": 329,
+      "dealer_net": -288,
+      "total_net": 2342,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 1.244,
+      "trust_ratio": 0.178
+    },
+    {
+      "date": "20260831",
+      "symbol": "3450",
+      "name": "聯鈞",
+      "foreign_net": 1864,
+      "trust_net": 329,
+      "dealer_net": -1,
+      "total_net": 2193,
+      "themes": [
+        "矽光子/光通訊"
+      ],
+      "foreign_ratio": 1.28,
+      "trust_ratio": 0.226
+    },
+    {
+      "date": "20260831",
+      "symbol": "3264",
+      "name": "欣銓",
+      "foreign_net": -1003,
+      "trust_net": 318,
+      "dealer_net": -257,
+      "total_net": -942,
+      "themes": [
+        "記憶體"
+      ],
+      "foreign_ratio": -2.046,
+      "trust_ratio": 0.649
+    },
+    {
+      "date": "20260831",
+      "symbol": "9941",
+      "name": "裕融",
+      "foreign_net": 196,
+      "trust_net": 292,
+      "dealer_net": -75,
+      "total_net": 413,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.034,
+      "trust_ratio": 0.051
+    },
+    {
+      "date": "20260831",
+      "symbol": "2357",
+      "name": "華碩",
+      "foreign_net": 986,
+      "trust_net": 227,
+      "dealer_net": 83,
+      "total_net": 1296,
+      "themes": [
+        "電腦及週邊"
+      ],
+      "foreign_ratio": 0.133,
+      "trust_ratio": 0.031
+    },
+    {
+      "date": "20260831",
+      "symbol": "6510",
+      "name": "精測",
+      "foreign_net": -35,
+      "trust_net": 214,
+      "dealer_net": -10,
+      "total_net": 169,
+      "themes": [
+        "PCB"
+      ],
+      "foreign_ratio": -1.064,
+      "trust_ratio": 6.508
+    },
+    {
+      "date": "20260831",
+      "symbol": "2412",
+      "name": "中華電",
+      "foreign_net": -536,
+      "trust_net": 213,
+      "dealer_net": -32,
+      "total_net": -355,
+      "themes": [
+        "矽光子/光通訊"
+      ],
+      "foreign_ratio": -0.007,
+      "trust_ratio": 0.003
+    },
+    {
+      "date": "20260831",
+      "symbol": "2603",
+      "name": "長榮",
+      "foreign_net": -290,
+      "trust_net": 203,
+      "dealer_net": -174,
+      "total_net": -261,
+      "themes": [
+        "航運"
+      ],
+      "foreign_ratio": -0.013,
+      "trust_ratio": 0.009
+    },
+    {
+      "date": "20260831",
+      "symbol": "3081",
+      "name": "聯亞",
+      "foreign_net": -132,
+      "trust_net": 200,
+      "dealer_net": 24,
+      "total_net": 92,
+      "themes": [
+        "矽光子/光通訊"
+      ],
+      "foreign_ratio": -1.427,
+      "trust_ratio": 2.162
+    },
+    {
+      "date": "20260831",
+      "symbol": "3045",
+      "name": "台灣大",
+      "foreign_net": 2567,
+      "trust_net": 195,
+      "dealer_net": -297,
+      "total_net": 2465,
+      "themes": [
+        "通信網路"
+      ],
+      "foreign_ratio": 0.069,
+      "trust_ratio": 0.005
+    },
+    {
+      "date": "20260831",
+      "symbol": "6472",
+      "name": "保瑞",
+      "foreign_net": -288,
+      "trust_net": 185,
+      "dealer_net": -6,
+      "total_net": -109,
+      "themes": [
+        "生技醫療"
+      ],
+      "foreign_ratio": -0.225,
+      "trust_ratio": 0.145
+    },
+    {
+      "date": "20260831",
+      "symbol": "00662",
+      "name": "富邦NASDAQ",
+      "foreign_net": 378,
+      "trust_net": 180,
+      "dealer_net": -2267,
+      "total_net": -1708,
+      "themes": [
+        "ETF/債券"
+      ],
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "3653",
+      "name": "健策",
+      "foreign_net": -64,
+      "trust_net": 153,
+      "dealer_net": 6,
+      "total_net": 94,
+      "themes": [
+        "散熱"
+      ],
+      "foreign_ratio": -0.044,
+      "trust_ratio": 0.104
     }
   ],
   "foreign_surges": [
     {
-      "date": "20260830",
-      "symbol": "1815",
-      "name": "富喬",
-      "foreign_net": 25453,
-      "trust_net": 1189,
-      "dealer_net": 1315,
-      "total_net": 27957,
-      "themes": [
-        "被動元件"
-      ],
-      "foreign_ratio": 43.471,
-      "trust_ratio": 2.031
-    },
-    {
-      "date": "20260830",
-      "symbol": "4939",
-      "name": "亞電",
-      "foreign_net": 7582,
+      "date": "20260831",
+      "symbol": "6770",
+      "name": "力積電",
+      "foreign_net": 73710,
       "trust_net": 0,
-      "dealer_net": -495,
-      "total_net": 7086,
+      "dealer_net": 2740,
+      "total_net": 76450,
       "themes": [
-        "PCB"
+        "晶圓代工"
       ],
-      "foreign_ratio": 77.209,
+      "foreign_ratio": 1.737,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "3374",
-      "name": "精材",
-      "foreign_net": 4911,
-      "trust_net": 3336,
-      "dealer_net": 61,
-      "total_net": 8308,
-      "themes": [
-        "IC載板"
-      ],
-      "foreign_ratio": 18.097,
-      "trust_ratio": 12.293
-    },
-    {
-      "date": "20260830",
-      "symbol": "3264",
-      "name": "欣銓",
-      "foreign_net": 3897,
-      "trust_net": -1,
-      "dealer_net": 613,
-      "total_net": 4509,
-      "themes": [
-        "記憶體"
-      ],
-      "foreign_ratio": 7.95,
-      "trust_ratio": -0.002
-    },
-    {
-      "date": "20260830",
-      "symbol": "00888",
-      "name": "永豐台灣ESG",
-      "foreign_net": 3029,
+      "date": "20260831",
+      "symbol": "2409",
+      "name": "友達",
+      "foreign_net": 41264,
       "trust_net": 0,
-      "dealer_net": 3199,
-      "total_net": 6229,
+      "dealer_net": -60,
+      "total_net": 41205,
       "themes": [
-        "ETF/債券"
+        "光電"
       ],
-      "foreign_ratio": 7.972,
+      "foreign_ratio": 0.547,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "6179",
-      "name": "亞通",
-      "foreign_net": 2888,
-      "trust_net": 0,
-      "dealer_net": 51,
-      "total_net": 2939,
+      "date": "20260831",
+      "symbol": "2887",
+      "name": "台新新光金",
+      "foreign_net": 35114,
+      "trust_net": 1227,
+      "dealer_net": -1178,
+      "total_net": 35163,
       "themes": [
-        "半導體封測"
+        "金融"
       ],
-      "foreign_ratio": 16.287,
+      "foreign_ratio": 0.141,
+      "trust_ratio": 0.005
+    },
+    {
+      "date": "20260831",
+      "symbol": "2834",
+      "name": "臺企銀",
+      "foreign_net": 31633,
+      "trust_net": -2969,
+      "dealer_net": -37,
+      "total_net": 28626,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.326,
+      "trust_ratio": -0.031
+    },
+    {
+      "date": "20260831",
+      "symbol": "2883",
+      "name": "凱基金",
+      "foreign_net": 29874,
+      "trust_net": 47,
+      "dealer_net": -1165,
+      "total_net": 28756,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.176,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "5314",
-      "name": "世紀*",
-      "foreign_net": 1661,
+      "date": "20260831",
+      "symbol": "1301",
+      "name": "台塑",
+      "foreign_net": 24980,
       "trust_net": 0,
-      "dealer_net": 1443,
-      "total_net": 3104,
+      "dealer_net": 1105,
+      "total_net": 26085,
       "themes": [
-        "其他類股"
+        "塑膠"
       ],
-      "foreign_ratio": 5.688,
+      "foreign_ratio": 0.392,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "3324",
-      "name": "雙鴻",
-      "foreign_net": 1597,
-      "trust_net": 460,
-      "dealer_net": 117,
-      "total_net": 2173,
+      "date": "20260831",
+      "symbol": "2890",
+      "name": "永豐金",
+      "foreign_net": 23141,
+      "trust_net": 28,
+      "dealer_net": -1218,
+      "total_net": 21952,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.16,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "1326",
+      "name": "台化",
+      "foreign_net": 18152,
+      "trust_net": 0,
+      "dealer_net": 1112,
+      "total_net": 19264,
+      "themes": [
+        "塑膠"
+      ],
+      "foreign_ratio": 0.31,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2880",
+      "name": "華南金",
+      "foreign_net": 17747,
+      "trust_net": -2221,
+      "dealer_net": -1413,
+      "total_net": 14112,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.128,
+      "trust_ratio": -0.016
+    },
+    {
+      "date": "20260831",
+      "symbol": "2609",
+      "name": "陽明",
+      "foreign_net": 14788,
+      "trust_net": -7,
+      "dealer_net": 605,
+      "total_net": 15386,
+      "themes": [
+        "航運"
+      ],
+      "foreign_ratio": 0.423,
+      "trust_ratio": -0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "1312",
+      "name": "國喬",
+      "foreign_net": 14188,
+      "trust_net": 0,
+      "dealer_net": 437,
+      "total_net": 14625,
+      "themes": [
+        "塑膠"
+      ],
+      "foreign_ratio": 1.282,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2489",
+      "name": "瑞軒",
+      "foreign_net": 13501,
+      "trust_net": 0,
+      "dealer_net": 475,
+      "total_net": 13976,
+      "themes": [
+        "光電"
+      ],
+      "foreign_ratio": 2.213,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "1717",
+      "name": "長興",
+      "foreign_net": 12571,
+      "trust_net": 3450,
+      "dealer_net": 950,
+      "total_net": 16971,
+      "themes": [
+        "化學"
+      ],
+      "foreign_ratio": 1.072,
+      "trust_ratio": 0.294
+    },
+    {
+      "date": "20260831",
+      "symbol": "2324",
+      "name": "仁寶",
+      "foreign_net": 11724,
+      "trust_net": 0,
+      "dealer_net": -46,
+      "total_net": 11678,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 0.266,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2421",
+      "name": "建準",
+      "foreign_net": 9431,
+      "trust_net": 0,
+      "dealer_net": 225,
+      "total_net": 9656,
       "themes": [
         "散熱/機殼"
       ],
-      "foreign_ratio": 17.158,
-      "trust_ratio": 4.942
+      "foreign_ratio": 3.287,
+      "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "5498",
-      "name": "凱崴",
-      "foreign_net": 1351,
+      "date": "20260831",
+      "symbol": "0056",
+      "name": "元大高股息",
+      "foreign_net": 9255,
       "trust_net": 0,
-      "dealer_net": 43,
-      "total_net": 1394,
+      "dealer_net": 26374,
+      "total_net": 35629,
+      "themes": [
+        "ETF/債券"
+      ],
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "5880",
+      "name": "合庫金",
+      "foreign_net": 8441,
+      "trust_net": 40,
+      "dealer_net": -61,
+      "total_net": 8420,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.054,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "9105",
+      "name": "泰金寶-DR",
+      "foreign_net": 8081,
+      "trust_net": 0,
+      "dealer_net": 89,
+      "total_net": 8170,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.077,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2885",
+      "name": "元大金",
+      "foreign_net": 7731,
+      "trust_net": -1120,
+      "dealer_net": -531,
+      "total_net": 6081,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.058,
+      "trust_ratio": -0.008
+    },
+    {
+      "date": "20260831",
+      "symbol": "9904",
+      "name": "寶成",
+      "foreign_net": 7528,
+      "trust_net": 41,
+      "dealer_net": -147,
+      "total_net": 7422,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 0.255,
+      "trust_ratio": 0.001
+    },
+    {
+      "date": "20260831",
+      "symbol": "2377",
+      "name": "微星",
+      "foreign_net": 7426,
+      "trust_net": -23,
+      "dealer_net": 732,
+      "total_net": 8136,
+      "themes": [
+        "散熱/機殼"
+      ],
+      "foreign_ratio": 0.879,
+      "trust_ratio": -0.003
+    },
+    {
+      "date": "20260831",
+      "symbol": "1718",
+      "name": "中纖",
+      "foreign_net": 4908,
+      "trust_net": 0,
+      "dealer_net": 53,
+      "total_net": 4961,
+      "themes": [
+        "化學"
+      ],
+      "foreign_ratio": 0.291,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "3042",
+      "name": "晶技",
+      "foreign_net": 4752,
+      "trust_net": 0,
+      "dealer_net": -128,
+      "total_net": 4624,
+      "themes": [
+        "被動元件/石英"
+      ],
+      "foreign_ratio": 1.385,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2812",
+      "name": "台中銀",
+      "foreign_net": 4597,
+      "trust_net": -9,
+      "dealer_net": -43,
+      "total_net": 4544,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.076,
+      "trust_ratio": -0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "3006",
+      "name": "晶豪科",
+      "foreign_net": 4437,
+      "trust_net": 0,
+      "dealer_net": 363,
+      "total_net": 4800,
+      "themes": [
+        "IC設計"
+      ],
+      "foreign_ratio": 1.49,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2353",
+      "name": "宏碁",
+      "foreign_net": 4040,
+      "trust_net": 923,
+      "dealer_net": -176,
+      "total_net": 4787,
+      "themes": [
+        "電腦及週邊"
+      ],
+      "foreign_ratio": 0.133,
+      "trust_ratio": 0.03
+    },
+    {
+      "date": "20260831",
+      "symbol": "2845",
+      "name": "遠東銀",
+      "foreign_net": 4038,
+      "trust_net": 0,
+      "dealer_net": 1806,
+      "total_net": 5844,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.083,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "00940",
+      "name": "元大台灣價值高息",
+      "foreign_net": 3848,
+      "trust_net": 0,
+      "dealer_net": 9204,
+      "total_net": 13052,
+      "themes": [
+        "ETF/債券"
+      ],
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "8111",
+      "name": "立碁",
+      "foreign_net": 3279,
+      "trust_net": 0,
+      "dealer_net": 174,
+      "total_net": 3453,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 30.054,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "4938",
+      "name": "和碩",
+      "foreign_net": 3238,
+      "trust_net": 63,
+      "dealer_net": 135,
+      "total_net": 3436,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 0.121,
+      "trust_ratio": 0.002
+    },
+    {
+      "date": "20260831",
+      "symbol": "00687B",
+      "name": "國泰20年美債",
+      "foreign_net": 3175,
+      "trust_net": 0,
+      "dealer_net": 617,
+      "total_net": 3792,
+      "themes": [
+        "ETF/債券"
+      ],
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "5314",
+      "name": "世紀*",
+      "foreign_net": 2911,
+      "trust_net": 0,
+      "dealer_net": -851,
+      "total_net": 2060,
+      "themes": [
+        "其他類股"
+      ],
+      "foreign_ratio": 9.969,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "00922",
+      "name": "國泰台灣領袖50",
+      "foreign_net": 2573,
+      "trust_net": 0,
+      "dealer_net": 860,
+      "total_net": 3433,
+      "themes": [
+        "ETF/債券"
+      ],
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2312",
+      "name": "金寶",
+      "foreign_net": 2535,
+      "trust_net": 0,
+      "dealer_net": 145,
+      "total_net": 2680,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 0.168,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "1710",
+      "name": "東聯",
+      "foreign_net": 2459,
+      "trust_net": 0,
+      "dealer_net": 71,
+      "total_net": 2530,
+      "themes": [
+        "化學"
+      ],
+      "foreign_ratio": 0.278,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "3324",
+      "name": "雙鴻",
+      "foreign_net": 2452,
+      "trust_net": 560,
+      "dealer_net": 246,
+      "total_net": 3258,
+      "themes": [
+        "散熱/機殼"
+      ],
+      "foreign_ratio": 26.344,
+      "trust_ratio": 6.017
+    },
+    {
+      "date": "20260831",
+      "symbol": "2492",
+      "name": "華新科",
+      "foreign_net": 2379,
+      "trust_net": 0,
+      "dealer_net": -1486,
+      "total_net": 893,
       "themes": [
         "被動元件"
       ],
-      "foreign_ratio": 6.98,
+      "foreign_ratio": 0.49,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "3265",
-      "name": "台星科",
-      "foreign_net": 1117,
-      "trust_net": 0,
-      "dealer_net": 154,
-      "total_net": 1271,
+      "date": "20260831",
+      "symbol": "2455",
+      "name": "全新",
+      "foreign_net": 2300,
+      "trust_net": 329,
+      "dealer_net": -288,
+      "total_net": 2342,
       "themes": [
-        "半導體封測"
+        "AI伺服器/代工"
       ],
-      "foreign_ratio": 8.197,
+      "foreign_ratio": 1.244,
+      "trust_ratio": 0.178
+    },
+    {
+      "date": "20260831",
+      "symbol": "1304",
+      "name": "台聚",
+      "foreign_net": 1820,
+      "trust_net": 0,
+      "dealer_net": 53,
+      "total_net": 1873,
+      "themes": [
+        "塑膠"
+      ],
+      "foreign_ratio": 0.153,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
+      "date": "20260831",
+      "symbol": "2201",
+      "name": "裕隆",
+      "foreign_net": 1808,
+      "trust_net": 0,
+      "dealer_net": 174,
+      "total_net": 1982,
+      "themes": [
+        "汽車"
+      ],
+      "foreign_ratio": 0.169,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "3019",
+      "name": "亞光",
+      "foreign_net": 1669,
+      "trust_net": 0,
+      "dealer_net": 274,
+      "total_net": 1944,
+      "themes": [
+        "光電"
+      ],
+      "foreign_ratio": 0.598,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "00900",
+      "name": "富邦特選高股息30",
+      "foreign_net": 1548,
+      "trust_net": 0,
+      "dealer_net": 5631,
+      "total_net": 7179,
+      "themes": [
+        "ETF/債券"
+      ],
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "1714",
+      "name": "和桐",
+      "foreign_net": 1535,
+      "trust_net": 0,
+      "dealer_net": 48,
+      "total_net": 1583,
+      "themes": [
+        "化學"
+      ],
+      "foreign_ratio": 0.155,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "3141",
+      "name": "晶宏",
+      "foreign_net": 1451,
+      "trust_net": 0,
+      "dealer_net": -18,
+      "total_net": 1433,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 19.229,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
       "symbol": "3293",
       "name": "鈊象",
-      "foreign_net": 1064,
-      "trust_net": -1460,
-      "dealer_net": -53,
-      "total_net": -449,
+      "foreign_net": 1421,
+      "trust_net": -1998,
+      "dealer_net": -17,
+      "total_net": -594,
       "themes": [
         "其他類股"
       ],
-      "foreign_ratio": 3.776,
-      "trust_ratio": -5.181
+      "foreign_ratio": 5.043,
+      "trust_ratio": -7.09
     },
     {
-      "date": "20260830",
-      "symbol": "6218",
-      "name": "豪勉",
-      "foreign_net": 937,
+      "date": "20260831",
+      "symbol": "2023",
+      "name": "燁輝",
+      "foreign_net": 1354,
+      "trust_net": 0,
+      "dealer_net": -204,
+      "total_net": 1150,
+      "themes": [
+        "鋼鐵"
+      ],
+      "foreign_ratio": 0.074,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2376",
+      "name": "技嘉",
+      "foreign_net": 1325,
+      "trust_net": 443,
+      "dealer_net": 0,
+      "total_net": 1768,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 0.198,
+      "trust_ratio": 0.066
+    },
+    {
+      "date": "20260831",
+      "symbol": "00679B",
+      "name": "元大美債20年",
+      "foreign_net": 1304,
+      "trust_net": 0,
+      "dealer_net": 3976,
+      "total_net": 5280,
+      "themes": [
+        "ETF/債券"
+      ],
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "00981D",
+      "name": "主動中信非投等債",
+      "foreign_net": 1276,
+      "trust_net": 0,
+      "dealer_net": -425,
+      "total_net": 851,
+      "themes": [
+        "ETF/債券"
+      ],
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "6214",
+      "name": "精誠",
+      "foreign_net": 1148,
       "trust_net": 0,
       "dealer_net": -5,
-      "total_net": 932,
+      "total_net": 1143,
       "themes": [
-        "其他類股"
+        "資訊服務"
       ],
-      "foreign_ratio": 14.581,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "5443",
-      "name": "均豪",
-      "foreign_net": 576,
-      "trust_net": 0,
-      "dealer_net": 435,
-      "total_net": 1011,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 3.496,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "5386",
-      "name": "青雲",
-      "foreign_net": 491,
-      "trust_net": 0,
-      "dealer_net": 8,
-      "total_net": 499,
-      "themes": [
-        "AI伺服器/代工"
-      ],
-      "foreign_ratio": 13.608,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "4716",
-      "name": "大立",
-      "foreign_net": 443,
-      "trust_net": 0,
-      "dealer_net": 5,
-      "total_net": 448,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 4.691,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "2221",
-      "name": "大甲",
-      "foreign_net": 432,
-      "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 432,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 10.207,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "2061",
-      "name": "風青",
-      "foreign_net": 426,
-      "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 427,
-      "themes": [
-        "重電/電力系統"
-      ],
-      "foreign_ratio": 7.424,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "4157",
-      "name": "太景*-KY",
-      "foreign_net": 399,
-      "trust_net": 0,
-      "dealer_net": 1,
-      "total_net": 400,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 0.561,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "1569",
-      "name": "濱川",
-      "foreign_net": 378,
-      "trust_net": 0,
-      "dealer_net": 14,
-      "total_net": 392,
-      "themes": [
-        "PCB"
-      ],
-      "foreign_ratio": 2.62,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "6284",
-      "name": "佳邦",
-      "foreign_net": 333,
-      "trust_net": 0,
-      "dealer_net": 13,
-      "total_net": 346,
-      "themes": [
-        "被動元件"
-      ],
-      "foreign_ratio": 2.235,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3287",
-      "name": "廣寰科",
-      "foreign_net": 277,
-      "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 277,
-      "themes": [
-        "電子科技"
-      ],
-      "foreign_ratio": 6.3,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3360",
-      "name": "尚立",
-      "foreign_net": 269,
-      "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 269,
-      "themes": [
-        "PCB"
-      ],
-      "foreign_ratio": 3.521,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "4510",
-      "name": "高鋒",
-      "foreign_net": 250,
-      "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 250,
-      "themes": [
-        "AI伺服器/代工"
-      ],
-      "foreign_ratio": 2.294,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "6259",
-      "name": "百徽",
-      "foreign_net": 227,
-      "trust_net": 0,
-      "dealer_net": 1,
-      "total_net": 228,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 8.091,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "5530",
-      "name": "龍巖",
-      "foreign_net": 197,
-      "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 197,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 0.469,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "8040",
-      "name": "九暘",
-      "foreign_net": 150,
-      "trust_net": 0,
-      "dealer_net": -2,
-      "total_net": 148,
-      "themes": [
-        "被動元件"
-      ],
-      "foreign_ratio": 1.556,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3147",
-      "name": "大綜",
-      "foreign_net": 147,
-      "trust_net": 0,
-      "dealer_net": -2,
-      "total_net": 145,
-      "themes": [
-        "AI伺服器/代工"
-      ],
-      "foreign_ratio": 3.365,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "8182",
-      "name": "加高",
-      "foreign_net": 135,
-      "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 136,
-      "themes": [
-        "被動元件"
-      ],
-      "foreign_ratio": 1.261,
+      "foreign_ratio": 0.422,
       "trust_ratio": 0.0
     }
   ],
   "trust_surges": [
     {
-      "date": "20260830",
-      "symbol": "3105",
-      "name": "穩懋",
-      "foreign_net": 1383,
-      "trust_net": 2775,
-      "dealer_net": -54,
-      "total_net": 4104,
+      "date": "20260831",
+      "symbol": "3374",
+      "name": "精材",
+      "foreign_net": 2552,
+      "trust_net": 5685,
+      "dealer_net": -108,
+      "total_net": 8129,
+      "themes": [
+        "IC載板"
+      ],
+      "foreign_ratio": 9.404,
+      "trust_ratio": 20.95
+    },
+    {
+      "date": "20260831",
+      "symbol": "2027",
+      "name": "大成鋼",
+      "foreign_net": -3053,
+      "trust_net": 4088,
+      "dealer_net": -62,
+      "total_net": 973,
       "themes": [
         "AI伺服器/代工"
       ],
-      "foreign_ratio": 3.262,
-      "trust_ratio": 6.546
+      "foreign_ratio": -0.118,
+      "trust_ratio": 0.158
     },
     {
-      "date": "20260830",
+      "date": "20260831",
+      "symbol": "1717",
+      "name": "長興",
+      "foreign_net": 12571,
+      "trust_net": 3450,
+      "dealer_net": 950,
+      "total_net": 16971,
+      "themes": [
+        "化學"
+      ],
+      "foreign_ratio": 1.072,
+      "trust_ratio": 0.294
+    },
+    {
+      "date": "20260831",
+      "symbol": "2891",
+      "name": "中信金",
+      "foreign_net": 508,
+      "trust_net": 3218,
+      "dealer_net": -900,
+      "total_net": 2827,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.003,
+      "trust_ratio": 0.016
+    },
+    {
+      "date": "20260831",
+      "symbol": "2449",
+      "name": "京元電子",
+      "foreign_net": -16652,
+      "trust_net": 2591,
+      "dealer_net": -1068,
+      "total_net": -15129,
+      "themes": [
+        "半導體封測"
+      ],
+      "foreign_ratio": -1.362,
+      "trust_ratio": 0.212
+    },
+    {
+      "date": "20260831",
+      "symbol": "2882",
+      "name": "國泰金",
+      "foreign_net": 7894,
+      "trust_net": 2461,
+      "dealer_net": -123,
+      "total_net": 10232,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.054,
+      "trust_ratio": 0.017
+    },
+    {
+      "date": "20260831",
+      "symbol": "2368",
+      "name": "金像電",
+      "foreign_net": -941,
+      "trust_net": 1662,
+      "dealer_net": -657,
+      "total_net": 65,
+      "themes": [
+        "PCB"
+      ],
+      "foreign_ratio": -0.182,
+      "trust_ratio": 0.321
+    },
+    {
+      "date": "20260831",
+      "symbol": "2382",
+      "name": "廣達",
+      "foreign_net": 2660,
+      "trust_net": 1458,
+      "dealer_net": -318,
+      "total_net": 3800,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 0.069,
+      "trust_ratio": 0.038
+    },
+    {
+      "date": "20260831",
+      "symbol": "3231",
+      "name": "緯創",
+      "foreign_net": -4652,
+      "trust_net": 1272,
+      "dealer_net": 216,
+      "total_net": -3163,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": -0.146,
+      "trust_ratio": 0.04
+    },
+    {
+      "date": "20260831",
+      "symbol": "2313",
+      "name": "華通",
+      "foreign_net": 6413,
+      "trust_net": 1266,
+      "dealer_net": 221,
+      "total_net": 7900,
+      "themes": [
+        "PCB"
+      ],
+      "foreign_ratio": 0.538,
+      "trust_ratio": 0.106
+    },
+    {
+      "date": "20260831",
+      "symbol": "4958",
+      "name": "臻鼎-KY",
+      "foreign_net": 2178,
+      "trust_net": 1230,
+      "dealer_net": 587,
+      "total_net": 3995,
+      "themes": [
+        "PCB"
+      ],
+      "foreign_ratio": 0.202,
+      "trust_ratio": 0.114
+    },
+    {
+      "date": "20260831",
+      "symbol": "2542",
+      "name": "興富發",
+      "foreign_net": -1803,
+      "trust_net": 1016,
+      "dealer_net": 216,
+      "total_net": -571,
+      "themes": [
+        "建材營造"
+      ],
+      "foreign_ratio": -0.083,
+      "trust_ratio": 0.047
+    },
+    {
+      "date": "20260831",
+      "symbol": "2353",
+      "name": "宏碁",
+      "foreign_net": 4040,
+      "trust_net": 923,
+      "dealer_net": -176,
+      "total_net": 4787,
+      "themes": [
+        "電腦及週邊"
+      ],
+      "foreign_ratio": 0.133,
+      "trust_ratio": 0.03
+    },
+    {
+      "date": "20260831",
+      "symbol": "2347",
+      "name": "聯強",
+      "foreign_net": -938,
+      "trust_net": 867,
+      "dealer_net": -155,
+      "total_net": -225,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": -0.056,
+      "trust_ratio": 0.052
+    },
+    {
+      "date": "20260831",
+      "symbol": "3026",
+      "name": "禾伸堂",
+      "foreign_net": -258,
+      "trust_net": 865,
+      "dealer_net": -108,
+      "total_net": 499,
+      "themes": [
+        "被動元件"
+      ],
+      "foreign_ratio": -0.156,
+      "trust_ratio": 0.521
+    },
+    {
+      "date": "20260831",
+      "symbol": "2610",
+      "name": "華航",
+      "foreign_net": -2301,
+      "trust_net": 667,
+      "dealer_net": -125,
+      "total_net": -1759,
+      "themes": [
+        "航運"
+      ],
+      "foreign_ratio": -0.038,
+      "trust_ratio": 0.011
+    },
+    {
+      "date": "20260831",
       "symbol": "3324",
       "name": "雙鴻",
-      "foreign_net": 1597,
-      "trust_net": 460,
-      "dealer_net": 117,
-      "total_net": 2173,
+      "foreign_net": 2452,
+      "trust_net": 560,
+      "dealer_net": 246,
+      "total_net": 3258,
       "themes": [
         "散熱/機殼"
       ],
-      "foreign_ratio": 17.158,
-      "trust_ratio": 4.942
+      "foreign_ratio": 26.344,
+      "trust_ratio": 6.017
     },
     {
-      "date": "20260830",
-      "symbol": "3491",
-      "name": "昇達科",
-      "foreign_net": -337,
-      "trust_net": 255,
-      "dealer_net": 6,
-      "total_net": -76,
+      "date": "20260831",
+      "symbol": "2618",
+      "name": "長榮航",
+      "foreign_net": 606,
+      "trust_net": 492,
+      "dealer_net": -656,
+      "total_net": 442,
       "themes": [
-        "低軌衛星"
+        "航運"
       ],
-      "foreign_ratio": -4.898,
-      "trust_ratio": 3.706
+      "foreign_ratio": 0.011,
+      "trust_ratio": 0.009
     },
     {
-      "date": "20260830",
-      "symbol": "6727",
-      "name": "亞泰金屬",
-      "foreign_net": -54,
-      "trust_net": 180,
-      "dealer_net": 24,
-      "total_net": 150,
+      "date": "20260831",
+      "symbol": "3034",
+      "name": "聯詠",
+      "foreign_net": 63,
+      "trust_net": 465,
+      "dealer_net": -51,
+      "total_net": 477,
+      "themes": [
+        "IC設計"
+      ],
+      "foreign_ratio": 0.01,
+      "trust_ratio": 0.076
+    },
+    {
+      "date": "20260831",
+      "symbol": "2376",
+      "name": "技嘉",
+      "foreign_net": 1325,
+      "trust_net": 443,
+      "dealer_net": 0,
+      "total_net": 1768,
       "themes": [
         "AI伺服器/代工"
       ],
-      "foreign_ratio": -2.009,
-      "trust_ratio": 6.695
+      "foreign_ratio": 0.198,
+      "trust_ratio": 0.066
+    },
+    {
+      "date": "20260831",
+      "symbol": "3605",
+      "name": "宏致",
+      "foreign_net": -1946,
+      "trust_net": 434,
+      "dealer_net": 28,
+      "total_net": -1484,
+      "themes": [
+        "PCB"
+      ],
+      "foreign_ratio": -1.114,
+      "trust_ratio": 0.248
+    },
+    {
+      "date": "20260831",
+      "symbol": "3008",
+      "name": "大立光",
+      "foreign_net": -509,
+      "trust_net": 402,
+      "dealer_net": -85,
+      "total_net": -192,
+      "themes": [
+        "矽光子/光通訊"
+      ],
+      "foreign_ratio": -0.389,
+      "trust_ratio": 0.307
+    },
+    {
+      "date": "20260831",
+      "symbol": "2455",
+      "name": "全新",
+      "foreign_net": 2300,
+      "trust_net": 329,
+      "dealer_net": -288,
+      "total_net": 2342,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 1.244,
+      "trust_ratio": 0.178
+    },
+    {
+      "date": "20260831",
+      "symbol": "3264",
+      "name": "欣銓",
+      "foreign_net": -1003,
+      "trust_net": 318,
+      "dealer_net": -257,
+      "total_net": -942,
+      "themes": [
+        "記憶體"
+      ],
+      "foreign_ratio": -2.046,
+      "trust_ratio": 0.649
+    },
+    {
+      "date": "20260831",
+      "symbol": "9941",
+      "name": "裕融",
+      "foreign_net": 196,
+      "trust_net": 292,
+      "dealer_net": -75,
+      "total_net": 413,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.034,
+      "trust_ratio": 0.051
+    },
+    {
+      "date": "20260831",
+      "symbol": "2357",
+      "name": "華碩",
+      "foreign_net": 986,
+      "trust_net": 227,
+      "dealer_net": 83,
+      "total_net": 1296,
+      "themes": [
+        "電腦及週邊"
+      ],
+      "foreign_ratio": 0.133,
+      "trust_ratio": 0.031
+    },
+    {
+      "date": "20260831",
+      "symbol": "6510",
+      "name": "精測",
+      "foreign_net": -35,
+      "trust_net": 214,
+      "dealer_net": -10,
+      "total_net": 169,
+      "themes": [
+        "PCB"
+      ],
+      "foreign_ratio": -1.064,
+      "trust_ratio": 6.508
+    },
+    {
+      "date": "20260831",
+      "symbol": "3653",
+      "name": "健策",
+      "foreign_net": -64,
+      "trust_net": 153,
+      "dealer_net": 6,
+      "total_net": 94,
+      "themes": [
+        "散熱"
+      ],
+      "foreign_ratio": -0.044,
+      "trust_ratio": 0.104
+    },
+    {
+      "date": "20260831",
+      "symbol": "2404",
+      "name": "漢唐",
+      "foreign_net": -377,
+      "trust_net": 137,
+      "dealer_net": -11,
+      "total_net": -251,
+      "themes": [
+        "半導體設備"
+      ],
+      "foreign_ratio": -0.198,
+      "trust_ratio": 0.072
+    },
+    {
+      "date": "20260831",
+      "symbol": "00695B",
+      "name": "富邦美債7-10",
+      "foreign_net": 76,
+      "trust_net": 134,
+      "dealer_net": -211,
+      "total_net": -1,
+      "themes": [
+        "ETF/債券"
+      ],
+      "foreign_ratio": 0.0,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2379",
+      "name": "瑞昱",
+      "foreign_net": -78,
+      "trust_net": 131,
+      "dealer_net": -23,
+      "total_net": 31,
+      "themes": [
+        "IC設計"
+      ],
+      "foreign_ratio": -0.015,
+      "trust_ratio": 0.025
+    },
+    {
+      "date": "20260831",
+      "symbol": "3661",
+      "name": "世芯-KY",
+      "foreign_net": 71,
+      "trust_net": 117,
+      "dealer_net": 27,
+      "total_net": 216,
+      "themes": [
+        "IP/IC設計"
+      ],
+      "foreign_ratio": 0.086,
+      "trust_ratio": 0.143
+    },
+    {
+      "date": "20260831",
+      "symbol": "5434",
+      "name": "崇越",
+      "foreign_net": -466,
+      "trust_net": 113,
+      "dealer_net": 11,
+      "total_net": -342,
+      "themes": [
+        "電子通路"
+      ],
+      "foreign_ratio": -0.241,
+      "trust_ratio": 0.058
     }
   ],
   "top_foreign_ratio": [
     {
-      "date": "20260830",
-      "symbol": "4939",
-      "name": "亞電",
-      "foreign_net": 7582,
+      "date": "20260831",
+      "symbol": "8111",
+      "name": "立碁",
+      "foreign_net": 3279,
       "trust_net": 0,
-      "dealer_net": -495,
-      "total_net": 7086,
-      "themes": [
-        "PCB"
-      ],
-      "foreign_ratio": 77.209,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "1815",
-      "name": "富喬",
-      "foreign_net": 25453,
-      "trust_net": 1189,
-      "dealer_net": 1315,
-      "total_net": 27957,
-      "themes": [
-        "被動元件"
-      ],
-      "foreign_ratio": 43.471,
-      "trust_ratio": 2.031
-    },
-    {
-      "date": "20260830",
-      "symbol": "3441",
-      "name": "聯一光",
-      "foreign_net": 916,
-      "trust_net": 0,
-      "dealer_net": -56,
-      "total_net": 860,
-      "themes": [
-        "光電/光通訊"
-      ],
-      "foreign_ratio": 22.877,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "6173",
-      "name": "信昌電",
-      "foreign_net": 3534,
-      "trust_net": 0,
-      "dealer_net": 274,
-      "total_net": 3808,
-      "themes": [
-        "半導體封測"
-      ],
-      "foreign_ratio": 20.547,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3374",
-      "name": "精材",
-      "foreign_net": 4911,
-      "trust_net": 3336,
-      "dealer_net": 61,
-      "total_net": 8308,
-      "themes": [
-        "IC載板"
-      ],
-      "foreign_ratio": 18.097,
-      "trust_ratio": 12.293
-    },
-    {
-      "date": "20260830",
-      "symbol": "3324",
-      "name": "雙鴻",
-      "foreign_net": 1597,
-      "trust_net": 460,
-      "dealer_net": 117,
-      "total_net": 2173,
-      "themes": [
-        "散熱/機殼"
-      ],
-      "foreign_ratio": 17.158,
-      "trust_ratio": 4.942
-    },
-    {
-      "date": "20260830",
-      "symbol": "6179",
-      "name": "亞通",
-      "foreign_net": 2888,
-      "trust_net": 0,
-      "dealer_net": 51,
-      "total_net": 2939,
-      "themes": [
-        "半導體封測"
-      ],
-      "foreign_ratio": 16.287,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "6218",
-      "name": "豪勉",
-      "foreign_net": 937,
-      "trust_net": 0,
-      "dealer_net": -5,
-      "total_net": 932,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 14.581,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "5386",
-      "name": "青雲",
-      "foreign_net": 491,
-      "trust_net": 0,
-      "dealer_net": 8,
-      "total_net": 499,
+      "dealer_net": 174,
+      "total_net": 3453,
       "themes": [
         "AI伺服器/代工"
       ],
-      "foreign_ratio": 13.608,
+      "foreign_ratio": 30.054,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "2221",
-      "name": "大甲",
-      "foreign_net": 432,
+      "date": "20260831",
+      "symbol": "3324",
+      "name": "雙鴻",
+      "foreign_net": 2452,
+      "trust_net": 560,
+      "dealer_net": 246,
+      "total_net": 3258,
+      "themes": [
+        "散熱/機殼"
+      ],
+      "foreign_ratio": 26.344,
+      "trust_ratio": 6.017
+    },
+    {
+      "date": "20260831",
+      "symbol": "6538",
+      "name": "倉和",
+      "foreign_net": 768,
       "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 432,
+      "dealer_net": -103,
+      "total_net": 665,
       "themes": [
         "其他類股"
       ],
-      "foreign_ratio": 10.207,
+      "foreign_ratio": 20.172,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "3265",
-      "name": "台星科",
-      "foreign_net": 1117,
+      "date": "20260831",
+      "symbol": "3141",
+      "name": "晶宏",
+      "foreign_net": 1451,
       "trust_net": 0,
-      "dealer_net": 154,
-      "total_net": 1271,
+      "dealer_net": -18,
+      "total_net": 1433,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 19.229,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "3339",
+      "name": "泰谷",
+      "foreign_net": 1192,
+      "trust_net": 0,
+      "dealer_net": 1,
+      "total_net": 1193,
+      "themes": [
+        "其他類股"
+      ],
+      "foreign_ratio": 17.906,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "8358",
+      "name": "金居",
+      "foreign_net": 3516,
+      "trust_net": 9,
+      "dealer_net": 390,
+      "total_net": 3916,
+      "themes": [
+        "PCB/銅箔"
+      ],
+      "foreign_ratio": 13.92,
+      "trust_ratio": 0.036
+    },
+    {
+      "date": "20260831",
+      "symbol": "7751",
+      "name": "竑騰",
+      "foreign_net": 327,
+      "trust_net": -126,
+      "dealer_net": -73,
+      "total_net": 128,
+      "themes": [
+        "其他類股"
+      ],
+      "foreign_ratio": 12.161,
+      "trust_ratio": -4.686
+    },
+    {
+      "date": "20260831",
+      "symbol": "3441",
+      "name": "聯一光",
+      "foreign_net": 437,
+      "trust_net": 0,
+      "dealer_net": 5,
+      "total_net": 442,
+      "themes": [
+        "光電/光通訊"
+      ],
+      "foreign_ratio": 10.914,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "5314",
+      "name": "世紀*",
+      "foreign_net": 2911,
+      "trust_net": 0,
+      "dealer_net": -851,
+      "total_net": 2060,
+      "themes": [
+        "其他類股"
+      ],
+      "foreign_ratio": 9.969,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "3374",
+      "name": "精材",
+      "foreign_net": 2552,
+      "trust_net": 5685,
+      "dealer_net": -108,
+      "total_net": 8129,
+      "themes": [
+        "IC載板"
+      ],
+      "foreign_ratio": 9.404,
+      "trust_ratio": 20.95
+    },
+    {
+      "date": "20260831",
+      "symbol": "3490",
+      "name": "單井",
+      "foreign_net": 383,
+      "trust_net": 0,
+      "dealer_net": 0,
+      "total_net": 383,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 6.963,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "5904",
+      "name": "寶雅*",
+      "foreign_net": 730,
+      "trust_net": -3,
+      "dealer_net": -22,
+      "total_net": 705,
+      "themes": [
+        "其他類股"
+      ],
+      "foreign_ratio": 6.858,
+      "trust_ratio": -0.028
+    },
+    {
+      "date": "20260831",
+      "symbol": "4541",
+      "name": "晟田",
+      "foreign_net": 458,
+      "trust_net": 0,
+      "dealer_net": 11,
+      "total_net": 469,
+      "themes": [
+        "其他類股"
+      ],
+      "foreign_ratio": 6.77,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "5321",
+      "name": "美而快",
+      "foreign_net": 332,
+      "trust_net": 0,
+      "dealer_net": 2,
+      "total_net": 334,
+      "themes": [
+        "其他類股"
+      ],
+      "foreign_ratio": 6.243,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "5291",
+      "name": "邑昇",
+      "foreign_net": 238,
+      "trust_net": 0,
+      "dealer_net": 7,
+      "total_net": 245,
+      "themes": [
+        "PCB"
+      ],
+      "foreign_ratio": 5.966,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "3131",
+      "name": "弘塑",
+      "foreign_net": 176,
+      "trust_net": 1,
+      "dealer_net": -2,
+      "total_net": 176,
+      "themes": [
+        "先進封裝設備"
+      ],
+      "foreign_ratio": 5.931,
+      "trust_ratio": 0.034
+    },
+    {
+      "date": "20260831",
+      "symbol": "3219",
+      "name": "倚強科",
+      "foreign_net": 411,
+      "trust_net": 0,
+      "dealer_net": 2,
+      "total_net": 413,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 5.726,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "3540",
+      "name": "曜越",
+      "foreign_net": 476,
+      "trust_net": 0,
+      "dealer_net": 25,
+      "total_net": 500,
+      "themes": [
+        "散熱/機殼"
+      ],
+      "foreign_ratio": 5.636,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "3693",
+      "name": "營邦",
+      "foreign_net": 231,
+      "trust_net": 0,
+      "dealer_net": 28,
+      "total_net": 259,
+      "themes": [
+        "散熱/機殼"
+      ],
+      "foreign_ratio": 5.373,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "3498",
+      "name": "陽程",
+      "foreign_net": 329,
+      "trust_net": 0,
+      "dealer_net": 25,
+      "total_net": 354,
+      "themes": [
+        "PCB"
+      ],
+      "foreign_ratio": 5.369,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "6530",
+      "name": "創威",
+      "foreign_net": 181,
+      "trust_net": 0,
+      "dealer_net": 0,
+      "total_net": 181,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 5.363,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "3293",
+      "name": "鈊象",
+      "foreign_net": 1421,
+      "trust_net": -1998,
+      "dealer_net": -17,
+      "total_net": -594,
+      "themes": [
+        "其他類股"
+      ],
+      "foreign_ratio": 5.043,
+      "trust_ratio": -7.09
+    },
+    {
+      "date": "20260831",
+      "symbol": "5426",
+      "name": "振發",
+      "foreign_net": 626,
+      "trust_net": 0,
+      "dealer_net": 2,
+      "total_net": 628,
+      "themes": [
+        "其他類股"
+      ],
+      "foreign_ratio": 4.353,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "7715",
+      "name": "裕山",
+      "foreign_net": 137,
+      "trust_net": 0,
+      "dealer_net": 0,
+      "total_net": 137,
+      "themes": [
+        "其他類股"
+      ],
+      "foreign_ratio": 4.184,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "3362",
+      "name": "先進光",
+      "foreign_net": 592,
+      "trust_net": 0,
+      "dealer_net": 24,
+      "total_net": 616,
+      "themes": [
+        "光電/光通訊"
+      ],
+      "foreign_ratio": 4.015,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "3218",
+      "name": "大學光",
+      "foreign_net": 333,
+      "trust_net": 0,
+      "dealer_net": -1,
+      "total_net": 332,
+      "themes": [
+        "矽光子/光通訊"
+      ],
+      "foreign_ratio": 3.93,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "6274",
+      "name": "台燿",
+      "foreign_net": 1129,
+      "trust_net": -1401,
+      "dealer_net": -75,
+      "total_net": -347,
+      "themes": [
+        "銅箔基板/CCL"
+      ],
+      "foreign_ratio": 3.875,
+      "trust_ratio": -4.808
+    },
+    {
+      "date": "20260831",
+      "symbol": "4416",
+      "name": "三圓",
+      "foreign_net": 264,
+      "trust_net": 0,
+      "dealer_net": 0,
+      "total_net": 264,
+      "themes": [
+        "其他類股"
+      ],
+      "foreign_ratio": 3.588,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2421",
+      "name": "建準",
+      "foreign_net": 9431,
+      "trust_net": 0,
+      "dealer_net": 225,
+      "total_net": 9656,
+      "themes": [
+        "散熱/機殼"
+      ],
+      "foreign_ratio": 3.287,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "3685",
+      "name": "元創精密",
+      "foreign_net": 244,
+      "trust_net": 0,
+      "dealer_net": 0,
+      "total_net": 244,
+      "themes": [
+        "其他類股"
+      ],
+      "foreign_ratio": 3.066,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "6683",
+      "name": "雍智科技",
+      "foreign_net": 84,
+      "trust_net": -58,
+      "dealer_net": -7,
+      "total_net": 19,
       "themes": [
         "半導體封測"
       ],
-      "foreign_ratio": 8.197,
-      "trust_ratio": 0.0
+      "foreign_ratio": 3.048,
+      "trust_ratio": -2.105
     },
     {
-      "date": "20260830",
-      "symbol": "6259",
-      "name": "百徽",
-      "foreign_net": 227,
-      "trust_net": 0,
-      "dealer_net": 1,
-      "total_net": 228,
+      "date": "20260831",
+      "symbol": "5274",
+      "name": "信驊",
+      "foreign_net": 108,
+      "trust_net": -91,
+      "dealer_net": 3,
+      "total_net": 20,
       "themes": [
         "其他類股"
       ],
-      "foreign_ratio": 8.091,
-      "trust_ratio": 0.0
+      "foreign_ratio": 2.857,
+      "trust_ratio": -2.407
     },
     {
-      "date": "20260830",
-      "symbol": "00888",
-      "name": "永豐台灣ESG",
-      "foreign_net": 3029,
-      "trust_net": 0,
-      "dealer_net": 3199,
-      "total_net": 6229,
-      "themes": [
-        "ETF/債券"
-      ],
-      "foreign_ratio": 7.972,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3264",
-      "name": "欣銓",
-      "foreign_net": 3897,
-      "trust_net": -1,
-      "dealer_net": 613,
-      "total_net": 4509,
-      "themes": [
-        "記憶體"
-      ],
-      "foreign_ratio": 7.95,
-      "trust_ratio": -0.002
-    },
-    {
-      "date": "20260830",
-      "symbol": "2061",
-      "name": "風青",
-      "foreign_net": 426,
+      "date": "20260831",
+      "symbol": "2070",
+      "name": "精湛",
+      "foreign_net": 111,
       "trust_net": 0,
       "dealer_net": 0,
-      "total_net": 427,
+      "total_net": 111,
       "themes": [
-        "重電/電力系統"
+        "IC載板"
       ],
-      "foreign_ratio": 7.424,
+      "foreign_ratio": 2.657,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "5498",
-      "name": "凱崴",
-      "foreign_net": 1351,
+      "date": "20260831",
+      "symbol": "3234",
+      "name": "光環",
+      "foreign_net": 277,
       "trust_net": 0,
-      "dealer_net": 43,
-      "total_net": 1394,
+      "dealer_net": 2,
+      "total_net": 279,
       "themes": [
-        "被動元件"
+        "矽光子/光通訊"
       ],
-      "foreign_ratio": 6.98,
+      "foreign_ratio": 2.485,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "4991",
-      "name": "環宇-KY",
-      "foreign_net": 831,
+      "date": "20260831",
+      "symbol": "6532",
+      "name": "瑞耘",
+      "foreign_net": 83,
       "trust_net": 0,
-      "dealer_net": -64,
-      "total_net": 767,
+      "dealer_net": 0,
+      "total_net": 83,
+      "themes": [
+        "其他類股"
+      ],
+      "foreign_ratio": 2.217,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2489",
+      "name": "瑞軒",
+      "foreign_net": 13501,
+      "trust_net": 0,
+      "dealer_net": 475,
+      "total_net": 13976,
+      "themes": [
+        "光電"
+      ],
+      "foreign_ratio": 2.213,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "6290",
+      "name": "良維",
+      "foreign_net": 373,
+      "trust_net": 0,
+      "dealer_net": 45,
+      "total_net": 418,
+      "themes": [
+        "其他類股"
+      ],
+      "foreign_ratio": 2.201,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "3379",
+      "name": "彬台",
+      "foreign_net": 82,
+      "trust_net": 0,
+      "dealer_net": 0,
+      "total_net": 82,
+      "themes": [
+        "散熱/機殼"
+      ],
+      "foreign_ratio": 2.156,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "2221",
+      "name": "大甲",
+      "foreign_net": 89,
+      "trust_net": 0,
+      "dealer_net": 1,
+      "total_net": 91,
+      "themes": [
+        "其他類股"
+      ],
+      "foreign_ratio": 2.103,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "1336",
+      "name": "台翰",
+      "foreign_net": 162,
+      "trust_net": 0,
+      "dealer_net": 2,
+      "total_net": 164,
+      "themes": [
+        "其他類股"
+      ],
+      "foreign_ratio": 2.087,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "4979",
+      "name": "華星光",
+      "foreign_net": 286,
+      "trust_net": -411,
+      "dealer_net": 109,
+      "total_net": -16,
+      "themes": [
+        "矽光子/光通訊"
+      ],
+      "foreign_ratio": 2.009,
+      "trust_ratio": -2.887
+    },
+    {
+      "date": "20260831",
+      "symbol": "8299",
+      "name": "群聯",
+      "foreign_net": 422,
+      "trust_net": 4,
+      "dealer_net": -51,
+      "total_net": 374,
+      "themes": [
+        "IC設計"
+      ],
+      "foreign_ratio": 1.909,
+      "trust_ratio": 0.018
+    },
+    {
+      "date": "20260831",
+      "symbol": "6770",
+      "name": "力積電",
+      "foreign_net": 73710,
+      "trust_net": 0,
+      "dealer_net": 2740,
+      "total_net": 76450,
       "themes": [
         "晶圓代工"
       ],
-      "foreign_ratio": 6.871,
+      "foreign_ratio": 1.737,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "3287",
-      "name": "廣寰科",
-      "foreign_net": 277,
+      "date": "20260831",
+      "symbol": "3438",
+      "name": "類比科",
+      "foreign_net": 79,
       "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 277,
+      "dealer_net": 1,
+      "total_net": 80,
       "themes": [
-        "電子科技"
+        "IC設計"
       ],
-      "foreign_ratio": 6.3,
+      "foreign_ratio": 1.675,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "5314",
-      "name": "世紀*",
-      "foreign_net": 1661,
-      "trust_net": 0,
-      "dealer_net": 1443,
-      "total_net": 3104,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 5.688,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "4908",
-      "name": "前鼎",
-      "foreign_net": 432,
-      "trust_net": 0,
-      "dealer_net": -108,
-      "total_net": 324,
-      "themes": [
-        "矽光子/光通訊"
-      ],
-      "foreign_ratio": 5.523,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3693",
-      "name": "營邦",
-      "foreign_net": 237,
-      "trust_net": 0,
-      "dealer_net": 40,
-      "total_net": 277,
+      "date": "20260831",
+      "symbol": "6805",
+      "name": "富世達",
+      "foreign_net": 1108,
+      "trust_net": -620,
+      "dealer_net": -27,
+      "total_net": 461,
       "themes": [
         "散熱/機殼"
       ],
-      "foreign_ratio": 5.513,
-      "trust_ratio": 0.0
+      "foreign_ratio": 1.616,
+      "trust_ratio": -0.904
     },
     {
-      "date": "20260830",
-      "symbol": "3211",
-      "name": "順達",
-      "foreign_net": 796,
-      "trust_net": 0,
-      "dealer_net": -183,
-      "total_net": 613,
-      "themes": [
-        "IC載板"
-      ],
-      "foreign_ratio": 5.155,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "4716",
-      "name": "大立",
-      "foreign_net": 443,
-      "trust_net": 0,
-      "dealer_net": 5,
-      "total_net": 448,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 4.691,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3081",
-      "name": "聯亞",
-      "foreign_net": 422,
-      "trust_net": -3,
-      "dealer_net": -30,
-      "total_net": 389,
-      "themes": [
-        "矽光子/光通訊"
-      ],
-      "foreign_ratio": 4.561,
-      "trust_ratio": -0.032
-    },
-    {
-      "date": "20260830",
-      "symbol": "6547",
-      "name": "高端疫苗",
-      "foreign_net": 1434,
-      "trust_net": 0,
-      "dealer_net": -225,
-      "total_net": 1209,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 4.362,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "6190",
-      "name": "萬泰科",
-      "foreign_net": 751,
-      "trust_net": 0,
-      "dealer_net": 155,
-      "total_net": 906,
-      "themes": [
-        "電子科技"
-      ],
-      "foreign_ratio": 4.002,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "6517",
-      "name": "保勝光學",
-      "foreign_net": 119,
-      "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 119,
-      "themes": [
-        "光電/光通訊"
-      ],
-      "foreign_ratio": 3.892,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3234",
-      "name": "光環",
-      "foreign_net": 425,
-      "trust_net": 0,
-      "dealer_net": -5,
-      "total_net": 420,
-      "themes": [
-        "矽光子/光通訊"
-      ],
-      "foreign_ratio": 3.813,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3293",
-      "name": "鈊象",
-      "foreign_net": 1064,
-      "trust_net": -1460,
-      "dealer_net": -53,
-      "total_net": -449,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 3.776,
-      "trust_ratio": -5.181
-    },
-    {
-      "date": "20260830",
-      "symbol": "3066",
-      "name": "李洲",
-      "foreign_net": 302,
-      "trust_net": 0,
-      "dealer_net": 1,
-      "total_net": 303,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 3.635,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3360",
-      "name": "尚立",
-      "foreign_net": 269,
-      "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 269,
-      "themes": [
-        "PCB"
-      ],
-      "foreign_ratio": 3.521,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "6187",
-      "name": "萬潤",
-      "foreign_net": 345,
-      "trust_net": 416,
-      "dealer_net": -38,
-      "total_net": 723,
-      "themes": [
-        "先進封裝"
-      ],
-      "foreign_ratio": 3.513,
-      "trust_ratio": 4.237
-    },
-    {
-      "date": "20260830",
-      "symbol": "5443",
-      "name": "均豪",
-      "foreign_net": 576,
-      "trust_net": 0,
-      "dealer_net": 435,
-      "total_net": 1011,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 3.496,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "6199",
-      "name": "天品",
-      "foreign_net": 213,
-      "trust_net": 0,
-      "dealer_net": -1,
-      "total_net": 212,
-      "themes": [
-        "被動元件"
-      ],
-      "foreign_ratio": 3.449,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "4577",
-      "name": "達航科技",
-      "foreign_net": 169,
-      "trust_net": 0,
-      "dealer_net": 9,
-      "total_net": 178,
-      "themes": [
-        "電子科技"
-      ],
-      "foreign_ratio": 3.439,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "6532",
-      "name": "瑞耘",
-      "foreign_net": 127,
-      "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 127,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 3.392,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3147",
-      "name": "大綜",
-      "foreign_net": 147,
-      "trust_net": 0,
-      "dealer_net": -2,
-      "total_net": 145,
+      "date": "20260831",
+      "symbol": "3260",
+      "name": "威剛",
+      "foreign_net": 504,
+      "trust_net": -1,
+      "dealer_net": 109,
+      "total_net": 612,
       "themes": [
         "AI伺服器/代工"
       ],
-      "foreign_ratio": 3.365,
-      "trust_ratio": 0.0
+      "foreign_ratio": 1.53,
+      "trust_ratio": -0.003
     },
     {
-      "date": "20260830",
-      "symbol": "3105",
-      "name": "穩懋",
-      "foreign_net": 1383,
-      "trust_net": 2775,
-      "dealer_net": -54,
-      "total_net": 4104,
-      "themes": [
-        "AI伺服器/代工"
-      ],
-      "foreign_ratio": 3.262,
-      "trust_ratio": 6.546
-    },
-    {
-      "date": "20260830",
-      "symbol": "7751",
-      "name": "竑騰",
-      "foreign_net": 84,
+      "date": "20260831",
+      "symbol": "6716",
+      "name": "應廣",
+      "foreign_net": 46,
       "trust_net": 0,
-      "dealer_net": -10,
-      "total_net": 74,
+      "dealer_net": 0,
+      "total_net": 46,
       "themes": [
         "其他類股"
       ],
-      "foreign_ratio": 3.124,
+      "foreign_ratio": 1.521,
       "trust_ratio": 0.0
     },
     {
-      "date": "20260830",
-      "symbol": "6588",
-      "name": "東典光電",
-      "foreign_net": 108,
+      "date": "20260831",
+      "symbol": "6829",
+      "name": "千附精密",
+      "foreign_net": 89,
       "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 108,
-      "themes": [
-        "散熱/機殼"
-      ],
-      "foreign_ratio": 3.112,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "6693",
-      "name": "廣閎科",
-      "foreign_net": 131,
-      "trust_net": 0,
-      "dealer_net": 37,
-      "total_net": 168,
-      "themes": [
-        "散熱/機殼"
-      ],
-      "foreign_ratio": 2.865,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "1569",
-      "name": "濱川",
-      "foreign_net": 378,
-      "trust_net": 0,
-      "dealer_net": 14,
-      "total_net": 392,
-      "themes": [
-        "PCB"
-      ],
-      "foreign_ratio": 2.62,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3176",
-      "name": "基亞",
-      "foreign_net": 352,
-      "trust_net": 0,
-      "dealer_net": 1,
-      "total_net": 353,
-      "themes": [
-        "生技醫療"
-      ],
-      "foreign_ratio": 2.527,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "7734",
-      "name": "印能科技",
-      "foreign_net": 69,
-      "trust_net": -70,
-      "dealer_net": -3,
-      "total_net": -5,
-      "themes": [
-        "電子科技"
-      ],
-      "foreign_ratio": 2.464,
-      "trust_ratio": -2.5
-    },
-    {
-      "date": "20260830",
-      "symbol": "4510",
-      "name": "高鋒",
-      "foreign_net": 250,
-      "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 250,
-      "themes": [
-        "AI伺服器/代工"
-      ],
-      "foreign_ratio": 2.294,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "4951",
-      "name": "精拓科",
-      "foreign_net": 78,
-      "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 78,
-      "themes": [
-        "AI伺服器/代工"
-      ],
-      "foreign_ratio": 2.284,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "6174",
-      "name": "安碁",
-      "foreign_net": 112,
-      "trust_net": 0,
-      "dealer_net": 1,
-      "total_net": 113,
-      "themes": [
-        "被動元件"
-      ],
-      "foreign_ratio": 2.24,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "6284",
-      "name": "佳邦",
-      "foreign_net": 333,
-      "trust_net": 0,
-      "dealer_net": 13,
-      "total_net": 346,
-      "themes": [
-        "被動元件"
-      ],
-      "foreign_ratio": 2.235,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3362",
-      "name": "先進光",
-      "foreign_net": 317,
-      "trust_net": 0,
-      "dealer_net": 86,
-      "total_net": 403,
-      "themes": [
-        "光電/光通訊"
-      ],
-      "foreign_ratio": 2.15,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20260830",
-      "symbol": "3631",
-      "name": "晟楠",
-      "foreign_net": 171,
-      "trust_net": 0,
-      "dealer_net": -1,
-      "total_net": 170,
+      "dealer_net": 43,
+      "total_net": 132,
       "themes": [
         "其他類股"
       ],
-      "foreign_ratio": 2.09,
+      "foreign_ratio": 1.504,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "5432",
+      "name": "新門",
+      "foreign_net": 31,
+      "trust_net": 0,
+      "dealer_net": 0,
+      "total_net": 31,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 1.498,
+      "trust_ratio": 0.0
+    },
+    {
+      "date": "20260831",
+      "symbol": "3006",
+      "name": "晶豪科",
+      "foreign_net": 4437,
+      "trust_net": 0,
+      "dealer_net": 363,
+      "total_net": 4800,
+      "themes": [
+        "IC設計"
+      ],
+      "foreign_ratio": 1.49,
       "trust_ratio": 0.0
     }
   ],
   "top_trust_ratio": [
     {
-      "date": "20260830",
+      "date": "20260831",
       "symbol": "3374",
       "name": "精材",
-      "foreign_net": 4911,
-      "trust_net": 3336,
-      "dealer_net": 61,
-      "total_net": 8308,
+      "foreign_net": 2552,
+      "trust_net": 5685,
+      "dealer_net": -108,
+      "total_net": 8129,
       "themes": [
         "IC載板"
       ],
-      "foreign_ratio": 18.097,
-      "trust_ratio": 12.293
+      "foreign_ratio": 9.404,
+      "trust_ratio": 20.95
     },
     {
-      "date": "20260830",
-      "symbol": "6727",
-      "name": "亞泰金屬",
-      "foreign_net": -54,
-      "trust_net": 180,
-      "dealer_net": 24,
-      "total_net": 150,
+      "date": "20260831",
+      "symbol": "6510",
+      "name": "精測",
+      "foreign_net": -35,
+      "trust_net": 214,
+      "dealer_net": -10,
+      "total_net": 169,
       "themes": [
-        "AI伺服器/代工"
+        "PCB"
       ],
-      "foreign_ratio": -2.009,
-      "trust_ratio": 6.695
+      "foreign_ratio": -1.064,
+      "trust_ratio": 6.508
     },
     {
-      "date": "20260830",
-      "symbol": "3105",
-      "name": "穩懋",
-      "foreign_net": 1383,
-      "trust_net": 2775,
-      "dealer_net": -54,
-      "total_net": 4104,
-      "themes": [
-        "AI伺服器/代工"
-      ],
-      "foreign_ratio": 3.262,
-      "trust_ratio": 6.546
-    },
-    {
-      "date": "20260830",
+      "date": "20260831",
       "symbol": "3324",
       "name": "雙鴻",
-      "foreign_net": 1597,
-      "trust_net": 460,
-      "dealer_net": 117,
-      "total_net": 2173,
+      "foreign_net": 2452,
+      "trust_net": 560,
+      "dealer_net": 246,
+      "total_net": 3258,
       "themes": [
         "散熱/機殼"
       ],
-      "foreign_ratio": 17.158,
-      "trust_ratio": 4.942
+      "foreign_ratio": 26.344,
+      "trust_ratio": 6.017
     },
     {
-      "date": "20260830",
-      "symbol": "6187",
-      "name": "萬潤",
-      "foreign_net": 345,
-      "trust_net": 416,
-      "dealer_net": -38,
-      "total_net": 723,
+      "date": "20260831",
+      "symbol": "009814",
+      "name": "富邦標普500",
+      "foreign_net": 0,
+      "trust_net": 450,
+      "dealer_net": -627,
+      "total_net": -177,
       "themes": [
-        "先進封裝"
+        "ETF/債券"
       ],
-      "foreign_ratio": 3.513,
-      "trust_ratio": 4.237
+      "foreign_ratio": 0.0,
+      "trust_ratio": 2.811
     },
     {
-      "date": "20260830",
-      "symbol": "3491",
-      "name": "昇達科",
-      "foreign_net": -337,
-      "trust_net": 255,
-      "dealer_net": 6,
-      "total_net": -76,
-      "themes": [
-        "低軌衛星"
-      ],
-      "foreign_ratio": -4.898,
-      "trust_ratio": 3.706
-    },
-    {
-      "date": "20260830",
-      "symbol": "5425",
-      "name": "台半",
-      "foreign_net": -4904,
-      "trust_net": 660,
-      "dealer_net": -368,
-      "total_net": -4612,
-      "themes": [
-        "半導體封測"
-      ],
-      "foreign_ratio": -18.612,
-      "trust_ratio": 2.505
-    },
-    {
-      "date": "20260830",
-      "symbol": "1815",
-      "name": "富喬",
-      "foreign_net": 25453,
-      "trust_net": 1189,
-      "dealer_net": 1315,
-      "total_net": 27957,
-      "themes": [
-        "被動元件"
-      ],
-      "foreign_ratio": 43.471,
-      "trust_ratio": 2.031
-    },
-    {
-      "date": "20260830",
-      "symbol": "6147",
-      "name": "頎邦",
-      "foreign_net": -5377,
-      "trust_net": 838,
-      "dealer_net": -1620,
-      "total_net": -6159,
+      "date": "20260831",
+      "symbol": "3081",
+      "name": "聯亞",
+      "foreign_net": -132,
+      "trust_net": 200,
+      "dealer_net": 24,
+      "total_net": 92,
       "themes": [
         "矽光子/光通訊"
       ],
-      "foreign_ratio": -7.221,
-      "trust_ratio": 1.125
+      "foreign_ratio": -1.427,
+      "trust_ratio": 2.162
     },
     {
-      "date": "20260830",
-      "symbol": "3680",
-      "name": "家登",
-      "foreign_net": 30,
-      "trust_net": 45,
-      "dealer_net": 73,
-      "total_net": 148,
+      "date": "20260831",
+      "symbol": "3105",
+      "name": "穩懋",
+      "foreign_net": -6359,
+      "trust_net": 522,
+      "dealer_net": 401,
+      "total_net": -5437,
       "themes": [
-        "其他類股"
+        "AI伺服器/代工"
       ],
-      "foreign_ratio": 0.312,
-      "trust_ratio": 0.468
+      "foreign_ratio": -15.0,
+      "trust_ratio": 1.231
     },
     {
-      "date": "20260830",
-      "symbol": "8436",
-      "name": "大江",
-      "foreign_net": -413,
-      "trust_net": 53,
-      "dealer_net": -3,
-      "total_net": -363,
+      "date": "20260831",
+      "symbol": "3264",
+      "name": "欣銓",
+      "foreign_net": -1003,
+      "trust_net": 318,
+      "dealer_net": -257,
+      "total_net": -942,
       "themes": [
-        "其他類股"
+        "記憶體"
       ],
-      "foreign_ratio": -3.508,
-      "trust_ratio": 0.45
+      "foreign_ratio": -2.046,
+      "trust_ratio": 0.649
     },
     {
-      "date": "20260830",
-      "symbol": "4162",
-      "name": "智擎",
-      "foreign_net": -42,
-      "trust_net": 60,
-      "dealer_net": 1,
-      "total_net": 19,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": -0.288,
-      "trust_ratio": 0.412
-    },
-    {
-      "date": "20260830",
+      "date": "20260831",
       "symbol": "6640",
       "name": "均華",
-      "foreign_net": -35,
-      "trust_net": 10,
-      "dealer_net": -5,
-      "total_net": -31,
+      "foreign_net": -21,
+      "trust_net": 17,
+      "dealer_net": 13,
+      "total_net": 10,
       "themes": [
         "半導體封測"
       ],
-      "foreign_ratio": -1.227,
-      "trust_ratio": 0.351
+      "foreign_ratio": -0.736,
+      "trust_ratio": 0.596
     },
     {
-      "date": "20260830",
-      "symbol": "3529",
-      "name": "力旺",
-      "foreign_net": -63,
-      "trust_net": 8,
-      "dealer_net": 8,
-      "total_net": -47,
+      "date": "20260831",
+      "symbol": "3406",
+      "name": "玉晶光",
+      "foreign_net": 599,
+      "trust_net": 616,
+      "dealer_net": -100,
+      "total_net": 1115,
+      "themes": [
+        "光電"
+      ],
+      "foreign_ratio": 0.531,
+      "trust_ratio": 0.546
+    },
+    {
+      "date": "20260831",
+      "symbol": "3026",
+      "name": "禾伸堂",
+      "foreign_net": -258,
+      "trust_net": 865,
+      "dealer_net": -108,
+      "total_net": 499,
+      "themes": [
+        "被動元件"
+      ],
+      "foreign_ratio": -0.156,
+      "trust_ratio": 0.521
+    },
+    {
+      "date": "20260831",
+      "symbol": "8436",
+      "name": "大江",
+      "foreign_net": -54,
+      "trust_net": 50,
+      "dealer_net": -2,
+      "total_net": -6,
+      "themes": [
+        "其他類股"
+      ],
+      "foreign_ratio": -0.459,
+      "trust_ratio": 0.425
+    },
+    {
+      "date": "20260831",
+      "symbol": "2368",
+      "name": "金像電",
+      "foreign_net": -941,
+      "trust_net": 1662,
+      "dealer_net": -657,
+      "total_net": 65,
+      "themes": [
+        "PCB"
+      ],
+      "foreign_ratio": -0.182,
+      "trust_ratio": 0.321
+    },
+    {
+      "date": "20260831",
+      "symbol": "3491",
+      "name": "昇達科",
+      "foreign_net": -244,
+      "trust_net": 22,
+      "dealer_net": 40,
+      "total_net": -182,
+      "themes": [
+        "低軌衛星"
+      ],
+      "foreign_ratio": -3.546,
+      "trust_ratio": 0.32
+    },
+    {
+      "date": "20260831",
+      "symbol": "3008",
+      "name": "大立光",
+      "foreign_net": -509,
+      "trust_net": 402,
+      "dealer_net": -85,
+      "total_net": -192,
+      "themes": [
+        "矽光子/光通訊"
+      ],
+      "foreign_ratio": -0.389,
+      "trust_ratio": 0.307
+    },
+    {
+      "date": "20260831",
+      "symbol": "1717",
+      "name": "長興",
+      "foreign_net": 12571,
+      "trust_net": 3450,
+      "dealer_net": 950,
+      "total_net": 16971,
+      "themes": [
+        "化學"
+      ],
+      "foreign_ratio": 1.072,
+      "trust_ratio": 0.294
+    },
+    {
+      "date": "20260831",
+      "symbol": "3605",
+      "name": "宏致",
+      "foreign_net": -1946,
+      "trust_net": 434,
+      "dealer_net": 28,
+      "total_net": -1484,
+      "themes": [
+        "PCB"
+      ],
+      "foreign_ratio": -1.114,
+      "trust_ratio": 0.248
+    },
+    {
+      "date": "20260831",
+      "symbol": "3450",
+      "name": "聯鈞",
+      "foreign_net": 1864,
+      "trust_net": 329,
+      "dealer_net": -1,
+      "total_net": 2193,
+      "themes": [
+        "矽光子/光通訊"
+      ],
+      "foreign_ratio": 1.28,
+      "trust_ratio": 0.226
+    },
+    {
+      "date": "20260831",
+      "symbol": "2449",
+      "name": "京元電子",
+      "foreign_net": -16652,
+      "trust_net": 2591,
+      "dealer_net": -1068,
+      "total_net": -15129,
+      "themes": [
+        "半導體封測"
+      ],
+      "foreign_ratio": -1.362,
+      "trust_ratio": 0.212
+    },
+    {
+      "date": "20260831",
+      "symbol": "2455",
+      "name": "全新",
+      "foreign_net": 2300,
+      "trust_net": 329,
+      "dealer_net": -288,
+      "total_net": 2342,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 1.244,
+      "trust_ratio": 0.178
+    },
+    {
+      "date": "20260831",
+      "symbol": "2027",
+      "name": "大成鋼",
+      "foreign_net": -3053,
+      "trust_net": 4088,
+      "dealer_net": -62,
+      "total_net": 973,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": -0.118,
+      "trust_ratio": 0.158
+    },
+    {
+      "date": "20260831",
+      "symbol": "6472",
+      "name": "保瑞",
+      "foreign_net": -288,
+      "trust_net": 185,
+      "dealer_net": -6,
+      "total_net": -109,
+      "themes": [
+        "生技醫療"
+      ],
+      "foreign_ratio": -0.225,
+      "trust_ratio": 0.145
+    },
+    {
+      "date": "20260831",
+      "symbol": "3661",
+      "name": "世芯-KY",
+      "foreign_net": 71,
+      "trust_net": 117,
+      "dealer_net": 27,
+      "total_net": 216,
       "themes": [
         "IP/IC設計"
       ],
-      "foreign_ratio": -0.844,
-      "trust_ratio": 0.107
+      "foreign_ratio": 0.086,
+      "trust_ratio": 0.143
     },
     {
-      "date": "20260830",
-      "symbol": "6488",
-      "name": "環球晶",
-      "foreign_net": -1858,
-      "trust_net": 30,
-      "dealer_net": -1,
-      "total_net": -1828,
+      "date": "20260831",
+      "symbol": "4958",
+      "name": "臻鼎-KY",
+      "foreign_net": 2178,
+      "trust_net": 1230,
+      "dealer_net": 587,
+      "total_net": 3995,
       "themes": [
-        "矽晶圓"
+        "PCB"
       ],
-      "foreign_ratio": -3.886,
-      "trust_ratio": 0.063
+      "foreign_ratio": 0.202,
+      "trust_ratio": 0.114
     },
     {
-      "date": "20260830",
-      "symbol": "5483",
-      "name": "中美晶",
-      "foreign_net": -1481,
-      "trust_net": 10,
-      "dealer_net": -9,
-      "total_net": -1480,
+      "date": "20260831",
+      "symbol": "2313",
+      "name": "華通",
+      "foreign_net": 6413,
+      "trust_net": 1266,
+      "dealer_net": 221,
+      "total_net": 7900,
       "themes": [
-        "矽晶圓"
+        "PCB"
       ],
-      "foreign_ratio": -2.31,
-      "trust_ratio": 0.016
+      "foreign_ratio": 0.538,
+      "trust_ratio": 0.106
     },
     {
-      "date": "20260830",
-      "symbol": "3078",
-      "name": "僑威",
-      "foreign_net": -407,
-      "trust_net": 3,
+      "date": "20260831",
+      "symbol": "4736",
+      "name": "泰博",
+      "foreign_net": -34,
+      "trust_net": 100,
+      "dealer_net": 3,
+      "total_net": 69,
+      "themes": [
+        "生技醫療"
+      ],
+      "foreign_ratio": -0.036,
+      "trust_ratio": 0.105
+    },
+    {
+      "date": "20260831",
+      "symbol": "3653",
+      "name": "健策",
+      "foreign_net": -64,
+      "trust_net": 153,
+      "dealer_net": 6,
+      "total_net": 94,
+      "themes": [
+        "散熱"
+      ],
+      "foreign_ratio": -0.044,
+      "trust_ratio": 0.104
+    },
+    {
+      "date": "20260831",
+      "symbol": "7828",
+      "name": "創新服務",
+      "foreign_net": -3,
+      "trust_net": 4,
       "dealer_net": 0,
-      "total_net": -404,
+      "total_net": 0,
+      "themes": [
+        "其他類股"
+      ],
+      "foreign_ratio": -0.074,
+      "trust_ratio": 0.099
+    },
+    {
+      "date": "20260831",
+      "symbol": "3034",
+      "name": "聯詠",
+      "foreign_net": 63,
+      "trust_net": 465,
+      "dealer_net": -51,
+      "total_net": 477,
+      "themes": [
+        "IC設計"
+      ],
+      "foreign_ratio": 0.01,
+      "trust_ratio": 0.076
+    },
+    {
+      "date": "20260831",
+      "symbol": "2404",
+      "name": "漢唐",
+      "foreign_net": -377,
+      "trust_net": 137,
+      "dealer_net": -11,
+      "total_net": -251,
+      "themes": [
+        "半導體設備"
+      ],
+      "foreign_ratio": -0.198,
+      "trust_ratio": 0.072
+    },
+    {
+      "date": "20260831",
+      "symbol": "2376",
+      "name": "技嘉",
+      "foreign_net": 1325,
+      "trust_net": 443,
+      "dealer_net": 0,
+      "total_net": 1768,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 0.198,
+      "trust_ratio": 0.066
+    },
+    {
+      "date": "20260831",
+      "symbol": "5434",
+      "name": "崇越",
+      "foreign_net": -466,
+      "trust_net": 113,
+      "dealer_net": 11,
+      "total_net": -342,
+      "themes": [
+        "電子通路"
+      ],
+      "foreign_ratio": -0.241,
+      "trust_ratio": 0.058
+    },
+    {
+      "date": "20260831",
+      "symbol": "2347",
+      "name": "聯強",
+      "foreign_net": -938,
+      "trust_net": 867,
+      "dealer_net": -155,
+      "total_net": -225,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": -0.056,
+      "trust_ratio": 0.052
+    },
+    {
+      "date": "20260831",
+      "symbol": "9941",
+      "name": "裕融",
+      "foreign_net": 196,
+      "trust_net": 292,
+      "dealer_net": -75,
+      "total_net": 413,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.034,
+      "trust_ratio": 0.051
+    },
+    {
+      "date": "20260831",
+      "symbol": "2303",
+      "name": "聯電",
+      "foreign_net": -12716,
+      "trust_net": 6340,
+      "dealer_net": -1126,
+      "total_net": -7502,
+      "themes": [
+        "晶圓代工"
+      ],
+      "foreign_ratio": -0.101,
+      "trust_ratio": 0.05
+    },
+    {
+      "date": "20260831",
+      "symbol": "6409",
+      "name": "旭隼",
+      "foreign_net": -47,
+      "trust_net": 44,
+      "dealer_net": 3,
+      "total_net": 0,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": -0.054,
+      "trust_ratio": 0.05
+    },
+    {
+      "date": "20260831",
+      "symbol": "2542",
+      "name": "興富發",
+      "foreign_net": -1803,
+      "trust_net": 1016,
+      "dealer_net": 216,
+      "total_net": -571,
+      "themes": [
+        "建材營造"
+      ],
+      "foreign_ratio": -0.083,
+      "trust_ratio": 0.047
+    },
+    {
+      "date": "20260831",
+      "symbol": "3231",
+      "name": "緯創",
+      "foreign_net": -4652,
+      "trust_net": 1272,
+      "dealer_net": 216,
+      "total_net": -3163,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": -0.146,
+      "trust_ratio": 0.04
+    },
+    {
+      "date": "20260831",
+      "symbol": "5269",
+      "name": "祥碩",
+      "foreign_net": -62,
+      "trust_net": 30,
+      "dealer_net": 2,
+      "total_net": -30,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": -0.084,
+      "trust_ratio": 0.04
+    },
+    {
+      "date": "20260831",
+      "symbol": "2382",
+      "name": "廣達",
+      "foreign_net": 2660,
+      "trust_net": 1458,
+      "dealer_net": -318,
+      "total_net": 3800,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 0.069,
+      "trust_ratio": 0.038
+    },
+    {
+      "date": "20260831",
+      "symbol": "3706",
+      "name": "神達",
+      "foreign_net": -411,
+      "trust_net": 474,
+      "dealer_net": 355,
+      "total_net": 417,
       "themes": [
         "散熱/機殼"
       ],
-      "foreign_ratio": -1.79,
-      "trust_ratio": 0.013
+      "foreign_ratio": -0.031,
+      "trust_ratio": 0.036
+    },
+    {
+      "date": "20260831",
+      "symbol": "8358",
+      "name": "金居",
+      "foreign_net": 3516,
+      "trust_net": 9,
+      "dealer_net": 390,
+      "total_net": 3916,
+      "themes": [
+        "PCB/銅箔"
+      ],
+      "foreign_ratio": 13.92,
+      "trust_ratio": 0.036
+    },
+    {
+      "date": "20260831",
+      "symbol": "3131",
+      "name": "弘塑",
+      "foreign_net": 176,
+      "trust_net": 1,
+      "dealer_net": -2,
+      "total_net": 176,
+      "themes": [
+        "先進封裝設備"
+      ],
+      "foreign_ratio": 5.931,
+      "trust_ratio": 0.034
+    },
+    {
+      "date": "20260831",
+      "symbol": "2357",
+      "name": "華碩",
+      "foreign_net": 986,
+      "trust_net": 227,
+      "dealer_net": 83,
+      "total_net": 1296,
+      "themes": [
+        "電腦及週邊"
+      ],
+      "foreign_ratio": 0.133,
+      "trust_ratio": 0.031
+    },
+    {
+      "date": "20260831",
+      "symbol": "2353",
+      "name": "宏碁",
+      "foreign_net": 4040,
+      "trust_net": 923,
+      "dealer_net": -176,
+      "total_net": 4787,
+      "themes": [
+        "電腦及週邊"
+      ],
+      "foreign_ratio": 0.133,
+      "trust_ratio": 0.03
+    },
+    {
+      "date": "20260831",
+      "symbol": "2855",
+      "name": "統一證",
+      "foreign_net": 569,
+      "trust_net": 418,
+      "dealer_net": 0,
+      "total_net": 987,
+      "themes": [
+        "金融"
+      ],
+      "foreign_ratio": 0.036,
+      "trust_ratio": 0.026
+    },
+    {
+      "date": "20260831",
+      "symbol": "1476",
+      "name": "儒鴻",
+      "foreign_net": -256,
+      "trust_net": 68,
+      "dealer_net": -17,
+      "total_net": -205,
+      "themes": [
+        "紡織纖維"
+      ],
+      "foreign_ratio": -0.093,
+      "trust_ratio": 0.025
+    },
+    {
+      "date": "20260831",
+      "symbol": "2379",
+      "name": "瑞昱",
+      "foreign_net": -78,
+      "trust_net": 131,
+      "dealer_net": -23,
+      "total_net": 31,
+      "themes": [
+        "IC設計"
+      ],
+      "foreign_ratio": -0.015,
+      "trust_ratio": 0.025
+    },
+    {
+      "date": "20260831",
+      "symbol": "2356",
+      "name": "英業達",
+      "foreign_net": 5121,
+      "trust_net": 748,
+      "dealer_net": 780,
+      "total_net": 6650,
+      "themes": [
+        "AI伺服器/代工"
+      ],
+      "foreign_ratio": 0.143,
+      "trust_ratio": 0.021
+    },
+    {
+      "date": "20260831",
+      "symbol": "2467",
+      "name": "志聖",
+      "foreign_net": -66,
+      "trust_net": 33,
+      "dealer_net": -24,
+      "total_net": -56,
+      "themes": [
+        "PCB"
+      ],
+      "foreign_ratio": -0.042,
+      "trust_ratio": 0.021
+    },
+    {
+      "date": "20260831",
+      "symbol": "6257",
+      "name": "矽格",
+      "foreign_net": -5373,
+      "trust_net": 98,
+      "dealer_net": -704,
+      "total_net": -5979,
+      "themes": [
+        "半導體"
+      ],
+      "foreign_ratio": -1.11,
+      "trust_ratio": 0.02
     }
   ],
   "theme_inflows": [
     {
-      "theme_name": "被動元件",
-      "count": 26,
-      "total_net": 31048,
+      "theme_name": "金融",
+      "count": 27,
+      "total_net": 235545,
       "stocks": [
-        "富喬",
-        "凱崴",
-        "佳邦",
-        "天品",
-        "益安",
-        "崇越電",
-        "九暘",
-        "加高",
-        "安碁",
-        "蜜望實",
-        "泰藝",
-        "安國",
-        "迅德",
-        "好德",
-        "朋億*",
-        "強新",
-        "博磊",
-        "生展",
-        "凱衛",
-        "崑鼎",
-        "力新",
-        "富榮綱",
-        "台林",
-        "育富",
-        "虎門科技",
-        "建暐"
+        "台新新光金",
+        "凱基金",
+        "臺企銀",
+        "第一金",
+        "永豐金",
+        "華南金",
+        "玉山金",
+        "國泰金",
+        "合庫金",
+        "泰金寶-DR",
+        "國票金",
+        "彰銀",
+        "元大金",
+        "遠東銀",
+        "台中銀",
+        "兆豐金",
+        "中信金",
+        "中租-KY",
+        "統一證",
+        "裕融",
+        "中再保",
+        "王道銀行",
+        "旺旺保",
+        "群益期",
+        "汎德永業",
+        "東聯互動",
+        "精誠金融"
       ]
     },
     {
-      "theme_name": "IC載板",
-      "count": 4,
-      "total_net": 8976,
+      "theme_name": "晶圓代工",
+      "count": 2,
+      "total_net": 76452,
       "stocks": [
-        "精材",
-        "順達",
-        "精湛",
-        "鑫科"
+        "力積電",
+        "新晶投控"
       ]
     },
     {
-      "theme_name": "半導體封測",
-      "count": 9,
-      "total_net": 8262,
+      "theme_name": "塑膠",
+      "count": 10,
+      "total_net": 64832,
       "stocks": [
-        "信昌電",
-        "亞通",
-        "台星科",
-        "兆豐半導體氣候N",
-        "統一亞洲半導體N",
-        "連展投控",
-        "光聚晶電",
-        "倍微",
-        "矽瑪"
+        "台塑",
+        "台化",
+        "國喬",
+        "台聚",
+        "台苯",
+        "亞聚",
+        "台達化",
+        "華夏",
+        "三芳",
+        "再生-KY"
       ]
     },
     {
-      "theme_name": "PCB",
-      "count": 14,
-      "total_net": 7981,
+      "theme_name": "光電",
+      "count": 15,
+      "total_net": 61589,
       "stocks": [
-        "亞電",
-        "濱川",
-        "尚立",
-        "陽程",
-        "霖宏",
-        "亞信",
-        "日揚",
-        "鼎翰",
-        "昇佳電子",
-        "富致",
-        "有益",
-        "加百裕",
-        "凌網",
-        "洛碁"
+        "友達",
+        "瑞軒",
+        "聯合再生",
+        "亞光",
+        "玉晶光",
+        "宏齊",
+        "今國光",
+        "台表科",
+        "億光",
+        "吉祥全",
+        "艾笛森",
+        "天瀚",
+        "銘旺科",
+        "澤米",
+        "鈺德"
       ]
     },
     {
       "theme_name": "AI伺服器/代工",
-      "count": 34,
-      "total_net": 6040,
+      "count": 85,
+      "total_net": 60494,
       "stocks": [
-        "穩懋",
-        "青雲",
-        "高鋒",
-        "亞泰金屬",
-        "大綜",
-        "漢達",
+        "仁寶",
+        "南亞科",
+        "寶成",
+        "英業達",
+        "廣達",
+        "立碁",
+        "和碩",
+        "金寶",
+        "全新",
+        "技嘉",
+        "晶宏",
+        "州巧",
+        "中工",
+        "大成鋼",
+        "威剛",
         "倚強科",
-        "擎邦",
-        "精拓科",
-        "群翊",
-        "利機",
-        "泓瀚",
-        "凡甲",
+        "十銓",
+        "單井",
+        "有成精密",
+        "燿華",
+        "創威",
+        "聯上發",
+        "統新",
+        "藍天",
+        "勤益控",
+        "億豐",
+        "聯策",
+        "湧德",
+        "凌華",
+        "惠特",
+        "久正",
+        "信邦",
+        "精英",
+        "華立",
+        "中華",
         "合騏*",
-        "鑫龍騰",
-        "精星",
-        "立弘",
-        "岳豐",
-        "能率網通",
-        "欣技",
-        "敘豐",
-        "安克",
+        "資通",
+        "展達",
+        "凌群",
+        "佳和",
+        "廣穎",
+        "鳳凰",
+        "大眾控",
+        "三一東林",
+        "帝寶",
+        "川湖",
+        "漢達",
+        "德晉",
+        "新門",
+        "天鈺",
+        "皇普",
+        "潤弘",
+        "和迅",
+        "力致",
+        "利機",
+        "伸興",
+        "瑞祺電通",
+        "宇隆",
         "亞泰",
-        "明遠精密",
-        "鉅邁",
-        "華洋精機",
+        "巨鎧精密-創",
         "微端",
-        "西勝",
-        "鐿鈦",
-        "耀穎",
-        "晶采",
-        "昱捷",
-        "安心",
-        "叡揚"
+        "元翎",
+        "圓剛",
+        "根基",
+        "力麗店",
+        "得力",
+        "和勤",
+        "立弘",
+        "和康生",
+        "驊宏資",
+        "雲嘉南",
+        "欣技",
+        "宏觀",
+        "鋐寶科技",
+        "寒舍",
+        "高林",
+        "智晶",
+        "寶綠特-KY",
+        "華凌",
+        "禾聯碩",
+        "詠業",
+        "明遠精密",
+        "東隆興",
+        "明係",
+        "惠普"
       ]
     }
   ]
