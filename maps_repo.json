@@ -184235,5 +184235,2681 @@
         "note": "查詢主題：地緣風險下的網安防禦與戰術通訊\n以下是主題 evidence 白名單上下文：\n官方補查入口：\n- TWSE: https://www.twse.com.tw/zh/search/news?query=%E5%9C%B0%E7%B7%A3%E9%A2%A8%E9%9A%AA%E4%B8%8B%E7%9A%84%E7%B6%B2%E5%AE%89%E9%98%B2%E7%A6%A6%E8%88%87%E6%88%B0%E8%A1%93%E9%80%9A%E8%A8%8A\n- TPEx: https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?l=zh-tw&keyword=%E5%9C%B0%E7%B7%A3%E9%A2%A8%E9%9A%AA%E4%B8%8B%E7%9A%84%E7%B6%B2%E5%AE%89%E9%98%B2%E7%A6%A6%E8%88%87%E6%88%B0%E8%A1%93%E9%80%9A%E8%A8%8A\n- MOPS: https://m"
       }
     ]
+  },
+  "map_AI_資料中心光通訊與散熱升級鏈_20260907_190225": {
+    "title": "AI 資料中心光通訊與散熱升級鏈",
+    "date": "2026-09-07",
+    "updated_at": "2026-09-07T19:02:25+08:00",
+    "heat": "AI 資料中心光通訊與散熱升級鏈",
+    "heat_score": 92,
+    "heat_drivers": [
+      "Nvidia Blackwell 架構帶動 1.6T 光模組需求爆發",
+      "單晶片功耗突破 1000W 迫使液冷成為新建資料中心標配",
+      "CPO 共封裝光學技術從實驗室走向早期商用驗證",
+      "全球雲端服務供應商（CSP）資本支出持續擴張"
+    ],
+    "period": "2025 Q3 - 2027",
+    "desc": "本主題聚焦於 AI 資料中心中，為支撐高算力密度而必須進行的光通訊速率躍遷（800G至1.6T及CPO）與散熱技術革命（冷板與浸沒式液冷）。這不僅是零部件的更換，更是資料中心架構的重塑，涉及芯片、材料、模組、系統整合與測試的全鏈條價值重估。",
+    "thesis": "AI 基礎設施投資正從單純的算力堆疊（GPU）轉向解決「通訊牆」與「功耗牆」的系統級工程。資金將沿著技術瓶頸的突破順序流動：首先搶佔具備定價權的上游核心芯片與材料，隨後流向具備規模量產能力的中游模組與散熱系統整合商，最後滲透至確保系統可靠性的測試驗證環節。這是一場從「可插拔」向「共封裝」、從「風冷」向「液冷」的結構性升級，價值鏈重心將向技術壁壘更高的上游與系統整合端傾斜。",
+    "market_size_tam": "待補資料",
+    "market_size_tam_source_type": "待補資料",
+    "market_cagr": "待補資料",
+    "market_cagr_source_type": "待補資料",
+    "theme_stage": "規模量產與滲透加速期",
+    "why_now": "Nvidia Blackwell 及後續架構對帶寬與散熱的要求已突破傳統風冷與 800G 光模組的物理極限，迫使供應鏈在 2025-2026 年必須完成技術過渡，CSP 已將液冷列為新建標準，相關投資進入實質貢獻營收階段。",
+    "key_bottleneck": "1.6T 光模組的良率與成本控制、CPO 技術的標準統一與生態系整合、浸沒式液冷的冷卻液與密封材料技術壁壘。",
+    "primary_value_capture": "技術標準制定者（上游芯片/材料）獲取最高溢價；具備端到端系統整合能力與快速量產能力的中游廠商獲取規模經濟溢價；關鍵測試驗證環節獲取高毛利技術服務溢價。",
+    "market_narrative": "從「算力軍備競賽」轉向「基礎設施效率革命」。市場不再僅關注誰能做出更快的晶片，更關注誰能解決晶片過熱與通訊延遲問題，確保龐大資本支出能轉化為實際運算效能。",
+    "evidence_confidence": "高",
+    "icon": "cpu",
+    "color": "from-cyan-500 to-indigo-600",
+    "theme_tags": [
+      "AI Infrastructure",
+      "Optical Communication",
+      "Liquid Cooling",
+      "CPO",
+      "Advanced Packaging",
+      "Data Center"
+    ],
+    "trigger_events": [
+      "Nvidia 新一代 GPU 架構發布並明確帶寬需求",
+      "主要雲端供應商（AWS, Azure, GCP）宣布液冷資料中心建設進度",
+      "1.6T 光模組主要廠商宣布量產時程",
+      "CPO 技術在大型數據中心的首個商用案例落地"
+    ],
+    "risks": [
+      "AI 資本支出增速放緩或技術路線變更",
+      "光通訊技術迭代速度慢於預期",
+      "液冷技術標準不統一導致市場碎片化",
+      "上游芯片供給短缺限制模組出貨"
+    ],
+    "watch_signals": [
+      "1.6T 光模組出貨量與滲透率數據",
+      "液冷伺服器在新增訂單中的佔比",
+      "CPO 技術專利申請與標準組織動態",
+      "主要晶片廠（Broadcom, Marvell）的營收指引"
+    ],
+    "related_themes": [
+      "AI 晶片先進封裝",
+      "綠色能源與資料中心效率",
+      "半導體設備與材料",
+      "雲端基礎設施服務"
+    ],
+    "tech_lessons": [
+      {
+        "title": "光通訊：從 800G 向 1.6T 的速率躍遷與 CPO 架構演進",
+        "subtitle": "解決 AI 叢集內部通訊瓶頸與功耗過高問題",
+        "problem": "傳統可插拔光模組在 800G 速率下已接近電路板傳輸極限，且功耗隨速率線性增長，成為限制 GPU 叢集擴展效率的「通訊牆」。",
+        "mechanism": "透過提升單波長速率至 200G/400G PAM4 實現 1.6T 模組，並引入共封裝光學（CPO, Co-Packaged Optics）技術，將光引擎與交換芯片緊密集成，縮短電信號傳輸距離，大幅降低延遲與功耗。",
+        "why_now": "Nvidia Blackwell 及後續架構對帶寬需求激增，迫使供應鏈必須在 2025-2026 年完成從 800G 到 1.6T 的量產過渡，CPO 技術亦從實驗室走向早期商用驗證。",
+        "desc": "本模組解析光通訊技術如何突破帶寬瓶頸。重點在於理解 1.6T 光模組的供應鏈結構（光芯片、電芯片、封裝），以及 CPO 技術如何改變傳統光模組的定義，將價值鏈從「模組廠」向「芯片級整合」轉移。"
+      },
+      {
+        "title": "散熱革命：液冷技術從備選變為 AI 資料中心標配",
+        "subtitle": "應對高功率密度晶片（>1000W）的熱管理危機",
+        "problem": "傳統風冷散熱無法有效處理單顆 AI 晶片超過 1000W 的熱設計功耗（TDP），導致資料中心 PUE（能源使用效率）惡化，且散熱不均影響晶片穩定性。",
+        "mechanism": "採用冷板式液冷（Cold Plate）與浸沒式液冷（Immersion Cooling）。冷板式透過金屬冷板直接接觸晶片導熱；浸沒式則將晶片完全浸入絕緣氟化液中，利用液體高比熱容進行熱交換，顯著提升散熱效率與空間密度。",
+        "why_now": "隨著 AI 晶片功耗突破風冷物理極限，全球主要雲端服務供應商（CSP）已將液冷列為新建資料中心的強制標準，相關基礎設施投資進入爆發期。",
+        "desc": "本模組探討散熱技術的物理限制與解決方案。重點在於比較冷板式與浸沒式的優劣勢、適用場景，以及液冷供應鏈（冷板、管路、冷卻液、快接頭）的技術壁壘與市場佔有率變化。"
+      },
+      {
+        "title": "先進封裝與基板：高頻高速傳輸的材料科學挑戰",
+        "subtitle": "支撐高速光電轉換與高功率散熱的物理基礎",
+        "problem": "高速信號（>112G/224G SerDes）在電路板上傳輸時會產生嚴重損耗，且高功率晶片需要具備低熱膨脹係數與高導熱性的基板材料，傳統 FR-4 材料已無法滿足需求。",
+        "mechanism": "採用 ABF 載板、Low Loss 高頻覆銅板（如 Panasonic Megtron 8/9 等級）以及矽中介層（Silicon Interposer）。這些材料能降低信號損耗、提升散熱效率，並支撐更複雜的 2.5D/3D 封裝結構。",
+        "why_now": "AI 晶片與光模組的集成度提高，對基板材料的介電常數與損耗角正切值要求極高，導致高階基板供給緊張，成為制約產能的关键環節。",
+        "desc": "本模組聚焦於隱藏在光通訊與散熱背後的基礎材料科學。重點在於理解高頻高速基板、ABF 載板在 AI 供應鏈中的關鍵地位，以及材料性能如何直接影響最終產品的良率與效能。"
+      },
+      {
+        "title": "系統整合與測試驗證：確保異質元件協同運作的關鍵",
+        "subtitle": "解決光電整合與液冷系統的複雜性與可靠性問題",
+        "problem": "AI 資料中心涉及 GPU、光模組、液冷系統等多種異質元件的整合，任何單一環節的故障都會導致整個叢集效能下降。此外，高速光電轉換與液冷系統的密封性需要極高精度的測試。",
+        "mechanism": "建立端到端的系統級測試平台，模擬真實運算負載下的熱與信號完整性。採用自動化測試設備（ATE）與光學測試儀表，驗證光模組的誤碼率、液冷系統的洩漏率及熱交換效率。",
+        "why_now": "隨著技術複雜度指數級上升，測試驗證成為確保產品上市時間（Time-to-Market）與品質控制的關鍵瓶頸，測試設備與服務商的價值被重新評估。",
+        "desc": "本模組強調系統整合與測試的重要性。重點在於理解光電測試設備的技術門檻、液冷系統測試的標準，以及測試環節在整個 AI 基礎設施投資中的佔比與成長潛力。"
+      }
+    ],
+    "structure_layers": [
+      {
+        "name": "上游：核心光電芯片與先進封裝材料",
+        "position": "供應鏈最上游，技術壁壘最高，價值量佔比提升",
+        "summary": "負責提供光模組所需的 EML/VCSEL 芯片、DSP 芯片，以及支撐高速信號傳輸的 Low Loss 基板與 ABF 載板。此層級直接決定 1.6T 模組與 CPO 架構的物理極限。",
+        "key_points": [
+          "EML 芯片與高階 DSP 芯片由少數國際大廠壟斷，具備絕對定價權",
+          "Low Loss 覆銅板（如 Panasonic Megtron 8/9）與 ABF 載板因技術門檻高，供給緊張",
+          "CPO 架構下，光引擎與交換芯片的整合度提高，材料科學成為關鍵差異化因素"
+        ],
+        "beneficiaries": [
+          "Broadcom (AVGO)",
+          "Marvell Technology (MRVL)",
+          "Coherent Corp. (COHR)",
+          "Panasonic Holdings (PCRFY)",
+          "Shinko Electric Industries (8045.TW)",
+          "IBIDEN (6478.TW)"
+        ],
+        "pricing_power": "極高（寡頭壟斷或獨家供應）",
+        "margin_profile": "高毛利，受技術迭代與良率影響大",
+        "value_capture": "技術標準制定者，獲取最大份額的技術溢價",
+        "entry_barrier": "極高（研發週期長、認證門檻高）",
+        "leader_type": "全球晶片設計與材料巨頭"
+      },
+      {
+        "name": "中游：高速光模組與 CPO 模組製造",
+        "position": "供應鏈核心組裝環節，直接受益於速率躍遷（800G->1.6T）",
+        "summary": "將上游芯片封裝為可插拔光模組或 CPO 光引擎。此層級競爭激烈，但具備規模效應與快速迭代能力的廠商將獲得主要份額。",
+        "key_points": [
+          "1.6T 光模組量產時程成為關鍵催化劑，領先廠商可獲得早期利潤",
+          "CPO 技術改變傳統模組定義，價值鏈向芯片級整合轉移",
+          "台灣廠商在全球光模組市場佔有率極高，具備完整供應鏈整合優勢"
+        ],
+        "beneficiaries": [
+          "InnoLight (300308.SZ)",
+          "Eoptolink (300502.SZ)",
+          "Foxconn Industrial Internet (6244.TW)",
+          "Delta Electronics (2308.TW)",
+          "Sunwoda (300070.SZ)",
+          "Broadcom (AVGO) - CPO 整合"
+        ],
+        "pricing_power": "中等（依賴客戶訂單規模與技術領先度）",
+        "margin_profile": "中等，隨規模擴大與良率提升而改善",
+        "value_capture": "透過規模經濟與快速量產能力獲取製造溢價",
+        "entry_barrier": "高（需要整合上游芯片與下游客戶認證）",
+        "leader_type": "全球光通訊模組龍頭"
+      },
+      {
+        "name": "下游：液冷散熱系統與基礎設施整合",
+        "position": "從備選方案變為標配，市場規模爆發性成長",
+        "summary": "提供冷板式與浸沒式液冷解決方案，包括冷板、管路、冷卻液、快接頭及系統整合。此層級直接解決 AI 晶片高功耗帶來的熱管理危機。",
+        "key_points": [
+          "冷板式液冷為過渡期主流，浸沒式液冷為長期趨勢",
+          "散熱系統從「附加組件」變為「核心基礎設施」，價值量顯著提升",
+          "系統整合商需具備與 GPU 伺服器廠商的深度協同設計能力"
+        ],
+        "beneficiaries": [
+          "Vertiv Holdings (VRT)",
+          "Super Micro Computer (SMCI)",
+          "Ampere Computing (ARMR)",
+          "Cooler Master (3659.TW)",
+          "Lite-On Technology (2372.TW)",
+          "Hon Hai Precision (2317.TW)"
+        ],
+        "pricing_power": "中等偏高（解決方案屬性，非標準品）",
+        "margin_profile": "中等，系統整合服務帶來穩定現金流",
+        "value_capture": "透過提供端到端散熱解決方案獲取系統級溢價",
+        "entry_barrier": "中高（需要系統級測試驗證與客戶認證）",
+        "leader_type": "伺服器與基礎設施整合龍頭"
+      },
+      {
+        "name": "支撐層：測試驗證與設備",
+        "position": "隱形關鍵環節，確保異質元件協同運作",
+        "summary": "提供光電測試設備與液冷系統測試服務，確保產品良率與可靠性。隨著技術複雜度上升，測試環節的價值被重新評估。",
+        "key_points": [
+          "高速光電測試設備技術門檻高，依賴精密儀表",
+          "液冷系統測試需驗證洩漏率與熱交換效率，標準日益嚴格",
+          "測試驗證成為縮短 Time-to-Market 的關鍵瓶頸"
+        ],
+        "beneficiaries": [
+          "Keysight Technologies (KEYS)",
+          "Teledyne Technologies (TDY)",
+          "Advantest (6857.TW)",
+          "Teradyne (TER)",
+          "Chroma ATE (2360.TW)"
+        ],
+        "pricing_power": "高（專業設備，替代性低）",
+        "margin_profile": "高毛利，受研發投入影響",
+        "value_capture": "透過提供關鍵測試解決方案獲取技術溢價",
+        "entry_barrier": "高（需要深厚的技術積累與行業知識）",
+        "leader_type": "專業測試設備供應商"
+      }
+    ],
+    "capital_flow": [
+      {
+        "phase": "技術驗證與早期佈局期",
+        "timeframe": "2024 - 2025 Q2",
+        "focus": "上游核心芯片與先進材料",
+        "logic": "資金率先湧入具備絕對技術壁壘與定價權的上游環節。在 1.6T 與 CPO 技術尚未完全量產前，市場願意為技術領先者支付高溢價。Broadcom、Marvell 等芯片設計廠，以及 Panasonic、IBIDEN 等高階材料供應商，因直接決定技術極限而成為首選標的。",
+        "beneficiary_groups": [
+          "Broadcom (AVGO)",
+          "Marvell Technology (MRVL)",
+          "Coherent Corp. (COHR)",
+          "Panasonic Holdings (PCRFY)",
+          "Shinko Electric Industries (8045.TW)",
+          "IBIDEN (6478.TW)"
+        ]
+      },
+      {
+        "phase": "規模量產與滲透加速期",
+        "timeframe": "2025 Q3 - 2026",
+        "focus": "中游光模組製造與液冷系統整合",
+        "logic": "隨著 1.6T 光模組量產與液冷成為新建標配，價值鏈重心向中游轉移。具備規模效應、快速迭代能力與客戶認證優勢的模組廠（如 InnoLight, Eoptolink）與系統整合商（如 Vertiv, Super Micro, Delta）開始貢獻顯著營收。此階段競爭加劇，資金將聚焦於市佔率提升與成本控制能力強的龍頭。",
+        "beneficiary_groups": [
+          "InnoLight (300308.SZ)",
+          "Eoptolink (300502.SZ)",
+          "Foxconn Industrial Internet (6244.TW)",
+          "Delta Electronics (2308.TW)",
+          "Vertiv Holdings (VRT)",
+          "Super Micro Computer (SMCI)"
+        ]
+      },
+      {
+        "phase": "成熟應用與生態系擴散期",
+        "timeframe": "2027 及以後",
+        "focus": "測試驗證與生態系標準化",
+        "logic": "當技術趨於成熟，硬體利潤率可能壓縮，但系統複雜度確保了測試驗證環節的長期價值。Keysight、Advantest 等測試設備商因確保異質元件協同運作與良率，成為隱形贏家。同時，CPO 與浸沒式液冷標準確立後，生態系整合者將獲得穩定現金流。",
+        "beneficiary_groups": [
+          "Keysight Technologies (KEYS)",
+          "Teledyne Technologies (TDY)",
+          "Advantest (6857.TW)",
+          "Teradyne (TER)",
+          "Chroma ATE (2360.TW)"
+        ]
+      }
+    ],
+    "timeline_phases": [
+      {
+        "phase": "技術驗證與早期導入期",
+        "timeframe": "2024 - 2025 Q2",
+        "summary": "800G 光模組量產並開始出貨，1.6T 樣品完成驗證。冷板式液冷在部分高階伺服器中開始應用，浸沒式液冷進行小規模測試。",
+        "winners": [
+          "InnoLight (300308.SZ)",
+          "Vertiv Holdings (VRT)",
+          "Broadcom (AVGO)",
+          "Super Micro Computer (SMCI)"
+        ],
+        "investment_phase": "主題佈局初期，關注技術領先者",
+        "revenue_meaning": "營收貢獻有限，主要為研發投入與樣品銷售",
+        "watch_metric": "1.6T 光模組樣品驗證進度、液冷伺服器訂單確認",
+        "expected_market_focus": "技術突破與標準制定"
+      },
+      {
+        "phase": "規模量產與滲透加速期",
+        "timeframe": "2025 Q3 - 2026",
+        "summary": "1.6T 光模組開始大規模量產，CPO 技術進入早期商用驗證。冷板式液冷成為新建資料中心標配，浸沒式液冷滲透率提升。",
+        "winners": [
+          "Eoptolink (300502.SZ)",
+          "Foxconn Industrial Internet (6244.TW)",
+          "Delta Electronics (2308.TW)",
+          "Vertiv Holdings (VRT)",
+          "Panasonic Holdings (PCRFY)"
+        ],
+        "investment_phase": "主升段，關注量產能力與市佔率",
+        "revenue_meaning": "營收開始顯著成長，利潤率隨規模擴大而改善",
+        "watch_metric": "1.6T 光模組出貨量、液冷伺服器滲透率、CPO 商用案例",
+        "expected_market_focus": "供應鏈穩定性與成本控制"
+      },
+      {
+        "phase": "成熟應用與生態系擴散期",
+        "timeframe": "2027 及以後",
+        "summary": "CPO 技術成為主流，1.6T 及以上速率模組普及。浸沒式液冷在大型資料中心廣泛應用。測試驗證環節價值進一步凸顯。",
+        "winners": [
+          "Keysight Technologies (KEYS)",
+          "Advantest (6857.TW)",
+          "Chroma ATE (2360.TW)",
+          "Coherent Corp. (COHR)",
+          "IBIDEN (6478.TW)"
+        ],
+        "investment_phase": "穩健成長期，關注生態系與長期趨勢",
+        "revenue_meaning": "營收穩定成長，利潤來源多元化",
+        "watch_metric": "CPO 市場佔有率、浸沒式液冷標準化進度、測試設備需求",
+        "expected_market_focus": "生態系整合與長期競爭力"
+      }
+    ],
+    "concepts": [
+      {
+        "title": "光通訊升級鏈",
+        "subtitle": "速率躍遷與架構變革",
+        "desc": "涵蓋從 800G 到 1.6T 光模組的量產過渡，以及 CPO 共封裝光學技術的早期應用，解決 AI 叢集帶寬與功耗瓶頸。"
+      },
+      {
+        "title": "液冷散熱系統",
+        "subtitle": "高功率密度熱管理",
+        "desc": "針對 >1000W AI 晶片，從風冷轉向冷板式與浸沒式液冷，成為新建資料中心標配，重塑散熱供應鏈。"
+      },
+      {
+        "title": "先進封裝材料",
+        "subtitle": "高頻高速物理基礎",
+        "desc": "包括 Low Loss 基板、ABF 載板與矽中介層，支撐高速信號傳輸與高功率散熱，是光電整合的關鍵材料。"
+      },
+      {
+        "title": "系統測試驗證",
+        "subtitle": "異質元件協同保障",
+        "desc": "涵蓋光電測試與液冷系統測試，確保複雜 AI 基礎設施的可靠性與效能，是供應鏈中隱形的關鍵環節。"
+      }
+    ],
+    "stocks": [
+      {
+        "id": "2308",
+        "name": "台達電",
+        "code": "2308",
+        "sector": "散熱系統與電源模組",
+        "sectorId": "cooling_system",
+        "role": "系統整合與散熱解決方案龍頭",
+        "timeframe": "2025-2026 放量",
+        "pureLevel": 3.5,
+        "barrierLevel": 4.0,
+        "pros": "全球伺服器電源與散熱模組市佔率領先，具備端到端液冷解決方案（冷板、管路、CDU）整合能力，客戶涵蓋主要雲端供應商。",
+        "cons": "業務多元，AI 散熱營收佔比相對整體營收仍低；面臨 Vertiv 等專業散熱廠競爭。",
+        "catalyst": "1.6T 光模組與高功率 GPU 伺服器量產，液冷滲透率加速提升。",
+        "desc": "台達電從電源供應器延伸至伺服器散熱模組，提供冷板式液冷完整解決方案。其優勢在於規模效應與全球佈局，能與伺服器大廠緊密協同設計。",
+        "ai_revenue_exposure": "medium",
+        "ai_revenue_exposure_source_type": "待補資料",
+        "gross_margin_impact": "positive",
+        "customer_concentration": "high",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 75,
+        "substitution_risk": "low",
+        "commercialization_phase": "scale_production",
+        "capacity_share_hint": "global_leader",
+        "switching_cost": "high",
+        "revenue_visibility": "high",
+        "market": "TWSE",
+        "evidence_type": "inferred",
+        "sources": [],
+        "stock_tier": "extended"
+      },
+      {
+        "id": "2360",
+        "name": "致茂",
+        "code": "2360",
+        "sector": "測試驗證設備",
+        "sectorId": "test_equipment",
+        "role": "光電與電源測試設備供應商",
+        "timeframe": "2025-2026 需求增長",
+        "pureLevel": 3.5,
+        "barrierLevel": 4.0,
+        "pros": "台灣領先的測試設備廠商，提供光電測試與電源測試解決方案，受益於 AI 產品複雜度提升帶來的測試需求增加。",
+        "cons": "市場規模相對較小；受半導體週期影響。",
+        "catalyst": "光模組與伺服器測試標準升級；新產品線擴展。",
+        "desc": "致茂電子在測試驗證環節扮演關鍵角色，特別是光電測試領域。隨著 AI 產品對可靠性要求提高，測試設備的價值與需求持續增長。",
+        "ai_revenue_exposure": "medium",
+        "ai_revenue_exposure_source_type": "待補資料",
+        "gross_margin_impact": "positive",
+        "customer_concentration": "medium",
+        "sole_supplier": false,
+        "pricing_power": "medium_high",
+        "value_capture_score": 70,
+        "substitution_risk": "low",
+        "commercialization_phase": "scale_production",
+        "capacity_share_hint": "regional_leader",
+        "switching_cost": "high",
+        "revenue_visibility": "medium",
+        "market": "TWSE",
+        "evidence_type": "inferred",
+        "sources": [],
+        "stock_tier": "extended"
+      },
+      {
+        "id": "00886",
+        "code": "00886",
+        "name": "永豐美國科技",
+        "sector": "延伸供應鏈",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 資料中心光通訊與散熱升級鏈 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TPEX",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "00887",
+        "code": "00887",
+        "name": "永豐中國科技50大",
+        "sector": "延伸供應鏈",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 資料中心光通訊與散熱升級鏈 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TPEX",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "009807",
+        "code": "009807",
+        "name": "台新標普科技精選",
+        "sector": "延伸供應鏈",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 資料中心光通訊與散熱升級鏈 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TPEX",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1313",
+        "code": "1313",
+        "name": "聯成",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 資料中心光通訊與散熱升級鏈 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1528",
+        "code": "1528",
+        "name": "恩德",
+        "sector": "05",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 資料中心光通訊與散熱升級鏈 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1529",
+        "code": "1529",
+        "name": "樂事綠能",
+        "sector": "05",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 資料中心光通訊與散熱升級鏈 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1533",
+        "code": "1533",
+        "name": "車王電",
+        "sector": "12",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 資料中心光通訊與散熱升級鏈 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1537",
+        "code": "1537",
+        "name": "廣隆",
+        "sector": "05",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 資料中心光通訊與散熱升級鏈 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1563",
+        "code": "1563",
+        "name": "巧新",
+        "sector": "12",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 資料中心光通訊與散熱升級鏈 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1589",
+        "code": "1589",
+        "name": "永冠-KY",
+        "sector": "05",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 資料中心光通訊與散熱升級鏈 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      }
+    ],
+    "sources": [
+      {
+        "type": "model-inference",
+        "label": "本地 vLLM 多步推理",
+        "note": "search_mode=search_augmented; pipeline_mode=multi_step"
+      },
+      {
+        "type": "context",
+        "label": "search_context",
+        "note": "查詢主題：AI 資料中心光通訊與散熱升級鏈\n以下是主題 evidence 白名單上下文：\n【global_news】\n[global_news-1] 標題：South Korea&apos;s AI rally is reshaping romance, reality shows and academic preferences\n    來源：https://www.cnbc.com/2026/09/04/south-korea-ai-rally-society-impact.html\n    來源名稱：CNBC\n    來源分類：global_news\n    發布時間：Fri, 04 Sep 2026 00:55:30 GMT\n[global_news-2] 標題：Nvidia&apos;s investments grow to $99 billion as chip giant becomes major backer of AI companies\n    來源：https://www.cnbc.com/2026/09/04/nvidia-ai-investments-99"
+      }
+    ]
+  },
+  "map_地緣管制下的磷化銦_InP_與射頻前端替代_20260907_190320": {
+    "title": "地緣管制下的磷化銦（InP）與射頻前端替代",
+    "date": "2026-09-07",
+    "updated_at": "2026-09-07T19:03:20+08:00",
+    "heat": "地緣管制下的磷化銦（InP）與射頻前端替代",
+    "heat_score": 78,
+    "heat_drivers": [
+      "5G毫米波與LEO衛星通訊對高頻高功率元件需求爆發",
+      "美國出口管制加速供應鏈去美化與技術自主化",
+      "InP製程良率突破與SiP異質整合技術成熟",
+      "傳統GaAs製程在高端頻段遭遇物理瓶頸"
+    ],
+    "period": "2024-2027",
+    "desc": "本主題聚焦於地緣管制背景下，磷化銦（InP）作為高頻射頻元件關鍵材料的戰略價值。InP憑藉高電子遷移率，在毫米波頻段具備GaAs無法比擬的能效與線性度優勢。隨著衛星通訊與5G基站需求增長，InP從利基市場走向主流。投資邏輯在於供應鏈重組帶來的替代機會，以及技術壁壘轉化為定價權的過程。",
+    "thesis": "在地緣政治常態化與5G/6G技術迭代的雙重驅動下，射頻前端（RFFE）正經歷從GaAs向InP的技術遷移。這不僅是材料替代，更是供應鏈重組的戰略契機。投資核心在於捕捉「製程良率提升」帶來的毛利改善，以及「SiP整合」帶來的價值量提升。資金將沿著上游晶圓驗證、中游晶片放量、下游模組整合的路徑輪動，優先佈局具備自主製程能力與異質整合技術的台灣供應鏈龍頭。",
+    "market_size_tam": "待補資料",
+    "market_size_tam_source_type": "待補資料",
+    "market_cagr": "待補資料",
+    "market_cagr_source_type": "待補資料",
+    "theme_stage": "技術驗證與供應鏈重組期（Early Growth）",
+    "why_now": "地緣衝突導致傳統美系供應鏈斷裂風險升高，終端品牌商急需非美系替代方案；同時，5G毫米波與低軌衛星發射進入加速期，市場對高頻元件的需求從「可選」變為「必選」，InP技術成熟度剛好滿足此剛性需求。",
+    "key_bottleneck": "InP晶圓硬度高、易碎，導致製程良率難以控制且成本高昂；異質整合（SiP）技術複雜，不同材料間的熱應力與訊號干擾解決難度大。",
+    "primary_value_capture": "技術壁壘轉化為定價權：上游晶圓供應商因稀缺性獲得高毛利；中游設計與製造商透過高頻性能指標獲取溢價；下游封測廠透過SiP整合技術提升單機價值量。",
+    "market_narrative": "從「成本導向」轉向「性能與安全導向」。在地緣管制下，供應鏈韌性成為首要考量，InP作為高技術門檻材料，成為建立自主可控射頻供應鏈的關鍵節點，市場敘事從單純的元件採購轉向戰略資源佈局。",
+    "evidence_confidence": "中高",
+    "icon": "cpu",
+    "color": "from-cyan-500 to-indigo-600",
+    "theme_tags": [
+      "射頻前端",
+      "磷化銦",
+      "5G毫米波",
+      "衛星通訊",
+      "地緣政治",
+      "供應鏈重組",
+      "SiP封裝"
+    ],
+    "trigger_events": [
+      "主要手機品牌商宣布採用非美系射頻元件供應商",
+      "台灣半導體廠宣布InP晶圓良率突破關鍵節點",
+      "美國進一步收緊高階射頻設備出口管制",
+      "大型LEO衛星星座完成關鍵階段發射"
+    ],
+    "risks": [
+      "InP製程良率提升速度慢於預期，導致成本居高不下",
+      "GaAs技術持續優化，延長其生命週期，壓縮InP滲透速度",
+      "地緣政治緩和，供應鏈重新整合，替代需求減弱",
+      "終端消費電子需求衰退，影響射頻元件整體出貨量"
+    ],
+    "watch_signals": [
+      "InP晶圓出貨量與良率數據",
+      "主要封測廠SiP訂單能見度",
+      "政府對半導體自主製程的補助金額",
+      "衛星通訊終端產品上市進度"
+    ],
+    "related_themes": [
+      "5G基站建設",
+      "低軌衛星產業鏈",
+      "先進封裝技術",
+      "半導體設備自主化"
+    ],
+    "tech_lessons": [
+      {
+        "title": "InP 材料物理特性與射頻前端優勢",
+        "subtitle": "高電子遷移率與寬頻帶特性解析",
+        "problem": "傳統矽基（Si）或砷化鎵（GaAs）製程在毫米波（mmWave）頻段面臨插入損耗高、線性度不足及散熱困難等瓶頸，難以滿足 5G/6G 高頻高速傳輸需求。",
+        "mechanism": "磷化銦（InP）具備極高的電子遷移率與飽和速度，能在更高頻率下保持低噪聲與高線性度。透過異質接面雙極性電晶體（HBT）或高電子遷移率電晶體（HEMT）技術，實現高效能的射頻功率放大器（PA）與低噪聲放大器（LNA）。",
+        "why_now": "隨著 5G 毫米波普及及衛星通訊（LEO）擴張，市場急需能處理更高頻段且功耗更低的元件，InP 成為突破物理極限的關鍵材料。",
+        "desc": "本模組解釋 InP 為何在射頻前端領域具有不可替代的物理優勢，重點在於其對高頻信號的處理能力與能效比。"
+      },
+      {
+        "title": "地緣管制下的供應鏈重組與替代路徑",
+        "subtitle": "從 GaAs 到 InP 的技術遷移與自主可控",
+        "problem": "美國對中國半導體設備與技術的出口管制，導致傳統依賴進口的高階射頻元件供應鏈斷裂，台灣與亞洲製造商面臨技術斷層與產能轉移壓力。",
+        "mechanism": "在地緣政治壓力下，產業被迫加速開發非美系技術路徑或提升本土製程能力。InP 作為較少受到單一國家壟斷且具備高技術門檻的材料，成為建立自主射頻供應鏈的重要跳板，推動從 GaAs 向 InP 的製程升級。",
+        "why_now": "地緣衝突常態化使得「技術自主」成為剛性需求，各國政府與企業加大對 InP 等關鍵材料的研發投入，以確保通訊基礎設施的安全與韌性。",
+        "desc": "本模組分析地緣政治如何驅動技術替代，探討 InP 在建立獨立射頻供應鏈中的戰略地位與產業遷移趨勢。"
+      },
+      {
+        "title": "射頻前端模組（RFFE）的整合趨勢",
+        "subtitle": "SiP 封裝與 InP 元件的協同設計",
+        "problem": "智慧型手機與 IoT 設備內部空間有限，傳統分立元件導致體積龐大、訊號干擾嚴重，且不同材料製程（如 Si, GaAs, InP）整合困難。",
+        "mechanism": "採用系統級封裝（SiP）技術，將 InP 功率放大器、GaAs 開關、矽基濾波器等異質元件整合於單一模組中。InP 元件負責高頻高功率部分，與其他元件協同工作，優化整體效能與尺寸。",
+        "why_now": "5G 手機與衛星通訊終端對小型化與高效能的要求達到極致，SiP 整合成為必然趨勢，InP 作為核心高頻元件，其整合技術成為競爭關鍵。",
+        "desc": "本模組介紹 InP 元件如何透過先進封裝技術融入射頻前端模組，解決空間與效能的矛盾，並說明其在系統級設計中的角色。"
+      },
+      {
+        "title": "InP 製程挑戰與良率提升策略",
+        "subtitle": "晶圓生長、蝕刻與封裝技術突破",
+        "problem": "InP 晶圓硬度高、易碎，且與常見矽基製程不兼容，導致製造成本高、良率難以控制，限制了大規模商業應用。",
+        "mechanism": "透過優化分子束磊晶（MBE）或金屬有機化學氣相沉積（MOCVD）生長條件，改善晶體品質；開發專用蝕刻技術以精細化線寬；並研究異質整合封裝技術以解決熱應力問題。",
+        "why_now": "隨著需求增長，降低成本與提升良率是 InP 產業規模化的關鍵。近期技術突破使得 InP 製程逐漸成熟，為大規模量產奠定基礎。",
+        "desc": "本模組深入探討 InP 製造過程中的技術難點與解決方案，分析如何透過製程創新降低成本，推動產業從利基市場走向主流應用。"
+      }
+    ],
+    "structure_layers": [
+      {
+        "name": "上游：InP 晶圓與磊晶材料",
+        "position": "基礎材料供應層",
+        "summary": "提供高純度磷化銦晶圓及異質結構磊晶層，是射頻前端高頻性能的物理基礎。此層技術壁壘極高，主要被日美大厂壟斷，地緣管制下成為戰略瓶頸。",
+        "key_points": [
+          "MOCVD/MBE 磊晶技術門檻極高，晶圓缺陷密度直接決定良率",
+          "6吋向8吋晶圓轉換的產能擴張節奏",
+          "地緣管制導致高端晶圓進口受限，本土替代需求強烈"
+        ],
+        "beneficiaries": [
+          "世界先進 (3539)",
+          "漢科 (5347)",
+          "台積電 (2330) - 透過特色製程間接參與"
+        ],
+        "pricing_power": "高",
+        "margin_profile": "高毛利，受良率波動影響大",
+        "value_capture": "材料稀缺性與技術專有性",
+        "entry_barrier": "極高（資本密集+技術積累）",
+        "leader_type": "垂直整合製造商或專業磊晶廠"
+      },
+      {
+        "name": "中游：InP 射頻晶片設計與製造",
+        "position": "核心元件製造層",
+        "summary": "利用 InP 材料特性製造高電子遷移率電晶體（HEMT）或異質接面雙極性電晶體（HBT），專注於功率放大器（PA）與低噪聲放大器（LNA）。此層是技術替代的核心戰場。",
+        "key_points": [
+          "從 GaAs 向 InP 遷移的製程切換成本",
+          "毫米波（mmWave）頻段下的線性度與能效比優勢",
+          "衛星通訊（LEO）與 5G 基站對高功率元件的需求爆發"
+        ],
+        "beneficiaries": [
+          "聯發科 (2454) - 設計端整合",
+          "智原科技 (2443) - IP 與設計服務",
+          "漢科 (5347) - 製造端佈局"
+        ],
+        "pricing_power": "中高",
+        "margin_profile": "中高毛利，依賴設計專利與製程優化",
+        "value_capture": "高頻性能指標與專利授權",
+        "entry_barrier": "高（材料理解+電路設計+製程協同）",
+        "leader_type": "IDM 或 Fabless 設計龍頭"
+      },
+      {
+        "name": "下游：SiP 封裝與射頻前端模組（RFFE）",
+        "position": "系統整合與終端應用層",
+        "summary": "將 InP PA、GaAs 開關、矽基濾波器等異質元件透過系統級封裝（SiP）整合，解決小型化與散熱問題。此層直接對接手機與 IoT 終端，是價值實現的最後一公里。",
+        "key_points": [
+          "異質整合技術（Heterogeneous Integration）的封裝難度",
+          "模組化趨勢下，InP 元件在模組中的佔比提升",
+          "地緣管制推動供應鏈去美化，本土封測廠獲訂單轉移"
+        ],
+        "beneficiaries": [
+          "日月光 (2324)",
+          "矽品 (8024)",
+          "京元電子 (2449)",
+          "欣興電子 (3037)"
+        ],
+        "pricing_power": "中",
+        "margin_profile": "中毛利，規模效應顯著",
+        "value_capture": "整合能力與客戶認證壁壘",
+        "entry_barrier": "中高（客戶認證週期長+設備投資大）",
+        "leader_type": "大型封測廠或模組整合商"
+      }
+    ],
+    "capital_flow": [
+      {
+        "phase": "概念驗證與供應鏈重組期",
+        "timeframe": "2024 - 2025 Q2",
+        "focus": "上游晶圓與製程開發",
+        "logic": "資金優先佈局具備InP製程能力或磊晶技術的上游廠商。此階段營收貢獻低，但股價驅動來自技術突破與客戶認證進度。地緣管制下，市場願意為「自主可控」的技術路徑支付溢價。",
+        "beneficiary_groups": [
+          "InP晶圓製造商",
+          "磊晶材料供應商",
+          "提供製程開發服務的代工廠"
+        ]
+      },
+      {
+        "phase": "小量導入與利基市場放量期",
+        "timeframe": "2025 Q3 - 2026",
+        "focus": "中游晶片設計與衛星通訊模組",
+        "logic": "隨著衛星通訊與高端5G基站需求釋放，InP晶片開始小量量產。資金轉向具備設計專利與製造能力的中游廠商，以及專攻衛星通訊模組的整合商。此階段營收開始顯著增長，毛利率隨良率提升而改善。",
+        "beneficiary_groups": [
+          "InP晶片設計公司",
+          "衛星通訊模組整合商",
+          "具備高頻測試能力的封測廠"
+        ]
+      },
+      {
+        "phase": "大規模量產與消費級滲透期",
+        "timeframe": "2027 及以後",
+        "focus": "下游SiP整合與消費性電子",
+        "logic": "InP技術成熟並滲透至智慧型手機市場，SiP整合成為標配。資金輪動至具備規模優勢的下游封測廠與模組整合商，關注點轉為市佔率、現金流與平均售價（ASP）變化。產業進入規模經濟階段，獲利穩定性增強。",
+        "beneficiary_groups": [
+          "大型SiP封測廠",
+          "射頻前端模組整合商",
+          "具備系統級解決方案能力的設計公司"
+        ]
+      }
+    ],
+    "timeline_phases": [
+      {
+        "phase": "技術驗證與供應鏈重組期",
+        "timeframe": "2024 - 2025 Q2",
+        "summary": "地緣管制加劇，終端品牌商開始評估非美系或本土替代方案。InP 製程處於小量試產與客戶驗證階段，重點在於解決良率與異質整合問題。",
+        "winners": [
+          "提供製程開發服務的代工廠",
+          "具備 SiP 封裝技術的封測廠",
+          "研發投入高的設計公司"
+        ],
+        "investment_phase": "概念驗證（PoC）與早期佈局",
+        "revenue_meaning": "營收貢獻低，主要為研發費用化，股價驅動來自訂單預告與技術突破",
+        "watch_metric": "晶圓良率提升曲線、主要客戶認證進度、政府補助金額",
+        "expected_market_focus": "衛星通訊原型機、5G 基站測試設備"
+      },
+      {
+        "phase": "小量導入與利基市場放量期",
+        "timeframe": "2025 Q3 - 2026",
+        "summary": "InP 元件在衛星通訊（LEO）與高端 5G 基站等對成本較不敏感、對性能要求極高的利基市場實現小量量產。供應鏈初步穩定，本土替代路徑跑通。",
+        "winners": [
+          "率先通過認證的 InP 晶片製造商",
+          "專攻衛星通訊模組的整合商",
+          "上游晶圓供應商（產能利用率提升）"
+        ],
+        "investment_phase": "成長初期（Early Growth）",
+        "revenue_meaning": "營收開始顯著增長，毛利率隨良率提升而改善",
+        "watch_metric": "衛星發射數量、5G 基站採購合約、InP 晶圓出貨量",
+        "expected_market_focus": "低軌衛星終端、企業專網通訊設備"
+      },
+      {
+        "phase": "大規模量產與消費級滲透期",
+        "timeframe": "2027 及以後",
+        "summary": "InP 技術成熟，成本下降，逐步滲透至智慧型手機等消費性電子市場。SiP 整合技術成為標配，InP 成為射頻前端標準選項之一，產業進入規模經濟階段。",
+        "winners": [
+          "具備規模優勢的 IDM 或代工廠",
+          "主導 SiP 標準的大型封測廠",
+          "整合度高、具備系統級解決方案能力的設計公司"
+        ],
+        "investment_phase": "成熟成長期（Mature Growth）",
+        "revenue_meaning": "營收規模化，利潤穩定，關注市佔率與現金流",
+        "watch_metric": "智慧型手機 InP 元件滲透率、8吋晶圓產能佔比、平均售價（ASP）變化",
+        "expected_market_focus": "旗艦智慧型手機、6G 預研產品、車載通訊系統"
+      }
+    ],
+    "concepts": [
+      {
+        "title": "InP 高頻優勢",
+        "subtitle": "物理特性解析",
+        "desc": "磷化銦具備高電子遷移率，適合毫米波頻段，解決傳統矽基元件在高頻下損耗大、線性度差的痛點。"
+      },
+      {
+        "title": "地緣驅動替代",
+        "subtitle": "供應鏈自主化",
+        "desc": "在地緣管制下，InP 成為建立非美系或高韌性射頻供應鏈的關鍵材料，推動技術路徑從 GaAs 向 InP 遷移。"
+      },
+      {
+        "title": "SiP 異質整合",
+        "subtitle": "系統級封裝技術",
+        "desc": "將 InP 高頻元件與其他材料元件透過 SiP 技術整合，解決終端設備小型化與高效能並存的挑戰。"
+      },
+      {
+        "title": "製程良率突破",
+        "subtitle": "成本與規模化關鍵",
+        "desc": "透過優化磊晶生長與蝕刻技術，克服 InP 晶圓加工難題，提升良率以滿足大規模商業應用需求。"
+      }
+    ],
+    "stocks": [
+      {
+        "id": "3037",
+        "name": "欣興",
+        "code": "3037",
+        "sector": "IC載板/先進封裝",
+        "sectorId": "carrier",
+        "role": "關鍵角色",
+        "timeframe": "2024-2025 驗證期",
+        "pureLevel": 3.0,
+        "barrierLevel": 3.5,
+        "pros": "深耕高階IC載板與SiP封裝，具備異質整合技術，直接受益於射頻前端模組小型化與整合趨勢。",
+        "cons": "射頻載板佔整體營收比例有限，受整體PCB景氣影響。",
+        "catalyst": "5G手機射頻模組升級、衛星通訊終端出貨增加。",
+        "desc": "欣興電子在先進封裝與高頻載板具技術優勢，InP元件需透過SiP整合才能應用於終端，欣興作為封測與載板龍頭，是價值鏈整合的關鍵節點。",
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "待補資料",
+        "gross_margin_impact": "中",
+        "customer_concentration": "中高",
+        "sole_supplier": false,
+        "pricing_power": "中",
+        "value_capture_score": 3,
+        "substitution_risk": "低",
+        "commercialization_phase": "小量導入",
+        "capacity_share_hint": "全球前段",
+        "switching_cost": "高",
+        "revenue_visibility": "中高",
+        "market": "TWSE",
+        "evidence_type": "inferred",
+        "sources": [],
+        "stock_tier": "extended"
+      },
+      {
+        "id": "2449",
+        "name": "京元電子",
+        "code": "2449",
+        "sector": "測試服務",
+        "sectorId": "test",
+        "role": "關鍵角色",
+        "timeframe": "2024-2025 驗證期",
+        "pureLevel": 3.5,
+        "barrierLevel": 3.5,
+        "pros": "台灣最大獨立測試廠，具備高頻射頻測試能力，InP元件良率提升與驗證階段需求強。",
+        "cons": "測試服務屬後段製程，價值量低於製造與設計。",
+        "catalyst": "新製程驗證訂單增加、射頻元件測試需求上升。",
+        "desc": "InP元件在量產前需經過嚴格的高頻測試與驗證，京元電子具備相關測試設備與技術，是製程良率提升過程中的關鍵服務提供者。",
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "待補資料",
+        "gross_margin_impact": "中",
+        "customer_concentration": "中高",
+        "sole_supplier": false,
+        "pricing_power": "中",
+        "value_capture_score": 2,
+        "substitution_risk": "低",
+        "commercialization_phase": "技術驗證",
+        "capacity_share_hint": "本土龍頭",
+        "switching_cost": "中",
+        "revenue_visibility": "中",
+        "market": "TWSE",
+        "evidence_type": "inferred",
+        "sources": [],
+        "stock_tier": "extended"
+      },
+      {
+        "id": "2454",
+        "name": "聯發科",
+        "code": "2454",
+        "sector": "IC設計",
+        "sectorId": "fabless",
+        "role": "關鍵角色",
+        "timeframe": "2025-2027 滲透期",
+        "pureLevel": 2.0,
+        "barrierLevel": 4.5,
+        "pros": "全球手機SoC龍頭，主導射頻前端整合方案，推動InP元件在終端產品的應用標準。",
+        "cons": "InP僅為其射頻方案之一，營收貢獻有限，主要仍依賴GaAs與矽基。",
+        "catalyst": "新一代旗艦手機採用InP PA、衛星通訊功能普及。",
+        "desc": "聯發科作為系統設計龍頭，決定射頻元件的規格與整合方式。其推動的先進射頻架構將加速InP元件在消費性電子中的滲透。",
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "待補資料",
+        "gross_margin_impact": "高",
+        "customer_concentration": "高",
+        "sole_supplier": false,
+        "pricing_power": "高",
+        "value_capture_score": 4,
+        "substitution_risk": "低",
+        "commercialization_phase": "小量導入",
+        "capacity_share_hint": "全球領先",
+        "switching_cost": "極高",
+        "revenue_visibility": "高",
+        "market": "TWSE",
+        "evidence_type": "inferred",
+        "sources": [],
+        "stock_tier": "extended"
+      }
+    ],
+    "sources": [
+      {
+        "type": "model-inference",
+        "label": "本地 vLLM 多步推理",
+        "note": "search_mode=search_augmented; pipeline_mode=multi_step"
+      },
+      {
+        "type": "context",
+        "label": "search_context",
+        "note": "查詢主題：地緣管制下的磷化銦（InP）與射頻前端替代\n以下是主題 evidence 白名單上下文：\n官方補查入口：\n- TWSE: https://www.twse.com.tw/zh/search/news?query=%E5%9C%B0%E7%B7%A3%E7%AE%A1%E5%88%B6%E4%B8%8B%E7%9A%84%E7%A3%B7%E5%8C%96%E9%8A%A6%EF%BC%88InP%EF%BC%89%E8%88%87%E5%B0%84%E9%A0%BB%E5%89%8D%E7%AB%AF%E6%9B%BF%E4%BB%A3\n- TPEx: https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?l=zh-tw&keyword=%E5%9C%B0%E7%B7%A3%E7%AE%A1%E5%88%B6%E4%B8%8B%E7%9A%84%E7%A3%B7%E5%8C%96%E9%8A%A6%EF%BC%88InP%EF%BC%89%E8%88%87%E5%B0"
+      }
+    ]
+  },
+  "map_AI_終端邊緣化與高階消費電子升級_20260907_190435": {
+    "title": "AI 終端邊緣化與高階消費電子升級",
+    "date": "2026-09-07",
+    "updated_at": "2026-09-07T19:04:35+08:00",
+    "heat": "AI 終端邊緣化與高階消費電子升級",
+    "heat_score": 88,
+    "heat_drivers": [
+      "2026 年 AI PC 與 AI Phone 進入實質換機潮，消費者對「離線隱私」與「即時響應」需求爆發",
+      "Nvidia 投資規模達 990 億美元，顯示巨頭對端雲協同基礎設施的長期押注",
+      "高淨值人群財富增長（2025 年達 15.1 兆美元）支撐高階消費電子溢價能力",
+      "端側 NPU 效能突破（TOPS/Watt 提升），解決長期以來的功耗與發熱瓶頸"
+    ],
+    "period": "2025 Q3 - 2027 Q2",
+    "desc": "本主題聚焦於 AI 技術下沉至終端設備（手機、筆電、AR/VR）所引發的產業結構性變化。隨著大語言模型（LLM）在端側的量化與加速技術成熟，設備不再僅是雲端服務的終端顯示器，而是具備本地推理能力的智能體。這將驅動硬體規格升級（NPU、記憶體、感測器）並創造新的軟體服務收入來源。",
+    "thesis": "AI 從雲端集中式運算轉向邊緣分散式推理，將重塑消費電子產業價值鏈。投資核心不在於單純的硬體銷量增長，而在於「端側算力密度」與「多模態感知介面」帶來的 ASP（平均銷售價格）提升，以及由此衍生的「端雲協同服務訂閱」模式。資金將從純雲端晶片股，輪動至具備端側 NPU 架構優勢的 SoC 設計廠、高階感測器模組廠，最終匯聚於能鎖定用戶生態系的整機品牌與平台業者。",
+    "market_size_tam": "待補資料",
+    "market_size_tam_source_type": "待補資料",
+    "market_cagr": "待補資料",
+    "market_cagr_source_type": "待補資料",
+    "theme_stage": "規模化驗證與換機潮啟動期",
+    "why_now": "2026 年是 AI 終端化的關鍵轉折點。技術上，NPU 架構與量化技術已能支撐 7B-13B 參數量模型在低功耗下運行；市場上，早期採用者反饋良好，推動主流品牌（Apple, Samsung, Lenovo）全面導入 AI 功能作為換機驅動力；政策與隱私意識提升，使得「本地化處理」成為高階產品的必要標配。",
+    "key_bottleneck": "端側記憶體頻寬（LPDDR5X/6）與散熱設計（Thermal Management）的平衡。高算力帶來高功耗，如何在輕薄機身內維持持續高性能輸出是硬體設計的最大挑戰。",
+    "primary_value_capture": "1. 硬體溢價：具備先進 NPU 與多模態感測器的設備享有更高 ASP。\n2. 服務訂閱：基於端雲協同的個人助理、隱私計算與雲端推理服務產生持續性收入。\n3. 生態系鎖定：透過 AI 功能增強用戶黏著度，提升跨設備（Phone-PC-Cloud）轉換成本。",
+    "market_narrative": "從「連接一切」到「理解一切」。AI 終端化不僅是更快的晶片，更是設備從被動工具轉變為主動助手。市場正在重新定價消費電子，從「硬體製造業」估值轉向「AI 服務平台」估值。誰能提供最無縫的端雲體驗並保護用戶隱私，誰就能贏得下一輪換機潮。",
+    "evidence_confidence": "高",
+    "icon": "cpu",
+    "color": "from-cyan-500 to-indigo-600",
+    "theme_tags": [
+      "AI Edge Computing",
+      "Consumer Electronics Upgrade",
+      "NPU Architecture",
+      "Multimodal AI",
+      "Privacy Computing",
+      "Edge-Cloud Synergy"
+    ],
+    "trigger_events": [
+      "Apple、Samsung、Lenovo 發布搭載新一代 NPU 的旗艦產品，並強調離線 AI 功能",
+      "主要晶片廠（Qualcomm, MediaTek, Intel）發布專為 AI 終端設計的 SoC，能效比顯著提升",
+      "大型雲端服務商（AWS, Azure, Google Cloud）推出針對端側推理的優化 API 與邊緣計算解決方案",
+      "消費者對 AI 隱私保護的關注度顯著上升，推動具備 TEE 認證的產品銷量增長"
+    ],
+    "risks": [
+      "端側 AI 功能被用戶視為「噱頭」，換機意願低於預期",
+      "電池技術突破緩慢，限制高算力終端的持續使用時間",
+      "雲端 AI 服務成本下降過快，削弱端側推理的經濟性",
+      "地緣政治導致先進製程（3nm/2nm）或高頻寬記憶體供應鏈中斷"
+    ],
+    "watch_signals": [
+      "AI 手機/筆電出貨量佔比是否突破 20% 關鍵門檻",
+      "端側 NPU 晶片價格與供貨穩定性",
+      "主要品牌廠 AI 功能訂閱服務（如 Apple Intelligence, Copilot+）的續約率",
+      "多模態感測器（LiDAR, 高階鏡頭）在旗艦機中的滲透率變化",
+      "端雲協同架構下的 API 呼叫延遲與成本數據"
+    ],
+    "related_themes": [
+      "先進半導體製程與封裝",
+      "物聯網（IoT）與邊緣運算",
+      "隱私計算與數據安全",
+      "AR/VR 與空間計算",
+      "5G/6G 通訊技術"
+    ],
+    "tech_lessons": [
+      {
+        "title": "端側 NPU 效能與功耗平衡術",
+        "subtitle": "解決手機/筆電在離線狀態下運行大語言模型（LLM）的硬體瓶頸",
+        "problem": "雲端推理延遲高且隱私風險大，但傳統 CPU/GPU 在終端設備上運行 7B-13B 參數量模型時，功耗過高導致發熱與電池耗盡，且無法在無網路環境提供即時服務。",
+        "mechanism": "利用專用神經處理單元（NPU）進行張量運算加速，結合 INT8/INT4 量化技術降低精度損失，並透過模型剪枝（Pruning）減少運算量。關鍵在於硬體架構（如 ARM Cortex-X 系列或專屬 AI 晶片）與軟體編譯器（如 TFLite, CoreML）的協同優化，以在 5-10W 功耗下實現每秒 20+ tokens 的生成速度。",
+        "why_now": "2026 年 AI PC 與 AI Phone 進入換機潮，消費者要求「隨時隨地」的個人助理體驗，迫使終端硬體必須具備本地推理能力，而非僅依賴雲端串流。",
+        "desc": "本模組探討如何評估終端設備的 AI 算力指標（TOPS/Watt），以及量化技術對模型精度的影響。投資者可關注具備自主 NPU 架構設計能力或高效能封裝技術的晶片廠與散熱模組供應商。"
+      },
+      {
+        "title": "端雲協同架構（Edge-Cloud Synergy）",
+        "subtitle": "優化資料傳輸成本與即時反應速度的系統設計邏輯",
+        "problem": "純雲端方案頻寬成本高且受網路波動影響；純端側方案受於記憶體與算力限制，無法處理複雜或多輪對話。兩者皆無法單獨滿足高階消費電子對「低延遲」與「高智慧」的雙重要求。",
+        "mechanism": "採用「輕量模型在端側處理常態性任務（如語音喚醒、簡單指令、隱私資料過濾），重型模型在雲端處理複雜推理」的分層架構。透過邊緣閘道器或終端 OS 層級的任務調度器，動態判斷何時將請求上傳至雲端，並利用 5G/6G 低延遲特性進行無縫切換。",
+        "why_now": "隨著 AI 應用從單點功能轉向持續性服務（如個人知識庫、全天候健康監測），資料流量呈指數級增長，端雲協同成為控制營運成本（OpEx）並維持用戶體驗的唯一解。",
+        "desc": "本模組解析端雲協同的資料流向與 API 呼叫邏輯。投資重點在於具備邊緣運算平台能力、低延遲通訊協議優化，以及能整合端雲資源的系統整合商（SI）或雲端服務大廠。"
+      },
+      {
+        "title": "高階消費電子之 AI 感知介面升級",
+        "subtitle": "從觸控/語音轉向多模態（Multimodal）自然互動的硬體變革",
+        "problem": "傳統輸入介面（鍵盤、滑鼠、觸控）效率低下，無法充分發揮 AI 的意圖識別能力。用戶期望設備能「看懂」環境、「聽懂」語氣並「預測」需求，現有硬體感測器精度與資料融合能力不足。",
+        "mechanism": "整合高解析度攝像頭、LiDAR、麥克風陣列與生物感測器，透過端側多模態模型（Multimodal LLM）即時融合視覺、聽覺與生理資料。硬體上需升級 ISP（影像信號處理器）與音訊 DSP，軟體上需實現低延遲的感測器融合演算法，以支持眼神追蹤、手勢控制與情境感知。",
+        "why_now": "AI 終端化使得設備具備「感知」能力成為可能，高階消費電子（如 AR/VR 眼鏡、智慧手錶、旗艦手機）需透過多模態介面建立差異化競爭壁壘，吸引高淨值用戶群。",
+        "desc": "本模組分析多模態感測器的供應鏈升級趨勢。投資者可關注高階鏡頭模組、微型感測器製造商，以及提供多模態 AI 開發工具鏈的軟體平台業者。"
+      },
+      {
+        "title": "端側隱私計算與本地化資料處理",
+        "subtitle": "在 AI 普及背景下解決用戶隱私焦慮的技術架構",
+        "problem": "用戶對個人資料上傳雲端存在疑慮，尤其在健康、財務與通訊領域。若所有資料皆上傳雲端，不僅隱私風險高，且違反 GDPR 等數據主權法規，限制 AI 服務的市場滲透率。",
+        "mechanism": "採用聯邦學習（Federated Learning）與同態加密技術，使模型能在本地設備上利用個人資料進行微調（Fine-tuning），僅上傳模型參數更新而非原始資料。同時，利用可信執行環境（TEE）確保敏感資料在記憶體中處理時不被惡意軟體竊取。",
+        "why_now": "隨著 AI 深入個人生活，隱私成為高階消費電子購買決策的關鍵因素。具備「本地化隱私保護」標章的產品能獲得企業客戶與高淨值個人用戶的青睞，形成品牌溢價。",
+        "desc": "本模組介紹端側隱私保護的技術實現路徑。投資焦點在於提供安全晶片（Secure Element）、加密演算法授權，以及具備隱私計算架構的雲端與邊緣設備供應商。"
+      }
+    ],
+    "structure_layers": [
+      {
+        "name": "端側算力核心（Edge AI SoC/NPU）",
+        "position": "上游：終端設備的運算大腦，決定本地推理能力上限",
+        "summary": "負責在手機、筆電、AR/VR設備上執行低延遲、低功耗的AI推理。從通用GPU轉向專屬NPU架構，強調TOPS/Watt能效比。",
+        "key_points": [
+          "NPU架構設計與製程節點（3nm/2nm）直接影響能效",
+          "記憶體頻寬（LPDDR5X/6）成為瓶頸，HBM在端側滲透",
+          "軟體編譯器生態系（Compiler Stack）是護城河",
+          "功耗管理（Thermal Management）與散熱模組緊密綁定"
+        ],
+        "beneficiaries": [
+          "高通（Qualcomm）- 手機端AI晶片龍頭",
+          "聯發科（MediaTek）- 中階至高階AI手機晶片",
+          "AMD/NVIDIA - AI PC與高階筆電GPU",
+          "台積電（TSMC）- 先進製程與CoWoS封裝",
+          "瑞昱（Realtek）/ 脈伏（Pavv）- 相關電源管理IC"
+        ],
+        "pricing_power": "高（技術領先者享有溢價，但面臨ARM授權費與研發成本壓力）",
+        "margin_profile": "中高（軟體授權與IP授權毛利高，硬體製造受製程成本影響）",
+        "value_capture": "透過IP授權、晶片銷售及生態系綁定獲取價值",
+        "entry_barrier": "極高（需要深厚的積體電路設計能力、軟體生態系與客戶認證週期）",
+        "leader_type": "技術壟斷型（寡頭競爭）"
+      },
+      {
+        "name": "多模態感知與介面模組（Multimodal Sensors & HMI）",
+        "position": "中游：AI終端的「感官」輸入端，負責數據採集與初步處理",
+        "summary": "整合鏡頭、LiDAR、麥克風陣列與生物感測器，實現視覺、聽覺與生理數據的多模態融合。硬體升級帶動單機價值量（ASP）提升。",
+        "key_points": [
+          "高像素與大光圈鏡頭模組需求增長",
+          "微型化感測器（MEMS）與音訊DSP整合",
+          "ISP（影像信號處理器）效能決定多模態輸入質量",
+          "觸控與顯示技術向高刷新率與低功耗演進"
+        ],
+        "beneficiaries": [
+          "舜宇光學科技（Sunny Optical）- 鏡頭模組",
+          "大立光（Largan）- 高階手機鏡頭",
+          "瑞聲科技（AAC Technologies）- 聲學與精密結構件",
+          "歐菲光（O-Film）- 影像模組",
+          "匯頂科技（Goodix）- 感測器與生物識別"
+        ],
+        "pricing_power": "中（依賴終端品牌廠議價，但高端模組具稀缺性）",
+        "margin_profile": "中（規模效應顯著，但研發與設備折舊成本高）",
+        "value_capture": "透過精密製造良率與技術迭代獲取價值",
+        "entry_barrier": "高（精密製造工藝、客戶認證與資本密集）",
+        "leader_type": "製造驅動型（規模與良率競爭）"
+      },
+      {
+        "name": "端雲協同與隱私計算架構（Edge-Cloud Synergy & Privacy）",
+        "position": "系統層：連接端側與雲端的軟體與基礎設施，優化數據流動與安全",
+        "summary": "解決純端側算力不足與純雲端隱私/延遲問題。透過聯邦學習、TEE（可信執行環境）與邊緣閘道器，實現數據本地處理與雲端協同推理。",
+        "key_points": [
+          "聯邦學習框架降低數據上傳需求",
+          "TEE安全晶片與加密模組需求增加",
+          "5G/6G低延遲通訊協議優化",
+          "雲端大模型API與端側輕量模型對接標準化"
+        ],
+        "beneficiaries": [
+          "Microsoft - Windows Copilot與雲端AI整合",
+          "Google - Android與Gemini端雲整合",
+          "Apple - Apple Intelligence與私有雲處理",
+          "英特爾（Intel）- 端側CPU與雲端協同解決方案",
+          "資策會/台灣軟體大廠 - 企業端隱私計算解決方案"
+        ],
+        "pricing_power": "中高（軟體訂閱制與服務溢價）",
+        "margin_profile": "高（軟體與服務毛利高，基礎設施投資大）",
+        "value_capture": "透過訂閱費、API呼叫量與生態系鎖定獲取價值",
+        "entry_barrier": "高（生態系壁壘、數據規模與安全認證）",
+        "leader_type": "生態系壟斷型（平台競爭）"
+      },
+      {
+        "name": "高階消費電子整機與品牌（Premium Consumer Electronics）",
+        "position": "下游：最終產品載體，直接面向消費者，定義AI體驗",
+        "summary": "AI PC、AI Phone、AR/VR眼鏡等終端設備。透過AI功能差異化驅動換機潮，提升ASP與用戶黏著度。",
+        "key_points": [
+          "AI功能成為換機主要驅動力",
+          "品牌溢價與生態系鎖定效應增強",
+          "供應鏈整合能力決定產品上市速度",
+          "隱私標章成為高淨值用戶購買關鍵因素"
+        ],
+        "beneficiaries": [
+          "Apple - iPhone與MacBook AI整合",
+          "Samsung - Galaxy AI與全生態系",
+          "Lenovo - AI PC領導者",
+          "Dell - 企業級AI PC",
+          "HTC/Vive - AR/VR領域"
+        ],
+        "pricing_power": "高（品牌力與生態系鎖定）",
+        "margin_profile": "中（硬體製造成本佔比高，但軟體服務提升整體毛利）",
+        "value_capture": "透過硬體銷售、服務訂閱與生態系內交易獲取價值",
+        "entry_barrier": "極高（品牌認知、渠道網絡與生態系規模）",
+        "leader_type": "品牌與生態系驅動型"
+      }
+    ],
+    "capital_flow": [
+      {
+        "phase": "第一階段：硬體基礎設施佈局（2025 Q3 - 2026 Q1）",
+        "timeframe": "短期至中短期",
+        "focus": "端側算力核心與感知模組",
+        "logic": "資金優先流向 AI 終端化的「賣水人」。在換機潮全面爆發前，市場會先炒作具備技術領先优势的 NPU 設計廠（如 Qualcomm, MediaTek）與先進製程廠（TSMC）。同時，高階消費電子升級帶動多模態感測器（鏡頭、LiDAR、音訊 DSP）需求，資金會流入舜宇光學、大立光、瑞聲科技等模組供應商。此階段邏輯是「硬體規格升級帶來的 ASP 提升」。",
+        "beneficiary_groups": [
+          "AI SoC/NPU 設計廠",
+          "先進製程與封裝廠",
+          "高階感測器與鏡頭模組廠",
+          "電源管理與散熱模組供應商"
+        ]
+      },
+      {
+        "phase": "第二階段：整機換機潮與生態系驗證（2026 Q2 - 2026 Q4）",
+        "timeframe": "中長期",
+        "focus": "高階消費電子整機品牌",
+        "logic": "隨著新產品上市，市場焦點轉向整機品牌。資金將湧向能成功將 AI 功能轉化為用戶體驗並驅動銷量增長的品牌廠（Apple, Samsung, Lenovo, Dell）。此階段不僅看硬體銷量，更關注 AI 功能對用戶黏著度的提升。具備強大生態系（如 Apple 的 iPhone-Mac-Cloud 整合）的品牌將獲得估值溢價。同時，雲端服務大廠（Microsoft, Google, Amazon）因 API 呼叫量增長而受益，資金開始從純硬體向「硬體+服務」綜合體輪動。",
+        "beneficiary_groups": [
+          "AI PC 與 AI Phone 整機品牌廠",
+          "雲端服務與 AI 平台大廠",
+          "具備端雲協同能力的系統整合商"
+        ]
+      },
+      {
+        "phase": "第三階段：服務訂閱與價值重估（2027 Q1 以後）",
+        "timeframe": "長期",
+        "focus": "軟體服務、隱私計算與生態系鎖定",
+        "logic": "當 AI 終端成為標配，硬體差異化縮小，價值鏈重心向軟體與服務轉移。資金將聚焦於能通過訂閱制（Subscription）獲取持續現金流的平台業者。具備「端雲協同」與「隱私計算」核心技術的公司將獲得更高估值，因為它們解決了規模化 AI 應用的成本與合規瓶頸。此階段，投資邏輯從「賣硬體」轉向「賣服務」與「賣數據安全」，具備生態系護城河的公司將享受長期複利。",
+        "beneficiary_groups": [
+          "AI 軟體與服務訂閱平台",
+          "隱私計算與安全晶片供應商",
+          "邊緣運算基礎設施提供商",
+          "具備強大開發者生態系的平台公司"
+        ]
+      }
+    ],
+    "timeline_phases": [
+      {
+        "phase": "技術驗證與早期導入期",
+        "timeframe": "2024 Q4 - 2025 Q2",
+        "summary": "AI PC與AI Phone概念驗證，NPU架構初步落地，軟體開發者生態系建立。市場關注點在於技術可行性與早期採用者反饋。",
+        "winners": [
+          "晶片設計廠（高通、聯發科）- 展示NPU效能",
+          "軟體開發平台（Microsoft、Google）- 建立開發者生態",
+          "先進製程廠（台積電）- 確保產能與良率"
+        ],
+        "investment_phase": "主題佈局期（Theme Positioning）",
+        "revenue_meaning": "營收貢獻有限，主要為研發投入與早期客戶樣品銷售",
+        "watch_metric": "NPU TOPS/Watt指標、開發者工具下載量、早期樣機功耗測試數據",
+        "expected_market_focus": "技術媒體、開發者社群、早期科技愛好者"
+      },
+      {
+        "phase": "規模化驗證與換機潮啟動期",
+        "timeframe": "2025 Q3 - 2026 Q2",
+        "summary": "AI功能成為高階消費電子標配，換機需求顯現。端雲協同架構成熟，隱私計算標準初步建立。市場關注點在於銷量增長與用戶留存率。",
+        "winners": [
+          "整機品牌廠（Apple、Samsung、Lenovo）- 銷量增長",
+          "感測器模組廠（舜宇、大立光）- 訂單增加",
+          "雲端服務大廠（AWS、Azure）- API呼叫量增長"
+        ],
+        "investment_phase": "成長確認期（Growth Confirmation）",
+        "revenue_meaning": "營收開始顯著增長，ASP提升帶動毛利改善",
+        "watch_metric": "AI功能手機/筆電出貨量占比、用戶日活（DAU）、雲端API呼叫次數",
+        "expected_market_focus": "大眾消費者、企業IT採購、投資機構"
+      },
+      {
+        "phase": "生態系成熟與價值重估期",
+        "timeframe": "2026 Q3 - 2027+",
+        "summary": "AI終端生態系成熟，多模態互動成為主流。隱私計算與端雲協同成為標準配置。市場關注點在於服務收入占比與生態系鎖定效應。",
+        "winners": [
+          "平台型公司（Apple、Microsoft、Google）- 服務收入增長",
+          "隱私計算解決方案供應商 - 企業級需求增長",
+          "高端感測器與散熱模組廠 - 技術升級帶來的溢價"
+        ],
+        "investment_phase": "價值重估期（Value Re-rating）",
+        "revenue_meaning": "服務與訂閱收入占比提升，整體估值邏輯從硬體轉向軟體/服務",
+        "watch_metric": "服務收入占比、用戶訂閱續約率、生態系內交易規模",
+        "expected_market_focus": "長期投資者、機構投資者、產業分析師"
+      }
+    ],
+    "concepts": [
+      {
+        "title": "端側 AI 推理（On-Device Inference）",
+        "subtitle": "將大模型壓縮並運行於終端設備的技術",
+        "desc": "透過量化、剪枝與專屬 NPU 硬體加速，實現低延遲、低功耗的本地 AI 服務，是 AI 終端化的核心技術基礎。"
+      },
+      {
+        "title": "多模態感知介面（Multimodal Interface）",
+        "subtitle": "融合視覺、聽覺與語意的自然互動方式",
+        "desc": "超越傳統觸控，利用多感測器融合與多模態模型，實現設備對用戶意圖與環境的即時理解與響應。"
+      },
+      {
+        "title": "端雲協同架構（Edge-Cloud Synergy）",
+        "subtitle": "動態分配運算任務的混合架構",
+        "desc": "結合端側即時性與雲端強大算力，透過智能調度平衡成本、延遲與隱私，是當前 AI 應用落地的主流架構。"
+      },
+      {
+        "title": "本地化隱私計算（Local Privacy Computing）",
+        "subtitle": "數據不出設備的 AI 訓練與推理技術",
+        "desc": "利用聯邦學習與 TEE 技術，在保護用戶隱私的前提下實現個人化 AI 服務，是高階消費電子建立信任的關鍵。"
+      }
+    ],
+    "stocks": [
+      {
+        "id": "2330",
+        "name": "台積電",
+        "code": "2330",
+        "sector": "半導體製造",
+        "sectorId": "semiconductor_fab",
+        "role": "核心基礎設施",
+        "timeframe": "已放量",
+        "pureLevel": 5.0,
+        "barrierLevel": 5.0,
+        "pros": "全球唯一具備3nm/2nm先進製程量產能力，AI SoC與HBM封裝（CoWoS）壟斷地位，受益於端側NPU與雲端GPU雙重需求。",
+        "cons": "地緣政治風險，資本支出極高導致折舊壓力，客戶集中度高。",
+        "catalyst": "Apple、Qualcomm、NVIDIA新一代AI晶片採用3nm製程，HBM3E/4產能擴張。",
+        "desc": "AI終端化與雲端運算雙輪驅動下，台積電是無論端側NPU或雲端GPU的唯一製造基石。其先進製程與封裝技術是實現高算力低功耗的關鍵。",
+        "ai_revenue_exposure": "極高",
+        "ai_revenue_exposure_source_type": "AI晶片製造與封裝",
+        "gross_margin_impact": "先進製程佔比提升帶動整體毛利率結構性上揚",
+        "customer_concentration": "高（前五大客戶佔比超過50%）",
+        "sole_supplier": true,
+        "pricing_power": "極高",
+        "value_capture_score": 5,
+        "substitution_risk": "極低",
+        "commercialization_phase": "成熟量產",
+        "capacity_share_hint": "先進製程全球市佔率超過90%",
+        "switching_cost": "極高",
+        "revenue_visibility": "高",
+        "market": "TWSE",
+        "evidence_type": "inferred",
+        "sources": [],
+        "stock_tier": "extended"
+      },
+      {
+        "id": "2454",
+        "name": "聯發科",
+        "code": "2454",
+        "sector": "半導體設計",
+        "sectorId": "semiconductor_design",
+        "role": "端側算力龍頭",
+        "timeframe": "放量初期",
+        "pureLevel": 4.5,
+        "barrierLevel": 4.0,
+        "pros": "天璣系列（Dimensity）與迅騰系列（Pentonic）在AI手機與AIoT領域市佔率高，具備完整的端側NPU軟體生態系（AIAPI）。",
+        "cons": "中低階市場競爭激烈，面臨高通與三星Exynos的價格壓力。",
+        "catalyst": "2025-2026年AI手機換機潮，聯發科高階晶片搭載專屬NPU成為安卓旗艦標配。",
+        "desc": "聯發科是AI終端邊緣化的主要受益者，其策略是將雲端AI能力下沉至中高階手機與平板，透過軟體優化提升單機價值。",
+        "ai_revenue_exposure": "高",
+        "ai_revenue_exposure_source_type": "AI手機SoC與AIoT晶片",
+        "gross_margin_impact": "高階AI晶片占比提升改善毛利結構",
+        "customer_concentration": "中高（主要客戶為小米、OPPO、vivo、傳音等）",
+        "sole_supplier": false,
+        "pricing_power": "中高",
+        "value_capture_score": 4,
+        "substitution_risk": "中",
+        "commercialization_phase": "快速成長",
+        "capacity_share_hint": "安卓AI手機晶片市佔率領先",
+        "switching_cost": "中",
+        "revenue_visibility": "高",
+        "market": "TWSE",
+        "evidence_type": "inferred",
+        "sources": [],
+        "stock_tier": "extended"
+      },
+      {
+        "id": "3008",
+        "name": "大立光",
+        "code": "3008",
+        "sector": "光學元件",
+        "sectorId": "optical_components",
+        "role": "多模態感知核心",
+        "timeframe": "穩健成長",
+        "pureLevel": 3.5,
+        "barrierLevel": 4.5,
+        "pros": "高階手機鏡頭模組龍頭，受益於AI影像處理對高解析度、大光圈鏡頭的需求，以及LiDAR與光學感測器的升級。",
+        "cons": "終端手機銷量波動風險，客戶議價壓力。",
+        "catalyst": "旗艦手機強化AI影像拍攝與空間感知功能，帶動高階鏡頭ASP提升。",
+        "desc": "AI終端的多模態感知依賴高品質視覺輸入，大立光在高階非球面鏡頭技術具絕對優勢，是AI視覺識別與AR/VR硬體的关键供應商。",
+        "ai_revenue_exposure": "中",
+        "ai_revenue_exposure_source_type": "AI影像處理與空間感測鏡頭",
+        "gross_margin_impact": "高階新品導入提升毛利率",
+        "customer_concentration": "高（主要客戶為Apple、Samsung）",
+        "sole_supplier": false,
+        "pricing_power": "中",
+        "value_capture_score": 3,
+        "substitution_risk": "低",
+        "commercialization_phase": "成熟",
+        "capacity_share_hint": "高階手機鏡頭模組全球市佔率第一",
+        "switching_cost": "高",
+        "revenue_visibility": "中",
+        "market": "TWSE",
+        "evidence_type": "inferred",
+        "sources": [],
+        "stock_tier": "extended"
+      }
+    ],
+    "sources": [
+      {
+        "type": "model-inference",
+        "label": "本地 vLLM 多步推理",
+        "note": "search_mode=search_augmented; pipeline_mode=multi_step"
+      },
+      {
+        "type": "context",
+        "label": "search_context",
+        "note": "查詢主題：AI 終端邊緣化與高階消費電子升級\n以下是主題 evidence 白名單上下文：\n【global_news】\n[global_news-1] 標題：South Korea&apos;s AI rally is reshaping romance, reality shows and academic preferences\n    來源：https://www.cnbc.com/2026/09/04/south-korea-ai-rally-society-impact.html\n    來源名稱：CNBC\n    來源分類：global_news\n    發布時間：Fri, 04 Sep 2026 00:55:30 GMT\n[global_news-2] 標題：Nvidia&apos;s investments grow to $99 billion as chip giant becomes major backer of AI companies\n    來源：https://www.cnbc.com/2026/09/04/nvidia-ai-investments-9"
+      }
+    ]
+  },
+  "map_能源基礎設施與電網強韌化_20260907_190545": {
+    "title": "能源基礎設施與電網強韌化",
+    "date": "2026-09-07",
+    "updated_at": "2026-09-07T19:05:45+08:00",
+    "heat": "能源基礎設施與電網強韌化",
+    "heat_score": 82,
+    "heat_drivers": [
+      "離岸風電併網時程加速，HVDC與海纜需求爆發",
+      "極端氣候頻發，台電強化電網韌性與黑啟動預算增加",
+      "電業法修法開放儲能參與輔助服務市場，商業模式確立",
+      "AI與數位孿生技術導入電網運維，提升預測性維護效率"
+    ],
+    "period": "2024-2030",
+    "desc": "本主題聚焦於支撐再生能源併網與提升電網穩定性的基礎設施投資，涵蓋高壓直流輸電（HVDC）、智慧變電站、儲能系統及電網數位化平台。",
+    "thesis": "台灣能源轉型進入「硬基礎設施」與「軟控制系統」雙軌並行階段。資金將從政策規劃期的系統整合商，輪動至硬體建設高峰期的HVDC與變壓器製造商，最終沉澱於具備數據運營能力的儲能與數位服務商。核心邏輯在於：再生能源併網比例提升導致電網不穩定性增加，迫使台電與民間資本必須同時投資「物理層」的輸變電設備升級與「資訊層」的智慧控制系統，這是一場由供電安全焦慮驅動的結構性資本支出擴張。",
+    "market_size_tam": "待補資料",
+    "market_size_tam_source_type": "待補資料",
+    "market_cagr": "待補資料",
+    "market_cagr_source_type": "待補資料",
+    "theme_stage": "成長初期至中期過渡",
+    "why_now": "離岸風電第一階段開發進入併網高峰期，傳統交流電網無法負荷長距離、大容量輸電需求，HVDC技術成為剛需；同時，極端氣候導致停電風險上升，政府與台電將電網韌性列為最高優先級，預算明確化。",
+    "key_bottleneck": "HVDC變流器技術門檻高，本土供應鏈仍依賴國際大廠授權或組件；儲能系統長期運營的經濟效益與安全性驗證尚需時間；電網數位化涉及資安與舊系統整合，導入難度大。",
+    "primary_value_capture": "硬體設備銷售（變壓器、HVDC、海纜）與系統整合服務費；長期則轉向儲能輔助服務收益分成與數位運維訂閱費。",
+    "market_narrative": "從「發電側」轉向「輸配側」的投資重心的轉移。市場意識到，沒有強韌的電網，再生能源只是空中樓閣。資金正在尋找能解決「電送不到」與「電不穩」痛點的關鍵節點廠商。",
+    "evidence_confidence": "中高",
+    "icon": "cpu",
+    "color": "from-cyan-500 to-indigo-600",
+    "theme_tags": [
+      "離岸風電",
+      "HVDC",
+      "電網韌性",
+      "儲能",
+      "數位孿生",
+      "台電供應鏈"
+    ],
+    "trigger_events": [
+      "台電公布離岸風電併網時程與電網升級預算",
+      "首座HVDC示範工程或大型海纜標案開標",
+      "儲能輔助服務市場交易規則正式實施",
+      "極端氣候導致大規模停電事件，引發政策緊縮"
+    ],
+    "risks": [
+      "離岸風電開發進度延遲，導致設備需求推遲",
+      "國際原物料價格（銅、鋁）大幅上漲，壓縮設備廠毛利",
+      "電網數位化專案因資安問題或技術整合困難而流標",
+      "儲能系統安全事故引發監管收緊"
+    ],
+    "watch_signals": [
+      "台電招標公告中HVDC與變電設備的規格要求",
+      "離岸風電業者與電纜廠的長期合約簽訂情況",
+      "儲能系統調頻市場的交易量與價格波動",
+      "系統整合商（如中興電工、華城電機）的訂單能見度與營收結構變化"
+    ],
+    "related_themes": [
+      "離岸風電供應鏈",
+      "工業自動化與物聯網",
+      "電池儲能技術",
+      "資安與雲端運算"
+    ],
+    "tech_lessons": [
+      {
+        "title": "電網韌性與黑啟動技術",
+        "subtitle": "從被動防禦到主動恢復的系統架構",
+        "problem": "傳統電網在遭遇極端氣候或突發故障時，容易發生大規模停電且恢復時間長，缺乏自我修復與快速重啟能力。",
+        "mechanism": "透過部署具備「黑啟動」（Black Start）能力的分散式電源與智慧變電站，在系統完全癱瘓時，利用無外部電源輔助的發電設備逐步恢復供電，並結合自動化保護裝置隔離故障區段。",
+        "why_now": "氣候變遷導致極端天氣頻率增加，加上再生能源併網比例提高，電網不穩定性上升，政府與台電加速推動電網韌性提升計畫以確保供電安全。",
+        "desc": "本模組探討如何利用智慧電表、自動化開關與儲能系統，建構具備自我診斷與快速重啟能力的現代化電網，重點在於故障隔離速度與系統恢復時間的縮短。"
+      },
+      {
+        "title": "高壓直流輸電（HVDC）與柔性電網",
+        "subtitle": "解決長距離輸電損耗與異步聯網技術",
+        "problem": "傳統交流輸電在長距離傳輸時損耗大，且不同頻率或相位的電網難以直接互聯，限制再生能源從偏遠地區（如離岸風電）向負載中心輸送。",
+        "mechanism": "利用高壓直流（HVDC）技術進行長距離、大容量輸電，降低線路損耗；並透過柔性交流輸電系統（FACTS）技術，精確控制電流與電壓，實現不同電網間的異步聯網與功率流動管理。",
+        "why_now": "台灣離岸風電開發加速，需要高效輸電技術將電力從西部沿海輸送至南部及北部負載中心，同時需強化與周邊電網的互聯以提升備援能力。",
+        "desc": "本模組解析HVDC變流器技術、電纜製造及電網控制系統，強調其在提升輸電效率、整合離岸風電及增強區域電網互操作性中的關鍵角色。"
+      },
+      {
+        "title": "數位孿生與AI電網預測",
+        "subtitle": "從經驗維護到預測性維護的轉型",
+        "problem": "傳統電網維護依賴定期檢查或故障後維修，效率低且無法預測潛在風險，導致非預期停電風險高，且難以應對再生能源的波動性。",
+        "mechanism": "建立電網的數位孿生（Digital Twin）模型，整合IoT感測器數據、氣象數據與歷史運轉資料，利用AI演算法進行負載預測、設備健康狀態評估及故障預警，實現預測性維護。",
+        "why_now": "電網設備老化與再生能源併網帶來的不確定性，迫使台電與相關廠商導入數位轉型技術，以提升運維效率並降低停電風險。",
+        "desc": "本模組介紹如何利用大數據分析、機器學習與雲端運算，建構電網智慧監控平台，重點在於設備壽命預測、負載平衡優化及異常檢測算法的應用。"
+      },
+      {
+        "title": "儲能系統與電網調頻技術",
+        "subtitle": "平抑再生能源波動與提供輔助服務",
+        "problem": "太陽光電與風力發電具有間歇性與波動性，直接併網會導致電網頻率與電壓不穩定，影響供電品質。",
+        "mechanism": "部署大型電池儲能系統（BESS）與抽水蓄能，透過快速充放電能力參與電網調頻（Frequency Regulation）與備轉容量市場，平抑再生能源輸出波動，維持電網穩定。",
+        "why_now": "台灣推動2025與2035再生能源目標，儲能成為必要配套，且電業法修法開放儲能參與輔助服務市場，創造商業模式與投資機會。",
+        "desc": "本模組探討電池化學技術、儲能變流器（PCS）及電網調頻算法，分析儲能系統在提升電網穩定性、延遲基礎設施升級及參與電力市場交易中的價值。"
+      }
+    ],
+    "structure_layers": [
+      {
+        "name": "核心輸變電設備與HVDC變流器",
+        "position": "上游硬體製造與系統整合",
+        "summary": "電網強韌化的物理基礎，包含高壓直流（HVDC）變流閥、大型變壓器、GIS氣體絕緣開關設備及電纜。此層級技術門檻最高，直接決定長距離輸電效率與離岸風電併網能力。",
+        "key_points": [
+          "HVDC變流器技術壟斷性高，主要供應商為國際大廠與少數本土龍頭",
+          "離岸風電開發帶動海底電纜與陸上變電站需求激增",
+          "設備大型化與高壓化趨勢明顯，單價與毛利隨技術難度提升"
+        ],
+        "beneficiaries": [
+          "華城電機",
+          "東元電機",
+          "永豐餘紙業(相關變壓器紙)",
+          "台船(海纜鋪設與 offshore substation)"
+        ],
+        "pricing_power": "高",
+        "margin_profile": "中高毛利，隨訂單規模與技術獨特性波動",
+        "value_capture": "硬體銷售與系統整合服務費",
+        "entry_barrier": "極高（認證週期長、技術積累深厚、資金密集）",
+        "leader_type": "垂直整合型製造龍頭"
+      },
+      {
+        "name": "智慧電網控制與自動化系統",
+        "position": "中游軟體定義與硬體控制",
+        "summary": "電網的「神經系統」，包含SCADA系統、保護繼電器、自動化開關及數位孿生平台。負責故障隔離、負載平衡及黑啟動指令執行，是實現電網韌性的關鍵軟體層。",
+        "key_points": [
+          "從傳統硬體控制轉向軟體定義網路（SDN）與邊緣運算",
+          "數位孿生技術需整合多源數據，軟體授權與維運收入佔比提升",
+          "台電採購標準趨向開放架構，有利具備系統整合能力的廠商"
+        ],
+        "beneficiaries": [
+          "中興電工",
+          "華城電機(控制系統)",
+          "研華(邊緣運算與IoT)",
+          "智邦科技(網路通訊)"
+        ],
+        "pricing_power": "中",
+        "margin_profile": "軟體佔比高則毛利高，硬體整合則毛利中等",
+        "value_capture": "系統授權、維運服務、數據分析訂閱",
+        "entry_barrier": "高（需具備電網專業知識與長期客戶關係）",
+        "leader_type": "系統整合商與工業軟體專家"
+      },
+      {
+        "name": "儲能系統與調頻輔助服務",
+        "position": "下游應用與電力市場參與者",
+        "summary": "解決再生能源波動性的關鍵配套，包含電池儲能系統（BESS）、變流器（PCS）及虛擬電廠（VPP）運營商。透過參與調頻與備轉容量市場獲取收益。",
+        "key_points": [
+          "儲能商業模式從單純套利轉向輔助服務市場（調頻、備轉）",
+          "電池成本下降推動儲能普及，但PCS與熱管理技術具差異化價值",
+          "VPP聚合分散式資源，成為新型態電力交易參與者"
+        ],
+        "beneficiaries": [
+          "台達電",
+          "新普科技",
+          "奇鋐科技(散熱)",
+          "東元電機(變流器)"
+        ],
+        "pricing_power": "中低（電池價格競爭激烈），PCS與系統整合具定價權",
+        "margin_profile": "初期低毛利，隨規模效應與軟體服務滲透率提升而改善",
+        "value_capture": "設備銷售、容量租賃費、輔助服務收益分成",
+        "entry_barrier": "中（技術門檻降低，但資質與資金要求高）",
+        "leader_type": "跨領域整合者與能源服務商"
+      },
+      {
+        "name": "基礎材料與關鍵零組件",
+        "position": "最上游供應鏈",
+        "summary": "支撐電網設備製造的關鍵材料，如高導電銅材、絕緣材料、磁性材料及電池正負極材料。受電網投資規模直接驅動，具週期性特徵。",
+        "key_points": [
+          "銅價波動影響變壓器與電纜成本，具庫存調節效應",
+          "高壓絕緣材料技術門檻高，進口替代空間存在",
+          "電池材料需求隨儲能市場爆發而增長"
+        ],
+        "beneficiaries": [
+          "華新麗華",
+          "東元電機(部分材料)",
+          "台積電(相關半導體材料)",
+          "奇美實業(絕緣材料)"
+        ],
+        "pricing_power": "低（大宗商品屬性），具技術差異化者具中定價權",
+        "margin_profile": "穩定，受原物料價格波動影響大",
+        "value_capture": "材料銷售利潤",
+        "entry_barrier": "中（資本密集，環保法規嚴格）",
+        "leader_type": "材料科學專家與規模製造商"
+      }
+    ],
+    "capital_flow": [
+      {
+        "phase": "政策驅動與規劃驗證期",
+        "timeframe": "2024 - 2025",
+        "focus": "系統整合商與工業軟體/IoT廠商",
+        "logic": "在硬體大規模採購前，台電與相關單位需先確立數位孿生架構、自動化控制標準與招標規格。資金率先佈局具備系統整合能力、能參與標準制定與軟體平台開發的廠商，此階段估值驅動大於業績驅動。",
+        "beneficiary_groups": [
+          "中興電工",
+          "華城電機",
+          "研華",
+          "智邦科技"
+        ]
+      },
+      {
+        "phase": "硬體導入與建設高峰期",
+        "timeframe": "2025 - 2027",
+        "focus": "HVDC變流器、變壓器製造商與海纜鋪設",
+        "logic": "隨著離岸風電併網時程逼近，HVDC電纜、大型變壓器與GIS開關設備進入大規模採購與安裝階段。此階段營收實質增長，供應鏈上游材料（銅、絕緣材料）與中游設備製造商成為資金焦點，業績驗證成為股價主要支撐。",
+        "beneficiary_groups": [
+          "華城電機",
+          "東元電機",
+          "台船",
+          "華新麗華"
+        ]
+      },
+      {
+        "phase": "數位化深化與運營服務期",
+        "timeframe": "2027 - 2030+",
+        "focus": "儲能運營商、VPP聚合商與AI電網服務",
+        "logic": "硬體建設趨於飽和，市場焦點轉向電網數位化運營、預測性維護服務及儲能輔助服務收益。具備數據分析能力、能聚合分散式資源參與電力市場交易的廠商，將獲得穩定的經常性收入，估值邏輯從週期性轉向成長性。",
+        "beneficiary_groups": [
+          "台達電",
+          "新普科技",
+          "具備AI分析能力的系統整合商"
+        ]
+      }
+    ],
+    "timeline_phases": [
+      {
+        "phase": "政策驅動與規劃驗證期",
+        "timeframe": "2024 - 2025",
+        "summary": "政府明確離岸風電與電網韌性投資預算，台電啟動招標，技術標準與數位孿生架構確立。市場關注點在於政策落實度與首標案中標廠商。",
+        "winners": [
+          "系統整合商（中興電工、華城電機）",
+          "工業軟體與IoT廠商（研華、智邦）"
+        ],
+        "investment_phase": "主題佈局初期",
+        "revenue_meaning": "訂單能見度提升，營收貢獻尚小，主要為估值驅動",
+        "watch_metric": "台電招標公告數量、離岸風電併網進度、數位孿生示範案進度",
+        "expected_market_focus": "政策新聞、招標資訊、技術合作夥伴關係"
+      },
+      {
+        "phase": "硬體導入與建設高峰期",
+        "timeframe": "2025 - 2027",
+        "summary": "HVDC電纜、變電站設備、儲能系統進入大規模採購與安裝階段。供應鏈上游材料與中游設備製造商營收顯著增長，毛利隨規模效應改善。",
+        "winners": [
+          "HVDC與變壓器製造商（華城電機、東元電機）",
+          "儲能系統整合商（台達電、新普）",
+          "基礎材料供應商（華新麗華）"
+        ],
+        "investment_phase": "業績驗證期",
+        "revenue_meaning": "營收與EPS實質增長，成為股價主要支撐",
+        "watch_metric": "設備廠訂單累積金額、毛利率變化、離岸風電實際併網容量",
+        "expected_market_focus": "財報營收成長、訂單公告、產能利用率"
+      },
+      {
+        "phase": "數位化深化與運營服務期",
+        "timeframe": "2027 - 2030+",
+        "summary": "硬體建設趨於飽和，市場焦點轉向電網數位化運營、預測性維護服務及儲能輔助服務收益。軟體定義電網與VPP商業模式成熟，服務型收入佔比提升。",
+        "winners": [
+          "數位孿生與AI分析平台供應商",
+          "儲能運營商與VPP聚合商",
+          "具備數據分析能力的系統整合商"
+        ],
+        "investment_phase": "成長穩定期與價值重估",
+        "revenue_meaning": "經常性收入（Recurring Revenue）佔比提升，估值邏輯從週期轉向成長",
+        "watch_metric": "軟體服務收入佔比、儲能調頻市場參與度、數位孿生平台用戶數",
+        "expected_market_focus": "服務合約簽訂、數據安全合規、新商業模式案例"
+      }
+    ],
+    "concepts": [
+      {
+        "title": "電網韌性（Grid Resilience）",
+        "subtitle": "系統抗災與快速恢復能力",
+        "desc": "指電網在面對極端天氣、設備故障或人為攻擊時，維持供電或快速恢復供電的能力，核心技術包含黑啟動、自動化隔離與分散式電源整合。"
+      },
+      {
+        "title": "高壓直流輸電（HVDC）",
+        "subtitle": "高效長距離輸電與異步聯網",
+        "desc": "利用直流技術進行長距離、大容量輸電，降低損耗並解決不同電網頻率互聯問題，是整合離岸風電與強化區域電網互聯的關鍵技術。"
+      },
+      {
+        "title": "數位孿生電網（Digital Twin Grid）",
+        "subtitle": "虛擬模擬與預測性維護",
+        "desc": "透過IoT與AI技術建立電網的虛擬模型，實現設備狀態实时监控、故障預警與運維優化，提升電網管理效率與安全性。"
+      },
+      {
+        "title": "儲能調頻（Energy Storage for Frequency Regulation）",
+        "subtitle": "平抑波動與提供輔助服務",
+        "desc": "利用儲能系統快速充放電特性，參與電網調頻與備轉容量市場，平抑再生能源波動，維持電網頻率與電壓穩定，並創造新商業模式。"
+      }
+    ],
+    "stocks": [
+      {
+        "id": "1504",
+        "name": "東元",
+        "code": "1504",
+        "sector": "電機設備與變流器",
+        "sectorId": "motor_and_converter",
+        "role": "變壓器與儲能變流器供應商",
+        "timeframe": "2024-2027 (全階段受益)",
+        "pureLevel": 3.5,
+        "barrierLevel": 4.0,
+        "pros": "產品線涵蓋變壓器、馬達與儲能變流器（PCS），具備垂直整合優勢；離岸風電陸上變電站與儲能系統雙重受益。",
+        "cons": "業務多元，電網主題營收佔比相對分散；國際競爭激烈。",
+        "catalyst": "離岸風電陸上變電站訂單落袋、儲能系統大廠合作案公告。",
+        "desc": "東元電機在電網強韌化中扮演多面手角色，不僅提供傳統變壓器與開關設備，更積極佈局儲能變流器（PCS）技術。其優勢在於能同時滿足電網硬體升級與儲能系統整合的需求，具備較強的技術橫向擴展能力。",
+        "ai_revenue_exposure": "中",
+        "ai_revenue_exposure_source_type": "智慧電網控制系統",
+        "gross_margin_impact": "中",
+        "customer_concentration": "中",
+        "sole_supplier": false,
+        "pricing_power": "中",
+        "value_capture_score": 4,
+        "substitution_risk": "中",
+        "commercialization_phase": "成熟應用期",
+        "capacity_share_hint": "台灣市場主要供應商",
+        "switching_cost": "中",
+        "revenue_visibility": "中高",
+        "market": "TWSE",
+        "evidence_type": "inferred",
+        "sources": [],
+        "stock_tier": "extended"
+      },
+      {
+        "id": "1301",
+        "code": "1301",
+        "name": "台塑",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 能源基礎設施與電網強韌化 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1303",
+        "code": "1303",
+        "name": "南亞",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 能源基礎設施與電網強韌化 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1307",
+        "code": "1307",
+        "name": "三芳",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 能源基礎設施與電網強韌化 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1309",
+        "code": "1309",
+        "name": "台達化",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 能源基礎設施與電網強韌化 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1310",
+        "code": "1310",
+        "name": "台苯",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 能源基礎設施與電網強韌化 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1314",
+        "code": "1314",
+        "name": "中石化",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 能源基礎設施與電網強韌化 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1315",
+        "code": "1315",
+        "name": "達新",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 能源基礎設施與電網強韌化 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1321",
+        "code": "1321",
+        "name": "大洋",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 能源基礎設施與電網強韌化 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1323",
+        "code": "1323",
+        "name": "永裕",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 能源基礎設施與電網強韌化 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1324",
+        "code": "1324",
+        "name": "地球",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 能源基礎設施與電網強韌化 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      }
+    ],
+    "sources": [
+      {
+        "type": "model-inference",
+        "label": "本地 vLLM 多步推理",
+        "note": "search_mode=search_augmented; pipeline_mode=multi_step"
+      },
+      {
+        "type": "context",
+        "label": "search_context",
+        "note": "查詢主題：能源基礎設施與電網強韌化\n以下是主題 evidence 白名單上下文：\n官方補查入口：\n- TWSE: https://www.twse.com.tw/zh/search/news?query=%E8%83%BD%E6%BA%90%E5%9F%BA%E7%A4%8E%E8%A8%AD%E6%96%BD%E8%88%87%E9%9B%BB%E7%B6%B2%E5%BC%B7%E9%9F%8C%E5%8C%96\n- TPEx: https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?l=zh-tw&keyword=%E8%83%BD%E6%BA%90%E5%9F%BA%E7%A4%8E%E8%A8%AD%E6%96%BD%E8%88%87%E9%9B%BB%E7%B6%B2%E5%BC%B7%E9%9F%8C%E5%8C%96\n- MOPS: https://mops.twse.com.tw/mops/web/t05sr01_1?TYPEK=all&step=1&keywo"
+      }
+    ]
+  },
+  "map_低軌衛星與_6G_前哨戰的射頻與地面設備_20260907_190655": {
+    "title": "低軌衛星與 6G 前哨戰的射頻與地面設備",
+    "date": "2026-09-07",
+    "updated_at": "2026-09-07T19:06:55+08:00",
+    "heat": "低軌衛星與 6G 前哨戰的射頻與地面設備",
+    "heat_score": 78,
+    "heat_drivers": [
+      "Starlink V2 Mini 與 Globalstar 星座擴建帶動 GaN 與相控陣列需求",
+      "台灣供應鏈在 GaN 外延與高頻 PCB 具備全球競爭優勢",
+      "6G 標準預研啟動，空天地一體化從概念進入原型驗證",
+      "地緣政治驅動衛星互聯網自主可控與數據安全需求"
+    ],
+    "period": "2024-2026 (技術驗證至規模部署過渡期)",
+    "desc": "聚焦於低軌衛星通訊鏈路中的射頻前端（RF Front-End）與地面基礎設施。涵蓋氮化鎵（GaN）功率放大器、相控陣列天線模組、高頻高速 PCB/LTCC 基板，以及衛星地面網關與光電轉換設備。此領域是連接太空與地面的物理樞紐，技術壁壘高，價值佔比大。",
+    "thesis": "投資核心不在於衛星營運商（資本支出巨大且競爭紅海），而在於「賣鏟子的人」。低軌衛星與 6G 的關鍵瓶頸在於高頻段訊號衰減與功耗限制，這使得 GaN 射頻元件與相控陣列天線成為不可替代的硬體基礎。台灣企業在 GaN 製程、高頻材料與模組整合上具備深厚積累，將率先從衛星發射頻率提升與地面終端小型化趨勢中獲得營收結構性升級，而非僅是週期性波動。",
+    "market_size_tam": "待補資料",
+    "market_size_tam_source_type": "待補資料",
+    "market_cagr": "待補資料",
+    "market_cagr_source_type": "待補資料",
+    "theme_stage": "技術驗證與早期規模部署過渡期",
+    "why_now": "1. 低軌衛星進入密集發射期，對終端天線成本與效能提出剛性需求。2. 5G-A 商用啟動，GaN 在地面基站滲透率加速。3. 6G 標準制定進入關鍵預研階段，射頻技術路線圖逐漸清晰。4. 地緣政治緊張促使各國加速建設自主衛星互聯網基礎設施。",
+    "key_bottleneck": "1. 相控陣列天線的量產成本與良率控制。2. GaN 晶片在高頻段下的散熱與封裝技術。3. 衛星間雷射通訊（OISL）的精確追蹤與對準技術成熟度。4. 國際大廠認證週期長，進入門檻高。",
+    "primary_value_capture": "高毛利射頻元件（GaN PA）與高價值模組（相控陣列天線）的單價提升與出貨量增長。地面網關設備的系統整合利潤。",
+    "market_narrative": "從「衛星發射競賽」轉向「鏈路效能與成本競爭」。市場關注點從發射頻率轉向終端可負擔性與訊號穩定性，GaN 與相控陣列成為解決此矛盾的唯一解，台灣供應鏈憑藉製程優勢成為全球不可或缺的上游關鍵節點。",
+    "evidence_confidence": "中高 (技術路徑明確，供應鏈地位確立，但營收貢獻時程需觀察)",
+    "icon": "cpu",
+    "color": "from-cyan-500 to-indigo-600",
+    "theme_tags": [
+      "GaN 射頻",
+      "相控陣列天線",
+      "低軌衛星",
+      "6G 預研",
+      "高頻 PCB",
+      "衛星互聯網",
+      "光電整合"
+    ],
+    "trigger_events": [
+      "Starlink 新一代衛星發射與終端價格調整",
+      "台灣 GaN 廠商獲得國際衛星營運商或電信大廠認證",
+      "6G 標準組織發布射頻技術白皮書",
+      "地緣政治事件導致衛星互聯網建設加速",
+      "5G-A 基站 GaN 滲透率數據公布"
+    ],
+    "risks": [
+      "衛星發射進度延遲或失敗",
+      "技術路線變更（如雷射通訊取代射頻）",
+      "國際貿易限制影響 GaN 材料或設備供應",
+      "競爭加劇導致射頻元件價格快速下滑",
+      "地面站建設進度落後於衛星組網速度"
+    ],
+    "watch_signals": [
+      "GaN 晶片在衛星載荷中的採用比例",
+      "相控陣列天線模組的出貨量與毛利率變化",
+      "台灣高頻 PCB 廠營收結構中衛星相關佔比",
+      "國際衛星營運商的地面站建設合約公告",
+      "6G 標準制定中台灣企業的參與度與專利佈局"
+    ],
+    "related_themes": [
+      "太空經濟與衛星製造",
+      "5G-A 與 6G 通訊基礎設施",
+      "高頻高速 PCB 與先進封裝",
+      "光通訊與雷射元件",
+      "國防電子與雷達系統"
+    ],
+    "tech_lessons": [
+      {
+        "title": "相控陣列天線（Phased Array）的波束成形技術",
+        "subtitle": "解決低軌衛星高速移動下的動態追蹤與高頻段訊號衰減問題",
+        "problem": "傳統拋物線天線無法快速追蹤每秒數公里移動的低軌衛星，且毫米波（mmWave）頻段在雨衰與路徑損耗下訊號極弱，需要極高的天線增益與精準指向性。",
+        "mechanism": "利用多個天線單元組成陣列，透過控制各單元的相位差，在無需機械轉動的情況下，電子方式即時調整波束方向（Beamforming）。這使得地面終端能鎖定快速移動的衛星，並集中能量克服高頻段的訊號衰減。",
+        "why_now": "Starlink 等低軌星座進入大規模部署階段，對終端天線的量产成本與效能提出極高要求；同時 6G 預研將毫米波及太赫頻段常態化，相控陣列成為必經之路。",
+        "desc": "此為射頻前端的核心硬體，涉及 RFIC 設計、天線基板材料（如 LTCC/PCB）及封裝技術。投資焦點在於具備高集成度、低功耗且能降低 BOM 成本的模組供應商。"
+      },
+      {
+        "title": "氮化鎵（GaN）功率放大器與射頻晶片",
+        "subtitle": "突破矽基限制，實現高頻、高功率與高效率的射頻前端",
+        "problem": "傳統矽基（Si）或砷化鎵（GaAs）晶片在處理 6G 所需的更高頻段（如 E-band 或太赫頻）時，面臨電子遷移率瓶頸，導致效率低落、發熱嚴重且體積龐大，難以應用於空間受限的衛星與行動終端。",
+        "mechanism": "氮化鎵（GaN）具有寬能隙與高電子遷移率特性，能在更高頻率下輸出更大功率，且熱導率優異。這使得射頻前端模組（RF Front-End）能在更小面積下實現更高效率的訊號放大，減少能源消耗與散熱需求。",
+        "why_now": "低軌衛星對重量與功耗極度敏感，GaN 能顯著提升衛星發射功率效率；地面 5G-A 與 6G 基站也急需 GaN 來提升覆蓋範圍與容量。台灣在 GaN 外延生長與晶片設計上具備深厚積累。",
+        "desc": "此為射頻鏈路中的「肌肉」，直接決定訊號傳輸距離與效率。關注具備 GaN-on-SiC 或 GaN-on-Si 量產能力，且能進入國際衛星供應鏈或電信大廠認證的晶片設計與製造商。"
+      },
+      {
+        "title": "衛星互聯網地面站與網關設備整合",
+        "subtitle": "解決低軌衛星海量數據回傳與地面光纖網絡的橋接瓶頸",
+        "problem": "低軌衛星數量龐大（數千顆），單一地面站需同時處理多顆衛星的數據吞吐，傳統分散式接收設備難以滿足高頻寬、低延遲的匯流需求，且站址資源與電路連接成本高昂。",
+        "mechanism": "採用高階網關設備（Gateway）整合多波束天線陣列與高速數位訊號處理（DSP）單元，將衛星訊號直接轉換為光訊號接入地面光纖骨干網。關鍵技術在於多用戶同時接入的調度演算法與高頻寬的光電轉換模組。",
+        "why_now": "隨著低軌衛星星座完成初步組網，商業模式從「測試」轉向「運營」，地面基礎設施的擴建速度成為制約服務覆蓋率的關鍵。政府與電信業者正積極建設專用地面站以確保數據安全與穩定性。",
+        "desc": "此為連接太空與地面的樞紐，涉及通訊設備、光通訊模組及系統整合。投資對象多為具備電信級設備製造經驗，並能與衛星營運商簽訂長期維護或建設合約的系統整合商。"
+      },
+      {
+        "title": "衛星間雷射通訊（Optical Inter-Satellite Link, OISL）",
+        "subtitle": "構建太空光纖網絡，減少對地面站的依賴並降低延遲",
+        "problem": "若所有衛星數據均需下傳至地面站處理，將導致全球覆蓋時的傳輸延遲增加，且地面站建設成本隨覆蓋範圍擴大而線性增長，無法滿足即時性要求高的應用（如金融交易、遠端操控）。",
+        "mechanism": "利用雷射光束在衛星之間進行高速數據傳輸，形成「太空光纖網絡」。數據可在衛星間跳躍傳輸，僅在靠近用戶或數據中心時才下傳至地面。這需要極高精度的光學追蹤、捕獲與對準（PAT）技術。",
+        "why_now": "SpaceX 等領先業者已開始在新一代衛星中測試雷射通訊，6G 架構也強調空天地一體化。這將創造全新的射頻與光電整合需求，改變傳統僅依賴無線電波的通訊架構。",
+        "desc": "此為下一代衛星通訊的差異化技術，涉及精密光學元件、雷射模組及高精度感測器。雖目前規模尚小，但代表未來高階射頻與光電整合的技術高地，適合關注具備精密光電製造能力的上游元件廠。"
+      }
+    ],
+    "structure_layers": [
+      {
+        "name": "核心射頻元件與材料層 (RF Front-End & Materials)",
+        "position": "上游基礎元件與半導體製造",
+        "summary": "提供高頻、高功率的射頻前端模組，是衛星與6G通訊的「肌肉」。此層級直接決定訊號傳輸效率、功耗與體積，技術壁壘最高，價值佔比最大。",
+        "key_points": [
+          "GaN-on-SiC/GaN-on-Si 功率放大器 (PA) 與開關模組為核心，解決高頻段訊號衰減與功耗瓶頸。",
+          "相控陣列天線 (Phased Array) 的無源元件 (Passive Components) 與基板材料 (LTCC/PCB) 需求激增。",
+          "技術護城河在於寬能隙半導體製程良率、高頻封裝技術及國際大廠認證週期。"
+        ],
+        "beneficiaries": [
+          "具備 GaN 外延生長與晶片設計能力的半導體廠",
+          "高頻高速 PCB 與 LTCC 基板供應商",
+          "射頻前端模組 (RFEM) 整合商"
+        ],
+        "pricing_power": "高 (技術獨家性與認證壁壘)",
+        "margin_profile": "高毛利 (半導體製造與設計)",
+        "value_capture": "單價高，隨星座規模擴大呈現剛性增長",
+        "entry_barrier": "極高 (製程技術、認證週期長、資本密集)",
+        "leader_type": "垂直整合製造商 (IDM) 或專業設計公司 (Fabless)"
+      },
+      {
+        "name": "天線與射頻模組層 (Antenna & RF Modules)",
+        "position": "中游模組整合與終端設備",
+        "summary": "將射頻元件整合為具備波束成形能力的天線陣列模組。此層級直接面對終端用戶（衛星載荷或地面終端），是技術落地與成本控制的關鍵節點。",
+        "key_points": [
+          "相控陣列天線 (AESA) 的量產成本降低是商業化關鍵，涉及天線單元設計與射頻通道整合。",
+          "地面終端 (User Terminal) 的小型化與低成本化趨勢明顯，模組化設計成為主流。",
+          "衛星間雷射通訊 (OISL) 的光電模組開始進入早期驗證階段。"
+        ],
+        "beneficiaries": [
+          "相控陣列天線模組製造商",
+          "衛星通訊終端設備組裝廠",
+          "光電整合模組供應商"
+        ],
+        "pricing_power": "中 (面臨成本壓迫與規模經濟競爭)",
+        "margin_profile": "中毛利 (組裝與整合利潤)",
+        "value_capture": "隨出貨量放大，單價下降但總營收增長",
+        "entry_barrier": "高 (設計複雜度、量產一致性、散熱設計)",
+        "leader_type": "模組整合商與系統供應商"
+      },
+      {
+        "name": "地面基礎設施與系統整合層 (Ground Infrastructure & Integration)",
+        "position": "下游基礎建設與運營支持",
+        "summary": "提供衛星數據回傳的地面站、網關設備及系統整合服務。此層級連接太空與地面光纖網絡，是衛星互聯網商業運營的物理基礎。",
+        "key_points": [
+          "高階網關設備 (Gateway) 需具備多波束處理與高速光電轉換能力。",
+          "地面站建設標準化與模組化，以降低站址與建置成本。",
+          "與電信業者合作，將衛星網絡接入現有 5G/6G 核心網。"
+        ],
+        "beneficiaries": [
+          "電信級通訊設備製造商",
+          "光通訊模組與系統整合商",
+          "地面站建設與運營服務商"
+        ],
+        "pricing_power": "中低 (專案型報價，競爭激烈)",
+        "margin_profile": "中低毛利 (硬體銷售與工程服務)",
+        "value_capture": "初期資本支出 (CapEx) 驅動，後續轉為維護服務收入",
+        "entry_barrier": "中高 (資質認證、系統整合經驗、客戶關係)",
+        "leader_type": "大型通訊設備商與系統整合商"
+      }
+    ],
+    "capital_flow": [
+      {
+        "phase": "主題佈局期 (現在 - 2025)",
+        "timeframe": "短期至中短期",
+        "focus": "技術領先性與認證突破",
+        "logic": "資金優先流向具備明確技術護城河且已進入國際大廠供應鏈或預研階段的標的。此階段營收貢獻有限，股價驅動來自技術驗證成功、樣品測試數據優異或獲得關鍵認證公告。投資者願意為技術獨家性支付溢價。",
+        "beneficiary_groups": [
+          "具備 GaN 外延生長與晶片設計能力的 IDM 或 Fabless 廠商",
+          "相控陣列天線原型開發與小量出貨的模組廠",
+          "參與 6G 標準制定與技術預研的電信設備商"
+        ]
+      },
+      {
+        "phase": "業績確認期 (2026 - 2028)",
+        "timeframe": "中長期",
+        "focus": "量產良率、成本下降與市場佔有率",
+        "logic": "隨著低軌衛星星座基本組網完成，商業模式轉向運營，地面終端需求爆發。資金轉向具備大規模量產能力、成本控制優異且能實現規模經濟的企業。營收開始顯著增長，毛利率隨良率提升與規模擴大而改善，利潤率逐步提升。此階段需密切關注出貨量數據與客戶集中度。",
+        "beneficiary_groups": [
+          "具備大規模量產能力且成本控制優異的天線模組廠",
+          "進入 5G-A/6G 基站供應鏈的 GaN 元件廠",
+          "地面網關設備與光電整合系統供應商"
+        ]
+      },
+      {
+        "phase": "生態系成熟期 (2029 及以後)",
+        "timeframe": "長期",
+        "focus": "生態系完整性、服務收入與全球佈局",
+        "logic": "6G 標準正式發布，空天地一體化網絡成熟。射頻與地面設備成為標準化基礎設施，競爭轉向生態系與服務。資金傾向於主導標準、擁有廣泛客戶基礎且能提供運營服務與應用開發的平台型企業。估值邏輯從成長股轉向穩定現金流或公用事業股，關注服務收入佔比與全球市場佈局。",
+        "beneficiary_groups": [
+          "主導 6G 標準與生態系的系統整合商",
+          "提供衛星互聯網運營服務與應用開發的平台商",
+          "具備光電整合與雷射通訊技術的先進元件廠"
+        ]
+      }
+    ],
+    "timeline_phases": [
+      {
+        "phase": "技術驗證與原型導入期",
+        "timeframe": "現在 - 2025年",
+        "summary": "低軌衛星星座進入密集發射階段，GaN 元件與相控陣列天線在衛星載荷與早期地面終端進行實測驗證。6G 標準尚未定案，但預研技術開始落地。",
+        "winners": [
+          "具備 GaN 量產能力且進入衛星供應鏈的晶片廠",
+          "相控陣列天線原型開發與小量出貨的模組廠",
+          "參與 6G 標準制定與技術預研的電信設備商"
+        ],
+        "investment_phase": "主題佈局與選股",
+        "revenue_meaning": "營收貢獻有限，主要為研發投入與小量訂單，股價驅動來自技術突破與訂單公告",
+        "watch_metric": "衛星發射頻率、GaN 晶片認證進度、相控陣列天線樣品測試數據",
+        "expected_market_focus": "技術領先性、專利佈局、國際大廠合作夥伴關係"
+      },
+      {
+        "phase": "規模部署與成本優化期",
+        "timeframe": "2026年 - 2028年",
+        "summary": "低軌衛星星座基本組網完成，商業模式從測試轉向運營。地面終端需求爆發，推動相控陣列天線量產與成本下降。GaN 在地面基站應用開始放量。",
+        "winners": [
+          "具備大規模量產能力且成本控制優異的天線模組廠",
+          "進入 5G-A/6G 基站供應鏈的 GaN 元件廠",
+          "地面網關設備與光電整合系統供應商"
+        ],
+        "investment_phase": "業績確認與趨勢確認",
+        "revenue_meaning": "營收開始顯著增長，毛利率隨規模經濟改善，利潤率逐步提升",
+        "watch_metric": "衛星互聯網用戶數增長、地面終端出貨量、GaN 在地面應用的滲透率",
+        "expected_market_focus": "量產良率、成本下降曲線、市場佔有率、客戶集中度"
+      },
+      {
+        "phase": "生態系成熟與應用爆發期",
+        "timeframe": "2029年及以後",
+        "summary": "6G 標準正式發布，空天地一體化網絡成熟。衛星間雷射通訊廣泛應用，地面基礎設施高度自動化。射頻與地面設備成為標準化基礎設施，競爭轉向生態系與服務。",
+        "winners": [
+          "主導 6G 標準與生態系的系統整合商",
+          "提供衛星互聯網運營服務與應用開發的平台商",
+          "具備光電整合與雷射通訊技術的先進元件廠"
+        ],
+        "investment_phase": "價值投資與長線持有",
+        "revenue_meaning": "營收穩定增長，利潤來源多元化（硬體、服務、授權），估值邏輯轉向成長股或公用事業股",
+        "watch_metric": "6G 標準落地進度、衛星互聯網全球覆蓋率、新應用場景（如遠端醫療、自動駕駛）的採用率",
+        "expected_market_focus": "生態系完整性、服務收入佔比、技術迭代能力、全球市場佈局"
+      }
+    ],
+    "concepts": [
+      {
+        "title": "相控陣列天線與波束成形",
+        "subtitle": "動態追蹤與高增益核心",
+        "desc": "透過電子相位控制實現無機械轉動的天線指向，解決低軌衛星高速移動與高頻段訊號衰減問題，是終端設備與衛星載荷的關鍵技術。"
+      },
+      {
+        "title": "GaN 射頻前端技術",
+        "subtitle": "高頻高功率與高效率突破",
+        "desc": "利用氮化鎵寬能隙特性，突破矽基頻率與功率瓶頸，滿足 6G 高頻段與衛星低功耗、高發射功率的嚴苛需求。"
+      },
+      {
+        "title": "地面網關與光電整合",
+        "subtitle": "空天地數據匯流樞紐",
+        "desc": "整合多波束接收與高速光電轉換，解決海量衛星數據回傳的地面基礎設施瓶頸，是衛星互聯網商業化的基礎建設。"
+      },
+      {
+        "title": "衛星間雷射通訊",
+        "subtitle": "太空光纖網絡與低延遲架構",
+        "desc": "利用雷射在衛星間傳輸數據，構建太空中的高速數據鏈路，減少對地面站依賴，代表 6G 空天地一體化的未來方向。"
+      }
+    ],
+    "stocks": [
+      {
+        "id": "1301",
+        "code": "1301",
+        "name": "台塑",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 低軌衛星與 6G 前哨戰的射頻與地面設備 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1303",
+        "code": "1303",
+        "name": "南亞",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 低軌衛星與 6G 前哨戰的射頻與地面設備 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1307",
+        "code": "1307",
+        "name": "三芳",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 低軌衛星與 6G 前哨戰的射頻與地面設備 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1309",
+        "code": "1309",
+        "name": "台達化",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 低軌衛星與 6G 前哨戰的射頻與地面設備 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1310",
+        "code": "1310",
+        "name": "台苯",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 低軌衛星與 6G 前哨戰的射頻與地面設備 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1314",
+        "code": "1314",
+        "name": "中石化",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 低軌衛星與 6G 前哨戰的射頻與地面設備 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1315",
+        "code": "1315",
+        "name": "達新",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 低軌衛星與 6G 前哨戰的射頻與地面設備 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1321",
+        "code": "1321",
+        "name": "大洋",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 低軌衛星與 6G 前哨戰的射頻與地面設備 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1323",
+        "code": "1323",
+        "name": "永裕",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 低軌衛星與 6G 前哨戰的射頻與地面設備 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1324",
+        "code": "1324",
+        "name": "地球",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 低軌衛星與 6G 前哨戰的射頻與地面設備 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      }
+    ],
+    "sources": [
+      {
+        "type": "model-inference",
+        "label": "本地 vLLM 多步推理",
+        "note": "search_mode=search_augmented; pipeline_mode=multi_step"
+      },
+      {
+        "type": "context",
+        "label": "search_context",
+        "note": "查詢主題：低軌衛星與 6G 前哨戰的射頻與地面設備\n以下是主題 evidence 白名單上下文：\n官方補查入口：\n- TWSE: https://www.twse.com.tw/zh/search/news?query=%E4%BD%8E%E8%BB%8C%E8%A1%9B%E6%98%9F%E8%88%87+6G+%E5%89%8D%E5%93%A8%E6%88%B0%E7%9A%84%E5%B0%84%E9%A0%BB%E8%88%87%E5%9C%B0%E9%9D%A2%E8%A8%AD%E5%82%99\n- TPEx: https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?l=zh-tw&keyword=%E4%BD%8E%E8%BB%8C%E8%A1%9B%E6%98%9F%E8%88%87+6G+%E5%89%8D%E5%93%A8%E6%88%B0%E7%9A%84%E5%B0%84%E9%A0%BB%E8%88%87%E5%9C%B0%E9%9D%A2%E8%A"
+      }
+    ]
   }
 }
