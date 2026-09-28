@@ -889,9 +889,9 @@
   {
     "category": "儲存設備 (Storage)",
     "target": "硬碟 (HDD) 供給缺口",
-    "market_expect": "市場原認為硬碟產業已成熟，PC需求衰退導致需求萎縮",
+    "market_expect": "市場原預期AI漲幅見頂，擔憂中國擴產導致記憶體供給過剩反轉",
     "real_data": "AI推論帶動需求年增40-50%，供給僅增30-35%，ODM庫存僅剩1-2周",
-    "gap_space": "供需缺口擴大，價格重估彈性極大，供不應求持續2-3年",
+    "gap_space": "交期大幅拉長證實供需失衡，供給端短期難以跟上，估值重估空間大",
     "concept_stocks": [
       "8299 群聯",
       "2344 華邦電",
@@ -899,7 +899,9 @@
       "2454 聯發科",
       "2330 台積電",
       "2308 台達電",
-      "3017 奇鋐"
+      "3017 奇鋐",
+      "2337 旺宏",
+      "2383 台光電"
     ],
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
@@ -2169,6 +2171,21 @@
   },
   {
     "category": "先進半導體 (Advanced Semiconductor)",
+    "target": "世界先進(5347) 8吋成熟製程產能",
+    "market_expect": "市場原預期成熟製程僅受季節性循環影響，缺貨為短期現象",
+    "real_data": "董事長直言產能利用率「徹底爆掉」，缺貨恐延續至2027-2030年",
+    "gap_space": "供需失衡時間軸大幅延長，估值邏輯從週期性轉為結構性短缺",
+    "concept_stocks": [
+      "5347 世界",
+      "2330 台積電"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "鉅亨網：世界先進VSMC開幕，董事長方略透露產能徹底爆掉",
+    "last_update": "2026-09-28"
+  },
+  {
+    "category": "先進半導體 (Advanced Semiconductor)",
     "target": "世芯-KY (AI ASIC 設計服務)",
     "market_expect": "市場先前預期 2026 年 EPS 中位數為 135 元",
     "real_data": "FactSet 調查顯示 2026 年 EPS 上修至 138.16 元，目標價 6000 元",
@@ -2244,11 +2261,13 @@
     "target": "先進封裝散熱與防翹曲設備",
     "market_expect": "市場原預期先進封裝擴產主要帶動CoWoS等封裝產能需求",
     "real_data": "AI晶片功耗破千瓦，散熱防翹曲設備身價翻倍，站點暴增",
-    "gap_space": "設備價值量翻倍，從單一封裝需求擴展至關鍵輔助設備",
+    "gap_space": "從週期性需求轉為結構性爆發，設備單價與站點數雙重增長",
     "concept_stocks": [
       "3008 大立光",
       "6214 精誠",
-      "2409 友達"
+      "2409 友達",
+      "2454 聯發科",
+      "3711 日月光投控"
     ],
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
@@ -2714,12 +2733,15 @@
   {
     "category": "先進半導體 (Advanced Semiconductor)",
     "target": "台積電晶圓代工報價",
-    "market_expect": "市場原預期台積電漲價幅度有限或僅針對特定先進製程",
-    "real_data": "傳出2027年晶圓代工報價調升3%~6%，帶動含積量ETF熱度",
-    "gap_space": "漲價預期明確且覆蓋面廣，估值重估空間大",
+    "market_expect": "市場預期台積電漲價幅度有限，主要聚焦於先進製程產能擴張",
+    "real_data": "傳出2027年報價調升3%~6%，含積量成焦點，帶動AI供應鏈輪動",
+    "gap_space": "漲價預期明確且幅度可觀，驗證AI需求強勁，估值重估空間大",
     "concept_stocks": [
       "2330 台積電",
-      "00881 國泰台灣科技龍頭ETF"
+      "00881 國泰台灣科技龍頭ETF",
+      "2454 聯發科",
+      "2308 台達電",
+      "2317 鴻海"
     ],
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
@@ -6997,12 +7019,13 @@
       "2408 南亞科",
       "3260 威剛",
       "8299 群聯",
-      "2337 旺宏"
+      "2337 旺宏",
+      "2345 智邦"
     ],
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
     "source": "MarketWatch：分析師大幅調升美光目標價，看好記憶體榮景延續",
-    "last_update": "2026-09-19"
+    "last_update": "2026-09-27"
   },
   {
     "category": "記憶體 (Memory)",
@@ -7247,6 +7270,23 @@
   },
   {
     "category": "記憶體 (Memory)",
+    "target": "DRAM 與 NAND 快閃記憶體",
+    "market_expect": "市場預期記憶體價格溫和上漲，蘋果可透過漲價轉嫁成本",
+    "real_data": "記憶體占iPhone 18 Pro Max新增成本90%，導致iPhone毛利率下修至40.4%",
+    "gap_space": "成本結構劇變，記憶體漲幅遠超預期，價格重估彈性極大",
+    "concept_stocks": [
+      "2344 華邦電",
+      "2337 旺宏",
+      "2451 創見",
+      "3260 威剛"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "鉅亨網：Bernstein分析師指出記憶體暴漲壓縮蘋果毛利率",
+    "last_update": "2026-09-26"
+  },
+  {
+    "category": "記憶體 (Memory)",
     "target": "DRAM 超級周期與常規 DRAM 供需缺口",
     "market_expect": "市場原預期漲價主因為 HBM 需求爆發，常規 DRAM 僅隨動",
     "real_data": "花旗指出常規 DRAM 供需失衡為漲價主力，2026 年 ASP 漲 200%",
@@ -7483,6 +7523,22 @@
     "impact_direction": "bullish",
     "source": "金色財經：三星Q2財報預警與記憶體短缺數據",
     "last_update": "2026-07-06"
+  },
+  {
+    "category": "記憶體 (Memory)",
+    "target": "DRAM/NAND 供給缺口與價格趨勢",
+    "market_expect": "AI 建設推動存儲晶片結構性短缺，價格持續上漲",
+    "real_data": "中國產能擴張，短缺或兩年內消退，部分價格已開始下降",
+    "gap_space": "預期短缺持續性被高估，面臨供給過剩與價格重估風險",
+    "concept_stocks": [
+      "2344 華邦電",
+      "2451 創見",
+      "3260 威剛"
+    ],
+    "dream_rating": "利空重擊估值",
+    "impact_direction": "bearish",
+    "source": "BlockBeats/CNBC：大空頭 Burry 預警存儲晶片短缺消退",
+    "last_update": "2026-09-24"
   },
   {
     "category": "記憶體 (Memory)",
@@ -9199,6 +9255,23 @@
   },
   {
     "category": "記憶體 (Memory)",
+    "target": "企業級SSD (eSSD) 與 NAND 供需結構",
+    "market_expect": "市場原預期消費級NAND疲弱將拖累整體市場，供給相對寬鬆",
+    "real_data": "花旗預估2027年eSSD需求年增52.9%，NAND供需缺口擴大至-6.1%",
+    "gap_space": "AI需求強勁抵銷消費疲軟，供需缺口由微幅轉為顯著短缺，估值重估空間大",
+    "concept_stocks": [
+      "2344 華邦電",
+      "2337 旺宏",
+      "2451 創見",
+      "8299 群聯"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "鉅亨網/花旗研究：AI推升eSSD需求，NAND供需缺口擴大",
+    "last_update": "2026-09-25"
+  },
+  {
+    "category": "記憶體 (Memory)",
     "target": "企業級SSD與高階記憶體模組",
     "market_expect": "市場原預期漲價為短期週期波動，獲利反彈具季節性且不可持續",
     "real_data": "創見Q2毛利率達77%，合約滿足率僅3-5成，缺口延至2027年，工控營收占近七成",
@@ -9998,13 +10071,14 @@
   {
     "category": "電力設備 (Power Equipment)",
     "target": "AI資料中心用變壓器",
-    "market_expect": "市場原預期變壓器需求僅隨傳統電網升級緩慢增長",
-    "real_data": "亞洲廠商連拿大單，美國供給吃緊，訂單金額達數千萬美元",
-    "gap_space": "需求爆發式增長，供給缺口擴大，估值大幅重估",
+    "market_expect": "市場原預期變壓器供給充足，僅隨傳統電網升級緩步成長",
+    "real_data": "美國供給吃緊，亞洲廠商如寧波三星、印度CG Power接連拿下億級美元大單",
+    "gap_space": "供給缺口擴大，亞洲廠商市佔率與營收重估空間極大",
     "concept_stocks": [
       "2308 台達電",
       "3017 奇鋐",
-      "1504 東元"
+      "1504 東元",
+      "5202 力新"
     ],
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
