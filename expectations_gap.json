@@ -179,6 +179,22 @@
   },
   {
     "category": "AI 基礎設施 (AI Infrastructure)",
+    "target": "美國中部電網 (MISO) Data Center 用電缺口",
+    "market_expect": "市場原預期大型負載僅1.5GW，且2032年前才需滿足",
+    "real_data": "負載上修至2.8GW且提前至2030年，最大供給2031年才到位",
+    "gap_space": "2027-2030年存在顯著供給缺口，電力建設時程落後需求",
+    "concept_stocks": [
+      "2308 台達電",
+      "3017 奇鋐",
+      "3324 雙鴻"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "優分析：Ameren上修Data Center用電預測至2.8GW",
+    "last_update": "2026-09-30"
+  },
+  {
+    "category": "AI 基礎設施 (AI Infrastructure)",
     "target": "美國資料中心產能 (US Data Center Capacity)",
     "market_expect": "市場恐慌預期2026年半數規劃產能遭取消或延期，導致建設崩盤",
     "real_data": "SemiAnalysis證實實際交付產能僅微調1-5%，核心專案確定性高，恐慌被誇大",
@@ -1960,6 +1976,24 @@
   },
   {
     "category": "先進半導體 (Advanced Semiconductor)",
+    "target": "HBM4 基礎裸晶 (Base Die) 與 8nm 以下先進製程",
+    "market_expect": "市場原預期DRAM漲價與2奈米訂單增加將改善代工表現",
+    "real_data": "HBM4需求爆發，8nm以下製程稼動率達滿載，虧損年減41.8%",
+    "gap_space": "HBM貢獻超出預期，帶動先進製程滿載，估值重估空間大",
+    "concept_stocks": [
+      "2330 台積電",
+      "2344 華邦電",
+      "2337 旺宏",
+      "2451 創見",
+      "3035 智原"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "鉅亨網/Wccftech引述Kiwook Securities分析",
+    "last_update": "2026-09-30"
+  },
+  {
+    "category": "先進半導體 (Advanced Semiconductor)",
     "target": "HBM、DDR5、CoWoS 產能",
     "market_expect": "市場預期蘋果硬體需求強勁，供應鏈產能充足可支撐高增長",
     "real_data": "AI 基建吸走先進製程與記憶體產能，蘋果面臨晶片與記憶體實質短缺",
@@ -2225,16 +2259,31 @@
     "category": "先進半導體 (Advanced Semiconductor)",
     "target": "世界先進(5347) 8吋成熟製程產能",
     "market_expect": "市場原預期成熟製程僅受季節性循環影響，缺貨為短期現象",
-    "real_data": "董事長直言產能利用率「徹底爆掉」，缺貨恐延續至2027-2030年",
-    "gap_space": "供需失衡時間軸大幅延長，估值邏輯從週期性轉為結構性短缺",
+    "real_data": "AI帶動結構性缺貨，Q2毛利率32.3%，2027年漲價幅度不看小於今年",
+    "gap_space": "從週期性翻轉為結構性成長，ASP與產能利用率雙升，估值重估空間大",
     "concept_stocks": [
       "5347 世界",
-      "2330 台積電"
+      "2330 台積電",
+      "3707 漢磊"
     ],
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
     "source": "鉅亨網：世界先進VSMC開幕，董事長方略透露產能徹底爆掉",
-    "last_update": "2026-09-28"
+    "last_update": "2026-09-29"
+  },
+  {
+    "category": "先進半導體 (Advanced Semiconductor)",
+    "target": "世界先進(5347) 成熟製程與VSMC新廠",
+    "market_expect": "原預期新廠產能5.5萬片，市場擔憂擴產後供給過剩或需求轉弱",
+    "real_data": "產能縮至4.4萬片但良率>99%，產能已預訂，2027年漲幅預期不低於2026年",
+    "gap_space": "供給受限支撐漲價，估值因長約與高良率重估，成長循環確認",
+    "concept_stocks": [
+      "5347 世界"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "優分析：世界先進新廠啟用，成熟製程續迎漲價循環",
+    "last_update": "2026-09-30"
   },
   {
     "category": "先進半導體 (Advanced Semiconductor)",
@@ -2907,6 +2956,22 @@
     "impact_direction": "bullish",
     "source": "優分析：意法半導體調高資料中心營收目標，Q4有望突破40億美元",
     "last_update": "2026-07-23"
+  },
+  {
+    "category": "先進半導體 (Advanced Semiconductor)",
+    "target": "成熟製程晶圓代工",
+    "market_expect": "市場預期成熟製程需求平淡，股價沉寂無表現",
+    "real_data": "晶圓代工傳出漲價利多，聯電等三雄股價集體轉強",
+    "gap_space": "落後補漲效應顯著，估值從冷門轉向熱門",
+    "concept_stocks": [
+      "2303 聯電",
+      "5347 世界",
+      "6770 力積電"
+    ],
+    "dream_rating": "利多追價效應",
+    "impact_direction": "bullish",
+    "source": "優分析：成熟製程漲價利多，三雄股價轉強",
+    "last_update": "2026-09-29"
   },
   {
     "category": "先進半導體 (Advanced Semiconductor)",
@@ -4055,6 +4120,20 @@
     "last_update": "2026-09-15"
   },
   {
+    "category": "半導體廠務與基礎設施",
+    "target": "大甲(2221) 數據中心冷卻管件與半導體廠務系統",
+    "market_expect": "市場原視其為傳統石化管件供應商，成長受限於石化景氣循環",
+    "real_data": "8月EPS暴增2.5倍，冷卻管件占比達六成，接單能見度延伸至2028年",
+    "gap_space": "估值邏輯從傳統週期股重估為AI基建成長股，獲利結構質變",
+    "concept_stocks": [
+      "2221 大甲"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "優分析：大甲9天股價翻倍，獲利結構轉向AI數據中心",
+    "last_update": "2026-09-30"
+  },
+  {
     "category": "半導體後段封測 (Semiconductor Backend)",
     "target": "AI ASIC 測試產能與矽光子測試",
     "market_expect": "法人原預期單季 EPS 維持 2 元以上，視為常態性水準",
@@ -5084,6 +5163,20 @@
     "impact_direction": "bullish",
     "source": "鉅亨網/上海航交所：美東線運價4年首破萬美元",
     "last_update": "2026-09-23"
+  },
+  {
+    "category": "特殊鋼 (Special Steel)",
+    "target": "榮剛(5009) VAR產能與AI能源應用",
+    "market_expect": "原預期傳統週期復甦緩慢，新產能貢獻需待2027年才顯現",
+    "real_data": "在手訂單升至85億，VAR產能翻倍，AI資料中心能源需求以年計算",
+    "gap_space": "能源需求能見度極高且供應缺口大，產能擴張轉化速度優於預期",
+    "concept_stocks": [
+      "5009 榮剛"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "優分析：榮剛法人會透露訂單升至85億，VAR產能翻倍受惠AI缺電",
+    "last_update": "2026-09-30"
   },
   {
     "category": "特用化學 (Specialty Chemicals)",
@@ -8586,6 +8679,23 @@
     "impact_direction": "bullish",
     "source": "首爾經濟日報：三星 SK 海力士 Q3 財報面臨極高預期與漲價放緩挑戰",
     "last_update": "2026-09-27"
+  },
+  {
+    "category": "記憶體 (Memory)",
+    "target": "HBM4/HBM4e 供給缺口與價格",
+    "market_expect": "市場原預期HBM價格溫和上漲，供需緊繃屬週期性現象",
+    "real_data": "TrendForce預測明年HBM混合ASP暴漲121%，供不應求延續至2027年",
+    "gap_space": "價格預期差距極大，ASP年增121%遠超市場樂觀預期，估值重估空間顯著",
+    "concept_stocks": [
+      "2344 華邦電",
+      "2337 旺宏",
+      "1229 聯華",
+      "2330 台積電"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "TrendForce：HBM4明年恐漲價121%，AI需求推升供應緊張",
+    "last_update": "2026-09-30"
   },
   {
     "category": "記憶體 (Memory)",
