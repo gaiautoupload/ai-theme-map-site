@@ -4243,7 +4243,7 @@
   {
     "category": "半導體材料 (Semiconductor Materials)",
     "target": "12吋矽晶圓 (12-inch Silicon Wafer)",
-    "market_expect": "法人原預期傳統週期波動，對明年長約漲幅預期保守或持平",
+    "market_expect": "法人原預期長約漲幅溫和，市場對庫存調整影響獲利仍有疑慮",
     "real_data": "法人看好2027年矽晶圓長約看漲1-2成，AI產能滿載且供需改善",
     "gap_space": "預期漲幅達10-20%，估值因AI需求重估，空間顯著",
     "concept_stocks": [
@@ -4870,6 +4870,22 @@
     "impact_direction": "bullish",
     "source": "經濟日報：聲寶法說會指出記憶體漲幅影響電視成本，第四季審慎樂觀",
     "last_update": "2026-09-16"
+  },
+  {
+    "category": "封測 (OSAT)",
+    "target": "華泰(2329) 封測漲價與eSSD/AI伺服器應用",
+    "market_expect": "市場原預期漲價效益延後，且消費性電子需求疲弱影響稼動率",
+    "real_data": "Q3起顯現漲價效益，eSSD切入AI伺服器，邏輯IC產能外溢效應發酵",
+    "gap_space": "利潤結構優化，高階產品占比提升帶動營收與獲利雙重重估",
+    "concept_stocks": [
+      "2329 華泰",
+      "2344 華邦電",
+      "2337 旺宏"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "鉅亨網：華泰法說會指出Q3漲價效益顯現，明年雙動能強",
+    "last_update": "2026-10-02"
   },
   {
     "category": "工業自動化零組件",
@@ -5637,7 +5653,9 @@
       "2492 華新科",
       "2330 台積電",
       "3037 欣興",
-      "3189 景碩"
+      "3189 景碩",
+      "5007 三星",
+      "2383 台光電"
     ],
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
@@ -5790,12 +5808,14 @@
     "concept_stocks": [
       "2327 國巨*",
       "2492 華新科",
-      "6173 信昌電"
+      "6173 信昌電",
+      "3026 禾伸堂",
+      "8043 蜜望實"
     ],
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
     "source": "優分析：三星電機調漲MLCC報價，通路庫存量減價升",
-    "last_update": "2026-09-04"
+    "last_update": "2026-10-02"
   },
   {
     "category": "被動元件 (Passive Components)",
@@ -5864,7 +5884,7 @@
     "target": "MLCC、晶片電阻、AI伺服器電源組件",
     "market_expect": "市場原以為AI狂潮與被動元件無關，認為該族群走勢死氣沉沉，缺乏成長動能",
     "real_data": "國巨華新科帶頭漲價，受惠AI伺服器12V電源升級與高階產品轉單，稼動率攀升",
-    "gap_space": "獲利結構性重估，高毛利產品比重拉升帶來EPS強烈上修空間與定價權",
+    "gap_space": "從預期無關到結構性巨變，獲利與毛利率具備強烈上修空間，估值重估彈性大",
     "concept_stocks": [
       "2327 國巨*",
       "2492 華新科",
@@ -8896,6 +8916,40 @@
   },
   {
     "category": "記憶體 (Memory)",
+    "target": "HBM4 記憶體",
+    "market_expect": "市場原預期HBM價格溫和上漲，反映供需緊繃但屬常態性波動",
+    "real_data": "三星HBM4報價4.5美元起，較HBM3E漲三倍，年增率預估達121%",
+    "gap_space": "價格重估空間巨大，三倍漲幅遠超市場對常態性漲價的預期",
+    "concept_stocks": [
+      "2344 華邦電",
+      "2451 創見",
+      "3260 威剛"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "南韓《每日經濟》：三星HBM4報價鎖4.5美元起，漲三倍",
+    "last_update": "2026-10-03"
+  },
+  {
+    "category": "記憶體 (Memory)",
+    "target": "HBM4 高頻寬記憶體",
+    "market_expect": "市場原預期 HBM 價格溫和上漲，競爭格局由 SK 海力士主導",
+    "real_data": "三星 HBM4 報價逾前代 3 倍，TrendForce 預測 2027 年均价漲 121%",
+    "gap_space": "價格溢價幅度遠超預期，供需缺口與技術壁壘支撐極高估值重估空間",
+    "concept_stocks": [
+      "2344 華邦電",
+      "2451 創見",
+      "3260 威剛",
+      "3035 智原",
+      "2449 京元電子"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "韓國《每日經濟》：三星 HBM4 報價逾前代 3 倍",
+    "last_update": "2026-10-03"
+  },
+  {
+    "category": "記憶體 (Memory)",
     "target": "HBM4/HBM4e 供給缺口與價格",
     "market_expect": "市場原預期HBM價格溫和上漲，供需緊繃屬週期性現象",
     "real_data": "TrendForce預測明年HBM混合ASP暴漲121%，供不應求延續至2027年",
@@ -10541,13 +10595,14 @@
     "category": "記憶體 (Memory)",
     "target": "高階 DRAM 與 NAND Flash 供給缺口",
     "market_expect": "市場原預期記憶體價格溫和復甦，屬傳統週期性波動",
-    "real_data": "AI 伺服器擠佔產能致晶片荒，三星手機年內二次漲價轉嫁成本",
+    "real_data": "AI 伺服器擠佔產能致晶片荒，三星 S26 系列年內二次漲價 100 美元",
     "gap_space": "AI 需求結構性擠壓導致供給缺口擴大，價格重估彈性極大",
     "concept_stocks": [
       "2344 華邦電",
       "2337 旺宏",
       "2451 創見",
-      "8299 群聯"
+      "8299 群聯",
+      "3260 威剛"
     ],
     "dream_rating": "利多估值重估",
     "impact_direction": "bullish",
@@ -10675,6 +10730,23 @@
     "impact_direction": "bearish",
     "source": "鉅亨網：特斯拉Q2交車暴增25%遠超預期，股價反寫近一年最大跌幅",
     "last_update": "2026-07-03"
+  },
+  {
+    "category": "電動車供應鏈",
+    "target": "特斯拉 (TSLA) 庫存去化與交車表現",
+    "market_expect": "市場預期交車量約46.1萬輛，擔憂高基期下成長動能放緩",
+    "real_data": "實際交車48.65萬輛大勝預期，且產量低於交車量，庫存去化2.2萬輛",
+    "gap_space": "交車量超預期2.45萬輛，庫存去化證實需求強勁，估值重估空間大",
+    "concept_stocks": [
+      "2308 台達電",
+      "2317 鴻海",
+      "3231 緯創",
+      "2382 廣達"
+    ],
+    "dream_rating": "利多估值重估",
+    "impact_direction": "bullish",
+    "source": "Electrek/Reuters：特斯拉Q3交車年減2.1%仍大勝預期，庫存去化成亮點",
+    "last_update": "2026-10-03"
   },
   {
     "category": "電動車與AI硬體",
