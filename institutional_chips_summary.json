@@ -1,6 +1,6 @@
 {
-  "date": "20261023",
-  "update_time": "2026-10-23 19:33:30",
+  "date": "20261025",
+  "update_time": "2026-10-25 19:32:03",
   "cohort_themes": [
     {
       "theme_name": "半導體封測",
@@ -38,8 +38,8 @@
   "surge_themes": [
     {
       "theme_name": "半導體封測",
-      "total_net_buy": 8280,
-      "count": 4,
+      "total_net_buy": 3792,
+      "count": 1,
       "stocks": [
         {
           "symbol": "6173",
@@ -49,50 +49,14 @@
           "total_net": 3792,
           "foreign_ratio": 17.744,
           "trust_ratio": 2.971
-        },
-        {
-          "symbol": "6173",
-          "name": "信昌電",
-          "foreign_net": 3052,
-          "trust_net": 511,
-          "total_net": 3792,
-          "foreign_ratio": 17.744,
-          "trust_ratio": 2.971
-        },
-        {
-          "symbol": "3265",
-          "name": "台星科",
-          "foreign_net": 610,
-          "trust_net": 0,
-          "total_net": 568,
-          "foreign_ratio": 4.477,
-          "trust_ratio": 0.0
-        },
-        {
-          "symbol": "3691",
-          "name": "碩禾",
-          "foreign_net": 123,
-          "trust_net": 0,
-          "total_net": 128,
-          "foreign_ratio": 1.339,
-          "trust_ratio": 0.0
         }
       ]
     },
     {
       "theme_name": "被動元件",
-      "total_net_buy": 2701,
-      "count": 3,
+      "total_net_buy": 881,
+      "count": 1,
       "stocks": [
-        {
-          "symbol": "8042",
-          "name": "金山電",
-          "foreign_net": 1468,
-          "trust_net": 0,
-          "total_net": 1318,
-          "foreign_ratio": 11.301,
-          "trust_ratio": 0.0
-        },
         {
           "symbol": "5202",
           "name": "力新",
@@ -101,31 +65,6 @@
           "total_net": 881,
           "foreign_ratio": 9.888,
           "trust_ratio": 0.0
-        },
-        {
-          "symbol": "6194",
-          "name": "育富",
-          "foreign_net": 502,
-          "trust_net": 0,
-          "total_net": 502,
-          "foreign_ratio": 10.458,
-          "trust_ratio": 0.0
-        }
-      ]
-    },
-    {
-      "theme_name": "散熱/機殼",
-      "total_net_buy": 783,
-      "count": 1,
-      "stocks": [
-        {
-          "symbol": "3324",
-          "name": "雙鴻",
-          "foreign_net": 716,
-          "trust_net": 25,
-          "total_net": 783,
-          "foreign_ratio": 7.693,
-          "trust_ratio": 0.269
         }
       ]
     },
@@ -183,6 +122,22 @@
           "total_net": 236,
           "foreign_ratio": 6.167,
           "trust_ratio": 0.0
+        }
+      ]
+    },
+    {
+      "theme_name": "矽晶圓",
+      "total_net_buy": -4693,
+      "count": 1,
+      "stocks": [
+        {
+          "symbol": "5483",
+          "name": "中美晶",
+          "foreign_net": -5273,
+          "trust_net": 911,
+          "total_net": -4693,
+          "foreign_ratio": -8.223,
+          "trust_ratio": 1.421
         }
       ]
     }
@@ -538,7 +493,7 @@
   ],
   "cohort_buys": [
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6173",
       "name": "信昌電",
       "foreign_net": 3052,
@@ -552,7 +507,7 @@
       "trust_ratio": 2.971
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3324",
       "name": "雙鴻",
       "foreign_net": 716,
@@ -566,7 +521,7 @@
       "trust_ratio": 0.269
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3293",
       "name": "鈊象",
       "foreign_net": 634,
@@ -580,7 +535,7 @@
       "trust_ratio": 0.039
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "8069",
       "name": "元太",
       "foreign_net": 314,
@@ -596,7 +551,7 @@
   ],
   "top_foreign_buys": [
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00687B",
       "name": "國泰20年美債",
       "foreign_net": 8066,
@@ -610,7 +565,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00931B",
       "name": "統一美債20年",
       "foreign_net": 6778,
@@ -624,7 +579,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00937B",
       "name": "群益ESG投等債20+",
       "foreign_net": 5301,
@@ -638,7 +593,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00679B",
       "name": "元大美債20年",
       "foreign_net": 4195,
@@ -652,7 +607,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00751B",
       "name": "元大AAA至A公司債",
       "foreign_net": 3152,
@@ -666,7 +621,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6173",
       "name": "信昌電",
       "foreign_net": 3052,
@@ -680,7 +635,7 @@
       "trust_ratio": 2.971
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "5904",
       "name": "寶雅*",
       "foreign_net": 2273,
@@ -694,7 +649,7 @@
       "trust_ratio": -3.232
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3374",
       "name": "精材",
       "foreign_net": 2249,
@@ -708,7 +663,7 @@
       "trust_ratio": -0.696
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00933B",
       "name": "國泰10Y+金融債",
       "foreign_net": 2151,
@@ -722,7 +677,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00696B",
       "name": "富邦美債20年",
       "foreign_net": 2046,
@@ -736,7 +691,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00720B",
       "name": "元大投資級公司債",
       "foreign_net": 1931,
@@ -750,7 +705,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00998A",
       "name": "主動復華金融股息",
       "foreign_net": 1719,
@@ -764,7 +719,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "8042",
       "name": "金山電",
       "foreign_net": 1468,
@@ -778,7 +733,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3105",
       "name": "穩懋",
       "foreign_net": 1382,
@@ -792,7 +747,7 @@
       "trust_ratio": -5.392
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "4903",
       "name": "聯光通",
       "foreign_net": 1321,
@@ -806,7 +761,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00950B",
       "name": "凱基A級公司債",
       "foreign_net": 1227,
@@ -820,7 +775,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6148",
       "name": "驊宏資",
       "foreign_net": 1208,
@@ -834,7 +789,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00948B",
       "name": "中信優息投資級債",
       "foreign_net": 1180,
@@ -848,7 +803,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "5009",
       "name": "榮剛",
       "foreign_net": 1176,
@@ -862,7 +817,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00761B",
       "name": "國泰A級公司債",
       "foreign_net": 1031,
@@ -876,7 +831,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00725B",
       "name": "國泰投資級公司債",
       "foreign_net": 962,
@@ -890,7 +845,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "5202",
       "name": "力新",
       "foreign_net": 881,
@@ -904,7 +859,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00981D",
       "name": "主動中信非投等債",
       "foreign_net": 815,
@@ -918,7 +873,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00772B",
       "name": "中信高評級公司債",
       "foreign_net": 800,
@@ -932,7 +887,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00746B",
       "name": "富邦A級公司債",
       "foreign_net": 789,
@@ -946,7 +901,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00864B",
       "name": "中信美國公債0-1",
       "foreign_net": 767,
@@ -960,7 +915,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00411A",
       "name": "主動統一前沿科技",
       "foreign_net": 752,
@@ -974,7 +929,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3324",
       "name": "雙鴻",
       "foreign_net": 716,
@@ -988,7 +943,7 @@
       "trust_ratio": 0.269
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00986D",
       "name": "主動復華金融債息",
       "foreign_net": 704,
@@ -1002,7 +957,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00955",
       "name": "中信日本商社",
       "foreign_net": 641,
@@ -1016,7 +971,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6147",
       "name": "頎邦",
       "foreign_net": 641,
@@ -1030,7 +985,7 @@
       "trust_ratio": -1.319
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3293",
       "name": "鈊象",
       "foreign_net": 634,
@@ -1044,7 +999,7 @@
       "trust_ratio": 0.039
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3265",
       "name": "台星科",
       "foreign_net": 610,
@@ -1058,7 +1013,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00795B",
       "name": "中信美國公債20年",
       "foreign_net": 583,
@@ -1072,7 +1027,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "1569",
       "name": "濱川",
       "foreign_net": 522,
@@ -1086,7 +1041,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00966B",
       "name": "統一ESG投等債15+",
       "foreign_net": 520,
@@ -1100,7 +1055,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00857B",
       "name": "永豐20年美公債",
       "foreign_net": 511,
@@ -1114,7 +1069,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6194",
       "name": "育富",
       "foreign_net": 502,
@@ -1128,7 +1083,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6109",
       "name": "亞元",
       "foreign_net": 492,
@@ -1142,7 +1097,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00773B",
       "name": "中信優先金融債",
       "foreign_net": 471,
@@ -1156,7 +1111,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3707",
       "name": "漢磊",
       "foreign_net": 467,
@@ -1170,7 +1125,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "8227",
       "name": "巨有科技",
       "foreign_net": 455,
@@ -1184,7 +1139,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00740B",
       "name": "富邦全球投等債",
       "foreign_net": 442,
@@ -1198,7 +1153,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00768B",
       "name": "復華20年美債",
       "foreign_net": 435,
@@ -1212,7 +1167,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "4953",
       "name": "緯致",
       "foreign_net": 413,
@@ -1226,7 +1181,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "5230",
       "name": "雷笛克光學",
       "foreign_net": 395,
@@ -1240,7 +1195,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00942B",
       "name": "台新美A公司債20+",
       "foreign_net": 369,
@@ -1254,7 +1209,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "4123",
       "name": "晟德",
       "foreign_net": 369,
@@ -1268,7 +1223,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6221",
       "name": "晉泰",
       "foreign_net": 365,
@@ -1282,7 +1237,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6187",
       "name": "萬潤",
       "foreign_net": 333,
@@ -1298,7 +1253,7 @@
   ],
   "top_trust_buys": [
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3264",
       "name": "欣銓",
       "foreign_net": -7716,
@@ -1312,7 +1267,7 @@
       "trust_ratio": 4.435
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "5483",
       "name": "中美晶",
       "foreign_net": -5273,
@@ -1326,7 +1281,7 @@
       "trust_ratio": 1.421
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6173",
       "name": "信昌電",
       "foreign_net": 3052,
@@ -1340,7 +1295,7 @@
       "trust_ratio": 2.971
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6510",
       "name": "精測",
       "foreign_net": -241,
@@ -1354,7 +1309,7 @@
       "trust_ratio": 9.093
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "8069",
       "name": "元太",
       "foreign_net": 314,
@@ -1368,7 +1323,7 @@
       "trust_ratio": 0.246
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "7856",
       "name": "漢測",
       "foreign_net": -16,
@@ -1382,7 +1337,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6223",
       "name": "旺矽",
       "foreign_net": -30,
@@ -1396,7 +1351,7 @@
       "trust_ratio": 0.388
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "8358",
       "name": "金居",
       "foreign_net": -1522,
@@ -1410,7 +1365,7 @@
       "trust_ratio": 0.123
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6138",
       "name": "茂達",
       "foreign_net": -74,
@@ -1424,7 +1379,7 @@
       "trust_ratio": 0.357
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3324",
       "name": "雙鴻",
       "foreign_net": 716,
@@ -1438,7 +1393,7 @@
       "trust_ratio": 0.269
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "5347",
       "name": "世界",
       "foreign_net": -2179,
@@ -1452,7 +1407,7 @@
       "trust_ratio": 0.007
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3293",
       "name": "鈊象",
       "foreign_net": 634,
@@ -1466,7 +1421,7 @@
       "trust_ratio": 0.039
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "4991",
       "name": "環宇-KY",
       "foreign_net": -435,
@@ -1480,7 +1435,7 @@
       "trust_ratio": 0.091
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "7734",
       "name": "印能科技",
       "foreign_net": -8,
@@ -1494,7 +1449,7 @@
       "trust_ratio": 0.357
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "8299",
       "name": "群聯",
       "foreign_net": 248,
@@ -1508,7 +1463,7 @@
       "trust_ratio": 0.045
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3260",
       "name": "威剛",
       "foreign_net": 228,
@@ -1522,7 +1477,7 @@
       "trust_ratio": 0.012
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3526",
       "name": "凡甲",
       "foreign_net": -118,
@@ -1538,7 +1493,7 @@
   ],
   "foreign_surges": [
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00687B",
       "name": "國泰20年美債",
       "foreign_net": 8066,
@@ -1552,7 +1507,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00931B",
       "name": "統一美債20年",
       "foreign_net": 6778,
@@ -1566,13 +1521,13 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
-      "symbol": "00679B",
-      "name": "元大美債20年",
-      "foreign_net": 4195,
+      "date": "20261025",
+      "symbol": "00751B",
+      "name": "元大AAA至A公司債",
+      "foreign_net": 3152,
       "trust_net": 0,
-      "dealer_net": 13927,
-      "total_net": 18122,
+      "dealer_net": 4746,
+      "total_net": 7898,
       "themes": [
         "ETF/債券"
       ],
@@ -1580,7 +1535,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6173",
       "name": "信昌電",
       "foreign_net": 3052,
@@ -1594,21 +1549,7 @@
       "trust_ratio": 2.971
     },
     {
-      "date": "20261023",
-      "symbol": "00696B",
-      "name": "富邦美債20年",
-      "foreign_net": 2046,
-      "trust_net": 0,
-      "dealer_net": -1548,
-      "total_net": 498,
-      "themes": [
-        "ETF/債券"
-      ],
-      "foreign_ratio": 0.0,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00720B",
       "name": "元大投資級公司債",
       "foreign_net": 1931,
@@ -1622,35 +1563,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
-      "symbol": "8042",
-      "name": "金山電",
-      "foreign_net": 1468,
-      "trust_net": 0,
-      "dealer_net": -150,
-      "total_net": 1318,
-      "themes": [
-        "被動元件"
-      ],
-      "foreign_ratio": 11.301,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20261023",
-      "symbol": "00761B",
-      "name": "國泰A級公司債",
-      "foreign_net": 1031,
-      "trust_net": 0,
-      "dealer_net": -969,
-      "total_net": 62,
-      "themes": [
-        "ETF/債券"
-      ],
-      "foreign_ratio": 0.0,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "5202",
       "name": "力新",
       "foreign_net": 881,
@@ -1664,21 +1577,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
-      "symbol": "00746B",
-      "name": "富邦A級公司債",
-      "foreign_net": 789,
-      "trust_net": 0,
-      "dealer_net": -763,
-      "total_net": 26,
-      "themes": [
-        "ETF/債券"
-      ],
-      "foreign_ratio": 0.0,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00864B",
       "name": "中信美國公債0-1",
       "foreign_net": 767,
@@ -1692,21 +1591,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
-      "symbol": "3324",
-      "name": "雙鴻",
-      "foreign_net": 716,
-      "trust_net": 25,
-      "dealer_net": 42,
-      "total_net": 783,
-      "themes": [
-        "散熱/機殼"
-      ],
-      "foreign_ratio": 7.693,
-      "trust_ratio": 0.269
-    },
-    {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00986D",
       "name": "主動復華金融債息",
       "foreign_net": 704,
@@ -1720,27 +1605,13 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
-      "symbol": "3265",
-      "name": "台星科",
-      "foreign_net": 610,
+      "date": "20261025",
+      "symbol": "00857B",
+      "name": "永豐20年美公債",
+      "foreign_net": 511,
       "trust_net": 0,
-      "dealer_net": -42,
-      "total_net": 568,
-      "themes": [
-        "半導體封測"
-      ],
-      "foreign_ratio": 4.477,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20261023",
-      "symbol": "00966B",
-      "name": "統一ESG投等債15+",
-      "foreign_net": 520,
-      "trust_net": 0,
-      "dealer_net": -197,
-      "total_net": 323,
+      "dealer_net": 400,
+      "total_net": 911,
       "themes": [
         "ETF/債券"
       ],
@@ -1748,21 +1619,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
-      "symbol": "6194",
-      "name": "育富",
-      "foreign_net": 502,
-      "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 502,
-      "themes": [
-        "被動元件"
-      ],
-      "foreign_ratio": 10.458,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00773B",
       "name": "中信優先金融債",
       "foreign_net": 471,
@@ -1776,21 +1633,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
-      "symbol": "00768B",
-      "name": "復華20年美債",
-      "foreign_net": 435,
-      "trust_net": 0,
-      "dealer_net": -318,
-      "total_net": 117,
-      "themes": [
-        "ETF/債券"
-      ],
-      "foreign_ratio": 0.0,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "4953",
       "name": "緯致",
       "foreign_net": 413,
@@ -1804,7 +1647,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "5230",
       "name": "雷笛克光學",
       "foreign_net": 395,
@@ -1818,7 +1661,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00942B",
       "name": "台新美A公司債20+",
       "foreign_net": 369,
@@ -1832,21 +1675,21 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
-      "symbol": "6221",
-      "name": "晉泰",
-      "foreign_net": 365,
-      "trust_net": 0,
-      "dealer_net": 25,
-      "total_net": 390,
+      "date": "20261025",
+      "symbol": "8069",
+      "name": "元太",
+      "foreign_net": 314,
+      "trust_net": 284,
+      "dealer_net": 42,
+      "total_net": 640,
       "themes": [
         "其他類股"
       ],
-      "foreign_ratio": 2.165,
-      "trust_ratio": 0.0
+      "foreign_ratio": 0.272,
+      "trust_ratio": 0.246
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3219",
       "name": "倚強科",
       "foreign_net": 260,
@@ -1860,21 +1703,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
-      "symbol": "3529",
-      "name": "力旺",
-      "foreign_net": 231,
-      "trust_net": -119,
-      "dealer_net": -14,
-      "total_net": 98,
-      "themes": [
-        "IP/IC設計"
-      ],
-      "foreign_ratio": 3.093,
-      "trust_ratio": -1.593
-    },
-    {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00853B",
       "name": "統一美債10年Aa-A",
       "foreign_net": 208,
@@ -1888,7 +1717,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "4188",
       "name": "安克",
       "foreign_net": 194,
@@ -1902,7 +1731,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6690",
       "name": "安碁資訊",
       "foreign_net": 185,
@@ -1916,49 +1745,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
-      "symbol": "6180",
-      "name": "橘子",
-      "foreign_net": 179,
-      "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 179,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 1.02,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20261023",
-      "symbol": "4534",
-      "name": "慶騰",
-      "foreign_net": 166,
-      "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 166,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 1.913,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20261023",
-      "symbol": "6925",
-      "name": "意藍",
-      "foreign_net": 151,
-      "trust_net": 0,
-      "dealer_net": -28,
-      "total_net": 123,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 7.55,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "4523",
       "name": "永彰",
       "foreign_net": 137,
@@ -1972,35 +1759,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
-      "symbol": "3691",
-      "name": "碩禾",
-      "foreign_net": 123,
-      "trust_net": 0,
-      "dealer_net": 5,
-      "total_net": 128,
-      "themes": [
-        "半導體封測"
-      ],
-      "foreign_ratio": 1.339,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20261023",
-      "symbol": "6140",
-      "name": "訊達",
-      "foreign_net": 114,
-      "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 114,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 2.077,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "00862B",
       "name": "中信投資級公司債",
       "foreign_net": 110,
@@ -2012,39 +1771,11 @@
       ],
       "foreign_ratio": 0.0,
       "trust_ratio": 0.0
-    },
-    {
-      "date": "20261023",
-      "symbol": "6617",
-      "name": "共信-KY",
-      "foreign_net": 102,
-      "trust_net": 0,
-      "dealer_net": 0,
-      "total_net": 102,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 0.8,
-      "trust_ratio": 0.0
-    },
-    {
-      "date": "20261023",
-      "symbol": "8240",
-      "name": "華宏",
-      "foreign_net": 102,
-      "trust_net": 0,
-      "dealer_net": 65,
-      "total_net": 167,
-      "themes": [
-        "其他類股"
-      ],
-      "foreign_ratio": 1.02,
-      "trust_ratio": 0.0
     }
   ],
   "trust_surges": [
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "5483",
       "name": "中美晶",
       "foreign_net": -5273,
@@ -2056,25 +1787,11 @@
       ],
       "foreign_ratio": -8.223,
       "trust_ratio": 1.421
-    },
-    {
-      "date": "20261023",
-      "symbol": "6173",
-      "name": "信昌電",
-      "foreign_net": 3052,
-      "trust_net": 511,
-      "dealer_net": 228,
-      "total_net": 3792,
-      "themes": [
-        "半導體封測"
-      ],
-      "foreign_ratio": 17.744,
-      "trust_ratio": 2.971
     }
   ],
   "top_foreign_ratio": [
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6148",
       "name": "驊宏資",
       "foreign_net": 1208,
@@ -2088,7 +1805,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "5904",
       "name": "寶雅*",
       "foreign_net": 2273,
@@ -2102,7 +1819,7 @@
       "trust_ratio": -3.232
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6173",
       "name": "信昌電",
       "foreign_net": 3052,
@@ -2116,7 +1833,7 @@
       "trust_ratio": 2.971
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "4903",
       "name": "聯光通",
       "foreign_net": 1321,
@@ -2130,7 +1847,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "8227",
       "name": "巨有科技",
       "foreign_net": 455,
@@ -2144,7 +1861,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "8042",
       "name": "金山電",
       "foreign_net": 1468,
@@ -2158,7 +1875,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6194",
       "name": "育富",
       "foreign_net": 502,
@@ -2172,7 +1889,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "5202",
       "name": "力新",
       "foreign_net": 881,
@@ -2186,7 +1903,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3374",
       "name": "精材",
       "foreign_net": 2249,
@@ -2200,7 +1917,7 @@
       "trust_ratio": -0.696
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3324",
       "name": "雙鴻",
       "foreign_net": 716,
@@ -2214,7 +1931,7 @@
       "trust_ratio": 0.269
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6925",
       "name": "意藍",
       "foreign_net": 151,
@@ -2228,7 +1945,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3580",
       "name": "友威科",
       "foreign_net": 291,
@@ -2242,7 +1959,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6517",
       "name": "保勝光學",
       "foreign_net": 225,
@@ -2256,7 +1973,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "5230",
       "name": "雷笛克光學",
       "foreign_net": 395,
@@ -2270,7 +1987,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6727",
       "name": "亞泰金屬",
       "foreign_net": 175,
@@ -2284,7 +2001,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6690",
       "name": "安碁資訊",
       "foreign_net": 185,
@@ -2298,7 +2015,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "4953",
       "name": "緯致",
       "foreign_net": 413,
@@ -2312,7 +2029,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6109",
       "name": "亞元",
       "foreign_net": 492,
@@ -2326,7 +2043,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3441",
       "name": "聯一光",
       "foreign_net": 190,
@@ -2340,7 +2057,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3265",
       "name": "台星科",
       "foreign_net": 610,
@@ -2354,7 +2071,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6538",
       "name": "倉和",
       "foreign_net": 166,
@@ -2368,7 +2085,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "4760",
       "name": "勤凱",
       "foreign_net": 136,
@@ -2382,7 +2099,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3219",
       "name": "倚強科",
       "foreign_net": 260,
@@ -2396,7 +2113,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "1569",
       "name": "濱川",
       "foreign_net": 522,
@@ -2410,7 +2127,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6187",
       "name": "萬潤",
       "foreign_net": 333,
@@ -2424,7 +2141,7 @@
       "trust_ratio": -1.304
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "5228",
       "name": "鈺鎧",
       "foreign_net": 126,
@@ -2438,7 +2155,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3105",
       "name": "穩懋",
       "foreign_net": 1382,
@@ -2452,7 +2169,7 @@
       "trust_ratio": -5.392
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3529",
       "name": "力旺",
       "foreign_net": 231,
@@ -2466,7 +2183,7 @@
       "trust_ratio": -1.593
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "4188",
       "name": "安克",
       "foreign_net": 194,
@@ -2480,7 +2197,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3689",
       "name": "湧德",
       "foreign_net": 267,
@@ -2494,7 +2211,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "4542",
       "name": "科嶠",
       "foreign_net": 102,
@@ -2508,7 +2225,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "1595",
       "name": "川寶",
       "foreign_net": 160,
@@ -2522,7 +2239,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3354",
       "name": "律勝",
       "foreign_net": 192,
@@ -2536,7 +2253,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "4939",
       "name": "亞電",
       "foreign_net": 251,
@@ -2550,7 +2267,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6874",
       "name": "倍力",
       "foreign_net": 56,
@@ -2564,7 +2281,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "4541",
       "name": "晟田",
       "foreign_net": 162,
@@ -2578,7 +2295,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3293",
       "name": "鈊象",
       "foreign_net": 634,
@@ -2592,7 +2309,7 @@
       "trust_ratio": 0.039
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3268",
       "name": "海德威",
       "foreign_net": 78,
@@ -2606,7 +2323,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6221",
       "name": "晉泰",
       "foreign_net": 365,
@@ -2620,7 +2337,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6811",
       "name": "宏碁資訊",
       "foreign_net": 89,
@@ -2634,7 +2351,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "4523",
       "name": "永彰",
       "foreign_net": 137,
@@ -2648,7 +2365,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "5209",
       "name": "新鼎",
       "foreign_net": 60,
@@ -2662,7 +2379,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6140",
       "name": "訊達",
       "foreign_net": 114,
@@ -2676,7 +2393,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "5009",
       "name": "榮剛",
       "foreign_net": 1176,
@@ -2690,7 +2407,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "4534",
       "name": "慶騰",
       "foreign_net": 166,
@@ -2704,7 +2421,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "7714",
       "name": "創泓科技",
       "foreign_net": 39,
@@ -2718,7 +2435,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3623",
       "name": "富晶通",
       "foreign_net": 53,
@@ -2732,7 +2449,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6146",
       "name": "耕興",
       "foreign_net": 184,
@@ -2746,7 +2463,7 @@
       "trust_ratio": -0.02
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "5289",
       "name": "宜鼎",
       "foreign_net": 171,
@@ -2760,7 +2477,7 @@
       "trust_ratio": 0.0
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6218",
       "name": "豪勉",
       "foreign_net": 112,
@@ -2776,7 +2493,7 @@
   ],
   "top_trust_ratio": [
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6510",
       "name": "精測",
       "foreign_net": -241,
@@ -2790,7 +2507,7 @@
       "trust_ratio": 9.093
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3264",
       "name": "欣銓",
       "foreign_net": -7716,
@@ -2804,7 +2521,7 @@
       "trust_ratio": 4.435
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6173",
       "name": "信昌電",
       "foreign_net": 3052,
@@ -2818,7 +2535,7 @@
       "trust_ratio": 2.971
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "5483",
       "name": "中美晶",
       "foreign_net": -5273,
@@ -2832,7 +2549,7 @@
       "trust_ratio": 1.421
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6223",
       "name": "旺矽",
       "foreign_net": -30,
@@ -2846,7 +2563,7 @@
       "trust_ratio": 0.388
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "6138",
       "name": "茂達",
       "foreign_net": -74,
@@ -2860,7 +2577,7 @@
       "trust_ratio": 0.357
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "7734",
       "name": "印能科技",
       "foreign_net": -8,
@@ -2874,7 +2591,7 @@
       "trust_ratio": 0.357
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3324",
       "name": "雙鴻",
       "foreign_net": 716,
@@ -2888,7 +2605,7 @@
       "trust_ratio": 0.269
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "8069",
       "name": "元太",
       "foreign_net": 314,
@@ -2902,7 +2619,7 @@
       "trust_ratio": 0.246
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "8358",
       "name": "金居",
       "foreign_net": -1522,
@@ -2916,7 +2633,7 @@
       "trust_ratio": 0.123
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "4991",
       "name": "環宇-KY",
       "foreign_net": -435,
@@ -2930,7 +2647,7 @@
       "trust_ratio": 0.091
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "8299",
       "name": "群聯",
       "foreign_net": 248,
@@ -2944,7 +2661,7 @@
       "trust_ratio": 0.045
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3293",
       "name": "鈊象",
       "foreign_net": 634,
@@ -2958,7 +2675,7 @@
       "trust_ratio": 0.039
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3526",
       "name": "凡甲",
       "foreign_net": -118,
@@ -2972,7 +2689,7 @@
       "trust_ratio": 0.03
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "3260",
       "name": "威剛",
       "foreign_net": 228,
@@ -2986,7 +2703,7 @@
       "trust_ratio": 0.012
     },
     {
-      "date": "20261023",
+      "date": "20261025",
       "symbol": "5347",
       "name": "世界",
       "foreign_net": -2179,
