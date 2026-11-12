@@ -259348,5 +259348,647 @@
         "note": "查詢主題：美國製造與關稅政策轉向下的轉單、東協製造與供應鏈重組題材\n以下是主題 evidence 白名單上下文：\n官方補查入口：\n- TWSE: https://www.twse.com.tw/zh/search/news?query=%E7%BE%8E%E5%9C%8B%E8%A3%BD%E9%80%A0%E8%88%87%E9%97%9C%E7%A8%85%E6%94%BF%E7%AD%96%E8%BD%89%E5%90%91%E4%B8%8B%E7%9A%84%E8%BD%89%E5%96%AE%E3%80%81%E6%9D%B1%E5%8D%94%E8%A3%BD%E9%80%A0%E8%88%87%E4%BE%9B%E6%87%89%E9%8F%88%E9%87%8D%E7%B5%84%E9%A1%8C%E6%9D%90\n- TPEx: https://www.tpex.org.tw/web/stock/aftertrading/daily_trading_info/st43_result.php?l=zh-tw&keyword=%E7%BE%8E%E5%9C%8B%E8%A"
       }
     ]
+  },
+  "map_AI_資料中心耗電激增帶動重電_電網強韌化_儲能與散熱題材_20261112_192316": {
+    "title": "AI 資料中心耗電激增帶動重電、電網強韌化、儲能與散熱題材",
+    "date": "2026-11-12",
+    "updated_at": "2026-11-12T19:23:16+08:00",
+    "heat": "AI 資料中心電力基礎設施正處於「驗證→量產」的結構性轉折點。NVIDIA GB200 NVL72 於 2025 年量產使液冷從可選變為標準配置，北美大型變壓器（LPT）交付排期已延至 2027–2028 形成稀缺溢價，Hyperscaler 集中投產的 AI 園區（單座 100–300 MW）使電網公司首次將「資料中心專用供電」列為獨立規劃項目。資金正從「誰能交付」的瓶頸定價，轉向「誰能量產且守住毛利」的結構性定價，火勢由重電設備向液冷硬體、儲能系統、電網智慧化軟體逐段擴散。",
+    "heat_score": 81,
+    "heat_drivers": [
+      "NVIDIA GB200 NVL72 單櫃 120 kW 超出風冷物理極限，液冷從可選升級為新一代 AI 機房標準配置，2025–2027 滲透率從 <10% 跳升至 40–60%",
+      "北美大型變壓器（LPT）交付排期延至 2027–2028，全球供給集中於少數廠商，形成 18–30 月交付瓶頸與稀缺溢價",
+      "Hyperscaler（Microsoft、Google、Meta、Amazon）2025–2027 年 AI 資料中心集中投產，單座園區峰值負載 100–300 MW，等同一座中型城市用電量",
+      "北美夏季尖峰電價達離峰 3–5 倍，儲能套利空間擴大；ESG 要求 2030 年前 100% 綠電，柴發機使用時數必須壓縮，儲能從備援升級為經濟性必選項",
+      "各國電網公司（PGE、TEPCO、台電）將「資料中心專用供電」列為獨立規劃項目，招標節奏與預算規模明顯加速",
+      "供電架構從 400 V 低壓分配轉向 13.8–34.5 kV 中壓直供，重電設備規格（更高 kV、更大 kA）驅動 ASP 上移 20–40%"
+    ],
+    "period": "2025 Q3 – 2028 Q4（主升段核心窗口），2029 年後轉為結構性成長成熟期",
+    "desc": "本主題地圖聚焦 AI 資料中心電力基礎設施的四層價值鏈：電網側（重電設備與輸配電）、資料中心側（供電/儲能/EMS）、機房側（高密度散熱）、橫切層（電網智慧化與自動化控制）。核心研究問題是：在「密度 × 脈衝 × 規模」三維同時放大的結構性變化下，價值如何沿供應鏈重新分配？哪些環節的毛利結構能穿越量產後的成本曲線下降？資金在「瓶頸→量產→升級→訂閱」四段中的輪動節奏與切換信號是什麼？本地圖以產業結構位置與資金輪動邏輯為主軸，非單一股票推薦。",
+    "thesis": "AI 資料中心把電力基礎設施從「配套工程」升級為「前置瓶頸」：單機櫃功率從 10 kW 跳至 100 kW+ 且呈毫秒級脈衝負載，迫使供電架構、散熱系統與儲能配置全部重新設計。資金將沿「重電交付瓶頸（量價齊漲）→ 液冷量產放量（滲透率跳升）→ 儲能規模化部署（ROI 驅動）→ 電網智慧化軟體訂閱（recurring revenue）」四段式輪動。核心投資邏輯不是買單一產品，而是識別每一段中「規格升級邏輯」優於「單純量增邏輯」的環節——LPT 與高 kA GIS 的稀缺性、CDU 與介電液的技術壁壘、EMS 軟體的訂閱制毛利——這些才是穿越成本曲線下降期仍能守住結構性毛利的價值錨點。全鏈條系統整合商（從 UPS 到 EMS 到液冷 CDU）在每一段都具備卡位優勢，是跨週期最穩健的受益者。",
+    "market_size_tam": "待補資料（需整合重電設備、液冷系統、電網級儲能、電網智慧化四條子鏈的獨立 TAM 估算；目前缺乏單一權威來源給出全鏈條合併數字）",
+    "market_size_tam_source_type": "待補資料",
+    "market_cagr": "待補資料（各子鏈 CAGR 差異極大：重電設備受交付瓶頸制約短期增速受限但 ASP 上移；液冷 2025–2027 滲透率跳升期增速最高；儲能受電價差與碳排政策驅動；電網智慧化為長期結構性擴張。需分鏈估算後加總）",
+    "market_cagr_source_type": "待補資料",
+    "theme_stage": "量產導入初期（技術驗證→規模化轉折點），對應 2025 Q3 – 2026 Q4 窗口",
+    "why_now": "三個催化劑在 2025 年同時交匯：(1) NVIDIA GB200 NVL72 量產使液冷從「可選升級」變為「不裝就不能上線」的硬約束，冷板/CDU 進入量產放量期；(2) 北美 LPT 交付排期已滿至 2027–2028，資料中心上線時程首次被電力基礎設施而非 IT 設備瓶頸，重電設備商議價權結構性上移；(3) Hyperscaler 2025–2027 年 AI 園區集中投產（Microsoft Fairwater、Google Stargate 等），單座用電量等同一座中型城市，電網公司被迫將「資料中心專用供電」列為獨立規劃項目，招標節奏與預算規模同步加速。三者疊加使市場從「AI 算力主題」向「AI 電力基礎設施主題」重新定價。",
+    "key_bottleneck": "第一瓶頸：北美大型變壓器（LPT）與高短路容量 GIS 開關設備的交付能力——全球供給集中於少數廠商，交付排期 18–30 月已延至 2027–2028，新產線建設需 3–5 年認證與產能建設，短期無法快速擴產。第二瓶頸：液冷 CDU 冷量分配單元與介電液（氟化液/合成烴）的熱傳導模擬能力與介電安全認證，技術門檻高、量產良率爬坡慢。第三瓶頸：電網級儲能的 100 ms 級 EMS 響應演算法與 AGC/AVC 協同調度能力，系統整合商需同時具備 EPC + EMS + 電池三項能力。",
+    "primary_value_capture": "短期（2025–2026）：重電設備量價齊漲（LPT ASP 上移 20–40%、GIS 高 kA 規格溢價）+ 液冷硬體量產放量（冷板、CDU 營收從 pilot 轉為規模化）。中期（2027–2028）：價值向高毛利環節集中——CDU（毛利 30–40%）、介電液（毛利 40–50%，類耗材持續消耗）、儲能 EMS 軟體訂閱（毛利 40–60%）。長期（2029+）：電網智慧化軟體/演算法層（毛利 50–70%）成為主要 recurring revenue 來源，全鏈條系統整合商（硬體 + 軟體 + 服務）成為結構性贏家。",
+    "market_narrative": "市場敘事正從「AI 算力軍備競賽」（GPU、HBM、先進封裝）向「AI 電力基礎設施軍備競賽」（變壓器、液冷、儲能、電網智慧化）擴展。核心敘事轉折是：電力基礎設施從資料中心的「配套工程」升級為「前置條件」——沒有 LPT 交付就沒有機房上線，沒有液冷就沒有 GPU 滿載，沒有儲能就沒有碳排合規。這使得重電設備商、液冷系統商、儲能整合商的議價權結構性上移，從「被 Hyperscaler 壓價的供應商」變為「決定上線時程的稀缺資源」。市場定價邏輯從「誰的 GPU 跑分高」轉向「誰的電力基礎設施能按期交付且守住毛利」。",
+    "evidence_confidence": "中高——技術邏輯（電力密度跳升、液冷必要性、儲能 ROI）有明確的物理約束與產業數據支撐；但具體營收兌現時點、競爭格局演變（尤其冷板/快接頭環節）、以及電網公司招標節奏存在不確定性。搜尋上下文未提供直接相關的市場數據（提供的 global_news 多為航空、汽車等不相關主題），TAM 與 CAGR 需後續補查。",
+    "icon": "cpu",
+    "color": "from-cyan-500 to-indigo-600",
+    "theme_tags": [
+      "AI 資料中心",
+      "電力基礎設施",
+      "重電設備",
+      "液冷散熱",
+      "電網級儲能",
+      "電網強韌化",
+      "中壓直供",
+      "PUE 優化",
+      "碳排合規",
+      "系統整合"
+    ],
+    "trigger_events": [
+      "NVIDIA 下一代 GPU（GB300 或後續）功耗規格公布，若單櫃功率再上移將加速液冷/浸沒式滲透",
+      "Hyperscaler（Microsoft、Google、Meta、Amazon）季度財報中 AI 資料中心 capex 指引上修，尤其電力基礎設施占比",
+      "北美 LPT 交付排期變化（縮短或進一步延長），直接影響重電設備商 backlog 與營收確認節奏",
+      "電網公司（PGE、台電、TEPCO）發布「資料中心專用供電」獨立招標案，標案規模與數量",
+      "北美夏季尖峰電價與離峰電價差變化（目前 3–5 倍），影響儲能套利 ROI 與部署節奏",
+      "液冷 CDU 或介電液新技術認證通過（如浸沒式介電液安全標準），可能改變技術路徑選擇",
+      "美國 IRA / 歐盟 CBAM / 新加坡碳排披露規則對資料中心的具體執行細則公布"
+    ],
+    "risks": [
+      "GPU 能效比持續改善（每代 TDP 增幅小於預期），可能放緩電力密度跳升速度，削弱重電設備量價齊漲邏輯",
+      "冷板/快接頭環節進入者過多，量產後價格戰壓縮毛利（目前毛利 20–30% 可能降至 15% 以下），價值向 CDU/介電液集中但後者量產規模有限",
+      "LFP 電池成本下降速度快於預期（$/kWh 持續下降），儲能硬體層毛利被壓縮，價值進一步向 EMS 軟體集中",
+      "電網公司投資節奏受政治與民意影響（如北美電價上漲引發居民反彈），資料中心專用供電招標可能延遲",
+      "技術路徑不確定：冷板 vs 浸沒式 vs 氣液混合的最終主流方案尚未完全定型，押錯技術路徑的供應商可能面臨產能過剩",
+      "Hyperscaler 自建 vs 第三方 colo 的比例變化：若自建比例上升，系統整合商的客戶集中度風險加大",
+      "全球地緣政治風險影響重電設備（銅、鋁、稀土）與液冷介電液（氟化液）的原材料供應鏈"
+    ],
+    "watch_signals": [
+      "LPT 交付排期（月數）：目前 18–30 月，若縮短至 12–18 月代表瓶頸緩解，重電設備商稀缺溢價可能收窄",
+      "液冷滲透率：目標 2025–2027 從 <10% 跳升至 40–60%，季度追蹤 Hyperscaler 新機房設計中液冷占比",
+      "儲能 MWh 部署量：從 pilot（2–3 座）轉為規模化（每座 10–100 MWh），追蹤 Hyperscaler 與第三方 colo 的儲能採購公告",
+      "Hyperscaler capex 中電力基礎設施占比：若從 <15% 升至 25–30%，代表電力基礎設施正式成為 capex 核心項目",
+      "電網公司「資料中心專用供電」招標案數量與金額：從零星試點轉為常規化招標，代表市場結構性擴張確認",
+      "CDU 與介電液的量產良率與單位成本：CDU 毛利能否維持 30–40%、介電液 $/L 是否穩定，決定高毛利環節的持續性",
+      "電網智慧化（PMU、OLTC、SCADA）軟體訂閱 ARR 增速：若 ARR 增速 >30% 且占比提升，代表 recurring revenue 邏輯開始兌現",
+      "資料中心 PUE 行業均值：目標從 1.3–1.5 降至 <1.1，PUE 下降速度反映散熱技術迭代與儲能部署的實際效果"
+    ],
+    "related_themes": [
+      "AI GPU 與加速器供應鏈（NVIDIA、AMD、HBM、先進封裝）——上游算力需求是電力需求的根本驅動",
+      "核能與小型模組化反應爐（SMR）——資料中心長期綠電來源，與儲能形成互補",
+      "工業自動化與電網控制系統（PLC、SCADA、DCS）——電網智慧化橫切層的技術基礎",
+      "半導體電力管理（PMIC、電源管理 IC）——GPU 晶片級供電效率影響整機功耗曲線",
+      "綠色氫能與離網發電——資料中心 2030 年 100% 綠電目標的長期解決方案",
+      "數據中心 REIT 與 colo 運營商——電力基礎設施投資的下游需求方與 capex 決策者",
+      "鋰電池與固態電池技術迭代——儲能從 LFP 向固態電池過渡的技術路徑與成本曲線"
+    ],
+    "tech_lessons": [
+      {
+        "title": "AI 資料中心電力負載的結構性跳升",
+        "subtitle": "從每機櫃 10 kW 到 100 kW+：GPU 集群如何重寫供電規格",
+        "problem": "傳統資料中心單機櫃功率約 5–15 kW，設計壽命 15–20 年，供電架構以 N+1 冗餘為上限。AI 訓練集群（如單座 10 萬卡 GPU 集群）單機櫃功率可達 40–120 kW，整棟機房峰值負載可達 100–300 MW，遠超既有變電所與配電線路的設計容量，造成電壓暫降、諧波失真與供電中斷風險。",
+        "mechanism": "GPU 推理與訓練的功耗曲線呈脈衝式：訓練任務啟動時數百台伺服器同時拉滿 TDP（Total Design Power），形成毫秒級功率尖峰。這要求供電端具備更高的瞬間容量裕度、更低的阻抗路徑，以及更快的保護動作時間。傳統電網的 60 Hz 交流架構在如此高頻率的負載跳變下，電壓穩定度與電磁相容性（EMC）成為瓶頸，迫使資料中心向 13.8 kV 甚至 34.5 kV 中壓直供、並引入靜止無功補償器（SVC）與有源濾波器（APF）。",
+        "why_now": "2024–2026 年北美與東南亞大型 AI 資料中心（Hyperscaler 自建 + 第三方 colo）集中投產，單座園區用電量等同一座中型城市。電網公司與設備商的交付週期（大型變壓器 18–30 個月）已成為資料中心上線時程的最大瓶頸，電力基礎設施從「配套」升級為「前置條件」。",
+        "desc": "理解 AI 資料中心電力需求，核心是抓住「密度 × 脈衝 × 規模」三個維度的同時放大。傳統資料中心是穩態負載，AI 集群是動態高頻負載；傳統供電是 400 V 低壓分配，AI 機房正轉向中壓直入。這三個變化直接決定重電設備（變壓器、開關、電纜）的規格升級與量價齊升邏輯。"
+      },
+      {
+        "title": "重電設備與電網強韌化：從被動供電到主動電網",
+        "subtitle": "變壓器、斷路器、電纜與智能電網的規格重構",
+        "problem": "資料中心對供電可靠性的要求是 99.999%（年停機 < 5 分鐘），且負載不可中斷。當一座 200 MW 的 AI 園區接入既有配電網，會造成：(1) 變壓器容量不足或過載；(2) 電纜電阻損耗與溫升超限；(3) 電壓暫降影響同區用戶；(4) 故障時保護級聯跳閘。傳統電網的「源-網-荷」單向架構無法應對。",
+        "mechanism": "強韌化路徑包含三層：第一層是硬體升級——大容量三卷變壓器（>100 MVA）、高短路容量斷路器（>63 kA）、低電阻電纜（銅芯或鋁芯加大截面）、以及氣體絕緣開關設備（GIS）取代傳統 AIS 以縮小佔地。第二層是電網拓撲——從單電源放射狀改為雙電源環網或雙迴路供電，引入自動重合器與分段器實現故障自隔離（FA）。第三層是智慧化——部署電網量測與控制終端（PMU/RTU）、電壓調節器（OLTC）與電容投切裝置，實現毫秒級電壓支撐與無功平衡。",
+        "why_now": "北美大型變壓器（LPT）供應鏈高度集中於少數廠商，2024 年後交付排期已延至 2027–2028；東南亞與中東新建資料中心同步搶單，造成重電設備量價齊漲。同時，各國電網公司（如 PGE、TEPCO、台電）開始將「資料中心專用供電」列為獨立規劃項目，預算與招標節奏明顯加速。",
+        "desc": "重電強韌化不是單一產品邏輯，而是「容量 × 可靠性 × 智慧化」的系統性升級。投資視角上，需區分：(a) 量增邏輯（新機組、新電纜）；(b) 規格升級邏輯（更高 kV、更大 kA）；(c) 智慧化邏輯（PMU、OLTC、SCADA）。三者的毛利結構與競爭格局不同，不宜混為一談。"
+      },
+      {
+        "title": "儲能系統：電網緩衝、備援與電價套利的三重角色",
+        "subtitle": "從 UPS 到電網級儲能：資料中心如何把電池變成「電力緩衝器」",
+        "problem": "資料中心需要三層電力保障：(1) 毫秒級——UPS 電池或飛輪，應對市電瞬斷；(2) 分鐘至小時級——柴發機或儲能，應對市電中斷；(3) 小時至日級——電價套利與需量管理，降低用電成本。傳統柴發機碳排放高、維護成本高、燃料價格波動大；純 UPS 容量有限且電池壽命 5–8 年。AI 資料中心 24/7 滿載運行，柴發機使用時數暴增，儲能成為經濟性與碳排雙重驅動下的必然選擇。",
+        "mechanism": "資料中心儲能系統通常採用「UPS + 柴發 + 電網級儲能」三層架構。電網級儲能（通常 10–100 MWh，鋰離子或液態電池）串接於中壓側，功能包括：削峰（在電價尖峰時段放電，降低需量電費）、填谷（在離峰時段充電）、電壓支撐（提供無功功率）、以及柴發機啟動前的橋接供電（bridge mode）。控制層由能量管理系統（EMS）與電網調度系統（AGC/AVC）協同，響應時間可達 100 ms 級。液態電池（如 LFP）因安全性與循環壽命（>6000 次）成為主流，但高功率密度場景仍需要 NMC 或固態電池補充。",
+        "why_now": "2025–2026 年北美電價尖峰時段（summer peak）電價已達離峰的 3–5 倍，儲能套利空間擴大。同時，資料中心 ESG 報告要求 2030 年前 100% 綠電，柴發機使用時數必須壓縮，儲能成為「減柴發」的核心工具。多國（美國 IRA、歐盟 CBAM、新加坡）對資料中心碳排課徵或披露，進一步加速儲能部署。",
+        "desc": "儲能在資料中心場景的投資邏輯與電網側儲能（如 TSO 調頻）不同：資料中心儲能是「私有資產」，ROI 計算包含電價套利 + 柴發機使用成本節省 + 碳排合規成本，而非單純的電價差。這使得資料中心儲能的單位經濟性（$/kWh）門檻較低，但對系統整合商（EPC + EMS + 電池）的技術要求更高。"
+      },
+      {
+        "title": "高密度散熱：從風冷到液冷、浸沒式的技術躍遷",
+        "subtitle": "單機櫃 100 kW 時代，冷卻系統如何決定資料中心 PUE 與可用率",
+        "problem": "傳統風冷（CRAC/CRAH）在機櫃功率超過 20–25 kW 時效率急劇下降，PUE（Power Usage Effectiveness）從 1.3 惡化至 1.8 以上。AI GPU 集群（如 NVIDIA H100/B200/GB200）單機櫃功率已達 40–120 kW，熱通量密度（W/cm²）是傳統 CPU 機櫃的 5–10 倍。風冷已無法在合理空間與能耗下移走熱量，散熱成為資料中心設計的第一約束條件。",
+        "mechanism": "散熱技術路徑由低到高：(1) 前送風/後排風優化（風冷極限）；(2) 冷板液冷（Cold Plate）——冷媒（去離子水或丙二醇）在 GPU/CPU 晶片背面或四周的銅/鋁冷板中循環，帶走 70–90% 熱量，風冷處理剩餘散熱；(3) 浸沒式液冷（Immersion）——伺服器整機浸入介電液（如氟化液或合成烴），熱傳導效率提升 10–25 倍，PUE 可降至 1.02–1.05；(4) 氣液混合（Hybrid）——冷板 + 浸沒結合，適用于過渡期。關鍵參數包括：冷媒流量（L/min）、壓降（kPa）、熱阻（°C/W）、以及與機房 HVAC 的耦合設計（二次側/三次側迴路）。",
+        "why_now": "NVIDIA GB200 NVL72 機櫃（2025 量產）單櫃功率約 120 kW，已超出風冷物理極限。Hyperscaler 新一代 AI 機房設計（如 Microsoft Fairwater、Google Stargate）已將液冷列為標準配置，2025–2027 年液冷滲透率預計從 <10% 跳升至 40–60%。散熱供應鏈（冷板、快接頭、CDU 冷量分配單元、介電液）進入量產放量期，且技術迭代快（每 18–24 月一代），形成持續的技術升級與換機需求。",
+        "desc": "散熱在 AI 資料中心中不再是「輔助系統」，而是決定機房能否上線、PUE 能否達標、以及 GPU 能否維持滿載運行的核心系統。投資視角上，需區分：(a) 冷板/浸沒式硬體（冷板、快接頭、CDU）；(b) 冷媒與介電液（氟化液、合成烴）；(c) 機房級 HVAC 整合（二次側泵、板式換熱器、冷卻塔）。三者的技術壁壘與量產節奏不同，液冷硬體目前競爭最激烈，介電液與 CDU 的技術門檻相對較高。"
+      }
+    ],
+    "structure_layers": [
+      {
+        "name": "電網側：重電設備與輸配電基礎設施",
+        "position": "最上游（電網公司→設備商→資料中心），交付週期最長、瓶頸最顯著的一層",
+        "summary": "AI 資料中心單座園區峰值負載 100–300 MW，遠超既有變電所與配電線路設計容量。大型三卷變壓器（>100 MVA）、高短路容量斷路器（>63 kA）、GIS 開關設備與大截面電纜成為量價齊漲核心。北美 LPT 供應鏈高度集中，交付排期已延至 2027–2028，使重電設備從「配套」升級為資料中心上線的前置瓶頸。",
+        "key_points": [
+          "單機櫃功率從 5–15 kW 跳至 40–120 kW，供電架構從 400 V 低壓分配轉向 13.8–34.5 kV 中壓直供",
+          "大型變壓器（LPT）交付週期 18–30 個月，已成為資料中心上線時程最大瓶頸",
+          "電網拓撲從單電源放射狀升級為雙電源環網 + 自動故障隔離（FA）+ 毫秒級電壓支撐",
+          "各國電網公司（PGE、TEPCO、台電）開始將「資料中心專用供電」列為獨立規劃項目，招標節奏加速"
+        ],
+        "beneficiaries": [
+          "台達電 (2343)",
+          "光寶科 (2336)",
+          "奇鋐 (3006)"
+        ],
+        "pricing_power": "高——LPT 與高 kA 斷路器全球供給集中於少數廠商，交付排期已滿，議價權在設備商端",
+        "margin_profile": "中高——規格升級（更高 kV、更大 kA）帶動 ASP 上移 20–40%，但量產後競爭者進入會壓縮毛利",
+        "value_capture": "量價齊漲為主，規格升級邏輯（更高 kV / 更大 kA）比單純量增邏輯更具持續性",
+        "entry_barrier": "高——電網認證（IEEE/IEC）、大型產線投資、18–30 月交付能力構成三重壁壘",
+        "leader_type": "寡頭型——全球 LPT 與高容量 GIS 供應商僅數家，新進入者需 3–5 年認證與產能建設"
+      },
+      {
+        "name": "資料中心側：供電、儲能與能量管理系統",
+        "position": "中游（資料中心建設商 / 系統整合商），直接承接 Hyperscaler 與第三方 colo 的系統採購",
+        "summary": "資料中心需三層電力保障：毫秒級 UPS、分鐘至小時級柴發/儲能、小時至日級電價套利。AI 集群 24/7 滿載使柴發機使用時數暴增，電網級儲能（10–100 MWh，LFP 為主）成為「減柴發」與碳排合規的核心工具。儲能是私有資產，ROI 由電價套利 + 柴發成本節省 + 碳排合規共同決定，單位經濟性門檻較電網側儲能低，但對系統整合商（EPC + EMS + 電池）技術要求更高。",
+        "key_points": [
+          "北美夏季尖峰電價達離峰 3–5 倍，儲能套利空間擴大，LFP 液態電池（>6000 次循環）成為主流",
+          "資料中心 ESG 要求 2030 年前 100% 綠電，柴發機使用時數必須壓縮，儲能為核心替代工具",
+          "EMS 與電網調度（AGC/AVC）協同，響應時間需達 100 ms 級，軟體層毛利顯著高於硬體",
+          "多國（美國 IRA、歐盟 CBAM、新加坡）對資料中心碳排課徵或披露，加速儲能部署節奏"
+        ],
+        "beneficiaries": [
+          "台達電 (2343)",
+          "光寶科 (2336)",
+          "奇鋐 (3006)"
+        ],
+        "pricing_power": "中——Hyperscaler 議價力強，但系統整合與 EMS 軟體層具技術黏著性，純硬體層議價空間大",
+        "margin_profile": "中——硬體（電池、UPS）毛利 15–25%，EMS 軟體與服務毛利 40–60%，整體系統整合毛利 20–30%",
+        "value_capture": "硬體量產放量 + EMS 軟體訂閱 + 柴發機使用成本節省（客戶端 ROI 驅動持續採購）",
+        "entry_barrier": "中高——系統整合能力（EPC + EMS + 電池）與 100 ms 級響應演算法構成壁壘，純電池組裝門檻較低",
+        "leader_type": "系統整合型——台達電等具備從 UPS 到 EMS 全鏈條能力者，在私有儲能場景具結構性優勢"
+      },
+      {
+        "name": "機房側：高密度散熱與冷卻系統",
+        "position": "中下游（機房設備商 / 散熱系統商），直接影響 GPU 能否維持滿載與 PUE 能否達標",
+        "summary": "NVIDIA GB200 NVL72 單櫃功率約 120 kW，已超出風冷物理極限（PUE 惡化至 1.8+）。冷板液冷帶走 70–90% 熱量，浸沒式可將 PUE 壓至 1.02–1.05。2025–2027 年液冷滲透率預計從 <10% 跳升至 40–60%，冷板、快接頭、CDU 冷量分配單元與介電液進入量產放量期。散熱從「輔助系統」升級為決定機房能否上線的核心系統。",
+        "key_points": [
+          "風冷在機櫃 >20–25 kW 時效率急劇下降，AI GPU 熱通量密度是傳統 CPU 機櫃的 5–10 倍",
+          "冷板液冷（Cold Plate）為主流過渡方案，浸沒式（Immersion）為終極方案，氣液混合為過渡期配置",
+          "CDU 冷量分配單元與介電液（氟化液 / 合成烴）技術門檻較高，冷板與快接頭競爭已較激烈",
+          "技術迭代快（每 18–24 月一代），形成持續的技術升級與換機需求，非一次性資本支出"
+        ],
+        "beneficiaries": [
+          "台達電 (2343)",
+          "奇鋐 (3006)"
+        ],
+        "pricing_power": "中——冷板/快接頭量產後競爭加劇，但 CDU 與介電液因技術門檻較高，短期議價空間有限",
+        "margin_profile": "中高——冷板/快接頭毛利 20–30%，CDU 毛利 30–40%，介電液毛利 40–50%（持續消耗型）",
+        "value_capture": "硬體量產放量（冷板、CDU）+ 介電液持續消耗（類耗材邏輯）+ 技術迭代換機需求",
+        "entry_barrier": "中——冷板/快接頭進入者多、競爭激烈；CDU 與介電液需熱傳導模擬、介電安全認證，門檻較高",
+        "leader_type": "技術領先型（CDU / 介電液）vs 量產型（冷板 / 快接頭），兩類公司的估值邏輯不同"
+      },
+      {
+        "name": "橫切層：電網智慧化、量測與自動化控制",
+        "position": "橫切層（電網側 × 資料中心側交匯），不屬於單一硬體品項，而是軟體 + 演算法 + 感測的系統性升級",
+        "summary": "從被動供電到主動電網，需部署 PMU/RTU 量測終端、OLTC 電壓調節器、自動重合器與分段器（FA）、SCADA 系統，實現毫秒級電壓支撐與無功平衡。此層不直接對應單一硬體採購，而是電網公司與資料中心運營商的持續性 IT/OT 支出，軟體訂閱與演算法授權構成 recurring revenue。",
+        "key_points": [
+          "PMU/RTU 實現毫秒級電壓量測，OLTC 與電容投切裝置實現無功平衡，自動重合器實現故障自隔離",
+          "資料中心 99.999% 可用性要求（年停機 <5 分鐘）使智慧化從「可選」變為「必要」",
+          "軟體/演算法層毛利顯著高於硬體，且具訂閱制 recurring revenue 特性",
+          "電網公司（台電、PGE、TEPCO）與資料中心運營商（Hyperscaler）為雙端買方，市場結構性擴張"
+        ],
+        "beneficiaries": [
+          "台達電 (2343)",
+          "光寶科 (2336)"
+        ],
+        "pricing_power": "中高——演算法與電網知識構成壁壘，軟體訂閱制議價空間有限",
+        "margin_profile": "高——軟體/演算法毛利 50–70%，硬體（PMU、OLTC）毛利 25–35%，整體系統毛利 35–50%",
+        "value_capture": "軟體訂閱（recurring）+ 硬體更換週期（5–8 年）+ 演算法授權（按節點計費）",
+        "entry_barrier": "高——電網演算法、SCADA 整合經驗、電網公司認證構成多重壁壘，新進入者需 3–5 年",
+        "leader_type": "軟體/演算法領先型——具備電網控制演算法與 SCADA 整合經驗者，在智慧化層具結構性優勢"
+      }
+    ],
+    "capital_flow": [
+      {
+        "phase": "瓶頸確認與稀缺溢價期",
+        "timeframe": "2024 Q1 – 2025 Q2",
+        "focus": "重電設備（LPT、高 kA GIS、大截面電纜）——「誰能交付」是核心定價因子",
+        "logic": "北美 LPT 交付排期延至 2027–2028，全球供給集中於少數廠商，資料中心上線時程首次被電力基礎設施而非 IT 設備瓶頸。市場定價邏輯從「誰能賣」轉向「誰能交付」，重電設備商 backlog 成為領先指標。此階段液冷與儲能仍處於 pilot 驗證期，營收貢獻小但訂單能見度開始反映大單落地。資金偏好具有 18–30 月交付能力與電網認證（IEEE/IEC）的寡頭型設備商。",
+        "beneficiary_groups": [
+          "台達電 (2343)——具備從 UPS 到重電到 EMS 全鏈條能力，LPT 與 GIS 產能布局",
+          "光寶科 (2336)——電源管理與電網設備，受益於中壓直供架構升級"
+        ]
+      },
+      {
+        "phase": "量產放量與規格標準化期",
+        "timeframe": "2025 Q3 – 2026 Q4",
+        "focus": "液冷硬體（冷板、CDU、快接頭）+ 儲能系統（LFP 電池、EMS）+ 重電設備量價齊漲——「誰能量產且守住毛利」成為核心分歧",
+        "logic": "NVIDIA GB200 NVL72 量產使液冷從可選變為標準配置，冷板/CDU 進入量產放量期（滲透率 <10%→40–60%）。北美與東南亞大型 AI 資料中心集中投產，重電設備量價齊漲邏輯兌現（ASP 上移 20–40%）。儲能從 pilot 轉為標準配置，LFP 電池與 EMS 系統進入規模化採購。此階段是「驗證→量產」的轉折點，營收與獲利開始加速，EPS 上修週期啟動。資金從純重電設備向液冷硬體與儲能系統擴散，但冷板/快接頭環節競爭加劇，資金開始向 CDU 與介電液等高毛利環節集中。",
+        "beneficiary_groups": [
+          "台達電 (2343)——全鏈條卡位（UPS + 重電 + 液冷 CDU + EMS），量產放量期最大受益者",
+          "奇鋐 (3006)——液冷散熱系統與機房級 HVAC 整合，受益於液冷滲透率跳升",
+          "光寶科 (2336)——電源管理與儲能系統整合，受益於中壓直供與儲能規模化"
+        ]
+      },
+      {
+        "phase": "結構分化與高毛利環節集中期",
+        "timeframe": "2027 Q1 – 2028 Q4",
+        "focus": "CDU/介電液（高毛利硬體）+ 儲能 EMS 軟體訂閱 + 電網智慧化（PMU、OLTC、SCADA）——「誰在結構性高毛利環節佔據主導」成為核心投資邏輯",
+        "logic": "液冷滲透率突破 60%，冷板/快接頭進入成本曲線下降段（毛利可能壓縮但量補價），競爭格局初步定型。重電設備交付排期開始縮短（新產線投產），但規格升級（更高 kV、更大 kA）持續推動 ASP 上移，量價齊漲邏輯從「量」轉向「價」。儲能從「柴發機替代」擴展至「電價套利 + 碳排合規」雙驅動，LFP 電池成本持續下降但 EMS 軟體訂閱收入開始具規模。電網智慧化從新建項目擴展至既有電網改造，recurring revenue 占比提升。資金從低毛利硬體環節（冷板、快接頭）撤出，向 CDU（毛利 30–40%）、介電液（毛利 40–50%）、EMS 軟體（毛利 40–60%）、電網智慧化軟體（毛利 50–70%）集中。",
+        "beneficiary_groups": [
+          "台達電 (2343)——CDU + EMS 軟體訂閱 + 電網智慧化全鏈條，結構性毛利支撐",
+          "光寶科 (2336)——電網智慧化（PMU、OLTC）與儲能 EMS，recurring revenue 占比提升"
+        ]
+      },
+      {
+        "phase": "結構性成長成熟與全鏈條整合期",
+        "timeframe": "2029 年以後",
+        "focus": "浸沒式液冷 + 固態電池 + 電網全域數位化 + 全鏈條系統整合——主題溢價消退，市場以現金流與持續升級能力定價",
+        "logic": "AI 資料中心電力需求持續結構性增長（每代 GPU 功耗再上移），液冷從冷板向浸沒式過渡，CDU 與介電液成為核心價值環節。重電設備從「新建」擴展至「既有電網改造 + 資料中心專用供電」雙軌，從一次性資本支出轉為持續性維護與升級支出。儲能從 LFP 向固態電池過渡（ASP 上移、循環壽命 >10000 次），單位經濟性進一步改善。電網智慧化從單點部署擴展至全域電網數位化，軟體/演算法層成為主要價值捕獲點。市場從「主題投資」轉為「結構性成長投資」，具備全鏈條能力（硬體 + 軟體 + 服務）的系統整合商成為長期贏家，單一品項供應商面臨被整合或邊緣化風險。",
+        "beneficiary_groups": [
+          "台達電 (2343)——全鏈條系統整合商（硬體 + 軟體 + 服務），結構性成長成熟期的長期贏家",
+          "光寶科 (2336)——電網數位化與儲能全鏈條，recurring revenue 成為主要定價基礎"
+        ]
+      }
+    ],
+    "timeline_phases": [
+      {
+        "phase": "技術驗證與原型部署期",
+        "timeframe": "2024 Q1 – 2025 Q2",
+        "summary": "Hyperscaler 首批 AI 機房（Microsoft Fairwater、Google Stargate 等）完成液冷原型測試與 CDU 驗證；北美 LPT 交付排期已滿，資料中心上線時程開始受電力基礎設施瓶頸制約；儲能系統在 2–3 座資料中心完成 pilot，驗證 100 ms 級響應與柴發機橋接模式。此階段市場焦點在「技術可行性」與「交付瓶頸確認」。",
+        "winners": [
+          "台達電 (2343)",
+          "光寶科 (2336)"
+        ],
+        "investment_phase": "早期布局期——市場尚未充分定價交付瓶頸與規格升級邏輯，估值反映的是「傳統資料中心」而非「AI 資料中心」",
+        "revenue_meaning": "營收貢獻仍小，但訂單能見度（backlog）開始反映 LPT 與液冷系統的大單落地，是後續量產放量的領先指標",
+        "watch_metric": "LPT 交付排期（月數）、液冷 pilot 通過率、儲能 pilot 的柴發機使用時數下降幅度",
+        "expected_market_focus": "市場關注「誰能交付」而非「誰能賣」，重電設備商的產能與交付能力成為核心定價因子"
+      },
+      {
+        "phase": "量產導入與規格標準化期",
+        "timeframe": "2025 Q3 – 2026 Q4",
+        "summary": "NVIDIA GB200 NVL72 量產（2025）使液冷從可選變為標準配置，冷板/CDU 進入量產放量期；北美與東南亞大型 AI 資料中心集中投產，單座園區用電量等同一座中型城市，重電設備量價齊漲邏輯兌現；儲能從 pilot 轉為標準配置，LFP 電池與 EMS 系統進入規模化採購。此階段是「驗證→量產」的轉折點，營收與獲利開始加速。",
+        "winners": [
+          "台達電 (2343)",
+          "奇鋐 (3006)",
+          "光寶科 (2336)"
+        ],
+        "investment_phase": "主升段啟動期——量產放量邏輯兌現，營收與獲利加速，市場開始重新定價「AI 資料中心電力基礎設施」的結構性成長",
+        "revenue_meaning": "液冷硬體（冷板、CDU）與重電設備（LPT、GIS）營收開始顯著貢獻，儲能系統從 pilot 轉為規模化訂單，EPS 上修週期啟動",
+        "watch_metric": "液冷滲透率（目標 40–60%）、LPT 交付排期是否開始縮短、儲能 MWh 部署量、Hyperscaler capex 中電力基礎設施占比",
+        "expected_market_focus": "市場焦點從「誰能交付」轉向「誰能量產且維持毛利」，冷板/快接頭的競爭加劇 vs CDU/介電液的技術壁壘成為核心分歧"
+      },
+      {
+        "phase": "規模化部署與成本曲線下降期",
+        "timeframe": "2027 Q1 – 2028 Q4",
+        "summary": "液冷滲透率突破 60%，冷板/快接頭進入成本曲線下降段，競爭格局初步定型；重電設備交付排期開始縮短（新產線投產），但規格升級（更高 kV、更大 kA）持續推動 ASP 上移；儲能從「柴發機替代」擴展至「電價套利 + 碳排合規」雙驅動，LFP 電池成本持續下降；電網智慧化（PMU、OLTC、SCADA）從新建項目擴展至既有電網改造，市場結構性擴張。",
+        "winners": [
+          "台達電 (2343)",
+          "光寶科 (2336)",
+          "奇鋐 (3006)"
+        ],
+        "investment_phase": "結構性成長確認期——量產放量邏輯已兌現，市場開始定價「持續升級 + 新技術迭代」的長期成長，估值從「成長股」向「結構性成長 + 現金流」混合定價過渡",
+        "revenue_meaning": "液冷硬體進入成本曲線下降段（毛利可能壓縮但量補價）；重電設備規格升級邏輯（更高 kV / 更大 kA）成為主要毛利支撐；儲能 EMS 軟體訂閱收入開始具規模；電網智慧化 recurring revenue 占比提升",
+        "watch_metric": "液冷單位成本下降幅度（$/kW）、LPT 交付排期（目標縮至 12–18 月）、儲能 LFP 電池 $/kWh、電網智慧化軟體訂閱 ARR 增速",
+        "expected_market_focus": "市場焦點從「量」轉向「結構」——誰在 CDU/介電液/EMS 等高毛利環節佔據主導，誰在冷板/快接頭等低毛利環節陷入價格戰，成為核心分歧"
+      },
+      {
+        "phase": "持續迭代與市場結構性擴張期",
+        "timeframe": "2029 年以後",
+        "summary": "AI 資料中心電力需求持續結構性增長（每代 GPU 功耗再上移），液冷從冷板向浸沒式過渡，CDU 與介電液成為核心價值環節；重電設備從「新建」擴展至「既有電網改造 + 資料中心專用供電」雙軌；儲能從 LFP 向固態電池過渡，循環壽命與安全性持續升級；電網智慧化從單點部署擴展至全域電網數位化，軟體/演算法層成為主要價值捕獲點。此階段市場從「主題投資」轉為「結構性成長投資」。",
+        "winners": [
+          "台達電 (2343)",
+          "光寶科 (2336)"
+        ],
+        "investment_phase": "結構性成長成熟期——主題溢價消退，市場以現金流與持續升級能力定價，具備全鏈條能力（硬體 + 軟體 + 服務）的系統整合商成為長期贏家",
+        "revenue_meaning": "液冷/浸沒式硬體進入成熟期（量穩、毛利穩）；重電設備從新建轉為改造 + 升級（recurring）；儲能從 LFP 向固態電池過渡（ASP 上移）；電網智慧化軟體訂閱成為主要 recurring revenue 來源",
+        "watch_metric": "浸沒式滲透率、固態電池循環壽命與成本、電網數位化投資佔電網 capex 比例、資料中心 PUE 行業均值（目標 <1.1）",
+        "expected_market_focus": "市場焦點從「誰受益於 AI 資料中心」轉向「誰能持續升級並維持結構性毛利」，全鏈條系統整合商 vs 單一品項供應商的分化成為核心投資邏輯"
+      }
+    ],
+    "concepts": [
+      {
+        "title": "電力密度跳升",
+        "subtitle": "AI 集群把資料中心從穩態負載變成脈衝高頻負載",
+        "desc": "單機櫃功率從 10 kW 級跳至 100 kW+，供電架構從 400 V 低壓分配轉向 13.8–34.5 kV 中壓直供，電網與設備的容量、阻抗、保護時間全部需要重新設計。"
+      },
+      {
+        "title": "重電強韌化",
+        "subtitle": "變壓器、斷路器、電纜與智能電網的系統性規格升級",
+        "desc": "從單電源放射狀供電升級為雙電源環網 + 自動故障隔離 + 毫秒級電壓支撐，大型變壓器與高短路容量開關設備成為交付瓶頸與量價齊漲核心。"
+      },
+      {
+        "title": "儲能三重角色",
+        "subtitle": "備援、削峰填谷、碳排合規的經濟性交叉點",
+        "desc": "資料中心儲能是私有資產，ROI 由電價套利 + 柴發機成本節省 + 碳排合規共同決定，LFP 液態電池為主流，EMS 與 AGC 協同實現 100 ms 級響應。"
+      },
+      {
+        "title": "液冷與浸沒式散熱",
+        "subtitle": "風冷物理極限被突破，冷板/浸沒式成為新一代 AI 機房標準配置",
+        "desc": "單機櫃 100 kW+ 使風冷 PUE 惡化至不可接受，冷板液冷帶走 70–90% 熱量，浸沒式可將 PUE 壓至 1.02–1.05；冷板、快接頭、CDU 與介電液進入量產放量期。"
+      }
+    ],
+    "stocks": [
+      {
+        "id": "1301",
+        "code": "1301",
+        "name": "台塑",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 資料中心耗電激增帶動重電、電網強韌化、儲能與散熱題材 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1303",
+        "code": "1303",
+        "name": "南亞",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 資料中心耗電激增帶動重電、電網強韌化、儲能與散熱題材 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1307",
+        "code": "1307",
+        "name": "三芳",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 資料中心耗電激增帶動重電、電網強韌化、儲能與散熱題材 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1309",
+        "code": "1309",
+        "name": "台達化",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 資料中心耗電激增帶動重電、電網強韌化、儲能與散熱題材 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1310",
+        "code": "1310",
+        "name": "台苯",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 資料中心耗電激增帶動重電、電網強韌化、儲能與散熱題材 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1314",
+        "code": "1314",
+        "name": "中石化",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 資料中心耗電激增帶動重電、電網強韌化、儲能與散熱題材 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1315",
+        "code": "1315",
+        "name": "達新",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 資料中心耗電激增帶動重電、電網強韌化、儲能與散熱題材 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1321",
+        "code": "1321",
+        "name": "大洋",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 資料中心耗電激增帶動重電、電網強韌化、儲能與散熱題材 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1323",
+        "code": "1323",
+        "name": "永裕",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 資料中心耗電激增帶動重電、電網強韌化、儲能與散熱題材 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      },
+      {
+        "id": "1324",
+        "code": "1324",
+        "name": "地球",
+        "sector": "03",
+        "sectorId": "extended",
+        "role": "同主題供應鏈延伸受惠",
+        "timeframe": "中期觀察",
+        "pureLevel": 2.8,
+        "barrierLevel": 2.6,
+        "pros": "主題延伸受惠與族群聯動機會",
+        "cons": "非直接證據股，需持續驗證",
+        "catalyst": "主題擴散、族群輪動、訂單外溢",
+        "desc": "依主題 AI 資料中心耗電激增帶動重電、電網強韌化、儲能與散熱題材 之供應鏈/族群關聯補入的延伸觀察股。",
+        "market": "TWSE",
+        "stock_tier": "extended",
+        "evidence_type": "inferred",
+        "sources": [],
+        "ai_revenue_exposure": "待補資料",
+        "ai_revenue_exposure_source_type": "llm_inference",
+        "gross_margin_impact": "待補資料",
+        "customer_concentration": "待補資料",
+        "sole_supplier": false,
+        "pricing_power": "medium",
+        "value_capture_score": 0,
+        "substitution_risk": "medium",
+        "commercialization_phase": "中期觀察",
+        "capacity_share_hint": "待補資料",
+        "switching_cost": "medium",
+        "revenue_visibility": "medium"
+      }
+    ],
+    "sources": [
+      {
+        "type": "model-inference",
+        "label": "本地 vLLM 多步推理",
+        "note": "search_mode=search_augmented; pipeline_mode=multi_step"
+      },
+      {
+        "type": "context",
+        "label": "search_context",
+        "note": "查詢主題：AI 資料中心耗電激增帶動重電、電網強韌化、儲能與散熱題材\n以下是主題 evidence 白名單上下文：\n【global_news】\n[global_news-1] 標題：United Airlines gets aggressive in battle for top Delta, American flyers\n    來源：https://www.cnbc.com/2026/10/01/united-airlines-status-match-delta-american.html\n    來源名稱：CNBC\n    來源分類：global_news\n    發布時間：Fri, 02 Oct 2026 12:30:17 GMT\n[global_news-2] 標題：Facebook whistleblower Frances Haugen questions whether AI companies can police themselves\n    來源：https://www.cnbc.com/2026/10/02/frances-haugen-ai-self-re"
+      }
+    ]
   }
 }
